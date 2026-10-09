@@ -1,0 +1,827 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>語文補給站｜「賓語提前」倒裝句法練習神器</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@600;700;900&family=Noto+Sans+TC:wght@400;500;700;900&display=swap" rel="stylesheet">
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <style>
+    :root {
+      --primary: #0284c7;
+      --primary-dark: #0369a1;
+      --primary-light: #e0f2fe;
+      --accent: #f59e0b;
+      --accent-light: #fef3c7;
+      --success: #10b981;
+      --success-light: #d1fae5;
+      --danger: #ef4444;
+      --danger-light: #fee2e2;
+      --bg: #f8fafc;
+      --card-bg: #ffffff;
+      --text: #0f172a;
+      --muted: #64748b;
+      --border: #e2e8f0;
+      --shadow: 0 10px 25px -5px rgba(2, 132, 199, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.04);
+      --radius: 18px;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Noto Sans TC', sans-serif;
+      background-color: var(--bg);
+      color: var(--text);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 20px 15px 40px;
+      background-image:
+        radial-gradient(circle at 10% 10%, rgba(2, 132, 199, 0.05) 0%, transparent 45%),
+        radial-gradient(circle at 90% 90%, rgba(245, 158, 11, 0.05) 0%, transparent 45%);
+    }
+
+    /* 頂部標題 */
+    header {
+      width: 100%;
+      max-width: 680px;
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: var(--primary-light);
+      color: var(--primary-dark);
+      padding: 6px 14px;
+      border-radius: 999px;
+      font-size: 0.82rem;
+      font-weight: 700;
+      margin-bottom: 10px;
+    }
+    h1 {
+      font-family: 'Noto Serif TC', serif;
+      font-size: 1.7rem;
+      color: var(--primary-dark);
+      font-weight: 900;
+      letter-spacing: -0.5px;
+      margin-bottom: 6px;
+    }
+    .subtitle {
+      font-size: 0.92rem;
+      color: var(--muted);
+    }
+
+    /* 分頁導覽列 */
+    .tab-bar {
+      display: flex;
+      gap: 8px;
+      margin-bottom: 22px;
+      background: #e2e8f0;
+      padding: 5px;
+      border-radius: 14px;
+      width: 100%;
+      max-width: 540px;
+    }
+    .tab-btn {
+      flex: 1;
+      padding: 10px 12px;
+      border: none;
+      border-radius: 10px;
+      background: transparent;
+      color: var(--muted);
+      font-size: 0.95rem;
+      font-weight: 700;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      transition: all 0.25s ease;
+    }
+    .tab-btn.active {
+      background: white;
+      color: var(--primary-dark);
+      box-shadow: 0 4px 10px rgba(0,0,0,0.06);
+    }
+
+    /* 容器架構 */
+    .view-panel {
+      display: none;
+      width: 100%;
+      max-width: 600px;
+      flex-direction: column;
+      align-items: center;
+      animation: fadeIn 0.35s ease;
+    }
+    .view-panel.active { display: flex; }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(8px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* 篩選等級標籤 */
+    .filter-pills {
+      display: flex;
+      gap: 8px;
+      margin-bottom: 16px;
+    }
+    .pill {
+      padding: 5px 14px;
+      border-radius: 999px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      background: white;
+      border: 1px solid var(--border);
+      color: var(--muted);
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+    .pill.active {
+      background: var(--primary);
+      border-color: var(--primary);
+      color: white;
+    }
+
+    /* 翻轉卡片組件 */
+    .card-scene {
+      width: 100%;
+      max-width: 480px;
+      height: 480px;
+      perspective: 1000px;
+      margin-bottom: 18px;
+      cursor: pointer;
+    }
+    .card-3d {
+      width: 100%;
+      height: 100%;
+      position: relative;
+      transform-style: preserve-3d;
+      transition: transform 0.55s cubic-bezier(0.4, 0, 0.2, 1);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+    }
+    .card-scene.is-flipped .card-3d {
+      transform: rotateY(180deg);
+    }
+    .card-face {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      backface-visibility: hidden;
+      border-radius: var(--radius);
+      background: white;
+      border: 2px solid var(--border);
+      display: flex;
+      flex-direction: column;
+      padding: 24px;
+      box-sizing: border-box;
+    }
+    .card-front {
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 6px solid var(--primary);
+      background-image: radial-gradient(#e0f2fe 1px, transparent 1px);
+      background-size: 24px 24px;
+    }
+    .card-back {
+      transform: rotateY(180deg);
+      border-top: 6px solid var(--accent);
+      justify-content: space-between;
+      text-align: left;
+    }
+
+    .card-top-info {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .card-index {
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: var(--muted);
+    }
+    .card-level-badge {
+      font-size: 0.75rem;
+      padding: 3px 10px;
+      border-radius: 999px;
+      font-weight: 700;
+    }
+    .level-basic { background: #dbeafe; color: #1e40af; }
+    .level-adv { background: #fef3c7; color: #92400e; }
+
+    .card-question {
+      font-family: 'Noto Serif TC', serif;
+      font-size: 2.2rem;
+      font-weight: 900;
+      color: var(--primary-dark);
+      text-align: center;
+      line-height: 1.4;
+      margin: 15px 0;
+    }
+    .card-hint-click {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      color: var(--muted);
+      font-size: 0.88rem;
+    }
+
+    /* 卡片背面內容 */
+    .restore-target {
+      font-family: 'Noto Serif TC', serif;
+      font-size: 1.8rem;
+      font-weight: 900;
+      color: #b45309;
+      text-align: center;
+      padding: 10px;
+      background: var(--accent-light);
+      border-radius: 12px;
+      margin-bottom: 12px;
+    }
+    .analysis-list {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      margin-bottom: 10px;
+    }
+    .analysis-item {
+      display: flex;
+      font-size: 0.88rem;
+      line-height: 1.5;
+    }
+    .analysis-item b {
+      color: var(--primary-dark);
+      min-width: 68px;
+    }
+    .step-pill-box {
+      background: #f1f5f9;
+      padding: 10px 12px;
+      border-radius: 10px;
+      font-size: 0.83rem;
+      line-height: 1.6;
+      color: #334155;
+      border-left: 4px solid var(--primary);
+    }
+
+    /* 閃卡記憶掌握按鈕列 */
+    .mastery-ctrls {
+      display: flex;
+      gap: 12px;
+      width: 100%;
+      max-width: 480px;
+    }
+    .m-btn {
+      flex: 1;
+      padding: 12px;
+      border: none;
+      border-radius: 12px;
+      font-size: 0.95rem;
+      font-weight: 700;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      transition: all 0.2s;
+    }
+    .m-btn-unknow {
+      background: #f1f5f9;
+      color: #475569;
+      border: 1px solid var(--border);
+    }
+    .m-btn-unknow:hover { background: #e2e8f0; }
+    .m-btn-know {
+      background: var(--primary);
+      color: white;
+    }
+    .m-btn-know:hover { background: var(--primary-dark); transform: translateY(-2px); }
+
+    /* 測驗挑戰區 */
+    .quiz-box {
+      width: 100%;
+      background: white;
+      border-radius: var(--radius);
+      padding: 25px 22px;
+      box-shadow: var(--shadow);
+      border: 1px solid var(--border);
+      text-align: center;
+    }
+    .quiz-progress-bar {
+      width: 100%;
+      height: 8px;
+      background: #e2e8f0;
+      border-radius: 999px;
+      margin-bottom: 18px;
+      overflow: hidden;
+    }
+    .quiz-progress-inner {
+      height: 100%;
+      background: linear-gradient(90deg, var(--primary), var(--accent));
+      width: 0%;
+      transition: width 0.3s;
+    }
+    .quiz-topic {
+      font-size: 0.88rem;
+      color: var(--muted);
+      margin-bottom: 6px;
+      font-weight: 600;
+    }
+    .quiz-sentence {
+      font-family: 'Noto Serif TC', serif;
+      font-size: 1.8rem;
+      font-weight: 900;
+      color: var(--primary-dark);
+      margin-bottom: 22px;
+      padding: 12px;
+      background: var(--primary-light);
+      border-radius: 12px;
+    }
+    .quiz-options {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      margin-bottom: 20px;
+    }
+    .opt-btn {
+      padding: 14px 10px;
+      background: white;
+      border: 2px solid var(--border);
+      border-radius: 12px;
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: var(--text);
+      cursor: pointer;
+      transition: all 0.2s ease;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 64px;
+    }
+    .opt-btn:hover:not(:disabled) {
+      border-color: var(--primary);
+      background: #f0f9ff;
+    }
+    .opt-btn.correct {
+      background: var(--success-light);
+      border-color: var(--success);
+      color: #065f46;
+    }
+    .opt-btn.wrong {
+      background: var(--danger-light);
+      border-color: var(--danger);
+      color: #991b1b;
+    }
+    .quiz-feedback {
+      display: none;
+      padding: 14px;
+      border-radius: 12px;
+      text-align: left;
+      font-size: 0.9rem;
+      line-height: 1.6;
+      margin-bottom: 18px;
+      animation: fadeIn 0.3s;
+    }
+    .quiz-feedback.show { display: block; }
+    .quiz-feedback.is-correct { background: var(--success-light); border-left: 5px solid var(--success); }
+    .quiz-feedback.is-wrong { background: var(--danger-light); border-left: 5px solid var(--danger); }
+
+    .next-quiz-btn {
+      display: none;
+      width: 100%;
+      padding: 13px;
+      background: var(--primary);
+      color: white;
+      border: none;
+      border-radius: 12px;
+      font-size: 1rem;
+      font-weight: 700;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+    .next-quiz-btn:hover { background: var(--primary-dark); }
+    .next-quiz-btn.show { display: block; }
+
+    /* 測驗結算畫面 */
+    .result-card {
+      display: none;
+      background: white;
+      padding: 35px 25px;
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      text-align: center;
+      width: 100%;
+      max-width: 480px;
+    }
+    .result-score {
+      font-size: 3.5rem;
+      font-weight: 900;
+      color: var(--primary);
+      margin: 10px 0;
+    }
+    .result-title {
+      font-size: 1.4rem;
+      font-weight: 800;
+      color: var(--text);
+    }
+    .restart-btn {
+      margin-top: 20px;
+      padding: 12px 28px;
+      background: var(--primary);
+      color: white;
+      border: none;
+      border-radius: 999px;
+      font-size: 1rem;
+      font-weight: 700;
+      cursor: pointer;
+    }
+
+    /* 滿分或進階徽章 */
+    .badge-icon {
+      width: 60px;
+      height: 60px;
+      margin: 0 auto 10px;
+      color: var(--accent);
+    }
+
+    /* 底部版權 */
+    footer {
+      margin-top: 35px;
+      font-size: 0.82rem;
+      color: var(--muted);
+      text-align: center;
+    }
+
+    @media (max-width: 500px) {
+      .quiz-options { grid-template-columns: 1fr; }
+      .card-scene { height: 440px; }
+      .card-question { font-size: 1.8rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="badge">
+      <i data-lucide="sparkles" size="14"></i>
+      翰林版七~九年級・倒裝句型特訓
+    </div>
+    <h1>「賓語提前」倒裝句法練習神器</h1>
+    <p class="subtitle">口訣：去掉四隻刺蝟，動前名後，喂，前面的，統統不准動！</p>
+  </header>
+
+  <!-- 功能頁籤 -->
+  <div class="tab-bar">
+    <button class="tab-btn active" onclick="switchView('flashcard')">
+      <i data-lucide="layers" size="16"></i>
+      閃卡特訓
+    </button>
+    <button class="tab-btn" onclick="switchView('quiz')">
+      <i data-lucide="help-circle" size="16"></i>
+      闖關測驗
+    </button>
+    <button class="tab-btn" onclick="switchView('formula')">
+      <i data-lucide="book-open" size="16"></i>
+      公式秘笈
+    </button>
+  </div>
+
+  <!-- 1. 閃卡特訓模式 -->
+  <div id="flashcard-view" class="view-panel active">
+    <div class="filter-pills">
+      <button class="pill active" onclick="filterCards('all')">全部 (16)</button>
+      <button class="pill" onclick="filterCards('basic')">初級 (7)</button>
+      <button class="pill" onclick="filterCards('adv')">進階 (9)</button>
+    </div>
+
+    <div class="card-scene" id="cardScene" onclick="flipCard()">
+      <div class="card-3d">
+        <!-- 卡片正面 -->
+        <div class="card-face card-front">
+          <div class="card-top-info">
+            <span class="card-index" id="cardCounter">1 / 16</span>
+            <span class="card-level-badge level-basic" id="cardLevel">初級練習</span>
+          </div>
+          <div class="card-question" id="cardFrontText">菊之愛</div>
+          <div class="card-hint-click">
+            <i data-lucide="rotate-cw" size="16"></i>
+            點擊卡片翻看還原句與解析
+          </div>
+        </div>
+        <!-- 卡片背面 -->
+        <div class="card-face card-back">
+          <div class="card-top-info">
+            <span class="card-index">句意還原詳解</span>
+            <span class="card-level-badge level-basic" id="cardLevelBack">初級練習</span>
+          </div>
+          <div>
+            <div class="restore-target" id="cardBackText">愛菊</div>
+            <div class="analysis-list">
+              <div class="analysis-item">
+                <b>【助詞】</b><span id="cardParticle">「之」無義，提示賓語提前</span>
+              </div>
+              <div class="analysis-item">
+                <b>【動詞】</b><span id="cardVerb">「愛」（述語/動作）</span>
+              </div>
+              <div class="analysis-item">
+                <b>【賓語】</b><span id="cardNoun">「菊」（名詞/客體受詞）</span>
+              </div>
+            </div>
+            <div class="step-pill-box" id="cardStepText">
+              💡 還原秘訣：去掉助詞「之」，將述語動詞「愛」移至賓語「菊」之前，得「愛菊」。
+            </div>
+          </div>
+          <div class="card-hint-click" style="justify-content: center;">
+            <i data-lucide="rotate-cw" size="16"></i>
+            再次點擊翻回正面
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 記憶掌控切換 -->
+    <div class="mastery-ctrls">
+      <button class="m-btn m-btn-unknow" onclick="prevCard(event)">
+        <i data-lucide="chevron-left" size="18"></i>
+        上一題
+      </button>
+      <button class="m-btn m-btn-know" onclick="nextCard(event)">
+        下一題
+        <i data-lucide="chevron-right" size="18"></i>
+      </button>
+    </div>
+  </div>
+
+  <!-- 2. 闖關測驗模式 -->
+  <div id="quiz-view" class="view-panel">
+    <div class="quiz-box" id="quizBox">
+      <div class="quiz-progress-bar">
+        <div class="quiz-progress-inner" id="quizProgressBar"></div>
+      </div>
+      <div class="quiz-topic" id="quizCounter">第 1 / 10 題</div>
+      <div class="quiz-sentence" id="quizPrompt">「菊之愛」還原後的正常語序為？</div>
+      
+      <div class="quiz-options" id="quizOptions">
+        <!-- 動態生成選項 -->
+      </div>
+
+      <div class="quiz-feedback" id="quizFeedback"></div>
+      <button class="next-quiz-btn" id="nextQuizBtn" onclick="nextQuizQuestion()">下一題</button>
+    </div>
+
+    <!-- 測驗結算 -->
+    <div class="result-card" id="resultCard">
+      <div class="badge-icon">
+        <i data-lucide="award" size="60"></i>
+      </div>
+      <h2 class="result-title">測驗完成！</h2>
+      <div class="result-score" id="resultScore">100</div>
+      <p id="resultMsg" style="color: var(--muted); font-size: 0.95rem; line-height: 1.6;">太厲害了！你已經完全掌握倒裝句賓語提前的還原秘笈！</p>
+      <button class="restart-btn" onclick="restartQuiz()">
+        <i data-lucide="rotate-ccw" size="16" style="vertical-align: middle;"></i>
+        重新挑戰測驗
+      </button>
+    </div>
+  </div>
+
+  <!-- 3. 公式秘笈模式 -->
+  <div id="formula-view" class="view-panel">
+    <div style="background: white; border-radius: var(--radius); padding: 25px; box-shadow: var(--shadow); border: 1px solid var(--border); width: 100%; line-height: 1.8;">
+      <h3 style="color: var(--primary-dark); font-family: 'Noto Serif TC', serif; font-size: 1.3rem; margin-bottom: 12px; display: flex; align-items: center; gap: 8px;">
+        <i data-lucide="zap" size="20" color="#f59e0b"></i>
+        萬能破題五部曲口訣
+      </h3>
+      <div style="background: var(--accent-light); padding: 12px 16px; border-radius: 12px; font-weight: 800; color: #92400e; font-size: 1rem; margin-bottom: 18px; border-left: 5px solid var(--accent);">
+        口訣：去掉四隻刺蝟，動前名後，喂，前面的，統統不准動！
+      </div>
+
+      <ol style="padding-left: 20px; color: #334155; margin-bottom: 20px; font-size: 0.95rem;">
+        <li style="margin-bottom: 8px;"><b>第一步：去掉助詞</b> —— 去除「是」、「之」、「之為」等無義標誌。</li>
+        <li style="margin-bottom: 8px;"><b>第二步：找出名詞</b> —— 鎖定被提前的客體/名詞賓語。</li>
+        <li style="margin-bottom: 8px;"><b>第三步：找出動詞</b> —— 鎖定真正的述語動作。</li>
+        <li style="margin-bottom: 8px;"><b>第四步：動前名後</b> —— 將動詞拉回名詞前面（述語 + 賓語）。</li>
+        <li style="margin-bottom: 8px;"><b>第五步：副詞不動</b> —— 「唯」等副詞或句首主語，統統留在最前面！</li>
+      </ol>
+
+      <div style="background: #f0f9ff; padding: 14px; border-radius: 12px; border: 1px solid #bae6fd;">
+        <h4 style="color: #0369a1; font-size: 0.95rem; margin-bottom: 6px;">💡 為什麼古人要倒裝？</h4>
+        <p style="font-size: 0.88rem; color: #475569;">
+          正常文言文語序為「主語 + 述語（動詞） + 賓語（受詞）」。為了強烈強調「受詞」（例如「只關心你一個人」、「只貪圖利益」），古人會特意把受詞挪到最前頭，並安插「之、是」作為結構助詞。
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    學思軒・語文補給站｜國語文 AI 數位互動教材
+  </footer>
+
+  <script>
+    // 講義題庫完整資料 (16題，配置高誘答力干擾選項：包含助詞未去、動賓未倒裝、副詞誤位、文言常考盲區)
+    const cardData = [
+      { id: 1, type: 'basic', q: '菊之愛', a: '愛菊', distractors: ['菊愛', '愛之菊', '菊之愛（非倒裝）'], particle: '之（無意義結構助詞）', verb: '愛（動詞）', noun: '菊（名詞）', step: '去掉「之」，動詞「愛」移到名詞「菊」前，還原為「愛菊」（喜愛菊花）。' },
+      { id: 2, type: 'basic', q: '蓮之愛', a: '愛蓮', distractors: ['蓮愛', '愛之蓮', '蓮之同予'], particle: '之（無意義結構助詞）', verb: '愛（動詞）', noun: '蓮（名詞）', step: '去掉「之」，動詞「愛」移到名詞「蓮」前，還原為「愛蓮」（喜愛蓮花）。' },
+      { id: 3, type: 'basic', q: '牡丹之愛', a: '愛牡丹', distractors: ['牡丹愛', '愛之牡丹', '牡丹眾愛'], particle: '之（無意義結構助詞）', verb: '愛（動詞）', noun: '牡丹（名詞）', step: '去掉「之」，動詞「愛」移到名詞「牡丹」前，還原為「愛牡丹」（喜愛牡丹）。' },
+      { id: 4, type: 'basic', q: '主義是從', a: '從主義', distractors: ['從是主義', '主義從', '是從主義'], particle: '是（無意義結構助詞）', verb: '從（動詞，遵從）', noun: '主義（名詞）', step: '去掉「是」，動詞「從」移到名詞「主義」前，還原為「從主義」（遵從三民主義）。' },
+      { id: 5, type: 'basic', q: '馬首是瞻', a: '瞻馬首', distractors: ['瞻是馬首', '馬首瞻', '是瞻馬首'], particle: '是（無意義結構助詞）', verb: '瞻（動詞，看望）', noun: '馬首（名詞，馬頭）', step: '去掉「是」，動詞「瞻」移到名詞「馬首」前，還原為「瞻馬首」（看著主將的馬頭行動）。' },
+      { id: 6, type: 'basic', q: '一室之不治', a: '不治一室', distractors: ['治一室', '不治之一室', '一室不治'], particle: '之（無意義結構助詞）', verb: '不治（否定副詞+動詞）', noun: '一室（名詞，一間房間）', step: '去掉「之」，保留否定「不」，動詞「治」移到名詞「一室」前，還原為「不治一室」（連一間房間都不清理）。' },
+      { id: 7, type: 'basic', q: '尺璧非寶，寸陰是競', a: '尺璧非寶，競寸陰', distractors: ['寸陰是競，尺璧非寶', '尺璧非寶，寸陰競', '競尺璧非寶，寸陰'], particle: '是（無意義結構助詞）', verb: '競（動詞，爭取）', noun: '寸陰（名詞，短暫光陰）', step: '去掉「是」，前句「尺璧非寶」不動，動詞「競」移到「寸陰」前，還原為「尺璧非寶，競寸陰」。' },
+      { id: 8, type: 'adv', q: '唯你是問', a: '唯問你', distractors: ['問唯你', '你唯問', '唯是問你'], particle: '是（無意義結構助詞）', verb: '問（動詞，責問/追究）', noun: '你（代名詞賓語）', step: '去掉助詞「是」，保留句首副詞「唯」，動詞「問」移到名詞「你」前，還原為「唯問你」（只責問你一個人）。' },
+      { id: 9, type: 'adv', q: '唯利是圖', a: '唯圖利', distractors: ['圖唯利', '利唯圖', '唯是圖利'], particle: '是（無意義結構助詞）', verb: '圖（動詞，貪求/圖謀）', noun: '利（名詞，利益）', step: '去掉助詞「是」，句首副詞「唯」不動，動詞「圖」移到名詞「利」前，還原為「唯圖利」（只圖謀利益）。' },
+      { id: 10, type: 'adv', q: '唯命是從', a: '唯從命', distractors: ['從唯命', '命唯從', '唯是從命'], particle: '是（無意義結構助詞）', verb: '從（動詞，服從）', noun: '命（名詞，命令）', step: '去掉助詞「是」，副詞「唯」不動，動詞「從」移到名詞「命」前，還原為「唯從命」（只服從命令行事）。' },
+      { id: 11, type: 'adv', q: '唯兄嫂是依', a: '唯依兄嫂', distractors: ['依唯兄嫂', '兄嫂唯依', '唯是依兄嫂'], particle: '是（無意義結構助詞）', verb: '依（動詞，依靠）', noun: '兄嫂（名詞）', step: '去掉「是」，保留「唯」，動詞「依」移到名詞「兄嫂」前，還原為「唯依兄嫂」（只依靠哥哥與大嫂）。' },
+      { id: 12, type: 'adv', q: '唯弈秋之為聽', a: '唯聽弈秋', distractors: ['聽唯弈秋', '唯為聽弈秋', '唯弈秋聽之'], particle: '之為（無意義結構助詞）', verb: '聽（動詞，聆聽）', noun: '弈秋（名詞，圍棋高手弈秋）', step: '去掉四隻刺蝟中的雙字助詞「之為」，保留「唯」，動詞「聽」移至「弈秋」前，還原為「唯聽弈秋」。' },
+      { id: 13, type: 'adv', q: '何陋之有', a: '有何陋', distractors: ['何陋有', '有之何陋', '何有陋'], particle: '之（無意義結構助詞）', verb: '有（動詞）', noun: '何陋（疑問詞+形容詞作賓語，有什麼簡陋）', step: '去掉助詞「之」，動詞「有」移到名詞片語「何陋」前，還原為「有何陋」（有什麼簡陋呢？）。' },
+      { id: 14, type: 'adv', q: '何罪之有', a: '有何罪', distractors: ['何罪有', '有之何罪', '何有罪'], particle: '之（無意義結構助詞）', verb: '有（動詞）', noun: '何罪（名詞片語，什麼罪過）', step: '去掉助詞「之」，動詞「有」移到「何罪」前面，還原為「有何罪」（有什麼罪過呢？）。' },
+      { id: 15, type: 'adv', q: '何難之有', a: '有何難', distractors: ['何難有', '有之何難', '何有難'], particle: '之（無意義結構助詞）', verb: '有（動詞）', noun: '何難（名詞片語，什麼困難）', step: '去掉助詞「之」，動詞「有」移到「何難」前面，還原為「有何難」（有什麼困難呢？）。' },
+      { id: 16, type: 'adv', q: '父母唯其疾之憂', a: '父母唯憂其疾', distractors: ['父母憂其疾', '憂父母唯其疾', '父母唯其疾憂'], particle: '之（無意義結構助詞）', verb: '憂（動詞，擔憂）', noun: '其疾（名詞片語，他的疾病）', step: '主語「父母」與副詞「唯」統統留在前方不動！去掉「之」，動詞「憂」移至「其疾」前，還原為「父母唯憂其疾」。' }
+    ];
+
+    // 狀態管理
+    let currentFilter = 'all';
+    let filteredList = [...cardData];
+    let currentIndex = 0;
+    let isFlipped = false;
+
+    function renderCard() {
+      const card = filteredList[currentIndex];
+      const scene = document.getElementById('cardScene');
+      scene.classList.remove('is-flipped');
+      isFlipped = false;
+
+      document.getElementById('cardCounter').innerText = `${currentIndex + 1} / ${filteredList.length}`;
+      document.getElementById('cardFrontText').innerText = card.q;
+      document.getElementById('cardBackText').innerText = card.a;
+      
+      const levelLabel = card.type === 'basic' ? '初級練習' : '進階練習';
+      const levelClass = card.type === 'basic' ? 'level-basic' : 'level-adv';
+      
+      const badgeFront = document.getElementById('cardLevel');
+      badgeFront.innerText = levelLabel;
+      badgeFront.className = `card-level-badge ${levelClass}`;
+
+      const badgeBack = document.getElementById('cardLevelBack');
+      badgeBack.innerText = levelLabel;
+      badgeBack.className = `card-level-badge ${levelClass}`;
+
+      document.getElementById('cardParticle').innerText = card.particle;
+      document.getElementById('cardVerb').innerText = card.verb;
+      document.getElementById('cardNoun').innerText = card.noun;
+      document.getElementById('cardStepText').innerText = `💡 ${card.step}`;
+    }
+
+    function flipCard() {
+      const scene = document.getElementById('cardScene');
+      scene.classList.toggle('is-flipped');
+      isFlipped = !isFlipped;
+    }
+
+    function nextCard(e) {
+      if(e) e.stopPropagation();
+      currentIndex = (currentIndex + 1) % filteredList.length;
+      renderCard();
+    }
+
+    function prevCard(e) {
+      if(e) e.stopPropagation();
+      currentIndex = (currentIndex - 1 + filteredList.length) % filteredList.length;
+      renderCard();
+    }
+
+    function filterCards(type) {
+      currentFilter = type;
+      document.querySelectorAll('.filter-pills .pill').forEach(b => b.classList.remove('active'));
+      event.target.classList.add('active');
+
+      if (type === 'all') filteredList = [...cardData];
+      else filteredList = cardData.filter(c => c.type === type);
+      currentIndex = 0;
+      renderCard();
+    }
+
+    // 切換視圖
+    function switchView(view) {
+      document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+      event.target.closest('.tab-btn').classList.add('active');
+
+      document.querySelectorAll('.view-panel').forEach(p => p.classList.remove('active'));
+      document.getElementById(`${view}-view`).classList.add('active');
+
+      if (view === 'quiz') startQuiz();
+    }
+
+    // 測驗系統
+    let quizPool = [];
+    let currentQuizIdx = 0;
+    let quizScore = 0;
+
+    function startQuiz() {
+      // 隨機選 10 題
+      quizPool = [...cardData].sort(() => 0.5 - Math.random()).slice(0, 10);
+      currentQuizIdx = 0;
+      quizScore = 0;
+      document.getElementById('quizBox').style.display = 'block';
+      document.getElementById('resultCard').style.display = 'none';
+      renderQuizQuestion();
+    }
+
+    function renderQuizQuestion() {
+      const q = quizPool[currentQuizIdx];
+      document.getElementById('quizCounter').innerText = `第 ${currentQuizIdx + 1} / ${quizPool.length} 題`;
+      document.getElementById('quizProgressBar').style.width = `${((currentQuizIdx) / quizPool.length) * 100}%`;
+      document.getElementById('quizPrompt').innerText = `「${q.q}」還原後的正常語序為？`;
+
+      // 產生高誘答力干擾選項（專屬為此題設計之語序混淆、助詞誤留、副詞誤位選項）
+      let options = [q.a];
+      if (q.distractors && q.distractors.length >= 3) {
+        options = [q.a, ...q.distractors.slice(0, 3)];
+      } else {
+        const distractors = cardData.filter(item => item.id !== q.id).map(item => item.a);
+        while(options.length < 4) {
+          const rand = distractors[Math.floor(Math.random() * distractors.length)];
+          if (!options.includes(rand)) options.push(rand);
+        }
+      }
+      options.sort(() => 0.5 - Math.random());
+
+      const container = document.getElementById('quizOptions');
+      container.innerHTML = '';
+      options.forEach(opt => {
+        const btn = document.createElement('button');
+        btn.className = 'opt-btn';
+        btn.innerText = opt;
+        btn.onclick = () => checkQuizAnswer(opt, q.a, btn);
+        container.appendChild(btn);
+      });
+
+      document.getElementById('quizFeedback').className = 'quiz-feedback';
+      document.getElementById('quizFeedback').innerHTML = '';
+      document.getElementById('nextQuizBtn').className = 'next-quiz-btn';
+    }
+
+    function checkQuizAnswer(selected, correct, clickedBtn) {
+      const btns = document.querySelectorAll('.opt-btn');
+      btns.forEach(b => b.disabled = true);
+
+      const feedback = document.getElementById('quizFeedback');
+      const q = quizPool[currentQuizIdx];
+
+      if (selected === correct) {
+        clickedBtn.classList.add('correct');
+        quizScore += 10;
+        feedback.className = 'quiz-feedback show is-correct';
+        feedback.innerHTML = `<b>🎉 答對了！</b><br>${q.step}`;
+      } else {
+        clickedBtn.classList.add('wrong');
+        btns.forEach(b => {
+          if (b.innerText === correct) b.classList.add('correct');
+        });
+        feedback.className = 'quiz-feedback show is-wrong';
+        feedback.innerHTML = `<b>❌ 答錯了！正確解答為「${correct}」</b><br>${q.step}`;
+      }
+
+      document.getElementById('nextQuizBtn').className = 'next-quiz-btn show';
+      document.getElementById('quizProgressBar').style.width = `${((currentQuizIdx + 1) / quizPool.length) * 100}%`;
+    }
+
+    function nextQuizQuestion() {
+      currentQuizIdx++;
+      if (currentQuizIdx < quizPool.length) {
+        renderQuizQuestion();
+      } else {
+        showQuizResult();
+      }
+    }
+
+    function showQuizResult() {
+      document.getElementById('quizBox').style.display = 'none';
+      const resultCard = document.getElementById('resultCard');
+      resultCard.style.display = 'block';
+      document.getElementById('resultScore').innerText = `${quizScore} 分`;
+
+      let msg = '';
+      if (quizScore === 100) msg = '太神了！滿分過關！你已完全通曉倒裝句「動前名後」與「副詞不動」的所有秘技！';
+      else if (quizScore >= 80) msg = '很棒喔！對賓語提前的判斷相當熟練，多注意「之為」雙字助詞與句首副詞即可滿分！';
+      else msg = '再接再厲！複習「口訣：去掉四隻刺蝟，動前名後，喂前面的統統不准動」，再來挑戰一次吧！';
+      
+      document.getElementById('resultMsg').innerText = msg;
+    }
+
+    function restartQuiz() {
+      startQuiz();
+    }
+
+    // 初始化 Lucide 圖示與卡片
+    window.addEventListener('DOMContentLoaded', () => {
+      lucide.createIcons();
+      renderCard();
+    });
+  </script>
+</body>
+</html>

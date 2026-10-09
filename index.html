@@ -1,0 +1,1440 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>學思軒・語文補給站｜國語文 AI 數位互動教材入口網</title>
+  <meta name="description" content="學思軒語文補給站：國中國語文旗艦級 AI 數位互動教材導覽首頁，整合移覺修辭、傳統節日、二十四節氣與專屬練習神器。">
+  <!-- Google Fonts: 典雅思源黑體、思源宋體與書法字型 -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;600;700;900&family=Noto+Sans+TC:wght@300;400;500;700;900&family=Ma+Shan+Zheng&display=swap" rel="stylesheet">
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <style>
+    :root {
+      --primary: #c2410c;
+      --primary-dark: #9a3412;
+      --primary-light: #ffedd5;
+      --primary-hover: #ea580c;
+
+      --secondary: #7c3aed;
+      --secondary-dark: #5b21b6;
+      --secondary-light: #ede9fe;
+
+      --gold: #d97706;
+      --gold-light: #fef3c7;
+      --teal: #0d9488;
+      --teal-light: #ccfbf1;
+      --blue: #2563eb;
+      --blue-light: #eff6ff;
+
+      --dark: #0f172a;
+      --dark-card: #1e293b;
+      --gray: #64748b;
+      --gray-light: #f1f5f9;
+      --border: #e2dcd5;
+      --border-focus: #ea580c;
+
+      --bg-page: #faf8f5;
+      --card-bg: rgba(255, 255, 255, 0.96);
+      --card-glass: rgba(255, 255, 255, 0.82);
+      
+      --radius-sm: 8px;
+      --radius-md: 14px;
+      --radius-lg: 22px;
+      --radius-xl: 28px;
+      
+      --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.04);
+      --shadow-md: 0 10px 25px -5px rgba(0, 0, 0, 0.06), 0 8px 10px -6px rgba(0, 0, 0, 0.04);
+      --shadow-lg: 0 20px 35px -10px rgba(0, 0, 0, 0.12), 0 10px 15px -5px rgba(0, 0, 0, 0.04);
+      --shadow-glow: 0 0 25px rgba(194, 65, 12, 0.18);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Noto Sans TC', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      background-color: var(--bg-page);
+      color: var(--dark);
+      line-height: 1.65;
+      background-image: 
+        radial-gradient(circle at 10% 12%, rgba(217, 119, 6, 0.04) 0%, transparent 45%),
+        radial-gradient(circle at 90% 25%, rgba(124, 58, 237, 0.04) 0%, transparent 45%),
+        radial-gradient(circle at 50% 85%, rgba(194, 65, 12, 0.03) 0%, transparent 60%);
+      background-attachment: fixed;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .serif {
+      font-family: 'Noto Serif TC', serif;
+    }
+
+    .calligraphy {
+      font-family: 'Ma Shan Zheng', 'Noto Serif TC', cursive;
+    }
+
+    /* 頂部導覽列 */
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(14px);
+      border-bottom: 1px solid var(--border);
+      box-shadow: 0 4px 18px rgba(0, 0, 0, 0.03);
+      padding: 0.75rem 1.5rem;
+      transition: all 0.3s ease;
+    }
+
+    .nav-container {
+      max-width: 1320px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    .brand-group {
+      display: flex;
+      align-items: center;
+      gap: 0.85rem;
+      text-decoration: none;
+    }
+
+    .brand-seal-img {
+      height: 48px;
+      width: auto;
+      object-fit: contain;
+      transition: transform 0.3s ease;
+      filter: drop-shadow(0 2px 5px rgba(0,0,0,0.1));
+    }
+
+    .brand-seal-img:hover {
+      transform: rotate(5deg) scale(1.08);
+    }
+
+    .brand-logo-img {
+      height: 48px;
+      width: auto;
+      object-fit: contain;
+      filter: drop-shadow(0 2px 4px rgba(0,0,0,0.08));
+    }
+
+    .brand-text {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .brand-title {
+      font-size: 1.35rem;
+      font-weight: 800;
+      color: var(--primary-dark);
+      letter-spacing: -0.5px;
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+
+    .brand-badge {
+      font-size: 0.72rem;
+      background: var(--primary-light);
+      color: var(--primary-dark);
+      padding: 0.15rem 0.55rem;
+      border-radius: 999px;
+      font-weight: 700;
+      width: fit-content;
+      margin-top: 2px;
+      border: 1px solid rgba(194, 65, 12, 0.15);
+    }
+
+    nav ul {
+      display: flex;
+      gap: 0.45rem;
+      list-style: none;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: #475569;
+      font-weight: 600;
+      font-size: 0.92rem;
+      padding: 0.5rem 0.9rem;
+      border-radius: 10px;
+      transition: all 0.2s ease;
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+
+    nav a:hover {
+      color: var(--primary);
+      background: var(--primary-light);
+      transform: translateY(-1px);
+    }
+
+    nav a.highlight-nav {
+      background: linear-gradient(135deg, #ffedd5, #fef3c7);
+      color: var(--primary-dark);
+      border: 1px solid rgba(217, 119, 6, 0.25);
+    }
+
+    /* 主要容器 */
+    main {
+      flex: 1;
+      max-width: 1320px;
+      width: 100%;
+      margin: 0 auto;
+      padding: 2.2rem 1.5rem 4rem;
+    }
+
+    /* Hero 大旗艦展示區 */
+    .hero-section {
+      background: linear-gradient(135deg, rgba(255, 255, 255, 0.98), rgba(255, 247, 237, 0.95)), url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23d97706' fill-opacity='0.03' fill-rule='evenodd'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/svg%3E");
+      border-radius: var(--radius-xl);
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow-lg);
+      padding: 3.5rem 2.5rem;
+      margin-bottom: 3.5rem;
+      position: relative;
+      overflow: hidden;
+      text-align: center;
+    }
+
+    .hero-section::before {
+      content: "";
+      position: absolute;
+      top: -40px;
+      right: -40px;
+      width: 260px;
+      height: 260px;
+      background: radial-gradient(circle, rgba(217, 119, 6, 0.12) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .hero-section::after {
+      content: "國文神社";
+      position: absolute;
+      right: 3%;
+      bottom: -15px;
+      font-size: 6rem;
+      font-family: 'Noto Serif TC', serif;
+      font-weight: 900;
+      color: rgba(194, 65, 12, 0.035);
+      user-select: none;
+      pointer-events: none;
+    }
+
+    .hero-badge-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: white;
+      border: 1px solid #fed7aa;
+      padding: 0.4rem 1.1rem;
+      border-radius: 999px;
+      color: var(--primary-dark);
+      font-weight: 700;
+      font-size: 0.88rem;
+      box-shadow: 0 2px 8px rgba(194, 65, 12, 0.08);
+      margin-bottom: 1.25rem;
+    }
+
+    .hero-title {
+      font-size: 2.85rem;
+      font-weight: 900;
+      color: #1e1b4b;
+      margin-bottom: 1rem;
+      letter-spacing: -0.8px;
+      line-height: 1.25;
+    }
+
+    .hero-title span {
+      background: linear-gradient(135deg, var(--primary), var(--gold));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .hero-desc {
+      font-size: 1.18rem;
+      color: #475569;
+      max-width: 860px;
+      margin: 0 auto 2rem;
+      line-height: 1.8;
+    }
+
+    .hero-features-bar {
+      display: flex;
+      justify-content: center;
+      gap: 0.85rem;
+      flex-wrap: wrap;
+      margin-bottom: 2rem;
+    }
+
+    .hero-feature-chip {
+      background: white;
+      padding: 0.45rem 1.05rem;
+      border-radius: 999px;
+      font-size: 0.88rem;
+      font-weight: 600;
+      color: #334155;
+      border: 1px solid #e2e8f0;
+      display: flex;
+      align-items: center;
+      gap: 0.45rem;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.03);
+    }
+
+    /* 快捷搜尋與篩選列 */
+    .search-filter-box {
+      max-width: 680px;
+      margin: 0 auto;
+      position: relative;
+    }
+
+    .search-input-wrapper {
+      position: relative;
+      display: flex;
+      align-items: center;
+    }
+
+    .search-icon {
+      position: absolute;
+      left: 1.25rem;
+      color: #94a3b8;
+      pointer-events: none;
+    }
+
+    .search-input {
+      width: 100%;
+      padding: 1rem 1.25rem 1rem 3.2rem;
+      font-size: 1.05rem;
+      font-family: inherit;
+      border-radius: 999px;
+      border: 2px solid var(--border);
+      background: white;
+      color: var(--dark);
+      box-shadow: var(--shadow-md);
+      transition: all 0.25s ease;
+      outline: none;
+    }
+
+    .search-input:focus {
+      border-color: var(--primary);
+      box-shadow: 0 0 0 4px rgba(194, 65, 12, 0.12), var(--shadow-md);
+    }
+
+    /* 區塊通用抬頭 */
+    .section-header {
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      margin-bottom: 1.8rem;
+      border-bottom: 2px solid #e2dcd5;
+      padding-bottom: 0.85rem;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    .section-title {
+      font-size: 1.9rem;
+      font-weight: 800;
+      color: var(--dark);
+      display: flex;
+      align-items: center;
+      gap: 0.7rem;
+    }
+
+    .section-title i {
+      color: var(--primary);
+    }
+
+    .section-desc {
+      font-size: 0.96rem;
+      color: var(--gray);
+    }
+
+    .section-count {
+      font-size: 0.82rem;
+      background: #f1f5f9;
+      color: #475569;
+      padding: 0.25rem 0.75rem;
+      border-radius: 999px;
+      font-weight: 700;
+    }
+
+    /* 旗艦殿堂主題大卡片 (2欄大網格) */
+    .flagship-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(420px, 1fr));
+      gap: 2rem;
+      margin-bottom: 4rem;
+    }
+
+    .flagship-card {
+      background: var(--card-bg);
+      border-radius: var(--radius-xl);
+      border: 2px solid var(--border);
+      box-shadow: var(--shadow-md);
+      overflow: hidden;
+      transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+      display: flex;
+      flex-direction: column;
+      position: relative;
+    }
+
+    .flagship-card:hover {
+      transform: translateY(-8px);
+      box-shadow: var(--shadow-lg), var(--shadow-glow);
+    }
+
+    .flagship-card.holiday-card {
+      border-top: 6px solid #c2410c;
+    }
+
+    .flagship-card.yijay-card {
+      border-top: 6px solid #7c3aed;
+    }
+
+    .flagship-card.pos-card {
+      border-top: 6px solid #0d9488;
+    }
+
+    .flagship-card.inversion-card {
+      border-top: 6px solid #0284c7;
+    }
+
+    .flagship-banner {
+      padding: 2rem 2.2rem 1.5rem;
+      position: relative;
+    }
+
+    .holiday-card .flagship-banner {
+      background: linear-gradient(135deg, #fff7ed 0%, #fef3c7 100%);
+    }
+
+    .yijay-card .flagship-banner {
+      background: linear-gradient(135deg, #f5f3ff 0%, #fdf2f8 100%);
+    }
+
+    .pos-card .flagship-banner {
+      background: linear-gradient(135deg, #f0fdfa 0%, #eff6ff 100%);
+    }
+
+    .inversion-card .flagship-banner {
+      background: linear-gradient(135deg, #f0f9ff 0%, #fef3c7 100%);
+    }
+
+    .flagship-tag-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 1rem;
+    }
+
+    .flagship-category {
+      font-size: 0.8rem;
+      font-weight: 800;
+      padding: 0.3rem 0.8rem;
+      border-radius: 8px;
+      letter-spacing: 0.5px;
+    }
+
+    .holiday-card .flagship-category {
+      background: #ea580c;
+      color: white;
+    }
+
+    .yijay-card .flagship-category {
+      background: #7c3aed;
+      color: white;
+    }
+
+    .pos-card .flagship-category {
+      background: #0d9488;
+      color: white;
+    }
+
+    .inversion-card .flagship-category {
+      background: #0284c7;
+      color: white;
+    }
+
+    .flagship-level {
+      font-size: 0.82rem;
+      font-weight: 700;
+      color: #64748b;
+      display: flex;
+      align-items: center;
+      gap: 0.3rem;
+    }
+
+    .flagship-title {
+      font-size: 1.85rem;
+      font-weight: 900;
+      color: #1e1b4b;
+      margin-bottom: 0.6rem;
+      line-height: 1.3;
+    }
+
+    .flagship-subtitle {
+      font-size: 1.02rem;
+      color: #475569;
+      line-height: 1.6;
+    }
+
+    .flagship-body {
+      padding: 1.75rem 2.2rem;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 1.5rem;
+    }
+
+    .flagship-features {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+    }
+
+    .flagship-features li {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.65rem;
+      font-size: 0.96rem;
+      color: #334155;
+      line-height: 1.5;
+    }
+
+    .flagship-features li i {
+      flex-shrink: 0;
+      margin-top: 3px;
+    }
+
+    .holiday-card .flagship-features li i { color: #ea580c; }
+    .yijay-card .flagship-features li i { color: #7c3aed; }
+    .pos-card .flagship-features li i { color: #0d9488; }
+
+    .flagship-action-box {
+      margin-top: auto;
+      padding-top: 1.25rem;
+      border-top: 1px solid #f1f5f9;
+      display: flex;
+      gap: 0.85rem;
+      flex-wrap: wrap;
+    }
+
+    .btn-enter-primary {
+      flex: 1;
+      min-width: 180px;
+      padding: 0.95rem 1.5rem;
+      border-radius: var(--radius-md);
+      font-size: 1.05rem;
+      font-weight: 800;
+      text-decoration: none;
+      text-align: center;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.6rem;
+      transition: all 0.25s ease;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    }
+
+    .holiday-card .btn-enter-primary {
+      background: linear-gradient(135deg, #c2410c, #ea580c);
+      color: white;
+    }
+
+    .holiday-card .btn-enter-primary:hover {
+      background: linear-gradient(135deg, #9a3412, #c2410c);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 20px rgba(194, 65, 12, 0.3);
+    }
+
+    .yijay-card .btn-enter-primary {
+      background: linear-gradient(135deg, #7c3aed, #9333ea);
+      color: white;
+    }
+
+    .yijay-card .btn-enter-primary:hover {
+      background: linear-gradient(135deg, #5b21b6, #7c3aed);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 20px rgba(124, 58, 237, 0.3);
+    }
+
+    .pos-card .btn-enter-primary {
+      background: linear-gradient(135deg, #0d9488, #0f766e);
+      color: white;
+    }
+
+    .pos-card .btn-enter-primary:hover {
+      background: linear-gradient(135deg, #0f766e, #115e59);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 20px rgba(13, 148, 136, 0.3);
+    }
+
+    .inversion-card .btn-enter-primary {
+      background: linear-gradient(135deg, #0284c7, #0369a1);
+      color: white;
+    }
+
+    .inversion-card .btn-enter-primary:hover {
+      background: linear-gradient(135deg, #0369a1, #075985);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 20px rgba(2, 132, 199, 0.3);
+    }
+
+    /* 練習神器模組精選區 (5個小卡片網格) */
+    .practice-section {
+      margin-bottom: 4rem;
+    }
+
+    .practice-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .practice-card {
+      background: white;
+      border-radius: var(--radius-lg);
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow-sm);
+      padding: 1.5rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: all 0.25s ease;
+      position: relative;
+    }
+
+    .practice-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-md);
+      border-color: #cbd5e1;
+    }
+
+    .practice-card-header {
+      display: flex;
+      align-items: flex-start;
+      gap: 1rem;
+      margin-bottom: 1rem;
+    }
+
+    .practice-icon-box {
+      width: 48px;
+      height: 48px;
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .practice-icon-box.orange { background: #ffedd5; color: #c2410c; }
+    .practice-icon-box.purple { background: #ede9fe; color: #7c3aed; }
+    .practice-icon-box.green { background: #dcfce7; color: #15803d; }
+    .practice-icon-box.blue { background: #dbeafe; color: #1d4ed8; }
+    .practice-icon-box.teal { background: #ccfbf1; color: #0f766e; }
+
+    .practice-card-title {
+      font-size: 1.18rem;
+      font-weight: 800;
+      color: #1e293b;
+      margin-bottom: 0.25rem;
+    }
+
+    .practice-card-tag {
+      font-size: 0.76rem;
+      font-weight: 700;
+      color: #64748b;
+      background: #f8fafc;
+      border: 1px solid #e2e8f0;
+      padding: 0.15rem 0.5rem;
+      border-radius: 6px;
+      display: inline-block;
+    }
+
+    .practice-card-desc {
+      font-size: 0.92rem;
+      color: #475569;
+      line-height: 1.6;
+      margin-bottom: 1.25rem;
+    }
+
+    .practice-card-btn {
+      width: 100%;
+      padding: 0.7rem 1rem;
+      border-radius: 10px;
+      background: #f8fafc;
+      border: 1px solid #cbd5e1;
+      color: #1e293b;
+      font-weight: 700;
+      font-size: 0.92rem;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.45rem;
+      transition: all 0.2s ease;
+    }
+
+    .practice-card-btn:hover {
+      background: var(--dark);
+      color: white;
+      border-color: var(--dark);
+    }
+
+    /* 航向偉大航道橫幅 (學習地圖) */
+    .roadmap-section {
+      background: white;
+      border-radius: var(--radius-xl);
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow-md);
+      padding: 2.2rem;
+      margin-bottom: 4rem;
+      text-align: center;
+    }
+
+    .roadmap-banner-wrap {
+      margin-top: 1.5rem;
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      border: 2px solid #e2dcd5;
+      background: #f8fafc;
+      position: relative;
+      cursor: zoom-in;
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.05);
+      transition: transform 0.25s ease;
+    }
+
+    .roadmap-banner-wrap:hover {
+      transform: scale(1.01);
+    }
+
+    .roadmap-banner-img {
+      width: 100%;
+      height: auto;
+      max-height: 480px;
+      object-fit: contain;
+      display: block;
+    }
+
+    .roadmap-zoom-tip {
+      position: absolute;
+      bottom: 15px;
+      right: 15px;
+      background: rgba(15, 23, 42, 0.85);
+      color: white;
+      padding: 0.4rem 0.9rem;
+      border-radius: 20px;
+      font-size: 0.82rem;
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+      backdrop-filter: blur(4px);
+    }
+
+    /* 教學特色三欄區 */
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 1.5rem;
+      margin-bottom: 4rem;
+    }
+
+    .feature-box {
+      background: white;
+      border-radius: var(--radius-lg);
+      border: 1px solid var(--border);
+      padding: 1.75rem;
+      box-shadow: var(--shadow-sm);
+      text-align: left;
+    }
+
+    .feature-box-icon {
+      width: 52px;
+      height: 52px;
+      border-radius: 14px;
+      background: linear-gradient(135deg, #ffedd5, #fef3c7);
+      color: var(--primary);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 1.25rem;
+    }
+
+    .feature-box h3 {
+      font-size: 1.25rem;
+      font-weight: 800;
+      color: #1e293b;
+      margin-bottom: 0.5rem;
+    }
+
+    .feature-box p {
+      font-size: 0.94rem;
+      color: #64748b;
+      line-height: 1.65;
+    }
+
+    /* 頁尾 Footer */
+    footer {
+      background: linear-gradient(180deg, #1e293b, #0f172a);
+      color: white;
+      padding: 3.5rem 1.5rem 2.5rem;
+      margin-top: auto;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .footer-container {
+      max-width: 1320px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1.8rem;
+      text-align: center;
+    }
+
+    .footer-logos {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 1.5rem;
+      flex-wrap: wrap;
+    }
+
+    .footer-seal {
+      height: 60px;
+      width: auto;
+      object-fit: contain;
+      filter: drop-shadow(0 4px 10px rgba(0, 0, 0, 0.3));
+    }
+
+    .footer-tagline-img {
+      max-height: 46px;
+      width: auto;
+      object-fit: contain;
+    }
+
+    .footer-credit {
+      font-size: 0.95rem;
+      color: #e2e8f0;
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      padding: 0.6rem 1.6rem;
+      border-radius: 999px;
+      font-weight: 600;
+      letter-spacing: 0.5px;
+    }
+
+    .footer-notes {
+      font-size: 0.85rem;
+      color: #94a3b8;
+      max-width: 750px;
+      line-height: 1.65;
+    }
+
+    /* Lightbox 全螢幕燈箱 */
+    .lightbox-modal {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background: rgba(15, 23, 42, 0.92);
+      backdrop-filter: blur(8px);
+      z-index: 9999;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 1.5rem;
+      animation: fadeIn 0.2s ease;
+    }
+
+    .lightbox-modal.show {
+      display: flex;
+    }
+
+    .lightbox-container {
+      position: relative;
+      max-width: 94vw;
+      max-height: 94vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .lightbox-img {
+      max-width: 100%;
+      max-height: 84vh;
+      object-fit: contain;
+      border-radius: 12px;
+      box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+    }
+
+    .lightbox-caption {
+      color: #f1f5f9;
+      margin-top: 0.85rem;
+      font-size: 1rem;
+      text-align: center;
+      font-weight: 600;
+    }
+
+    .lightbox-close-btn {
+      position: absolute;
+      top: -45px;
+      right: 0;
+      background: rgba(255, 255, 255, 0.2);
+      border: 1px solid rgba(255, 255, 255, 0.4);
+      color: white;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      font-size: 1.3rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+
+    .lightbox-close-btn:hover {
+      background: rgba(239, 68, 68, 0.8);
+      transform: scale(1.1);
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: scale(0.98); }
+      to { opacity: 1; transform: scale(1); }
+    }
+
+    /* 響應式調整 */
+    @media (max-width: 768px) {
+      .hero-title {
+        font-size: 2.1rem;
+      }
+      .hero-section {
+        padding: 2.5rem 1.25rem;
+      }
+      .flagship-grid {
+        grid-template-columns: 1fr;
+      }
+      .practice-grid {
+        grid-template-columns: 1fr;
+      }
+      nav ul {
+        justify-content: center;
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- 頂部導覽列 -->
+  <header>
+    <div class="nav-container">
+      <a href="index.html" class="brand-group">
+        <img src="icon/seal-red.png" alt="學思軒印章" class="brand-seal-img">
+        <img src="icon/logo-yuwen.png" alt="語文補給站" class="brand-logo-img" onerror="this.src='icon/logo-yuwen.png'">
+        <div class="brand-text">
+          <div class="brand-title serif">學思軒・語文補給站</div>
+          <span class="brand-badge">國中國語文 AI 數位教材整合總部</span>
+        </div>
+      </a>
+      <nav>
+        <ul>
+          <li><a href="#flagship-sec"><i data-lucide="sparkles"></i> 旗艦學習殿堂</a></li>
+          <li><a href="#practice-sec" class="highlight-nav"><i data-lucide="gamepad-2"></i> 練習神器專區</a></li>
+          <li><a href="#roadmap-sec"><i data-lucide="map"></i> 學習航道圖</a></li>
+          <li><a href="#features-sec"><i data-lucide="award"></i> 教學特色</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- 主要內容區 -->
+  <main>
+
+    <!-- Hero 旗艦標題展示區 -->
+    <section class="hero-section">
+      <div class="hero-badge-pill">
+        <i data-lucide="zap" style="color: #ea580c; width: 16px; height: 16px;"></i>
+        跨領域・高互動・全語音・會考實戰精萃
+      </div>
+      <h1 class="hero-title serif">
+        學思軒・國語文 <span>AI 數位互動教材殿堂</span>
+      </h1>
+      <p class="hero-desc">
+        專為國中學生與國語文教學設計，融匯「古典文學意境、跨領域科普常識、互動五感圖鑑、即時會考闖關與練習神器」，打破傳統講義框架，開啟全新自主探索殿堂！
+      </p>
+
+      <div class="hero-features-bar">
+        <div class="hero-feature-chip"><i data-lucide="check-circle-2" style="color:#10b981; width:16px;"></i> 4 大旗艦主題殿堂</div>
+        <div class="hero-feature-chip"><i data-lucide="check-circle-2" style="color:#10b981; width:16px;"></i> 12 款專屬練習神器</div>
+        <div class="hero-feature-chip"><i data-lucide="check-circle-2" style="color:#10b981; width:16px;"></i> 全真人語音發音朗讀</div>
+        <div class="hero-feature-chip"><i data-lucide="check-circle-2" style="color:#10b981; width:16px;"></i> 跨載具響應式支援（手機/平板/電腦）</div>
+      </div>
+
+      <!-- 即時快速篩選搜尋 -->
+      <div class="search-filter-box">
+        <div class="search-input-wrapper">
+          <i data-lucide="search" class="search-icon"></i>
+          <input type="text" id="courseSearch" class="search-input" placeholder="快速搜尋教材、修辭、節慶、節氣、詩詞、倒裝或練習神器..." oninput="filterCourses()">
+        </div>
+      </div>
+    </section>
+
+    <!-- 旗艦主題殿堂 (大卡片區) -->
+    <section id="flagship-sec">
+      <div class="section-header">
+        <div>
+          <h2 class="section-title serif"><i data-lucide="crown"></i> 旗艦學習殿堂主題</h2>
+          <p class="section-desc">深度結合課文情境、觀念圖解、典範圖鑑與即時互動測驗的主題式教學網頁</p>
+        </div>
+        <span class="section-count">4 大主題殿堂</span>
+      </div>
+
+      <div class="flagship-grid">
+        <!-- 殿堂 1：移覺（通感）修辭互動學習殿堂 -->
+        <article class="flagship-card yijay-card course-item" data-keywords="移覺 通感 修辭 視覺 聽覺 嗅覺 味覺 觸覺 翰林 國文 課文 圖鑑 造句 會考">
+          <div class="flagship-banner">
+            <div class="flagship-tag-row">
+              <span class="flagship-category">核心修辭特訓</span>
+              <span class="flagship-level"><i data-lucide="book-open" style="width:15px;"></i> 翰林國文精選</span>
+            </div>
+            <h3 class="flagship-title serif">移覺（通感）修辭互動學習殿堂</h3>
+            <p class="flagship-subtitle">打破五感界線・喚醒文字感知！掌握文學中最具立體感的感官互換魔法。</p>
+          </div>
+          <div class="flagship-body">
+            <ul class="flagship-features">
+              <li><i data-lucide="check-circle-2"></i> <b>五感羅盤互動切換</b>：視覺、聽覺、嗅覺、味覺、觸覺雙向移轉示範。</li>
+              <li><i data-lucide="check-circle-2"></i> <b>30 句典範圖鑑庫</b>：涵蓋課本經典與跨作家名篇，支援全語音朗讀。</li>
+              <li><i data-lucide="check-circle-2"></i> <b>會考實戰與造句工坊</b>：內建 5 題會考闖關與創意造句即時診斷回饋。</li>
+              <li><i data-lucide="check-circle-2"></i> <b>內嵌練習神器</b>：隨頁隨測，強化手感記憶。</li>
+            </ul>
+            <div class="flagship-action-box">
+              <a href="yijay.html" class="btn-enter-primary">
+                <i data-lucide="sparkles"></i> 進入移覺學習殿堂
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <!-- 殿堂 2：時序之美：傳統節日與二十四節氣 -->
+        <article class="flagship-card holiday-card course-item" data-keywords="時序之美 節日 傳統節日 二十四節氣 曆法 詩詞 節令 農曆 陽曆 陰陽合曆 會考">
+          <div class="flagship-banner">
+            <div class="flagship-tag-row">
+              <span class="flagship-category">國學與跨科素養</span>
+              <span class="flagship-level"><i data-lucide="sun-moon" style="width:15px;"></i> 會考必考主題</span>
+            </div>
+            <h3 class="flagship-title serif">時序之美：傳統節日與二十四節氣殿堂</h3>
+            <p class="flagship-subtitle">歲月流轉・天地同歌！融合國文詩詞意境與自然科普天文曆法的跨領域旗艦殿堂。</p>
+          </div>
+          <div class="flagship-body">
+            <ul class="flagship-features">
+              <li><i data-lucide="check-circle-2"></i> <b>曆法大解密</b>：破解陽曆、陰曆與陰陽合曆迷思，精準掌握二十四節氣本質。</li>
+              <li><i data-lucide="check-circle-2"></i> <b>10 大傳統節日深度探索</b>：由春至冬，含由來、習俗、代表食物與精選詩詞。</li>
+              <li><i data-lucide="check-circle-2"></i> <b>20 題詩詞密碼獵手</b>：一鍵展開白話語譯與關鍵字提示，輕鬆解鎖詩意。</li>
+              <li><i data-lucide="check-circle-2"></i> <b>10 題會考神射手測驗</b>：即時算分、錯題詳解剖析與多款內嵌練習神器。</li>
+            </ul>
+            <div class="flagship-action-box">
+              <a href="holiday.html" class="btn-enter-primary">
+                <i data-lucide="sun-moon"></i> 進入時序之美殿堂
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <!-- 殿堂 3：詞類與詞性・AI 互動學習殿堂 -->
+        <article class="flagship-card pos-card course-item" data-keywords="詞性 詞類 語一 實詞 虛詞 名詞 動詞 形容詞 副詞 代詞 數量詞 介詞 連詞 助詞 嘆詞 轉品 聯綿詞 複詞 偏義複詞 同義複詞 歌詞一百 翰林 國文 會考">
+          <div class="flagship-banner">
+            <div class="flagship-tag-row">
+              <span class="flagship-category">語法常識旗艦</span>
+              <span class="flagship-level"><i data-lucide="layers" style="width:15px;"></i> 翰林語文補給站</span>
+            </div>
+            <h3 class="flagship-title serif">詞類與詞性・AI 互動學習殿堂</h3>
+            <p class="flagship-subtitle">字詞句層級解析・實詞虛詞全景宇宙！掌握成語結構、轉品密碼與 100 題流行歌詞資料庫。</p>
+          </div>
+          <div class="flagship-body">
+            <ul class="flagship-features">
+              <li><i data-lucide="check-circle-2"></i> <b>語文五大層級與詞類體系</b>：字 ➔ 詞 ➔ 句 ➔ 段 ➔ 篇，實詞六類與虛詞四類全圖鑑。</li>
+              <li><i data-lucide="check-circle-2"></i> <b>複詞探索與音韻殿堂</b>：同義、偏義複詞 vs 雙聲疊韻聯綿詞互動發音辨析。</li>
+              <li><i data-lucide="check-circle-2"></i> <b>詞性一百流行歌詞庫</b>：收錄五月天、周杰倫等 100 題歌詞例句，支援真人語音朗讀。</li>
+              <li><i data-lucide="check-circle-2"></i> <b>三大進階實戰學習集</b>：詞性活用、轉品判定、詞性對照雙向擂台與結構魔法工坊。</li>
+            </ul>
+            <div class="flagship-action-box">
+              <a href="pos.html" class="btn-enter-primary">
+                <i data-lucide="sparkles"></i> 進入詞性學習殿堂
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <!-- 殿堂 4：「賓語提前」倒裝句法旗艦學習殿堂 -->
+        <article class="flagship-card inversion-card course-item" data-keywords="倒裝 倒裝句 賓語提前 愛蓮說 菊之愛 蓮之愛 牡丹之愛 主義是從 馬首是瞻 唯你是問 唯利是圖 唯命是從 唯兄嫂是依 何陋之有 何罪之有 何難之有 父母唯其疾之憂 句型 語法 會考 翰林 國文">
+          <div class="flagship-banner">
+            <div class="flagship-tag-row">
+              <span class="flagship-category">核心句型旗艦</span>
+              <span class="flagship-level"><i data-lucide="sparkles" style="width:15px;"></i> 翰林 B3L04 愛蓮說</span>
+            </div>
+            <h3 class="flagship-title serif">「賓語提前」倒裝句法旗艦殿堂</h3>
+            <p class="flagship-subtitle">去掉四隻刺蝟，動前名後！掌握古人強調賓語的文言語序樞紐與還原秘技。</p>
+          </div>
+          <div class="flagship-body">
+            <ul class="flagship-features">
+              <li><i data-lucide="check-circle-2"></i> <b>五步還原法與口訣</b>：「刺蝟退場、動前名後、喂前面的統統不准動」終極心法。</li>
+              <li><i data-lucide="check-circle-2"></i> <b>16 組全收錄典範圖鑑</b>：初級 7 題 + 進階宇宙無敵難 9 題，逐句分析與真人語音朗讀。</li>
+              <li><i data-lucide="check-circle-2"></i> <b>魔法還原工坊</b>：即時組裝主語、副詞、名詞與動詞，動態展示正常語序還原軌跡。</li>
+              <li><i data-lucide="check-circle-2"></i> <b>會考神仙挑戰賽與練習神器</b>：10 題隨機挑戰賽，內嵌翻卡練習神器無縫整合。</li>
+            </ul>
+            <div class="flagship-action-box">
+              <a href="inversion.html" class="btn-enter-primary">
+                <i data-lucide="sparkles"></i> 進入倒裝句法殿堂
+              </a>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- 練習神器專區 (12 大互動練習卡片) -->
+    <section id="practice-sec" class="practice-section">
+      <div class="section-header">
+        <div>
+          <h2 class="section-title serif"><i data-lucide="gamepad-2"></i> 學思軒練習神器專區</h2>
+          <p class="section-desc">輕量、高效、好玩的單元配對與快問快答，適合課堂互動搶答或課後自我檢測</p>
+        </div>
+        <span class="section-count">12 款專屬神器</span>
+      </div>
+
+      <div class="practice-grid">
+        <!-- 神器 1：節慶詩詞句練習神器 -->
+        <div class="practice-card course-item" data-keywords="節慶 詩詞 節日 練習神器 寒食 清明 端午 七夕 中秋 重陽 詩詞句">
+          <div>
+            <div class="practice-card-header">
+              <div class="practice-icon-box orange"><i data-lucide="flame"></i></div>
+              <div>
+                <h3 class="practice-card-title">節慶（詩詞句）練習神器</h3>
+                <span class="practice-card-tag">國學常識・詩詞配對</span>
+              </div>
+            </div>
+            <p class="practice-card-desc">精選會考高頻出現的傳統節日古典詩詞句，透過拖曳與配對迅速辨析節慶特徵。</p>
+          </div>
+          <a href="holiday/festival-poems.html" class="practice-card-btn" target="_blank">
+            <i data-lucide="external-link" style="width:16px;"></i> 開啟節慶詩詞練習
+          </a>
+        </div>
+
+        <!-- 神器 2：二十四節氣練習神器 -->
+        <div class="practice-card course-item" data-keywords="二十四節氣 節氣 練習神器 春夏秋冬 四季 太陽 陽曆 農業">
+          <div>
+            <div class="practice-card-header">
+              <div class="practice-icon-box green"><i data-lucide="leaf"></i></div>
+              <div>
+                <h3 class="practice-card-title">二十四節氣練習神器</h3>
+                <span class="practice-card-tag">自然時序・節氣排序</span>
+              </div>
+            </div>
+            <p class="practice-card-desc">依循春、夏、秋、冬順序，掌握二十四節氣的名稱、順序與季節物候特徵。</p>
+          </div>
+          <a href="holiday/24-solar-terms.html" class="practice-card-btn" target="_blank">
+            <i data-lucide="external-link" style="width:16px;"></i> 開啟二十四節氣練習
+          </a>
+        </div>
+
+        <!-- 神器 3：季節關鍵字詞練習神器 -->
+        <div class="practice-card course-item" data-keywords="季節 關鍵字 練習神器 東風 荷花 金風 朔風 季節詞彙">
+          <div>
+            <div class="practice-card-header">
+              <div class="practice-icon-box blue"><i data-lucide="tag"></i></div>
+              <div>
+                <h3 class="practice-card-title">季節（關鍵字詞）練習神器</h3>
+                <span class="practice-card-tag">詞彙辨析・關鍵密碼</span>
+              </div>
+            </div>
+            <p class="practice-card-desc">快速抓出詩句中代表四季的代表性花卉、節候氣象、動植物等關鍵解題線索。</p>
+          </div>
+          <a href="holiday/season-keywords.html" class="practice-card-btn" target="_blank">
+            <i data-lucide="external-link" style="width:16px;"></i> 開啟關鍵字詞練習
+          </a>
+        </div>
+
+        <!-- 神器 4：季節相關詞句練習神器 -->
+        <div class="practice-card course-item" data-keywords="季節 相關詞句 練習神器 四季詩詞 意境鑑賞 詞句判讀">
+          <div>
+            <div class="practice-card-header">
+              <div class="practice-icon-box teal"><i data-lucide="book-marked"></i></div>
+              <div>
+                <h3 class="practice-card-title">季節（相關詞句）練習神器</h3>
+                <span class="practice-card-tag">名句鑑賞・季節判別</span>
+              </div>
+            </div>
+            <p class="practice-card-desc">精選歷代描繪春夏秋冬的名篇佳句，強化學生對四時景物描寫的語感與鑑賞力。</p>
+          </div>
+          <a href="holiday/season-verses.html" class="practice-card-btn" target="_blank">
+            <i data-lucide="external-link" style="width:16px;"></i> 開啟季節詞句練習
+          </a>
+        </div>
+
+        <!-- 神器 5：移覺（通感）修辭練習神器 -->
+        <div class="practice-card course-item" data-keywords="移覺 通感 修辭 練習神器 視覺 聽覺 嗅覺 味覺 觸覺 感官">
+          <div>
+            <div class="practice-card-header">
+              <div class="practice-icon-box purple"><i data-lucide="wand-2"></i></div>
+              <div>
+                <h3 class="practice-card-title">移覺（通感）修辭練習神器</h3>
+                <span class="practice-card-tag">修辭特訓・感官互感</span>
+              </div>
+            </div>
+            <p class="practice-card-desc">精煉 30 組感官轉換試題，快速判斷「由何種感官轉移至何種感官」，鞏固修辭基礎。</p>
+          </div>
+          <a href="yijay/synesthesia-practice.html" class="practice-card-btn" target="_blank">
+            <i data-lucide="external-link" style="width:16px;"></i> 開啟移覺修辭練習
+          </a>
+        </div>
+
+        <!-- 神器 6：同義反義偏義複詞練習神器 -->
+        <div class="practice-card course-item" data-keywords="同義 反義 偏義 複詞 練習神器 構詞 規則 判斷 恩怨 忘記 國家 朋友 聲音">
+          <div>
+            <div class="practice-card-header">
+              <div class="practice-icon-box green"><i data-lucide="sparkles"></i></div>
+              <div>
+                <h3 class="practice-card-title">同義反義偏義複詞</h3>
+                <span class="practice-card-tag">複詞構造・規則判斷</span>
+              </div>
+            </div>
+            <p class="practice-card-desc">偏義複詞重點突破與同義、反義構詞規則判斷，精準透析語境涵義。</p>
+          </div>
+          <a href="https://oaoadna-1313.github.io/2026_practicetools/yuwen-practice/yuwen-compound-words.html" class="practice-card-btn" target="_blank">
+            <i data-lucide="external-link" style="width:16px;"></i> 開啟複詞練習
+          </a>
+        </div>
+
+        <!-- 神器 7：量詞練習神器 -->
+        <div class="practice-card course-item" data-keywords="量詞 名量詞 動量詞 練習神器 計算單位 把 部 匹 門 方 副 幅 道 帖 幀 幢 撮 度量衡">
+          <div>
+            <div class="practice-card-header">
+              <div class="practice-icon-box orange"><i data-lucide="scale"></i></div>
+              <div>
+                <h3 class="practice-card-title">量詞運用練習神器</h3>
+                <span class="practice-card-tag">計量單位・語法搭配</span>
+              </div>
+            </div>
+            <p class="practice-card-desc">中文豐富細膩的名量詞與動量詞搭配與文法測驗，全盤掌握生活與古典量詞。</p>
+          </div>
+          <a href="https://oaoadna-1313.github.io/2026_practicetools/yuwen-practice/yuwen-classifiers.html" class="practice-card-btn" target="_blank">
+            <i data-lucide="external-link" style="width:16px;"></i> 開啟量詞練習
+          </a>
+        </div>
+
+        <!-- 神器 8：連接詞運用練習神器 -->
+        <div class="practice-card course-item" data-keywords="連接詞 連詞 練習神器 並列 選擇 轉折 遞進 承接 比較 因果 條件 假設 目的 複句">
+          <div>
+            <div class="practice-card-header">
+              <div class="practice-icon-box teal"><i data-lucide="git-merge"></i></div>
+              <div>
+                <h3 class="practice-card-title">連接詞運用練習神器</h3>
+                <span class="practice-card-tag">複句關係・邏輯關聯</span>
+              </div>
+            </div>
+            <p class="practice-card-desc">因果、轉折、遞進、條件等複句關聯詞精確選用，強化語意邏輯銜接。</p>
+          </div>
+          <a href="https://oaoadna-1313.github.io/2026_practicetools/yuwen-practice/yuwen-conjunctions.html" class="practice-card-btn" target="_blank">
+            <i data-lucide="external-link" style="width:16px;"></i> 開啟連接詞練習
+          </a>
+        </div>
+
+        <!-- 神器 9：詞性判斷練習神器 -->
+        <div class="practice-card course-item" data-keywords="詞性 判斷 練習神器 名詞 動詞 形容詞 副詞 介詞 連詞 代詞 數詞 量詞 助詞 嘆詞 實詞 虛詞">
+          <div>
+            <div class="practice-card-header">
+              <div class="practice-icon-box blue"><i data-lucide="target"></i></div>
+              <div>
+                <h3 class="practice-card-title">詞性判斷練習神器</h3>
+                <span class="practice-card-tag">實詞虛詞・精準定位</span>
+              </div>
+            </div>
+            <p class="practice-card-desc">名詞、動詞、形容詞、副詞、介詞、連詞等十大詞性精準定位與文法判定。</p>
+          </div>
+          <a href="https://oaoadna-1313.github.io/2026_practicetools/yuwen-practice/yuwen-part-of-speech.html" class="practice-card-btn" target="_blank">
+            <i data-lucide="external-link" style="width:16px;"></i> 開啟詞性判斷
+          </a>
+        </div>
+
+        <!-- 神器 10：詞性活用判斷練習神器 -->
+        <div class="practice-card course-item" data-keywords="詞性 活用 轉品 練習神器 名詞作動詞 形容詞作動詞 文言 轉品活用 解析 語法">
+          <div>
+            <div class="practice-card-header">
+              <div class="practice-icon-box purple"><i data-lucide="shuffle"></i></div>
+              <div>
+                <h3 class="practice-card-title">詞性活用判斷練習神器</h3>
+                <span class="practice-card-tag">轉品活用・文言解析</span>
+              </div>
+            </div>
+            <p class="practice-card-desc">名詞作動詞、形容詞作動詞等文言轉品活用解析，徹底掌握位置決定詞性法則。</p>
+          </div>
+          <a href="https://oaoadna-1313.github.io/2026_practicetools/yuwen-practice/yuwen-pos-inflection.html" class="practice-card-btn" target="_blank">
+            <i data-lucide="external-link" style="width:16px;"></i> 開啟詞性活用練習
+          </a>
+        </div>
+
+        <!-- 神器 11：詞性結構判斷練習神器 -->
+        <div class="practice-card course-item" data-keywords="詞性 結構 成語 四字詞 練習神器 名動名動 副形副形 動名動名 形名形名 詞語結構">
+          <div>
+            <div class="practice-card-header">
+              <div class="practice-icon-box green"><i data-lucide="layout-grid"></i></div>
+              <div>
+                <h3 class="practice-card-title">詞性結構判斷練習神器</h3>
+                <span class="practice-card-tag">四字成語・結構拆解</span>
+              </div>
+            </div>
+            <p class="practice-card-desc">成語與四字詞內部詞性結構（如：名動名動、副形副形、動名動名）快速分析。</p>
+          </div>
+          <a href="https://oaoadna-1313.github.io/2026_practicetools/yuwen-practice/yuwen-pos-structure.html" class="practice-card-btn" target="_blank">
+            <i data-lucide="external-link" style="width:16px;"></i> 開啟詞性結構練習
+          </a>
+        </div>
+
+        <!-- 神器 12：「賓語提前」倒裝句法練習神器 -->
+        <div class="practice-card course-item" data-keywords="倒裝 倒裝句 賓語提前 練習神器 菊之愛 蓮之愛 唯利是圖 唯你是問 何陋之有 閃卡 翻卡 測驗 愛蓮說 句型">
+          <div>
+            <div class="practice-card-header">
+              <div class="practice-icon-box blue"><i data-lucide="sparkles"></i></div>
+              <div>
+                <h3 class="practice-card-title">「賓語提前」倒裝句練習神器</h3>
+                <span class="practice-card-tag">文言語序・閃卡特訓</span>
+              </div>
+            </div>
+            <p class="practice-card-desc">初級難題與進階宇宙無敵難題完整收錄，支援 3D 雙面翻卡、句意還原剖析與隨堂闖關挑戰。</p>
+          </div>
+          <a href="inversion/inversion-practice.html" class="practice-card-btn" target="_blank">
+            <i data-lucide="external-link" style="width:16px;"></i> 開啟倒裝句法練習
+          </a>
+        </div>
+      </div>
+    </section>
+
+ 
+    <!-- 教學特色與設計哲學 (三欄) -->
+    <section id="features-sec">
+      <div class="section-header">
+        <div>
+          <h2 class="section-title serif"><i data-lucide="sparkle"></i> 教學特色與設計理念</h2>
+          <p class="section-desc">為師生打造兼具美感、互動性與實用價值的現代數位語文學習資源</p>
+        </div>
+      </div>
+
+      <div class="features-grid">
+        <div class="feature-box">
+          <div class="feature-box-icon"><i data-lucide="smartphone"></i></div>
+          <h3 class="serif">單一檔案・離線免裝・隨開即用</h3>
+          <p>純前端極簡架構，無須資料庫與複雜後端，支援跨平台手機、平板、電子白板與個人電腦，離線亦可輕鬆存取教學。</p>
+        </div>
+
+        <div class="feature-box">
+          <div class="feature-box-icon"><i data-lucide="volume-2"></i></div>
+          <h3 class="serif">全真人語音・視覺動態圖解</h3>
+          <p>內建 Web Speech 語音發音與精心繪製的教材架構圖、字詞卡片，照顧視覺與聽覺多元學習需求，提升記憶留存率。</p>
+        </div>
+
+        <div class="feature-box">
+          <div class="feature-box-icon"><i data-lucide="target"></i></div>
+          <h3 class="serif">素養導向・會考題庫即時反饋</h3>
+          <p>整合歷年國中會考經典題型，搭配詳解剖析與防作弊安全機制，讓學生在互動操作中輕鬆建立解題信心。</p>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- 頁尾宣告 -->
+  <footer>
+    <div class="footer-container">
+      <div class="footer-logos">
+        <img src="icon/seal-white.png" alt="學思軒" class="footer-seal" onerror="this.src='icon/seal-red.png'">
+        <img src="icon/slogan-god-dark.png" alt="只要有心人人都是國文神" class="footer-tagline-img">
+      </div>
+      <div class="footer-credit serif">
+        𖤐 本系統由學思軒黃于珊、王斐亭老師規劃設計 · 版權所有 © 2026 𖤐
+      </div>
+     
+    </div>
+  </footer>
+
+  <!-- Lightbox 燈箱模態視窗 -->
+  <div id="lightbox" class="lightbox-modal" onclick="closeLightbox(event)">
+    <div class="lightbox-container" onclick="event.stopPropagation()">
+      <button class="lightbox-close-btn" onclick="closeLightbox()" title="關閉">&times;</button>
+      <img id="lightbox-img" src="" alt="放大預覽" class="lightbox-img">
+      <div id="lightbox-caption" class="lightbox-caption serif"></div>
+    </div>
+  </div>
+
+  <script>
+    // 初始化 Lucide 圖標
+    lucide.createIcons();
+
+    // 搜尋過濾功能
+    function filterCourses() {
+      const query = document.getElementById('courseSearch').value.trim().toLowerCase();
+      const items = document.querySelectorAll('.course-item');
+
+      items.forEach(item => {
+        const keywords = (item.getAttribute('data-keywords') || '').toLowerCase();
+        const text = item.textContent.toLowerCase();
+        if (!query || keywords.includes(query) || text.includes(query)) {
+          item.style.display = '';
+        } else {
+          item.style.display = 'none';
+        }
+      });
+    }
+
+    // Lightbox 燈箱功能
+    function openLightbox(imgSrc, captionText) {
+      const modal = document.getElementById('lightbox');
+      const img = document.getElementById('lightbox-img');
+      const caption = document.getElementById('lightbox-caption');
+      
+      img.src = imgSrc;
+      caption.textContent = captionText || '';
+      modal.classList.add('show');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeLightbox(event) {
+      if (!event || event.target.id === 'lightbox' || event.target.classList.contains('lightbox-close-btn')) {
+        const modal = document.getElementById('lightbox');
+        modal.classList.remove('show');
+        document.body.style.overflow = '';
+      }
+    }
+
+    // ESC 鍵關閉 Lightbox
+    window.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') {
+        closeLightbox({ target: { id: 'lightbox' } });
+      }
+    });
+  </script>
+</body>
+</html>

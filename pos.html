@@ -1,0 +1,2615 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>語文補給站｜詞類與詞性・國語文旗艦 AI 互動學習殿堂</title>
+  <!-- Google Fonts: 思源黑體、思源宋體與書法字型 -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;600;700;900&family=Noto+Sans+TC:wght@300;400;500;700;900&family=Ma+Shan+Zheng&display=swap" rel="stylesheet">
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <style>
+    :root {
+      --primary: #0d9488;
+      --primary-dark: #0f766e;
+      --primary-light: #ccfbf1;
+      --primary-hover: #14b8a6;
+
+      --pos-noun: #2563eb;
+      --pos-noun-bg: #eff6ff;
+      --pos-noun-border: #bfdbfe;
+
+      --pos-verb: #059669;
+      --pos-verb-bg: #ecfdf5;
+      --pos-verb-border: #a7f3d0;
+
+      --pos-adj: #d97706;
+      --pos-adj-bg: #fffbeb;
+      --pos-adj-border: #fde68a;
+
+      --pos-adv: #7c3aed;
+      --pos-adv-bg: #f5f3ff;
+      --pos-adv-border: #ddd6fe;
+
+      --pos-pron: #db2777;
+      --pos-pron-bg: #fdf2f8;
+      --pos-pron-border: #fbcfe8;
+
+      --pos-num: #65a30d;
+      --pos-num-bg: #f7fee7;
+      --pos-num-border: #d9f99d;
+
+      --pos-prep: #ea580c;
+      --pos-prep-bg: #fff7ed;
+      --pos-prep-border: #fed7aa;
+
+      --pos-conj: #0891b2;
+      --pos-conj-bg: #ecfeff;
+      --pos-conj-border: #a5f3fc;
+
+      --pos-aux: #475569;
+      --pos-aux-bg: #f8fafc;
+      --pos-aux-border: #cbd5e1;
+
+      --pos-int: #dc2626;
+      --pos-int-bg: #fef2f2;
+      --pos-int-border: #fecaca;
+
+      --dark: #0f172a;
+      --dark-card: #1e293b;
+      --gray: #64748b;
+      --gray-light: #f1f5f9;
+      --border: #e2e8f0;
+      --bg-page: #f8fafc;
+      --card-bg: rgba(255, 255, 255, 0.96);
+
+      --radius-sm: 8px;
+      --radius-md: 14px;
+      --radius-lg: 22px;
+      --radius-xl: 28px;
+
+      --shadow: 0 10px 25px -5px rgba(13, 148, 136, 0.08), 0 8px 10px -6px rgba(0, 0, 0, 0.04);
+      --shadow-hover: 0 20px 30px -10px rgba(13, 148, 136, 0.18);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Noto Sans TC', sans-serif;
+      background-color: var(--bg-page);
+      color: var(--dark);
+      line-height: 1.65;
+      background-image: 
+        radial-gradient(circle at 5% 10%, rgba(13, 148, 136, 0.04) 0%, transparent 45%),
+        radial-gradient(circle at 95% 85%, rgba(37, 99, 235, 0.04) 0%, transparent 45%),
+        radial-gradient(circle at 50% 50%, rgba(124, 58, 237, 0.03) 0%, transparent 60%);
+      background-attachment: fixed;
+    }
+
+    .serif { font-family: 'Noto Serif TC', serif; }
+    .calligraphy { font-family: 'Ma Shan Zheng', 'Noto Serif TC', cursive; }
+
+    /* 頂部導覽列 */
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(14px);
+      border-bottom: 1px solid var(--border);
+      padding: 0.75rem 1.5rem;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
+    }
+
+    .nav-container {
+      max-width: 1350px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    .brand-group {
+      display: flex;
+      align-items: center;
+      gap: 0.85rem;
+      text-decoration: none;
+    }
+
+    .brand-seal-img {
+      height: 46px;
+      width: auto;
+      object-fit: contain;
+      transition: transform 0.3s ease;
+      filter: drop-shadow(0 2px 4px rgba(0,0,0,0.08));
+    }
+    .brand-seal-img:hover {
+      transform: rotate(5deg) scale(1.08);
+    }
+
+    .brand-logo-img {
+      height: 46px;
+      width: auto;
+      object-fit: contain;
+      filter: drop-shadow(0 2px 4px rgba(0,0,0,0.08));
+    }
+
+    .brand-text {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .brand-title {
+      font-size: 1.3rem;
+      font-weight: 800;
+      color: var(--primary-dark);
+      letter-spacing: -0.5px;
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+
+    .brand-badge {
+      font-size: 0.72rem;
+      background: var(--primary-light);
+      color: var(--primary-dark);
+      padding: 0.15rem 0.55rem;
+      border-radius: 999px;
+      font-weight: 600;
+      width: fit-content;
+      margin-top: 2px;
+    }
+
+    nav ul {
+      display: flex;
+      gap: 0.4rem;
+      list-style: none;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: var(--dark);
+      font-weight: 600;
+      padding: 0.45rem 0.75rem;
+      border-radius: 10px;
+      transition: all 0.2s ease;
+      font-size: 0.88rem;
+      display: flex;
+      align-items: center;
+      gap: 0.35rem;
+    }
+
+    nav a:hover, nav a.active {
+      background: var(--primary-light);
+      color: var(--primary-dark);
+    }
+
+    .home-link {
+      background: #f1f5f9;
+      color: #334155;
+    }
+    .home-link:hover {
+      background: #e2e8f0;
+      color: #0f172a;
+    }
+
+    /* 主容器 */
+    main {
+      max-width: 1350px;
+      margin: 2rem auto;
+      padding: 0 1.5rem;
+    }
+
+    /* Hero 旗艦標題區 */
+    .hero {
+      position: relative;
+      background: linear-gradient(135deg, #f0fdfa 0%, #eff6ff 50%, #faf5ff 100%);
+      border-radius: var(--radius-xl);
+      border: 1px solid rgba(13, 148, 136, 0.15);
+      padding: 3.5rem 2.5rem;
+      margin-bottom: 2.5rem;
+      box-shadow: var(--shadow);
+      overflow: hidden;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .hero::after {
+      content: "詞類・詞性";
+      position: absolute;
+      right: 2%;
+      bottom: -25px;
+      font-size: 8.5rem;
+      font-family: 'Ma Shan Zheng', cursive;
+      color: rgba(13, 148, 136, 0.05);
+      pointer-events: none;
+      z-index: 1;
+      white-space: nowrap;
+    }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: white;
+      border: 1px solid var(--primary);
+      color: var(--primary-dark);
+      padding: 0.4rem 1.2rem;
+      border-radius: 999px;
+      font-size: 0.9rem;
+      font-weight: 700;
+      margin-bottom: 1.2rem;
+      box-shadow: 0 2px 8px rgba(13, 148, 136, 0.1);
+      z-index: 2;
+    }
+
+    .hero-title {
+      font-size: 2.75rem;
+      font-weight: 900;
+      line-height: 1.25;
+      margin-bottom: 1rem;
+      background: linear-gradient(135deg, #0f766e 0%, #1d4ed8 50%, #6d28d9 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      z-index: 2;
+    }
+
+    .hero-subtitle {
+      font-size: 1.15rem;
+      color: var(--gray);
+      max-width: 800px;
+      margin-bottom: 1.8rem;
+      z-index: 2;
+    }
+
+    .hero-pills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      justify-content: center;
+      z-index: 2;
+    }
+
+    .hero-pill {
+      background: white;
+      border: 1px solid var(--border);
+      padding: 0.4rem 0.9rem;
+      border-radius: 999px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: #334155;
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.02);
+    }
+    .hero-pill i { color: var(--primary); }
+
+    /* 通用章節樣式 */
+    section {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 2.2rem;
+      margin-bottom: 2.5rem;
+      box-shadow: var(--shadow);
+    }
+
+    .section-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 1.8rem;
+      flex-wrap: wrap;
+      gap: 1rem;
+      border-bottom: 2px solid var(--gray-light);
+      padding-bottom: 1rem;
+    }
+
+    .section-title-wrap {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+
+    .section-icon {
+      width: 44px;
+      height: 44px;
+      border-radius: 12px;
+      background: var(--primary-light);
+      color: var(--primary-dark);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.25rem;
+    }
+
+    .section-title {
+      font-size: 1.6rem;
+      font-weight: 800;
+      color: var(--dark);
+    }
+
+    .section-subtitle {
+      font-size: 0.92rem;
+      color: var(--gray);
+      margin-top: 0.2rem;
+    }
+
+    /* 語文層級互動演進軸 */
+    .hierarchy-container {
+      display: flex;
+      align-items: stretch;
+      justify-content: space-between;
+      gap: 1rem;
+      margin-bottom: 2rem;
+      flex-wrap: wrap;
+    }
+
+    .hierarchy-node {
+      flex: 1;
+      min-width: 200px;
+      background: #f8fafc;
+      border: 2px solid #e2e8f0;
+      border-radius: var(--radius-md);
+      padding: 1.2rem;
+      text-align: center;
+      position: relative;
+      transition: all 0.3s ease;
+      cursor: pointer;
+    }
+
+    .hierarchy-node:hover, .hierarchy-node.active {
+      border-color: var(--primary);
+      background: white;
+      transform: translateY(-4px);
+      box-shadow: 0 10px 20px -5px rgba(13, 148, 136, 0.15);
+    }
+
+    .hierarchy-tag {
+      display: inline-block;
+      font-size: 0.75rem;
+      font-weight: 700;
+      padding: 0.2rem 0.6rem;
+      border-radius: 999px;
+      background: #e2e8f0;
+      color: #475569;
+      margin-bottom: 0.5rem;
+    }
+
+    .hierarchy-node.active .hierarchy-tag {
+      background: var(--primary);
+      color: white;
+    }
+
+    .hierarchy-name {
+      font-size: 1.6rem;
+      font-weight: 900;
+      color: var(--dark);
+      margin-bottom: 0.4rem;
+    }
+
+    .hierarchy-desc {
+      font-size: 0.85rem;
+      color: var(--gray);
+      line-height: 1.45;
+    }
+
+    .hierarchy-arrow {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #94a3b8;
+      font-size: 1.5rem;
+    }
+
+    /* 詞類架構全景樹狀卡片 */
+    .tree-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5rem;
+      margin-top: 1.5rem;
+    }
+
+    @media (max-width: 900px) {
+      .tree-grid { grid-template-columns: 1fr; }
+    }
+
+    .tree-card {
+      background: white;
+      border-radius: var(--radius-md);
+      border: 1px solid var(--border);
+      padding: 1.5rem;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.02);
+    }
+
+    .tree-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding-bottom: 0.8rem;
+      border-bottom: 2px solid var(--gray-light);
+      margin-bottom: 1rem;
+    }
+
+    .tree-badge {
+      padding: 0.3rem 0.8rem;
+      border-radius: 999px;
+      font-weight: 700;
+      font-size: 0.85rem;
+    }
+
+    .tree-badge.real { background: #dbeafe; color: #1e40af; }
+    .tree-badge.virt { background: #fef3c7; color: #92400e; }
+
+    .pos-pill-group {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.6rem;
+      margin-top: 0.8rem;
+    }
+
+    .pos-pill {
+      padding: 0.45rem 0.85rem;
+      border-radius: var(--radius-sm);
+      font-size: 0.9rem;
+      font-weight: 700;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      border: 1px solid transparent;
+      transition: transform 0.2s ease;
+    }
+    .pos-pill:hover { transform: scale(1.05); }
+
+    /* 標籤過濾晶片 */
+    .filter-tabs {
+      display: flex;
+      gap: 0.5rem;
+      flex-wrap: wrap;
+      margin-bottom: 1.5rem;
+    }
+
+    .tab-btn {
+      background: white;
+      border: 1px solid var(--border);
+      padding: 0.5rem 1rem;
+      border-radius: 999px;
+      cursor: pointer;
+      font-weight: 600;
+      font-size: 0.88rem;
+      color: #475569;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      transition: all 0.2s ease;
+    }
+
+    .tab-btn:hover, .tab-btn.active {
+      background: var(--primary);
+      color: white;
+      border-color: var(--primary);
+      box-shadow: 0 4px 10px rgba(13, 148, 136, 0.25);
+    }
+
+    /* 複詞探索卡片 */
+    .compound-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 1.25rem;
+    }
+
+    .compound-card {
+      background: white;
+      border-radius: var(--radius-md);
+      border: 1px solid var(--border);
+      padding: 1.4rem;
+      transition: all 0.25s ease;
+      position: relative;
+    }
+    .compound-card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 10px 20px -5px rgba(0,0,0,0.08);
+      border-color: var(--primary);
+    }
+
+    .compound-card-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 0.75rem;
+    }
+
+    .compound-type-badge {
+      font-size: 0.75rem;
+      font-weight: 700;
+      padding: 0.2rem 0.6rem;
+      border-radius: 999px;
+    }
+
+    .badge-syn { background: #dcfce7; color: #166534; }
+    .badge-bias { background: #fee2e2; color: #991b1b; }
+    .badge-allit { background: #e0e7ff; color: #3730a3; }
+    .badge-rhyme { background: #fce7f3; color: #9d174d; }
+    .badge-both { background: #fef3c7; color: #92400e; }
+    .badge-none { background: #f1f5f9; color: #475569; }
+    .badge-onomat { background: #ccfbf1; color: #115e59; }
+
+    .compound-word {
+      font-size: 1.4rem;
+      font-weight: 800;
+      color: var(--dark);
+      letter-spacing: 1px;
+    }
+
+    .compound-zhuyin {
+      font-size: 0.82rem;
+      color: var(--gray);
+      margin-top: 0.15rem;
+    }
+
+    .compound-meaning {
+      font-size: 0.9rem;
+      color: #334155;
+      margin-top: 0.6rem;
+      line-height: 1.5;
+      background: #f8fafc;
+      padding: 0.6rem 0.8rem;
+      border-radius: var(--radius-sm);
+    }
+
+    /* 詞性修飾金字塔階梯 */
+    .pyramid-box {
+      background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+      border-radius: var(--radius-lg);
+      padding: 2rem;
+      color: white;
+      margin: 1.5rem 0;
+    }
+
+    .pyramid-title {
+      font-size: 1.3rem;
+      font-weight: 800;
+      color: #38bdf8;
+      margin-bottom: 1.2rem;
+      text-align: center;
+    }
+
+    .stair-wrap {
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+      max-width: 850px;
+      margin: 0 auto;
+    }
+
+    .stair-item {
+      display: flex;
+      align-items: center;
+      background: rgba(255, 255, 255, 0.08);
+      border-left: 5px solid var(--primary);
+      border-radius: 8px;
+      padding: 0.75rem 1.2rem;
+      transition: all 0.25s ease;
+      cursor: pointer;
+    }
+
+    .stair-item:hover {
+      background: rgba(255, 255, 255, 0.15);
+      transform: translateX(6px);
+    }
+
+    .stair-lvl {
+      width: 90px;
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: #94a3b8;
+    }
+
+    .stair-pos {
+      padding: 0.2rem 0.6rem;
+      border-radius: 6px;
+      font-size: 0.8rem;
+      font-weight: 700;
+      margin-right: 1rem;
+    }
+
+    .stair-text {
+      font-size: 1.05rem;
+      flex: 1;
+    }
+
+    .stair-highlight {
+      color: #fbbf24;
+      font-weight: 800;
+      text-decoration: underline;
+    }
+
+    /* 歌詞庫 100 題網格與卡片 */
+    .song-control-bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+      margin-bottom: 1.5rem;
+      background: #f8fafc;
+      padding: 1rem 1.4rem;
+      border-radius: var(--radius-md);
+      border: 1px solid var(--border);
+    }
+
+    .search-input-wrap {
+      position: relative;
+      flex: 1;
+      min-width: 260px;
+    }
+
+    .search-input-wrap input {
+      width: 100%;
+      padding: 0.6rem 1rem 0.6rem 2.4rem;
+      border-radius: 999px;
+      border: 1px solid var(--border);
+      font-size: 0.92rem;
+      outline: none;
+      transition: all 0.2s;
+    }
+
+    .search-input-wrap input:focus {
+      border-color: var(--primary);
+      box-shadow: 0 0 0 3px rgba(13, 148, 136, 0.15);
+    }
+
+    .search-input-wrap i {
+      position: absolute;
+      left: 0.85rem;
+      top: 50%;
+      transform: translateY(-50%);
+      color: var(--gray);
+    }
+
+    .control-actions {
+      display: flex;
+      gap: 0.6rem;
+    }
+
+    .action-btn {
+      background: var(--primary);
+      color: white;
+      border: none;
+      padding: 0.55rem 1.1rem;
+      border-radius: 999px;
+      font-size: 0.88rem;
+      font-weight: 700;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      transition: all 0.2s;
+    }
+    .action-btn:hover {
+      background: var(--primary-dark);
+      transform: translateY(-2px);
+    }
+
+    .song-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
+      gap: 1rem;
+    }
+
+    .song-card {
+      background: white;
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      padding: 1.1rem 1.3rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: all 0.2s ease;
+      position: relative;
+    }
+
+    .song-card:hover {
+      border-color: var(--primary);
+      box-shadow: 0 6px 16px -4px rgba(0,0,0,0.06);
+    }
+
+    .song-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: 0.6rem;
+    }
+
+    .song-num {
+      font-size: 0.8rem;
+      font-weight: 800;
+      color: #94a3b8;
+      background: #f1f5f9;
+      padding: 0.15rem 0.5rem;
+      border-radius: 6px;
+    }
+
+    .tts-btn {
+      background: #f1f5f9;
+      border: none;
+      color: #475569;
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+    .tts-btn:hover {
+      background: var(--primary-light);
+      color: var(--primary-dark);
+      transform: scale(1.1);
+    }
+
+    .song-sentence {
+      font-size: 1.05rem;
+      font-weight: 600;
+      color: var(--dark);
+      line-height: 1.5;
+      margin-bottom: 0.8rem;
+    }
+
+    .target-word {
+      color: #0f766e;
+      background: #ccfbf1;
+      padding: 0.1rem 0.4rem;
+      border-radius: 4px;
+      font-weight: 800;
+      border-bottom: 2px solid #0d9488;
+    }
+
+    .song-bottom {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-top: 0.6rem;
+      border-top: 1px dashed var(--gray-light);
+    }
+
+    .mask-badge {
+      background: #f1f5f9;
+      color: #64748b;
+      font-weight: 700;
+      font-size: 0.85rem;
+      padding: 0.25rem 0.8rem;
+      border-radius: 999px;
+      cursor: pointer;
+      border: 1px dashed #cbd5e1;
+      transition: all 0.2s;
+    }
+
+    .mask-badge.revealed {
+      border-style: solid;
+    }
+
+    /* 測驗與實戰互動題庫 */
+    .practice-box {
+      background: #f8fafc;
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 1.8rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .q-card {
+      background: white;
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      padding: 1.3rem;
+      margin-bottom: 1rem;
+      transition: all 0.2s;
+    }
+
+    .q-title {
+      font-size: 1.05rem;
+      font-weight: 700;
+      margin-bottom: 0.8rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .q-num {
+      background: var(--primary);
+      color: white;
+      font-size: 0.75rem;
+      padding: 0.15rem 0.5rem;
+      border-radius: 6px;
+    }
+
+    .opt-group {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+      gap: 0.6rem;
+      margin-top: 0.6rem;
+    }
+
+    .opt-btn {
+      background: #f8fafc;
+      border: 1px solid #e2e8f0;
+      padding: 0.55rem 0.9rem;
+      border-radius: var(--radius-sm);
+      font-size: 0.9rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.2s;
+      text-align: center;
+    }
+    .opt-btn:hover {
+      background: #f1f5f9;
+      border-color: #cbd5e1;
+    }
+
+    .opt-btn.correct {
+      background: #dcfce7 !important;
+      border-color: #22c55e !important;
+      color: #15803d !important;
+    }
+
+    .opt-btn.wrong {
+      background: #fee2e2 !important;
+      border-color: #ef4444 !important;
+      color: #b91c1c !important;
+    }
+
+    .q-explain {
+      margin-top: 0.8rem;
+      padding: 0.7rem 1rem;
+      background: #f0fdfa;
+      border-left: 4px solid var(--primary);
+      border-radius: 4px;
+      font-size: 0.88rem;
+      color: #134e4a;
+      display: none;
+    }
+
+    .q-explain.show { display: block; }
+
+    /* 魔法造句工坊 */
+    .workshop-card {
+      background: linear-gradient(135deg, #f0fdf4 0%, #f0fdfa 50%, #eff6ff 100%);
+      border: 1px solid #a7f3d0;
+      border-radius: var(--radius-lg);
+      padding: 2rem;
+    }
+
+    .workshop-controls {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .workshop-col {
+      flex: 1;
+      min-width: 240px;
+      background: white;
+      padding: 1.2rem;
+      border-radius: var(--radius-md);
+      border: 1px solid #e2e8f0;
+    }
+
+    .workshop-col h4 {
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: #334155;
+      margin-bottom: 0.8rem;
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+
+    .chip-selector {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+    }
+
+    .chip-btn {
+      background: #f8fafc;
+      border: 1px solid #cbd5e1;
+      padding: 0.35rem 0.75rem;
+      border-radius: 999px;
+      font-size: 0.85rem;
+      cursor: pointer;
+      font-weight: 600;
+      transition: all 0.2s;
+    }
+    .chip-btn:hover, .chip-btn.active {
+      background: var(--primary);
+      color: white;
+      border-color: var(--primary);
+    }
+
+    .workshop-result {
+      background: white;
+      border: 2px dashed #0d9488;
+      border-radius: var(--radius-md);
+      padding: 1.5rem;
+      text-align: center;
+      margin-top: 1rem;
+    }
+
+    .workshop-sentence {
+      font-size: 1.6rem;
+      font-weight: 800;
+      color: var(--dark);
+      margin-bottom: 0.8rem;
+      letter-spacing: 2px;
+    }
+
+    .workshop-syntax {
+      display: flex;
+      justify-content: center;
+      gap: 0.75rem;
+      flex-wrap: wrap;
+    }
+
+    /* 頁尾 */
+    footer {
+      background: #0f172a;
+      color: #94a3b8;
+      padding: 3rem 1.5rem 2rem;
+      text-align: center;
+      margin-top: 4rem;
+    }
+
+    .footer-content {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .footer-logo {
+      height: 48px;
+      margin-bottom: 1.2rem;
+      filter: brightness(0) invert(1);
+    }
+
+    .footer-text {
+      font-size: 0.9rem;
+      line-height: 1.7;
+    }
+
+    .footer-copy {
+      font-size: 0.8rem;
+      color: #64748b;
+      margin-top: 1.5rem;
+      border-top: 1px solid #1e293b;
+      padding-top: 1.5rem;
+    }
+
+    /* 浮動回頂端按鈕 */
+    .back-to-top {
+      position: fixed;
+      bottom: 2rem;
+      right: 2rem;
+      width: 46px;
+      height: 46px;
+      border-radius: 50%;
+      background: var(--primary);
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 4px 14px rgba(0,0,0,0.18);
+      cursor: pointer;
+      opacity: 0;
+      visibility: hidden;
+      transition: all 0.3s ease;
+      z-index: 99;
+      border: none;
+    }
+    .back-to-top.show {
+      opacity: 1;
+      visibility: visible;
+    }
+    .back-to-top:hover {
+      transform: translateY(-4px);
+      background: var(--primary-dark);
+    }
+
+    /* 練習神器專屬嵌入與切換樣式 */
+    .practice-tabs {
+      display: flex;
+      gap: 0.5rem;
+      flex-wrap: wrap;
+      margin-bottom: 1.25rem;
+    }
+
+    .practice-tab-btn {
+      background: white;
+      border: 1px solid var(--border);
+      padding: 0.65rem 1.1rem;
+      border-radius: var(--radius-sm);
+      cursor: pointer;
+      font-weight: 700;
+      font-size: 0.92rem;
+      color: #334155;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      transition: all 0.2s ease;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.02);
+    }
+
+    .practice-tab-btn:hover {
+      background: var(--primary-light);
+      border-color: var(--primary);
+      color: var(--primary-dark);
+      transform: translateY(-2px);
+    }
+
+    .practice-tab-btn.active {
+      background: var(--primary);
+      color: white;
+      border-color: var(--primary);
+      box-shadow: 0 4px 12px rgba(13, 148, 136, 0.28);
+    }
+
+    .practice-container {
+      background: #f8fafc;
+      border: 1px solid #e2e8f0;
+      border-radius: var(--radius-lg);
+      padding: 1.25rem;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.03);
+    }
+
+    .practice-toolbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 1rem;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      padding-bottom: 0.75rem;
+      border-bottom: 1px dashed #cbd5e1;
+    }
+
+    .practice-info {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      flex-wrap: wrap;
+    }
+
+    .practice-badge {
+      background: var(--primary-light);
+      color: var(--primary-dark);
+      font-weight: 800;
+      font-size: 0.8rem;
+      padding: 0.25rem 0.75rem;
+      border-radius: 999px;
+    }
+
+    .practice-actions {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      flex-wrap: wrap;
+    }
+
+    .secondary-btn {
+      background: white;
+      color: var(--primary-dark);
+      border: 1px solid var(--border);
+      padding: 0.5rem 1rem;
+      border-radius: 10px;
+      cursor: pointer;
+      font-weight: 600;
+      font-size: 0.9rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      transition: all 0.2s;
+      text-decoration: none;
+      font-family: inherit;
+    }
+
+    .secondary-btn:hover {
+      background: var(--primary-light);
+      border-color: var(--primary);
+    }
+
+    .practice-iframe-wrap {
+      width: 100%;
+      height: 840px;
+      border-radius: 16px;
+      overflow: hidden;
+      border: 1px solid #cbd5e1;
+      background: #ffffff;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+    }
+
+    .practice-iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+      display: block;
+    }
+
+    .tools-shortcut-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 1.25rem;
+      margin-top: 2rem;
+    }
+
+    .tool-shortcut-card {
+      background: white;
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      padding: 1.25rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: all 0.25s ease;
+    }
+
+    .tool-shortcut-card:hover {
+      border-color: var(--primary);
+      transform: translateY(-3px);
+      box-shadow: 0 10px 20px -5px rgba(13, 148, 136, 0.12);
+    }
+
+    .tool-shortcut-head {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      margin-bottom: 0.75rem;
+    }
+
+    .tool-shortcut-icon {
+      width: 40px;
+      height: 40px;
+      border-radius: 10px;
+      background: var(--primary-light);
+      color: var(--primary-dark);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.2rem;
+      flex-shrink: 0;
+    }
+
+    .tool-shortcut-title {
+      font-size: 1.05rem;
+      font-weight: 800;
+      color: var(--dark);
+    }
+
+    .tool-shortcut-tag {
+      font-size: 0.75rem;
+      color: var(--primary-dark);
+      background: var(--primary-light);
+      padding: 0.1rem 0.5rem;
+      border-radius: 4px;
+      font-weight: 700;
+      display: inline-block;
+      margin-top: 2px;
+    }
+
+    .tool-shortcut-desc {
+      font-size: 0.88rem;
+      color: var(--gray);
+      line-height: 1.5;
+      margin-bottom: 1rem;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- 頂部導覽列 -->
+  <header>
+    <div class="nav-container">
+      <a href="index.html" class="brand-group" title="返回語文補給站總入口">
+        <img src="icon/seal-red.png" alt="學思軒陽刻印" class="brand-seal-img">
+        <img src="icon/logo-yuwen.png" alt="語文補給站" class="brand-logo-img">
+        <div class="brand-text">
+          <span class="brand-title serif">語文補給站 <span class="brand-badge">#5 語一 詞類・詞性</span></span>
+        </div>
+      </a>
+      <nav>
+        <ul>
+          <li><a href="index.html" class="home-link"><i data-lucide="home"></i>首頁</a></li>
+          <li><a href="#hierarchy-sec"><i data-lucide="layers"></i>語文層級</a></li>
+          <li><a href="#compound-sec"><i data-lucide="sparkles"></i>複詞探索</a></li>
+          <li><a href="#pos-universe-sec"><i data-lucide="orbit"></i>十大詞性</a></li>
+          <li><a href="#structure-sec"><i data-lucide="shuffle"></i>結構與轉品</a></li>
+          <li><a href="#songs-100-sec"><i data-lucide="music"></i>詞性一百</a></li>
+          <li><a href="#practice-sec"><i data-lucide="dumbbell"></i>實戰學習集</a></li>
+          <li><a href="#workshop-sec"><i data-lucide="wand-2"></i>魔法工坊</a></li>
+          <li><a href="#practice-tools-sec" style="background: linear-gradient(135deg, #ccfbf1, #eff6ff); color: var(--primary-dark); font-weight: 800;"><i data-lucide="gamepad-2"></i> 練習神器 (6款)</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- 主內容區 -->
+  <main>
+    <!-- Hero 旗艦標題 -->
+    <div class="hero">
+      <div class="hero-badge"><i data-lucide="award"></i> 翰林國中國文・語文常識旗艦核心</div>
+      <h1 class="hero-title serif">詞類與詞性・AI 互動學習殿堂</h1>
+      <p class="hero-subtitle">從語言基本單位的字與詞，到實詞虛詞全景宇宙；結合 100 題流行歌詞資料庫與三大實戰題庫，讓你精準透析漢語語法！</p>
+      <div class="hero-pills">
+        <div class="hero-pill"><i data-lucide="check-circle-2"></i> 語文五大層級圖解</div>
+        <div class="hero-pill"><i data-lucide="check-circle-2"></i> 合義複詞 vs 衍聲聯綿詞</div>
+        <div class="hero-pill"><i data-lucide="check-circle-2"></i> 實詞六類・虛詞四類全圖鑑</div>
+        <div class="hero-pill"><i data-lucide="check-circle-2"></i> 成語結構與轉品九變</div>
+        <div class="hero-pill"><i data-lucide="check-circle-2"></i> 流行歌詞 100 題發音庫</div>
+      </div>
+    </div>
+
+    <!-- 模組一：語文層級與全景架構 -->
+    <section id="hierarchy-sec">
+      <div class="section-header">
+        <div class="section-title-wrap">
+          <div class="section-icon"><i data-lucide="layers"></i></div>
+          <div>
+            <h2 class="section-title serif">語文層級與體系全景</h2>
+            <p class="section-subtitle">由微觀音節符號到宏觀篇章的語言結構建構</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="hierarchy-container">
+        <div class="hierarchy-node active" onclick="highlightLevel('char')">
+          <span class="hierarchy-tag">第 1 層級</span>
+          <div class="hierarchy-name">字</div>
+          <div class="hierarchy-desc">記錄語言的符號<br>書寫時的基本單位<br>又稱「音節」</div>
+        </div>
+        <div class="hierarchy-arrow"><i data-lucide="chevron-right"></i></div>
+        <div class="hierarchy-node active" onclick="highlightLevel('word')">
+          <span class="hierarchy-tag" style="background:#0d9488;color:white;">核心主題</span>
+          <div class="hierarchy-name" style="color:#0d9488;">詞</div>
+          <div class="hierarchy-desc"><b>表達意義的基本單位</b><br>依結構分單詞與複詞<br>依意義分實詞與虛詞</div>
+        </div>
+        <div class="hierarchy-arrow"><i data-lucide="chevron-right"></i></div>
+        <div class="hierarchy-node" onclick="highlightLevel('sentence')">
+          <span class="hierarchy-tag">第 3 層級</span>
+          <div class="hierarchy-name">句</div>
+          <div class="hierarchy-desc">由兩個以上詞排列組合<br>表達<b>完整意義</b>的語言單位</div>
+        </div>
+        <div class="hierarchy-arrow"><i data-lucide="chevron-right"></i></div>
+        <div class="hierarchy-node" onclick="highlightLevel('para')">
+          <span class="hierarchy-tag">第 4 層級</span>
+          <div class="hierarchy-name">段</div>
+          <div class="hierarchy-desc">數個句子圍繞中心思想<br>構成段落意群</div>
+        </div>
+        <div class="hierarchy-arrow"><i data-lucide="chevron-right"></i></div>
+        <div class="hierarchy-node" onclick="highlightLevel('essay')">
+          <span class="hierarchy-tag">第 5 層級</span>
+          <div class="hierarchy-name">篇</div>
+          <div class="hierarchy-desc">完整結構之文章作品<br>起承轉合之大成</div>
+        </div>
+      </div>
+
+      <!-- 詞類架構雙柱 -->
+      <div class="tree-grid">
+        <!-- 實詞柱 -->
+        <div class="tree-card" style="border-top: 4px solid var(--pos-noun);">
+          <div class="tree-header">
+            <div>
+              <h3 class="serif" style="font-size:1.3rem;font-weight:800;">實詞（六大類）</h3>
+              <p style="font-size:0.85rem;color:var(--gray);">本身可表示「實際意義、具體概念」</p>
+            </div>
+            <span class="tree-badge real">有實質指涉</span>
+          </div>
+          <div class="pos-pill-group">
+            <span class="pos-pill" style="background:var(--pos-noun-bg);color:var(--pos-noun);border-color:var(--pos-noun-border);"><b>名詞</b> 人事物、地名、抽象概念</span>
+            <span class="pos-pill" style="background:var(--pos-verb-bg);color:var(--pos-verb);border-color:var(--pos-verb-border);"><b>動詞</b> 動作、行為、存在、屬性</span>
+            <span class="pos-pill" style="background:var(--pos-adj-bg);color:var(--pos-adj);border-color:var(--pos-adj-border);"><b>形容詞</b> 性質、狀態、修飾名詞</span>
+            <span class="pos-pill" style="background:var(--pos-adv-bg);color:var(--pos-adv);border-color:var(--pos-adv-border);"><b>副詞</b> 修飾動詞/形容詞/副詞</span>
+            <span class="pos-pill" style="background:var(--pos-pron-bg);color:var(--pos-pron);border-color:var(--pos-pron-border);"><b>代詞</b> 人稱、指示、疑問</span>
+            <span class="pos-pill" style="background:var(--pos-num-bg);color:var(--pos-num);border-color:var(--pos-num-border);"><b>數量詞</b> 數目、次序、計量單位</span>
+          </div>
+        </div>
+
+        <!-- 虛詞柱 -->
+        <div class="tree-card" style="border-top: 4px solid var(--pos-prep);">
+          <div class="tree-header">
+            <div>
+              <h3 class="serif" style="font-size:1.3rem;font-weight:800;">虛詞（四大類）</h3>
+              <p style="font-size:0.85rem;color:var(--gray);">不能表示實際意義，作「結構工具或語氣情感」</p>
+            </div>
+            <span class="tree-badge virt">語法結構工具</span>
+          </div>
+          <div class="pos-pill-group">
+            <span class="pos-pill" style="background:var(--pos-prep-bg);color:var(--pos-prep);border-color:var(--pos-prep-border);"><b>介詞</b> 介紹名詞/代詞給動詞或形容詞</span>
+            <span class="pos-pill" style="background:var(--pos-conj-bg);color:var(--pos-conj);border-color:var(--pos-conj-border);"><b>連詞</b> 連接詞、句、段落</span>
+            <span class="pos-pill" style="background:var(--pos-aux-bg);color:var(--pos-aux);border-color:var(--pos-aux-border);"><b>助詞</b> 表語氣（句首/中/末）、結構（的/之）</span>
+            <span class="pos-pill" style="background:var(--pos-int-bg);color:var(--pos-int);border-color:var(--pos-int-border);"><b>嘆詞</b> 感嘆、呼喚、應答之聲</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 模組二：複詞探索館 -->
+    <section id="compound-sec">
+      <div class="section-header">
+        <div class="section-title-wrap">
+          <div class="section-icon"><i data-lucide="sparkles"></i></div>
+          <div>
+            <h2 class="section-title serif">複詞探索館（合義 vs 衍聲）</h2>
+            <p class="section-subtitle">深入探究「同義複詞」、「偏義複詞」與「雙聲疊韻聯綿詞」之奧妙</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- 篩選標籤 -->
+      <div class="filter-tabs" id="compound-tabs">
+        <button class="tab-btn active" onclick="filterCompound('all', this)"><i data-lucide="grid"></i> 全部複詞</button>
+        <button class="tab-btn" onclick="filterCompound('syn', this)"><i data-lucide="equal"></i> 同義複詞</button>
+        <button class="tab-btn" onclick="filterCompound('bias', this)"><i data-lucide="git-commit"></i> 偏義複詞</button>
+        <button class="tab-btn" onclick="filterCompound('allit', this)"><i data-lucide="music-2"></i> 雙聲聯綿詞</button>
+        <button class="tab-btn" onclick="filterCompound('rhyme', this)"><i data-lucide="volume-2"></i> 疊韻聯綿詞</button>
+        <button class="tab-btn" onclick="filterCompound('both', this)"><i data-lucide="sparkle"></i> 雙聲又疊韻</button>
+        <button class="tab-btn" onclick="filterCompound('none', this)"><i data-lucide="compass"></i> 非雙聲非疊韻</button>
+        <button class="tab-btn" onclick="filterCompound('onomat', this)"><i data-lucide="mic"></i> 疊字狀聲/狀態</button>
+      </div>
+
+      <!-- 複詞卡片網格 -->
+      <div class="compound-grid" id="compound-grid-container">
+        <!-- 動態渲染複詞卡片 -->
+      </div>
+    </section>
+
+    <!-- 模組三：十大詞性宇宙 -->
+    <section id="pos-universe-sec">
+      <div class="section-header">
+        <div class="section-title-wrap">
+          <div class="section-icon"><i data-lucide="orbit"></i></div>
+          <div>
+            <h2 class="section-title serif">實詞與虛詞宇宙（十大詞性圖鑑）</h2>
+            <p class="section-subtitle">詞性修飾金字塔、度量衡古典量詞與 10 大連接詞關係大全</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- 詞性修飾金字塔階梯 -->
+      <div class="pyramid-box">
+        <div class="pyramid-title serif">🌟 詞性修飾作用金字塔（小丸子語法階梯）</div>
+        <div class="stair-wrap">
+          <div class="stair-item" onclick="speakText('小丸子')">
+            <span class="stair-lvl">第 1 階</span>
+            <span class="stair-pos" style="background:#2563eb;color:white;">名詞</span>
+            <span class="stair-text"><span class="stair-highlight">小丸子</span>（人事物名稱）</span>
+          </div>
+          <div class="stair-item" onclick="speakText('可愛的小丸子')">
+            <span class="stair-lvl">第 2 階</span>
+            <span class="stair-pos" style="background:#d97706;color:white;">形容詞</span>
+            <span class="stair-text"><span class="stair-highlight">可愛的</span> 小丸子（修飾名詞）</span>
+          </div>
+          <div class="stair-item" onclick="speakText('我喜歡可愛的小丸子')">
+            <span class="stair-lvl">第 3 階</span>
+            <span class="stair-pos" style="background:#059669;color:white;">動詞</span>
+            <span class="stair-text">我 <span class="stair-highlight">喜歡</span> 可愛的小丸子（表示動作行為）</span>
+          </div>
+          <div class="stair-item" onclick="speakText('我喜歡超級可愛的小丸子')">
+            <span class="stair-lvl">第 4 階</span>
+            <span class="stair-pos" style="background:#7c3aed;color:white;">副詞 (修形)</span>
+            <span class="stair-text">我喜歡 <span class="stair-highlight">超級</span> 可愛的小丸子（副詞修飾形容詞）</span>
+          </div>
+          <div class="stair-item" onclick="speakText('我非常喜歡超級可愛的小丸子')">
+            <span class="stair-lvl">第 5 階</span>
+            <span class="stair-pos" style="background:#7c3aed;color:white;">副詞 (修動)</span>
+            <span class="stair-text">我 <span class="stair-highlight">非常</span> 喜歡超級可愛的小丸子（副詞修飾動詞）</span>
+          </div>
+          <div class="stair-item" onclick="speakText('我實在非常喜歡超級可愛的小丸子')">
+            <span class="stair-lvl">第 6 階</span>
+            <span class="stair-pos" style="background:#7c3aed;color:white;">副詞 (修副)</span>
+            <span class="stair-text">我 <span class="stair-highlight">實在</span> 非常喜歡超級可愛的小丸子（副詞修飾副詞）</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- 十大詞性詳細定義 Grid -->
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));gap:1rem;margin-top:2rem;">
+        <!-- 名詞 -->
+        <div class="tree-card" style="border-left:4px solid var(--pos-noun);">
+          <h4 style="color:var(--pos-noun);font-size:1.15rem;font-weight:800;margin-bottom:0.4rem;"><i data-lucide="tag"></i> 名詞 (Noun)</h4>
+          <p style="font-size:0.88rem;color:#334155;line-height:1.5;">表示人、事、物、地點、學術或抽象概念之名稱。<br><b>例：</b>李白、友情、學校、奈米、槓桿原理。</p>
+        </div>
+        <!-- 動詞 -->
+        <div class="tree-card" style="border-left:4px solid var(--pos-verb);">
+          <h4 style="color:var(--pos-verb);font-size:1.15rem;font-weight:800;margin-bottom:0.4rem;"><i data-lucide="activity"></i> 動詞 (Verb)</h4>
+          <p style="font-size:0.88rem;color:#334155;line-height:1.5;">表示行為動作、存在發展、或判斷屬性。<br><b>例：</b>跑、看見、存在、變成、是、非、乃。</p>
+        </div>
+        <!-- 形容詞 -->
+        <div class="tree-card" style="border-left:4px solid var(--pos-adj);">
+          <h4 style="color:var(--pos-adj);font-size:1.15rem;font-weight:800;margin-bottom:0.4rem;"><i data-lucide="feather"></i> 形容詞 (Adjective)</h4>
+          <p style="font-size:0.88rem;color:#334155;line-height:1.5;">表示人事物之性質、狀態，主要修飾名詞。<br><b>例：</b>漂亮、紅、乾淨、溫柔、新鮮、巨大。</p>
+        </div>
+        <!-- 副詞 -->
+        <div class="tree-card" style="border-left:4px solid var(--pos-adv);">
+          <h4 style="color:var(--pos-adv);font-size:1.15rem;font-weight:800;margin-bottom:0.4rem;"><i data-lucide="zap"></i> 副詞 (Adverb)</h4>
+          <p style="font-size:0.88rem;color:#334155;line-height:1.5;">修飾限制動詞、形容詞或其他副詞。<br><b>例：</b>很、非常、更、馬上、已經、也許、常常。</p>
+        </div>
+        <!-- 代詞 -->
+        <div class="tree-card" style="border-left:4px solid var(--pos-pron);">
+          <h4 style="color:var(--pos-pron);font-size:1.15rem;font-weight:800;margin-bottom:0.4rem;"><i data-lucide="user-check"></i> 代詞 (Pronoun)</h4>
+          <p style="font-size:0.88rem;color:#334155;line-height:1.5;">替代或指示人事物，含人稱、指示與疑問代詞。<br><b>例：</b>我、你、這、那、誰、何、什麼。</p>
+        </div>
+        <!-- 數量詞 -->
+        <div class="tree-card" style="border-left:4px solid var(--pos-num);">
+          <h4 style="color:var(--pos-num);font-size:1.15rem;font-weight:800;margin-bottom:0.4rem;"><i data-lucide="hash"></i> 數量詞 (Numeral/Classifier)</h4>
+          <p style="font-size:0.88rem;color:#334155;line-height:1.5;">數詞（數目次序）與量詞（計算單位）之合稱。<br><b>例：</b>一、第一、萬千；個、顆、把、首、幅。</p>
+        </div>
+        <!-- 介詞 -->
+        <div class="tree-card" style="border-left:4px solid var(--pos-prep);">
+          <h4 style="color:var(--pos-prep);font-size:1.15rem;font-weight:800;margin-bottom:0.4rem;"><i data-lucide="arrow-right-circle"></i> 介詞 (Preposition)</h4>
+          <p style="font-size:0.88rem;color:#334155;line-height:1.5;">介引名詞/代詞給動詞/形容詞，表處所時間原因。<br><b>例：</b>在、從、向、自、比、被、用、因、以。</p>
+        </div>
+        <!-- 連詞 -->
+        <div class="tree-card" style="border-left:4px solid var(--pos-conj);">
+          <h4 style="color:var(--pos-conj);font-size:1.15rem;font-weight:800;margin-bottom:0.4rem;"><i data-lucide="link"></i> 連詞 (Conjunction)</h4>
+          <p style="font-size:0.88rem;color:#334155;line-height:1.5;">連接詞與詞、句與句，表示語意邏輯關係。<br><b>例：</b>和、與、或者、雖然、但是、因為、如果。</p>
+        </div>
+        <!-- 助詞 -->
+        <div class="tree-card" style="border-left:4px solid var(--pos-aux);">
+          <h4 style="color:var(--pos-aux);font-size:1.15rem;font-weight:800;margin-bottom:0.4rem;"><i data-lucide="anchor"></i> 助詞 (Auxiliary/Particle)</h4>
+          <p style="font-size:0.88rem;color:#334155;line-height:1.5;">附著句中表語氣（了、嗎、呢、吧）或結構（的、之、是）。<br><b>例：</b>天黑「了」、唯利「是」圖、大師「的」畫作。</p>
+        </div>
+        <!-- 嘆詞 -->
+        <div class="tree-card" style="border-left:4px solid var(--pos-int);">
+          <h4 style="color:var(--pos-int);font-size:1.15rem;font-weight:800;margin-bottom:0.4rem;"><i data-lucide="sparkles"></i> 嘆詞 (Interjection)</h4>
+          <p style="font-size:0.88rem;color:#334155;line-height:1.5;">表示強烈情感、感嘆、呼喚或應答之聲音獨立成分。<br><b>例：</b>啊！哎呀！哼！唉！嘿嘿嘿！</p>
+        </div>
+      </div>
+
+      <!-- 擴充知識：古代度量衡與 10 大連接詞關係 Tab 切換 -->
+      <div style="margin-top:2.5rem;background:#f8fafc;padding:1.5rem;border-radius:var(--radius-md);border:1px solid var(--border);">
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:1rem;flex-wrap:wrap;gap:0.5rem;">
+          <h3 class="serif" style="font-size:1.25rem;font-weight:800;color:var(--dark);"><i data-lucide="book-open"></i> 語法實戰擴充：度量衡量詞庫 & 10 大連接詞</h3>
+          <div class="filter-tabs" style="margin-bottom:0;">
+            <button class="tab-btn active" id="btn-show-measure" onclick="toggleExtraTab('measure')"><i data-lucide="scale"></i> 古代度量衡與量詞</button>
+            <button class="tab-btn" id="btn-show-conj" onclick="toggleExtraTab('conj')"><i data-lucide="git-merge"></i> 10 大連接詞關係</button>
+          </div>
+        </div>
+
+        <!-- 度量衡量詞區塊 -->
+        <div id="extra-measure-box">
+          <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1rem;">
+            <div style="background:white;padding:1rem;border-radius:8px;border:1px solid #e2e8f0;">
+              <h5 style="color:#c2410c;font-weight:800;margin-bottom:0.4rem;">📏 長度單位（度）</h5>
+              <p style="font-size:0.85rem;color:#475569;"><b>里</b>（360步）｜<b>舍</b>（30里，如退避三舍）｜<b>尋</b>（8尺，如深可四尋）｜<b>仞</b>（8尺，如為山九仞）</p>
+            </div>
+            <div style="background:white;padding:1rem;border-radius:8px;border:1px solid #e2e8f0;">
+              <h5 style="color:#0d9488;font-weight:800;margin-bottom:0.4rem;">🧪 容量單位（量）</h5>
+              <p style="font-size:0.85rem;color:#475569;"><b>升</b>（10撮）｜<b>斗</b>（10升，如升斗小民）｜<b>斛</b>（5斗）｜<b>石</b>（10斗）｜<b>鍾</b>（6斛4斗，如千鍾粟）</p>
+            </div>
+            <div style="background:white;padding:1rem;border-radius:8px;border:1px solid #e2e8f0;">
+              <h5 style="color:#2563eb;font-weight:800;margin-bottom:0.4rem;">⚖️ 重量單位（衡）</h5>
+              <p style="font-size:0.85rem;color:#475569;"><b>錙</b>（6銖，如錙銖必較）｜<b>兩</b>（24銖）｜<b>斤</b>（16兩，如半斤八兩）｜<b>鈞</b>（30斤，如千鈞一髮）｜<b>石</b>（4鈞）</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- 連接詞關係區塊 -->
+        <div id="extra-conj-box" style="display:none;">
+          <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:0.8rem;font-size:0.85rem;">
+            <div style="background:white;padding:0.8rem;border-radius:6px;border-left:3px solid #0891b2;"><b>1. 並列：</b>與、跟、和、既…又（我和妳，男和女）</div>
+            <div style="background:white;padding:0.8rem;border-radius:6px;border-left:3px solid #0891b2;"><b>2. 選擇：</b>或、或者、還是（內用還是外帶？）</div>
+            <div style="background:white;padding:0.8rem;border-radius:6px;border-left:3px solid #0891b2;"><b>3. 轉折：</b>但、卻、然而、雖然（然而妳永遠不會知道）</div>
+            <div style="background:white;padding:0.8rem;border-radius:6px;border-left:3px solid #0891b2;"><b>4. 遞進：</b>何況、況且、不但…而且（我又脆弱，何況那算什麼傷）</div>
+            <div style="background:white;padding:0.8rem;border-radius:6px;border-left:3px solid #0891b2;"><b>5. 承接：</b>先…再、首先…然後（先管面子，再管裡子）</div>
+            <div style="background:white;padding:0.8rem;border-radius:6px;border-left:3px solid #0891b2;"><b>6. 比較：</b>與其…不如、寧可…也不（寧可過錯，也不要錯過）</div>
+            <div style="background:white;padding:0.8rem;border-radius:6px;border-left:3px solid #0891b2;"><b>7. 因果：</b>由於、因此、因為…所以（因為整天下雨，所以空氣才會憂鬱）</div>
+            <div style="background:white;padding:0.8rem;border-radius:6px;border-left:3px solid #0891b2;"><b>8. 條件：</b>不管、只要、若要…除非（只要在你目光看得見的地方）</div>
+            <div style="background:white;padding:0.8rem;border-radius:6px;border-left:3px solid #0891b2;"><b>9. 假設：</b>如果…就、要是…就、假如（要是有自信，就能做決定）</div>
+            <div style="background:white;padding:0.8rem;border-radius:6px;border-left:3px solid #0891b2;"><b>10. 目的：</b>以免、以便（懸崖勒馬以免傷到粉身碎骨）</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 模組四：成語結構與轉品密碼 -->
+    <section id="structure-sec">
+      <div class="section-header">
+        <div class="section-title-wrap">
+          <div class="section-icon"><i data-lucide="shuffle"></i></div>
+          <div>
+            <h2 class="section-title serif">詞語結構與轉品九變</h2>
+            <p class="section-subtitle">成語四字詞性結構拆解、轉品修辭與位置決定詞性法則</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- 六大成語結構分析 -->
+      <h3 class="serif" style="font-size:1.25rem;font-weight:800;margin-bottom:1rem;color:var(--dark);"><i data-lucide="layout-grid"></i> 六大常見成語詞性結構</h3>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:1.2rem;margin-bottom:2rem;">
+        <div class="tree-card" style="border-top:3px solid #059669;">
+          <div style="font-weight:800;color:#059669;margin-bottom:0.4rem;">動 ＋ 名 ＋ 動 ＋ 名</div>
+          <p style="font-size:0.88rem;color:#334155;line-height:1.6;">上天下地、悲天憫人、去無存菁、專心致志、堆金砌玉</p>
+        </div>
+        <div class="tree-card" style="border-top:3px solid #2563eb;">
+          <div style="font-weight:800;color:#2563eb;margin-bottom:0.4rem;">名 ＋ 動 ＋ 名 ＋ 動</div>
+          <p style="font-size:0.88rem;color:#334155;line-height:1.6;">石破天驚、物換星移、水落石出、劍及履及、手舞足蹈</p>
+        </div>
+        <div class="tree-card" style="border-top:3px solid #d97706;">
+          <div style="font-weight:800;color:#d97706;margin-bottom:0.4rem;">形 ＋ 名 ＋ 形 ＋ 名</div>
+          <p style="font-size:0.88rem;color:#334155;line-height:1.6;">生龍活虎、光風霽月、閒雲野鶴、疾風勁草、高風亮節</p>
+        </div>
+        <div class="tree-card" style="border-top:3px solid #ea580c;">
+          <div style="font-weight:800;color:#ea580c;margin-bottom:0.4rem;">名 ＋ 形 ＋ 名 ＋ 形</div>
+          <p style="font-size:0.88rem;color:#334155;line-height:1.6;">風調雨順、理直氣壯、天清日晏、心平氣和、言簡意賅</p>
+        </div>
+        <div class="tree-card" style="border-top:3px solid #7c3aed;">
+          <div style="font-weight:800;color:#7c3aed;margin-bottom:0.4rem;">副 ＋ 動 ＋ 副 ＋ 動</div>
+          <p style="font-size:0.88rem;color:#334155;line-height:1.6;">深入淺出、急起直追、淺嘗輒止、突飛猛進、精打細算</p>
+        </div>
+        <div class="tree-card" style="border-top:3px solid #db2777;">
+          <div style="font-weight:800;color:#db2777;margin-bottom:0.4rem;">副 ＋ 形 ＋ 副 ＋ 形</div>
+          <p style="font-size:0.88rem;color:#334155;line-height:1.6;">一清二楚、大紅大紫、千真萬確、窮凶惡極、大同小異</p>
+        </div>
+      </div>
+
+      <!-- 轉品修辭九大變化 -->
+      <h3 class="serif" style="font-size:1.25rem;font-weight:800;margin-bottom:1rem;color:var(--dark);"><i data-lucide="zap"></i> 轉品修辭九大變化典範</h3>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1rem;">
+        <div style="background:#f8fafc;padding:1rem;border-radius:8px;border-left:4px solid #0d9488;">
+          <span style="font-weight:700;color:#0f766e;">名詞 ➔ 動詞：</span> 願為「市」鞍馬（市：買）
+        </div>
+        <div style="background:#f8fafc;padding:1rem;border-radius:8px;border-left:4px solid #0d9488;">
+          <span style="font-weight:700;color:#0f766e;">名詞 ➔ 副詞：</span> 「狼」吞「虎」嚥地吃飯
+        </div>
+        <div style="background:#f8fafc;padding:1rem;border-radius:8px;border-left:4px solid #0d9488;">
+          <span style="font-weight:700;color:#0f766e;">名詞 ➔ 形容詞：</span> 墾丁的天空很「希臘」
+        </div>
+        <div style="background:#f8fafc;padding:1rem;border-radius:8px;border-left:4px solid #3b82f6;">
+          <span style="font-weight:700;color:#1d4ed8;">動詞 ➔ 名詞：</span> 最奢侈的「享受」
+        </div>
+        <div style="background:#f8fafc;padding:1rem;border-radius:8px;border-left:4px solid #3b82f6;">
+          <span style="font-weight:700;color:#1d4ed8;">動詞 ➔ 副詞：</span> 前後「合」攻（合：共同）
+        </div>
+        <div style="background:#f8fafc;padding:1rem;border-radius:8px;border-left:4px solid #3b82f6;">
+          <span style="font-weight:700;color:#1d4ed8;">動詞 ➔ 形容詞：</span> 「落」花「流」水春去也
+        </div>
+        <div style="background:#f8fafc;padding:1rem;border-radius:8px;border-left:4px solid #d97706;">
+          <span style="font-weight:700;color:#b45309;">形容詞 ➔ 名詞：</span> 想像那一流「清淺」
+        </div>
+        <div style="background:#f8fafc;padding:1rem;border-radius:8px;border-left:4px solid #d97706;">
+          <span style="font-weight:700;color:#b45309;">形容詞 ➔ 動詞：</span> 「幼」吾幼以及人之幼
+        </div>
+        <div style="background:#f8fafc;padding:1rem;border-radius:8px;border-left:4px solid #d97706;">
+          <span style="font-weight:700;color:#b45309;">形容詞 ➔ 副詞：</span> 捧腹「大」笑（大：程度深）
+        </div>
+      </div>
+    </section>
+
+    <!-- 模組五：詞性一百流行歌詞典範資料庫 -->
+    <section id="songs-100-sec">
+      <div class="section-header">
+        <div class="section-title-wrap">
+          <div class="section-icon"><i data-lucide="music"></i></div>
+          <div>
+            <h2 class="section-title serif">詞性一百・流行歌詞典範資料庫</h2>
+            <p class="section-subtitle">五月天、周杰倫、蘇打綠等 100 題經典歌詞，全真人 TTS 發音與一鍵遮罩/揭曉</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- 歌詞搜尋與操作列 -->
+      <div class="song-control-bar">
+        <div class="search-input-wrap">
+          <i data-lucide="search"></i>
+          <input type="text" id="song-search-input" placeholder="搜尋歌詞關鍵字、歌手或字詞（如：五月天、溫柔、晴天）..." oninput="handleSongSearch()">
+        </div>
+        <div class="control-actions">
+          <button class="action-btn" onclick="toggleAllMasks(true)"><i data-lucide="eye"></i> 一鍵全部揭曉</button>
+          <button class="action-btn" style="background:#475569;" onclick="toggleAllMasks(false)"><i data-lucide="eye-off"></i> 一鍵全部遮罩</button>
+        </div>
+      </div>
+
+      <!-- 詞性分類 Chip 篩選 -->
+      <div class="filter-tabs" id="song-pos-filters">
+        <button class="tab-btn active" onclick="filterSongs('ALL', this)">全部 100 題</button>
+        <button class="tab-btn" onclick="filterSongs('名詞', this)">名詞</button>
+        <button class="tab-btn" onclick="filterSongs('動詞', this)">動詞</button>
+        <button class="tab-btn" onclick="filterSongs('形容詞', this)">形容詞</button>
+        <button class="tab-btn" onclick="filterSongs('副詞', this)">副詞</button>
+        <button class="tab-btn" onclick="filterSongs('代詞', this)">代詞</button>
+        <button class="tab-btn" onclick="filterSongs('數詞', this)">數詞</button>
+        <button class="tab-btn" onclick="filterSongs('量詞', this)">量詞</button>
+        <button class="tab-btn" onclick="filterSongs('介詞', this)">介詞</button>
+        <button class="tab-btn" onclick="filterSongs('連詞', this)">連詞</button>
+        <button class="tab-btn" onclick="filterSongs('助詞', this)">助詞</button>
+        <button class="tab-btn" onclick="filterSongs('嘆詞', this)">嘆詞</button>
+      </div>
+
+      <!-- 歌詞卡片網格 -->
+      <div class="song-grid" id="song-grid-container">
+        <!-- 動態渲染 100 題卡片 -->
+      </div>
+    </section>
+
+    <!-- 模組六：三大課後實戰進階學習集 -->
+    <section id="practice-sec">
+      <div class="section-header">
+        <div class="section-title-wrap">
+          <div class="section-icon"><i data-lucide="dumbbell"></i></div>
+          <div>
+            <h2 class="section-title serif">三大課後實戰進階學習集</h2>
+            <p class="section-subtitle">即時回饋互動答題、選項智能變色與詳解精闢剖析</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- 實戰學習集 Tab 切換 -->
+      <div class="filter-tabs">
+        <button class="tab-btn active" id="btn-practice-1" onclick="switchPracticeTab(1)"><i data-lucide="check-square"></i> 關卡一：詞性活用辨析 (12題)</button>
+        <button class="tab-btn" id="btn-practice-2" onclick="switchPracticeTab(2)"><i data-lucide="repeat"></i> 關卡二：轉品修辭精準判定 (10題)</button>
+        <button class="tab-btn" id="btn-practice-3" onclick="switchPracticeTab(3)"><i data-lucide="swords"></i> 關卡三：詞性對照雙向擂台 (28題)</button>
+      </div>
+
+      <!-- 關卡一容器 -->
+      <div class="practice-box" id="practice-box-1">
+        <h4 style="font-size:1.1rem;font-weight:800;color:var(--dark);margin-bottom:1rem;">🎯 關卡一：請依據粗體字在文句中的「位置與作用」，選出正確的詞性配對</h4>
+        <div id="p1-container"></div>
+      </div>
+
+      <!-- 關卡二容器 -->
+      <div class="practice-box" id="practice-box-2" style="display:none;">
+        <h4 style="font-size:1.1rem;font-weight:800;color:var(--dark);margin-bottom:1rem;">🔄 關卡二：轉品修辭練習（請判斷粗體字是由何種詞性轉為什麼詞性）</h4>
+        <div id="p2-container"></div>
+      </div>
+
+      <!-- 關卡三容器 -->
+      <div class="practice-box" id="practice-box-3" style="display:none;">
+        <h4 style="font-size:1.1rem;font-weight:800;color:var(--dark);margin-bottom:1rem;">⚔️ 關卡三：詞性對照擂台（相同詞彙在不同語境中的詞性判定）</h4>
+        <div id="p3-container"></div>
+      </div>
+    </section>
+
+    <!-- 模組七：魔法造句工坊 -->
+    <section id="workshop-sec">
+      <div class="section-header">
+        <div class="section-title-wrap">
+          <div class="section-icon"><i data-lucide="wand-2"></i></div>
+          <div>
+            <h2 class="section-title serif">詞性與結構魔法工坊</h2>
+            <p class="section-subtitle">自由點選詞性積木，即時拼裝成語與句構骨架</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="workshop-card">
+        <div class="workshop-controls">
+          <div class="workshop-col">
+            <h4><i data-lucide="puzzle"></i> 1. 選擇語法結構公式</h4>
+            <div class="chip-selector" id="ws-pattern-chips">
+              <button class="chip-btn active" onclick="selectWsPattern('VNVN', this)">動＋名＋動＋名</button>
+              <button class="chip-btn" onclick="selectWsPattern('NVNV', this)">名＋動＋名＋動</button>
+              <button class="chip-btn" onclick="selectWsPattern('ANAN', this)">形＋名＋形＋名</button>
+              <button class="chip-btn" onclick="selectWsPattern('NANAT', this)">名＋形＋名＋形</button>
+              <button class="chip-btn" onclick="selectWsPattern('DADV', this)">副＋動＋副＋動</button>
+            </div>
+          </div>
+          <div class="workshop-col">
+            <h4><i data-lucide="book"></i> 2. 選擇範例詞彙</h4>
+            <div class="chip-selector" id="ws-words-chips">
+              <!-- 動態渲染可選詞彙 -->
+            </div>
+          </div>
+        </div>
+
+        <div class="workshop-result">
+          <p style="font-size:0.85rem;color:#0f766e;font-weight:700;margin-bottom:0.4rem;">當前拼裝成語結構解析：</p>
+          <div class="workshop-sentence serif" id="ws-output-word">上 天 下 地</div>
+          <div class="workshop-syntax" id="ws-output-syntax">
+            <span class="pos-pill" style="background:#ecfdf5;color:#059669;">動詞：上</span>
+            <span class="pos-pill" style="background:#eff6ff;color:#2563eb;">名詞：天</span>
+            <span class="pos-pill" style="background:#ecfdf5;color:#059669;">動詞：下</span>
+            <span class="pos-pill" style="background:#eff6ff;color:#2563eb;">名詞：地</span>
+          </div>
+          <div style="margin-top:1rem;">
+            <button class="action-btn" onclick="speakText(document.getElementById('ws-output-word').innerText)"><i data-lucide="volume-2"></i> 發音示範</button>
+            <button class="action-btn" style="background:#3b82f6;" onclick="randomWs()"><i data-lucide="shuffle"></i> 隨機產生</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 模組八：六大專屬練習神器特訓專區 -->
+    <section id="practice-tools-sec">
+      <div class="section-header">
+        <div class="section-title-wrap">
+          <div class="section-icon"><i data-lucide="gamepad-2"></i></div>
+          <div>
+            <h2 class="section-title serif">詞性與語法・六大專屬練習神器</h2>
+            <p class="section-subtitle">複詞辨析、量詞搭配、連接詞選用、詞性判斷、轉品活用與成語結構專屬練習庫</p>
+          </div>
+        </div>
+        <div class="practice-actions">
+          <button class="secondary-btn" onclick="reloadPracticeIframe()" title="重新整理練習神器">
+            <i data-lucide="rotate-ccw"></i> 重新載入
+          </button>
+          <a id="practice-ext-link" href="https://oaoadna-1313.github.io/2026_practicetools/yuwen-practice/yuwen-compound-words.html" target="_blank" class="action-btn" title="在新分頁開啟練習神器獨立視窗">
+            <i data-lucide="external-link"></i> 新分頁獨立開啟
+          </a>
+        </div>
+      </div>
+
+      <!-- 6 大神器切換 Tab 按鈕 -->
+      <div class="practice-tabs">
+        <button class="practice-tab-btn active" id="tab-tool-compound" onclick="switchPracticeTool('compound')">
+          <i data-lucide="sparkles"></i> 💫 同義反義偏義複詞
+        </button>
+        <button class="practice-tab-btn" id="tab-tool-classifiers" onclick="switchPracticeTool('classifiers')">
+          <i data-lucide="scale"></i> 📏 量詞運用
+        </button>
+        <button class="practice-tab-btn" id="tab-tool-conjunctions" onclick="switchPracticeTool('conjunctions')">
+          <i data-lucide="git-merge"></i> 🔗 連接詞運用
+        </button>
+        <button class="practice-tab-btn" id="tab-tool-pos" onclick="switchPracticeTool('pos')">
+          <i data-lucide="target"></i> 🎯 詞性判斷
+        </button>
+        <button class="practice-tab-btn" id="tab-tool-inflection" onclick="switchPracticeTool('inflection')">
+          <i data-lucide="shuffle"></i> 🔄 詞性活用判斷
+        </button>
+        <button class="practice-tab-btn" id="tab-tool-structure" onclick="switchPracticeTool('structure')">
+          <i data-lucide="layout-grid"></i> 🧩 詞性結構判斷
+        </button>
+      </div>
+
+      <!-- 內嵌 iframe 容器 -->
+      <div class="practice-container">
+        <div class="practice-toolbar">
+          <div class="practice-info">
+            <span class="practice-badge" id="practice-badge-text">語文學習集・複詞專區</span>
+            <span id="practice-desc-text" style="font-weight: 700; color: #334155; font-size: 0.95rem;">同義・反義・偏義複詞練習神器</span>
+          </div>
+          <div style="font-size: 0.85rem; color: #64748b;">
+            💡 提示：支援登入、自選模式、卡片翻轉、錯題自動收錄與即時診斷
+          </div>
+        </div>
+
+        <div class="practice-iframe-wrap">
+          <iframe id="practice-iframe" src="https://oaoadna-1313.github.io/2026_practicetools/yuwen-practice/yuwen-compound-words.html" class="practice-iframe" allow="fullscreen"></iframe>
+        </div>
+      </div>
+
+      <!-- 6 款神器快速導覽卡片網格 -->
+      <div class="tools-shortcut-grid">
+        <div class="tool-shortcut-card">
+          <div>
+            <div class="tool-shortcut-head">
+              <div class="tool-shortcut-icon"><i data-lucide="sparkles"></i></div>
+              <div>
+                <h4 class="tool-shortcut-title">同義反義偏義複詞</h4>
+                <span class="tool-shortcut-tag">複詞構造・規則判斷</span>
+              </div>
+            </div>
+            <p class="tool-shortcut-desc">偏義複詞重點突破與同義、反義構詞規則判斷。</p>
+          </div>
+          <button class="action-btn" onclick="switchPracticeTool('compound'); document.getElementById('practice-tools-sec').scrollIntoView({behavior:'smooth'});">
+            <i data-lucide="play-circle"></i> 切換此神器
+          </button>
+        </div>
+
+        <div class="tool-shortcut-card">
+          <div>
+            <div class="tool-shortcut-head">
+              <div class="tool-shortcut-icon" style="background:#fef3c7;color:#d97706;"><i data-lucide="scale"></i></div>
+              <div>
+                <h4 class="tool-shortcut-title">量詞運用</h4>
+                <span class="tool-shortcut-tag" style="background:#fef3c7;color:#92400e;">計量單位・語法搭配</span>
+              </div>
+            </div>
+            <p class="tool-shortcut-desc">中文豐富細膩的名量詞與動量詞搭配與文法測驗。</p>
+          </div>
+          <button class="action-btn" style="background:#d97706;" onclick="switchPracticeTool('classifiers'); document.getElementById('practice-tools-sec').scrollIntoView({behavior:'smooth'});">
+            <i data-lucide="play-circle"></i> 切換此神器
+          </button>
+        </div>
+
+        <div class="tool-shortcut-card">
+          <div>
+            <div class="tool-shortcut-head">
+              <div class="tool-shortcut-icon" style="background:#ecfeff;color:#0891b2;"><i data-lucide="git-merge"></i></div>
+              <div>
+                <h4 class="tool-shortcut-title">連接詞運用</h4>
+                <span class="tool-shortcut-tag" style="background:#ecfeff;color:#0e7490;">複句關係・邏輯關聯</span>
+              </div>
+            </div>
+            <p class="tool-shortcut-desc">因果、轉折、遞進、條件等複句關聯詞精確選用。</p>
+          </div>
+          <button class="action-btn" style="background:#0891b2;" onclick="switchPracticeTool('conjunctions'); document.getElementById('practice-tools-sec').scrollIntoView({behavior:'smooth'});">
+            <i data-lucide="play-circle"></i> 切換此神器
+          </button>
+        </div>
+
+        <div class="tool-shortcut-card">
+          <div>
+            <div class="tool-shortcut-head">
+              <div class="tool-shortcut-icon" style="background:#eff6ff;color:#2563eb;"><i data-lucide="target"></i></div>
+              <div>
+                <h4 class="tool-shortcut-title">詞性判斷</h4>
+                <span class="tool-shortcut-tag" style="background:#eff6ff;color:#1e40af;">實詞虛詞・精準定位</span>
+              </div>
+            </div>
+            <p class="tool-shortcut-desc">名詞、動詞、形容詞、副詞、介詞、連詞精準定位。</p>
+          </div>
+          <button class="action-btn" style="background:#2563eb;" onclick="switchPracticeTool('pos'); document.getElementById('practice-tools-sec').scrollIntoView({behavior:'smooth'});">
+            <i data-lucide="play-circle"></i> 切換此神器
+          </button>
+        </div>
+
+        <div class="tool-shortcut-card">
+          <div>
+            <div class="tool-shortcut-head">
+              <div class="tool-shortcut-icon" style="background:#f5f3ff;color:#7c3aed;"><i data-lucide="shuffle"></i></div>
+              <div>
+                <h4 class="tool-shortcut-title">詞性活用判斷</h4>
+                <span class="tool-shortcut-tag" style="background:#f5f3ff;color:#5b21b6;">轉品活用・文言解析</span>
+              </div>
+            </div>
+            <p class="tool-shortcut-desc">名詞作動詞、形容詞作動詞等文言轉品活用解析。</p>
+          </div>
+          <button class="action-btn" style="background:#7c3aed;" onclick="switchPracticeTool('inflection'); document.getElementById('practice-tools-sec').scrollIntoView({behavior:'smooth'});">
+            <i data-lucide="play-circle"></i> 切換此神器
+          </button>
+        </div>
+
+        <div class="tool-shortcut-card">
+          <div>
+            <div class="tool-shortcut-head">
+              <div class="tool-shortcut-icon" style="background:#ecfdf5;color:#059669;"><i data-lucide="layout-grid"></i></div>
+              <div>
+                <h4 class="tool-shortcut-title">詞性結構判斷</h4>
+                <span class="tool-shortcut-tag" style="background:#ecfdf5;color:#065f46;">四字成語・結構拆解</span>
+              </div>
+            </div>
+            <p class="tool-shortcut-desc">成語與四字詞內部詞性結構（如：名動名動、副形副形）。</p>
+          </div>
+          <button class="action-btn" style="background:#059669;" onclick="switchPracticeTool('structure'); document.getElementById('practice-tools-sec').scrollIntoView({behavior:'smooth'});">
+            <i data-lucide="play-circle"></i> 切換此神器
+          </button>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- 浮動回頂端按鈕 -->
+  <button class="back-to-top" id="back-to-top-btn" onclick="window.scrollTo({top:0,behavior:'smooth'})" title="回頂端">
+    <i data-lucide="chevron-up"></i>
+  </button>
+
+  <!-- 頁尾 -->
+  <footer>
+    <div class="footer-content">
+      <img src="icon/logo-xsw-dark.png" alt="學思軒" class="footer-logo">
+      <div style="margin-bottom:1rem;">
+        <img src="icon/banner-practice-center.png" alt="資源整合中心" style="max-height:55px;width:auto;">
+      </div>
+      <p class="footer-text">
+        學思軒團隊策劃・國中國文旗艦級 AI 數位互動教材專用網頁<br>
+        本單元依據翰林版國中國文「語文補給站 語一 詞類・詞性」精心編制
+      </p>
+      <div class="footer-copy">
+        © 2026 學思軒 (XueSiXuan) All Rights Reserved.｜建議使用 Chrome / Safari / Edge 獲得最佳互動體驗
+      </div>
+    </div>
+  </footer>
+
+  <!-- 互動腳本與資料庫 -->
+  <script>
+    // ==========================================
+    // 1. 複詞資料庫 (合義複詞、偏義複詞、衍聲複詞)
+    // ==========================================
+    const COMPOUND_DB = [
+      // 同義複詞 (人事物)
+      { type: 'syn', name: '朋友', zhuyin: 'ㄆㄥˊ ㄧㄡˇ', cat: '同義複詞（人事物）', desc: '「朋」與「友」皆為志同道合之人，意義相同。' },
+      { type: 'syn', name: '書信', zhuyin: 'ㄕㄨ ㄒㄧㄣˋ', cat: '同義複詞（人事物）', desc: '「書」與「信」皆指傳遞訊息之文字信件。' },
+      { type: 'syn', name: '房屋', zhuyin: 'ㄈㄤˊ ㄨ', cat: '同義複詞（人事物）', desc: '「房」與「屋」皆指住人的建築物。' },
+      { type: 'syn', name: '聲音', zhuyin: 'ㄕㄥ ㄧㄣ', cat: '同義複詞（人事物）', desc: '「聲」與「音」皆指聽覺感受到的波動聲響。' },
+      { type: 'syn', name: '言語', zhuyin: 'ㄧㄢˊ ㄩˇ', cat: '同義複詞（人事物）', desc: '「言」與「語」皆指說出來的話。' },
+      { type: 'syn', name: '糾紛', zhuyin: 'ㄐㄧㄡ ㄈㄣ', cat: '同義複詞（人事物）', desc: '「糾」與「紛」皆指繁雜紛亂、爭執。' },
+      // 同義複詞 (動作)
+      { type: 'syn', name: '追逐', zhuyin: 'ㄓㄨㄟ ㄓㄨˊ', cat: '同義複詞（動作）', desc: '「追」與「逐」皆表示自後緊隨跟隨之動作。' },
+      { type: 'syn', name: '懼怕', zhuyin: 'ㄐㄩˋ ㄆㄚˋ', cat: '同義複詞（動作）', desc: '「懼」與「怕」皆表示內心畏懼驚恐之情。' },
+      { type: 'syn', name: '洗滌', zhuyin: 'ㄒㄧˇ ㄉㄧˊ', cat: '同義複詞（動作）', desc: '「洗」與「滌」皆表示清洗、除垢之動作。' },
+      { type: 'syn', name: '扭轉', zhuyin: 'ㄋㄧㄡˇ ㄓㄨㄢˇ', cat: '同義複詞（動作）', desc: '「扭」與「轉」皆指改變方向或情勢。' },
+      { type: 'syn', name: '哭泣', zhuyin: 'ㄎㄨ ㄑㄧˋ', cat: '同義複詞（動作）', desc: '「哭」與「泣」皆指流淚發聲之悲傷動作。' },
+      // 同義複詞 (形容)
+      { type: 'syn', name: '碩大', zhuyin: 'ㄕㄨㄛˋ ㄉㄚˋ', cat: '同義複詞（形容）', desc: '「碩」與「大」皆形容體積或數量極其廣大。' },
+      { type: 'syn', name: '渺小', zhuyin: 'ㄇㄧㄠˇ ㄒㄧㄠˇ', cat: '同義複詞（形容）', desc: '「渺」與「小」皆形容微不足道或形體細微。' },
+      { type: 'syn', name: '和諧', zhuyin: 'ㄏㄜˊ ㄒㄧㄝˊ', cat: '同義複詞（形容）', desc: '「和」與「諧」皆指配合協調、融洽無爭。' },
+      { type: 'syn', name: '貪婪', zhuyin: 'ㄊㄢ ㄌㄢˊ', cat: '同義複詞（形容）', desc: '「貪」與「婪」皆指貪求無厭。' },
+
+      // 偏義複詞
+      { type: 'bias', name: '忘記', zhuyin: 'ㄨㄤˋ ㄐㄧˋ', cat: '偏義複詞', desc: '由「忘」與「記」兩相反字結合，使用上<b>只取「忘」</b>之意。' },
+      { type: 'bias', name: '禍福', zhuyin: 'ㄏㄨㄛˋ ㄈㄨˊ', cat: '偏義複詞', desc: '如「慘遭禍福」，意義上<b>偏重「禍」</b>。' },
+      { type: 'bias', name: '國家', zhuyin: 'ㄍㄨㄛˊ ㄐㄧㄚ', cat: '偏義複詞', desc: '「國」與「家」，在使用上通常<b>偏指「國」</b>。' },
+      { type: 'bias', name: '動靜', zhuyin: 'ㄉㄨㄥˋ ㄐㄧㄥˋ', cat: '偏義複詞', desc: '如「探聽動靜」，使用上<b>偏取「動」</b>（動態消息）。' },
+      { type: 'bias', name: '恩怨', zhuyin: 'ㄣ ㄩㄢˋ', cat: '偏義/反義辨析', desc: '「恩怨已深」偏取「怨」；「恩怨分明」則恩與怨並存（反義複詞）。' },
+      { type: 'bias', name: '捨得', zhuyin: 'ㄕㄜˇ ㄉㄜˊ', cat: '偏義複詞', desc: '由「捨」與「得」構成，在「捨得離去」中<b>只偏取「捨」</b>。' },
+
+      // 雙聲衍聲複詞 (聲母相同)
+      { type: 'allit', name: '孑孓', zhuyin: 'ㄐㄧㄝˊ ㄐㄩㄝˊ', cat: '雙聲衍聲複詞 (ㄐ)', desc: '蚊子幼蟲。兩字聲母皆為 ㄐ，分開則無單獨意義。' },
+      { type: 'allit', name: '蜘蛛', zhuyin: 'ㄓ ㄓㄨ', cat: '雙聲衍聲複詞 (ㄓ)', desc: '節肢動物。兩字聲母皆為 ㄓ。' },
+      { type: 'allit', name: '躊躇', zhuyin: 'ㄔㄡˊ ㄔㄨˊ', cat: '雙聲衍聲複詞 (ㄔ)', desc: '猶豫不決之貌。兩字聲母皆為 ㄔ。' },
+      { type: 'allit', name: '琵琶', zhuyin: 'ㄆㄧˊ ㄆㄚˊ', cat: '雙聲衍聲複詞 (ㄆ)', desc: '傳統撥弦樂器。兩字聲母皆為 ㄆ。' },
+      { type: 'allit', name: '崎嶇', zhuyin: 'ㄑㄧˊ ㄑㄩ', cat: '雙聲衍聲複詞 (ㄑ)', desc: '山路不平貌。兩字聲母皆為 ㄑ。' },
+      { type: 'allit', name: '彷彿', zhuyin: 'ㄈㄤˇ ㄈㄨˊ', cat: '雙聲衍聲複詞 (ㄈ)', desc: '似乎、好像。兩字聲母皆為 ㄈ。' },
+      { type: 'allit', name: '淋漓', zhuyin: 'ㄌㄧㄣˊ ㄌㄧˊ', cat: '雙聲衍聲複詞 (ㄌ)', desc: '充沛酣暢或溼透之貌。聲母皆為 ㄌ。' },
+      { type: 'allit', name: '忐忑', zhuyin: 'ㄊㄢˇ ㄊㄜˋ', cat: '雙聲衍聲複詞 (ㄊ)', desc: '心神不寧之貌。聲母皆為 ㄊ。' },
+      { type: 'allit', name: '尷尬', zhuyin: 'ㄍㄢ ㄍㄚˋ', cat: '雙聲衍聲複詞 (ㄍ)', desc: '處境窘困難堪之貌。聲母皆為 ㄍ。' },
+
+      // 疊韻衍聲複詞 (韻母相同)
+      { type: 'rhyme', name: '蟑螂', zhuyin: 'ㄓㄤ ㄌㄤˊ', cat: '疊韻衍聲複詞 (ㄤ)', desc: '昆蟲名。兩字韻母皆為 ㄤ。' },
+      { type: 'rhyme', name: '蜻蜓', zhuyin: 'ㄑㄧㄥ ㄊㄧㄥˊ', cat: '疊韻衍聲複詞 (ㄧㄥ)', desc: '昆蟲名。兩字韻母皆為 ㄧㄥ。' },
+      { type: 'rhyme', name: '駱駝', zhuyin: 'ㄌㄨㄛˋ ㄊㄨㄛˊ', cat: '疊韻衍聲複詞 (ㄨㄛ)', desc: '沙漠哺乳動物。兩字韻母皆為 ㄨㄛ。' },
+      { type: 'rhyme', name: '徘徊', zhuyin: 'ㄆㄞˊ ㄏㄨㄞˊ', cat: '疊韻衍聲複詞 (ㄞ)', desc: '流連反覆走動。兩字韻母皆為 ㄞ。' },
+      { type: 'rhyme', name: '蹉跎', zhuyin: 'ㄘㄨㄛ ㄊㄨㄛˊ', cat: '疊韻衍聲複詞 (ㄨㄛ)', desc: '虛度光陰。兩字韻母皆為 ㄨㄛ。' },
+      { type: 'rhyme', name: '從容', zhuyin: 'ㄘㄨㄥ ㄖㄨㄥˊ', cat: '疊韻衍聲複詞 (ㄨㄥ)', desc: '不慌不忙、舒緩優雅之貌。韻母皆為 ㄨㄥ。' },
+      { type: 'rhyme', name: '逍遙', zhuyin: 'ㄒㄧㄠ ㄧㄠˊ', cat: '疊韻衍聲複詞 (ㄠ)', desc: '自由自在不受拘束之貌。韻母皆為 ㄠ。' },
+      { type: 'rhyme', name: '燦爛', zhuyin: 'ㄘㄢˋ ㄌㄢˋ', cat: '疊韻衍聲複詞 (ㄢ)', desc: '光彩鮮明奪目。韻母皆為 ㄢ。' },
+
+      // 既雙聲又疊韻
+      { type: 'both', name: '玲瓏', zhuyin: 'ㄌㄧㄥˊ ㄌㄨㄥˊ', cat: '雙聲又疊韻', desc: '精巧剔透之貌。聲母皆為 ㄌ，音韻緊密相諧。' },
+      { type: 'both', name: '繾綣', zhuyin: 'ㄑㄧㄢˇ ㄑㄩㄢˇ', cat: '雙聲又疊韻', desc: '情意纏綿不忍分離之貌。' },
+      { type: 'both', name: '輾轉', zhuyin: 'ㄓㄢˇ ㄓㄨㄢˇ', cat: '雙聲又疊韻', desc: '翻來覆去、非直接地傳遞。' },
+
+      // 非雙聲非疊韻
+      { type: 'none', name: '蝴蝶', zhuyin: 'ㄏㄨˊ ㄉㄧㄝˊ', cat: '非雙聲非疊韻 (聯綿詞)', desc: '昆蟲名。兩字分開個別無意義，合在一起表一完整昆蟲概念。' },
+      { type: 'none', name: '葡萄', zhuyin: 'ㄆㄨˊ ㄊㄠˊ', cat: '非雙聲非疊韻 (聯綿詞)', desc: '水果名。外來譯音聯綿詞，分開單字無獨立意義。' },
+      { type: 'none', name: '芙蓉', zhuyin: 'ㄈㄨˊ ㄖㄨㄥˊ', cat: '非雙聲非疊韻 (聯綿詞)', desc: '植物名，多指荷花或木芙蓉。' },
+      { type: 'none', name: '澎湃', zhuyin: 'ㄆㄥ ㄆㄞˋ', cat: '非雙聲非疊韻', desc: '波濤衝擊之貌，亦形容聲勢浩大。' },
+      { type: 'none', name: '邂逅', zhuyin: 'ㄒㄧㄝˋ ㄏㄡˋ', cat: '非雙聲非疊韻', desc: '不期而遇、偶然相逢。' },
+      { type: 'none', name: '憔悴', zhuyin: 'ㄑㄧㄠˊ ㄘㄨㄟˋ', cat: '非雙聲非疊韻', desc: '枯瘦萎靡、容顏消瘦。' },
+
+      // 疊字狀聲/狀態
+      { type: 'onomat', name: '潺潺', zhuyin: 'ㄔㄢˊ ㄔㄢˊ', cat: '疊字狀聲詞', desc: '模擬流水清脆流動之聲音。' },
+      { type: 'onomat', name: '霍霍', zhuyin: 'ㄏㄨㄛˋ ㄏㄨㄛˋ', cat: '疊字狀聲詞', desc: '模擬急速磨刀聲（如木蘭詩：磨刀霍霍向豬羊）。' },
+      { type: 'onomat', name: '嘰嘰', zhuyin: 'ㄐㄧ ㄐㄧ', cat: '疊字狀聲詞', desc: '模擬小鳥或蟲鳴啼叫之微弱清脆聲。' },
+      { type: 'onomat', name: '悠悠', zhuyin: 'ㄧㄡ ㄧㄡ', cat: '疊字狀態詞', desc: '形容時間久遠、空間悠長或從容不迫。' },
+      { type: 'onomat', name: '滔滔', zhuyin: 'ㄊㄠ ㄊㄠ', cat: '疊字狀態詞', desc: '形容大水滾滾奔流不絕，或說話連續不斷。' },
+      { type: 'onomat', name: '緩緩', zhuyin: 'ㄏㄨㄢˇ ㄏㄨㄢˇ', cat: '疊字狀態詞', desc: '形容動作慢條斯理、不急不徐之狀態。' }
+    ];
+
+    // ==========================================
+    // 2. 歌詞庫 100 題完整資料庫 (Page 8 - 10)
+    // ==========================================
+    const SONGS_100_DB = [
+      { id: 1, sentence: "「人質」在這一刻得到釋放。", target: "人質", pos: "名詞", singer: "張惠妹《人質》" },
+      { id: 2, sentence: "「月亮」代表我的心。", target: "月亮", pos: "名詞", singer: "鄧麗君《月亮代表我的心》" },
+      { id: 3, sentence: "「台北」的天空有我年輕的笑容。", target: "台北", pos: "形容詞", singer: "王芷蕾《台北的天空》 (名轉形修飾天空)" },
+      { id: 4, sentence: "「平靜」的心拒絕再有浪潮。", target: "平靜", pos: "形容詞", singer: "張學友《吻別》" },
+      { id: 5, sentence: "「回憶」的畫面在盪著鞦韆。", target: "回憶", pos: "形容詞", singer: "周杰倫《麥芽糖》 (修飾畫面)" },
+      { id: 6, sentence: "「回憶」是最可怕的敵人。", target: "回憶", pos: "名詞", singer: "流行歌詞 (當主詞)" },
+      { id: 7, sentence: "「在」我生命留下一首歌。", target: "在", pos: "介詞", singer: "張學友《祝福》 (引導處所)" },
+      { id: 8, sentence: "「如果」冷該怎麼度過？", target: "如果", pos: "連詞", singer: "梁靜茹《如果有一天》 (假設連詞)" },
+      { id: 9, sentence: "「奇蹟」沒有發生。", target: "奇蹟", pos: "名詞", singer: "流行金曲 (當主詞)" },
+      { id: 10, sentence: "「往」幸福的天涯飛奔。", target: "往", pos: "介詞", singer: "流行歌詞 (引導方向)" },
+      { id: 11, sentence: "「青春」在風中飄著。", target: "青春", pos: "名詞", singer: "五月天《盛夏光年》" },
+      { id: 12, sentence: "「勇敢」地向過去和未來告別。", target: "勇敢", pos: "副詞", singer: "張惠妹《勇敢》 (修飾告別)" },
+      { id: 13, sentence: "「苦澀」回憶都會溫柔。", target: "苦澀", pos: "形容詞", singer: "梁靜茹《情歌》" },
+      { id: 14, sentence: "「啊」！多麼痛的領悟！", target: "啊", pos: "嘆詞", singer: "辛曉琪《領悟》" },
+      { id: 15, sentence: "「啊」！給我一杯忘情水！", target: "啊", pos: "嘆詞", singer: "劉德華《忘情水》" },
+      { id: 16, sentence: "「常常」聯絡不准懶散！", target: "常常", pos: "副詞", singer: "S.H.E《老婆》 (修飾動詞聯絡)" },
+      { id: 17, sentence: "「從」白天唱到黑夜，你一直在身邊。", target: "從", pos: "介詞", singer: "流行歌詞 (引導起點時間)" },
+      { id: 18, sentence: "「從」頭到腳趾都快樂。", target: "從", pos: "介詞", singer: "五月天《戀愛ING》" },
+      { id: 19, sentence: "「這」一生志願只要平凡快樂。", target: "這", pos: "代詞", singer: "五月天《笑忘歌》 (指示代詞)" },
+      { id: 20, sentence: "「這」是一首簡單的小情歌。", target: "這", pos: "代詞", singer: "蘇打綠《小情歌》" },
+      { id: 21, sentence: "「傷心」的人別聽慢歌。", target: "傷心", pos: "形容詞", singer: "五月天《傷心的人別聽慢歌》" },
+      { id: 22, sentence: "「漫漫」長路起伏不能由我。", target: "漫漫", pos: "形容詞", singer: "李宗盛《凡人歌》 (修飾長路)" },
+      { id: 23, sentence: "「輕輕」旋轉著夏天地面悶熱的晚風。", target: "輕輕", pos: "副詞", singer: "流行金曲 (修飾旋轉)" },
+      { id: 24, sentence: "「輕輕」敲醒沉睡的心靈。", target: "輕輕", pos: "副詞", singer: "群星《明天會更好》" },
+      { id: 25, sentence: "「嘿嘿嘿」！我的朋友，讓我向你來問候！", target: "嘿嘿嘿", pos: "嘆詞", singer: "童安格《跟我來》" },
+      { id: 26, sentence: "「誰」說這樣不偉大呢？", target: "誰", pos: "代詞", singer: "五月天《有些事現在不做》 (疑問代詞)" },
+      { id: 27, sentence: "一「顆」心噗通噗通的狂跳。", target: "顆", pos: "量詞", singer: "五月天《離開地球表面》" },
+      { id: 28, sentence: "一把吉他就想「對抗」萬千炮火。", target: "對抗", pos: "動詞", singer: "五月天《有些事現在不做》" },
+      { id: 29, sentence: "一把吉他就想對抗「萬千」炮火。", target: "萬千", pos: "數詞", singer: "五月天《有些事現在不做》" },
+      { id: 30, sentence: "一顆「葡萄」有多甜美。", target: "葡萄", pos: "名詞", singer: "陳奕迅《葡萄成熟時》" },
+      { id: 31, sentence: "人生本來就是一「齣」戲。", target: "齣", pos: "量詞", singer: "戲曲歌曲 (戲劇量詞)" },
+      { id: 32, sentence: "人生有限公司沒有一天能「請假」！", target: "請假", pos: "動詞", singer: "五月天《人生有限公司》" },
+      { id: 33, sentence: "下段「旅程」你一定要更幸福豐盛。", target: "旅程", pos: "名詞", singer: "梁靜茹《給未來的自己》" },
+      { id: 34, sentence: "下段旅程你一定要「更」幸福豐盛。", target: "更", pos: "副詞", singer: "梁靜茹《給未來的自己》 (程度副詞)" },
+      { id: 35, sentence: "不如一貧如洗「吧」！", target: "吧", pos: "助詞", singer: "五月天《有些事現在不做》 (句末語氣助詞)" },
+      { id: 36, sentence: "今天陽光突然好「溫柔」。", target: "溫柔", pos: "形容詞", singer: "五月天《溫柔》" },
+      { id: 37, sentence: "太陽下早已沒有「新鮮」事。", target: "新鮮", pos: "形容詞", singer: "流行歌詞 (修飾事)" },
+      { id: 38, sentence: "心中是否有我未曾到過的地方「啊」！", target: "啊", pos: "助詞", singer: "流行歌詞 (句末助詞)" },
+      { id: 39, sentence: "月亮「靜靜地」掛在遙遠的天上。", target: "靜靜地", pos: "副詞", singer: "流行歌詞 (修飾掛著)" },
+      { id: 40, sentence: "古巴比倫王「頒布」了漢摩拉比法典。", target: "頒布", pos: "動詞", singer: "周杰倫《愛在西元前》" },
+      { id: 41, sentence: "只要心還透明就能折射「希望」。", target: "希望", pos: "名詞", singer: "周華健《一起吃苦的幸福》" },
+      { id: 42, sentence: "用新的幸福把「遺憾」包著。", target: "遺憾", pos: "名詞", singer: "梁靜茹《可惜不是你》" },
+      { id: 43, sentence: "任意門通向「了」音樂。", target: "了", pos: "助詞", singer: "五月天《任意門》 (動態助詞)" },
+      { id: 44, sentence: "在所有流逝風景「與」人群中你對我最好。", target: "與", pos: "連詞", singer: "蘇打綠《當我們一起走過》" },
+      { id: 45, sentence: "如果我們不曾「相遇」你又會在哪裡？", target: "相遇", pos: "動詞", singer: "五月天《如果我們不曾相遇》" },
+      { id: 46, sentence: "有沒有它這麼恨我們的「八卦」？", target: "八卦", pos: "名詞", singer: "五月天《八卦》" },
+      { id: 47, sentence: "有沒有那麼一「滴」眼淚能洗掉後悔？", target: "滴", pos: "量詞", singer: "五月天《如煙》" },
+      { id: 48, sentence: "有許多事讓「淚水」洗過更明白。", target: "淚水", pos: "名詞", singer: "梁靜茹《給未來的自己》" },
+      { id: 49, sentence: "你只想變成「透明」的顏色。", target: "透明", pos: "形容詞", singer: "五月天《盛夏光年》" },
+      { id: 50, sentence: "你在「煩惱」什麼嗎？", target: "煩惱", pos: "動詞", singer: "蘇打綠《你在煩惱什麼》" },
+      { id: 51, sentence: "你和我最後都要回歸「地平線」。", target: "地平線", pos: "名詞", singer: "五月天《轉眼》" },
+      { id: 52, sentence: "你曾「掙扎」過嗎？", target: "掙扎", pos: "動詞", singer: "流行歌詞" },
+      { id: 53, sentence: "你給我的「天堂」其實是一片荒涼。", target: "天堂", pos: "名詞", singer: "張惠妹《解脫》" },
+      { id: 54, sentence: "你會裝進什麼回憶紀念「在」行李裡面？", target: "在", pos: "介詞", singer: "五月天《後來的我們》" },
+      { id: 55, sentence: "你說「呢」？明知你不在還是會問。", target: "呢", pos: "助詞", singer: "五月天《後來的我們》 (疑問助詞)" },
+      { id: 56, sentence: "我「失去」了自己的形狀。", target: "失去", pos: "動詞", singer: "五月天《盛夏光年》" },
+      { id: 57, sentence: "我「遇見」你是最美麗的意外。", target: "遇見", pos: "動詞", singer: "孫燕姿《遇見》" },
+      { id: 58, sentence: "我「獨自」跳舞從日暮到日出。", target: "獨自", pos: "副詞", singer: "流行歌詞 (修飾跳舞)" },
+      { id: 59, sentence: "我「瀟灑」走過條條大道。", target: "瀟灑", pos: "副詞", singer: "葉蒨文《瀟灑走一回》" },
+      { id: 60, sentence: "我不願你「獨自」走過風雨的時分。", target: "獨自", pos: "副詞", singer: "五月天《我不願讓你一個人》" },
+      { id: 61, sentence: "我只求「與」妳共華髮。", target: "與", pos: "連詞", singer: "古風歌詞 (連詞/介詞)" },
+      { id: 62, sentence: "我可以「改變」世界、改變自己。", target: "改變", pos: "動詞", singer: "王力宏《改變自己》" },
+      { id: 63, sentence: "我和你的眼中看見「了」不同的天空。", target: "了", pos: "助詞", singer: "流行金曲" },
+      { id: 64, sentence: "我們天生就是「派對」動物。", target: "派對", pos: "形容詞", singer: "五月天《派對動物》 (名轉形修飾動物)" },
+      { id: 65, sentence: "我們活在「巨大」片廠。", target: "巨大", pos: "形容詞", singer: "流行歌詞" },
+      { id: 66, sentence: "我閉上眼睛聽到了海的「呼吸」。", target: "呼吸", pos: "名詞", singer: "梁靜茹《聽不到》 (動轉名)" },
+      { id: 67, sentence: "我獨自「流浪」海角天邊。", target: "流浪", pos: "動詞", singer: "流行歌詞" },
+      { id: 68, sentence: "每個「渺小」的理由都困住自由。", target: "渺小", pos: "形容詞", singer: "五月天《有些事現在不做》" },
+      { id: 69, sentence: "沉睡「七」年的蟬換取七天的燦爛。", target: "七", pos: "數詞", singer: "蘇打綠《蟬想》" },
+      { id: 70, sentence: "男孩「和」女孩都有吉他和舞鞋。", target: "和", pos: "連詞", singer: "五月天《戀愛ING》" },
+      { id: 71, sentence: "那是一線之隔「或」是一線曙光？", target: "或", pos: "連詞", singer: "流行金曲 (選擇連詞)" },
+      { id: 72, sentence: "其實幸福「很」簡單。", target: "很", pos: "副詞", singer: "陶喆《普通朋友》 (程度副詞)" },
+      { id: 73, sentence: "往幸福的天涯「飛奔」。", target: "飛奔", pos: "動詞", singer: "流行歌詞" },
+      { id: 74, sentence: "青春永遠「定居」在我們的歲月。", target: "定居", pos: "動詞", singer: "五月天《乾杯》" },
+      { id: 75, sentence: "青春在風中「飄」著。", target: "飄", pos: "動詞", singer: "五月天《盛夏光年》" },
+      { id: 76, sentence: "屋頂的天空是「我們」的。", target: "我們", pos: "代詞", singer: "周杰倫《屋頂》 (人稱代詞)" },
+      { id: 77, sentence: "怎麼去擁有一「道」彩虹？", target: "道", pos: "量詞", singer: "五月天《知足》" },
+      { id: 78, sentence: "按下「了」鬧鐘開啟另一個夢。", target: "了", pos: "助詞", singer: "五月天《乾杯》" },
+      { id: 79, sentence: "時間「轉動」著古老的緣份。", target: "轉動", pos: "動詞", singer: "周杰倫《愛在西元前》" },
+      { id: 80, sentence: "書包裡面裝滿了蛋糕「和」汽水。", target: "和", pos: "連詞", singer: "五月天《九號球》" },
+      { id: 81, sentence: "能不能給我一「首」歌的時間？", target: "首", pos: "量詞", singer: "周杰倫《給我一首歌的時間》" },
+      { id: 82, sentence: "啊！給我一「杯」忘情水！", target: "杯", pos: "量詞", singer: "劉德華《忘情水》" },
+      { id: 83, sentence: "啊！給我一杯「忘情」水！", target: "忘情", pos: "形容詞", singer: "劉德華《忘情水》 (修飾水)" },
+      { id: 84, sentence: "堅持對我來說就是「以」剛克剛。", target: "以", pos: "介詞", singer: "流行歌詞 (表憑藉介詞)" },
+      { id: 85, sentence: "細數「此」生奔波。", target: "此", pos: "代詞", singer: "古風歌詞 (指示代詞)" },
+      { id: 86, sentence: "終於發現我是「第一」第二第三個傻瓜。", target: "第一", pos: "數詞", singer: "五月天《三個傻瓜》 (序數詞)" },
+      { id: 87, sentence: "這「緜延」的故事還未了。", target: "緜延", pos: "形容詞", singer: "周杰倫《青花瓷》" },
+      { id: 88, sentence: "這些話我已聽了「千百」遍。", target: "千百", pos: "數詞", singer: "流行金曲" },
+      { id: 89, sentence: "這星球天天有「五十億」人在錯過。", target: "五十億", pos: "數詞", singer: "五月天《攜帶》" },
+      { id: 90, sentence: "這是一首「簡單」的小情歌。", target: "簡單", pos: "形容詞", singer: "蘇打綠《小情歌》" },
+      { id: 91, sentence: "感謝「默默」在崗位戰鬥的每個英雄。", target: "默默", pos: "副詞", singer: "致敬抗疫歌曲 (修飾戰鬥)" },
+      { id: 92, sentence: "說「了」再見才發現再也見不到。", target: "了", pos: "助詞", singer: "周杰倫《說了再見》" },
+      { id: 93, sentence: "蝴蝶飛「呀」！飛向未來的城堡！", target: "呀", pos: "助詞", singer: "小虎隊《蝴蝶飛呀》 (語氣助詞)" },
+      { id: 94, sentence: "請「慢慢」張開眼睛。", target: "慢慢", pos: "副詞", singer: "流行歌詞 (修飾張開)" },
+      { id: 95, sentence: "樹梢「緊緊」擁抱著樹葉。", target: "緊緊", pos: "副詞", singer: "流行歌詞 (修飾擁抱)" },
+      { id: 96, sentence: "舉頭「望」無盡灰雲。", target: "望", pos: "動詞", singer: "五月天《諾亞方舟》" },
+      { id: 97, sentence: "還記得你說家是唯一的「城堡」。", target: "城堡", pos: "名詞", singer: "周杰倫《稻香》" },
+      { id: 98, sentence: "讓月光「靜靜」蒸發你的眼淚。", target: "靜靜", pos: "副詞", singer: "流行歌詞 (修飾蒸發)" },
+      { id: 99, sentence: "讓月光靜靜「蒸發」你的眼淚。", target: "蒸發", pos: "動詞", singer: "流行歌詞" },
+      { id: 100, sentence: "讓我的歌「用力」的穿過天空。", target: "用力", pos: "副詞", singer: "流行歌詞 (修飾穿過)" }
+    ];
+
+    // ==========================================
+    // 3. 學習集題庫 (Page 11 - 12)
+    // ==========================================
+    const PRACTICE_1_DATA = [
+      { q: "1. 給人<b>方便</b>，也就<b>方便</b>了自己。", ans: "名詞 ➔ 動詞", options: ["名詞 ➔ 動詞", "動詞 ➔ 名詞", "形容詞 ➔ 動詞", "副詞 ➔ 動詞"], exp: "前「方便」為人事物概念（名詞），後「方便」為使之便利（動詞）。" },
+      { q: "2. 大大<b>代表</b>班上競選班聯會<b>代表</b>。", ans: "動詞 ➔ 名詞", options: ["動詞 ➔ 名詞", "名詞 ➔ 動詞", "副詞 ➔ 名詞", "動詞 ➔ 形容詞"], exp: "前「代表」是代理表達（動詞），後「代表」是職位身份（名詞）。" },
+      { q: "3. <b>夢想</b>成為超人是一種不切實際的<b>夢想</b>。", ans: "動詞 ➔ 名詞", options: ["動詞 ➔ 名詞", "名詞 ➔ 動詞", "形容詞 ➔ 名詞", "動詞 ➔ 形容詞"], exp: "前「夢想」是心中盼望（動詞），後「夢想」是理想願景（名詞）。" },
+      { q: "4. 體育老師一身牛仔裝，比學生還<b>學生</b>。", ans: "名詞 ➔ 形容詞", options: ["名詞 ➔ 形容詞", "名詞 ➔ 動詞", "名詞 ➔ 副詞", "形容詞 ➔ 名詞"], exp: "一身牛仔裝中裝為名詞；後「還學生」轉為形容詞（如同學生般清純年輕）。" },
+      { q: "5. <b>青春</b>歲月難再有，可別讓<b>青春</b>留白了。", ans: "形容詞 ➔ 名詞", options: ["形容詞 ➔ 名詞", "名詞 ➔ 形容詞", "動詞 ➔ 名詞", "副詞 ➔ 名詞"], exp: "前「青春歲月」中修飾歲月（形容詞），後「讓青春留白」指青年時期（名詞）。" },
+      { q: "6. 我<b>希望</b>能實現我的<b>希望</b>——環遊世界！", ans: "動詞 ➔ 名詞", options: ["動詞 ➔ 名詞", "名詞 ➔ 動詞", "形容詞 ➔ 名詞", "副詞 ➔ 動詞"], exp: "前「希望」是心中期盼（動詞），後「我的希望」指願望（名詞）。" },
+      { q: "7. 父母經常<b>囑咐</b>我，要我牢記老師的<b>囑咐</b>。", ans: "動詞 ➔ 名詞", options: ["動詞 ➔ 名詞", "名詞 ➔ 動詞", "副詞 ➔ 名詞", "形容詞 ➔ 動詞"], exp: "前「囑咐」為叮嚀告誡之行為（動詞），後「老師的囑咐」為叮嚀的話（名詞）。" },
+      { q: "8. 他是現代愚公呢！他一向<b>堅持</b>他的<b>堅持</b>。", ans: "動詞 ➔ 名詞", options: ["動詞 ➔ 名詞", "名詞 ➔ 動詞", "形容詞 ➔ 名詞", "動詞 ➔ 形容詞"], exp: "前「堅持」為執著進行（動詞），後「他的堅持」為執守之原則事物（名詞）。" },
+      { q: "9. 快樂不是做你<b>喜歡</b>的事，而是<b>喜歡</b>你做的事。", ans: "形容詞 ➔ 動詞", options: ["形容詞 ➔ 動詞", "動詞 ➔ 名詞", "名詞 ➔ 動詞", "副詞 ➔ 動詞"], exp: "前「喜歡的事」修飾事（形容詞），後「喜歡你做的事」為動態喜愛（動詞）。" },
+      { q: "10. 他在雜誌社當<b>翻譯</b>，專門負責<b>翻譯</b>外國文學。", ans: "名詞 ➔ 動詞", options: ["名詞 ➔ 動詞", "動詞 ➔ 名詞", "形容詞 ➔ 動詞", "副詞 ➔ 動詞"], exp: "前「當翻譯」為職稱人物（名詞），後「負責翻譯」為翻譯工作之動作（動詞）。" },
+      { q: "11. 經過老師<b>清楚</b>地分析，我已經<b>清楚</b>問題的癥結了。", ans: "副詞 ➔ 動詞", options: ["副詞 ➔ 動詞", "形容詞 ➔ 動詞", "名詞 ➔ 動詞", "副詞 ➔ 形容詞"], exp: "前「清楚地分析」修飾動詞分析（副詞），後「清楚問題」為明瞭理解（動詞）。" },
+      { q: "12. 身為報社<b>編輯</b>，當然要<b>編輯</b>出既有深度又暢銷的報紙。", ans: "名詞 ➔ 動詞", options: ["名詞 ➔ 動詞", "動詞 ➔ 名詞", "形容詞 ➔ 動詞", "副詞 ➔ 動詞"], exp: "前「報社編輯」為職務職稱（名詞），後「編輯出」為編排出版之動作（動詞）。" }
+    ];
+
+    const PRACTICE_2_DATA = [
+      { q: "1. 坐觀成敗 ➔ <b>飛奔</b>而來", ans: "動詞 ➔ 副詞", options: ["動詞 ➔ 副詞", "名詞 ➔ 動詞", "形容詞 ➔ 動詞", "名詞 ➔ 形容詞"], exp: "「飛奔」本為動詞，在「飛奔而來」中修飾動詞「來」，轉為副詞。" },
+      { q: "2. 有一種何處惹塵埃的<b>了悟</b> ➔ 路不拾<b>遺</b>", ans: "動詞 ➔ 名詞", options: ["動詞 ➔ 名詞", "名詞 ➔ 動詞", "形容詞 ➔ 名詞", "動詞 ➔ 副詞"], exp: "「了悟」原為動詞，在此指頓悟之境界（名詞）；「遺」本為遺失（動詞），轉為遺失之物（名詞）。" },
+      { q: "3. <b>火</b>紅的太陽／<b>鵝黃</b>的毛毯／<b>筆直</b>前進", ans: "名詞 ➔ 副詞", options: ["名詞 ➔ 副詞", "名詞 ➔ 形容詞", "形容詞 ➔ 副詞", "動詞 ➔ 副詞"], exp: "「火、鵝、筆」本為名詞，放在形容詞或動詞前，轉為修飾程度狀態的副詞。" },
+      { q: "4. <b>老</b>吾老以及人之老／<b>幼</b>吾幼以及人之幼", ans: "形容詞 ➔ 動詞（前字）與名詞（後字）", options: ["形容詞 ➔ 動詞（前字）與名詞（後字）", "名詞 ➔ 動詞", "動詞 ➔ 形容詞", "形容詞 ➔ 副詞"], exp: "前「老/幼」轉為動詞（孝敬、撫育），後「老/幼」轉為名詞（長輩、孩童）。" },
+      { q: "5. 人一能之，己<b>百</b>之／人十能之，己<b>千</b>之", ans: "數量詞 ➔ 動詞", options: ["數量詞 ➔ 動詞", "數量詞 ➔ 副詞", "名詞 ➔ 動詞", "動詞 ➔ 名詞"], exp: "「百、千」本為數詞，在此轉為動詞（付出百倍、千倍的努力）。" },
+      { q: "6. 空山新雨後／晚來天欲<b>雪</b>／生，於我乎<b>館</b>", ans: "名詞 ➔ 動詞", options: ["名詞 ➔ 動詞", "動詞 ➔ 名詞", "名詞 ➔ 形容詞", "形容詞 ➔ 動詞"], exp: "「雪」轉為下雪（動詞）；「館」轉為提供住處住宿（動詞）。" },
+      { q: "7. 我不是<b>歸</b>人／飛鳥<b>相與</b>還／<b>落霞</b>與孤鶩齊飛", ans: "動詞 ➔ 形容詞", options: ["動詞 ➔ 形容詞", "動詞 ➔ 名詞", "名詞 ➔ 形容詞", "形容詞 ➔ 副詞"], exp: "「歸」人修飾人，「落霞」修飾霞，動詞轉為修飾名詞之形容詞。" },
+      { q: "8. <b>遠</b>上寒山石徑斜／你的心是小小的窗扉<b>緊</b>掩", ans: "形容詞 ➔ 副詞", options: ["形容詞 ➔ 副詞", "形容詞 ➔ 動詞", "名詞 ➔ 副詞", "動詞 ➔ 副詞"], exp: "「遠」修飾「上」，「緊」修飾「掩」，形容詞轉為副詞。" },
+      { q: "9. 小強有夠<b>機車</b>／割雞焉用<b>牛刀</b>／海珊很<b>斯巴達</b>", ans: "名詞 ➔ 形容詞", options: ["名詞 ➔ 形容詞", "名詞 ➔ 副詞", "形容詞 ➔ 動詞", "動詞 ➔ 名詞"], exp: "「機車、斯巴達」等專有名詞置於「很、有夠」之後，轉為形容詞。" },
+      { q: "10. 黑著眼圈／登泰山而<b>小</b>天下／春風又<b>綠</b>江南岸", ans: "形容詞 ➔ 動詞", options: ["形容詞 ➔ 動詞", "形容詞 ➔ 副詞", "名詞 ➔ 動詞", "動詞 ➔ 名詞"], exp: "「小」天下指看小/藐小；「綠」江南岸指吹綠（致使動詞），形容詞轉動詞。" }
+    ];
+
+    const PRACTICE_3_DATA = [
+      { pair: "1", q1: "(1) 伍佰最愛喝<b>啤酒</b>。", a1: "名詞", q2: "(2) 伍佰有個<b>啤酒</b>肚。", a2: "形容詞", exp: "(1) 飲料名（名詞）；(2) 修飾肚子之特徵（形容詞）。" },
+      { pair: "2", q1: "(1) 妳是我永遠的<b>寶貝</b>！", a1: "名詞", q2: "(2) 我永遠<b>寶貝</b>妳！", a2: "動詞", exp: "(1) 珍惜喜愛之對象（名詞）；(2) 珍惜呵護之動作（動詞）。" },
+      { pair: "3", q1: "(1) 這可是天大的<b>妄想</b>哩！", a1: "名詞", q2: "(2) 勸你別痴心<b>妄想</b>了！", a2: "動詞", exp: "(1) 不切實際之想法（名詞）；(2) 胡思亂想之行為（動詞）。" },
+      { pair: "4", q1: "(1) <b>夏威夷</b>洋溢熱情與活力。", a1: "名詞", q2: "(2) 他今天的穿著很<b>夏威夷</b>。", a2: "形容詞", exp: "(1) 地名（名詞）；(2) 置於「很」之後表海島渡假風格（形容詞）。" },
+      { pair: "5", q1: "(1) 這時候春光已經<b>爛漫</b>在人間了。", a1: "動詞", q2: "(2) 春光像一個天真<b>爛漫</b>的小女孩。", a2: "形容詞", exp: "(1) 散佈蔓延（動詞）；(2) 率真開朗之性格狀態（形容詞）。" },
+      { pair: "6", q1: "(1) 卜會算<b>習慣</b>飯後抽菸。", a1: "動詞", q2: "(2) 抽菸是不好的<b>習慣</b>。", a2: "名詞", exp: "(1) 習以為常（動詞）；(2) 習性風氣（名詞）。" },
+      { pair: "7", q1: "(1) 認真的女人最<b>美麗</b>！", a1: "形容詞", q2: "(2) 難道<b>美麗</b>是一種錯誤？", a2: "名詞", exp: "(1) 漂亮動人（形容詞）；(2) 容貌外觀之概念本體（名詞）。" },
+      { pair: "8", q1: "(1) 讓照片<b>繽紛</b>你的回憶！", a1: "動詞", q2: "(2) <b>繽紛</b>的回憶在照片裡。", a2: "形容詞", exp: "(1) 使之豐富多彩（動詞）；(2) 多彩多姿之修飾（形容詞）。" },
+      { pair: "9", q1: "(1) 中國人受到儒家的<b>影響</b>。", a1: "名詞", q2: "(2) 儒家思想<b>影響</b>了中國人。", a2: "動詞", exp: "(1) 所受之作用效果（名詞）；(2) 對其產生作用改變（動詞）。" },
+      { pair: "10", q1: "(1) 多<b>運動</b>自然少病痛。", a1: "動詞", q2: "(2) <b>運動</b>是最好的藥方。", a2: "名詞", exp: "(1) 鍛鍊身體之動作（動詞）；(2) 體育鍛鍊之項目總稱（名詞）。" },
+      { pair: "11", q1: "(1) 天乾物燥！小心<b>火燭</b>！", a1: "名詞", q2: "(2) 小心用<b>火</b>，嚴防火災。", a2: "名詞", exp: "小心火燭中火燭為燃燒器物（名詞）；小心用火之小心為副詞，火為名詞。" },
+      { pair: "12", q1: "(1) 螢牛是歌壇出名的<b>大哥大</b>。", a1: "名詞", q2: "(2) 螢牛的作風一向很<b>大哥大</b>。", a2: "形容詞", exp: "(1) 領袖霸主人物（名詞）；(2) 具霸氣領袖風格（形容詞）。" },
+      { pair: "13", q1: "(1) 走進浪漫花海，奔向<b>羅曼蒂克</b>。", a1: "名詞", q2: "(2) 鮮花最能營造<b>羅曼蒂克</b>的氣氛。", a2: "形容詞", exp: "(1) 浪漫之境界事物（名詞）；(2) 浪漫之修飾（形容詞）。" },
+      { pair: "14", q1: "(1) 周董的機車很<b>法拉利</b>。", a1: "形容詞", q2: "(2) 周董擁有一部<b>法拉利</b>。", a2: "名詞", exp: "(1) 置於「很」之後形容頂級奢華速度感（形容詞）；(2) 名牌超跑名（名詞）。" }
+    ];
+
+    // ==========================================
+    // 4. 魔法工坊預設資料
+    // ==========================================
+    const WS_PATTERNS = {
+      'VNVN': {
+        name: '動＋名＋動＋名',
+        words: [
+          { w: '上天下地', p: ['動詞：上', '名詞：天', '動詞：下', '名詞：地'] },
+          { w: '悲天憫人', p: ['動詞：悲', '名詞：天', '動詞：憫', '名詞：人'] },
+          { w: '去蕪存菁', p: ['動詞：去', '名詞：蕪', '動詞：存', '名詞：菁'] },
+          { w: '專心致志', p: ['動詞：專', '名詞：心', '動詞：致', '名詞：志'] },
+          { w: '堆金砌玉', p: ['動詞：堆', '名詞：金', '動詞：砌', '名詞：玉'] }
+        ]
+      },
+      'NVNV': {
+        name: '名＋動＋名＋動',
+        words: [
+          { w: '石破天驚', p: ['名詞：石', '動詞：破', '名詞：天', '動詞：驚'] },
+          { w: '物換星移', p: ['名詞：物', '動詞：換', '名詞：星', '動詞：移'] },
+          { w: '水落石出', p: ['名詞：水', '動詞：落', '名詞：石', '動詞：出'] },
+          { w: '手舞足蹈', p: ['名詞：手', '動詞：舞', '名詞：足', '動詞：蹈'] }
+        ]
+      },
+      'ANAN': {
+        name: '形＋名＋形＋名',
+        words: [
+          { w: '生龍活虎', p: ['形容詞：生', '名詞：龍', '形容詞：活', '名詞：虎'] },
+          { w: '光風霽月', p: ['形容詞：光', '名詞：風', '形容詞：霽', '名詞：月'] },
+          { w: '閒雲野鶴', p: ['形容詞：閒', '名詞：雲', '形容詞：野', '名詞：鶴'] },
+          { w: '疾風勁草', p: ['形容詞：疾', '名詞：風', '形容詞：勁', '名詞：草'] }
+        ]
+      },
+      'NANAT': {
+        name: '名＋形＋名＋形',
+        words: [
+          { w: '風調雨順', p: ['名詞：風', '形容詞：調', '名詞：雨', '形容詞：順'] },
+          { w: '理直氣壯', p: ['名詞：理', '形容詞：直', '名詞：氣', '形容詞：壯'] },
+          { w: '心平氣和', p: ['名詞：心', '形容詞：平', '名詞：氣', '形容詞：和'] },
+          { w: '天清日晏', p: ['名詞：天', '形容詞：清', '名詞：日', '形容詞：晏'] }
+        ]
+      },
+      'DADV': {
+        name: '副＋動＋副＋動',
+        words: [
+          { w: '深入淺出', p: ['副詞：深', '動詞：入', '副詞：淺', '動詞：出'] },
+          { w: '急起直追', p: ['副詞：急', '動詞：起', '副詞：直', '動詞：追'] },
+          { w: '突飛猛進', p: ['副詞：突', '動詞：飛', '副詞：猛', '動詞：進'] },
+          { w: '精打細算', p: ['副詞：精', '動詞：打', '副詞：細', '動詞：算'] }
+        ]
+      }
+    };
+
+    let currentPattern = 'VNVN';
+
+    // ==========================================
+    // 5. 渲染與互動邏輯
+    // ==========================================
+
+    // 渲染複詞
+    function renderCompoundGrid(items) {
+      const container = document.getElementById('compound-grid-container');
+      if (!container) return;
+      container.innerHTML = items.map(item => {
+        let badgeClass = 'badge-syn';
+        if (item.type === 'bias') badgeClass = 'badge-bias';
+        else if (item.type === 'allit') badgeClass = 'badge-allit';
+        else if (item.type === 'rhyme') badgeClass = 'badge-rhyme';
+        else if (item.type === 'both') badgeClass = 'badge-both';
+        else if (item.type === 'none') badgeClass = 'badge-none';
+        else if (item.type === 'onomat') badgeClass = 'badge-onomat';
+
+        return `
+          <div class="compound-card">
+            <div class="compound-card-head">
+              <span class="compound-type-badge ${badgeClass}">${item.cat}</span>
+              <button class="tts-btn" onclick="speakText('${item.name}')" title="語音發音"><i data-lucide="volume-2"></i></button>
+            </div>
+            <div class="compound-word serif">${item.name}</div>
+            <div class="compound-zhuyin">${item.zhuyin}</div>
+            <div class="compound-meaning">${item.desc}</div>
+          </div>
+        `;
+      }).join('');
+      refreshIcons();
+    }
+
+    function filterCompound(type, el) {
+      document.querySelectorAll('#compound-tabs .tab-btn').forEach(btn => btn.classList.remove('active'));
+      if (el) el.classList.add('active');
+      if (type === 'all') {
+        renderCompoundGrid(COMPOUND_DB);
+      } else {
+        const filtered = COMPOUND_DB.filter(c => c.type === type);
+        renderCompoundGrid(filtered);
+      }
+    }
+
+    // 渲染歌詞庫 100 題
+    let currentSongList = [...SONGS_100_DB];
+
+    function renderSongCards(songs) {
+      const container = document.getElementById('song-grid-container');
+      if (!container) return;
+      container.innerHTML = songs.map(song => {
+        const highlightedSentence = song.sentence.replace(
+          `「${song.target}」`,
+          `「<span class="target-word">${song.target}</span>」`
+        );
+        return `
+          <div class="song-card" id="song-card-${song.id}">
+            <div class="song-top">
+              <span class="song-num">#${song.id.toString().padStart(3, '0')}</span>
+              <button class="tts-btn" onclick="speakText('${song.sentence.replace(/[「」]/g, '')}')" title="朗讀整句歌詞">
+                <i data-lucide="volume-2"></i>
+              </button>
+            </div>
+            <div class="song-sentence serif">${highlightedSentence}</div>
+            <div class="song-bottom">
+              <span style="font-size:0.75rem;color:#94a3b8;"><i data-lucide="disc"></i> ${song.singer}</span>
+              <span class="mask-badge" onclick="toggleSongMask(this, '${song.pos}')" data-pos="${song.pos}">
+                <i data-lucide="help-circle"></i> 點擊揭曉詞性
+              </span>
+            </div>
+          </div>
+        `;
+      }).join('');
+      refreshIcons();
+    }
+
+    function toggleSongMask(el, pos) {
+      if (el.classList.contains('revealed')) {
+        el.classList.remove('revealed');
+        el.style.background = '#f1f5f9';
+        el.style.color = '#64748b';
+        el.innerHTML = `<i data-lucide="help-circle"></i> 點擊揭曉詞性`;
+      } else {
+        el.classList.add('revealed');
+        let posColor = '#0d9488';
+        let posBg = '#ccfbf1';
+        if (pos === '名詞') { posColor = '#2563eb'; posBg = '#eff6ff'; }
+        else if (pos === '動詞') { posColor = '#059669'; posBg = '#ecfdf5'; }
+        else if (pos === '形容詞') { posColor = '#d97706'; posBg = '#fffbeb'; }
+        else if (pos === '副詞') { posColor = '#7c3aed'; posBg = '#f5f3ff'; }
+        else if (pos === '代詞') { posColor = '#db2777'; posBg = '#fdf2f8'; }
+        else if (pos === '數詞' || pos === '量詞') { posColor = '#65a30d'; posBg = '#f7fee7'; }
+        else if (pos === '介詞') { posColor = '#ea580c'; posBg = '#fff7ed'; }
+        else if (pos === '連詞') { posColor = '#0891b2'; posBg = '#ecfeff'; }
+        else if (pos === '助詞') { posColor = '#475569'; posBg = '#f1f5f9'; }
+        else if (pos === '嘆詞') { posColor = '#dc2626'; posBg = '#fef2f2'; }
+
+        el.style.background = posBg;
+        el.style.color = posColor;
+        el.style.borderColor = posColor;
+        el.innerHTML = `<b>【${pos}】</b>`;
+      }
+      refreshIcons();
+    }
+
+    function toggleAllMasks(show) {
+      document.querySelectorAll('.mask-badge').forEach(badge => {
+        const pos = badge.getAttribute('data-pos');
+        if (show && !badge.classList.contains('revealed')) {
+          toggleSongMask(badge, pos);
+        } else if (!show && badge.classList.contains('revealed')) {
+          toggleSongMask(badge, pos);
+        }
+      });
+    }
+
+    function filterSongs(pos, el) {
+      document.querySelectorAll('#song-pos-filters .tab-btn').forEach(btn => btn.classList.remove('active'));
+      if (el) el.classList.add('active');
+      if (pos === 'ALL') {
+        currentSongList = [...SONGS_100_DB];
+      } else {
+        currentSongList = SONGS_100_DB.filter(s => s.pos.includes(pos));
+      }
+      renderSongCards(currentSongList);
+    }
+
+    function handleSongSearch() {
+      const q = document.getElementById('song-search-input').value.trim().toLowerCase();
+      if (!q) {
+        renderSongCards(currentSongList);
+        return;
+      }
+      const searched = currentSongList.filter(s => 
+        s.sentence.toLowerCase().includes(q) ||
+        s.target.toLowerCase().includes(q) ||
+        s.pos.toLowerCase().includes(q) ||
+        s.singer.toLowerCase().includes(q)
+      );
+      renderSongCards(searched);
+    }
+
+    // 渲染實戰學習集關卡
+    function renderPractice1() {
+      const container = document.getElementById('p1-container');
+      if (!container) return;
+      container.innerHTML = PRACTICE_1_DATA.map((item, idx) => `
+        <div class="q-card">
+          <div class="q-title"><span class="q-num">第 ${idx + 1} 題</span> <span>${item.q}</span></div>
+          <div class="opt-group">
+            ${item.options.map(opt => `
+              <button class="opt-btn" onclick="checkP1Answer(this, '${opt}', '${item.ans}', 'exp-p1-${idx}')">${opt}</button>
+            `).join('')}
+          </div>
+          <div class="q-explain" id="exp-p1-${idx}">💡 <b>解析：</b>${item.exp}</div>
+        </div>
+      `).join('');
+    }
+
+    function checkP1Answer(btn, selected, correct, expId) {
+      const parent = btn.parentElement;
+      parent.querySelectorAll('.opt-btn').forEach(b => {
+        b.disabled = true;
+        if (b.innerText.trim() === correct.trim()) b.classList.add('correct');
+      });
+      if (selected.trim() !== correct.trim()) {
+        btn.classList.add('wrong');
+      }
+      const expEl = document.getElementById(expId);
+      if (expEl) expEl.classList.add('show');
+    }
+
+    function renderPractice2() {
+      const container = document.getElementById('p2-container');
+      if (!container) return;
+      container.innerHTML = PRACTICE_2_DATA.map((item, idx) => `
+        <div class="q-card">
+          <div class="q-title"><span class="q-num">第 ${idx + 1} 題</span> <span>${item.q}</span></div>
+          <div class="opt-group">
+            ${item.options.map(opt => `
+              <button class="opt-btn" onclick="checkP1Answer(this, '${opt}', '${item.ans}', 'exp-p2-${idx}')">${opt}</button>
+            `).join('')}
+          </div>
+          <div class="q-explain" id="exp-p2-${idx}">💡 <b>解析：</b>${item.exp}</div>
+        </div>
+      `).join('');
+    }
+
+    function renderPractice3() {
+      const container = document.getElementById('p3-container');
+      if (!container) return;
+      container.innerHTML = PRACTICE_3_DATA.map((item, idx) => `
+        <div class="q-card">
+          <div class="q-title"><span class="q-num">第 ${idx + 1} 組對照</span> <span>相同詞彙在不同語境之詞性判定</span></div>
+          <div style="margin-bottom:0.6rem;font-size:0.95rem;color:#1e293b;">${item.q1} ➔ 正確詞性：<span class="mask-badge" onclick="this.innerHTML='<b>${item.a1}</b>';this.classList.add('revealed');">點擊揭曉</span></div>
+          <div style="font-size:0.95rem;color:#1e293b;">${item.q2} ➔ 正確詞性：<span class="mask-badge" onclick="this.innerHTML='<b>${item.a2}</b>';this.classList.add('revealed');">點擊揭曉</span></div>
+          <div class="q-explain show" style="margin-top:0.6rem;">💡 <b>解析：</b>${item.exp}</div>
+        </div>
+      `).join('');
+    }
+
+    function switchPracticeTab(tabNum) {
+      [1, 2, 3].forEach(n => {
+        const box = document.getElementById(`practice-box-${n}`);
+        const btn = document.getElementById(`btn-practice-${n}`);
+        if (box) box.style.display = (n === tabNum ? 'block' : 'none');
+        if (btn) {
+          if (n === tabNum) btn.classList.add('active');
+          else btn.classList.remove('active');
+        }
+      });
+    }
+
+    function toggleExtraTab(tab) {
+      const measureBox = document.getElementById('extra-measure-box');
+      const conjBox = document.getElementById('extra-conj-box');
+      const btnM = document.getElementById('btn-show-measure');
+      const btnC = document.getElementById('btn-show-conj');
+      if (tab === 'measure') {
+        if (measureBox) measureBox.style.display = 'block';
+        if (conjBox) conjBox.style.display = 'none';
+        if (btnM) btnM.classList.add('active');
+        if (btnC) btnC.classList.remove('active');
+      } else {
+        if (measureBox) measureBox.style.display = 'none';
+        if (conjBox) conjBox.style.display = 'block';
+        if (btnM) btnM.classList.remove('active');
+        if (btnC) btnC.classList.add('active');
+      }
+    }
+
+    // 魔法工坊
+    function selectWsPattern(key, el) {
+      currentPattern = key;
+      document.querySelectorAll('#ws-pattern-chips .chip-btn').forEach(b => b.classList.remove('active'));
+      if (el) el.classList.add('active');
+
+      const pat = WS_PATTERNS[key];
+      const wordContainer = document.getElementById('ws-words-chips');
+      if (wordContainer && pat) {
+        wordContainer.innerHTML = pat.words.map((w, idx) => `
+          <button class="chip-btn ${idx === 0 ? 'active' : ''}" onclick="selectWsWord('${w.w}', this)">${w.w}</button>
+        `).join('');
+      }
+      if (pat && pat.words.length > 0) {
+        updateWsDisplay(pat.words[0]);
+      }
+    }
+
+    function selectWsWord(wordText, el) {
+      document.querySelectorAll('#ws-words-chips .chip-btn').forEach(b => b.classList.remove('active'));
+      if (el) el.classList.add('active');
+      const pat = WS_PATTERNS[currentPattern];
+      if (pat) {
+        const found = pat.words.find(w => w.w === wordText);
+        if (found) updateWsDisplay(found);
+      }
+    }
+
+    function updateWsDisplay(wordObj) {
+      const outWord = document.getElementById('ws-output-word');
+      const outSyntax = document.getElementById('ws-output-syntax');
+      if (outWord) outWord.innerText = wordObj.w.split('').join(' ');
+      if (outSyntax) {
+        outSyntax.innerHTML = wordObj.p.map(posStr => {
+          let bg = '#eff6ff';
+          let col = '#2563eb';
+          if (posStr.startsWith('動詞')) { bg = '#ecfdf5'; col = '#059669'; }
+          else if (posStr.startsWith('形容詞')) { bg = '#fffbeb'; col = '#d97706'; }
+          else if (posStr.startsWith('副詞')) { bg = '#f5f3ff'; col = '#7c3aed'; }
+          return `<span class="pos-pill" style="background:${bg};color:${col};">${posStr}</span>`;
+        }).join('');
+      }
+    }
+
+    function randomWs() {
+      const patKeys = Object.keys(WS_PATTERNS);
+      const randKey = patKeys[Math.floor(Math.random() * patKeys.length)];
+      const patBtn = Array.from(document.querySelectorAll('#ws-pattern-chips .chip-btn')).find(b => b.innerText.includes(WS_PATTERNS[randKey].name.slice(0, 4)));
+      if (patBtn) patBtn.click();
+
+      setTimeout(() => {
+        const wordBtns = document.querySelectorAll('#ws-words-chips .chip-btn');
+        if (wordBtns.length > 0) {
+          const randW = wordBtns[Math.floor(Math.random() * wordBtns.length)];
+          if (randW) randW.click();
+        }
+      }, 50);
+    }
+
+    // ==========================================
+    // 6. 六大練習神器切換控制 (Iframe 操控)
+    // ==========================================
+    const PRACTICE_TOOLS_MAP = {
+      compound: {
+        title: "同義・反義・偏義複詞練習神器",
+        badge: "語文學習集・複詞專區",
+        url: "https://oaoadna-1313.github.io/2026_practicetools/yuwen-practice/yuwen-compound-words.html"
+      },
+      classifiers: {
+        title: "量詞運用練習神器",
+        badge: "語文學習集・量詞專區",
+        url: "https://oaoadna-1313.github.io/2026_practicetools/yuwen-practice/yuwen-classifiers.html"
+      },
+      conjunctions: {
+        title: "連接詞運用練習神器",
+        badge: "語文學習集・連接詞專區",
+        url: "https://oaoadna-1313.github.io/2026_practicetools/yuwen-practice/yuwen-conjunctions.html"
+      },
+      pos: {
+        title: "詞性判斷練習神器",
+        badge: "語文學習集・十大詞性",
+        url: "https://oaoadna-1313.github.io/2026_practicetools/yuwen-practice/yuwen-part-of-speech.html"
+      },
+      inflection: {
+        title: "詞性活用判斷練習神器",
+        badge: "語文學習集・轉品活用",
+        url: "https://oaoadna-1313.github.io/2026_practicetools/yuwen-practice/yuwen-pos-inflection.html"
+      },
+      structure: {
+        title: "詞性結構判斷練習神器",
+        badge: "語文學習集・成語結構",
+        url: "https://oaoadna-1313.github.io/2026_practicetools/yuwen-practice/yuwen-pos-structure.html"
+      }
+    };
+
+    function switchPracticeTool(key) {
+      const data = PRACTICE_TOOLS_MAP[key];
+      if (!data) return;
+
+      const toolKeys = ['compound', 'classifiers', 'conjunctions', 'pos', 'inflection', 'structure'];
+      toolKeys.forEach(k => {
+        const btn = document.getElementById(`tab-tool-${k}`);
+        if (btn) btn.classList.toggle('active', k === key);
+      });
+
+      const iframe = document.getElementById('practice-iframe');
+      if (iframe) iframe.src = data.url;
+
+      const extLink = document.getElementById('practice-ext-link');
+      if (extLink) extLink.href = data.url;
+
+      const badge = document.getElementById('practice-badge-text');
+      if (badge) badge.innerText = data.badge;
+
+      const desc = document.getElementById('practice-desc-text');
+      if (desc) desc.innerText = data.title;
+
+      refreshIcons();
+    }
+
+    function reloadPracticeIframe() {
+      const iframe = document.getElementById('practice-iframe');
+      if (iframe) {
+        iframe.src = iframe.src;
+      }
+    }
+
+    // 語音發音
+    function speakText(text) {
+      if (!('speechSynthesis' in window)) {
+        alert("您的瀏覽器暫不支援語音合成！");
+        return;
+      }
+      window.speechSynthesis.cancel();
+      const utterance = new SpeechSynthesisUtterance(text);
+      utterance.lang = 'zh-TW';
+      utterance.rate = 0.95;
+      window.speechSynthesis.speak(utterance);
+    }
+
+    // 語文層級動畫高亮
+    function highlightLevel(lvl) {
+      speakText(lvl === 'char' ? '字，音節，記錄語言的符號' : 
+                lvl === 'word' ? '詞，表達意義的基本單位' : 
+                lvl === 'sentence' ? '句子，表達完整意義的語言單位' : 
+                lvl === 'para' ? '段落，圍繞中心思想的意群' : '篇章，完整起承轉合之文章');
+    }
+
+    // 滾動回頂端按鈕
+    window.addEventListener('scroll', () => {
+      const btn = document.getElementById('back-to-top-btn');
+      if (btn) {
+        if (window.scrollY > 400) btn.classList.add('show');
+        else btn.classList.remove('show');
+      }
+    });
+
+    // 安全刷新圖標
+    function refreshIcons() {
+      try {
+        if (window.lucide && typeof lucide.createIcons === 'function') {
+          lucide.createIcons();
+        }
+      } catch (e) {
+        console.warn("Lucide init error:", e);
+      }
+    }
+
+    // 頁面初始化
+    window.addEventListener('DOMContentLoaded', () => {
+      renderCompoundGrid(COMPOUND_DB);
+      renderSongCards(SONGS_100_DB);
+      renderPractice1();
+      renderPractice2();
+      renderPractice3();
+      selectWsPattern('VNVN', document.querySelector('#ws-pattern-chips .chip-btn'));
+      refreshIcons();
+    });
+  </script>
+</body>
+</html>

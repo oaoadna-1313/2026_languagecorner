@@ -1,0 +1,1843 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>語文補給站｜「賓語提前」倒裝句法旗艦學習殿堂</title>
+  <meta name="description" content="翰林國中國文B3L04愛蓮說語文補給站：賓語提前倒裝句法互動教學平台，收錄核心口訣、五步還原法、16組全收錄典範圖鑑、魔法還原工坊、會考神仙挑戰賽與專屬練習神器。">
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;600;700;900&family=Noto+Sans+TC:wght@300;400;500;700;900&family=Ma+Shan+Zheng&display=swap" rel="stylesheet">
+  
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <style>
+    :root {
+      /* 海洋青藍與琥珀金主題配色（切合愛蓮說水生植物清雅意象與文言語法之美） */
+      --primary: #0284c7;
+      --primary-dark: #0369a1;
+      --primary-light: #e0f2fe;
+      --primary-hover: #0274b3;
+
+      --accent: #f59e0b;
+      --accent-dark: #d97706;
+      --accent-light: #fef3c7;
+
+      --emerald: #059669;
+      --emerald-light: #d1fae5;
+
+      --rose: #e11d48;
+      --rose-light: #ffe4e6;
+
+      --gold: #d97706;
+      --dark: #0f172a;
+      --dark-card: #1e293b;
+      --gray: #64748b;
+      --light-bg: #f8fafc;
+      --card-bg: rgba(255, 255, 255, 0.98);
+      --border: #e2e8f0;
+      --radius: 20px;
+      --shadow: 0 10px 25px -5px rgba(2, 132, 199, 0.08), 0 8px 10px -6px rgba(0, 0, 0, 0.04);
+      --shadow-hover: 0 20px 35px -10px rgba(2, 132, 199, 0.2);
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Noto Sans TC', sans-serif;
+      background-color: var(--light-bg);
+      color: var(--dark);
+      line-height: 1.7;
+      background-image: 
+        radial-gradient(circle at 5% 10%, rgba(2, 132, 199, 0.05) 0%, transparent 45%),
+        radial-gradient(circle at 95% 85%, rgba(245, 158, 11, 0.05) 0%, transparent 45%),
+        radial-gradient(circle at 50% 50%, rgba(5, 150, 105, 0.03) 0%, transparent 60%);
+      background-attachment: fixed;
+    }
+
+    .serif { font-family: 'Noto Serif TC', serif; }
+    .calligraphy { font-family: 'Ma Shan Zheng', 'Noto Serif TC', cursive; }
+
+    /* 頂部導覽列 */
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(14px);
+      border-bottom: 1px solid var(--border);
+      padding: 0.75rem 1.5rem;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
+    }
+
+    .nav-container {
+      max-width: 1320px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    .brand-group {
+      display: flex;
+      align-items: center;
+      gap: 0.85rem;
+      text-decoration: none;
+    }
+
+    .brand-seal-img {
+      height: 48px;
+      width: auto;
+      object-fit: contain;
+      transition: transform 0.3s ease;
+      filter: drop-shadow(0 2px 4px rgba(0,0,0,0.08));
+    }
+    .brand-seal-img:hover {
+      transform: rotate(5deg) scale(1.08);
+    }
+
+    .brand-logo-img {
+      height: 48px;
+      width: auto;
+      object-fit: contain;
+      filter: drop-shadow(0 2px 4px rgba(0,0,0,0.08));
+    }
+
+    .brand-text { display: flex; flex-direction: column; }
+    .brand-title {
+      font-size: 1.35rem;
+      font-weight: 800;
+      color: var(--primary-dark);
+      letter-spacing: -0.5px;
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+    .brand-badge {
+      font-size: 0.72rem;
+      background: var(--primary-light);
+      color: var(--primary-dark);
+      padding: 0.15rem 0.55rem;
+      border-radius: 999px;
+      font-weight: 700;
+      width: fit-content;
+      margin-top: 2px;
+      border: 1px solid rgba(2, 132, 199, 0.2);
+    }
+
+    nav ul {
+      display: flex;
+      gap: 0.4rem;
+      list-style: none;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: var(--dark);
+      font-weight: 600;
+      padding: 0.45rem 0.85rem;
+      border-radius: 10px;
+      transition: all 0.2s ease;
+      font-size: 0.92rem;
+      display: flex;
+      align-items: center;
+      gap: 0.35rem;
+    }
+
+    nav a:hover, nav a.active {
+      background: var(--primary-light);
+      color: var(--primary-dark);
+    }
+
+    .nav-btn-tool {
+      background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+      color: white !important;
+      padding: 0.48rem 1.1rem;
+      border-radius: 999px;
+      box-shadow: 0 4px 10px rgba(2, 132, 199, 0.25);
+    }
+    .nav-btn-tool:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 14px rgba(2, 132, 199, 0.35);
+    }
+
+    /* 主容器 */
+    main {
+      max-width: 1320px;
+      margin: 2rem auto;
+      padding: 0 1.5rem;
+    }
+
+    /* Hero 全幅旗艦橫幅 */
+    .hero {
+      position: relative;
+      background: linear-gradient(135deg, #f0f9ff 0%, #fef3c7 50%, #ecfeff 100%);
+      border-radius: 28px;
+      border: 1px solid rgba(2, 132, 199, 0.15);
+      padding: 3.8rem 2.5rem;
+      margin-bottom: 2.8rem;
+      box-shadow: var(--shadow);
+      overflow: hidden;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .hero::after {
+      content: "倒裝・賓語提前";
+      position: absolute;
+      right: 2%;
+      bottom: -30px;
+      font-size: 7.5rem;
+      font-family: 'Ma Shan Zheng', cursive;
+      color: rgba(2, 132, 199, 0.045);
+      pointer-events: none;
+      user-select: none;
+      white-space: nowrap;
+    }
+
+    .hero-content {
+      max-width: 900px;
+      margin: 0 auto;
+      z-index: 2;
+    }
+
+    .hero-badge-top {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: white;
+      color: var(--primary-dark);
+      padding: 6px 16px;
+      border-radius: 999px;
+      font-size: 0.88rem;
+      font-weight: 700;
+      margin-bottom: 1.2rem;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+      border: 1px solid #bae6fd;
+    }
+
+    .hero-content h1 {
+      font-size: 3.1rem;
+      font-weight: 900;
+      color: var(--primary-dark);
+      margin-bottom: 1.2rem;
+      line-height: 1.25;
+    }
+
+    .hero-content h1 span {
+      background: linear-gradient(135deg, #0284c7, #f59e0b);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .hero-content p {
+      font-size: 1.18rem;
+      color: #475569;
+      margin-bottom: 2rem;
+      line-height: 1.8;
+    }
+
+    .hero-tags {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 0.85rem;
+    }
+
+    .hero-tag {
+      background: white;
+      padding: 0.55rem 1.25rem;
+      border-radius: 999px;
+      font-size: 0.92rem;
+      font-weight: 700;
+      color: #334155;
+      border: 1px solid #e2e8f0;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.03);
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+    .hero-tag i { color: var(--emerald); }
+
+    /* 通用章節標題 */
+    .section-header {
+      margin-bottom: 2rem;
+      text-align: center;
+    }
+    .section-badge {
+      display: inline-block;
+      font-size: 0.8rem;
+      font-weight: 800;
+      color: var(--primary);
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      margin-bottom: 0.4rem;
+    }
+    .section-title {
+      font-family: 'Noto Serif TC', serif;
+      font-size: 2.1rem;
+      font-weight: 900;
+      color: var(--dark);
+      letter-spacing: -0.5px;
+    }
+    .section-desc {
+      color: var(--gray);
+      font-size: 1rem;
+      margin-top: 0.4rem;
+    }
+
+    /* 模組一：核心定義與萬能公式解構 */
+    .formula-section {
+      margin-bottom: 3.5rem;
+    }
+    .formula-banner {
+      background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+      color: white;
+      border-radius: var(--radius);
+      padding: 2.2rem 2rem;
+      margin-bottom: 2rem;
+      box-shadow: var(--shadow);
+      position: relative;
+      overflow: hidden;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    .formula-banner::before {
+      content: "";
+      position: absolute;
+      top: -40px; right: -40px;
+      width: 180px; height: 180px;
+      background: radial-gradient(circle, rgba(2, 132, 199, 0.3) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .slogan-title {
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--accent);
+      margin-bottom: 0.5rem;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .slogan-box {
+      font-family: 'Noto Serif TC', serif;
+      font-size: 1.85rem;
+      font-weight: 900;
+      color: #ffffff;
+      line-height: 1.5;
+      letter-spacing: 0.5px;
+      background: rgba(255, 255, 255, 0.08);
+      padding: 1.1rem 1.6rem;
+      border-radius: 14px;
+      border-left: 6px solid var(--accent);
+      margin: 1rem 0;
+    }
+    .slogan-desc {
+      font-size: 0.95rem;
+      color: #94a3b8;
+      line-height: 1.7;
+    }
+
+    /* 萬能五步還原法卡片網格 */
+    .steps-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 1.2rem;
+      margin-bottom: 2rem;
+    }
+    .step-card {
+      background: white;
+      border-radius: 16px;
+      padding: 1.5rem;
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow);
+      transition: transform 0.25s, box-shadow 0.25s;
+      position: relative;
+    }
+    .step-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-hover);
+    }
+    .step-num {
+      width: 36px;
+      height: 36px;
+      background: var(--primary-light);
+      color: var(--primary-dark);
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 900;
+      font-size: 1.1rem;
+      margin-bottom: 1rem;
+    }
+    .step-card h3 {
+      font-size: 1.15rem;
+      color: var(--dark);
+      margin-bottom: 0.4rem;
+      font-weight: 800;
+    }
+    .step-card p {
+      font-size: 0.9rem;
+      color: var(--gray);
+      line-height: 1.6;
+    }
+    .step-chip {
+      display: inline-block;
+      margin-top: 0.6rem;
+      font-size: 0.78rem;
+      font-weight: 700;
+      padding: 2px 8px;
+      border-radius: 6px;
+      background: #f1f5f9;
+      color: #475569;
+    }
+
+    /* 模組二：結構對照星盤 (原句 vs 倒裝對比) */
+    .compare-section {
+      margin-bottom: 3.5rem;
+    }
+    .compare-card {
+      background: white;
+      border-radius: var(--radius);
+      border: 1px solid var(--border);
+      padding: 2rem;
+      box-shadow: var(--shadow);
+    }
+    .compare-flow {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 1.2rem;
+      flex-wrap: wrap;
+      margin: 1.5rem 0;
+    }
+    .flow-block {
+      padding: 1.2rem 1.6rem;
+      border-radius: 14px;
+      text-align: center;
+      flex: 1;
+      min-width: 240px;
+    }
+    .flow-normal {
+      background: #f0fdf4;
+      border: 2px solid #bbf7d0;
+    }
+    .flow-inverted {
+      background: #eff6ff;
+      border: 2px solid #bfdbfe;
+    }
+    .flow-title {
+      font-size: 0.85rem;
+      font-weight: 800;
+      margin-bottom: 0.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+    }
+    .flow-normal .flow-title { color: #166534; }
+    .flow-inverted .flow-title { color: #1e40af; }
+
+    .syntax-formula {
+      font-family: 'Noto Serif TC', serif;
+      font-size: 1.45rem;
+      font-weight: 900;
+      color: var(--dark);
+      letter-spacing: 1px;
+    }
+    .syntax-highlight-v { color: #0284c7; } /* 動詞 */
+    .syntax-highlight-o { color: #ea580c; } /* 賓語 */
+    .syntax-highlight-p { color: #9333ea; } /* 助詞 */
+    .syntax-highlight-adv { color: #059669; } /* 副詞 */
+
+    /* 模組三：典範圖鑑與句型資料庫 (16題全收錄) */
+    .gallery-section {
+      margin-bottom: 3.5rem;
+    }
+    .gallery-filter-bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+      margin-bottom: 1.5rem;
+      background: white;
+      padding: 1rem 1.4rem;
+      border-radius: 16px;
+      border: 1px solid var(--border);
+      box-shadow: 0 2px 8px rgba(0,0,0,0.03);
+    }
+    .filter-chips {
+      display: flex;
+      gap: 0.5rem;
+      flex-wrap: wrap;
+    }
+    .filter-chip {
+      padding: 0.45rem 1rem;
+      border-radius: 999px;
+      border: 1px solid var(--border);
+      background: #f8fafc;
+      color: #475569;
+      font-size: 0.88rem;
+      font-weight: 700;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+    .filter-chip.active {
+      background: var(--primary);
+      color: white;
+      border-color: var(--primary);
+      box-shadow: 0 3px 8px rgba(2, 132, 199, 0.25);
+    }
+    .search-box {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      background: #f8fafc;
+      border: 1px solid var(--border);
+      padding: 0.45rem 0.9rem;
+      border-radius: 10px;
+    }
+    .search-box input {
+      border: none;
+      background: transparent;
+      outline: none;
+      font-size: 0.9rem;
+      color: var(--dark);
+      width: 160px;
+    }
+    .toggle-all-btn {
+      background: var(--primary-light);
+      color: var(--primary-dark);
+      border: none;
+      padding: 0.45rem 1rem;
+      border-radius: 10px;
+      font-size: 0.88rem;
+      font-weight: 700;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      transition: background 0.2s;
+    }
+    .toggle-all-btn:hover { background: #bae6fd; }
+
+    /* 圖鑑卡片 Grid */
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
+      gap: 1.4rem;
+    }
+    .gallery-card {
+      background: white;
+      border-radius: 18px;
+      border: 1px solid var(--border);
+      padding: 1.5rem;
+      box-shadow: var(--shadow);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: transform 0.25s, box-shadow 0.25s;
+    }
+    .gallery-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-hover);
+    }
+    .card-meta {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 0.8rem;
+    }
+    .card-id-badge {
+      font-size: 0.75rem;
+      font-weight: 800;
+      padding: 2px 8px;
+      border-radius: 6px;
+      background: #f1f5f9;
+      color: #64748b;
+    }
+    .card-type-badge {
+      font-size: 0.75rem;
+      font-weight: 700;
+      padding: 2px 10px;
+      border-radius: 999px;
+    }
+    .type-basic { background: #e0f2fe; color: #0369a1; }
+    .type-adv { background: #fef3c7; color: #92400e; }
+
+    .inverted-phrase {
+      font-family: 'Noto Serif TC', serif;
+      font-size: 1.7rem;
+      font-weight: 900;
+      color: var(--dark);
+      margin-bottom: 0.8rem;
+      line-height: 1.3;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .tts-speaker-btn {
+      background: #f1f5f9;
+      border: none;
+      width: 34px;
+      height: 34px;
+      border-radius: 50%;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      color: var(--primary);
+      transition: background 0.2s, transform 0.2s;
+    }
+    .tts-speaker-btn:hover {
+      background: var(--primary-light);
+      transform: scale(1.1);
+    }
+
+    /* 互動揭曉遮罩 */
+    .reveal-box {
+      background: #f8fafc;
+      border-radius: 12px;
+      padding: 1rem;
+      margin-bottom: 1rem;
+      border: 1px dashed #cbd5e1;
+    }
+    .restore-label {
+      font-size: 0.8rem;
+      font-weight: 800;
+      color: var(--gray);
+      margin-bottom: 4px;
+      display: flex;
+      align-items: center;
+      gap: 5px;
+    }
+    .restore-content {
+      font-family: 'Noto Serif TC', serif;
+      font-size: 1.35rem;
+      font-weight: 900;
+      color: #b45309;
+      cursor: pointer;
+      padding: 6px 10px;
+      border-radius: 8px;
+      background: white;
+      border: 1px solid #fde68a;
+      transition: all 0.25s;
+    }
+    .restore-content.blurred {
+      filter: blur(5px);
+      user-select: none;
+      background: #e2e8f0;
+      border-color: #cbd5e1;
+      color: transparent;
+    }
+
+    .analysis-details {
+      font-size: 0.85rem;
+      color: #334155;
+      line-height: 1.6;
+      border-top: 1px solid var(--border);
+      padding-top: 0.8rem;
+      margin-top: 0.6rem;
+    }
+    .analysis-row {
+      display: flex;
+      gap: 6px;
+      margin-bottom: 3px;
+    }
+    .analysis-row b {
+      color: var(--primary-dark);
+      min-width: 65px;
+    }
+
+    /* 模組四：魔法互動工坊 (即時倒裝還原生成器) */
+    .workshop-section {
+      margin-bottom: 3.5rem;
+    }
+    .workshop-card {
+      background: white;
+      border-radius: var(--radius);
+      border: 1px solid var(--border);
+      padding: 2.2rem;
+      box-shadow: var(--shadow);
+    }
+    .preset-selector-row {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-bottom: 1.5rem;
+    }
+    .preset-btn {
+      padding: 8px 14px;
+      background: #f1f5f9;
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      font-size: 0.88rem;
+      font-weight: 700;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+    .preset-btn:hover { background: var(--primary-light); color: var(--primary-dark); }
+
+    .workshop-workbench {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5rem;
+      margin-bottom: 1.5rem;
+    }
+    .wb-card {
+      background: #f8fafc;
+      border-radius: 14px;
+      padding: 1.4rem;
+      border: 1px solid var(--border);
+    }
+    .wb-title {
+      font-size: 0.95rem;
+      font-weight: 800;
+      color: var(--primary-dark);
+      margin-bottom: 1rem;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .wb-input-group {
+      margin-bottom: 0.9rem;
+    }
+    .wb-input-group label {
+      display: block;
+      font-size: 0.82rem;
+      font-weight: 700;
+      color: var(--gray);
+      margin-bottom: 4px;
+    }
+    .wb-input {
+      width: 100%;
+      padding: 8px 12px;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      font-size: 0.95rem;
+      outline: none;
+    }
+    .wb-input:focus { border-color: var(--primary); }
+
+    .wb-display-result {
+      background: linear-gradient(135deg, #0369a1, #0284c7);
+      color: white;
+      border-radius: 14px;
+      padding: 1.5rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      text-align: center;
+      min-height: 200px;
+    }
+    .wb-result-text {
+      font-family: 'Noto Serif TC', serif;
+      font-size: 2.2rem;
+      font-weight: 900;
+      margin: 10px 0;
+      color: #fef08a;
+      letter-spacing: 1px;
+    }
+    .wb-steps-breakdown {
+      font-size: 0.85rem;
+      color: #e0f2fe;
+      line-height: 1.6;
+    }
+
+    /* 模組五：會考神仙挑戰賽 (測驗區) */
+    .quiz-section {
+      margin-bottom: 3.5rem;
+    }
+    .quiz-wrapper-card {
+      background: white;
+      border-radius: var(--radius);
+      border: 1px solid var(--border);
+      padding: 2.5rem 2rem;
+      box-shadow: var(--shadow);
+      max-width: 860px;
+      margin: 0 auto;
+    }
+    .quiz-status-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 1rem;
+    }
+    .quiz-count-pill {
+      font-size: 0.85rem;
+      font-weight: 800;
+      background: var(--primary-light);
+      color: var(--primary-dark);
+      padding: 4px 12px;
+      border-radius: 999px;
+    }
+    .quiz-score-pill {
+      font-size: 0.85rem;
+      font-weight: 800;
+      color: var(--accent-dark);
+      background: var(--accent-light);
+      padding: 4px 12px;
+      border-radius: 999px;
+    }
+    .quiz-prog-track {
+      width: 100%;
+      height: 8px;
+      background: #e2e8f0;
+      border-radius: 999px;
+      margin-bottom: 1.5rem;
+      overflow: hidden;
+    }
+    .quiz-prog-bar {
+      height: 100%;
+      background: linear-gradient(90deg, var(--primary), var(--accent));
+      width: 0%;
+      transition: width 0.35s ease;
+    }
+    .quiz-question-box {
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+    .quiz-target-phrase {
+      font-family: 'Noto Serif TC', serif;
+      font-size: 2.3rem;
+      font-weight: 900;
+      color: var(--primary-dark);
+      background: var(--primary-light);
+      padding: 1.2rem;
+      border-radius: 16px;
+      margin: 1rem auto;
+      max-width: 580px;
+      line-height: 1.3;
+    }
+    .quiz-prompt-text {
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: #334155;
+    }
+
+    .quiz-options-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+      margin-bottom: 1.5rem;
+    }
+    .quiz-opt-btn {
+      padding: 1.1rem;
+      background: white;
+      border: 2px solid var(--border);
+      border-radius: 14px;
+      font-size: 1.15rem;
+      font-weight: 800;
+      color: var(--dark);
+      cursor: pointer;
+      transition: all 0.2s ease;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 72px;
+      font-family: 'Noto Serif TC', serif;
+    }
+    .quiz-opt-btn:hover:not(:disabled) {
+      border-color: var(--primary);
+      background: #f0f9ff;
+      transform: translateY(-2px);
+    }
+    .quiz-opt-btn.correct {
+      background: var(--emerald-light) !important;
+      border-color: var(--emerald) !important;
+      color: #065f46 !important;
+    }
+    .quiz-opt-btn.wrong {
+      background: var(--rose-light) !important;
+      border-color: var(--rose) !important;
+      color: #9f1239 !important;
+    }
+
+    .quiz-explanation-box {
+      display: none;
+      padding: 1.2rem 1.4rem;
+      border-radius: 14px;
+      margin-bottom: 1.5rem;
+      font-size: 0.95rem;
+      line-height: 1.7;
+      text-align: left;
+    }
+    .quiz-explanation-box.show { display: block; }
+    .quiz-explanation-box.is-correct {
+      background: var(--emerald-light);
+      border-left: 6px solid var(--emerald);
+    }
+    .quiz-explanation-box.is-wrong {
+      background: var(--rose-light);
+      border-left: 6px solid var(--rose);
+    }
+
+    .quiz-action-next {
+      display: none;
+      width: 100%;
+      padding: 14px;
+      background: var(--primary);
+      color: white;
+      border: none;
+      border-radius: 12px;
+      font-size: 1.05rem;
+      font-weight: 800;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+    .quiz-action-next:hover { background: var(--primary-dark); }
+    .quiz-action-next.show { display: block; }
+
+    /* 測驗結果卡片 */
+    .quiz-result-box {
+      display: none;
+      text-align: center;
+      padding: 2.5rem 1rem;
+    }
+    .quiz-result-score {
+      font-size: 4rem;
+      font-weight: 900;
+      color: var(--primary);
+      margin: 10px 0;
+    }
+    .quiz-result-badge {
+      font-size: 1.15rem;
+      font-weight: 800;
+      color: var(--accent-dark);
+      margin-bottom: 1rem;
+    }
+    .quiz-restart-btn {
+      padding: 12px 32px;
+      background: var(--primary);
+      color: white;
+      border: none;
+      border-radius: 999px;
+      font-size: 1rem;
+      font-weight: 700;
+      cursor: pointer;
+      margin-top: 1rem;
+    }
+
+    /* 模組六：練習神器內嵌專區 */
+    .practice-tool-section {
+      margin-bottom: 4rem;
+    }
+    .tool-frame-container {
+      background: white;
+      border-radius: var(--radius);
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow);
+      padding: 1.5rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .tool-frame-topbar {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 1rem;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+    .tool-title {
+      font-size: 1.1rem;
+      font-weight: 800;
+      color: var(--dark);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .fullscreen-btn {
+      background: white;
+      border: 1px solid var(--border);
+      padding: 6px 14px;
+      border-radius: 8px;
+      font-size: 0.88rem;
+      font-weight: 700;
+      color: var(--primary-dark);
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      text-decoration: none;
+      transition: all 0.2s;
+    }
+    .fullscreen-btn:hover {
+      background: var(--primary-light);
+      border-color: var(--primary);
+    }
+    .practice-iframe {
+      width: 100%;
+      height: 680px;
+      border: 2px solid #e2e8f0;
+      border-radius: 14px;
+      background: #f8fafc;
+    }
+
+    /* 頁尾 */
+    footer {
+      background: #09090b;
+      color: #94a3b8;
+      padding: 3.5rem 1.5rem;
+      border-top: 1px solid #27272a;
+      text-align: center;
+      margin-top: 4rem;
+    }
+    .footer-content {
+      max-width: 900px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1.2rem;
+    }
+    .footer-logo {
+      height: 48px;
+      filter: brightness(0) invert(1);
+      opacity: 0.85;
+    }
+    .footer-text {
+      font-size: 0.92rem;
+      line-height: 1.8;
+    }
+
+    @media (max-width: 768px) {
+      .hero-content h1 { font-size: 2.3rem; }
+      .quiz-options-grid { grid-template-columns: 1fr; }
+      .syntax-formula { font-size: 1.15rem; }
+      .practice-iframe { height: 620px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- 頂部 Sticky 導覽列 -->
+  <header>
+    <div class="nav-container">
+      <a href="index.html" class="brand-group">
+        <img src="icon/seal-red.png" alt="學思軒" class="brand-seal-img" onerror="this.style.display='none'">
+        <img src="icon/logo-yuwen.png" alt="語文補給站" class="brand-logo-img" onerror="this.style.display='none'">
+        <div class="brand-text">
+          <div class="brand-title serif">語文補給站</div>
+          <div class="brand-badge">翰林版 B3L04 愛蓮說・核心倒裝語法</div>
+        </div>
+      </a>
+
+      <nav>
+        <ul>
+          <li><a href="index.html"><i data-lucide="home" size="16"></i>首頁總覽</a></li>
+          <li><a href="#formula"><i data-lucide="zap" size="16"></i>破題口訣</a></li>
+          <li><a href="#structure"><i data-lucide="git-branch" size="16"></i>語法結構</a></li>
+          <li><a href="#gallery"><i data-lucide="library" size="16"></i>典範圖鑑</a></li>
+          <li><a href="#workshop"><i data-lucide="sparkles" size="16"></i>魔法工坊</a></li>
+          <li><a href="#challenge"><i data-lucide="award" size="16"></i>會考挑戰</a></li>
+          <li><a href="#tool" class="nav-btn-tool"><i data-lucide="play-circle" size="16"></i>練習神器</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- Hero 旗艦橫幅 -->
+    <section class="hero">
+      <div class="hero-content">
+        <div class="hero-badge-top">
+          <i data-lucide="book-open-check" size="16"></i>
+          國中會考必考句型・文言語序核心樞紐
+        </div>
+        <h1 class="serif">
+          <span>「賓語提前」</span>倒裝句法學習殿堂
+        </h1>
+        <p>
+          解鎖古人「強調受詞」的語言密碼！透過口訣化教學、一鍵還原解鎖、全真真人語音發音與互動挑戰，輕鬆破解《愛蓮說》「菊之愛」、「何陋之有」與宇宙無敵難的倒裝難題。
+        </p>
+        <div class="hero-tags">
+          <div class="hero-tag"><i data-lucide="check-circle-2" size="16"></i> 去掉四隻刺蝟口訣</div>
+          <div class="hero-tag"><i data-lucide="check-circle-2" size="16"></i> 16組全收錄典範圖鑑</div>
+          <div class="hero-tag"><i data-lucide="check-circle-2" size="16"></i> 雙向倒裝還原生成器</div>
+          <div class="hero-tag"><i data-lucide="check-circle-2" size="16"></i> Web Speech API 真人朗讀</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 模組一：核心定義與萬能破題口訣 -->
+    <section id="formula" class="formula-section">
+      <div class="section-header">
+        <span class="section-badge">CORE PRINCIPLES</span>
+        <h2 class="section-title">核心定義與萬能破題口訣</h2>
+        <p class="section-desc">為何古人要倒裝？文言文中為了強調「客體賓語」，會特意將賓語拉到述語動作之前！</p>
+      </div>
+
+      <div class="formula-banner">
+        <div class="slogan-title">
+          <i data-lucide="zap" size="20"></i>
+          終極解題必殺技
+        </div>
+        <div class="slogan-box">
+          「去掉四隻刺蝟，動前名後，喂，前面的，統統不准動！」
+        </div>
+        <p class="slogan-desc">
+          💡 <strong>刺蝟四兄弟</strong>：指無義的結構助詞「是」、「之」、「之為」（及「唯…是…」中的助詞標誌）。消去刺蝟後，把真正的述語動詞移回名詞賓語前面，原句前面的「唯」等副詞或主語則絕對保持原位不動！
+        </p>
+      </div>
+
+      <!-- 萬能五步還原法卡片 -->
+      <div class="steps-grid">
+        <div class="step-card">
+          <div class="step-num">1</div>
+          <h3>去掉助詞標誌</h3>
+          <p>消去無義的結構助詞：<strong>是、之、之為</strong>。這些助詞只是古人立在此處提醒讀者「這裡有賓語提前」的標籤。</p>
+          <span class="step-chip">刺蝟退場</span>
+        </div>
+
+        <div class="step-card">
+          <div class="step-num">2</div>
+          <h3>圈出名詞賓語</h3>
+          <p>找出原本作為受詞的名詞或代名詞（例如：菊、蓮、馬首、你、利、其疾）。</p>
+          <span class="step-chip">鎖定受詞</span>
+        </div>
+
+        <div class="step-card">
+          <div class="step-num">3</div>
+          <h3>標出述語動詞</h3>
+          <p>找出句子中最核心的動作述語（例如：愛、瞻、從、問、圖、憂、有）。</p>
+          <span class="step-chip">鎖定動作</span>
+        </div>
+
+        <div class="step-card">
+          <div class="step-num">4</div>
+          <h3>動前名後歸位</h3>
+          <p>將動詞大步邁向名詞前面，恢復為中文常態的「動詞 + 名詞（述語+賓語）」語序！</p>
+          <span class="step-chip">順序復原</span>
+        </div>
+
+        <div class="step-card">
+          <div class="step-num">5</div>
+          <h3>喂！前面不動</h3>
+          <p>句首的<strong>副詞（唯、不、尺璧非寶）</strong>或省略後保留的主語，<strong>統統不准動</strong>，原地保留！</p>
+          <span class="step-chip">副詞護法</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- 模組二：語法結構星盤 (原句 vs 倒裝對比) -->
+    <section id="structure" class="compare-section">
+      <div class="section-header">
+        <span class="section-badge">SYNTAX STRUCTURE</span>
+        <h2 class="section-title">雙軌句法結構星盤</h2>
+        <p class="section-desc">透過現代句型公式對比，一目了然看穿倒裝句前後位移軌跡。</p>
+      </div>
+
+      <div class="compare-card">
+        <div class="compare-flow">
+          <div class="flow-block flow-normal">
+            <div class="flow-title">
+              <i data-lucide="check-circle" size="16"></i>
+              正常中文常態語序 (S + V + O)
+            </div>
+            <div class="syntax-formula">
+              [主語] + <span class="syntax-highlight-v">[述語(動詞)]</span> + <span class="syntax-highlight-o">[賓語(名詞受詞)]</span>
+            </div>
+            <p style="font-size: 0.88rem; color: #166534; margin-top: 8px;">
+              例句：(我) <span class="syntax-highlight-v">愛</span> <span class="syntax-highlight-o">菊</span> / 唯 <span class="syntax-highlight-v">圖</span> <span class="syntax-highlight-o">利</span>
+            </p>
+          </div>
+
+          <div style="font-size: 1.8rem; color: var(--primary);">
+            <i data-lucide="arrow-left-right"></i>
+          </div>
+
+          <div class="flow-block flow-inverted">
+            <div class="flow-title">
+              <i data-lucide="sparkles" size="16"></i>
+              賓語提前倒裝句型 (O + [助詞] + V)
+            </div>
+            <div class="syntax-formula">
+              <span class="syntax-highlight-adv">[副詞]</span> + <span class="syntax-highlight-o">[賓語提前]</span> + <span class="syntax-highlight-p">[結構助詞]</span> + <span class="syntax-highlight-v">[述語(動詞)]</span>
+            </div>
+            <p style="font-size: 0.88rem; color: #1e40af; margin-top: 8px;">
+              例句：<span class="syntax-highlight-o">菊</span> <span class="syntax-highlight-p">之</span> <span class="syntax-highlight-v">愛</span> / <span class="syntax-highlight-adv">唯</span> <span class="syntax-highlight-o">利</span> <span class="syntax-highlight-p">是</span> <span class="syntax-highlight-v">圖</span>
+            </p>
+          </div>
+        </div>
+
+        <div style="background: #f8fafc; padding: 1.2rem; border-radius: 12px; font-size: 0.9rem; color: #475569; line-height: 1.7; border-left: 4px solid var(--primary);">
+          📌 <strong>老師黑板劃重點</strong>：文言倒裝句三大特質：
+          <br>1. <strong>無義助詞標誌</strong>：倒裝後常接「之」、「是」、「之為」，強調前置受詞並提醒讀者語法變化。
+          <br>2. <strong>省略主語常態</strong>：古文為求精鍊常略去「我、人」等主語（如「菊之愛」即「我愛菊」）。
+          <br>3. <strong>前置限制副詞</strong>：常在提前賓語前加上「唯」（只、僅），強化排他性的強調語氣（如「唯利是圖」＝只貪圖利益）。
+        </div>
+      </div>
+    </section>
+
+    <!-- 模組三：典範圖鑑與句型資料庫 (16題全收錄) -->
+    <section id="gallery" class="gallery-section">
+      <div class="section-header">
+        <span class="section-badge">EXAMPLE REPOSITORY</span>
+        <h2 class="section-title">典範圖鑑與句型資料庫 (16組全收錄)</h2>
+        <p class="section-desc">包含講義【初級練習：難！】與【進階練習：宇宙無敵難！】全部題型，支援真人發音與遮罩互動解鎖！</p>
+      </div>
+
+      <div class="gallery-filter-bar">
+        <div class="filter-chips">
+          <button class="filter-chip active" onclick="filterGallery('all')">全部典範 (16)</button>
+          <button class="filter-chip" onclick="filterGallery('basic')">初級練習 (7)</button>
+          <button class="filter-chip" onclick="filterGallery('adv')">進階・宇宙無敵難 (9)</button>
+        </div>
+
+        <div style="display: flex; gap: 10px; align-items: center; flex-wrap: wrap;">
+          <div class="search-box">
+            <i data-lucide="search" size="16" color="#64748b"></i>
+            <input type="text" id="gallerySearch" placeholder="搜尋例句或關鍵字..." oninput="searchGallery()">
+          </div>
+          <button class="toggle-all-btn" onclick="toggleAllReveals()">
+            <i data-lucide="eye" size="16"></i>
+            一鍵揭曉/遮罩全解答
+          </button>
+        </div>
+      </div>
+
+      <div class="gallery-grid" id="galleryGrid">
+        <!-- 動態生成 16 組例句卡片 -->
+      </div>
+    </section>
+
+    <!-- 模組四：魔法互動工坊 (即時倒裝還原生成器) -->
+    <section id="workshop" class="workshop-section">
+      <div class="section-header">
+        <span class="section-badge">INTERACTIVE WORKSHOP</span>
+        <h2 class="section-title">魔法還原工坊・自由句型解構儀</h2>
+        <p class="section-desc">親手組裝主語、副詞、名詞與動詞，即時看見「倒裝句」與「正常語序」的神奇雙向轉化！</p>
+      </div>
+
+      <div class="workshop-card">
+        <div class="preset-selector-row">
+          <span style="font-weight: 700; font-size: 0.9rem; color: var(--gray);">經典範例套用：</span>
+          <button class="preset-btn" onclick="applyPreset('唯', '利', '是', '圖')">唯利是圖</button>
+          <button class="preset-btn" onclick="applyPreset('', '菊', '之', '愛')">菊之愛</button>
+          <button class="preset-btn" onclick="applyPreset('唯', '你', '是', '問')">唯你是問</button>
+          <button class="preset-btn" onclick="applyPreset('', '馬首', '是', '瞻')">馬首是瞻</button>
+          <button class="preset-btn" onclick="applyPreset('', '何陋', '之', '有')">何陋之有</button>
+          <button class="preset-btn" onclick="applyPreset('唯', '弈秋', '之為', '聽')">唯弈秋之為聽</button>
+        </div>
+
+        <div class="workshop-workbench">
+          <div class="wb-card">
+            <div class="wb-title">
+              <i data-lucide="sliders" size="18"></i>
+              輸入文言倒裝元素
+            </div>
+            <div class="wb-input-group">
+              <label>1. 前置副詞/主語（喂！前面統統不准動）</label>
+              <input type="text" id="wbAdv" class="wb-input" value="唯" placeholder="例如：唯、父母唯、空" oninput="updateWorkshop()">
+            </div>
+            <div class="wb-input-group">
+              <label>2. 提前的賓語（名詞受詞）</label>
+              <input type="text" id="wbNoun" class="wb-input" value="利" placeholder="例如：菊、利、你、馬首" oninput="updateWorkshop()">
+            </div>
+            <div class="wb-input-group">
+              <label>3. 無義刺蝟助詞（是、之、之為）</label>
+              <select id="wbParticle" class="wb-input" onchange="updateWorkshop()">
+                <option value="是">是（助詞）</option>
+                <option value="之">之（助詞）</option>
+                <option value="之為">之為（助詞組合）</option>
+              </select>
+            </div>
+            <div class="wb-input-group">
+              <label>4. 述語動詞（動作）</label>
+              <input type="text" id="wbVerb" class="wb-input" value="圖" placeholder="例如：愛、圖、問、從、瞻" oninput="updateWorkshop()">
+            </div>
+          </div>
+
+          <div class="wb-display-result">
+            <div style="font-size: 0.9rem; letter-spacing: 1px; color: #bae6fd; font-weight: 700;">
+              ✨ 還原正常語序解算結果
+            </div>
+            <div class="wb-result-text" id="wbResultOutput">
+              唯圖利
+            </div>
+            <div class="wb-steps-breakdown" id="wbStepsOutput">
+              去掉助詞「是」➔ 動詞「圖」移到名詞「利」前 ➔ 前方「唯」不動 ➔ 得「唯圖利」
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 模組五：會考神仙挑戰賽 (測驗區) -->
+    <section id="challenge" class="quiz-section">
+      <div class="section-header">
+        <span class="section-badge">CHALLENGE ARENA</span>
+        <h2 class="section-title">會考神仙挑戰賽</h2>
+        <p class="section-desc">隨機抽考 10 題核心倒裝句型還原，挑戰滿分奪得「國文神仙」榮譽徽章！</p>
+      </div>
+
+      <div class="quiz-wrapper-card">
+        <div id="quizPlayArea">
+          <div class="quiz-status-header">
+            <span class="quiz-count-pill" id="arenaCount">第 1 / 10 題</span>
+            <span class="quiz-score-pill" id="arenaScore">累積分數：0 分</span>
+          </div>
+
+          <div class="quiz-prog-track">
+            <div class="quiz-prog-bar" id="arenaBar"></div>
+          </div>
+
+          <div class="quiz-question-box">
+            <div class="quiz-prompt-text">請選出下列倒裝句「還原正常語序」之正確選項：</div>
+            <div class="quiz-target-phrase" id="arenaPrompt">菊之愛</div>
+          </div>
+
+          <div class="quiz-options-grid" id="arenaOptions">
+            <!-- 動態生成選項 -->
+          </div>
+
+          <div class="quiz-explanation-box" id="arenaFeedback"></div>
+          <button class="quiz-action-next" id="arenaNextBtn" onclick="nextArenaQuestion()">前往下一題</button>
+        </div>
+
+        <div class="quiz-result-box" id="arenaResultArea">
+          <div style="color: var(--accent); margin-bottom: 10px;">
+            <i data-lucide="trophy" size="64"></i>
+          </div>
+          <h2 style="font-size: 1.8rem; font-weight: 900; color: var(--dark);">挑戰賽完成！</h2>
+          <div class="quiz-result-score" id="arenaFinalScore">100 分</div>
+          <div class="quiz-result-badge" id="arenaBadgeText">🏆 榮獲封號：倒裝神捕・語法天花板！</div>
+          <p id="arenaComment" style="color: var(--gray); font-size: 1rem; max-width: 500px; margin: 0 auto; line-height: 1.7;">
+            太精彩了！你已熟透「去掉四隻刺蝟，動前名後，喂前面的統統不准動」的心法，會考倒裝題絕對難不倒你！
+          </p>
+          <button class="quiz-restart-btn" onclick="restartArena()">
+            <i data-lucide="rotate-ccw" size="18" style="vertical-align: middle;"></i>
+            再挑戰一次
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- 模組六：練習神器內嵌專區 -->
+    <section id="tool" class="practice-tool-section">
+      <div class="section-header">
+        <span class="section-badge">INTERACTIVE PRACTICE TOOL</span>
+        <h2 class="section-title">練習神器專區・沉浸式閃卡與特訓</h2>
+        <p class="section-desc">專屬設計之「倒裝句練習神器」，支援翻卡特訓、無干擾全螢幕與進度記憶。</p>
+      </div>
+
+      <div class="tool-frame-container">
+        <div class="tool-frame-topbar">
+          <div class="tool-title">
+            <i data-lucide="gamepad-2" size="22" color="#0284c7"></i>
+            「賓語提前」倒裝句法練習神器
+          </div>
+          <a href="inversion/inversion-practice.html" target="_blank" class="fullscreen-btn">
+            <i data-lucide="external-link" size="16"></i>
+            另開獨立全螢幕練習
+          </a>
+        </div>
+        <iframe src="inversion/inversion-practice.html" class="practice-iframe" title="賓語提前練習神器"></iframe>
+      </div>
+    </section>
+  </main>
+
+  <!-- 底部 Footer -->
+  <footer>
+    <div class="footer-content">
+      <img src="icon/seal-white.png" alt="學思軒印" class="footer-logo" onerror="this.style.display='none'">
+      <div class="footer-text">
+        學思軒團隊策劃・國中國文專用 AI 數位互動教材
+        <br>
+        依據翰林版國中國文第三冊《愛蓮說》語文補給站教材精心建置
+        <br>
+        © 2026 學思軒・語文補給站 版權所有
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // 講義完整 16 組例句資料（配置高誘答力干擾選項：包含助詞未去、動賓未倒裝、副詞誤位、文言常考盲區）
+    const inversionDatabase = [
+      {
+        id: 1,
+        type: 'basic',
+        phrase: '菊之愛',
+        restored: '愛菊',
+        distractors: ['菊愛', '愛之菊', '菊之愛（非倒裝）'],
+        particle: '之（無意義結構助詞）',
+        verb: '愛（動詞/述語）',
+        noun: '菊（名詞/提前賓語）',
+        adv: '無',
+        meaning: '喜愛菊花',
+        note: '《愛蓮說》：「菊之愛，陶後鮮有聞。」去掉助詞「之」，動詞「愛」拉到名詞「菊」前，還原為「愛菊」。'
+      },
+      {
+        id: 2,
+        type: 'basic',
+        phrase: '蓮之愛',
+        restored: '愛蓮',
+        distractors: ['蓮愛', '愛之蓮', '蓮之同予'],
+        particle: '之（無意義結構助詞）',
+        verb: '愛（動詞/述語）',
+        noun: '蓮（名詞/提前賓語）',
+        adv: '無',
+        meaning: '喜愛蓮花',
+        note: '《愛蓮說》：「蓮之愛，同予者何人？」去掉助詞「之」，動詞「愛」拉到名詞「蓮」前，還原為「愛蓮」。'
+      },
+      {
+        id: 3,
+        type: 'basic',
+        phrase: '牡丹之愛',
+        restored: '愛牡丹',
+        distractors: ['牡丹愛', '愛之牡丹', '牡丹眾愛'],
+        particle: '之（無意義結構助詞）',
+        verb: '愛（動詞/述語）',
+        noun: '牡丹（名詞/提前賓語）',
+        adv: '無',
+        meaning: '喜愛牡丹花',
+        note: '《愛蓮說》：「牡丹之愛，宜乎眾矣。」去掉助詞「之」，動詞「愛」移至「牡丹」前，還原為「愛牡丹」。'
+      },
+      {
+        id: 4,
+        type: 'basic',
+        phrase: '主義是從',
+        restored: '從主義',
+        distractors: ['從是主義', '主義從', '是從主義'],
+        particle: '是（無意義結構助詞）',
+        verb: '從（動詞/服從遵從）',
+        noun: '主義（名詞/提前賓語）',
+        adv: '無',
+        meaning: '遵從三民主義',
+        note: '國歌歌詞：「矢勤矢勇，聿修厥德； matriculation... 主義是從。」去掉「是」，動詞「從」移至「主義」前，還原為「從主義」。'
+      },
+      {
+        id: 5,
+        type: 'basic',
+        phrase: '馬首是瞻',
+        restored: '瞻馬首',
+        distractors: ['瞻是馬首', '馬首瞻', '是瞻馬首'],
+        particle: '是（無意義結構助詞）',
+        verb: '瞻（動詞/看望朝向）',
+        noun: '馬首（名詞/主將馬頭）',
+        adv: '無',
+        meaning: '看著主將的馬頭決定行動方向，比喻服從領導',
+        note: '去掉助詞「是」，動詞「瞻」移至名詞「馬首」前，還原為「瞻馬首」。'
+      },
+      {
+        id: 6,
+        type: 'basic',
+        phrase: '一室之不治',
+        restored: '不治一室',
+        distractors: ['治一室', '不治之一室', '一室不治'],
+        particle: '之（無意義結構助詞）',
+        verb: '不治（否定副詞+動詞）',
+        noun: '一室（名詞/一間房間）',
+        adv: '無（否定詞不與動詞治相連）',
+        meaning: '連一間房間都不肯清理整理',
+        note: '《習慣說》：「一室之不治，何以天下國家為？」去掉「之」，將述語「不治」移到名詞「一室」前，還原為「不治一室」。'
+      },
+      {
+        id: 7,
+        type: 'basic',
+        phrase: '尺璧非寶，寸陰是競',
+        restored: '尺璧非寶，競寸陰',
+        distractors: ['寸陰是競，尺璧非寶', '尺璧非寶，寸陰競', '競尺璧非寶，寸陰'],
+        particle: '是（無意義結構助詞）',
+        verb: '競（動詞/爭取競爭）',
+        noun: '寸陰（名詞/極短的光陰）',
+        adv: '尺璧非寶（前句不動）',
+        meaning: '一尺直徑的和璧不算真寶貝，短暫光陰才值得極力爭取',
+        note: '前半句「尺璧非寶」不動！後半句去掉「是」，動詞「競」移到名詞「寸陰」前，還原為「尺璧非寶，競寸陰」。'
+      },
+      {
+        id: 8,
+        type: 'adv',
+        phrase: '唯你是問',
+        restored: '唯問你',
+        distractors: ['問唯你', '你唯問', '唯是問你'],
+        particle: '是（無意義結構助詞）',
+        verb: '問（動詞/責問追究）',
+        noun: '你（代名詞賓語）',
+        adv: '唯（副詞/只、僅）',
+        meaning: '只責問你一個人，由你承擔全部責任',
+        note: '【進階宇宙無敵難】：去掉助詞「是」，副詞「唯」在前方統統不准動！動詞「問」移到名詞「你」前，還原為「唯問你」。'
+      },
+      {
+        id: 9,
+        type: 'adv',
+        phrase: '唯利是圖',
+        restored: '唯圖利',
+        distractors: ['圖唯利', '利唯圖', '唯是圖利'],
+        particle: '是（無意義結構助詞）',
+        verb: '圖（動詞/謀求貪圖）',
+        noun: '利（名詞/利益）',
+        adv: '唯（副詞/只、僅）',
+        meaning: '一心只圖謀私利',
+        note: '去掉助詞「是」，句首副詞「唯」不動！動詞「圖」移到名詞「利」前，還原為「唯圖利」。'
+      },
+      {
+        id: 10,
+        type: 'adv',
+        phrase: '唯命是從',
+        restored: '唯從命',
+        distractors: ['從唯命', '命唯從', '唯是從命'],
+        particle: '是（無意義結構助詞）',
+        verb: '從（動詞/服從聽從）',
+        noun: '命（名詞/命令）',
+        adv: '唯（副詞/只、僅）',
+        meaning: '一切只服從命令吩咐',
+        note: '去掉助詞「是」，副詞「唯」不動，動詞「從」移至名詞「命」前，還原為「唯從命」。'
+      },
+      {
+        id: 11,
+        type: 'adv',
+        phrase: '唯兄嫂是依',
+        restored: '唯依兄嫂',
+        distractors: ['依唯兄嫂', '兄嫂唯依', '唯是依兄嫂'],
+        particle: '是（無意義結構助詞）',
+        verb: '依（動詞/依靠仰賴）',
+        noun: '兄嫂（名詞/哥哥與大嫂）',
+        adv: '唯（副詞/只、僅）',
+        meaning: '只依靠哥哥和大嫂過日子',
+        note: '韓愈《祭十二郎文》：「唯兄嫂是依。」去掉「是」，保留「唯」，動詞「依」移到名詞「兄嫂」前，還原為「唯依兄嫂」。'
+      },
+      {
+        id: 12,
+        type: 'adv',
+        phrase: '唯弈秋之為聽',
+        restored: '唯聽弈秋',
+        distractors: ['聽唯弈秋', '唯為聽弈秋', '唯弈秋聽之'],
+        particle: '之為（雙字無義結構助詞組合）',
+        verb: '聽（動詞/聆聽求教）',
+        noun: '弈秋（專有名詞/棋聖弈秋的話）',
+        adv: '唯（副詞/只、專注地）',
+        meaning: '只專注聽弈秋一個人的教導',
+        note: '《孟子・學弈》：「一人雖聽之，一心以為有鴻鵠將至... 一人唯弈秋之為聽。」去掉刺蝟「之為」，保留「唯」，動詞「聽」移至「弈秋」前，還原為「唯聽弈秋」。'
+      },
+      {
+        id: 13,
+        type: 'adv',
+        phrase: '何陋之有',
+        restored: '有何陋',
+        distractors: ['何陋有', '有之何陋', '何有陋'],
+        particle: '之（無意義結構助詞）',
+        verb: '有（動詞/述語）',
+        noun: '何陋（疑問代詞+形容詞作賓語：什麼簡陋）',
+        adv: '無',
+        meaning: '有什麼簡陋的呢？',
+        note: '《陋室銘》引孔子言：「何陋之有？」去掉結構助詞「之」，動詞「有」拉到名詞性片語「何陋」前，還原為「有何陋」。'
+      },
+      {
+        id: 14,
+        type: 'adv',
+        phrase: '何罪之有',
+        restored: '有何罪',
+        distractors: ['何罪有', '有之何罪', '何有罪'],
+        particle: '之（無意義結構助詞）',
+        verb: '有（動詞/述語）',
+        noun: '何罪（名詞片語/什麼罪過）',
+        adv: '無',
+        meaning: '有什麼罪過呢？',
+        note: '去掉「之」，動詞「有」移到名詞片語「何罪」之前，還原為「有何罪」。'
+      },
+      {
+        id: 15,
+        type: 'adv',
+        phrase: '何難之有',
+        restored: '有何難',
+        distractors: ['何難有', '有之何難', '何有難'],
+        particle: '之（無意義結構助詞）',
+        verb: '有（動詞/述語）',
+        noun: '何難（名詞片語/什麼困難）',
+        adv: '無',
+        meaning: '有什麼困難呢？',
+        note: '去掉「之」，動詞「有」移到名詞片語「何難」之前，還原為「有何難」。'
+      },
+      {
+        id: 16,
+        type: 'adv',
+        phrase: '父母唯其疾之憂',
+        restored: '父母唯憂其疾',
+        distractors: ['父母憂其疾', '憂父母唯其疾', '父母唯其疾憂'],
+        particle: '之（無意義結構助詞）',
+        verb: '憂（動詞/擔憂憂慮）',
+        noun: '其疾（名詞片語/子女的疾病）',
+        adv: '唯（副詞/只、僅）',
+        meaning: '做父母的，只為子女的生病而擔憂',
+        note: '《論語・為政》：主語「父母」與副詞「唯」統統留在前方不動！去掉助詞「之」，動詞「憂」拉回「其疾」前，還原為「父母唯憂其疾」。'
+      }
+    ];
+
+    // 全域揭曉遮罩狀態
+    let allRevealed = false;
+
+    // 渲染圖鑑卡片
+    function renderGallery(items) {
+      const grid = document.getElementById('galleryGrid');
+      grid.innerHTML = '';
+
+      if (items.length === 0) {
+        grid.innerHTML = '<div style="grid-column: 1/-1; text-align:center; padding: 40px; color: var(--gray);">找不到相符的倒裝句，請嘗試其他關鍵字。</div>';
+        return;
+      }
+
+      items.forEach(item => {
+        const card = document.createElement('div');
+        card.className = 'gallery-card';
+
+        const typeLabel = item.type === 'basic' ? '初級練習・難' : '進階練習・宇宙無敵難';
+        const typeClass = item.type === 'basic' ? 'type-basic' : 'type-adv';
+
+        card.innerHTML = `
+          <div>
+            <div class="card-meta">
+              <span class="card-id-badge">No. ${item.id}</span>
+              <span class="card-type-badge ${typeClass}">${typeLabel}</span>
+            </div>
+            
+            <div class="inverted-phrase">
+              <span>${item.phrase}</span>
+              <button class="tts-speaker-btn" title="朗讀文言句與還原句" onclick="speakText('${item.phrase}，還原為，${item.restored}')">
+                <i data-lucide="volume-2" size="18"></i>
+              </button>
+            </div>
+
+            <div class="reveal-box">
+              <div class="restore-label">
+                <i data-lucide="eye" size="14"></i> 正常語序（點擊揭曉/遮罩）：
+              </div>
+              <div class="restore-content ${allRevealed ? '' : 'blurred'}" onclick="toggleReveal(this)">
+                ${item.restored}
+              </div>
+            </div>
+
+            <div class="analysis-details">
+              <div class="analysis-row"><b>【結構助詞】</b><span>${item.particle}</span></div>
+              <div class="analysis-row"><b>【述語動詞】</b><span>${item.verb}</span></div>
+              <div class="analysis-row"><b>【名詞賓語】</b><span>${item.noun}</span></div>
+              ${item.adv !== '無' ? `<div class="analysis-row"><b>【前置副詞】</b><span>${item.adv}（喂！統統不准動）</span></div>` : ''}
+              <div class="analysis-row" style="margin-top: 6px;"><b>【現代意譯】</b><span>${item.meaning}</span></div>
+              <div class="analysis-row" style="margin-top: 6px; color: #475569; font-size: 0.82rem;">
+                💡 <b>還原秘笈：</b>${item.note}
+              </div>
+            </div>
+          </div>
+        `;
+        grid.appendChild(card);
+      });
+
+      lucide.createIcons();
+    }
+
+    function toggleReveal(el) {
+      el.classList.toggle('blurred');
+    }
+
+    function toggleAllReveals() {
+      allRevealed = !allRevealed;
+      document.querySelectorAll('.restore-content').forEach(el => {
+        if (allRevealed) el.classList.remove('blurred');
+        else el.classList.add('blurred');
+      });
+    }
+
+    let currentGalleryFilter = 'all';
+    function filterGallery(type) {
+      currentGalleryFilter = type;
+      document.querySelectorAll('.filter-chips .filter-chip').forEach(b => b.classList.remove('active'));
+      event.target.classList.add('active');
+      searchGallery();
+    }
+
+    function searchGallery() {
+      const q = document.getElementById('gallerySearch').value.trim().toLowerCase();
+      let list = inversionDatabase;
+      if (currentGalleryFilter !== 'all') {
+        list = list.filter(item => item.type === currentGalleryFilter);
+      }
+      if (q) {
+        list = list.filter(item => 
+          item.phrase.toLowerCase().includes(q) ||
+          item.restored.toLowerCase().includes(q) ||
+          item.meaning.toLowerCase().includes(q) ||
+          item.note.toLowerCase().includes(q)
+        );
+      }
+      renderGallery(list);
+    }
+
+    // Web Speech API 真人語音朗讀
+    function speakText(text) {
+      if ('speechSynthesis' in window) {
+        window.speechSynthesis.cancel();
+        const utterance = new SpeechSynthesisUtterance(text);
+        utterance.lang = 'zh-TW';
+        utterance.rate = 0.9;
+        window.speechSynthesis.speak(utterance);
+      } else {
+        alert('您的瀏覽器不支援 Web Speech API 語音朗讀');
+      }
+    }
+
+    // 魔法互動工坊
+    function applyPreset(adv, noun, particle, verb) {
+      document.getElementById('wbAdv').value = adv;
+      document.getElementById('wbNoun').value = noun;
+      document.getElementById('wbParticle').value = particle;
+      document.getElementById('wbVerb').value = verb;
+      updateWorkshop();
+    }
+
+    function updateWorkshop() {
+      const adv = document.getElementById('wbAdv').value.trim();
+      const noun = document.getElementById('wbNoun').value.trim();
+      const particle = document.getElementById('wbParticle').value.trim();
+      const verb = document.getElementById('wbVerb').value.trim();
+
+      const resultText = (adv ? adv : '') + (verb ? verb : '') + (noun ? noun : '');
+      document.getElementById('wbResultOutput').innerText = resultText || '請輸入詞彙';
+
+      let stepText = `去掉刺蝟助詞「${particle}」➔ 將述語動詞「${verb || '動詞'}」移到名詞「${noun || '名詞'}」前面`;
+      if (adv) {
+        stepText += ` ➔ 前置副詞/主語「${adv}」統統不准動！保留最前方 ➔ 得「${resultText}」`;
+      } else {
+        stepText += ` ➔ 還原為「${resultText}」`;
+      }
+      document.getElementById('wbStepsOutput').innerText = stepText;
+    }
+
+    // 會考神仙挑戰賽
+    let arenaPool = [];
+    let arenaIdx = 0;
+    let arenaScore = 0;
+
+    function startArena() {
+      arenaPool = [...inversionDatabase].sort(() => 0.5 - Math.random()).slice(0, 10);
+      arenaIdx = 0;
+      arenaScore = 0;
+      document.getElementById('quizPlayArea').style.display = 'block';
+      document.getElementById('arenaResultArea').style.display = 'none';
+      renderArenaQuestion();
+    }
+
+    function renderArenaQuestion() {
+      const q = arenaPool[arenaIdx];
+      document.getElementById('arenaCount').innerText = `第 ${arenaIdx + 1} / ${arenaPool.length} 題`;
+      document.getElementById('arenaScore').innerText = `累積分數：${arenaScore} 分`;
+      document.getElementById('arenaBar').style.width = `${(arenaIdx / arenaPool.length) * 100}%`;
+      document.getElementById('arenaPrompt').innerText = q.phrase;
+
+      // 產生高誘答力選項（依每題句構語意精準設計之干擾選項：語序混淆、助詞誤留、副詞誤位）
+      let options = [q.restored];
+      if (q.distractors && q.distractors.length >= 3) {
+        options = [q.restored, ...q.distractors.slice(0, 3)];
+      } else {
+        const distractors = inversionDatabase.filter(d => d.id !== q.id).map(d => d.restored);
+        while(options.length < 4) {
+          const rand = distractors[Math.floor(Math.random() * distractors.length)];
+          if (!options.includes(rand)) options.push(rand);
+        }
+      }
+      options.sort(() => 0.5 - Math.random());
+
+      const grid = document.getElementById('arenaOptions');
+      grid.innerHTML = '';
+      options.forEach(opt => {
+        const btn = document.createElement('button');
+        btn.className = 'quiz-opt-btn';
+        btn.innerText = opt;
+        btn.onclick = () => checkArenaAnswer(opt, q.restored, btn);
+        grid.appendChild(btn);
+      });
+
+      document.getElementById('arenaFeedback').className = 'quiz-explanation-box';
+      document.getElementById('arenaFeedback').innerHTML = '';
+      document.getElementById('arenaNextBtn').className = 'quiz-action-next';
+    }
+
+    function checkArenaAnswer(selected, correct, clickedBtn) {
+      const btns = document.querySelectorAll('.quiz-opt-btn');
+      btns.forEach(b => b.disabled = true);
+
+      const feedback = document.getElementById('arenaFeedback');
+      const q = arenaPool[arenaIdx];
+
+      if (selected === correct) {
+        clickedBtn.classList.add('correct');
+        arenaScore += 10;
+        feedback.className = 'quiz-explanation-box show is-correct';
+        feedback.innerHTML = `<strong>🎉 答對了！恭喜得分！</strong><br>${q.note}`;
+      } else {
+        clickedBtn.classList.add('wrong');
+        btns.forEach(b => {
+          if (b.innerText === correct) b.classList.add('correct');
+        });
+        feedback.className = 'quiz-explanation-box show is-wrong';
+        feedback.innerHTML = `<strong>❌ 答錯了！正確解答為「${correct}」</strong><br>${q.note}`;
+      }
+
+      document.getElementById('arenaScore').innerText = `累積分數：${arenaScore} 分`;
+      document.getElementById('arenaNextBtn').className = 'quiz-action-next show';
+      document.getElementById('arenaBar').style.width = `${((arenaIdx + 1) / arenaPool.length) * 100}%`;
+    }
+
+    function nextArenaQuestion() {
+      arenaIdx++;
+      if (arenaIdx < arenaPool.length) {
+        renderArenaQuestion();
+      } else {
+        showArenaResult();
+      }
+    }
+
+    function showArenaResult() {
+      document.getElementById('quizPlayArea').style.display = 'none';
+      const resultArea = document.getElementById('arenaResultArea');
+      resultArea.style.display = 'block';
+
+      document.getElementById('arenaFinalScore').innerText = `${arenaScore} 分`;
+
+      let badge = '';
+      let comment = '';
+      if (arenaScore === 100) {
+        badge = '🏆 榮獲封號：倒裝神仙・語法天花板！';
+        comment = '太神了！滿分過關！你已完全貫通「刺蝟退場、動前名後、副詞不動」的所有倒裝秘訣，會考國文倒裝題無人能敵！';
+      } else if (arenaScore >= 80) {
+        badge = '🥈 榮獲封號：倒裝大師・游刃有餘！';
+        comment = '非常優秀！對賓語提前掌握度極高，特別留意「之為」雙字助詞與句首副詞「唯」的保留，就能輕鬆奪得滿分！';
+      } else {
+        badge = '🥉 榮獲封號：語法新秀・潛力無窮！';
+        comment = '別氣餒！記住口訣「去掉四隻刺蝟，動前名後，喂前面的統統不准動」，到上方的閃卡神器特訓後再來挑戰吧！';
+      }
+
+      document.getElementById('arenaBadgeText').innerText = badge;
+      document.getElementById('arenaComment').innerText = comment;
+    }
+
+    function restartArena() {
+      startArena();
+    }
+
+    // 頁面初始化
+    window.addEventListener('DOMContentLoaded', () => {
+      renderGallery(inversionDatabase);
+      startArena();
+      updateWorkshop();
+      lucide.createIcons();
+    });
+  </script>
+</body>
+</html>
