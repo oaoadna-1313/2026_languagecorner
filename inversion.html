@@ -158,16 +158,27 @@
       color: var(--primary-dark);
     }
 
-    .nav-btn-tool {
-      background: linear-gradient(135deg, var(--primary), var(--primary-dark));
-      color: white !important;
-      padding: 0.48rem 1.1rem;
-      border-radius: 999px;
-      box-shadow: 0 4px 10px rgba(2, 132, 199, 0.25);
+    nav a:focus {
+      outline: none;
     }
-    .nav-btn-tool:hover {
+
+    .nav-btn-tool {
+      background: linear-gradient(135deg, var(--primary), var(--primary-dark)) !important;
+      color: #ffffff !important;
+      padding: 0.48rem 1.15rem;
+      border-radius: 999px;
+      box-shadow: 0 4px 12px rgba(2, 132, 199, 0.28);
+      font-weight: 700;
+    }
+    .nav-btn-tool:hover, .nav-btn-tool:focus, .nav-btn-tool:active {
+      background: linear-gradient(135deg, var(--primary-dark), #075985) !important;
+      color: #ffffff !important;
       transform: translateY(-2px);
-      box-shadow: 0 6px 14px rgba(2, 132, 199, 0.35);
+      box-shadow: 0 6px 16px rgba(2, 132, 199, 0.4);
+    }
+    .nav-btn-tool i, .nav-btn-tool svg {
+      color: #ffffff !important;
+      stroke: #ffffff !important;
     }
 
     /* 主容器 */
