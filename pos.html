@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>語文補給站｜詞類與詞性・國語文旗艦 AI 互動學習殿堂</title>
+  <title>語文補給站｜詞類與詞性・國語文互動學習殿堂</title>
   <!-- Google Fonts: 思源黑體、思源宋體與書法字型 -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -1250,7 +1250,8 @@
         <img src="icon/seal-red.png" alt="學思軒陽刻印" class="brand-seal-img">
         <img src="icon/logo-yuwen.png" alt="語文補給站" class="brand-logo-img">
         <div class="brand-text">
-          <span class="brand-title serif">語文補給站 <span class="brand-badge">#5 語一 詞類・詞性</span></span>
+          <span class="brand-title serif">學思軒・語文補給站 <span class="brand-badge">
+翰林版 B03語一・核心語文常識</span></span>
         </div>
       </a>
       <nav>
@@ -1274,14 +1275,14 @@
     <!-- Hero 旗艦標題 -->
     <div class="hero">
       <div class="hero-badge"><i data-lucide="award"></i> 翰林國中國文・語文常識旗艦核心</div>
-      <h1 class="hero-title serif">詞類與詞性・AI 互動學習殿堂</h1>
-      <p class="hero-subtitle">從語言基本單位的字與詞，到實詞虛詞全景宇宙；結合 100 題流行歌詞資料庫與三大實戰題庫，讓你精準透析漢語語法！</p>
+      <h1 class="hero-title serif">詞類與詞性・互動學習殿堂</h1>
+      <p class="hero-subtitle">從語言基本單位的字與詞，到實詞虛詞全景宇宙；結合 100 題流行詞句資料庫與三大實戰題庫，讓你精準透析漢語語法！</p>
       <div class="hero-pills">
         <div class="hero-pill"><i data-lucide="check-circle-2"></i> 語文五大層級圖解</div>
         <div class="hero-pill"><i data-lucide="check-circle-2"></i> 合義複詞 vs 衍聲聯綿詞</div>
         <div class="hero-pill"><i data-lucide="check-circle-2"></i> 實詞六類・虛詞四類全圖鑑</div>
         <div class="hero-pill"><i data-lucide="check-circle-2"></i> 成語結構與轉品九變</div>
-        <div class="hero-pill"><i data-lucide="check-circle-2"></i> 流行歌詞 100 題發音庫</div>
+        <div class="hero-pill"><i data-lucide="check-circle-2"></i> 流行詞句 100 題發音庫</div>
       </div>
     </div>
 
@@ -1628,17 +1629,17 @@
         <div class="section-title-wrap">
           <div class="section-icon"><i data-lucide="music"></i></div>
           <div>
-            <h2 class="section-title serif">詞性一百・流行歌詞典範資料庫</h2>
-            <p class="section-subtitle">五月天、周杰倫、蘇打綠等 100 題經典歌詞，全真人 TTS 發音與一鍵遮罩/揭曉</p>
+            <h2 class="section-title serif">詞性一百・流行詞句資料庫</h2>
+            <p class="section-subtitle">100 題經典詞句，全真人 TTS 發音與一鍵遮罩/揭曉</p>
           </div>
         </div>
       </div>
 
-      <!-- 歌詞搜尋與操作列 -->
+      <!-- 歌詞操作列 -->
       <div class="song-control-bar">
-        <div class="search-input-wrap">
-          <i data-lucide="search"></i>
-          <input type="text" id="song-search-input" placeholder="搜尋歌詞關鍵字、歌手或字詞（如：五月天、溫柔、晴天）..." oninput="handleSongSearch()">
+        <div style="font-size:0.95rem; font-weight:700; color:#334155; display:flex; align-items:center; gap:0.5rem;">
+          <i data-lucide="help-circle" style="color:var(--primary); width:18px; height:18px;"></i>
+          <span>預設全題遮罩特訓 · 點擊卡片右下角可單獨揭曉答案與剖析</span>
         </div>
         <div class="control-actions">
           <button class="action-btn" onclick="toggleAllMasks(true)"><i data-lucide="eye"></i> 一鍵全部揭曉</button>
@@ -1811,105 +1812,6 @@
 
         <div class="practice-iframe-wrap">
           <iframe id="practice-iframe" src="pos/compound-words-practice.html" class="practice-iframe" allow="fullscreen"></iframe>
-        </div>
-      </div>
-
-      <!-- 6 款神器快速導覽卡片網格 -->
-      <div class="tools-shortcut-grid">
-        <div class="tool-shortcut-card">
-          <div>
-            <div class="tool-shortcut-head">
-              <div class="tool-shortcut-icon"><i data-lucide="sparkles"></i></div>
-              <div>
-                <h4 class="tool-shortcut-title">同義反義偏義複詞</h4>
-                <span class="tool-shortcut-tag">複詞構造・規則判斷</span>
-              </div>
-            </div>
-            <p class="tool-shortcut-desc">偏義複詞重點突破與同義、反義構詞規則判斷。</p>
-          </div>
-          <button class="action-btn" onclick="switchPracticeTool('compound'); document.getElementById('practice-tools-sec').scrollIntoView({behavior:'smooth'});">
-            <i data-lucide="play-circle"></i> 切換此神器
-          </button>
-        </div>
-
-        <div class="tool-shortcut-card">
-          <div>
-            <div class="tool-shortcut-head">
-              <div class="tool-shortcut-icon" style="background:#fef3c7;color:#d97706;"><i data-lucide="scale"></i></div>
-              <div>
-                <h4 class="tool-shortcut-title">量詞運用</h4>
-                <span class="tool-shortcut-tag" style="background:#fef3c7;color:#92400e;">計量單位・語法搭配</span>
-              </div>
-            </div>
-            <p class="tool-shortcut-desc">中文豐富細膩的名量詞與動量詞搭配與文法測驗。</p>
-          </div>
-          <button class="action-btn" style="background:#d97706;" onclick="switchPracticeTool('classifiers'); document.getElementById('practice-tools-sec').scrollIntoView({behavior:'smooth'});">
-            <i data-lucide="play-circle"></i> 切換此神器
-          </button>
-        </div>
-
-        <div class="tool-shortcut-card">
-          <div>
-            <div class="tool-shortcut-head">
-              <div class="tool-shortcut-icon" style="background:#ecfeff;color:#0891b2;"><i data-lucide="git-merge"></i></div>
-              <div>
-                <h4 class="tool-shortcut-title">連接詞運用</h4>
-                <span class="tool-shortcut-tag" style="background:#ecfeff;color:#0e7490;">複句關係・邏輯關聯</span>
-              </div>
-            </div>
-            <p class="tool-shortcut-desc">因果、轉折、遞進、條件等複句關聯詞精確選用。</p>
-          </div>
-          <button class="action-btn" style="background:#0891b2;" onclick="switchPracticeTool('conjunctions'); document.getElementById('practice-tools-sec').scrollIntoView({behavior:'smooth'});">
-            <i data-lucide="play-circle"></i> 切換此神器
-          </button>
-        </div>
-
-        <div class="tool-shortcut-card">
-          <div>
-            <div class="tool-shortcut-head">
-              <div class="tool-shortcut-icon" style="background:#eff6ff;color:#2563eb;"><i data-lucide="target"></i></div>
-              <div>
-                <h4 class="tool-shortcut-title">詞性判斷</h4>
-                <span class="tool-shortcut-tag" style="background:#eff6ff;color:#1e40af;">實詞虛詞・精準定位</span>
-              </div>
-            </div>
-            <p class="tool-shortcut-desc">名詞、動詞、形容詞、副詞、介詞、連詞精準定位。</p>
-          </div>
-          <button class="action-btn" style="background:#2563eb;" onclick="switchPracticeTool('pos'); document.getElementById('practice-tools-sec').scrollIntoView({behavior:'smooth'});">
-            <i data-lucide="play-circle"></i> 切換此神器
-          </button>
-        </div>
-
-        <div class="tool-shortcut-card">
-          <div>
-            <div class="tool-shortcut-head">
-              <div class="tool-shortcut-icon" style="background:#f5f3ff;color:#7c3aed;"><i data-lucide="shuffle"></i></div>
-              <div>
-                <h4 class="tool-shortcut-title">詞性活用判斷</h4>
-                <span class="tool-shortcut-tag" style="background:#f5f3ff;color:#5b21b6;">轉品活用・文言解析</span>
-              </div>
-            </div>
-            <p class="tool-shortcut-desc">名詞作動詞、形容詞作動詞等文言轉品活用解析。</p>
-          </div>
-          <button class="action-btn" style="background:#7c3aed;" onclick="switchPracticeTool('inflection'); document.getElementById('practice-tools-sec').scrollIntoView({behavior:'smooth'});">
-            <i data-lucide="play-circle"></i> 切換此神器
-          </button>
-        </div>
-
-        <div class="tool-shortcut-card">
-          <div>
-            <div class="tool-shortcut-head">
-              <div class="tool-shortcut-icon" style="background:#ecfdf5;color:#059669;"><i data-lucide="layout-grid"></i></div>
-              <div>
-                <h4 class="tool-shortcut-title">詞性結構判斷</h4>
-                <span class="tool-shortcut-tag" style="background:#ecfdf5;color:#065f46;">四字成語・結構拆解</span>
-              </div>
-            </div>
-            <p class="tool-shortcut-desc">成語與四字詞內部詞性結構（如：名動名動、副形副形）。</p>
-          </div>
-          <button class="action-btn" style="background:#059669;" onclick="switchPracticeTool('structure'); document.getElementById('practice-tools-sec').scrollIntoView({behavior:'smooth'});">
-            <i data-lucide="play-circle"></i> 切換此神器
-          </button>
         </div>
       </div>
     </section>
@@ -2271,6 +2173,12 @@
           `「${song.target}」`,
           `「<span class="target-word">${song.target}</span>」`
         );
+
+        // 分離歌手資訊與括號答案/語法解析（確保在隱藏模式下答案解說不洩漏）
+        const noteMatch = song.singer.match(/\s*(\([^)]+\))\s*$/);
+        const singerText = noteMatch ? song.singer.slice(0, noteMatch.index).trim() : song.singer;
+        const songNote = noteMatch ? noteMatch[1] : '';
+
         return `
           <div class="song-card" id="song-card-${song.id}">
             <div class="song-top">
@@ -2281,7 +2189,11 @@
             </div>
             <div class="song-sentence serif">${highlightedSentence}</div>
             <div class="song-bottom">
-              <span style="font-size:0.75rem;color:#94a3b8;"><i data-lucide="disc"></i> ${song.singer}</span>
+              <span class="song-meta" style="font-size:0.75rem;color:#94a3b8;display:inline-flex;align-items:center;flex-wrap:wrap;gap:4px;">
+                <i data-lucide="disc"></i>
+                <span class="singer-title">${singerText}</span>
+                ${songNote ? `<span class="song-note" style="display:none; color:#ea580c; background:#fff7ed; padding:1px 6px; border-radius:4px; font-weight:700;">${songNote}</span>` : ''}
+              </span>
               <span class="mask-badge" onclick="toggleSongMask(this, '${song.pos}')" data-pos="${song.pos}">
                 <i data-lucide="help-circle"></i> 點擊揭曉詞性
               </span>
@@ -2293,11 +2205,16 @@
     }
 
     function toggleSongMask(el, pos) {
+      const card = el.closest('.song-card');
+      const noteEl = card ? card.querySelector('.song-note') : null;
+
       if (el.classList.contains('revealed')) {
         el.classList.remove('revealed');
         el.style.background = '#f1f5f9';
         el.style.color = '#64748b';
+        el.style.borderColor = '#e2e8f0';
         el.innerHTML = `<i data-lucide="help-circle"></i> 點擊揭曉詞性`;
+        if (noteEl) noteEl.style.display = 'none';
       } else {
         el.classList.add('revealed');
         let posColor = '#0d9488';
@@ -2317,6 +2234,7 @@
         el.style.color = posColor;
         el.style.borderColor = posColor;
         el.innerHTML = `<b>【${pos}】</b>`;
+        if (noteEl) noteEl.style.display = 'inline-block';
       }
       refreshIcons();
     }
@@ -2341,21 +2259,6 @@
         currentSongList = SONGS_100_DB.filter(s => s.pos.includes(pos));
       }
       renderSongCards(currentSongList);
-    }
-
-    function handleSongSearch() {
-      const q = document.getElementById('song-search-input').value.trim().toLowerCase();
-      if (!q) {
-        renderSongCards(currentSongList);
-        return;
-      }
-      const searched = currentSongList.filter(s => 
-        s.sentence.toLowerCase().includes(q) ||
-        s.target.toLowerCase().includes(q) ||
-        s.pos.toLowerCase().includes(q) ||
-        s.singer.toLowerCase().includes(q)
-      );
-      renderSongCards(searched);
     }
 
     // 渲染實戰學習集關卡
