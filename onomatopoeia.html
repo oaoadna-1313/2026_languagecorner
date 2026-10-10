@@ -1,0 +1,2319 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>語文補給站｜萬籟俱寂・聲歷其境——狀聲詞旗艦學習殿堂</title>
+  <meta name="description" content="翰林國中國文 B3L06《鳥》語文補給站：狀聲詞互動教學學習平台，收錄人聲、鳥鳴、走獸、風雨、流水、金屬兵器、器物細動全圖鑑、全真語音朗讀、橘老師開唱解題眉角、聲景魔法工坊、會考挑戰賽與專屬練習神器。">
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;600;700;900&family=Noto+Sans+TC:wght@300;400;500;700;900&family=Ma+Shan+Zheng&display=swap" rel="stylesheet">
+  
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <style>
+    :root {
+      /* 浩瀚聲景主題色系：碧空藍、深海靛、靈動青與琥珀金 */
+      --primary: #0284c7;
+      --primary-dark: #0369a1;
+      --primary-light: #e0f2fe;
+      --primary-hover: #0ea5e9;
+
+      --accent: #f59e0b;
+      --accent-dark: #d97706;
+      --accent-light: #fef3c7;
+
+      --cyan: #06b6d4;
+      --cyan-light: #ecfeff;
+
+      --indigo: #4f46e5;
+      --indigo-light: #e0e7ff;
+
+      --emerald: #10b981;
+      --emerald-light: #d1fae5;
+
+      --rose: #f43f5e;
+      --rose-light: #ffe4e6;
+
+      --dark: #0f172a;
+      --dark-card: #1e293b;
+      --gray: #64748b;
+      --light-bg: #f8fafc;
+      --card-bg: rgba(255, 255, 255, 0.98);
+      --border: #e2e8f0;
+      --radius: 20px;
+      --shadow: 0 10px 25px -5px rgba(2, 132, 199, 0.08), 0 8px 10px -6px rgba(0, 0, 0, 0.04);
+      --shadow-hover: 0 20px 35px -10px rgba(2, 132, 199, 0.2);
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Noto Sans TC', sans-serif;
+      background-color: var(--light-bg);
+      color: var(--dark);
+      line-height: 1.7;
+      background-image: 
+        radial-gradient(circle at 8% 12%, rgba(2, 132, 199, 0.05) 0%, transparent 45%),
+        radial-gradient(circle at 92% 88%, rgba(245, 158, 11, 0.05) 0%, transparent 45%),
+        radial-gradient(circle at 50% 50%, rgba(79, 70, 229, 0.03) 0%, transparent 60%);
+      background-attachment: fixed;
+    }
+
+    .serif { font-family: 'Noto Serif TC', serif; }
+    .calligraphy { font-family: 'Ma Shan Zheng', 'Noto Serif TC', cursive; }
+
+    /* 頂部品牌導覽列 */
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(14px);
+      border-bottom: 1px solid var(--border);
+      padding: 0.75rem 1.5rem;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
+    }
+
+    .nav-container {
+      max-width: 1320px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    .brand-group {
+      display: flex;
+      align-items: center;
+      gap: 0.85rem;
+      text-decoration: none;
+    }
+
+    .brand-seal-img {
+      height: 48px;
+      width: auto;
+      object-fit: contain;
+      transition: transform 0.3s ease;
+      filter: drop-shadow(0 2px 4px rgba(0,0,0,0.08));
+    }
+    .brand-seal-img:hover {
+      transform: rotate(5deg) scale(1.08);
+    }
+
+    .brand-logo-img {
+      height: 48px;
+      width: auto;
+      object-fit: contain;
+      filter: drop-shadow(0 2px 4px rgba(0,0,0,0.08));
+    }
+
+    .brand-text { display: flex; flex-direction: column; }
+    .brand-title {
+      font-size: 1.35rem;
+      font-weight: 800;
+      color: var(--primary-dark);
+      letter-spacing: -0.5px;
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+    .brand-badge {
+      font-size: 0.72rem;
+      background: var(--primary-light);
+      color: var(--primary-dark);
+      padding: 0.15rem 0.55rem;
+      border-radius: 999px;
+      font-weight: 700;
+      width: fit-content;
+      margin-top: 2px;
+      border: 1px solid rgba(2, 132, 199, 0.2);
+    }
+
+    nav ul {
+      display: flex;
+      gap: 0.4rem;
+      list-style: none;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: var(--dark);
+      font-weight: 600;
+      padding: 0.45rem 0.85rem;
+      border-radius: 10px;
+      transition: all 0.2s ease;
+      font-size: 0.92rem;
+      display: flex;
+      align-items: center;
+      gap: 0.35rem;
+    }
+
+    nav a:hover, nav a.active {
+      background: var(--primary-light);
+      color: var(--primary-dark);
+    }
+
+    .nav-btn-tool {
+      background: linear-gradient(135deg, var(--primary), var(--primary-dark)) !important;
+      color: #ffffff !important;
+      padding: 0.48rem 1.1rem;
+      border-radius: 999px;
+      box-shadow: 0 4px 10px rgba(2, 132, 199, 0.25);
+    }
+    .nav-btn-tool:hover {
+      background: linear-gradient(135deg, var(--primary-dark), #075985) !important;
+      color: #ffffff !important;
+      transform: translateY(-2px);
+      box-shadow: 0 6px 14px rgba(2, 132, 199, 0.35);
+    }
+
+    /* 主版面區塊 */
+    main {
+      max-width: 1240px;
+      margin: 2rem auto;
+      padding: 0 1.5rem;
+    }
+
+    /* Hero Banner */
+    .hero {
+      position: relative;
+      background: linear-gradient(135deg, #ffffff 0%, #f0f9ff 100%);
+      border: 1px solid #bae6fd;
+      border-radius: 28px;
+      padding: 3.8rem 2.2rem;
+      margin-bottom: 2.8rem;
+      box-shadow: var(--shadow);
+      overflow: hidden;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .hero::after {
+      content: "狀聲・摹響";
+      position: absolute;
+      right: 2%;
+      bottom: -25px;
+      font-size: 7.8rem;
+      font-family: 'Ma Shan Zheng', cursive;
+      color: rgba(2, 132, 199, 0.045);
+      pointer-events: none;
+      user-select: none;
+      white-space: nowrap;
+    }
+
+    .hero-content {
+      max-width: 920px;
+      margin: 0 auto;
+      z-index: 2;
+    }
+
+    .hero-badge-top {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: white;
+      color: var(--primary-dark);
+      padding: 6px 16px;
+      border-radius: 999px;
+      font-size: 0.88rem;
+      font-weight: 700;
+      margin-bottom: 1.2rem;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+      border: 1px solid #7dd3fc;
+    }
+
+    .hero-content h1 {
+      font-size: 3.2rem;
+      font-weight: 900;
+      color: var(--primary-dark);
+      margin-bottom: 1.2rem;
+      line-height: 1.25;
+    }
+
+    .hero-content h1 span {
+      background: linear-gradient(135deg, #0284c7 0%, #4f46e5 50%, #f59e0b 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .hero-content p {
+      font-size: 1.18rem;
+      color: #475569;
+      margin-bottom: 2rem;
+      line-height: 1.8;
+    }
+
+    .feature-pills-row {
+      display: flex;
+      gap: 12px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .f-pill {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(255, 255, 255, 0.95);
+      padding: 8px 18px;
+      border-radius: 999px;
+      font-size: 0.92rem;
+      font-weight: 700;
+      color: #334155;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.04);
+      border: 1px solid rgba(2, 132, 199, 0.15);
+    }
+    .f-pill i { color: var(--primary); }
+
+    /* 通用區塊標題 */
+    .section-header {
+      margin-bottom: 2.2rem;
+      text-align: center;
+    }
+    .section-tag {
+      display: inline-block;
+      font-size: 0.84rem;
+      font-weight: 800;
+      color: var(--primary);
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      margin-bottom: 0.4rem;
+    }
+    .section-title {
+      font-size: 2.2rem;
+      font-weight: 900;
+      color: #1e293b;
+      margin-bottom: 0.6rem;
+    }
+    .section-desc {
+      font-size: 1.05rem;
+      color: #64748b;
+      max-width: 720px;
+      margin: 0 auto;
+    }
+
+    /* 區塊卡片外框 */
+    .content-section {
+      background: white;
+      border-radius: 24px;
+      border: 1px solid var(--border);
+      padding: 3rem 2.2rem;
+      margin-bottom: 3rem;
+      box-shadow: var(--shadow);
+    }
+
+    /* 模組一：核心定義與解題三部曲 */
+    .definition-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+      margin-bottom: 2.5rem;
+    }
+    .def-card {
+      background: #f8fafc;
+      border: 1px solid #e2e8f0;
+      border-radius: 18px;
+      padding: 24px;
+      transition: all 0.3s;
+      display: flex;
+      flex-direction: column;
+    }
+    .def-card:hover {
+      border-color: var(--primary);
+      background: white;
+      box-shadow: 0 8px 20px rgba(2, 132, 199, 0.08);
+      transform: translateY(-3px);
+    }
+    .def-icon-circle {
+      width: 50px;
+      height: 50px;
+      border-radius: 14px;
+      background: var(--primary-light);
+      color: var(--primary);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 16px;
+    }
+    .def-title {
+      font-size: 1.22rem;
+      font-weight: 800;
+      color: #1e293b;
+      margin-bottom: 10px;
+    }
+    .def-text {
+      font-size: 0.95rem;
+      color: #475569;
+      line-height: 1.7;
+      flex-grow: 1;
+    }
+    .def-text ul {
+      margin-left: 1.2rem;
+      margin-top: 8px;
+    }
+    .def-text li {
+      margin-bottom: 6px;
+    }
+    .highlight-span {
+      color: var(--primary-dark);
+      font-weight: 700;
+      background: rgba(2, 132, 199, 0.08);
+      padding: 1px 6px;
+      border-radius: 4px;
+    }
+
+    /* 橘老師開唱解題錦囊 Banner */
+    .orange-teacher-banner {
+      background: linear-gradient(135deg, #fffbeb 0%, #fef3c7 100%);
+      border: 2px dashed #f59e0b;
+      border-radius: 20px;
+      padding: 26px 30px;
+      margin-bottom: 2.5rem;
+      position: relative;
+    }
+    .orange-header {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 16px;
+    }
+    .orange-badge {
+      background: #f59e0b;
+      color: white;
+      font-weight: 800;
+      font-size: 0.95rem;
+      padding: 4px 14px;
+      border-radius: 999px;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .orange-title {
+      font-size: 1.35rem;
+      font-weight: 900;
+      color: #92400e;
+    }
+    .orange-content-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 18px;
+    }
+    .orange-item {
+      background: rgba(255, 255, 255, 0.85);
+      border-radius: 12px;
+      padding: 16px 20px;
+      border: 1px solid rgba(245, 158, 11, 0.25);
+    }
+    .orange-item-title {
+      font-weight: 800;
+      color: #b45309;
+      font-size: 1.02rem;
+      margin-bottom: 8px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .orange-item-desc {
+      font-size: 0.93rem;
+      color: #475569;
+      line-height: 1.65;
+    }
+
+    /* 萬能公式 Banner */
+    .formula-banner {
+      background: linear-gradient(135deg, #0369a1 0%, #1e1b4b 100%);
+      border-radius: 20px;
+      padding: 28px 32px;
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 20px;
+      box-shadow: 0 10px 25px rgba(2, 132, 199, 0.25);
+    }
+    .formula-title {
+      font-size: 1.55rem;
+      font-weight: 900;
+      margin-bottom: 6px;
+    }
+    .formula-desc {
+      font-size: 0.98rem;
+      color: #bae6fd;
+    }
+    .formula-steps {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+    }
+    .f-step {
+      background: rgba(255, 255, 255, 0.12);
+      border: 1px solid rgba(255, 255, 255, 0.25);
+      padding: 12px 18px;
+      border-radius: 14px;
+      font-size: 0.95rem;
+      font-weight: 700;
+      backdrop-filter: blur(8px);
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+    .f-step small {
+      color: #7dd3fc;
+      font-size: 0.76rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    /* 模組二：聲景八維度星盤導覽矩陣 */
+    .matrix-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+      margin-top: 1.5rem;
+    }
+    .matrix-card {
+      background: #f8fafc;
+      border: 1px solid #e2e8f0;
+      border-radius: 18px;
+      padding: 20px;
+      cursor: pointer;
+      transition: all 0.25s ease;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      position: relative;
+      overflow: hidden;
+    }
+    .matrix-card:hover, .matrix-card.active {
+      background: white;
+      border-color: var(--primary);
+      box-shadow: 0 8px 22px rgba(2, 132, 199, 0.15);
+      transform: translateY(-4px);
+    }
+    .matrix-card.active {
+      border-width: 2px;
+      background: #f0f9ff;
+    }
+    .matrix-icon-box {
+      font-size: 2rem;
+      margin-bottom: 10px;
+    }
+    .matrix-name {
+      font-size: 1.15rem;
+      font-weight: 800;
+      color: #1e293b;
+      margin-bottom: 6px;
+    }
+    .matrix-examples {
+      font-size: 0.86rem;
+      color: #64748b;
+      line-height: 1.5;
+    }
+    .matrix-count {
+      position: absolute;
+      top: 16px;
+      right: 16px;
+      background: white;
+      border: 1px solid #cbd5e1;
+      color: var(--primary-dark);
+      font-size: 0.75rem;
+      font-weight: 800;
+      padding: 2px 8px;
+      border-radius: 999px;
+    }
+
+    /* 模組三：典範圖鑑與語境資料庫 */
+    .filter-toolbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 15px;
+      margin-bottom: 2rem;
+      background: #f8fafc;
+      padding: 16px 20px;
+      border-radius: 18px;
+      border: 1px solid var(--border);
+    }
+
+    .category-chips {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+
+    .chip-btn {
+      padding: 8px 16px;
+      border-radius: 999px;
+      border: 1px solid #cbd5e1;
+      background: white;
+      font-size: 0.9rem;
+      font-weight: 700;
+      color: #475569;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+    .chip-btn:hover {
+      border-color: var(--primary);
+      color: var(--primary);
+    }
+    .chip-btn.active {
+      background: var(--primary);
+      color: white;
+      border-color: var(--primary);
+      box-shadow: 0 4px 10px rgba(2, 132, 199, 0.25);
+    }
+
+    .search-box-wrap {
+      position: relative;
+      min-width: 280px;
+    }
+    .search-input {
+      width: 100%;
+      padding: 10px 14px 10px 42px;
+      border-radius: 999px;
+      border: 1px solid #cbd5e1;
+      font-size: 0.95rem;
+      outline: none;
+      transition: all 0.2s;
+    }
+    .search-input:focus {
+      border-color: var(--primary);
+      box-shadow: 0 0 0 3px rgba(2, 132, 199, 0.15);
+    }
+    .search-icon-pos {
+      position: absolute;
+      left: 14px;
+      top: 50%;
+      transform: translateY(-50%);
+      color: #94a3b8;
+    }
+
+    .control-actions-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 1.5rem;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+    .result-counter {
+      font-size: 0.96rem;
+      font-weight: 700;
+      color: #64748b;
+    }
+    .reveal-all-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: white;
+      border: 1px solid #cbd5e1;
+      padding: 8px 16px;
+      border-radius: 10px;
+      font-size: 0.88rem;
+      font-weight: 700;
+      color: #334155;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+    .reveal-all-btn:hover {
+      background: #f1f5f9;
+      border-color: var(--primary);
+      color: var(--primary);
+    }
+
+    .vocab-cards-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+    }
+
+    .vocab-card {
+      background: #ffffff;
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      padding: 24px;
+      transition: all 0.25s ease;
+      display: flex;
+      flex-direction: column;
+      position: relative;
+    }
+    .vocab-card:hover {
+      box-shadow: 0 10px 25px rgba(2, 132, 199, 0.1);
+      border-color: #7dd3fc;
+      transform: translateY(-2px);
+    }
+
+    .card-top-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: 12px;
+    }
+
+    .term-headline {
+      display: flex;
+      align-items: baseline;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+    .term-name {
+      font-size: 1.7rem;
+      font-weight: 900;
+      color: var(--primary-dark);
+      letter-spacing: 0.5px;
+    }
+    .term-bopomofo {
+      font-size: 0.95rem;
+      color: #b45309;
+      font-weight: 700;
+      background: #fef3c7;
+      padding: 2px 8px;
+      border-radius: 6px;
+    }
+    .term-category-badge {
+      font-size: 0.78rem;
+      padding: 4px 10px;
+      border-radius: 999px;
+      font-weight: 700;
+    }
+
+    /* 類別標籤色彩 */
+    .cat-human { background: #fee2e2; color: #be123c; }
+    .cat-bird { background: #dcfce7; color: #15803d; }
+    .cat-animal { background: #fef9c3; color: #a16207; }
+    .cat-wind { background: #e0f2fe; color: #0369a1; }
+    .cat-rain { background: #e0e7ff; color: #4338ca; }
+    .cat-water { background: #ccfbf1; color: #0f766e; }
+    .cat-metal { background: #fae8ff; color: #86198f; }
+    .cat-object { background: #ffedd5; color: #c2410c; }
+
+    .tts-sound-btn {
+      background: #f0f9ff;
+      border: 1px solid #bae6fd;
+      color: var(--primary);
+      width: 38px;
+      height: 38px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+    .tts-sound-btn:hover {
+      background: var(--primary);
+      color: white;
+      transform: scale(1.1);
+    }
+    .tts-sound-btn.playing {
+      background: #10b981;
+      color: white;
+      animation: pulse 1s infinite;
+    }
+    @keyframes pulse {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.12); }
+      100% { transform: scale(1); }
+    }
+
+    .sentence-block {
+      background: #f8fafc;
+      border-left: 4px solid var(--primary);
+      padding: 12px 16px;
+      border-radius: 0 10px 10px 0;
+      margin-bottom: 14px;
+      font-size: 1.05rem;
+      line-height: 1.6;
+      color: #1e293b;
+      font-weight: 600;
+    }
+    .sentence-block .sound-word-hl {
+      color: #0284c7;
+      font-weight: 900;
+      text-decoration: underline;
+      text-underline-offset: 4px;
+    }
+    .source-quote {
+      font-size: 0.82rem;
+      color: #64748b;
+      font-weight: 500;
+      margin-top: 4px;
+      display: block;
+    }
+
+    .analysis-box {
+      background: #ffffff;
+      border: 1px dashed #cbd5e1;
+      border-radius: 12px;
+      padding: 12px 14px;
+      font-size: 0.92rem;
+      line-height: 1.6;
+      color: #475569;
+      position: relative;
+      cursor: pointer;
+      transition: all 0.25s;
+    }
+    .analysis-box.masked {
+      background: #f1f5f9;
+      color: transparent;
+      user-select: none;
+      border-style: solid;
+    }
+    .analysis-box.masked::after {
+      content: "🔒 點擊揭曉聲景解析與用法";
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      color: #0284c7;
+      font-weight: 700;
+      font-size: 0.92rem;
+      white-space: nowrap;
+    }
+
+    /* 模組四：古典聲景魔法工坊 */
+    .workshop-wrap {
+      background: linear-gradient(135deg, #f8fafc 0%, #e0f2fe 100%);
+      border: 1px solid #bae6fd;
+      border-radius: 20px;
+      padding: 30px;
+    }
+    .workshop-steps-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+      margin-bottom: 24px;
+    }
+    .workshop-panel {
+      background: white;
+      border-radius: 16px;
+      padding: 22px;
+      border: 1px solid var(--border);
+    }
+    .workshop-panel-title {
+      font-size: 1.15rem;
+      font-weight: 800;
+      color: var(--primary-dark);
+      margin-bottom: 14px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .scene-selector-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 10px;
+    }
+    .scene-btn {
+      padding: 12px;
+      border-radius: 12px;
+      border: 1px solid #cbd5e1;
+      background: #f8fafc;
+      font-weight: 700;
+      color: #334155;
+      text-align: left;
+      cursor: pointer;
+      transition: all 0.2s;
+      font-size: 0.92rem;
+    }
+    .scene-btn:hover {
+      border-color: var(--primary);
+      background: #f0f9ff;
+    }
+    .scene-btn.active {
+      background: var(--primary);
+      color: white;
+      border-color: var(--primary);
+      box-shadow: 0 4px 12px rgba(2, 132, 199, 0.25);
+    }
+    .sound-picker-row {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      margin-top: 10px;
+    }
+    .sound-pick-item {
+      padding: 6px 14px;
+      border-radius: 8px;
+      background: #f1f5f9;
+      border: 1px solid #cbd5e1;
+      font-size: 0.9rem;
+      font-weight: 700;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+    .sound-pick-item:hover {
+      background: #e0f2fe;
+      color: var(--primary-dark);
+    }
+    .sound-pick-item.active {
+      background: #4f46e5;
+      color: white;
+      border-color: #4f46e5;
+    }
+
+    .output-card {
+      background: white;
+      border-radius: 18px;
+      padding: 24px;
+      border: 2px dashed #0284c7;
+      text-align: center;
+      box-shadow: 0 6px 20px rgba(2, 132, 199, 0.08);
+    }
+    .output-text {
+      font-size: 1.45rem;
+      font-weight: 800;
+      color: #0f172a;
+      line-height: 1.7;
+      margin-bottom: 12px;
+    }
+    .output-text span.hl-sound {
+      color: #0284c7;
+      background: #e0f2fe;
+      padding: 2px 8px;
+      border-radius: 6px;
+    }
+    .output-annotation {
+      font-size: 0.95rem;
+      color: #64748b;
+      margin-bottom: 16px;
+    }
+    .output-action-btns {
+      display: flex;
+      gap: 12px;
+      justify-content: center;
+    }
+    .btn-workshop-action {
+      padding: 8px 18px;
+      border-radius: 999px;
+      font-weight: 700;
+      font-size: 0.9rem;
+      cursor: pointer;
+      border: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      transition: all 0.2s;
+    }
+    .btn-listen {
+      background: var(--primary);
+      color: white;
+    }
+    .btn-listen:hover {
+      background: var(--primary-dark);
+    }
+
+    /* 模組五：會考神仙挑戰賽 (Quiz) */
+    .quiz-container {
+      max-width: 860px;
+      margin: 0 auto;
+    }
+    .quiz-stats-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: #f8fafc;
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 12px 20px;
+      margin-bottom: 20px;
+    }
+    .quiz-progress-text {
+      font-weight: 800;
+      color: var(--primary-dark);
+      font-size: 1rem;
+    }
+    .quiz-score-badge {
+      background: var(--accent-light);
+      color: var(--accent-dark);
+      font-weight: 800;
+      padding: 4px 12px;
+      border-radius: 999px;
+      font-size: 0.92rem;
+    }
+    .quiz-bar-outer {
+      width: 100%;
+      height: 8px;
+      background: #e2e8f0;
+      border-radius: 999px;
+      overflow: hidden;
+      margin-bottom: 24px;
+    }
+    .quiz-bar-inner {
+      height: 100%;
+      width: 0%;
+      background: linear-gradient(90deg, #0284c7, #4f46e5);
+      transition: width 0.3s ease;
+    }
+
+    .quiz-card-box {
+      background: white;
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 28px;
+      box-shadow: var(--shadow);
+    }
+    .q-source-tag {
+      display: inline-block;
+      background: #f1f5f9;
+      color: #64748b;
+      font-size: 0.78rem;
+      font-weight: 700;
+      padding: 3px 10px;
+      border-radius: 6px;
+      margin-bottom: 12px;
+    }
+    .q-stem {
+      font-size: 1.25rem;
+      font-weight: 800;
+      color: #1e293b;
+      line-height: 1.6;
+      margin-bottom: 22px;
+    }
+    .q-options-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 12px;
+      margin-bottom: 24px;
+    }
+    .q-opt-btn {
+      padding: 15px 18px;
+      border-radius: 12px;
+      border: 2px solid #e2e8f0;
+      background: #f8fafc;
+      text-align: left;
+      font-size: 1rem;
+      font-weight: 600;
+      color: #334155;
+      cursor: pointer;
+      transition: all 0.2s;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .q-opt-btn:hover:not(:disabled) {
+      background: #f0f9ff;
+      border-color: var(--primary);
+    }
+    .q-opt-btn.correct {
+      background: #dcfce7 !important;
+      border-color: #16a34a !important;
+      color: #15803d !important;
+    }
+    .q-opt-btn.wrong {
+      background: #fee2e2 !important;
+      border-color: #dc2626 !important;
+      color: #991b1b !important;
+    }
+    .q-explanation-box {
+      background: #f8fafc;
+      border-left: 4px solid var(--primary);
+      border-radius: 0 12px 12px 0;
+      padding: 16px 20px;
+      margin-bottom: 20px;
+      display: none;
+      animation: fadeIn 0.3s ease;
+    }
+    .q-exp-title {
+      font-weight: 800;
+      color: var(--primary-dark);
+      margin-bottom: 6px;
+      font-size: 1.02rem;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .q-exp-text {
+      font-size: 0.95rem;
+      color: #475569;
+      line-height: 1.65;
+    }
+
+    .quiz-nav-row {
+      display: flex;
+      justify-content: flex-end;
+    }
+    .btn-next-q {
+      background: var(--primary);
+      color: white;
+      border: none;
+      padding: 10px 26px;
+      border-radius: 999px;
+      font-weight: 800;
+      font-size: 0.96rem;
+      cursor: pointer;
+      display: none;
+      transition: all 0.2s;
+    }
+    .btn-next-q:hover {
+      background: var(--primary-dark);
+      transform: translateY(-2px);
+    }
+
+    /* 測驗結算畫面 */
+    .quiz-result-view {
+      display: none;
+      text-align: center;
+      padding: 30px 20px;
+    }
+    .result-badge-icon {
+      font-size: 4rem;
+      margin-bottom: 12px;
+    }
+    .result-final-score {
+      font-size: 2.8rem;
+      font-weight: 900;
+      color: var(--primary-dark);
+      margin-bottom: 8px;
+    }
+    .result-comment {
+      font-size: 1.15rem;
+      color: #475569;
+      margin-bottom: 24px;
+    }
+    .btn-restart-quiz {
+      background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+      color: white;
+      border: none;
+      padding: 12px 30px;
+      border-radius: 999px;
+      font-size: 1.05rem;
+      font-weight: 800;
+      cursor: pointer;
+      box-shadow: 0 4px 15px rgba(2, 132, 199, 0.3);
+      transition: all 0.2s;
+    }
+    .btn-restart-quiz:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(2, 132, 199, 0.4);
+    }
+
+    /* 模組六：專屬練習神器內嵌專區 */
+    .practice-embed-box {
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      overflow: hidden;
+      background: #f8fafc;
+      box-shadow: var(--shadow);
+    }
+    .practice-toolbar {
+      background: #ffffff;
+      padding: 14px 20px;
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+    .tool-info {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .tool-badge {
+      background: var(--primary-light);
+      color: var(--primary-dark);
+      font-size: 0.78rem;
+      font-weight: 800;
+      padding: 3px 10px;
+      border-radius: 999px;
+    }
+    .tool-title {
+      font-weight: 800;
+      color: #1e293b;
+      font-size: 1.05rem;
+    }
+    .tool-btns-row {
+      display: flex;
+      gap: 10px;
+    }
+    .btn-tool-action {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: #f1f5f9;
+      border: 1px solid #cbd5e1;
+      padding: 6px 14px;
+      border-radius: 8px;
+      font-size: 0.88rem;
+      font-weight: 700;
+      color: #334155;
+      text-decoration: none;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+    .btn-tool-action:hover {
+      background: #e0f2fe;
+      color: var(--primary-dark);
+      border-color: #7dd3fc;
+    }
+    .btn-tool-action.primary {
+      background: var(--primary);
+      color: white;
+      border-color: var(--primary);
+    }
+    .btn-tool-action.primary:hover {
+      background: var(--primary-dark);
+    }
+    .iframe-wrapper {
+      position: relative;
+      width: 100%;
+      height: 820px;
+      background: white;
+    }
+    .iframe-wrapper iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+
+    /* 頁尾 Footer - 典雅溫潤暖栗木/沉木茶褐漸層 */
+    footer {
+      background: linear-gradient(180deg, #2e1a12 0%, #1c0f0a 100%);
+      color: white;
+      padding: 3.5rem 1.5rem 2.5rem;
+      margin-top: 5rem;
+      border-top: 3px solid #854d0e;
+      text-align: center;
+    }
+    .footer-container {
+      max-width: 1320px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1.8rem;
+      text-align: center;
+    }
+    .footer-logos {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 1.5rem;
+      flex-wrap: wrap;
+    }
+    .footer-seal {
+      height: 60px;
+      width: auto;
+      object-fit: contain;
+      filter: drop-shadow(0 4px 10px rgba(0, 0, 0, 0.3));
+    }
+    .footer-tagline-img {
+      max-height: 46px;
+      width: auto;
+      object-fit: contain;
+    }
+    .footer-credit {
+      font-size: 0.95rem;
+      color: #fde68a;
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(253, 230, 138, 0.25);
+      padding: 0.6rem 1.6rem;
+      border-radius: 999px;
+      font-weight: 600;
+      letter-spacing: 0.5px;
+    }
+
+    /* RWD 適應 */
+    @media (max-width: 992px) {
+      .definition-grid { grid-template-columns: 1fr; }
+      .matrix-grid { grid-template-columns: repeat(2, 1fr); }
+      .vocab-cards-grid { grid-template-columns: 1fr; }
+      .workshop-steps-grid { grid-template-columns: 1fr; }
+      .orange-content-grid { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 640px) {
+      .hero-content h1 { font-size: 2.2rem; }
+      .matrix-grid { grid-template-columns: 1fr; }
+      .nav-container { flex-direction: column; align-items: flex-start; }
+      nav ul { width: 100%; overflow-x: auto; padding-bottom: 4px; }
+      .formula-banner { flex-direction: column; align-items: flex-start; }
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(6px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- 頂部品牌導覽列 -->
+  <header>
+    <div class="nav-container">
+      <a href="index.html" class="brand-group">
+        <img src="icon/seal-red.png" alt="學思軒印章" class="brand-seal-img">
+        <img src="icon/logo-yuwen.png" alt="語文補給站" class="brand-logo-img">
+        <div class="brand-text">
+          <span class="brand-title serif">語文補給站・狀聲詞殿堂</span>
+          <span class="brand-badge">翰林版 B03L06・核心語文常識神器</span>
+        </div>
+      </a>
+      <nav>
+        <ul>
+          <li><a href="index.html"><i data-lucide="home" style="width:16px;"></i> 首頁</a></li>
+          <li><a href="#definition"><i data-lucide="book-open" style="width:16px;"></i> 核心定義</a></li>
+          <li><a href="#matrix"><i data-lucide="compass" style="width:16px;"></i> 聲景星盤</a></li>
+          <li><a href="#catalog"><i data-lucide="library" style="width:16px;"></i> 典範圖鑑</a></li>
+          <li><a href="#workshop"><i data-lucide="sparkles" style="width:16px;"></i> 魔法工坊</a></li>
+          <li><a href="#quiz"><i data-lucide="trophy" style="width:16px;"></i> 會考挑戰</a></li>
+          <li><a href="#practice" class="nav-btn-tool"><i data-lucide="gamepad-2" style="width:16px;"></i> 練習神器</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- Hero 旗艦橫幅 -->
+    <section class="hero">
+      <div class="hero-content">
+        <div class="hero-badge-top">
+          <i data-lucide="volume-2" style="width:16px;"></i> 翰林國文 B3L06《鳥》・語文補給站
+        </div>
+        <h1 class="serif">
+          萬籟俱寂・聲歷其境<br>
+          <span>狀聲詞旗艦學習殿堂</span>
+        </h1>
+        <p>
+          從人聲哭笑、鳥雀啁啾、疾風驟雨到金石交錯，探索古典詩文中最傳神的摹聲藝術。<br>
+          全真真人發音支援、多維星盤互動、橘老師避坑心法與會考神仙挑戰賽，助你精準掌握每一道天地清響！
+        </p>
+        <div class="feature-pills-row">
+          <div class="f-pill"><i data-lucide="check-circle-2"></i> 8 大類別生活與古典聲景</div>
+          <div class="f-pill"><i data-lucide="check-circle-2"></i> 45+ 組典範例句全真語音</div>
+          <div class="f-pill"><i data-lucide="check-circle-2"></i> 一鍵遮罩揭曉解析</div>
+          <div class="f-pill"><i data-lucide="check-circle-2"></i> 橘老師解題避坑指南</div>
+          <div class="f-pill"><i data-lucide="check-circle-2"></i> 會考高頻 10 題實戰測驗</div>
+          <div class="f-pill"><i data-lucide="check-circle-2"></i> 內嵌專屬練習神器</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 單元一：核心定義與解題萬能公式 -->
+    <section id="definition" class="content-section">
+      <div class="section-header">
+        <span class="section-tag">Unit 01・Core Knowledge</span>
+        <h2 class="section-title serif">核心定義與解題萬能公式</h2>
+        <p class="section-desc">掌握狀聲詞別稱、句法功能與避坑原則，破解會考常見陷阱題</p>
+      </div>
+
+      <div class="definition-grid">
+        <div class="def-card">
+          <div class="def-icon-circle"><i data-lucide="megaphone" style="width:26px;"></i></div>
+          <h3 class="def-title">什麼是狀聲詞？</h3>
+          <div class="def-text">
+            狀聲詞是用來<span class="highlight-span">模擬事物或動作聲音</span>的詞彙。
+            <ul>
+              <li><b>別稱：</b>象聲詞、擬聲詞、摹聲詞。</li>
+              <li><b>特性：</b>摹擬具體聽覺印象，讓讀者如聞其聲、如臨其境。</li>
+              <li><b>修辭歸屬：</b>在修辭學中歸屬於「摹度」中的「摹聲（聽覺摹寫）」。</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="def-card">
+          <div class="def-icon-circle"><i data-lucide="git-branch" style="width:26px;"></i></div>
+          <h3 class="def-title">語法位置與詞性功能</h3>
+          <div class="def-text">
+            狀聲詞在文法上可依據所修飾的成分靈活轉換：
+            <ul>
+              <li><span class="highlight-span">作副詞修飾動詞：</span>「<span class="highlight-span">哈哈</span>大笑」、「雷聲<span class="highlight-span">轟隆</span>作響」。</li>
+              <li><span class="highlight-span">作形容詞修飾名詞：</span>「<span class="highlight-span">潺潺</span>流水」、「<span class="highlight-span">蕭蕭</span>落木」。</li>
+              <li><span class="highlight-span">獨立成分或名詞：</span>「風聲<span class="highlight-span">蕭蕭</span>」、「忽聞水聲<span class="highlight-span">潺湲</span>」。</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="def-card">
+          <div class="def-icon-circle"><i data-lucide="shield-alert" style="width:26px;"></i></div>
+          <h3 class="def-title">會考審題關鍵：真聲音 vs 假聲音</h3>
+          <div class="def-text">
+            許多看似疊字或動態的詞彙<span class="highlight-span">並非狀聲詞</span>，切勿混淆：
+            <ul>
+              <li><b>非狀聲詞（形容神態/外貌）：</b>「洋洋灑灑」（文章盛大）、「欣欣向榮」（生機勃勃）、「楚楚可憐」（情態動人）。</li>
+              <li><b>非狀聲詞（形容動作/速度）：</b>「踽踽獨行」（孤單慢行）、「步履蹣跚」（走路不穩）。</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- 橘老師開唱重點區塊 -->
+      <div class="orange-teacher-banner">
+        <div class="orange-header">
+          <span class="orange-badge"><i data-lucide="music" style="width:16px;"></i> 橘老師開唱</span>
+          <h3 class="orange-title serif">狀聲詞高頻考點・避坑三大密碼</h3>
+        </div>
+        <div class="orange-content-grid">
+          <div class="orange-item">
+            <div class="orange-item-title"><i data-lucide="alert-circle" style="width:18px;"></i> 密碼一：教育部辭典明定「呢喃 / 喃喃」</div>
+            <div class="orange-item-desc">
+              過去學界對於「呢喃」、「喃喃」是否屬於狀聲詞常有歧異。但<b>教育部重編國語辭典修訂本</b>已明確定性：兩者皆為<b>「狀聲詞」</b>！
+              <ul>
+                <li>「燕語呢喃」：摹擬燕子啁啾細語之聲。</li>
+                <li>「喃喃自語」：摹擬人低聲說話、絮絮叨叨之聲音。</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="orange-item">
+            <div class="orange-item-title"><i data-lucide="layers" style="width:18px;"></i> 密碼二：同一狀聲詞可形容多種聲音！</div>
+            <div class="orange-item-desc">
+              會考最愛考「一詞多聲」的語境辨析：
+              <ul>
+                <li><b>「唧唧」（ㄐㄧˊ ㄐㄧˊ）：</b>機杼織布聲（《木蘭詩》唧唧復唧唧）、蟲鳴聲（蟲聲唧唧）、嘆息聲。</li>
+                <li><b>「啾啾」：</b>蟲鳴聲、馬鳴聲（燕山胡騎聲啾啾）、鳥鳴聲（啾啾黃雀啄）。</li>
+                <li><b>「啞啞」：</b>烏鴉叫聲（啞啞吐哀音）、小兒學語聲（啞啞學語）。</li>
+                <li><b>「蕭蕭」：</b>馬鳴聲（蕭蕭班馬鳴）、風聲（風蕭蕭兮易水寒）、落葉聲（無邊落木蕭蕭下）。</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 萬能解構公式 -->
+      <div class="formula-banner">
+        <div>
+          <div class="formula-title serif">🎯 狀聲詞解題三步驗證公式</div>
+          <div class="formula-desc">面對題幹考題，依序套用三步驟即可 100% 正確秒殺</div>
+        </div>
+        <div class="formula-steps">
+          <div class="f-step">
+            <small>Step 01・抓主體</small>
+            <span>鎖定發出聲音的來源事物</span>
+          </div>
+          <div class="f-step">
+            <small>Step 02・聽聲響</small>
+            <span>確認是否為描寫具體聽覺聲音</span>
+          </div>
+          <div class="f-step">
+            <small>Step 03・辨語境</small>
+            <span>判斷一詞多聲中的特定情境意義</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 單元二：聲景八維度星盤導覽矩陣 -->
+    <section id="matrix" class="content-section">
+      <div class="section-header">
+        <span class="section-tag">Unit 02・Soundscape Matrix</span>
+        <h2 class="section-title serif">聲景八維度星盤導覽</h2>
+        <p class="section-desc">點擊下方八大聲景卡片，即可快速導覽並即時連動下方典範圖鑑分類</p>
+      </div>
+
+      <div class="matrix-grid">
+        <div class="matrix-card" onclick="filterByMatrixCategory('human')">
+          <div class="matrix-count">11 詞</div>
+          <div class="matrix-icon-box">👥</div>
+          <div class="matrix-name serif">人聲百態</div>
+          <div class="matrix-examples">笑聲、哭聲、讀書聲、牙牙學語、飢腸轆轆、喃喃自語、撲通心跳</div>
+        </div>
+
+        <div class="matrix-card" onclick="filterByMatrixCategory('bird')">
+          <div class="matrix-count">12 詞</div>
+          <div class="matrix-icon-box">🐦</div>
+          <div class="matrix-name serif">飛禽鳥鳴</div>
+          <div class="matrix-examples">麻雀喳喳、烏鴉呱呱、雎鳩關關、黃鶯間關、不如歸去、水禽嘎嘎</div>
+        </div>
+
+        <div class="matrix-card" onclick="filterByMatrixCategory('animal')">
+          <div class="matrix-count">5 詞</div>
+          <div class="matrix-icon-box">🐴</div>
+          <div class="matrix-name serif">走獸昆蟲</div>
+          <div class="matrix-examples">胡騎啾啾、班馬蕭蕭、嘶嘶馬鳴、蟲聲唧唧、蜜蜂嗡嗡</div>
+        </div>
+
+        <div class="matrix-card" onclick="filterByMatrixCategory('wind')">
+          <div class="matrix-count">5 詞</div>
+          <div class="matrix-icon-box">🍃</div>
+          <div class="matrix-name serif">自然風聲</div>
+          <div class="matrix-examples">北風呼呼、秋風瑟瑟、易水蕭蕭、東風颯颯、寒窗霎霎</div>
+        </div>
+
+        <div class="matrix-card" onclick="filterByMatrixCategory('rain')">
+          <div class="matrix-count">4 詞</div>
+          <div class="matrix-icon-box">🌧️</div>
+          <div class="matrix-name serif">空濛雨聲</div>
+          <div class="matrix-examples">瀟瀟淅淅、淅淅瀝瀝、大雨嘩啦啦、細雨滴滴答答</div>
+        </div>
+
+        <div class="matrix-card" onclick="filterByMatrixCategory('water')">
+          <div class="matrix-count">6 詞</div>
+          <div class="matrix-icon-box">🌊</div>
+          <div class="matrix-name serif">山川流水</div>
+          <div class="matrix-examples">泉水泠泠、谷水潺潺、忽聞潺湲、幽咽泉流、流水淙淙、河水濺濺</div>
+        </div>
+
+        <div class="matrix-card" onclick="filterByMatrixCategory('metal')">
+          <div class="matrix-count">3 詞</div>
+          <div class="matrix-icon-box">⚔️</div>
+          <div class="matrix-name serif">金石兵器</div>
+          <div class="matrix-examples">錢幣鏗鏘、鋃鐺入獄、磨刀霍霍向豬羊</div>
+        </div>
+
+        <div class="matrix-card" onclick="filterByMatrixCategory('object')">
+          <div class="matrix-count">8 詞</div>
+          <div class="matrix-icon-box">🪵</div>
+          <div class="matrix-name serif">器物細動</div>
+          <div class="matrix-examples">伐木丁丁、機杼札札、雷聲轟隆、門窗格格、爐火必必剝剝、樹葉簌簌</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 單元三：典範圖鑑與語境資料庫 -->
+    <section id="catalog" class="content-section">
+      <div class="section-header">
+        <span class="section-tag">Unit 03・Exemplary Sound Library</span>
+        <h2 class="section-title serif">典範圖鑑與聲景語境庫</h2>
+        <p class="section-desc">收錄 45+ 組經典狀聲詞，支援即時關鍵字搜尋、分類過濾、互動遮罩揭曉與全真真人語音朗讀</p>
+      </div>
+
+      <!-- 工具列 -->
+      <div class="filter-toolbar">
+        <div class="category-chips" id="chips-container">
+          <button class="chip-btn active" onclick="setCategoryFilter('all')">全部聲景 (<span id="total-count">0</span>)</button>
+          <button class="chip-btn" onclick="setCategoryFilter('human')">人聲百態</button>
+          <button class="chip-btn" onclick="setCategoryFilter('bird')">飛禽鳥鳴</button>
+          <button class="chip-btn" onclick="setCategoryFilter('animal')">走獸昆蟲</button>
+          <button class="chip-btn" onclick="setCategoryFilter('wind')">風聲</button>
+          <button class="chip-btn" onclick="setCategoryFilter('rain')">雨聲</button>
+          <button class="chip-btn" onclick="setCategoryFilter('water')">山川流水</button>
+          <button class="chip-btn" onclick="setCategoryFilter('metal')">金石兵器</button>
+          <button class="chip-btn" onclick="setCategoryFilter('object')">器物細動</button>
+        </div>
+
+        <div class="search-box-wrap">
+          <i data-lucide="search" class="search-icon-pos" style="width:18px;"></i>
+          <input type="text" id="sound-search-input" class="search-input" placeholder="搜尋詞語、例句、出處..." oninput="handleSearch(this.value)">
+        </div>
+      </div>
+
+      <!-- 控制狀態列 -->
+      <div class="control-actions-row">
+        <div class="result-counter">
+          顯示 <span id="filtered-count" style="color:var(--primary); font-size:1.15rem;">0</span> 組聲景詞條
+        </div>
+        <button class="reveal-all-btn" id="btn-toggle-mask-all" onclick="toggleAllMasks()">
+          <i data-lucide="eye" style="width:16px;"></i> <span>一鍵揭曉全部解析</span>
+        </button>
+      </div>
+
+      <!-- 圖鑑卡片容器 -->
+      <div class="vocab-cards-grid" id="vocab-cards-grid">
+        <!-- 由 JavaScript 動態生成渲染 -->
+      </div>
+    </section>
+
+    <!-- 單元四：古典聲景魔法工坊 -->
+    <section id="workshop" class="content-section">
+      <div class="section-header">
+        <span class="section-tag">Unit 04・Interactive Sound Workshop</span>
+        <h2 class="section-title serif">古典聲景魔法工坊</h2>
+        <p class="section-desc">挑選情境與狀聲詞，感受文豪筆下文字化為立體音效的生動張力</p>
+      </div>
+
+      <div class="workshop-wrap">
+        <div class="workshop-steps-grid">
+          <!-- 步驟一：選擇情境 -->
+          <div class="workshop-panel">
+            <h3 class="workshop-panel-title serif">
+              <i data-lucide="image" style="width:20px;"></i> 第一步：選擇古典情境
+            </h3>
+            <div class="scene-selector-grid">
+              <button class="scene-btn active" onclick="selectScene('mulan')">
+                <b>🪵 木蘭機杼情思</b><br><small>《木蘭詩》深夜深宮</small>
+              </button>
+              <button class="scene-btn" onclick="selectScene('pipa')">
+                <b>🌊 潯陽江頭夜泊</b><br><small>《琵琶行》秋風江月</small>
+              </button>
+              <button class="scene-btn" onclick="selectScene('battle')">
+                <b>⚔️ 易水壯士西征</b><br><small>戰馬長鳴、西風蕭瑟</small>
+              </button>
+              <button class="scene-btn" onclick="selectScene('spring')">
+                <b>🐦 春日深林漫步</b><br><small>鳥雀和鳴、山溪潺潺</small>
+              </button>
+            </div>
+          </div>
+
+          <!-- 步驟二：選擇狀聲詞調色盤 -->
+          <div class="workshop-panel">
+            <h3 class="workshop-panel-title serif">
+              <i data-lucide="sliders" style="width:20px;"></i> 第二步：挑選核心狀聲詞
+            </h3>
+            <p style="font-size:0.88rem; color:#64748b; margin-bottom:8px;">點擊詞語替換上方情境的聲音元素：</p>
+            <div class="sound-picker-row" id="workshop-sound-picker">
+              <!-- 動態生成詞語 -->
+            </div>
+          </div>
+        </div>
+
+        <!-- 即時生成的文藝聲景 -->
+        <div class="output-card">
+          <div style="font-size:0.85rem; font-weight:800; color:var(--primary); text-transform:uppercase; margin-bottom:8px; letter-spacing:1px;">
+            ✦ 即時古典聲景情境生成 ✦
+          </div>
+          <div class="output-text serif" id="workshop-output-text">
+            載入中...
+          </div>
+          <div class="output-annotation" id="workshop-output-annotation">
+            解析載入中...
+          </div>
+          <div class="output-action-btns">
+            <button class="btn-workshop-action btn-listen" onclick="speakWorkshopText()">
+              <i data-lucide="volume-2" style="width:16px;"></i> 真人語音朗讀此段情境
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 單元五：會考神仙挑戰賽 (Quiz) -->
+    <section id="quiz" class="content-section">
+      <div class="section-header">
+        <span class="section-tag">Unit 05・Exam Master Challenge</span>
+        <h2 class="section-title serif">會考神仙挑戰賽</h2>
+        <p class="section-desc">精選 10 題高頻國中段考與基測、會考狀聲詞診斷試題，即時解題回饋</p>
+      </div>
+
+      <div class="quiz-container">
+        <!-- 狀態列 -->
+        <div class="quiz-stats-header">
+          <span class="quiz-progress-text" id="quiz-progress-text">第 1 / 10 題</span>
+          <span class="quiz-score-badge" id="quiz-score-badge">當前得分：0 分</span>
+        </div>
+        <div class="quiz-bar-outer">
+          <div class="quiz-bar-inner" id="quiz-progress-bar"></div>
+        </div>
+
+        <!-- 試題卡片 -->
+        <div class="quiz-card-box" id="quiz-card-box">
+          <span class="q-source-tag" id="q-source-tag">會考高頻經典題</span>
+          <h3 class="q-stem serif" id="q-stem">題目加載中...</h3>
+          <div class="q-options-grid" id="q-options-grid"></div>
+
+          <!-- 解析區塊 -->
+          <div class="q-explanation-box" id="q-explanation-box">
+            <div class="q-exp-title"><i data-lucide="check-circle" style="width:18px;"></i> 詳解與出處解析</div>
+            <div class="q-exp-text" id="q-exp-text"></div>
+          </div>
+
+          <div class="quiz-nav-row">
+            <button class="btn-next-q" id="btn-next-question" onclick="handleNextQuestion()">
+              下一題 <i data-lucide="arrow-right" style="width:16px;"></i>
+            </button>
+          </div>
+        </div>
+
+        <!-- 結算結果視窗 -->
+        <div class="quiz-result-view" id="quiz-result-view">
+          <div class="result-badge-icon" id="result-badge-icon">🏆</div>
+          <div class="result-final-score" id="result-final-score">100 分</div>
+          <p class="result-comment" id="result-comment">太神了！所有狀聲詞考點已全部精熟！</p>
+          <button class="btn-restart-quiz" onclick="restartQuiz()">
+            <i data-lucide="rotate-ccw" style="width:18px;"></i> 重新挑戰會考題庫
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- 單元六：專屬練習神器內嵌專區 -->
+    <section id="practice" class="content-section">
+      <div class="section-header">
+        <span class="section-tag">Unit 06・Exclusive Practice God</span>
+        <h2 class="section-title serif">專屬練習神器特訓中心</h2>
+        <p class="section-desc">收錄 62 題完整狀聲詞庫，支援 3D 雙面翻卡、釋義測驗、填空特訓與 LocalStorage 智慧錯題本</p>
+      </div>
+
+      <div class="practice-embed-box">
+        <div class="practice-toolbar">
+          <div class="tool-info">
+            <span class="tool-badge">互動特訓</span>
+            <span class="tool-title serif">「狀聲詞」互動練習神器</span>
+          </div>
+          <div class="tool-btns-row">
+            <button class="btn-tool-action" onclick="reloadIframe()">
+              <i data-lucide="refresh-cw" style="width:15px;"></i> 重新整理
+            </button>
+            <a href="onomatopoeia/onomatopoeia-practice.html" target="_blank" class="btn-tool-action primary">
+              <i data-lucide="external-link" style="width:15px;"></i> 另開全螢幕特訓
+            </a>
+          </div>
+        </div>
+        <div class="iframe-wrapper">
+          <iframe id="practice-iframe" src="onomatopoeia/onomatopoeia-practice.html" title="狀聲詞練習神器" loading="lazy"></iframe>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- 頁尾宣告 -->
+  <footer>
+    <div class="footer-container">
+      <div class="footer-logos">
+        <img src="icon/seal-white.png" alt="學思軒" class="footer-seal" onerror="this.src='icon/seal-red.png'">
+        <img src="icon/slogan-god-dark.png" alt="只要有心人人都是國文神" class="footer-tagline-img">
+      </div>
+      <div class="footer-credit serif">
+        𖤐 本系統由學思軒黃于珊、王斐亭老師規劃設計 · 版權所有 © 2026 𖤐
+      </div>
+    </div>
+  </footer>
+
+  <!-- 核心資料與互動邏輯 Script -->
+  <script>
+    // ==========================================
+    // 1. 典範資料庫 (45+ 組狀聲詞完整圖鑑)
+    // ==========================================
+    const vocabDatabase = [
+      // 人聲百態
+      { id: 1, word: "哈哈", bopomofo: "ㄏㄚ ㄏㄚ", category: "human", catName: "笑聲", sentence: "聽到小丑滑稽的表演，全場觀眾無不哈哈大笑。", quote: "生活常用", meaning: "形容開懷痛快的笑聲。", note: "最常見的大笑聲，在句中常作副詞修飾動詞「大笑」。" },
+      { id: 2, word: "呵呵", bopomofo: "ㄏㄜ ㄏㄜ", category: "human", catName: "笑聲", sentence: "他摸摸後腦勺，呵呵笑了起來，顯得有些靦腆。", quote: "生活常用", meaning: "形容笑聲，通常帶有憨厚、自得或微笑貌。", note: "亦可作「呵呵大笑」。" },
+      { id: 3, word: "噗哧", bopomofo: "ㄆㄨ ㄔ", category: "human", catName: "笑聲", sentence: "看見弟弟古怪的表情，她忍不住噗哧一笑。", quote: "生活常用", meaning: "形容忍不住突然笑出聲來。", note: "常與「一笑」連用，表現突發或忍俊不禁的笑聲。" },
+      { id: 4, word: "嘎嘎", bopomofo: "ㄍㄚ ㄍㄚ", category: "human", catName: "笑聲", sentence: "幾位好友聚在一起，說到開心處嘎嘎的笑個不停。", quote: "生活常用", meaning: "形容高聲、暢快的笑聲；亦可用於水禽啼鳴。", note: "一詞多聲：人笑聲與水禽叫聲皆可用。" },
+      { id: 5, word: "咯咯", bopomofo: "ㄍㄜ ㄍㄜ", category: "human", catName: "笑聲", sentence: "嬰兒看到彩色氣球，高興得咯咯笑個不停。", quote: "生活常用", meaning: "形容清脆、短促、歡快的笑聲（常形容小兒或少女）。", note: "注意讀音ㄍㄜ ㄍㄜ，常用於天真無邪的笑聲。" },
+      { id: 6, word: "哇哇", bopomofo: "ㄨㄚ ㄨㄚ", category: "human", catName: "哭聲", sentence: "受傷的小孩坐在地上哇哇大哭，讓人好生心疼。", quote: "生活常用", meaning: "形容小兒啼哭的大聲響；亦可形容嘔吐聲。", note: "哭聲中最響亮直接者。" },
+      { id: 7, word: "呱呱", bopomofo: "ㄍㄨ ㄍㄨ", category: "human", catName: "哭聲", sentence: "隨著一聲響亮的啼哭，小男嬰終於呱呱墜地。", quote: "古典成語", meaning: "形容嬰兒出生時宏亮的哭聲（呱呱墜地）。", note: "【重要考點】形容嬰兒出生時讀「ㄍㄨ ㄍㄨ」；若形容烏鴉或青蛙鳴叫則讀「ㄍㄨㄚ ㄍㄨㄚ」。" },
+      { id: 8, word: "嗚嗚咽咽", bopomofo: "ㄨ ㄨ ㄧㄝˋ ㄧㄝˋ", category: "human", catName: "哭聲", sentence: "聽到不幸的消息，她伏在桌上嗚嗚咽咽哭了起來。", quote: "文學作品", meaning: "形容悲傷低沉、斷斷續續的悲泣聲。", note: "描摹極度悲傷卻壓抑的啜泣聲。" },
+      { id: 9, word: "琅琅", bopomofo: "ㄌㄤˊ ㄌㄤˊ", category: "human", catName: "讀書聲", sentence: "清晨校園裡傳來一陣陣琅琅上口的書聲。", quote: "讀書常語", meaning: "形容清朗明脆的讀書聲或金石擊叩聲。", note: "常作「書聲琅琅」或「琅琅上口」。" },
+      { id: 10, word: "咿唔", bopomofo: "ㄧ ㄨˊ", category: "human", catName: "讀書聲", sentence: "昔日私塾學童搖頭晃腦，咿唔吟詩。", quote: "古典文辭", meaning: "形容讀書吟誦的聲音。", note: "古典文學中描寫老儒或童蒙吟詠之經典狀聲詞。" },
+      { id: 11, word: "牙牙/啞啞", bopomofo: "ㄧㄚˊ ㄧㄚˊ", category: "human", catName: "學語聲", sentence: "看著小嬰兒牙牙學語的模樣，真是惹人憐愛。", quote: "生活常用", meaning: "形容嬰幼兒剛開始學習說話的稚嫩聲音。", note: "「牙牙學語」亦常寫作「啞啞學語」。" },
+      { id: 12, word: "轆轆", bopomofo: "ㄌㄨˋ ㄌㄨˋ", category: "human", catName: "腹鳴聲", sentence: "忙了一整天未進米糧，肚子早已飢腸轆轆。", quote: "成語辭彙", meaning: "形容空腹時腸胃蠕動發出的鳴叫聲。", note: "【重要考點】原本形容車輪轉動滾滾之聲，此處借為腹部空腸鳴響。" },
+      { id: 13, word: "喃喃", bopomofo: "ㄋㄢˊ ㄋㄢˊ", category: "human", catName: "說話聲", sentence: "老爺爺對著舊照片喃喃自語，回憶往日時光。", quote: "教育部辭典狀聲詞", meaning: "形容低聲說話、連續自語的聲音。", note: "【橘老師開唱重點】教育部辭典明定為狀聲詞，常作「喃喃自語」。" },
+      { id: 14, word: "嘖嘖", bopomofo: "ㄗㄜˊ ㄗㄜˊ", category: "human", catName: "讚嘆聲", sentence: "看到魔術師不可思議的表演，全場觀眾嘖嘖稱奇。", quote: "成語辭彙", meaning: "形容咂嘴發出的讚賞、驚訝或嘆息聲。", note: "常作「嘖嘖稱奇」或「嘖嘖稱羨」。" },
+      { id: 15, word: "嗷嗷", bopomofo: "ㄠˊ ㄠˊ", category: "human", catName: "哀號聲", sentence: "鳥巢中雛鳥張大嘴巴嗷嗷待哺；災民啼飢號寒。", quote: "成語辭彙", meaning: "形容飢餓時哀哀悲號討食的聲音。", note: "常成語作「嗷嗷待哺」。" },
+      { id: 16, word: "撲通撲通", bopomofo: "ㄆㄨ ㄊㄨㄥ", category: "human", catName: "心跳聲", sentence: "站在講臺前準備發表，我的心撲通撲通跳個不停。", quote: "生活常用", meaning: "形容心臟急速劇烈跳動的聲音；亦可形容物體落水聲。", note: "雙重語境：既可摹心跳，亦可摹重物落水（撲通一聲跳進水裡）。" },
+
+      // 飛禽鳥鳴
+      { id: 17, word: "吱吱喳喳", bopomofo: "ㄓ ㄓ ㄓㄚ ㄓㄚ", category: "bird", catName: "麻雀", sentence: "清晨屋簷上聚集了許多吱吱喳喳的麻雀。", quote: "生活常用", meaning: "形容小鳥（尤其麻雀）頻繁細碎的鳴叫聲。", note: "亦可比喻人群聚雜語喧鬧之狀。" },
+      { id: 18, word: "呱呱", bopomofo: "ㄍㄨㄚ ㄍㄨㄚ", category: "bird", catName: "烏鴉", sentence: "古木枯枝上，傳來幾隻呱呱噪啼的烏鴉。", quote: "自然聲景", meaning: "形容烏鴉粗厲刺耳的鳴叫聲；或青蛙啼叫。", note: "烏鴉噪叫讀「ㄍㄨㄚ ㄍㄨㄚ」，嬰兒啼哭讀「ㄍㄨ ㄍㄨ」。" },
+      { id: 19, word: "啞啞", bopomofo: "ㄧㄚ ㄧㄚ", category: "bird", catName: "烏鴉", sentence: "慈烏失其母，啞啞吐哀音。晝夜不飛去，經年守故林。", quote: "白居易《慈烏夜啼》", meaning: "形容烏鴉哀楚嘶啞的啼鳴聲。", note: "【經典課文】白居易《慈烏夜啼》經典名句，摹擬喪母反哺之哀聲。" },
+      { id: 20, word: "啁啾", bopomofo: "ㄓㄡ ㄐㄧㄡ", category: "bird", catName: "群鳥", sentence: "清晨漫步在山林間，但聞鳥鳴啁啾，令人心曠神怡。", quote: "詩詞常見", meaning: "形容細小繁多、婉轉清脆的鳥叫聲。", note: "常作「鳥鳴啁啾」，形容山鳥百囀。" },
+      { id: 21, word: "啾啾", bopomofo: "ㄐㄧㄡ ㄐㄧㄡ", category: "bird", catName: "黃雀", sentence: "啾啾黃雀啄，暮宿在桑枝。", quote: "古詩名句", meaning: "形容小鳥婉轉鳴叫聲；亦可指馬鳴或蟲鳴。", note: "【重要考點】鳥雀鳴聲為「啾啾」，《木蘭詩》「燕山胡騎聲啾啾」則轉為馬鳴！" },
+      { id: 22, word: "關關", bopomofo: "ㄍㄨㄢ ㄍㄨㄢ", category: "bird", catName: "雎鳩", sentence: "關關雎鳩，在河之洲。窈窕淑女，君子好逑。", quote: "《詩經·周南·關關雎鳩》", meaning: "形容水鳥（雎鳩）雌雄相應的和鳴之聲。", note: "【經典國學】《詩經》開篇第一首名句，描繪雌雄雎鳩和諧叫聲象徵情篤。" },
+      { id: 23, word: "間關", bopomofo: "ㄐㄧㄢ ㄍㄨㄢ", category: "bird", catName: "黃鶯", sentence: "間關鶯語花底滑，幽咽泉流水下灘。", quote: "白居易《琵琶行》", meaning: "形容黃鶯婉轉流暢、圓潤多變的鳴聲。", note: "【會考高頻】白居易以間關鶯語比喻琵琶弦音清脆流暢。" },
+      { id: 24, word: "嚶嚶", bopomofo: "ㄧㄥ ㄧㄥ", category: "bird", catName: "鳥和鳴", sentence: "好鳥相鳴，嚶嚶成韻。", quote: "吳均《與宋元思書》", meaning: "形容鳥類相呼應合、和諧動聽的和鳴聲。", note: "【經典課文】吳均富春江山水名篇，「嚶嚶成韻」形容百鳥和鳴極其動聽。" },
+      { id: 25, word: "咕咕", bopomofo: "ㄍㄨ ㄍㄨ", category: "bird", catName: "鴿子", sentence: "廣場上的鴿子一邊啄食玉米，一邊發出咕咕的叫聲。", quote: "生活常用", meaning: "形容鴿子低沉溫潤的啼鳴聲。", note: "描摹鴿子喉部震動之特有音色。" },
+      { id: 26, word: "布穀", bopomofo: "ㄅㄨˋ ㄍㄨˇ", category: "bird", catName: "布穀鳥", sentence: "布穀聲聲催春種，農家戶戶起晨耕。", quote: "農家諺語", meaning: "形容布穀鳥（大杜鵑）催促春耕的啼聲。", note: "象聲成名，因叫聲宛如「布穀」而得鳥名。" },
+      { id: 27, word: "不如歸去", bopomofo: "ㄅㄨˋ ㄖㄨˊ ㄍㄨㄟ ㄑㄩˋ", category: "bird", catName: "杜鵑鳥", sentence: "子規夜半猶啼血，不信東風喚不回；聲聲宛如不如歸去。", quote: "古典典故", meaning: "古人將杜鵑鳥悲切的叫聲擬音為「不如歸去」。", note: "【會考必考】杜鵑（又名子規、催歸、望帝），其鳴淒涼如呼「不如歸去」。" },
+
+      // 走獸昆蟲
+      { id: 28, word: "啾啾 (馬鳴)", bopomofo: "ㄐㄧㄡ ㄐㄧㄡ", category: "animal", catName: "戰馬", sentence: "不聞爺孃喚女聲，但聞燕山胡騎聲啾啾。", quote: "《木蘭詩》", meaning: "形容邊境戰馬嘶鳴之聲。", note: "【會考超級考點】《木蘭詩》此處絕非鳥鳴，而是異族胡騎之戰馬嘶鳴！" },
+      { id: 29, word: "蕭蕭 (馬鳴)", bopomofo: "ㄒㄧㄠ ㄒㄧㄠ", category: "animal", catName: "班馬", sentence: "揮手自茲去，蕭蕭班馬鳴。", quote: "李白《送友人》", meaning: "形容離群之馬（班馬）長聲嘶鳴。", note: "「班馬」指離群之馬，蕭蕭描繪友人依依不捨的離別嘶鳴。" },
+      { id: 30, word: "嘶嘶", bopomofo: "ㄙ ㄙ", category: "animal", catName: "馬鳴", sentence: "烈日當空，只聽得戰馬揚蹄發出陣陣嘶嘶馬鳴聲。", quote: "軍旅描摹", meaning: "形容馬昂首長鳴或呼氣之聲。", note: "現代語體最直觀之馬鳴狀聲詞。" },
+      { id: 31, word: "唧唧 (蟲鳴)", bopomofo: "ㄐㄧˊ ㄐㄧˊ", category: "animal", catName: "秋蟲", sentence: "寒夜客來茶當酒，窗外但聽蟲聲唧唧。", quote: "古詩常語", meaning: "形容蟋蟀、促織等秋蟲細碎連續的鳴聲。", note: "秋夜靜寂時襯托環境幽深之經典聲音。教育部審訂音讀作「ㄐㄧˊ ㄐㄧˊ」。" },
+      { id: 32, word: "嗡嗡", bopomofo: "ㄨㄥ ㄨㄥ", category: "animal", catName: "昆蟲飛動", sentence: "盛開的李花叢中，成群蜜蜂正嗡嗡辛勤採蜜。", quote: "生活常用", meaning: "形容蜜蜂、蚊蚋等昆蟲振翅飛動的微小轟鳴聲。", note: "亦可用於形容飛機遠處低空飛過的引擎聲。" },
+
+      // 自然風聲
+      { id: 33, word: "呼呼", bopomofo: "ㄏㄨ ㄏㄨ", category: "wind", catName: "強風", sentence: "隆冬夜裡北風呼呼地吹，門窗被颳得直響。", quote: "生活常用", meaning: "形容狂風烈烈呼嘯的巨響。", note: "多用於冬天強烈寒風。" },
+      { id: 34, word: "瑟瑟", bopomofo: "ㄙㄜˋ ㄙㄜˋ", category: "wind", catName: "秋風", sentence: "潯陽江頭夜送客，楓葉荻花秋瑟瑟。", quote: "白居易《琵琶行》", meaning: "形容秋風吹拂楓葉、荻草所發出的蕭瑟細碎聲。", note: "【經典名篇】白居易以秋瑟瑟烘托江頭送客之淒清寂寞氛圍。" },
+      { id: 35, word: "蕭蕭 (風聲)", bopomofo: "ㄒㄧㄠ ㄒㄧㄠ", category: "wind", catName: "寒風", sentence: "風蕭蕭兮易水寒，壯士一去兮不復還！", quote: "《戰國策·荊軻刺秦王》", meaning: "形容深秋寒風勁烈呼嘯的悲壯聲響。", note: "【國學名篇】易水訣別，蕭蕭風聲化為歷史悲壯千古絕唱。" },
+      { id: 36, word: "颯颯", bopomofo: "ㄙㄚˋ ㄙㄚˋ", category: "wind", catName: "東風/微風", sentence: "颯颯東風細雨來，芙蓉塘外有輕雷。", quote: "李商隱《無題》", meaning: "形容風起林葉震響、輕風吹拂細雨的聲音。", note: "描摹風雨交織時自然之韻律美。" },
+      { id: 37, word: "霎霎", bopomofo: "ㄕㄚˋ ㄕㄚˋ", category: "wind", catName: "寒風吹襲", sentence: "窗寒霎霎風，孤燈照殘雪。", quote: "古典詩文", meaning: "形容風勢細密吹打窗欞之聲。", note: "描寫寒夜風聲冷冽細微之狀。" },
+
+      // 空濛雨聲
+      { id: 38, word: "瀟瀟淅淅", bopomofo: "ㄒㄧㄠ ㄒㄧㄠ ㄒㄧ ㄒㄧ", category: "rain", catName: "驟雨/長雨", sentence: "客夜孤舟，聽那瀟瀟淅淅的雨聲打在篷窗上。", quote: "文學文辭", meaning: "形容雨勢綿密急驟或風雨交加的聲響。", note: "融合「瀟瀟（疾風驟雨）」與「淅淅（細雨微聲）」。" },
+      { id: 39, word: "淅淅瀝瀝", bopomofo: "ㄒㄧ ㄒㄧ ㄌㄧˋ ㄌㄧˋ", category: "rain", catName: "細雨", sentence: "窗外淅淅瀝瀝下起小雨，帶來一絲秋日的涼意。", quote: "生活常用", meaning: "形容小雨或微雨連續不斷落下的細碎微聲。", note: "最典雅之綿綿細雨狀聲詞。" },
+      { id: 40, word: "嘩啦啦", bopomofo: "ㄏㄨㄚ ㄌㄚ ㄌㄚ", category: "rain", catName: "大雨/傾盆", sentence: "天際一道閃電劃過，傾盆大雨嘩啦啦地下了起來。", quote: "生活常用", meaning: "形容大雨傾盆沛然落下或水流猛烈傾倒之聲。", note: "聲音響亮飽滿，展現雨勢之猛烈磅礡。" },
+      { id: 41, word: "滴滴答答", bopomofo: "ㄉㄧ ㄉㄧ ㄉㄚ ㄉㄚ", category: "rain", catName: "水滴聲", sentence: "屋簷上的殘雨，依然滴滴答答落個不停。", quote: "生活常用", meaning: "形容水滴或小雨點斷續掉落瓦片或石階之聲。", note: "常用於描寫雨後初晴或夜雨殘滴。" },
+
+      // 山川流水
+      { id: 42, word: "泠泠", bopomofo: "ㄌㄧㄥˊ ㄌㄧㄥˊ", category: "water", catName: "清泉", sentence: "泉水激石，泠泠作響；好鳥相鳴，嚶嚶成韻。", quote: "吳均《與宋元思書》", meaning: "形容清泉流水撞擊岩石所發出的清脆悅耳聲。", note: "【課文名篇】描繪富春江奇山異水，清泉幽韻歷歷如繪。" },
+      { id: 43, word: "潺潺", bopomofo: "ㄔㄢˊ ㄔㄢˊ", category: "water", catName: "山澗谷水", sentence: "谷水潺潺，小溪自幽谷深處蜿蜒流出。", quote: "經典散文", meaning: "形容山溪水流緩緩流動的清脆細碎水聲。", note: "寫山泉溪流最普及常用的經典詞彙。" },
+      { id: 44, word: "潺湲", bopomofo: "ㄔㄢˊ ㄩㄢˊ", category: "water", catName: "緩流流水", sentence: "空山夜寂，忽聞水聲潺湲於石罅之間。", quote: "古典文辭", meaning: "形容水流徐徐流動之聲，亦可形容水流動態。", note: "古雅文辭，常作「水聲潺湲」。" },
+      { id: 45, word: "幽咽", bopomofo: "ㄧㄡ ㄧㄝˋ", category: "water", catName: "暗泉下灘", sentence: "間關鶯語花底滑，幽咽泉流水下灘。", quote: "白居易《琵琶行》", meaning: "形容泉水流經受阻狹隘之處，所發出低沉幽微如啜泣的水聲。", note: "【會考精選】白居易比喻琵琶轉調凝滯沉鬱之音韻。" },
+      { id: 46, word: "淙淙", bopomofo: "ㄘㄨㄥˊ ㄘㄨㄥˊ", category: "water", catName: "溪澗流水", sentence: "空山新雨後，山林深處流水淙淙，清涼沁心。", quote: "古典常語", meaning: "形容流水奔流或自高處傾落石間發出的清響。", note: "常作「流水淙淙」。" },
+      { id: 47, word: "濺濺", bopomofo: "ㄐㄧㄢ ㄐㄧㄢ", category: "water", catName: "黃河急流", sentence: "不聞爺孃喚女聲，但聞黃河流水鳴濺濺。", quote: "《木蘭詩》", meaning: "形容黃河等大河奔騰湍急澎湃之流水巨響。", note: "【課文名篇】木蘭宿於黃河邊，描繪河水澎湃聲浪襯托思親心緒。" },
+
+      // 金石兵器
+      { id: 48, word: "鏗鏘", bopomofo: "ㄎㄥ ㄑㄧㄤ", category: "metal", catName: "金屬碰撞", sentence: "口袋中的錢幣相互撞擊，發出鏗鏘的聲音。", quote: "生活常用", meaning: "形容金屬、玉石相互碰撞所產生的清脆嘹亮聲響。", note: "常用於金石樂器敲擊，亦可比喻言詞剛勁有力（鏗鏘有力）。" },
+      { id: 49, word: "鋃鐺", bopomofo: "ㄌㄤˊ ㄉㄤ", category: "metal", catName: "鎖鏈鐐銬", sentence: "作惡多端的罪犯終於落入法網，鋃鐺入獄。", quote: "成語辭彙", meaning: "形容囚徒手銬腳鐐等鐵器鎖鏈相互撞擊的聲音。", note: "【經典成語】「鋃鐺入獄」即因鐵鏈碰撞聲而引申為被拘禁收押。" },
+      { id: 50, word: "霍霍", bopomofo: "ㄏㄨㄛˋ ㄏㄨㄛˋ", category: "metal", catName: "磨刀急速", sentence: "小弟聞姊來，磨刀霍霍向豬羊。", quote: "《木蘭詩》", meaning: "形容刀鋒急速磨礪在砥石上所發出的銳利聲響。", note: "【課文名篇】描繪家人歡慶木蘭歸來的喜悅熱鬧磨刀宰殺之聲。" },
+
+      // 器物勞動與細碎動態
+      { id: 51, word: "丁丁", bopomofo: "ㄓㄥ ㄓㄥ", category: "object", catName: "伐木聲", sentence: "伐木丁丁，鳥鳴嚶嚶。出自幽谷，遷于喬木。", quote: "《詩經·小雅·伐木》", meaning: "形容斧頭砍伐樹木所發出的宏亮鏗然之聲。", note: "【重要考點】「丁丁」讀音為「ㄓㄥ ㄓㄥ」，絕不可誤讀為「ㄉㄧㄥ ㄉㄧㄥ」！" },
+      { id: 52, word: "札札", bopomofo: "ㄓㄚˊ ㄓㄚˊ", category: "object", catName: "織布機聲", sentence: "札札弄機杼，纖纖擢素手。終日不成章，泣涕零如雨。", quote: "《古詩十九首·迢迢牽牛星》", meaning: "形容織布機梭子與經緯線轉動摩擦之聲響。", note: "【經典名篇】描寫織女思念牛郎，終日推動織布機之孤寂音韻。" },
+      { id: 53, word: "唧唧 (機杼)", bopomofo: "ㄐㄧˊ ㄐㄧˊ", category: "object", catName: "機杼聲", sentence: "唧唧復唧唧，木蘭當戶織。不聞機杼聲，唯聞女嘆息。", quote: "《木蘭詩》", meaning: "首句摹擬織布機轉動聲，隨後化為思親憂國之嘆息聲。", note: "【會考名篇】一語雙關之代表，既摹織布機聲，亦摹織女之嘆息。教育部審訂音讀作「ㄐㄧˊ ㄐㄧˊ」。" },
+      { id: 54, word: "轟隆", bopomofo: "ㄏㄨㄥ ㄌㄨㄥ", category: "object", catName: "雷聲/巨響", sentence: "夏日午後烏雲密布，天際雷聲轟隆作響。", quote: "生活常用", meaning: "形容雷霆震動、火車駛過或建築崩塌之巨響。", note: "常用於雷聲滾滾或龐大重機運轉之聲。" },
+      { id: 55, word: "格格", bopomofo: "ㄍㄜˊ ㄍㄜˊ", category: "object", catName: "門窗碰撞", sentence: "突來的地震劇烈搖晃，把老屋的門窗震得格格作響。", quote: "生活常用", meaning: "形容器物相互劇烈碰撞、晃動或摩擦之聲響。", note: "注意讀音ㄍㄜˊ ㄍㄜˊ，常形容寒冷牙齒打戰或門窗震動。" },
+      { id: 56, word: "必必剝剝", bopomofo: "ㄅㄧˋ ㄅㄧˋ ㄅㄛ ㄅㄛ", category: "object", catName: "木柴爆裂", sentence: "冬夜寒冷，壁爐中燃燒著必必剝剝的爐火，暖意襲人。", quote: "文學散文", meaning: "形容柴火燃燒受熱時木節爆裂炸響之劈啪聲。", note: "描摹火星飛濺、木炭爆開之生動聽覺形象。" },
+      { id: 57, word: "沙沙", bopomofo: "ㄕㄚ ㄕㄚ", category: "object", catName: "細微摩挲", sentence: "夜風吹過竹林，竹葉發出沙沙作響的細微聲音。", quote: "生活常用", meaning: "形容小動物在草叢爬行，或風吹樹葉所發出的細密摩擦聲。", note: "營造靜謐幽深氣氛之經典狀聲詞。" },
+      { id: 58, word: "簌簌", bopomofo: "ㄙㄨˋ ㄙㄨˋ", category: "object", catName: "細碎墜落", sentence: "秋風蕭瑟，樹葉簌簌地響，片片飄落階前；或淚落簌簌。", quote: "朱自清《背影》", meaning: "形容細碎不斷的落葉聲，或眼淚紛紛墜落之狀。", note: "【重要考點】朱自清《背影》「眼淚簌簌地流下來」形容淚水紛落貌。" }
+    ];
+
+    let currentCategory = 'all';
+    let currentSearchKeyword = '';
+    let isAllMasked = false;
+
+    // 渲染圖鑑卡片
+    function renderVocabCards() {
+      const container = document.getElementById('vocab-cards-grid');
+      container.innerHTML = '';
+
+      const filtered = vocabDatabase.filter(item => {
+        const matchCat = (currentCategory === 'all' || item.category === currentCategory);
+        const matchSearch = (!currentSearchKeyword || 
+          item.word.includes(currentSearchKeyword) || 
+          item.sentence.includes(currentSearchKeyword) || 
+          item.meaning.includes(currentSearchKeyword) || 
+          item.quote.includes(currentSearchKeyword) ||
+          item.catName.includes(currentSearchKeyword)
+        );
+        return matchCat && matchSearch;
+      });
+
+      document.getElementById('filtered-count').textContent = filtered.length;
+      document.getElementById('total-count').textContent = vocabDatabase.length;
+
+      if (filtered.length === 0) {
+        container.innerHTML = `
+          <div style="grid-column:1/-1; text-align:center; padding:40px 20px; color:#94a3b8;">
+            <i data-lucide="search-x" style="width:48px; height:48px; margin-bottom:12px;"></i>
+            <p style="font-size:1.1rem; font-weight:700;">查無符合「${currentSearchKeyword}」的狀聲詞條目</p>
+            <p style="font-size:0.9rem;">建議嘗試搜尋：笑聲、哭聲、馬鳴、木蘭詩、琵琶行、流水、丁丁...</p>
+          </div>
+        `;
+        lucide.createIcons();
+        return;
+      }
+
+      filtered.forEach(item => {
+        const card = document.createElement('div');
+        card.className = 'vocab-card';
+        card.id = `v-card-${item.id}`;
+
+        const maskClass = isAllMasked ? 'masked' : '';
+
+        // 高亮句子中的狀聲詞
+        const hlSentence = item.sentence.replace(
+          new RegExp(item.word.replace('(', '\\(').replace(')', '\\)'), 'g'),
+          `<span class="sound-word-hl">${item.word}</span>`
+        );
+
+        card.innerHTML = `
+          <div class="card-top-row">
+            <div class="term-headline">
+              <span class="term-name serif">${item.word}</span>
+              <span class="term-bopomofo">${item.bopomofo}</span>
+              <span class="term-category-badge cat-${item.category}">${item.catName}</span>
+            </div>
+            <button class="tts-sound-btn" onclick="speakText('${item.word}。${item.sentence}', this)" title="真人語音朗讀">
+              <i data-lucide="volume-2" style="width:18px;"></i>
+            </button>
+          </div>
+
+          <div class="sentence-block">
+            ${hlSentence}
+            <span class="source-quote">── 典範語境 / 出處：${item.quote}</span>
+          </div>
+
+          <div class="analysis-box ${maskClass}" onclick="toggleSingleMask(this)" title="點擊切換顯示/隱藏解析">
+            <b>【聲景解析】</b>${item.meaning}<br>
+            <small style="color:#0369a1; font-weight:600;">【解題眉角】${item.note}</small>
+          </div>
+        `;
+
+        container.appendChild(card);
+      });
+
+      lucide.createIcons();
+    }
+
+    // 分類篩選
+    function setCategoryFilter(cat) {
+      currentCategory = cat;
+      const chips = document.querySelectorAll('.chip-btn');
+      chips.forEach(btn => {
+        btn.classList.remove('active');
+        if (btn.getAttribute('onclick')?.includes(`'${cat}'`)) {
+          btn.classList.add('active');
+        }
+      });
+      renderVocabCards();
+    }
+
+    // 星盤連動
+    function filterByMatrixCategory(cat) {
+      setCategoryFilter(cat);
+      const catalogSec = document.getElementById('catalog');
+      catalogSec.scrollIntoView({ behavior: 'smooth' });
+    }
+
+    // 搜尋處理
+    function handleSearch(keyword) {
+      currentSearchKeyword = keyword.trim();
+      renderVocabCards();
+    }
+
+    // 單張卡片遮罩切換
+    function toggleSingleMask(boxEl) {
+      boxEl.classList.toggle('masked');
+    }
+
+    // 全部遮罩切換
+    function toggleAllMasks() {
+      isAllMasked = !isAllMasked;
+      const btn = document.getElementById('btn-toggle-mask-all');
+      if (isAllMasked) {
+        btn.innerHTML = `<i data-lucide="eye" style="width:16px;"></i> <span>一鍵揭曉全部解析</span>`;
+      } else {
+        btn.innerHTML = `<i data-lucide="eye-off" style="width:16px;"></i> <span>一鍵隱藏遮罩特訓</span>`;
+      }
+      renderVocabCards();
+    }
+
+    // TTS 語音合成
+    function speakText(text, btnEl) {
+      if (!('speechSynthesis' in window)) {
+        alert('抱歉，您的瀏覽器不支援 Web Speech API 語音朗讀。建議使用 Chrome 或 Edge 瀏覽器！');
+        return;
+      }
+      window.speechSynthesis.cancel();
+      const utterance = new SpeechSynthesisUtterance(text);
+      utterance.lang = 'zh-TW';
+      utterance.rate = 0.92;
+
+      if (btnEl) {
+        btnEl.classList.add('playing');
+        utterance.onend = () => btnEl.classList.remove('playing');
+        utterance.onerror = () => btnEl.classList.remove('playing');
+      }
+
+      window.speechSynthesis.speak(utterance);
+    }
+
+    // ==========================================
+    // 2. 古典聲景魔法工坊 (Interactive Workshop)
+    // ==========================================
+    const workshopScenes = {
+      mulan: {
+        title: "木蘭機杼情思",
+        desc: "《木蘭詩》深宮夜織，心緒萬千",
+        sounds: ["唧唧", "札札", "霍霍", "啾啾"],
+        templates: {
+          "唧唧": {
+            text: "唧唧復唧唧，木蘭當戶織。幽微的織機聲伴隨深沉的嘆息，道盡了替父從軍前的掙扎與堅毅。",
+            note: "「唧唧」兼具織布機聲與少女長嘆之聲，虛實交融。"
+          },
+          "札札": {
+            text: "札札弄機杼，更深人靜。窗欞外冷月如霜，唯有梭子穿梭經緯的聲響劃破長夜的寂靜。",
+            note: "「札札」摹擬機件轉動之聲，烘托出深夜勤織之情境。"
+          },
+          "霍霍": {
+            text: "磨刀霍霍向豬羊！凱旋歸來的木蘭重返故園，阿弟手持利刃歡慶備席，滿院洋溢著團聚的喜氣。",
+            note: "「霍霍」描繪磨刀急速清脆之聲，展現澎湃熱烈的生活氣息。"
+          },
+          "啾啾": {
+            text: "燕山胡騎聲啾啾！遠征塞外的木蘭聽見敵軍戰馬長嘶，朔氣逼人，金戈鐵馬之肅殺感油然而生。",
+            note: "【經典必考】「啾啾」在此特指邊關戰馬悲嘶之聲，非鳥鳴！"
+          }
+        }
+      },
+      pipa: {
+        title: "潯陽江頭夜泊",
+        desc: "《琵琶行》潯陽江頭，秋月弦語",
+        sounds: ["間關", "幽咽", "瑟瑟", "泠泠"],
+        templates: {
+          "間關": {
+            text: "間關鶯語花底滑，琵琶女輕攏慢撚，絃音宛如黃鶯在繁花樹梢間宛轉清脆啼叫，流暢圓融。",
+            note: "「間關」摹寫鳥聲婉轉流暢，白居易借喻琵琶弦音之珠圓玉潤。"
+          },
+          "幽咽": {
+            text: "幽咽泉流水下灘！曲調漸轉凝滯沉鬱，如暗泉受阻於沙石之間低微悲泣，道盡了天涯淪落人的身世之悲。",
+            note: "「幽咽」描繪水流低微如泣，表現樂曲中壓抑沉痛的情愫。"
+          },
+          "瑟瑟": {
+            text: "楓葉荻花秋瑟瑟！潯陽江畔秋風吹拂，兩岸荻花楓葉紛紛飄搖，伴隨瑟瑟風聲，客舟寂寥更甚。",
+            note: "「瑟瑟」為秋風肅殺之聲，營造清冷蕭索的離別氛圍。"
+          },
+          "泠泠": {
+            text: "絃聲轉清如泉水泠泠，泠泠作響，宛若高山雪融、清流激石，洗淨了世俗喧囂與舟客殘愁。",
+            note: "「泠泠」指清泉擊石或古琴清亮高雅之音。"
+          }
+        }
+      },
+      battle: {
+        title: "易水壯士西征",
+        desc: "古戰場西風烈烈，易水訣別",
+        sounds: ["蕭蕭", "嘶嘶", "轟隆", "鏗鏘"],
+        templates: {
+          "蕭蕭": {
+            text: "風蕭蕭兮易水寒，壯士一去兮不復還！易水岸邊寒風呼號激盪，荊軻拔劍慷慨高歌，千古悲壯長留天地。",
+            note: "「蕭蕭」描寫狂烈寒風勁吹之聲，烘托出決絕無畏的英雄氣概。"
+          },
+          "嘶嘶": {
+            text: "戰馬揚首嘶鳴，發出陣陣嘶嘶之聲。將士束甲整軍，獵獵戰旗在西風中怒展，大戰一觸即發。",
+            note: "「嘶嘶」為戰馬昂首吐氣長鳴之聲，增添沙場緊張肅穆氣息。"
+          },
+          "轟隆": {
+            text: "天際雷霆轟隆巨響，戰鼓如雷震動大地，鐵騎奔馳揚起漫天塵土，聲勢動地驚天。",
+            note: "「轟隆」形容雷霆或千軍萬馬撼動地表的磅礡巨響。"
+          },
+          "鏗鏘": {
+            text: "刀槍劍戟相擊，迸發出鏗鏘有力的金石脆響，寒光閃爍在殘陽古道之上，寫下勇者的誓言。",
+            note: "「鏗鏘」描寫金屬兵刃猛烈撞擊的鏗然清響。"
+          }
+        }
+      },
+      spring: {
+        title: "春日深林漫步",
+        desc: "山幽鳥鳴，溪水潺潺，自然靜好",
+        sounds: ["關關", "潺潺", "嚶嚶", "淅淅瀝瀝"],
+        templates: {
+          "關關": {
+            text: "關關雎鳩，在河之洲。清晨的河畔沙洲上，水鳥和諧相呼應鳴，春風拂過水波，洋溢著蓬勃生機。",
+            note: "《詩經》首篇名句，「關關」摹擬雎鳩和鳴，象徵純潔和諧之美。"
+          },
+          "潺潺": {
+            text: "空山幽谷，谷水潺潺。清澈見底的溪流漫過青苔卵石，歡快地奔向林間深處，帶走塵世煩憂。",
+            note: "「潺潺」為溪水緩流之聲，給人寧靜幽雅的心靈洗滌。"
+          },
+          "嚶嚶": {
+            text: "好鳥相鳴，嚶嚶成韻。林木蔥鬱，百鳥相呼求友，和諧婉轉的啼聲在山谷間交織成自然的交響樂。",
+            note: "「嚶嚶」形容鳥類相鳴和諧動聽，出自吳均《與宋元思書》。"
+          },
+          "淅淅瀝瀝": {
+            text: "春雨淅淅瀝瀝落入幽谷，潤物細無聲。林間草木飲啜甘霖，更顯青翠欲滴、生機盎然。",
+            note: "「淅淅瀝瀝」描繪春雨細密輕柔的點滴微聲。"
+          }
+        }
+      }
+    };
+
+    let selectedSceneKey = 'mulan';
+    let selectedSoundWord = '唧唧';
+
+    function selectScene(sceneKey) {
+      selectedSceneKey = sceneKey;
+      const btns = document.querySelectorAll('.scene-btn');
+      btns.forEach(btn => btn.classList.remove('active'));
+      const activeBtn = Array.from(btns).find(b => b.getAttribute('onclick')?.includes(`'${sceneKey}'`));
+      if (activeBtn) activeBtn.classList.add('active');
+
+      // 載入該場景的狀聲詞清單
+      const scene = workshopScenes[sceneKey];
+      selectedSoundWord = scene.sounds[0];
+      renderWorkshopSoundPicker();
+      updateWorkshopOutput();
+    }
+
+    function renderWorkshopSoundPicker() {
+      const picker = document.getElementById('workshop-sound-picker');
+      picker.innerHTML = '';
+      const scene = workshopScenes[selectedSceneKey];
+
+      scene.sounds.forEach(sound => {
+        const item = document.createElement('div');
+        item.className = `sound-pick-item ${sound === selectedSoundWord ? 'active' : ''}`;
+        item.textContent = sound;
+        item.onclick = () => {
+          selectedSoundWord = sound;
+          renderWorkshopSoundPicker();
+          updateWorkshopOutput();
+        };
+        picker.appendChild(item);
+      });
+    }
+
+    function updateWorkshopOutput() {
+      const scene = workshopScenes[selectedSceneKey];
+      const data = scene.templates[selectedSoundWord];
+      const outTextEl = document.getElementById('workshop-output-text');
+      const outNoteEl = document.getElementById('workshop-output-annotation');
+
+      const highlighted = data.text.replace(
+        new RegExp(selectedSoundWord, 'g'),
+        `<span class="hl-sound">${selectedSoundWord}</span>`
+      );
+
+      outTextEl.innerHTML = highlighted;
+      outNoteEl.innerHTML = `<b>【聲學情境解析】</b>${data.note}`;
+    }
+
+    function speakWorkshopText() {
+      const scene = workshopScenes[selectedSceneKey];
+      const data = scene.templates[selectedSoundWord];
+      speakText(data.text);
+    }
+
+    // ==========================================
+    // 3. 會考神仙挑戰賽 (10 題高頻試題診斷)
+    // ==========================================
+    const quizQuestions = [
+      {
+        id: 1,
+        source: "經典詩詞典故・杜鵑題",
+        stem: "古人常將杜鵑鳥淒清的啼叫聲擬音為下列何者，用以寄託思鄉歸里之情？",
+        options: [
+          "A. 不如歸去",
+          "B. 關關雎鳩",
+          "C. 嚶嚶成韻",
+          "D. 啞啞吐哀音"
+        ],
+        answer: 0,
+        explanation: "正確答案為 (A)。杜鵑鳥（又稱子規、催歸），古人因其啼聲悲切，擬音為「不如歸去」，常作為遊子懷鄉、行旅思歸的象徵。(B)為水鳥雎鳩；(C)為群鳥和鳴；(D)為烏鴉哀啼。"
+      },
+      {
+        id: 2,
+        source: "會考高頻考點・《木蘭詩》",
+        stem: "《木蘭詩》：「不聞爺孃喚女聲，但聞燕山胡騎聲啾啾。」句中「啾啾」所摹擬的聲音為何？",
+        options: [
+          "A. 森林中黃雀細碎啄食之鳥鳴聲",
+          "B. 邊塞敵軍戰馬長嘯嘶鳴之聲",
+          "C. 荒漠中秋夜蟋蟀哀怨之蟲鳴聲",
+          "D. 塞外士兵徹夜長吁短嘆之嘆息聲"
+        ],
+        answer: 1,
+        explanation: "正確答案為 (B)。「燕山胡騎聲啾啾」中的「啾啾」在此特指敵軍（胡人）戰馬的嘶鳴之聲，烘托出塞外軍營肅殺嚴峻的氣氛。此為歷屆基測與會考極高頻的辨析陷阱！"
+      },
+      {
+        id: 3,
+        source: "古典文學一詞多聲・《木蘭詩》",
+        stem: "《木蘭詩》開篇「唧唧復唧唧，木蘭當戶織」，詩中的「唧唧」主要指何種聲音？",
+        options: [
+          "A. 紡織機梭子運轉之聲，後引申為女子嘆息聲",
+          "B. 窗外促織（蟋蟀）求偶之啼叫聲",
+          "C. 隔壁鄰居悄悄耳語之低語聲",
+          "D. 屋簷上麻雀聚集喧鬧之鳥雀聲"
+        ],
+        answer: 0,
+        explanation: "正確答案為 (A)。「唧唧」首句摹擬織布機轉動運作之聲，但隨後緊接著「不聞機杼聲，唯聞女嘆息」，轉化為木蘭思父憂國的幽微嘆息，為古典文學中虛實雙關之神筆。"
+      },
+      {
+        id: 4,
+        source: "字音辨析與詩經經典",
+        stem: "《詩經·小雅》：「伐木丁丁，鳥鳴嚶嚶。」句中「丁丁」的正確讀音與所指聲音為何？",
+        options: [
+          "A. 讀作「ㄉㄧㄥ ㄉㄧㄥ」，指小鈴鐺撞擊之聲",
+          "B. 讀作「ㄓㄥ ㄓㄥ」，指斧頭伐木發出的宏亮聲響",
+          "C. 讀作「ㄉㄧㄤ ㄉㄧㄤ」，指鐵器敲打之聲",
+          "D. 讀作「ㄊㄧㄥ ㄊㄧㄥ」，指風吹樹梢之輕聲"
+        ],
+        answer: 1,
+        explanation: "正確答案為 (B)。「伐木丁丁」中的「丁丁」音為「ㄓㄥ ㄓㄥ」，摹擬伐木時斧頭猛烈砍擊木材的鏗鏘巨響，絕不可誤讀為「ㄉㄧㄥ ㄉㄧㄥ」。"
+      },
+      {
+        id: 5,
+        source: "生活成語與語意辨析",
+        stem: "下列文句中的「轆轆」一詞，何者純粹用來形容「空腹飢餓時腹部發出的叫聲」？",
+        options: [
+          "A. 大道上車馬轆轆，商旅絡繹不絕",
+          "B. 井上轆轆轉動，汲出清冽甘泉",
+          "C. 忙到午後未進一米，早已飢腸轆轆",
+          "D. 滾石自山頂轆轆而下，聲勢驚人"
+        ],
+        answer: 2,
+        explanation: "正確答案為 (C)。「轆轆」原指車輪旋轉之聲，引申為水井滑輪轉動聲；但在成語「飢腸轆轆」中，借用來形容因腹部飢餓而引起的腸胃蠕動鳴叫聲。"
+      },
+      {
+        id: 6,
+        source: "會考高頻多重語境・蕭蕭",
+        stem: "「蕭蕭」一詞可形容多種自然與生物聲響。下列何句中的「蕭蕭」是用來摹擬「馬鳴聲」？",
+        options: [
+          "A. 風蕭蕭兮易水寒，壯士一去兮不復還",
+          "B. 無邊落木蕭蕭下，不盡長江滾滾來",
+          "C. 揮手自茲去，蕭蕭班馬鳴",
+          "D. 楓葉落盡，寒雨蕭蕭灑向空庭"
+        ],
+        answer: 2,
+        explanation: "正確答案為 (C)。李白《送友人》「蕭蕭班馬鳴」描寫離群之馬（班馬）依依不捨的長嘶聲。(A)為風聲；(B)為秋風中落葉細碎墜落之聲；(D)為風雨急促之聲。"
+      },
+      {
+        id: 7,
+        source: "唐詩名篇鑑賞・白居易《琵琶行》",
+        stem: "白居易《琵琶行》：「間關鶯語花底滑，幽咽泉流水下灘。」句中「間關」形容琵琶聲如何？",
+        options: [
+          "A. 如黃鶯在花下清脆婉轉的鳴囀，象徵絃音流暢圓潤",
+          "B. 如戰場關卡兩軍交戰之金鼓喧天，象徵悲壯急促",
+          "C. 如空谷幽泉受到岩石堵塞之沉痛凝滯，象徵哀怨低回",
+          "D. 如山雨初歇風吹竹葉之細碎沙沙，象徵若有若無"
+        ],
+        answer: 0,
+        explanation: "正確答案為 (A)。「間關」為鳥鳴婉轉之狀聲詞，白居易以此形容琵琶女指法純熟，弦音清脆流暢如黃鶯花底滑啼；對照下句「幽咽」之低沉受阻，構成鮮明的聽覺反差。"
+      },
+      {
+        id: 8,
+        source: "橘老師開唱避坑・教育部辭典規範",
+        stem: "關於「呢喃」、「喃喃」兩詞的詞性與修辭判定，依據教育部重編國語辭典之規範，下列敘述何者完全正確？",
+        options: [
+          "A. 兩者皆純屬描寫心理情態之形容詞，不可算作狀聲詞",
+          "B. 「呢喃」指燕語為狀聲詞，但「喃喃」指人說話非狀聲詞",
+          "C. 兩者皆為教育部辭典明定之狀聲詞，分別摹擬燕語與人低語之聲",
+          "D. 兩者皆為疊字複詞，但古代均無此用法，純屬現代語法"
+        ],
+        answer: 2,
+        explanation: "正確答案為 (C)。依據教育部國語辭典明定，「呢喃」摹擬燕子啼聲（如燕語呢喃），「喃喃」摹擬人低語說話之聲（如喃喃自語），兩者皆屬於規範認定之「狀聲詞」！"
+      },
+      {
+        id: 9,
+        source: "課文精華辨析・細微聽覺動態",
+        stem: "下列各句中的狀聲詞，何者是用來摹擬「細微爬行或風吹樹葉細密摩擦之聲」？",
+        options: [
+          "A. 竹林裡傳來陣陣沙沙作響的聲音",
+          "B. 錢幣相互撞擊，發出鏗鏘聲響",
+          "C. 屋簷下的春雨滴滴答答落個不停",
+          "D. 嚴冬爐火中正燃燒著必必剝剝的火星"
+        ],
+        answer: 0,
+        explanation: "正確答案為 (A)。「沙沙」常用於小動物在草叢爬行或微風吹動竹葉樹葉時發出的細微沙沙聲。(B)為金石撞擊聲；(C)為雨滴滴落聲；(D)為木柴爆裂聲。"
+      },
+      {
+        id: 10,
+        source: "字音字形與古詩文鑑賞",
+        stem: "下列有關狀聲詞的字音、字形與用法說明，何者「完全無誤」？",
+        options: [
+          "A. 「磨刀霍霍」中的「霍霍」音ㄏㄨㄛˋ ㄏㄨㄛˋ，指磨刀急速之聲",
+          "B. 「伐木丁丁」中的「丁丁」音ㄉㄧㄥ ㄉㄧㄥ，指砍柴細碎之聲",
+          "C. 「泉水泠泠」中的「泠泠」音ㄌㄧㄥˊ ㄌㄧㄥˊ，形容大河狂浪怒吼",
+          "D. 「呱呱墜地」中的「呱呱」音ㄍㄨㄚ ㄍㄨㄚ，形容青蛙群集跳水"
+        ],
+        answer: 0,
+        explanation: "正確答案為 (A)。「磨刀霍霍」形容磨刀急速銳利之聲，音ㄏㄨㄛˋ ㄏㄨㄛˋ。(B)「伐木丁丁」音ㄓㄥ ㄓㄥ；(C)「泉水泠泠」為清泉流水擊石清脆之聲，非怒吼；(D)嬰兒誕生「呱呱墜地」音ㄍㄨ ㄍㄨ。"
+      }
+    ];
+
+    let currentQIndex = 0;
+    let quizScore = 0;
+    let userAnswers = [];
+
+    function renderQuestion() {
+      const q = quizQuestions[currentQIndex];
+      document.getElementById('quiz-progress-text').textContent = `第 ${currentQIndex + 1} / ${quizQuestions.length} 題`;
+      document.getElementById('quiz-score-badge').textContent = `當前得分：${quizScore} 分`;
+      
+      const pct = ((currentQIndex) / quizQuestions.length) * 100;
+      document.getElementById('quiz-progress-bar').style.width = `${pct}%`;
+
+      document.getElementById('q-source-tag').textContent = q.source;
+      document.getElementById('q-stem').textContent = q.stem;
+
+      const optsContainer = document.getElementById('q-options-grid');
+      optsContainer.innerHTML = '';
+
+      q.options.forEach((optText, idx) => {
+        const btn = document.createElement('button');
+        btn.className = 'q-opt-btn';
+        btn.innerHTML = `<span style="font-weight:800; color:var(--primary);">${String.fromCharCode(65 + idx)}.</span> ${optText.substring(3)}`;
+        btn.onclick = () => handleSelectOption(idx);
+        optsContainer.appendChild(btn);
+      });
+
+      document.getElementById('q-explanation-box').style.display = 'none';
+      document.getElementById('btn-next-question').style.display = 'none';
+    }
+
+    function handleSelectOption(selectedIdx) {
+      const q = quizQuestions[currentQIndex];
+      const optBtns = document.querySelectorAll('.q-opt-btn');
+      
+      optBtns.forEach((btn, idx) => {
+        btn.disabled = true;
+        if (idx === q.answer) {
+          btn.classList.add('correct');
+        } else if (idx === selectedIdx) {
+          btn.classList.add('wrong');
+        }
+      });
+
+      const isCorrect = (selectedIdx === q.answer);
+      if (isCorrect) {
+        quizScore += 10;
+        document.getElementById('quiz-score-badge').textContent = `當前得分：${quizScore} 分`;
+      }
+
+      userAnswers.push({ qIndex: currentQIndex, selected: selectedIdx, isCorrect });
+
+      const expBox = document.getElementById('q-explanation-box');
+      document.getElementById('q-exp-text').textContent = q.explanation;
+      expBox.style.display = 'block';
+
+      const nextBtn = document.getElementById('btn-next-question');
+      if (currentQIndex < quizQuestions.length - 1) {
+        nextBtn.innerHTML = `下一題 <i data-lucide="arrow-right" style="width:16px;"></i>`;
+      } else {
+        nextBtn.innerHTML = `查看結算成績 <i data-lucide="award" style="width:16px;"></i>`;
+      }
+      nextBtn.style.display = 'inline-flex';
+      lucide.createIcons();
+    }
+
+    function handleNextQuestion() {
+      if (currentQIndex < quizQuestions.length - 1) {
+        currentQIndex++;
+        renderQuestion();
+      } else {
+        showQuizResult();
+      }
+    }
+
+    function showQuizResult() {
+      document.getElementById('quiz-card-box').style.display = 'none';
+      document.querySelector('.quiz-stats-header').style.display = 'none';
+      document.querySelector('.quiz-bar-outer').style.display = 'none';
+
+      const resultView = document.getElementById('quiz-result-view');
+      resultView.style.display = 'block';
+
+      document.getElementById('result-final-score').textContent = `${quizScore} 分`;
+
+      const badgeIcon = document.getElementById('result-badge-icon');
+      const comment = document.getElementById('result-comment');
+
+      if (quizScore === 100) {
+        badgeIcon.textContent = '👑';
+        comment.textContent = '神乎其技！滿分通過！你已經徹底掌握國中會考所有狀聲詞經典題型！';
+      } else if (quizScore >= 80) {
+        badgeIcon.textContent = '🌟';
+        comment.textContent = '表現優異！對狀聲詞有相當深刻的理解，再複習一下錯題就無懈可擊了！';
+      } else if (quizScore >= 60) {
+        badgeIcon.textContent = '💪';
+        comment.textContent = '順利及格！多留意「燕山胡騎聲啾啾」、「伐木丁丁ㄓㄥ ㄓㄥ」等易錯考點喔！';
+      } else {
+        badgeIcon.textContent = '📖';
+        comment.textContent = '加油！建議回到上方「典範圖鑑」多聽幾次語音並詳讀橘老師解題避坑指南！';
+      }
+    }
+
+    function restartQuiz() {
+      currentQIndex = 0;
+      quizScore = 0;
+      userAnswers = [];
+
+      document.getElementById('quiz-card-box').style.display = 'block';
+      document.querySelector('.quiz-stats-header').style.display = 'flex';
+      document.querySelector('.quiz-bar-outer').style.display = 'block';
+      document.getElementById('quiz-result-view').style.display = 'none';
+
+      renderQuestion();
+    }
+
+    // 重新載入練習神器 iframe
+    function reloadIframe() {
+      const iframe = document.getElementById('practice-iframe');
+      iframe.src = iframe.src;
+    }
+
+    // 初始化頁面
+    window.addEventListener('DOMContentLoaded', () => {
+      renderVocabCards();
+      selectScene('mulan');
+      renderQuestion();
+      lucide.createIcons();
+    });
+  </script>
+</body>
+</html>

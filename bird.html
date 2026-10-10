@@ -1,0 +1,2065 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>語文補給站｜詩中的鳥類・古典詩詞禽鳥意象互動學習殿堂</title>
+  <meta name="description" content="學思軒語文補給站：翰林國中國文 B3L06 詩中的鳥類專屬互動學習殿堂。收錄52種詩詞禽鳥、八大文化象徵星盤、全真語音TTS、考前15字極簡口訣卡、會考實戰挑戰賽與飛羽靈感工坊。">
+  <!-- Google Fonts: 典雅思源黑體、思源宋體與書法字型 -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;600;700;900&family=Noto+Sans+TC:wght@300;400;500;700;900&family=Ma+Shan+Zheng&display=swap" rel="stylesheet">
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <style>
+    :root {
+      --primary: #0284c7;
+      --primary-dark: #0369a1;
+      --primary-light: #e0f2fe;
+      --primary-hover: #0ea5e9;
+
+      --accent: #d97706;
+      --accent-light: #fef3c7;
+      --accent-dark: #b45309;
+
+      --emerald: #059669;
+      --emerald-light: #d1fae5;
+      --rose: #e11d48;
+      --rose-light: #ffe4e6;
+      --purple: #7c3aed;
+      --purple-light: #ede9fe;
+
+      --dark: #0f172a;
+      --dark-card: #1e293b;
+      --gray: #64748b;
+      --gray-light: #f1f5f9;
+      --border: #e2e8f0;
+
+      --bg-page: #f8fafc;
+      --card-bg: rgba(255, 255, 255, 0.96);
+      --card-glass: rgba(255, 255, 255, 0.85);
+
+      --radius-sm: 8px;
+      --radius-md: 14px;
+      --radius-lg: 20px;
+      --radius-xl: 28px;
+
+      --shadow: 0 10px 25px -5px rgba(2, 132, 199, 0.08), 0 8px 10px -6px rgba(0, 0, 0, 0.04);
+      --shadow-hover: 0 20px 30px -10px rgba(2, 132, 199, 0.2);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Noto Sans TC', sans-serif;
+      background-color: var(--bg-page);
+      color: var(--dark);
+      line-height: 1.65;
+      background-image:
+        radial-gradient(circle at 8% 12%, rgba(2, 132, 199, 0.04) 0%, transparent 45%),
+        radial-gradient(circle at 92% 20%, rgba(217, 119, 6, 0.04) 0%, transparent 45%),
+        radial-gradient(circle at 50% 80%, rgba(5, 150, 105, 0.03) 0%, transparent 60%);
+      background-attachment: fixed;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .serif {
+      font-family: 'Noto Serif TC', serif;
+    }
+
+    .calligraphy {
+      font-family: 'Ma Shan Zheng', 'Noto Serif TC', cursive;
+    }
+
+    /* 頂部導覽列 */
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(14px);
+      border-bottom: 1px solid var(--border);
+      padding: 0.75rem 1.5rem;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
+    }
+
+    .nav-container {
+      max-width: 1320px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    .brand-group {
+      display: flex;
+      align-items: center;
+      gap: 0.85rem;
+      text-decoration: none;
+    }
+
+    .brand-seal-img {
+      height: 48px;
+      width: auto;
+      object-fit: contain;
+      transition: transform 0.3s ease;
+      filter: drop-shadow(0 2px 4px rgba(0,0,0,0.08));
+    }
+
+    .brand-seal-img:hover {
+      transform: rotate(5deg) scale(1.08);
+    }
+
+    .brand-logo-img {
+      height: 48px;
+      width: auto;
+      object-fit: contain;
+      filter: drop-shadow(0 2px 4px rgba(0,0,0,0.08));
+    }
+
+    .brand-text {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .brand-title {
+      font-size: 1.35rem;
+      font-weight: 800;
+      color: var(--primary-dark);
+      letter-spacing: -0.5px;
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+
+    .brand-badge {
+      font-size: 0.72rem;
+      background: var(--primary-light);
+      color: var(--primary-dark);
+      padding: 0.15rem 0.55rem;
+      border-radius: 999px;
+      font-weight: 700;
+      width: fit-content;
+      margin-top: 2px;
+      border: 1px solid rgba(2, 132, 199, 0.15);
+    }
+
+    nav ul {
+      display: flex;
+      gap: 0.45rem;
+      list-style: none;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: #475569;
+      font-weight: 600;
+      font-size: 0.92rem;
+      padding: 0.5rem 0.9rem;
+      border-radius: 10px;
+      transition: all 0.2s ease;
+      display: flex;
+      align-items: center;
+      gap: 0.35rem;
+    }
+
+    nav a:hover, nav a.active {
+      color: var(--primary);
+      background: var(--primary-light);
+      transform: translateY(-1px);
+    }
+
+    .nav-btn-highlight {
+      background: linear-gradient(135deg, var(--primary), var(--primary-dark)) !important;
+      color: #ffffff !important;
+      padding: 0.48rem 1.15rem;
+      border-radius: 999px;
+      box-shadow: 0 4px 10px rgba(2, 132, 199, 0.25);
+    }
+
+    .nav-btn-highlight:hover {
+      background: linear-gradient(135deg, var(--primary-dark), #075985) !important;
+      color: #ffffff !important;
+      transform: translateY(-2px);
+      box-shadow: 0 6px 14px rgba(2, 132, 199, 0.35);
+    }
+
+    .nav-btn-highlight i {
+      color: #ffffff !important;
+    }
+
+    /* 主要內容容器 */
+    main {
+      flex: 1;
+      max-width: 1320px;
+      width: 100%;
+      margin: 2rem auto;
+      padding: 0 1.5rem;
+    }
+
+    /* Hero 全幅旗艦橫幅 */
+    .hero {
+      position: relative;
+      background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 45%, #fef3c7 100%);
+      border-radius: 28px;
+      border: 1px solid rgba(2, 132, 199, 0.2);
+      padding: 3.8rem 2.5rem;
+      margin-bottom: 2.8rem;
+      box-shadow: var(--shadow);
+      overflow: hidden;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .hero::after {
+      content: "飛羽・詩情";
+      position: absolute;
+      right: 2%;
+      bottom: -35px;
+      font-size: 7.5rem;
+      font-family: 'Ma Shan Zheng', cursive;
+      color: rgba(2, 132, 199, 0.05);
+      pointer-events: none;
+      user-select: none;
+      white-space: nowrap;
+    }
+
+    .hero-content {
+      max-width: 920px;
+      margin: 0 auto;
+      z-index: 2;
+    }
+
+    .hero-badge-top {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: white;
+      color: var(--primary-dark);
+      padding: 6px 18px;
+      border-radius: 999px;
+      font-size: 0.88rem;
+      font-weight: 700;
+      margin-bottom: 1.2rem;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+      border: 1px solid #bae6fd;
+    }
+
+    .hero-content h1 {
+      font-size: 3.2rem;
+      font-weight: 900;
+      color: var(--primary-dark);
+      margin-bottom: 1.2rem;
+      line-height: 1.25;
+      letter-spacing: -1px;
+    }
+
+    .hero-content h1 span {
+      background: linear-gradient(135deg, #0284c7, #d97706);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .hero-content p {
+      font-size: 1.18rem;
+      color: #334155;
+      margin-bottom: 2rem;
+      line-height: 1.8;
+    }
+
+    .hero-tags {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 0.85rem;
+    }
+
+    .hero-tag {
+      background: white;
+      padding: 0.55rem 1.25rem;
+      border-radius: 999px;
+      font-size: 0.92rem;
+      font-weight: 700;
+      color: #334155;
+      border: 1px solid #bae6fd;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.03);
+      display: flex;
+      align-items: center;
+      gap: 0.45rem;
+    }
+
+    .hero-tag i {
+      color: #059669;
+    }
+
+    /* 通用章節抬頭 */
+    .section-header {
+      margin-bottom: 2.2rem;
+      text-align: center;
+    }
+
+    .section-badge {
+      display: inline-block;
+      font-size: 0.82rem;
+      font-weight: 800;
+      color: var(--primary);
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      margin-bottom: 0.4rem;
+    }
+
+    .section-title {
+      font-family: 'Noto Serif TC', serif;
+      font-size: 2.2rem;
+      font-weight: 900;
+      color: var(--dark);
+      letter-spacing: -0.5px;
+    }
+
+    .section-desc {
+      color: var(--gray);
+      font-size: 1.02rem;
+      margin-top: 0.4rem;
+    }
+
+    /* 區塊卡片共通樣式 */
+    .content-section {
+      background: var(--card-bg);
+      border-radius: var(--radius-xl);
+      border: 1px solid var(--border);
+      padding: 2.8rem 2.2rem;
+      margin-bottom: 3.5rem;
+      box-shadow: var(--shadow);
+    }
+
+    /* 萬能解題公式與核心定義 */
+    .formula-banner {
+      background: linear-gradient(135deg, #0f172a, #1e293b);
+      border-radius: var(--radius-lg);
+      padding: 2.2rem;
+      color: white;
+      margin-bottom: 2.5rem;
+      position: relative;
+      overflow: hidden;
+      box-shadow: 0 10px 25px rgba(15, 23, 42, 0.15);
+      border: 1px solid #334155;
+    }
+
+    .formula-banner::before {
+      content: "詩禽解碼";
+      position: absolute;
+      right: 20px;
+      top: 50%;
+      transform: translateY(-50%);
+      font-family: 'Ma Shan Zheng', cursive;
+      font-size: 5rem;
+      color: rgba(255, 255, 255, 0.04);
+      pointer-events: none;
+    }
+
+    .formula-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.6rem;
+    }
+
+    .formula-card {
+      background: rgba(255, 255, 255, 0.07);
+      backdrop-filter: blur(8px);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      border-radius: 14px;
+      padding: 1.4rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.6rem;
+    }
+
+    .formula-step {
+      font-size: 0.8rem;
+      font-weight: 800;
+      color: #38bdf8;
+      letter-spacing: 1px;
+    }
+
+    .formula-heading {
+      font-size: 1.25rem;
+      font-weight: 800;
+      color: #f8fafc;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .formula-text {
+      font-size: 0.94rem;
+      color: #cbd5e1;
+      line-height: 1.6;
+    }
+
+    /* 八大文化象徵羅盤星盤 */
+    .compass-nav-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 1.2rem;
+      margin-bottom: 2.5rem;
+    }
+
+    .compass-btn {
+      background: white;
+      border: 2px solid var(--border);
+      border-radius: 16px;
+      padding: 1.2rem 1.4rem;
+      text-align: left;
+      cursor: pointer;
+      transition: all 0.25s ease;
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.03);
+    }
+
+    .compass-btn:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 18px rgba(2, 132, 199, 0.12);
+      border-color: #38bdf8;
+    }
+
+    .compass-btn.active {
+      border-color: var(--primary);
+      background: linear-gradient(135deg, #f0f9ff, #e0f2fe);
+      box-shadow: 0 8px 20px rgba(2, 132, 199, 0.18);
+    }
+
+    .compass-icon-box {
+      width: 48px;
+      height: 48px;
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.4rem;
+      flex-shrink: 0;
+    }
+
+    .compass-btn.theme-1 .compass-icon-box { background: #ffe4e6; color: #e11d48; }
+    .compass-btn.theme-2 .compass-icon-box { background: #fef3c7; color: #d97706; }
+    .compass-btn.theme-3 .compass-icon-box { background: #ecfeff; color: #0891b2; }
+    .compass-btn.theme-4 .compass-icon-box { background: #f3e8ff; color: #7c3aed; }
+    .compass-btn.theme-5 .compass-icon-box { background: #fee2e2; color: #dc2626; }
+    .compass-btn.theme-6 .compass-icon-box { background: #dcfce7; color: #15803d; }
+    .compass-btn.theme-7 .compass-icon-box { background: #ffedd5; color: #ea580c; }
+    .compass-btn.theme-8 .compass-icon-box { background: #f1f5f9; color: #475569; }
+
+    .compass-text-box h4 {
+      font-size: 1.05rem;
+      font-weight: 800;
+      color: var(--dark);
+      margin-bottom: 3px;
+    }
+
+    .compass-text-box p {
+      font-size: 0.84rem;
+      color: var(--gray);
+      line-height: 1.4;
+    }
+
+    .compass-count-badge {
+      margin-left: auto;
+      font-size: 0.78rem;
+      font-weight: 800;
+      background: #f1f5f9;
+      color: #475569;
+      padding: 3px 9px;
+      border-radius: 999px;
+    }
+
+    /* 圖鑑工具列 */
+    .catalog-toolbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1rem;
+      margin-bottom: 2rem;
+      flex-wrap: wrap;
+    }
+
+    .filter-pills {
+      display: flex;
+      gap: 0.5rem;
+      flex-wrap: wrap;
+    }
+
+    .pill-btn {
+      padding: 0.5rem 1.1rem;
+      border-radius: 999px;
+      font-size: 0.88rem;
+      font-weight: 700;
+      border: 1px solid var(--border);
+      background: white;
+      color: #475569;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+
+    .pill-btn:hover, .pill-btn.active {
+      background: var(--primary);
+      color: white;
+      border-color: var(--primary);
+    }
+
+    .search-box-wrap {
+      position: relative;
+      min-width: 280px;
+    }
+
+    .search-box-wrap input {
+      width: 100%;
+      padding: 0.6rem 1rem 0.6rem 2.5rem;
+      border-radius: 999px;
+      border: 1px solid var(--border);
+      outline: none;
+      font-size: 0.92rem;
+      transition: border-color 0.2s;
+    }
+
+    .search-box-wrap input:focus {
+      border-color: var(--primary);
+      box-shadow: 0 0 0 3px rgba(2, 132, 199, 0.15);
+    }
+
+    .search-box-wrap i {
+      position: absolute;
+      left: 12px;
+      top: 50%;
+      transform: translateY(-50%);
+      color: var(--gray);
+      width: 17px;
+      height: 17px;
+    }
+
+    /* 鳥類卡片網格 */
+    .bird-cards-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
+      gap: 1.8rem;
+    }
+
+    .bird-card {
+      background: white;
+      border-radius: var(--radius-lg);
+      border: 1px solid var(--border);
+      padding: 1.8rem;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.03);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+      position: relative;
+    }
+
+    .bird-card:hover {
+      transform: translateY(-5px);
+      box-shadow: var(--shadow-hover);
+      border-color: #38bdf8;
+    }
+
+    .bird-card-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 0.8rem;
+    }
+
+    .bird-num-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 0.82rem;
+      font-weight: 800;
+      color: var(--primary-dark);
+      background: var(--primary-light);
+      padding: 4px 12px;
+      border-radius: 999px;
+    }
+
+    .bird-theme-badge {
+      font-size: 0.78rem;
+      font-weight: 700;
+      padding: 3px 10px;
+      border-radius: 999px;
+      background: #f1f5f9;
+      color: #475569;
+    }
+
+    .bird-name-row {
+      display: flex;
+      align-items: baseline;
+      gap: 0.6rem;
+      margin-bottom: 0.8rem;
+    }
+
+    .bird-name {
+      font-size: 1.85rem;
+      font-weight: 900;
+      color: #0369a1;
+      letter-spacing: -0.5px;
+    }
+
+    .bird-alias {
+      font-size: 0.92rem;
+      color: var(--gray);
+      font-weight: 600;
+    }
+
+    /* 經典詩句深色卡片 */
+    .bird-poem-card {
+      background: linear-gradient(135deg, #f8fafc, #f1f5f9);
+      border-left: 4px solid var(--primary);
+      border-radius: 0 10px 10px 0;
+      padding: 0.9rem 1.1rem;
+      margin-bottom: 1rem;
+    }
+
+    .bird-poem-verse {
+      font-family: 'Noto Serif TC', serif;
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: #0f172a;
+      line-height: 1.5;
+      margin-bottom: 4px;
+    }
+
+    .bird-poem-source {
+      font-size: 0.82rem;
+      color: #64748b;
+      font-weight: 600;
+      text-align: right;
+    }
+
+    /* 語音按鈕 */
+    .btn-audio-speak {
+      background: white;
+      border: 1px solid #cbd5e1;
+      border-radius: 50%;
+      width: 34px;
+      height: 34px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      color: #0369a1;
+      transition: all 0.2s;
+      margin-left: 6px;
+      flex-shrink: 0;
+    }
+
+    .btn-audio-speak:hover {
+      background: var(--primary-light);
+      border-color: var(--primary);
+      transform: scale(1.1);
+    }
+
+    /* 模糊遮罩探究互動 */
+    .blur-mask-box {
+      filter: blur(5px);
+      user-select: none;
+      cursor: pointer;
+      transition: filter 0.25s ease, opacity 0.25s ease;
+      position: relative;
+      opacity: 0.85;
+      border-radius: 8px;
+    }
+
+    .blur-mask-box:hover {
+      filter: blur(3px);
+      opacity: 0.95;
+    }
+
+    .blur-mask-box.revealed {
+      filter: blur(0) !important;
+      user-select: text !important;
+      opacity: 1 !important;
+      cursor: default;
+    }
+
+    .blur-mask-hint {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background: rgba(2, 132, 199, 0.92);
+      color: white;
+      padding: 3px 12px;
+      border-radius: 999px;
+      font-size: 0.78rem;
+      font-weight: 800;
+      pointer-events: none;
+      z-index: 5;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.18);
+      white-space: nowrap;
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+    }
+
+    .blur-mask-box.revealed .blur-mask-hint {
+      display: none !important;
+    }
+
+    .bird-field-group {
+      margin-bottom: 0.9rem;
+    }
+
+    .bird-field-label {
+      font-size: 0.8rem;
+      font-weight: 800;
+      color: #64748b;
+      margin-bottom: 4px;
+      display: flex;
+      align-items: center;
+      gap: 4px;
+    }
+
+    .bird-trans-text {
+      font-size: 0.92rem;
+      color: #334155;
+      line-height: 1.6;
+      background: #fafafa;
+      padding: 0.6rem 0.8rem;
+      border-radius: 8px;
+      border: 1px dashed #e2e8f0;
+    }
+
+    .bird-symbol-text {
+      font-size: 0.92rem;
+      color: #0369a1;
+      font-weight: 700;
+      line-height: 1.6;
+      background: #f0f9ff;
+      padding: 0.6rem 0.8rem;
+      border-radius: 8px;
+      border-left: 3px solid #0284c7;
+    }
+
+    .bird-mnemonic-pill {
+      background: linear-gradient(135deg, #fef3c7, #fde68a);
+      border: 1px solid #f59e0b;
+      border-radius: 10px;
+      padding: 0.65rem 0.9rem;
+      margin-top: 0.8rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 6px;
+    }
+
+    .mnemonic-content {
+      font-size: 0.92rem;
+      font-weight: 800;
+      color: #92400e;
+    }
+
+    .mnemonic-badge {
+      font-size: 0.72rem;
+      background: #b45309;
+      color: white;
+      padding: 2px 6px;
+      border-radius: 4px;
+      font-weight: 700;
+      white-space: nowrap;
+    }
+
+    /* 快捷功能列 */
+    .quick-actions-bar {
+      display: flex;
+      justify-content: flex-end;
+      gap: 0.6rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .btn-secondary-action {
+      background: white;
+      border: 1px solid var(--border);
+      padding: 0.45rem 1rem;
+      border-radius: 8px;
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: #475569;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      transition: all 0.2s;
+    }
+
+    .btn-secondary-action:hover {
+      background: #f8fafc;
+      border-color: var(--primary);
+      color: var(--primary);
+    }
+
+    /* 單元四：考前15字極簡口訣卡卡池 */
+    .flashcard-section {
+      background: linear-gradient(135deg, #f8fafc, #eff6ff);
+      border-radius: var(--radius-xl);
+      padding: 2.5rem;
+      border: 1px solid #bfdbfe;
+      margin-bottom: 3.5rem;
+    }
+
+    .flashcard-container {
+      max-width: 680px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .flashcard-display {
+      background: white;
+      border-radius: 24px;
+      border: 2px solid #bae6fd;
+      padding: 2.8rem 2.2rem;
+      box-shadow: 0 12px 30px rgba(2, 132, 199, 0.12);
+      min-height: 280px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      margin-bottom: 1.8rem;
+      position: relative;
+      transition: all 0.3s;
+    }
+
+    .flashcard-bird-title {
+      font-size: 2.4rem;
+      font-weight: 900;
+      color: #0369a1;
+      margin-bottom: 0.6rem;
+    }
+
+    .flashcard-verse-quote {
+      font-family: 'Noto Serif TC', serif;
+      font-size: 1.3rem;
+      color: #334155;
+      font-weight: 700;
+      margin-bottom: 1.4rem;
+    }
+
+    .flashcard-mnemonic-box {
+      background: #fef3c7;
+      border: 2px dashed #f59e0b;
+      padding: 1rem 1.8rem;
+      border-radius: 16px;
+      color: #92400e;
+      font-size: 1.25rem;
+      font-weight: 900;
+      letter-spacing: 0.5px;
+    }
+
+    .flashcard-controls {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 1.2rem;
+    }
+
+    .btn-card-ctrl {
+      background: white;
+      border: 2px solid #bae6fd;
+      color: #0369a1;
+      padding: 0.7rem 1.4rem;
+      border-radius: 999px;
+      font-weight: 800;
+      font-size: 0.95rem;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      transition: all 0.2s;
+    }
+
+    .btn-card-ctrl:hover {
+      background: var(--primary);
+      color: white;
+      border-color: var(--primary);
+      transform: translateY(-2px);
+    }
+
+    .card-counter-indicator {
+      font-size: 1rem;
+      font-weight: 800;
+      color: #64748b;
+    }
+
+    /* 單元五：飛羽靈感創意工坊 */
+    .workshop-wrap {
+      background: white;
+      border-radius: 20px;
+      border: 1px solid var(--border);
+      padding: 2.2rem;
+      box-shadow: var(--shadow);
+    }
+
+    .workshop-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5rem;
+      margin-bottom: 1.8rem;
+    }
+
+    .select-group label {
+      display: block;
+      font-size: 0.92rem;
+      font-weight: 800;
+      color: #334155;
+      margin-bottom: 0.5rem;
+    }
+
+    .select-group select {
+      width: 100%;
+      padding: 0.75rem 1rem;
+      border-radius: 12px;
+      border: 2px solid var(--border);
+      font-size: 0.95rem;
+      font-family: inherit;
+      outline: none;
+      background: #f8fafc;
+      transition: border-color 0.2s;
+    }
+
+    .select-group select:focus {
+      border-color: var(--primary);
+      background: white;
+    }
+
+    .btn-generate-verse {
+      width: 100%;
+      background: linear-gradient(135deg, #0284c7, #0369a1);
+      color: white;
+      border: none;
+      padding: 1rem;
+      border-radius: 14px;
+      font-size: 1.1rem;
+      font-weight: 800;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      box-shadow: 0 4px 15px rgba(2, 132, 199, 0.25);
+      transition: all 0.25s;
+    }
+
+    .btn-generate-verse:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(2, 132, 199, 0.35);
+      background: linear-gradient(135deg, #0369a1, #075985);
+    }
+
+    .generator-output-box {
+      margin-top: 1.8rem;
+      background: linear-gradient(135deg, #f0fdf4, #ecfdf5);
+      border: 2px dashed #10b981;
+      border-radius: 16px;
+      padding: 1.6rem;
+      display: none;
+    }
+
+    .generator-output-box.active {
+      display: block;
+      animation: fadeIn 0.4s ease;
+    }
+
+    .gen-result-title {
+      font-size: 1rem;
+      font-weight: 800;
+      color: #065f46;
+      margin-bottom: 0.6rem;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .gen-poem-preview {
+      font-family: 'Noto Serif TC', serif;
+      font-size: 1.35rem;
+      font-weight: 900;
+      color: #0f172a;
+      line-height: 1.6;
+      margin-bottom: 0.6rem;
+    }
+
+    .gen-analysis-preview {
+      font-size: 0.95rem;
+      color: #334155;
+      line-height: 1.6;
+    }
+
+    /* 單元六：會考神仙挑戰賽 (題庫) */
+    .quiz-wrap {
+      max-width: 820px;
+      margin: 0 auto;
+    }
+
+    .quiz-progress-bar-wrap {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      margin-bottom: 1.8rem;
+    }
+
+    .quiz-progress-track {
+      flex: 1;
+      height: 10px;
+      background: #e2e8f0;
+      border-radius: 999px;
+      overflow: hidden;
+    }
+
+    .quiz-progress-fill {
+      height: 100%;
+      width: 0%;
+      background: linear-gradient(90deg, #38bdf8, #0284c7);
+      transition: width 0.3s ease;
+    }
+
+    .quiz-score-badge {
+      font-size: 0.9rem;
+      font-weight: 800;
+      color: var(--primary-dark);
+      background: var(--primary-light);
+      padding: 4px 14px;
+      border-radius: 999px;
+      white-space: nowrap;
+    }
+
+    .quiz-question-card {
+      background: white;
+      border-radius: 20px;
+      border: 2px solid var(--border);
+      padding: 2.2rem;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.04);
+      margin-bottom: 1.5rem;
+    }
+
+    .quiz-question-type {
+      font-size: 0.8rem;
+      font-weight: 800;
+      color: #b45309;
+      background: #fef3c7;
+      padding: 3px 10px;
+      border-radius: 6px;
+      display: inline-block;
+      margin-bottom: 0.8rem;
+    }
+
+    .quiz-question-title {
+      font-size: 1.25rem;
+      font-weight: 800;
+      color: var(--dark);
+      line-height: 1.6;
+      margin-bottom: 1.5rem;
+    }
+
+    .quiz-options-list {
+      display: flex;
+      flex-direction: column;
+      gap: 0.85rem;
+    }
+
+    .quiz-opt-btn {
+      background: #f8fafc;
+      border: 2px solid #e2e8f0;
+      border-radius: 12px;
+      padding: 1rem 1.2rem;
+      text-align: left;
+      font-size: 1rem;
+      font-weight: 600;
+      color: #334155;
+      cursor: pointer;
+      transition: all 0.2s;
+      display: flex;
+      align-items: center;
+      gap: 0.8rem;
+    }
+
+    .quiz-opt-btn:hover:not(:disabled) {
+      background: #f0f9ff;
+      border-color: #38bdf8;
+      color: #0369a1;
+      transform: translateX(4px);
+    }
+
+    .quiz-opt-btn.correct {
+      background: #dcfce7 !important;
+      border-color: #22c55e !important;
+      color: #15803d !important;
+      font-weight: 800;
+    }
+
+    .quiz-opt-btn.wrong {
+      background: #fee2e2 !important;
+      border-color: #ef4444 !important;
+      color: #b91c1c !important;
+    }
+
+    .quiz-opt-key {
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      background: white;
+      border: 1px solid #cbd5e1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.88rem;
+      font-weight: 800;
+      flex-shrink: 0;
+    }
+
+    .quiz-feedback-box {
+      margin-top: 1.4rem;
+      padding: 1.2rem 1.4rem;
+      border-radius: 12px;
+      font-size: 0.95rem;
+      line-height: 1.6;
+      display: none;
+    }
+
+    .quiz-feedback-box.correct {
+      background: #f0fdf4;
+      border-left: 4px solid #22c55e;
+      color: #14532d;
+      display: block;
+    }
+
+    .quiz-feedback-box.wrong {
+      background: #fef2f2;
+      border-left: 4px solid #ef4444;
+      color: #7f1d1d;
+      display: block;
+    }
+
+    .quiz-btn-next {
+      background: var(--primary);
+      color: white;
+      border: none;
+      padding: 0.8rem 1.8rem;
+      border-radius: 999px;
+      font-size: 0.95rem;
+      font-weight: 800;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      margin-top: 1rem;
+      transition: all 0.2s;
+    }
+
+    .quiz-btn-next:hover {
+      background: var(--primary-dark);
+      transform: translateY(-2px);
+    }
+
+    .quiz-summary-card {
+      background: white;
+      border-radius: 24px;
+      border: 2px solid var(--border);
+      padding: 3rem 2rem;
+      text-align: center;
+      box-shadow: var(--shadow);
+      display: none;
+    }
+
+    .quiz-summary-card.active {
+      display: block;
+      animation: fadeIn 0.4s ease;
+    }
+
+    .summary-score-circle {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #0284c7, #38bdf8);
+      color: white;
+      margin: 0 auto 1.5rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 8px 20px rgba(2, 132, 199, 0.3);
+    }
+
+    .summary-score-num {
+      font-size: 2.5rem;
+      font-weight: 900;
+      line-height: 1;
+    }
+
+    .summary-score-label {
+      font-size: 0.8rem;
+      opacity: 0.9;
+    }
+
+    /* 練習神器內嵌專區 */
+    .practice-embed-box {
+      background: white;
+      border-radius: var(--radius-lg);
+      border: 1px solid var(--border);
+      overflow: hidden;
+      box-shadow: var(--shadow);
+    }
+
+    .practice-embed-header {
+      padding: 1.5rem 1.8rem;
+      background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    .embed-title-group {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .embed-icon-badge {
+      width: 46px;
+      height: 46px;
+      border-radius: 12px;
+      background: #0284c7;
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.3rem;
+      box-shadow: 0 4px 10px rgba(2, 132, 199, 0.3);
+    }
+
+    .embed-title-text {
+      font-size: 1.25rem;
+      font-weight: 900;
+      color: #0369a1;
+      margin-bottom: 2px;
+    }
+
+    .embed-desc-text {
+      font-size: 0.88rem;
+      color: #64748b;
+    }
+
+    .btn-open-fullscreen {
+      background: white;
+      color: #0284c7;
+      border: 2px solid #0284c7;
+      padding: 0.6rem 1.2rem;
+      border-radius: 999px;
+      font-size: 0.9rem;
+      font-weight: 800;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      transition: all 0.2s ease;
+      box-shadow: 0 2px 6px rgba(2, 132, 199, 0.1);
+    }
+
+    .btn-open-fullscreen:hover {
+      background: #0284c7;
+      color: white;
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(2, 132, 199, 0.25);
+    }
+
+    .iframe-wrapper {
+      position: relative;
+      width: 100%;
+      height: 720px;
+      background: #f8fafc;
+    }
+
+    .iframe-wrapper iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+      display: block;
+    }
+
+    /* 頁尾 Footer - 典雅溫潤暖栗木/沉木茶褐漸層 */
+    footer {
+      background: linear-gradient(180deg, #2e1a12 0%, #1c0f0a 100%);
+      color: white;
+      padding: 3.5rem 1.5rem 2.5rem;
+      margin-top: auto;
+      border-top: 3px solid #854d0e;
+    }
+
+    .footer-container {
+      max-width: 1320px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1.8rem;
+      text-align: center;
+    }
+
+    .footer-logos {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 1.5rem;
+      flex-wrap: wrap;
+    }
+
+    .footer-seal {
+      height: 60px;
+      width: auto;
+      object-fit: contain;
+      filter: drop-shadow(0 4px 10px rgba(0, 0, 0, 0.3));
+    }
+
+    .footer-tagline-img {
+      max-height: 46px;
+      width: auto;
+      object-fit: contain;
+    }
+
+    .footer-credit {
+      font-size: 0.95rem;
+      color: #fde68a;
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(253, 230, 138, 0.25);
+      padding: 0.6rem 1.6rem;
+      border-radius: 999px;
+      font-weight: 600;
+      letter-spacing: 0.5px;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* 響應式排版 RWD */
+    @media (max-width: 768px) {
+      .hero {
+        padding: 2.5rem 1.2rem;
+      }
+      .hero-content h1 {
+        font-size: 2.2rem;
+      }
+      .hero::after {
+        display: none;
+      }
+      .content-section {
+        padding: 1.8rem 1.2rem;
+      }
+      .bird-cards-grid {
+        grid-template-columns: 1fr;
+      }
+      .formula-grid {
+        grid-template-columns: 1fr;
+      }
+      .nav-container {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      nav ul {
+        width: 100%;
+        overflow-x: auto;
+        padding-bottom: 0.3rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- 頂部導覽列 -->
+  <header>
+    <div class="nav-container">
+      <a href="index.html" class="brand-group" title="返回語文補給站總入口">
+        <img src="icon/seal-red.png" alt="學思軒" class="brand-seal-img">
+        <img src="icon/logo-yuwen.png" alt="語文補給站" class="brand-logo-img">
+        <div class="brand-text">
+          <div class="brand-title serif">
+            詩中的鳥類
+          </div>
+          <span class="brand-badge">翰林版 B03L06・禽鳥意象旗艦教材</span>
+        </div>
+      </a>
+
+      <nav>
+        <ul>
+          <li><a href="index.html"><i data-lucide="home"></i>首頁</a></li>
+          <li><a href="#formula"><i data-lucide="compass"></i>解題萬能公式</a></li>
+          <li><a href="#compass"><i data-lucide="layers"></i>八大意象羅盤</a></li>
+          <li><a href="#catalog"><i data-lucide="feather"></i>52禽鳥典範圖鑑</a></li>
+          <li><a href="#flashcards"><i data-lucide="sparkles"></i>極簡背誦卡</a></li>
+          <li><a href="#workshop"><i data-lucide="wand-2"></i>靈感工坊</a></li>
+          <li><a href="#quiz"><i data-lucide="award"></i>會考挑戰賽</a></li>
+          <li><a href="#practice-tool" class="nav-btn-highlight"><i data-lucide="gamepad-2"></i>練習神器</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- 主要內容區 -->
+  <main>
+    <!-- 全幅 Hero 旗艦橫幅 -->
+    <section class="hero">
+      <div class="hero-content">
+        <div class="hero-badge-top">
+          <i data-lucide="feather"></i> 國中古典文學・禽鳥意象總整理
+        </div>
+        <h1 class="serif">古典詩詞中的<span>鳥類大觀</span></h1>
+        <p>從《詩經》關關雎鳩的忠貞求偶，到盛唐杜甫天地沙鷗的孤獨漂泊，再到李白大鵬一日同風起的磅礴豪情。全面解構古典詩詞 52 種常見禽鳥意象、八大文化象徵星盤與 15 字極簡口訣！</p>
+        <div class="hero-tags">
+          <div class="hero-tag"><i data-lucide="check-circle-2"></i> 完整收錄 52 種詩詞禽鳥</div>
+          <div class="hero-tag"><i data-lucide="check-circle-2"></i> 八大文化象徵羅盤導覽</div>
+          <div class="hero-tag"><i data-lucide="check-circle-2"></i> 考前15字極簡背誦卡池</div>
+          <div class="hero-tag"><i data-lucide="check-circle-2"></i> 智慧 Web Speech 語音朗讀</div>
+          <div class="hero-tag"><i data-lucide="check-circle-2"></i> 10 題會考診斷挑戰賽</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 單元一：核心定義與解題萬能公式 -->
+    <section id="formula" class="content-section">
+      <div class="section-header">
+        <span class="section-badge">Module 01・Core Formula</span>
+        <h2 class="section-title">核心概念與解題萬能公式</h2>
+        <p class="section-desc">掌握古代詩人託物言志、借鳥抒懷的三步解碼法，一眼看破會考常考陷阱題</p>
+      </div>
+
+      <div class="formula-banner">
+        <div class="formula-grid">
+          <div class="formula-card">
+            <span class="formula-step">STEP 01・辨特徵</span>
+            <div class="formula-heading"><i data-lucide="eye"></i> 辨生理與羽鳴習性</div>
+            <p class="formula-text">留心鳥類的生活習性與外貌特徵（如：燕子春來秋去、鴻雁秋季南飛、杜鵑啼聲如泣血、鷓鴣鳴如「行不得也哥哥」、鶚鳥定偶不二）。</p>
+          </div>
+          <div class="formula-card">
+            <span class="formula-step">STEP 02・查情境</span>
+            <div class="formula-heading"><i data-lucide="map-pin"></i> 查時空與詩人際遇</div>
+            <p class="formula-text">觀察詩詞所處的季節、地理環境與寫作背景（如：邊塞寒漠常伴鴻雁雄雕、深山暮春常聞杜鵑鷓鴣、江渚水鄉多見白鷺沙鷗）。</p>
+          </div>
+          <div class="formula-card">
+            <span class="formula-step">STEP 03・鎖象徵</span>
+            <div class="formula-heading"><i data-lucide="target"></i> 鎖文化心理投射</div>
+            <p class="formula-text">將鳥類行為投射至文人內心世界（如：羈旅孤獨投射沙鷗寒鴉、超凡遠志投射鴻鵠白鶴、身陷仕途投射金籠畫眉鸚鵡）。</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 單元二：八大文化象徵羅盤星盤 -->
+    <section id="compass" class="content-section">
+      <div class="section-header">
+        <span class="section-badge">Module 02・Cultural Compass</span>
+        <h2 class="section-title">八大文化象徵羅盤星盤</h2>
+        <p class="section-desc">點擊下方八大文化意象卡片，即可快速連動過濾下方 52 種禽鳥圖鑑</p>
+      </div>
+
+      <div class="compass-nav-grid" id="compassGrid">
+        <!-- JS 動態生成 8 大主題卡片 -->
+      </div>
+    </section>
+
+    <!-- 單元三：典範圖鑑與禽鳥資料庫 -->
+    <section id="catalog" class="content-section">
+      <div class="section-header">
+        <span class="section-badge">Module 03・Bird Database</span>
+        <h2 class="section-title">52 種古典詩詞禽鳥典範圖鑑</h2>
+        <p class="section-desc">支援關鍵字搜尋、類別標籤篩選、互動遮罩探究與全真人語音朗讀</p>
+      </div>
+
+      <div class="quick-actions-bar">
+        <button class="btn-secondary-action" id="btnRevealAll"><i data-lucide="eye"></i> 一鍵揭曉全部遮罩</button>
+        <button class="btn-secondary-action" id="btnMaskAll"><i data-lucide="eye-off"></i> 一鍵恢復模糊遮罩</button>
+      </div>
+
+      <div class="catalog-toolbar">
+        <div class="filter-pills" id="catalogPills">
+          <button class="pill-btn active" data-theme="all">全部禽鳥 (52)</button>
+          <button class="pill-btn" data-theme="情愛與倫理">情愛倫理</button>
+          <button class="pill-btn" data-theme="行旅與愁懷">行旅愁懷</button>
+          <button class="pill-btn" data-theme="高潔與隱逸">高潔隱逸</button>
+          <button class="pill-btn" data-theme="抱負與豪情">抱負豪情</button>
+          <button class="pill-btn" data-theme="歷史與滄桑">歷史滄桑</button>
+          <button class="pill-btn" data-theme="田園與物候">田園物候</button>
+          <button class="pill-btn" data-theme="困境與羈絆">困境羈絆</button>
+          <button class="pill-btn" data-theme="諷諭與警世">諷諭警世</button>
+        </div>
+
+        <div class="search-box-wrap">
+          <i data-lucide="search"></i>
+          <input type="text" id="birdSearchInput" placeholder="搜尋鳥名、詩句、關鍵字或別名...">
+        </div>
+      </div>
+
+      <div class="bird-cards-grid" id="birdCardsGrid">
+        <!-- 52 種鳥類卡片將由 JS 渲染 -->
+      </div>
+    </section>
+
+    <!-- 單元四：考前15字極簡口訣卡卡池 -->
+    <section id="flashcards" class="flashcard-section">
+      <div class="section-header">
+        <span class="section-badge">Module 04・Mnemonic Flashcards</span>
+        <h2 class="section-title">考前 15 字極簡背誦口訣卡</h2>
+        <p class="section-desc">嚴格限制 15 字以內！隨機抽卡或循序複習，考前速記黃金重點</p>
+      </div>
+
+      <div class="flashcard-container">
+        <div class="flashcard-display" id="flashcardBox">
+          <div class="flashcard-bird-title serif" id="cardBirdName">雎鳩</div>
+          <div class="flashcard-verse-quote" id="cardVerse">關關雎鳩，在河之洲。</div>
+          <div class="flashcard-mnemonic-box" id="cardMnemonic">君子淑女好逑，定偶專一守禮。（14字）</div>
+        </div>
+
+        <div class="flashcard-controls">
+          <button class="btn-card-ctrl" id="btnPrevCard"><i data-lucide="chevron-left"></i> 上一張</button>
+          <span class="card-counter-indicator" id="cardCounter">1 / 52</span>
+          <button class="btn-card-ctrl" id="btnNextCard">下一張 <i data-lucide="chevron-right"></i></button>
+          <button class="btn-card-ctrl" id="btnRandomCard"><i data-lucide="shuffle"></i> 隨機抽卡</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- 單元五：飛羽靈感創意工坊 -->
+    <section id="workshop" class="content-section">
+      <div class="section-header">
+        <span class="section-badge">Module 05・Creative Workshop</span>
+        <h2 class="section-title">飛羽靈感詩意工坊</h2>
+        <p class="section-desc">選擇心境情懷與典型禽鳥，立即生成對應古典意境與寫作錦囊</p>
+      </div>
+
+      <div class="workshop-wrap">
+        <div class="workshop-grid">
+          <div class="select-group">
+            <label for="selectMood"><i data-lucide="heart"></i> 欲表達的情懷心境：</label>
+            <select id="selectMood">
+              <option value="思鄉羈旅">遊子漂泊・思鄉羈旅</option>
+              <option value="遠大抱負">豪邁不屈・遠大抱負</option>
+              <option value="超塵高潔">超凡脫俗・清白自守</option>
+              <option value="深情相誓">情深繾綣・至死不渝</option>
+              <option value="物是人非">撫今追昔・歷史興衰</option>
+            </select>
+          </div>
+
+          <div class="select-group">
+            <label for="selectBird"><i data-lucide="feather"></i> 欲搭配的象徵禽鳥：</label>
+            <select id="selectBird">
+              <option value="鴻雁">鴻雁（秋南春北・傳書訊）</option>
+              <option value="大鵬">大鵬（扶搖九萬・凌雲志）</option>
+              <option value="白鶴">白鶴（排雲直上・仙風骨）</option>
+              <option value="鴛鴦">鴛鴦（雙宿雙飛・生死許）</option>
+              <option value="燕子">燕子（尋常百姓・興衰嘆）</option>
+              <option value="沙鷗">沙鷗（天地一鷗・孤浮沉）</option>
+              <option value="杜鵑">杜鵑（望帝啼血・不如歸）</option>
+            </select>
+          </div>
+        </div>
+
+        <button class="btn-generate-verse" id="btnGenerateVerse">
+          <i data-lucide="sparkles"></i> 點亮詩意・生成寫作意象解析
+        </button>
+
+        <div class="generator-output-box" id="generatorOutput">
+          <div class="gen-result-title"><i data-lucide="check-circle"></i> 意象創作引導建議：</div>
+          <div class="gen-poem-preview serif" id="genPoemPreview"></div>
+          <div class="gen-analysis-preview" id="genAnalysisPreview"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 單元六：會考神仙挑戰賽 -->
+    <section id="quiz" class="content-section">
+      <div class="section-header">
+        <span class="section-badge">Module 06・Exam Challenge</span>
+        <h2 class="section-title">會考禽鳥意象神仙挑戰賽</h2>
+        <p class="section-desc">精選 10 題會考與段考經典題型，即時變色回饋與名師解析</p>
+      </div>
+
+      <div class="quiz-wrap">
+        <div class="quiz-progress-bar-wrap">
+          <div class="quiz-progress-track">
+            <div class="quiz-progress-fill" id="quizProgressBar"></div>
+          </div>
+          <span class="quiz-score-badge" id="quizScoreBadge">得分：0 分</span>
+        </div>
+
+        <div class="quiz-question-card" id="quizCard">
+          <span class="quiz-question-type" id="quizQType">單選題</span>
+          <h3 class="quiz-question-title serif" id="quizQTitle">載入中...</h3>
+
+          <div class="quiz-options-list" id="quizOptionsList">
+            <!-- 選項由 JS 渲染 -->
+          </div>
+
+          <div class="quiz-feedback-box" id="quizFeedback"></div>
+          <button class="quiz-btn-next" id="quizBtnNext" style="display: none;">下一題 <i data-lucide="arrow-right"></i></button>
+        </div>
+
+        <!-- 結算成績卡片 -->
+        <div class="quiz-summary-card" id="quizSummary">
+          <div class="summary-score-circle">
+            <div class="summary-score-num" id="summaryScoreNum">100</div>
+            <div class="summary-score-label">滿分 100 分</div>
+          </div>
+          <h3 class="serif" style="font-size: 1.8rem; margin-bottom: 0.8rem; color: #0369a1;" id="summaryTitle">禽鳥解碼大宗師！</h3>
+          <p style="color: #475569; margin-bottom: 2rem;" id="summaryFeedback">太厲害了！你對古典詩詞中各種鳥類的象徵意象如數家珍，會考遇到此類題目必能勢如破竹！</p>
+          <button class="btn-card-ctrl" id="btnRestartQuiz" style="margin: 0 auto;"><i data-lucide="rotate-ccw"></i> 重新挑戰一次</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- 單元七：專屬練習神器內嵌專區 -->
+    <section id="practice-tool" class="content-section">
+      <div class="section-header">
+        <span class="section-badge">Module 07・Interactive Practice Tool</span>
+        <h2 class="section-title">古典詩詞中的鳥類・專屬練習神器</h2>
+        <p class="section-desc">無縫整合 3D 雙面翻卡特訓、大卷列表、快問快答與個人專屬 LocalStorage 錯題本</p>
+      </div>
+
+      <div class="practice-embed-box">
+        <div class="practice-embed-header">
+          <div class="embed-title-group">
+            <div class="embed-icon-badge">
+              <i data-lucide="layers"></i>
+            </div>
+            <div>
+              <div class="embed-title-text serif">語文學習集・詩中的鳥類練習神器</div>
+              <div class="embed-desc-text">支援 3D 雙面翻卡記憶模式、四選一隨機快問快答、全卷瀏覽模式與個人專屬錯題本</div>
+            </div>
+          </div>
+          <a href="bird/bird-practice.html" target="_blank" class="btn-open-fullscreen">
+            <i data-lucide="external-link" style="width: 16px; height: 16px;"></i> 另開全螢幕練習
+          </a>
+        </div>
+        <div class="iframe-wrapper">
+          <iframe src="bird/bird-practice.html" title="詩中的鳥類練習神器" loading="lazy"></iframe>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- 頁尾宣告 -->
+  <footer>
+    <div class="footer-container">
+      <div class="footer-logos">
+        <img src="icon/seal-white.png" alt="學思軒" class="footer-seal" onerror="this.src='icon/seal-red.png'">
+        <img src="icon/slogan-god-dark.png" alt="只要有心人人都是國文神" class="footer-tagline-img">
+      </div>
+      <div class="footer-credit serif">
+        𖤐 本系統由學思軒黃于珊、王斐亭老師規劃設計 · 版權所有 © 2026 𖤐
+      </div>
+    </div>
+  </footer>
+
+  <!-- 資料與互動邏輯 Script -->
+  <script src="bird_data.js"></script>
+  <script>
+    // 初始化 Lucide 圖示
+    lucide.createIcons();
+
+    // 1. 羅盤主題資料
+    const THEMES = [
+      { id: "情愛與倫理", name: "情愛與倫理", desc: "男女誓願・深情相思・手足同心", count: 8, cls: "theme-1", icon: "heart" },
+      { id: "行旅與愁懷", name: "行旅與愁懷", desc: "遊子羈旅・思鄉斷腸・天地漂泊", count: 8, cls: "theme-2", icon: "compass" },
+      { id: "高潔與隱逸", name: "高潔與隱逸", desc: "仙風道骨・超凡脫俗・知足樂道", count: 5, cls: "theme-3", icon: "feather" },
+      { id: "抱負與豪情", name: "抱負與豪情", desc: "展翅萬里・搏擊長空・堅韌不屈", count: 7, cls: "theme-4", icon: "zap" },
+      { id: "歷史與滄桑", name: "歷史與滄桑", desc: "人事代謝・盛衰更迭・王朝興廢", count: 2, cls: "theme-5", icon: "history" },
+      { id: "田園與物候", name: "田園與物候", desc: "早春生機・農桑物候・水鄉生趣", count: 9, cls: "theme-6", icon: "sun" },
+      { id: "困境與羈絆", name: "困境與羈絆", desc: "囚籠之苦・受制於人・懷寶之禍", count: 5, cls: "theme-7", icon: "lock" },
+      { id: "諷諭與警世", name: "諷諭與警世", desc: "尸位素餐・小人偽飾・吉凶之兆", count: 8, cls: "theme-8", icon: "alert-triangle" }
+    ];
+
+    // 渲染羅盤星盤
+    function renderCompass() {
+      const compassGrid = document.getElementById('compassGrid');
+      compassGrid.innerHTML = THEMES.map(t => `
+        <div class="compass-btn ${t.cls}" data-theme="${t.id}" onclick="filterByCompass('${t.id}')">
+          <div class="compass-icon-box">
+            <i data-lucide="${t.icon}"></i>
+          </div>
+          <div class="compass-text-box">
+            <h4>${t.name}</h4>
+            <p>${t.desc}</p>
+          </div>
+          <span class="compass-count-badge">${t.count}種</span>
+        </div>
+      `).join('');
+      lucide.createIcons();
+    }
+
+    let currentThemeFilter = "all";
+    let currentSearchKeyword = "";
+
+    function filterByCompass(themeId) {
+      currentThemeFilter = themeId;
+      // 同步 catalog pills
+      document.querySelectorAll('#catalogPills .pill-btn').forEach(btn => {
+        if (btn.dataset.theme === themeId) {
+          btn.classList.add('active');
+        } else {
+          btn.classList.remove('active');
+        }
+      });
+      // 高亮 compass
+      document.querySelectorAll('.compass-btn').forEach(btn => {
+        if (btn.dataset.theme === themeId) {
+          btn.classList.add('active');
+        } else {
+          btn.classList.remove('active');
+        }
+      });
+      renderBirdCards();
+      // 平滑捲動至 catalog
+      document.getElementById('catalog').scrollIntoView({ behavior: 'smooth' });
+    }
+
+    // 渲染 52 種鳥類卡片
+    function renderBirdCards() {
+      const grid = document.getElementById('birdCardsGrid');
+      const filtered = BIRD_DATA.filter(b => {
+        const matchTheme = (currentThemeFilter === "all" || b.theme === currentThemeFilter);
+        const kw = currentSearchKeyword.trim().toLowerCase();
+        const matchKw = !kw || 
+          b.name.toLowerCase().includes(kw) || 
+          b.poem.toLowerCase().includes(kw) || 
+          b.source.toLowerCase().includes(kw) || 
+          b.translation.toLowerCase().includes(kw) || 
+          b.symbol.toLowerCase().includes(kw) || 
+          b.mnemonic.toLowerCase().includes(kw) ||
+          (b.alias && b.alias.toLowerCase().includes(kw));
+        return matchTheme && matchKw;
+      });
+
+      if (filtered.length === 0) {
+        grid.innerHTML = `
+          <div style="grid-column: 1/-1; text-align: center; padding: 3rem; color: #94a3b8;">
+            <i data-lucide="feather" style="width: 48px; height: 48px; margin-bottom: 0.8rem;"></i>
+            <p style="font-size: 1.1rem; font-weight: 700;">查無符合條件之禽鳥資料，請嘗試其他關鍵字或主題分類！</p>
+          </div>
+        `;
+        lucide.createIcons();
+        return;
+      }
+
+      grid.innerHTML = filtered.map(b => `
+        <div class="bird-card" data-bird-id="${b.id}">
+          <div>
+            <div class="bird-card-header">
+              <span class="bird-num-badge">NO.${String(b.id).padStart(2, '0')}</span>
+              <span class="bird-theme-badge">${b.theme}</span>
+            </div>
+
+            <div class="bird-name-row">
+              <h3 class="bird-name serif">${b.name}</h3>
+              ${b.alias ? `<span class="bird-alias">（${b.alias}）</span>` : ''}
+              <button class="btn-audio-speak" onclick="speakText('${b.name}。${b.poem}。${b.mnemonic}')" title="朗讀本卡">
+                <i data-lucide="volume-2" style="width: 16px; height: 16px;"></i>
+              </button>
+            </div>
+
+            <div class="bird-poem-card">
+              <div class="bird-poem-verse">${b.poem}</div>
+              <div class="bird-poem-source">${b.source}</div>
+            </div>
+
+            <!-- 白話翻譯（模糊遮罩） -->
+            <div class="bird-field-group">
+              <div class="bird-field-label"><i data-lucide="book-open"></i> 白話語譯</div>
+              <div class="blur-mask-box bird-trans-text" onclick="toggleMask(this)">
+                <span class="blur-mask-hint"><i data-lucide="hand"></i> 點擊揭曉語譯</span>
+                ${b.translation}
+              </div>
+            </div>
+
+            <!-- 核心文化象徵（模糊遮罩） -->
+            <div class="bird-field-group">
+              <div class="bird-field-label"><i data-lucide="compass"></i> 文化象徵與解說</div>
+              <div class="blur-mask-box bird-symbol-text" onclick="toggleMask(this)">
+                <span class="blur-mask-hint"><i data-lucide="hand"></i> 點擊揭曉象徵</span>
+                ${b.symbol}
+              </div>
+            </div>
+          </div>
+
+          <!-- 15字口訣 -->
+          <div class="bird-mnemonic-pill">
+            <div class="mnemonic-content">${b.mnemonic}</div>
+            <span class="mnemonic-badge">${b.wordCount || '速記'}</span>
+          </div>
+        </div>
+      `).join('');
+
+      lucide.createIcons();
+    }
+
+    // 模糊遮罩互動
+    function toggleMask(el) {
+      el.classList.toggle('revealed');
+    }
+
+    document.getElementById('btnRevealAll').addEventListener('click', () => {
+      document.querySelectorAll('.blur-mask-box').forEach(el => el.classList.add('revealed'));
+    });
+
+    document.getElementById('btnMaskAll').addEventListener('click', () => {
+      document.querySelectorAll('.blur-mask-box').forEach(el => el.classList.remove('revealed'));
+    });
+
+    // 篩選 Pills
+    document.querySelectorAll('#catalogPills .pill-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        document.querySelectorAll('#catalogPills .pill-btn').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        currentThemeFilter = btn.dataset.theme;
+
+        // 同步 compass
+        document.querySelectorAll('.compass-btn').forEach(c => {
+          if (c.dataset.theme === currentThemeFilter) {
+            c.classList.add('active');
+          } else {
+            c.classList.remove('active');
+          }
+        });
+
+        renderBirdCards();
+      });
+    });
+
+    // 搜尋輸入
+    document.getElementById('birdSearchInput').addEventListener('input', (e) => {
+      currentSearchKeyword = e.target.value;
+      renderBirdCards();
+    });
+
+    // Web Speech API 語音朗讀
+    function speakText(text) {
+      if (!('speechSynthesis' in window)) {
+        alert('您的瀏覽器暫不支援語音朗讀功能');
+        return;
+      }
+      window.speechSynthesis.cancel();
+      const clean = text.replace(/[（）()·]/g, ' ');
+      const utter = new SpeechSynthesisUtterance(clean);
+      utter.lang = 'zh-TW';
+      utter.rate = 0.95;
+      utter.pitch = 1.0;
+      window.speechSynthesis.speak(utter);
+    }
+
+    // 4. 極簡背誦卡邏輯
+    let currentCardIndex = 0;
+    function updateFlashcard() {
+      const b = BIRD_DATA[currentCardIndex];
+      document.getElementById('cardBirdName').textContent = b.name + (b.alias ? ` (${b.alias})` : '');
+      document.getElementById('cardVerse').textContent = b.poem + ` ${b.source}`;
+      document.getElementById('cardMnemonic').textContent = b.mnemonic;
+      document.getElementById('cardCounter').textContent = `${currentCardIndex + 1} / ${BIRD_DATA.length}`;
+    }
+
+    document.getElementById('btnPrevCard').addEventListener('click', () => {
+      currentCardIndex = (currentCardIndex - 1 + BIRD_DATA.length) % BIRD_DATA.length;
+      updateFlashcard();
+    });
+
+    document.getElementById('btnNextCard').addEventListener('click', () => {
+      currentCardIndex = (currentCardIndex + 1) % BIRD_DATA.length;
+      updateFlashcard();
+    });
+
+    document.getElementById('btnRandomCard').addEventListener('click', () => {
+      currentCardIndex = Math.floor(Math.random() * BIRD_DATA.length);
+      updateFlashcard();
+    });
+
+    // 5. 創意工坊生成器
+    const WORKSHOP_GUIDES = {
+      "思鄉羈旅": {
+        "鴻雁": {
+          quote: "塞下秋來風景異，衡陽雁去無留意。",
+          analysis: "【飛羽密碼】大雁為候鳥，秋往南飛、春向北返。古傳雁足傳書，其列隊長空的遷徙最易觸動邊塞將士與天涯遊子的歸心與家書思念。"
+        },
+        "杜鵑": {
+          quote: "莊生曉夢迷蝴蝶，望帝春心託杜鵑。",
+          analysis: "【飛羽密碼】相傳蜀王望帝化為子規，啼聲凄切如泣血，鳴聲擬音為「不如歸去」，是表達極致鄉愁、漂泊哀怨的最佳媒介。"
+        },
+        "沙鷗": {
+          quote: "飄飄何所似，天地一沙鷗。",
+          analysis: "【飛羽密碼】沙鷗在茫茫江天孤獨逐浪翻飛，無定所依，以渺小之軀對照浩瀚天地，極富身如浮萍的孤獨漂泊感。"
+        }
+      },
+      "遠大抱負": {
+        "大鵬": {
+          quote: "大鵬一日同風起，扶搖直上九萬里。",
+          analysis: "【飛羽密碼】大鵬出自《莊子・逍遙遊》，乘風而起、展翅遮天，象徵青年學子宏圖大展、放眼天下與追求極致自由的壯志豪情。"
+        },
+        "鴻雁": {
+          quote: "燕雀安知鴻鵠之志哉！",
+          analysis: "【飛羽密碼】「鴻鵠」借指大雁與天鵝的高翔，與籬笆下的燕雀形成強烈反差，象徵超拔凡庸、胸懷天下的卓絕志向。"
+        }
+      },
+      "超塵高潔": {
+        "白鶴": {
+          quote: "晴空一鶴排雲上，便引詩情到碧霄。",
+          analysis: "【飛羽密碼】白鶴羽色勝雪、昂然挺拔，自古為道家仙禽，象徵不屈從世俗逆境的豁達胸懷與超拔塵世的高貴操守。"
+        },
+        "鴛鴦": {
+          quote: "得成比目何辭死，願作鴛鴦不羨仙。",
+          analysis: "【飛羽密碼】鴛鴦交頸而眠、形影相隨，是傳統夫妻恩愛、至死不渝的最經典愛情象徵。"
+        }
+      }
+    };
+
+    document.getElementById('btnGenerateVerse').addEventListener('click', () => {
+      const mood = document.getElementById('selectMood').value;
+      const bird = document.getElementById('selectBird').value;
+      const box = document.getElementById('generatorOutput');
+      const poemEl = document.getElementById('genPoemPreview');
+      const anaEl = document.getElementById('genAnalysisPreview');
+
+      const match = WORKSHOP_GUIDES[mood] && WORKSHOP_GUIDES[mood][bird];
+      if (match) {
+        poemEl.textContent = match.quote;
+        anaEl.textContent = match.analysis;
+      } else {
+        // 動態根據資料庫組裝
+        const b = BIRD_DATA.find(x => x.name.includes(bird));
+        if (b) {
+          poemEl.textContent = b.poem + ` (${b.source})`;
+          anaEl.textContent = `【飛羽意象】${b.name} 在古典詩詞中常象徵「${b.theme}」。其口訣重點為：「${b.mnemonic}」。寫作時可借其習性起興，深化「${mood}」之情感深度。`;
+        } else {
+          poemEl.textContent = "晴空一鶴排雲上，便引詩情到碧霄。";
+          anaEl.textContent = "以出塵之姿展現不凡胸懷，是寫作託物言志的最佳意象組合。";
+        }
+      }
+
+      box.classList.add('active');
+    });
+
+    // 6. 會考挑戰賽邏輯
+    let quizCurrentIdx = 0;
+    let quizScore = 0;
+    let quizAnswered = false;
+
+    function loadQuestion() {
+      quizAnswered = false;
+      const q = QUIZ_QUESTIONS[quizCurrentIdx];
+      document.getElementById('quizQType').textContent = `第 ${quizCurrentIdx + 1} 題 / 共 ${QUIZ_QUESTIONS.length} 題・單選題`;
+      document.getElementById('quizQTitle').textContent = q.question;
+      document.getElementById('quizFeedback').className = 'quiz-feedback-box';
+      document.getElementById('quizFeedback').style.display = 'none';
+      document.getElementById('quizBtnNext').style.display = 'none';
+
+      const optList = document.getElementById('quizOptionsList');
+      optList.innerHTML = q.options.map((opt, i) => `
+        <button class="quiz-opt-btn" onclick="checkAnswer(${i}, this)">
+          <span class="quiz-opt-key">${['A', 'B', 'C', 'D'][i]}</span>
+          <span>${opt}</span>
+        </button>
+      `).join('');
+
+      // 更新進度條
+      const pct = (quizCurrentIdx / QUIZ_QUESTIONS.length) * 100;
+      document.getElementById('quizProgressBar').style.width = pct + '%';
+    }
+
+    function checkAnswer(chosenIdx, btnEl) {
+      if (quizAnswered) return;
+      quizAnswered = true;
+      const q = QUIZ_QUESTIONS[quizCurrentIdx];
+      const allBtns = document.querySelectorAll('.quiz-opt-btn');
+      allBtns.forEach(b => b.disabled = true);
+
+      const fb = document.getElementById('quizFeedback');
+      if (chosenIdx === q.answer) {
+        btnEl.classList.add('correct');
+        quizScore += 10;
+        document.getElementById('quizScoreBadge').textContent = `得分：${quizScore} 分`;
+        fb.className = 'quiz-feedback-box correct';
+        fb.innerHTML = `<strong><i data-lucide="check-circle-2"></i> 答對了！恭喜獲得 10 分！</strong><br>${q.explanation}`;
+      } else {
+        btnEl.classList.add('wrong');
+        allBtns[q.answer].classList.add('correct');
+        fb.className = 'quiz-feedback-box wrong';
+        fb.innerHTML = `<strong><i data-lucide="x-circle"></i> 答錯了！正確答案是 (${['A', 'B', 'C', 'D'][q.answer]})</strong><br>${q.explanation}`;
+      }
+      lucide.createIcons();
+
+      document.getElementById('quizBtnNext').style.display = 'inline-flex';
+    }
+
+    document.getElementById('quizBtnNext').addEventListener('click', () => {
+      quizCurrentIdx++;
+      if (quizCurrentIdx < QUIZ_QUESTIONS.length) {
+        loadQuestion();
+      } else {
+        showQuizSummary();
+      }
+    });
+
+    function showQuizSummary() {
+      document.getElementById('quizCard').style.display = 'none';
+      document.getElementById('quizProgressBar').style.width = '100%';
+      const summary = document.getElementById('quizSummary');
+      summary.classList.add('active');
+      document.getElementById('summaryScoreNum').textContent = quizScore;
+
+      const titleEl = document.getElementById('summaryTitle');
+      const feedEl = document.getElementById('summaryFeedback');
+      if (quizScore >= 90) {
+        titleEl.textContent = "禽鳥解碼大宗師！";
+        feedEl.textContent = "太厲害了！你對古典詩詞中各種鳥類的象徵意象如數家珍，會考遇到此類題目必能勢如破竹、輕鬆奪得A++！";
+      } else if (quizScore >= 70) {
+        titleEl.textContent = "飛羽詩情探花郎！";
+        feedEl.textContent = "表現非常優異！大部分經典禽鳥意象都已純熟掌握，再複習一下錯題口訣卡，就能達到滿分境界！";
+      } else {
+        titleEl.textContent = "百鳥朝鳳築基生！";
+        feedEl.textContent = "加油！古典禽鳥意象常是會考考題的詩眼與破題關鍵，建議多利用上方的八大羅盤與15字口訣卡進行強化特訓！";
+      }
+    }
+
+    document.getElementById('btnRestartQuiz').addEventListener('click', () => {
+      quizCurrentIdx = 0;
+      quizScore = 0;
+      document.getElementById('quizScoreBadge').textContent = `得分：0 分`;
+      document.getElementById('quizCard').style.display = 'block';
+      document.getElementById('quizSummary').classList.remove('active');
+      loadQuestion();
+    });
+
+    // 頁面初始化
+    window.addEventListener('DOMContentLoaded', () => {
+      renderCompass();
+      renderBirdCards();
+      updateFlashcard();
+      loadQuestion();
+    });
+  </script>
+</body>
+</html>

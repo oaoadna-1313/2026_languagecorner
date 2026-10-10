@@ -1,0 +1,2612 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>語文補給站｜花花語文世界：植物象徵・名花物語旗艦學習殿堂</title>
+  <meta name="description" content="翰林國中國文B3L04愛蓮說語文補給站：花花語文世界互動教學平台，收錄植物象徵涵義圖鑑、名花物語代言人、張潮幽夢影知己、人比花嬌成語是非辨析、詩詞草象徵、會考神仙挑戰賽與專屬練習神器。">
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;600;700;900&family=Noto+Sans+TC:wght@300;400;500;700;900&family=Ma+Shan+Zheng&display=swap" rel="stylesheet">
+  
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <style>
+    :root {
+      /* 花花語文世界專屬主題色系：嫣紅海棠、典雅翠竹、蓮青與琥珀金 */
+      --primary: #e11d48;
+      --primary-dark: #9f1239;
+      --primary-light: #ffe4e6;
+      --primary-hover: #be123c;
+
+      --accent: #d97706;
+      --accent-dark: #b45309;
+      --accent-light: #fef3c7;
+
+      --emerald: #059669;
+      --emerald-dark: #065f46;
+      --emerald-light: #d1fae5;
+
+      --indigo: #4f46e5;
+      --indigo-light: #e0e7ff;
+
+      --teal: #0d9488;
+      --teal-light: #ccfbf1;
+
+      --dark: #0f172a;
+      --dark-card: #1e293b;
+      --gray: #64748b;
+      --light-bg: #fffbfb;
+      --card-bg: rgba(255, 255, 255, 0.98);
+      --border: #fecdd3;
+      --radius: 20px;
+      --shadow: 0 10px 25px -5px rgba(225, 29, 72, 0.08), 0 8px 10px -6px rgba(0, 0, 0, 0.04);
+      --shadow-hover: 0 20px 35px -10px rgba(225, 29, 72, 0.2);
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Noto Sans TC', sans-serif;
+      background-color: var(--light-bg);
+      color: var(--dark);
+      line-height: 1.75;
+      background-image: 
+        radial-gradient(circle at 5% 10%, rgba(225, 29, 72, 0.04) 0%, transparent 45%),
+        radial-gradient(circle at 95% 85%, rgba(5, 150, 105, 0.04) 0%, transparent 45%),
+        radial-gradient(circle at 50% 50%, rgba(217, 119, 6, 0.02) 0%, transparent 60%);
+      background-attachment: fixed;
+    }
+
+    .serif { font-family: 'Noto Serif TC', serif; }
+    .calligraphy { font-family: 'Ma Shan Zheng', 'Noto Serif TC', cursive; }
+
+    /* 頂部導覽列 */
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(14px);
+      border-bottom: 1px solid var(--border);
+      padding: 0.75rem 1.5rem;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
+    }
+
+    .nav-container {
+      max-width: 1320px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    .brand-group {
+      display: flex;
+      align-items: center;
+      gap: 0.85rem;
+      text-decoration: none;
+    }
+
+    .brand-seal-img {
+      height: 48px;
+      width: auto;
+      object-fit: contain;
+      transition: transform 0.3s ease;
+      filter: drop-shadow(0 2px 4px rgba(0,0,0,0.08));
+    }
+    .brand-seal-img:hover {
+      transform: rotate(5deg) scale(1.08);
+    }
+
+    .brand-logo-img {
+      height: 48px;
+      width: auto;
+      object-fit: contain;
+      filter: drop-shadow(0 2px 4px rgba(0,0,0,0.08));
+    }
+
+    .brand-text { display: flex; flex-direction: column; }
+    .brand-title {
+      font-size: 1.35rem;
+      font-weight: 800;
+      color: var(--primary-dark);
+      letter-spacing: -0.5px;
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+    .brand-badge {
+      font-size: 0.72rem;
+      background: var(--primary-light);
+      color: var(--primary-dark);
+      padding: 0.15rem 0.55rem;
+      border-radius: 999px;
+      font-weight: 700;
+      width: fit-content;
+      margin-top: 2px;
+      border: 1px solid rgba(225, 29, 72, 0.2);
+    }
+
+    nav ul {
+      display: flex;
+      gap: 0.4rem;
+      list-style: none;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: var(--dark);
+      font-weight: 600;
+      padding: 0.45rem 0.85rem;
+      border-radius: 10px;
+      transition: all 0.2s ease;
+      font-size: 0.92rem;
+      display: flex;
+      align-items: center;
+      gap: 0.35rem;
+    }
+
+    nav a:hover, nav a.active {
+      background: var(--primary-light);
+      color: var(--primary-dark);
+    }
+
+    .nav-btn-tool,
+    nav a.nav-btn-tool {
+      background: linear-gradient(135deg, var(--primary), var(--primary-dark)) !important;
+      color: #ffffff !important;
+      padding: 0.48rem 1.1rem;
+      border-radius: 999px;
+      box-shadow: 0 4px 10px rgba(225, 29, 72, 0.25);
+    }
+    .nav-btn-tool:hover,
+    nav a.nav-btn-tool:hover,
+    nav a.nav-btn-tool:focus,
+    nav a.nav-btn-tool:active,
+    nav a.nav-btn-tool.active {
+      background: linear-gradient(135deg, var(--primary-dark), #9f1239) !important;
+      color: #ffffff !important;
+      transform: translateY(-2px);
+      box-shadow: 0 6px 14px rgba(225, 29, 72, 0.35);
+    }
+    .nav-btn-tool i,
+    nav a.nav-btn-tool i,
+    .nav-btn-tool svg,
+    nav a.nav-btn-tool svg {
+      color: #ffffff !important;
+      stroke: #ffffff !important;
+    }
+
+    /* 主內容容器 */
+    main {
+      max-width: 1320px;
+      margin: 2rem auto;
+      padding: 0 1.5rem;
+    }
+
+    /* Hero 全幅旗艦橫幅 */
+    .hero {
+      position: relative;
+      background: linear-gradient(135deg, #fff1f2 0%, #fffbeb 50%, #f0fdf4 100%);
+      border-radius: 28px;
+      border: 1px solid rgba(225, 29, 72, 0.15);
+      padding: 3.8rem 2.5rem;
+      margin-bottom: 2.8rem;
+      box-shadow: var(--shadow);
+      overflow: hidden;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .hero::after {
+      content: "花漾・語文";
+      position: absolute;
+      right: 2%;
+      bottom: -30px;
+      font-size: 7.5rem;
+      font-family: 'Ma Shan Zheng', cursive;
+      color: rgba(225, 29, 72, 0.045);
+      pointer-events: none;
+      user-select: none;
+      white-space: nowrap;
+    }
+
+    .hero-content {
+      max-width: 900px;
+      margin: 0 auto;
+      z-index: 2;
+    }
+
+    .hero-badge-top {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: white;
+      color: var(--primary-dark);
+      padding: 6px 16px;
+      border-radius: 999px;
+      font-size: 0.88rem;
+      font-weight: 700;
+      margin-bottom: 1.2rem;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+      border: 1px solid #fecdd3;
+    }
+
+    .hero-content h1 {
+      font-size: 3.1rem;
+      font-weight: 900;
+      color: var(--primary-dark);
+      margin-bottom: 1.2rem;
+      line-height: 1.25;
+    }
+
+    .hero-content h1 span {
+      background: linear-gradient(135deg, #e11d48, #d97706);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .hero-content p {
+      font-size: 1.18rem;
+      color: #475569;
+      margin-bottom: 2rem;
+      line-height: 1.8;
+    }
+
+    .hero-tags {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 0.85rem;
+    }
+
+    .hero-tag {
+      background: white;
+      padding: 0.55rem 1.25rem;
+      border-radius: 999px;
+      font-size: 0.92rem;
+      font-weight: 700;
+      color: #334155;
+      border: 1px solid #fecdd3;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.03);
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+    .hero-tag i { color: var(--emerald); }
+
+    /* 通用章節標題 */
+    .section-header {
+      margin-bottom: 2rem;
+      text-align: center;
+    }
+    .section-badge {
+      display: inline-block;
+      font-size: 0.8rem;
+      font-weight: 800;
+      color: var(--primary);
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      margin-bottom: 0.4rem;
+    }
+    .section-title {
+      font-family: 'Noto Serif TC', serif;
+      font-size: 2.1rem;
+      font-weight: 900;
+      color: var(--dark);
+      letter-spacing: -0.5px;
+    }
+    .section-desc {
+      color: var(--gray);
+      font-size: 1rem;
+      margin-top: 0.4rem;
+    }
+
+    /* 區塊卡片共通樣式 */
+    .content-section {
+      background: var(--card-bg);
+      border-radius: var(--radius);
+      border: 1px solid var(--border);
+      padding: 2.5rem;
+      margin-bottom: 3.5rem;
+      box-shadow: var(--shadow);
+    }
+
+    /* 模糊霧化遮罩互動樣式 */
+    .blur-mask-box {
+      filter: blur(5.5px);
+      user-select: none;
+      cursor: pointer;
+      transition: filter 0.25s ease, opacity 0.25s ease;
+      position: relative;
+      opacity: 0.85;
+      border-radius: 8px;
+    }
+    .blur-mask-box:hover {
+      filter: blur(3.5px);
+      opacity: 0.95;
+    }
+    .blur-mask-box.revealed {
+      filter: blur(0) !important;
+      user-select: text !important;
+      opacity: 1 !important;
+      cursor: default;
+    }
+    .blur-mask-hint {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background: rgba(225, 29, 72, 0.92);
+      color: white;
+      padding: 3px 12px;
+      border-radius: 999px;
+      font-size: 0.78rem;
+      font-weight: 800;
+      pointer-events: none;
+      z-index: 5;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.18);
+      white-space: nowrap;
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+    }
+    .blur-mask-box.revealed .blur-mask-hint {
+      display: none !important;
+    }
+
+    /* 單元一：植物象徵圖鑑 */
+    .filter-bar-wrap {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1rem;
+      margin-bottom: 2rem;
+      flex-wrap: wrap;
+    }
+
+    .pill-group {
+      display: flex;
+      gap: 0.5rem;
+      flex-wrap: wrap;
+    }
+
+    .pill-btn {
+      padding: 0.5rem 1.1rem;
+      border-radius: 999px;
+      font-size: 0.88rem;
+      font-weight: 700;
+      border: 1px solid var(--border);
+      background: white;
+      color: #475569;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+    .pill-btn:hover, .pill-btn.active {
+      background: var(--primary);
+      color: white;
+      border-color: var(--primary);
+    }
+
+    .search-box {
+      position: relative;
+      min-width: 260px;
+    }
+    .search-box input {
+      width: 100%;
+      padding: 0.55rem 1rem 0.55rem 2.4rem;
+      border-radius: 999px;
+      border: 1px solid var(--border);
+      outline: none;
+      font-size: 0.9rem;
+      transition: border-color 0.2s;
+    }
+    .search-box input:focus {
+      border-color: var(--primary);
+      box-shadow: 0 0 0 3px rgba(225, 29, 72, 0.15);
+    }
+    .search-box i {
+      position: absolute;
+      left: 12px;
+      top: 50%;
+      transform: translateY(-50%);
+      color: var(--gray);
+      width: 16px;
+      height: 16px;
+    }
+
+    .plant-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
+      gap: 1.8rem;
+    }
+
+    .plant-card {
+      background: white;
+      border-radius: 18px;
+      border: 1px solid var(--border);
+      padding: 1.8rem;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.03);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: all 0.3s;
+      position: relative;
+    }
+    .plant-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-hover);
+      border-color: #f43f5e;
+    }
+
+    .plant-top-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 1rem;
+    }
+
+    .plant-badge-code {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 0.85rem;
+      font-weight: 800;
+      color: var(--primary-dark);
+      background: var(--primary-light);
+      padding: 4px 12px;
+      border-radius: 999px;
+    }
+
+    .btn-audio {
+      background: #f1f5f9;
+      border: none;
+      border-radius: 50%;
+      width: 36px;
+      height: 36px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      color: var(--dark);
+      transition: all 0.2s;
+    }
+    .btn-audio:hover {
+      background: var(--primary-light);
+      color: var(--primary-dark);
+    }
+
+    .plant-title-wrap {
+      margin-bottom: 0.8rem;
+    }
+    .plant-title {
+      font-size: 1.7rem;
+      font-weight: 900;
+      color: #881337;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    .plant-epithet {
+      font-size: 0.92rem;
+      color: var(--accent-dark);
+      font-weight: 700;
+    }
+
+    .plant-meanings-box {
+      background: #fff1f2;
+      border-left: 4px solid var(--primary);
+      padding: 0.85rem 1.1rem;
+      border-radius: 0 10px 10px 0;
+      margin-bottom: 1rem;
+    }
+    .meaning-item {
+      font-size: 0.98rem;
+      font-weight: 700;
+      color: #9f1239;
+      margin-bottom: 4px;
+    }
+    .meaning-item:last-child { margin-bottom: 0; }
+
+    .plant-desc-box {
+      font-size: 0.92rem;
+      color: #475569;
+      line-height: 1.65;
+      margin-bottom: 1.2rem;
+      flex: 1;
+    }
+
+    .plant-quote-box {
+      background: #f8fafc;
+      border: 1px dashed #cbd5e1;
+      padding: 0.75rem 1rem;
+      border-radius: 10px;
+      font-size: 0.88rem;
+      color: #334155;
+      display: flex;
+      align-items: flex-start;
+      gap: 6px;
+    }
+
+    /* 單元二：名花物語與知己配對 */
+    .story-hero-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+      gap: 1.5rem;
+      margin-bottom: 2.5rem;
+    }
+
+    .story-card {
+      background: white;
+      border-radius: 16px;
+      border: 1px solid var(--border);
+      padding: 1.6rem;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.03);
+      position: relative;
+      transition: all 0.3s;
+    }
+    .story-card:hover {
+      border-color: var(--primary);
+      transform: translateY(-3px);
+    }
+
+    .story-person-badge {
+      font-size: 0.82rem;
+      font-weight: 800;
+      color: white;
+      background: linear-gradient(135deg, #e11d48, #be123c);
+      padding: 4px 12px;
+      border-radius: 999px;
+      display: inline-block;
+      margin-bottom: 0.7rem;
+    }
+
+    .story-flower-title {
+      font-size: 1.35rem;
+      font-weight: 900;
+      color: #1e293b;
+      margin-bottom: 0.6rem;
+    }
+
+    .story-clue-text {
+      font-size: 0.92rem;
+      color: #475569;
+      line-height: 1.65;
+      margin-bottom: 1rem;
+    }
+
+    .story-ans-reveal {
+      background: #fef2f2;
+      border-radius: 10px;
+      padding: 0.8rem 1rem;
+      border: 1px solid #fecdd3;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .btn-reveal-tag {
+      background: var(--primary);
+      color: white;
+      border: none;
+      padding: 4px 12px;
+      border-radius: 6px;
+      font-size: 0.82rem;
+      font-weight: 700;
+      cursor: pointer;
+    }
+
+    /* 幽夢影知己矩陣 */
+    .matrix-box {
+      background: linear-gradient(145deg, #ffffff 0%, #fff1f2 100%);
+      border: 2px solid var(--border);
+      border-radius: 18px;
+      padding: 2rem;
+      margin-top: 2rem;
+    }
+
+    .matrix-title {
+      font-size: 1.4rem;
+      font-weight: 900;
+      color: #881337;
+      text-align: center;
+      margin-bottom: 0.8rem;
+    }
+
+    .matrix-quote-banner {
+      background: white;
+      border: 1px solid #fecdd3;
+      padding: 1.2rem;
+      border-radius: 12px;
+      font-family: 'Noto Serif TC', serif;
+      font-size: 1.15rem;
+      color: #1e293b;
+      text-align: center;
+      line-height: 1.8;
+      margin-bottom: 1.6rem;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.03);
+    }
+
+    .matrix-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.2rem;
+    }
+
+    .matrix-item-card {
+      background: white;
+      border-radius: 12px;
+      border: 1px solid #fed7aa;
+      border: 1px solid #fecdd3;
+      padding: 1.1rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.02);
+    }
+
+    .matrix-item-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-weight: 800;
+      color: var(--primary-dark);
+      font-size: 1.05rem;
+    }
+
+    .matrix-item-body {
+      font-size: 0.88rem;
+      color: #64748b;
+      line-height: 1.55;
+    }
+
+    /* 單元三：成語大考驗與人比花嬌是非辨析 */
+    .idiom-fill-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 1.4rem;
+      margin-bottom: 3rem;
+    }
+
+    .idiom-card {
+      background: white;
+      border-radius: 14px;
+      border: 1px solid var(--border);
+      padding: 1.4rem;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.03);
+    }
+
+    .idiom-title {
+      font-size: 1.35rem;
+      font-weight: 900;
+      color: var(--dark);
+      margin-bottom: 0.6rem;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .idiom-char-box {
+      display: inline-block;
+      width: 34px;
+      height: 34px;
+      line-height: 32px;
+      text-align: center;
+      background: #f1f5f9;
+      border: 2px dashed #f43f5e;
+      border-radius: 8px;
+      color: var(--primary);
+      font-weight: 900;
+      font-size: 1.15rem;
+      cursor: pointer;
+      user-select: none;
+    }
+    .idiom-char-box.revealed {
+      background: var(--primary-light);
+      border-style: solid;
+      border-color: var(--primary);
+    }
+
+    .idiom-desc {
+      font-size: 0.9rem;
+      color: #475569;
+      line-height: 1.6;
+    }
+
+    /* 人比花嬌九大成語速測器 */
+    .ox-table-wrap {
+      background: white;
+      border-radius: 16px;
+      border: 1px solid var(--border);
+      overflow: hidden;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.03);
+    }
+
+    .ox-table-head {
+      background: linear-gradient(135deg, #fff1f2, #ffe4e6);
+      padding: 1.2rem 1.6rem;
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .ox-interactive-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+      gap: 1.2rem;
+      padding: 1.6rem;
+    }
+
+    .ox-item-card {
+      background: #fafafa;
+      border: 1px solid #e2e8f0;
+      border-radius: 12px;
+      padding: 1.1rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 0.8rem;
+      transition: all 0.2s;
+    }
+    .ox-item-card:hover {
+      background: white;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+    }
+
+    .ox-item-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .ox-word-title {
+      font-size: 1.2rem;
+      font-weight: 800;
+      color: #1e293b;
+    }
+
+    .ox-choice-btns {
+      display: flex;
+      gap: 8px;
+    }
+
+    .choice-btn {
+      padding: 6px 14px;
+      border-radius: 8px;
+      font-size: 0.9rem;
+      font-weight: 800;
+      cursor: pointer;
+      border: 1px solid #cbd5e1;
+      background: white;
+      transition: all 0.2s;
+    }
+    .choice-btn.selected-correct {
+      background: var(--emerald);
+      color: white;
+      border-color: var(--emerald);
+    }
+    .choice-btn.selected-wrong {
+      background: var(--primary);
+      color: white;
+      border-color: var(--primary);
+    }
+
+    .ox-explain-txt {
+      font-size: 0.85rem;
+      color: #64748b;
+      line-height: 1.5;
+      display: none;
+      padding-top: 6px;
+      border-top: 1px dashed #e2e8f0;
+    }
+
+    /* 單元四：草之象徵詩詞 */
+    .grass-verses-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
+      gap: 1.4rem;
+      margin-top: 1.5rem;
+    }
+
+    .grass-verse-card {
+      background: white;
+      border-radius: 14px;
+      border: 1px solid var(--border);
+      padding: 1.4rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 0.8rem;
+    }
+
+    .grass-verse-text {
+      font-family: 'Noto Serif TC', serif;
+      font-size: 1.15rem;
+      font-weight: 800;
+      color: #1e293b;
+      line-height: 1.6;
+    }
+
+    .grass-verse-author {
+      font-size: 0.82rem;
+      color: var(--gray);
+      margin-top: 2px;
+    }
+
+    /* 單元五：會考神仙挑戰賽 */
+    .quiz-container {
+      background: white;
+      border-radius: 18px;
+      border: 1px solid var(--border);
+      padding: 2.2rem;
+      box-shadow: var(--shadow);
+      max-width: 860px;
+      margin: 0 auto;
+    }
+
+    .quiz-progress-bar-wrap {
+      width: 100%;
+      height: 8px;
+      background: #f1f5f9;
+      border-radius: 999px;
+      overflow: hidden;
+      margin-bottom: 1.5rem;
+    }
+    .quiz-progress-bar {
+      height: 100%;
+      width: 8.33%;
+      background: linear-gradient(90deg, #e11d48, #f59e0b);
+      transition: width 0.3s ease;
+    }
+
+    .quiz-meta-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 1rem;
+    }
+
+    .quiz-q-num {
+      font-size: 0.88rem;
+      font-weight: 800;
+      color: var(--primary);
+    }
+    .quiz-score-badge {
+      font-size: 0.88rem;
+      font-weight: 800;
+      color: var(--accent-dark);
+      background: var(--accent-light);
+      padding: 4px 12px;
+      border-radius: 999px;
+    }
+
+    .quiz-question-title {
+      font-family: 'Noto Serif TC', serif;
+      font-size: 1.35rem;
+      font-weight: 900;
+      color: #0f172a;
+      line-height: 1.6;
+      margin-bottom: 1.5rem;
+    }
+
+    .quiz-options-list {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      margin-bottom: 1.5rem;
+    }
+
+    .quiz-opt-btn {
+      padding: 14px 18px;
+      border-radius: 12px;
+      border: 1.5px solid #e2e8f0;
+      background: white;
+      text-align: left;
+      font-size: 0.98rem;
+      font-weight: 600;
+      color: #334155;
+      cursor: pointer;
+      transition: all 0.2s;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .quiz-opt-btn:hover {
+      border-color: var(--primary);
+      background: #fff1f2;
+    }
+
+    .quiz-opt-btn.correct {
+      border-color: var(--emerald);
+      background: var(--emerald-light);
+      color: var(--emerald-dark);
+      font-weight: 800;
+    }
+
+    .quiz-opt-btn.wrong {
+      border-color: var(--primary);
+      background: var(--primary-light);
+      color: var(--primary-dark);
+    }
+
+    .quiz-explanation-box {
+      background: #fff8f8;
+      border: 1px solid #fecdd3;
+      border-radius: 12px;
+      padding: 1.2rem;
+      font-size: 0.92rem;
+      line-height: 1.65;
+      color: #374151;
+      display: none;
+      margin-bottom: 1.5rem;
+    }
+
+    .quiz-controls-row {
+      display: flex;
+      justify-content: flex-end;
+      gap: 10px;
+    }
+
+    .btn-quiz-next {
+      background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+      color: white;
+      border: none;
+      padding: 10px 24px;
+      border-radius: 10px;
+      font-size: 0.95rem;
+      font-weight: 800;
+      cursor: pointer;
+      display: none;
+      align-items: center;
+      gap: 6px;
+      box-shadow: 0 4px 12px rgba(225, 29, 72, 0.25);
+    }
+
+    /* 單元六：花語文學造句工坊 */
+    .workshop-wrap {
+      background: linear-gradient(145deg, #ffffff 0%, #fff1f2 100%);
+      border: 2px solid var(--border);
+      border-radius: 20px;
+      padding: 2.2rem;
+    }
+
+    .workshop-selectors-row {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 1.2rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .ws-field label {
+      display: block;
+      font-size: 0.88rem;
+      font-weight: 800;
+      color: var(--primary-dark);
+      margin-bottom: 6px;
+    }
+
+    .ws-field select {
+      width: 100%;
+      padding: 10px 14px;
+      border-radius: 10px;
+      border: 1px solid var(--border);
+      font-size: 0.95rem;
+      outline: none;
+      background: white;
+      color: #1e293b;
+    }
+
+    .btn-ws-generate {
+      background: linear-gradient(135deg, var(--primary), var(--accent));
+      color: white;
+      border: none;
+      padding: 12px 28px;
+      border-radius: 999px;
+      font-size: 1rem;
+      font-weight: 800;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      box-shadow: 0 4px 14px rgba(225, 29, 72, 0.25);
+      transition: all 0.25s;
+    }
+    .btn-ws-generate:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 18px rgba(225, 29, 72, 0.35);
+    }
+
+    .ws-result-box {
+      margin-top: 1.5rem;
+      background: white;
+      border: 1px solid #fecdd3;
+      border-radius: 14px;
+      padding: 1.5rem;
+      display: none;
+    }
+
+    .ws-sentence-text {
+      font-family: 'Noto Serif TC', serif;
+      font-size: 1.25rem;
+      font-weight: 800;
+      color: #881337;
+      line-height: 1.8;
+      margin-bottom: 0.8rem;
+    }
+
+    .ws-sentence-analysis {
+      font-size: 0.9rem;
+      color: #64748b;
+      line-height: 1.6;
+    }
+
+    /* 單元七：內嵌練習神器專區 */
+    .practice-tabs-bar {
+      display: flex;
+      gap: 12px;
+      margin-bottom: 1.2rem;
+      flex-wrap: wrap;
+    }
+
+    .practice-tab-btn {
+      padding: 10px 22px;
+      border-radius: 999px;
+      font-size: 0.95rem;
+      font-weight: 800;
+      border: 2px solid var(--border);
+      background: white;
+      color: #475569;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      transition: all 0.25s;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.03);
+    }
+
+    .practice-tab-btn:hover {
+      border-color: var(--primary);
+      color: var(--primary);
+      transform: translateY(-2px);
+    }
+
+    .practice-tab-btn.active {
+      background: linear-gradient(135deg, var(--primary), var(--accent));
+      color: white;
+      border-color: transparent;
+      box-shadow: 0 4px 14px rgba(225, 29, 72, 0.3);
+    }
+
+    .practice-embed-box {
+      background: white;
+      border: 2px solid var(--border);
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: var(--shadow);
+    }
+
+    .practice-embed-bar {
+      background: #fff1f2;
+      padding: 12px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .practice-iframe-wrap {
+      width: 100%;
+      height: 720px;
+      border: none;
+    }
+    .practice-iframe-wrap iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+
+    /* 燈箱 Lightbox */
+    .lightbox-modal {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background: rgba(15, 23, 42, 0.92);
+      backdrop-filter: blur(8px);
+      z-index: 9999;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 1.5rem;
+    }
+    .lightbox-modal.show { display: flex; }
+    .lightbox-container {
+      position: relative;
+      max-width: 94vw;
+      max-height: 94vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .lightbox-img {
+      max-width: 100%;
+      max-height: 84vh;
+      object-fit: contain;
+      border-radius: 12px;
+      box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+    }
+    .lightbox-close-btn {
+      position: absolute;
+      top: -45px;
+      right: 0;
+      background: rgba(255, 255, 255, 0.2);
+      border: 1px solid rgba(255, 255, 255, 0.4);
+      color: white;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      font-size: 1.3rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+    }
+
+    /* 頁尾 Footer - 典雅溫潤暖栗木/沉木茶褐漸層 */
+    footer {
+      background: linear-gradient(180deg, #2e1a12 0%, #1c0f0a 100%);
+      color: white;
+      padding: 3.5rem 1.5rem 2.5rem;
+      margin-top: 4rem;
+      border-top: 3px solid #854d0e;
+      text-align: center;
+    }
+    .footer-container {
+      max-width: 1320px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1.8rem;
+      text-align: center;
+    }
+    .footer-logos {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 1.5rem;
+      flex-wrap: wrap;
+    }
+    .footer-seal {
+      height: 60px;
+      width: auto;
+      object-fit: contain;
+      filter: drop-shadow(0 4px 10px rgba(0, 0, 0, 0.3));
+    }
+    .footer-tagline-img {
+      max-height: 46px;
+      width: auto;
+      object-fit: contain;
+    }
+    .footer-credit {
+      font-size: 0.95rem;
+      color: #fde68a;
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(253, 230, 138, 0.25);
+      padding: 0.6rem 1.6rem;
+      border-radius: 999px;
+      font-weight: 600;
+      letter-spacing: 0.5px;
+    }
+
+    @media (max-width: 768px) {
+      .hero-content h1 { font-size: 2.2rem; }
+      .hero { padding: 2.5rem 1.25rem; }
+      .content-section { padding: 1.5rem 1.2rem; }
+      .practice-iframe-wrap { height: 600px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- 頂部導覽列 -->
+  <header>
+    <div class="nav-container">
+      <a href="index.html" class="brand-group">
+        <img src="icon/seal-red.png" alt="學思軒印章" class="brand-seal-img">
+        <img src="icon/logo-yuwen.png" alt="語文補給站" class="brand-logo-img" onerror="this.src='icon/logo-yuwen.png'">
+        <div class="brand-text">
+          <div class="brand-title serif">花花語文世界</div>
+          <span class="brand-badge">翰林 B03L04 愛蓮說・語文補給站旗艦殿堂</span>
+        </div>
+      </a>
+      <nav>
+        <ul>
+          <li><a href="index.html"><i data-lucide="home"></i> 首頁</a></li>
+          <li><a href="#plants-sec"><i data-lucide="flower-2"></i> 植物象徵</a></li>
+          <li><a href="#stories-sec"><i data-lucide="book-open"></i> 名花物語</a></li>
+          <li><a href="#idioms-sec"><i data-lucide="sparkles"></i> 花名成語</a></li>
+          <li><a href="#grass-sec"><i data-lucide="leaf"></i> 草之離情</a></li>
+          <li><a href="#quiz-sec"><i data-lucide="trophy"></i> 會考闖關</a></li>
+          <li><a href="#practice-sec" class="nav-btn-tool"><i data-lucide="gamepad-2"></i> 練習神器</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- Hero 旗艦標題區 -->
+    <section class="hero">
+      <div class="hero-content">
+        <div class="hero-badge-top">
+          <i data-lucide="flower" style="width:16px;height:16px;color:#e11d48;"></i>
+          翰林版國中國文 B3L04 愛蓮說【語文補給站】・旗艦國學常識殿堂
+        </div>
+        <h1 class="serif">花花語文世界 <span>植物象徵與名花物語</span></h1>
+        <p>
+          「水陸草木之花，可愛者甚蕃。」從周敦頤獨愛蓮之潔白，到古人折柳贈別、歲寒三友、名花知己與草木離情，一站解鎖國中會考最常考的植物品格密碼與經典成語！
+        </p>
+        <div class="hero-tags">
+          <div class="hero-tag"><i data-lucide="check-circle-2"></i> 9 大核心植物象徵全覽</div>
+          <div class="hero-tag"><i data-lucide="check-circle-2"></i> 5 大名花物語代言人</div>
+          <div class="hero-tag"><i data-lucide="check-circle-2"></i> 張潮《幽夢影》知己配對</div>
+          <div class="hero-tag"><i data-lucide="check-circle-2"></i> 人比花嬌成語是非辨析</div>
+          <div class="hero-tag"><i data-lucide="check-circle-2"></i> 12 題會考全真神仙挑戰賽</div>
+          <div class="hero-tag"><i data-lucide="check-circle-2"></i> 專屬 3D 翻卡練習神器</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 模組一：植物象徵涵義圖鑑庫 -->
+    <section id="plants-sec" class="content-section">
+      <div class="section-header">
+        <span class="section-badge">Module 01・Plant Symbolism</span>
+        <h2 class="section-title">核心植物文化象徵全景圖鑑</h2>
+        <p class="section-desc">文人寄情於草木，賦予植物獨特的人格節操與文化意象（支援真人語音朗讀）</p>
+      </div>
+
+      <!-- 篩選列 -->
+      <div class="filter-bar-wrap">
+        <div class="pill-group">
+          <button class="pill-btn active" onclick="filterPlants('all', this)">全部植物 (9)</button>
+          <button class="pill-btn" onclick="filterPlants('gentleman', this)">君子品格／風骨</button>
+          <button class="pill-btn" onclick="filterPlants('three-friends', this)">歲寒三友</button>
+          <button class="pill-btn" onclick="filterPlants('parting', this)">離愁相思</button>
+          <button class="pill-btn" onclick="filterPlants('longevity', this)">長壽祥瑞</button>
+        </div>
+        <div class="search-box">
+          <i data-lucide="search"></i>
+          <input type="text" id="plantSearchInput" placeholder="搜尋植物、象徵或名句..." oninput="searchPlants()">
+        </div>
+      </div>
+
+      <!-- 植物卡片網格 -->
+      <div class="plant-grid" id="plantGrid">
+        <!-- 松 -->
+        <article class="plant-card" data-cat="gentleman three-friends longevity" data-keywords="松 松樹 長壽 君子 歲寒三友 鶴 逆境 堅忍">
+          <div>
+            <div class="plant-top-row">
+              <span class="plant-badge-code">歲寒三友之一</span>
+              <button class="btn-audio" onclick="speakText('松樹。象徵長壽，以及在亂世或逆境中堅忍不屈的君子。松柏後凋於歲寒。')" title="朗讀"><i data-lucide="volume-2" style="width:16px;height:16px;"></i></button>
+            </div>
+            <div class="plant-title-wrap">
+              <h3 class="plant-title serif">松 <span>🌲</span></h3>
+              <span class="plant-epithet">傲骨凌霜・千載常青</span>
+            </div>
+            <div class="plant-meanings-box">
+              <div class="meaning-item">1. 長壽、青春永駐</div>
+              <div class="meaning-item">2. 亂世逆境中堅忍不屈的君子</div>
+            </div>
+            <p class="plant-desc-box">
+              松樹四季長青，在寒冬依然姿態挺拔，常與仙鶴一同出現在祝壽圖中，祝賀「松鶴延年、長命百歲」；在儒家文化中更是堅貞節操的最高典範。
+            </p>
+          </div>
+          <div class="plant-quote-box">
+            <i data-lucide="quote" style="width:16px;height:16px;color:#d97706;flex-shrink:0;"></i>
+            <span>「松柏後凋於歲寒，雞鳴不已於風雨。」</span>
+          </div>
+        </article>
+
+        <!-- 竹 -->
+        <article class="plant-card" data-cat="gentleman three-friends" data-keywords="竹 竹子 四君子 歲寒三友 虛心 有節 謙虛 堅毅">
+          <div>
+            <div class="plant-top-row">
+              <span class="plant-badge-code">四君子 ＆ 歲寒三友</span>
+              <button class="btn-audio" onclick="speakText('竹子。象徵堅毅正直，謙虛有節的君子。夏不畏酷暑，冬不屈霜雪。')" title="朗讀"><i data-lucide="volume-2" style="width:16px;height:16px;"></i></button>
+            </div>
+            <div class="plant-title-wrap">
+              <h3 class="plant-title serif">竹 <span>🎋</span></h3>
+              <span class="plant-epithet">虛心勁節・寧折不彎</span>
+            </div>
+            <div class="plant-meanings-box">
+              <div class="meaning-item">堅毅正直，謙虛有節的君子</div>
+            </div>
+            <p class="plant-desc-box">
+              竹子生命力極強，夏不畏酷暑、冬不屈霜雪、生不避貧壤、伐後可復生。修長挺拔，內部「中空」象徵謙遜虛懷，外在「有節」象徵高風亮節與操守。
+            </p>
+          </div>
+          <div class="plant-quote-box">
+            <i data-lucide="quote" style="width:16px;height:16px;color:#059669;flex-shrink:0;"></i>
+            <span>「咬定青山不放鬆，立根原在破巖中。千磨萬擊還堅勁，任爾東西南北風。」</span>
+          </div>
+        </article>
+
+        <!-- 梅 -->
+        <article class="plant-card" data-cat="gentleman three-friends" data-keywords="梅 梅花 四君子 歲寒三友 孤傲 高潔 不畏嚴寒">
+          <div>
+            <div class="plant-top-row">
+              <span class="plant-badge-code">四君子 ＆ 歲寒三友</span>
+              <button class="btn-audio" onclick="speakText('梅花。象徵孤傲不屈，堅忍高潔的君子。傲立雪中，獨自綻放。')" title="朗讀"><i data-lucide="volume-2" style="width:16px;height:16px;"></i></button>
+            </div>
+            <div class="plant-title-wrap">
+              <h3 class="plant-title serif">梅 <span>🌸</span></h3>
+              <span class="plant-epithet">寒梅傲骨・冰肌玉骨</span>
+            </div>
+            <div class="plant-meanings-box">
+              <div class="meaning-item">孤傲不屈，堅忍高潔的君子</div>
+            </div>
+            <p class="plant-desc-box">
+              群花凋落後的隆冬季節，唯獨梅花傲立雪中獨自綻放，清香幽遠。宋代林逋隱居西湖孤山，以「梅妻鶴子」流芳千古。
+            </p>
+          </div>
+          <div class="plant-quote-box">
+            <i data-lucide="quote" style="width:16px;height:16px;color:#e11d48;flex-shrink:0;"></i>
+            <span>「疏影橫斜水清淺，暗香浮動月黃昏。」</span>
+          </div>
+        </article>
+
+        <!-- 蘭 -->
+        <article class="plant-card" data-cat="gentleman" data-keywords="蘭 蘭花 四君子 王者香 幽雅 高潔 屈原 賢人">
+          <div>
+            <div class="plant-top-row">
+              <span class="plant-badge-code">四君子之首・王者香</span>
+              <button class="btn-audio" onclick="speakText('蘭花。象徵幽雅高潔的君子、賢人。生長在深山野谷，不驕不媚，香氣幽遠。')" title="朗讀"><i data-lucide="volume-2" style="width:16px;height:16px;"></i></button>
+            </div>
+            <div class="plant-title-wrap">
+              <h3 class="plant-title serif">蘭 <span>🌿</span></h3>
+              <span class="plant-epithet">空谷幽香・王者之芬</span>
+            </div>
+            <div class="plant-meanings-box">
+              <div class="meaning-item">幽雅高潔的君子、不慕榮利的賢人</div>
+            </div>
+            <p class="plant-desc-box">
+              生長在深山荒谷，不因無人欣賞而不芳，香氣清幽淡雅，氣質脫俗。代表孔子所讚譽「人不知而不慍」的真君子風度，屈原亦在《離騷》中佩蘭自況。
+            </p>
+          </div>
+          <div class="plant-quote-box">
+            <i data-lucide="quote" style="width:16px;height:16px;color:#7c3aed;flex-shrink:0;"></i>
+            <span>「芝蘭生於深林，不以無人而不芳；君子修道立德，不為窮困而改節。」</span>
+          </div>
+        </article>
+
+        <!-- 菊 -->
+        <article class="plant-card" data-cat="gentleman longevity" data-keywords="菊 菊花 四君子 隱逸 陶淵明 延年 凌霜 高雅">
+          <div>
+            <div class="plant-top-row">
+              <span class="plant-badge-code">花之隱逸者・花中四君子</span>
+              <button class="btn-audio" onclick="speakText('菊花。花之隱逸者也。象徵高雅淡泊、隱逸避俗，亦有長壽的祝福。')" title="朗讀"><i data-lucide="volume-2" style="width:16px;height:16px;"></i></button>
+            </div>
+            <div class="plant-title-wrap">
+              <h3 class="plant-title serif">菊 <span>🌼</span></h3>
+              <span class="plant-epithet">霜華隱逸・南山淡泊</span>
+            </div>
+            <div class="plant-meanings-box">
+              <div class="meaning-item">1. 高雅淡泊、避世隱逸</div>
+              <div class="meaning-item">2. 長壽吉祥（重陽賞菊延年）</div>
+            </div>
+            <p class="plant-desc-box">
+              深秋凌霜盛開，不與百花爭春。東晉陶淵明罷官隱居，唯獨愛菊，從此菊花成為文人不隨流俗、淡泊名利的最佳心靈投射。
+            </p>
+          </div>
+          <div class="plant-quote-box">
+            <i data-lucide="quote" style="width:16px;height:16px;color:#d97706;flex-shrink:0;"></i>
+            <span>「採菊東籬下，悠然見南山。」「菊，花之隱逸者也。」</span>
+          </div>
+        </article>
+
+        <!-- 蓮 -->
+        <article class="plant-card" data-cat="gentleman" data-keywords="蓮 蓮花 荷花 周敦頤 君子 出淤泥而不染 潔身自好 中通外直">
+          <div>
+            <div class="plant-top-row">
+              <span class="plant-badge-code">花之君子者・愛蓮說本課核心</span>
+              <button class="btn-audio" onclick="speakText('蓮花。出淤泥而不染，濯清漣而不妖。象徵君子潔身自好、清高正直。')" title="朗讀"><i data-lucide="volume-2" style="width:16px;height:16px;"></i></button>
+            </div>
+            <div class="plant-title-wrap">
+              <h3 class="plant-title serif">蓮 <span>🪷</span></h3>
+              <span class="plant-epithet">淤泥不染・清雅君子</span>
+            </div>
+            <div class="plant-meanings-box">
+              <div class="meaning-item">潔身自好、清高正直、不阿諛富貴的君子</div>
+            </div>
+            <p class="plant-desc-box">
+              生於污濁淤泥中卻不被污染，亭亭玉立，香遠益清。周敦頤著《愛蓮說》，以蓮花自勉在複雜俗世中保持清白操守，可敬而不可輕侮。
+            </p>
+          </div>
+          <div class="plant-quote-box">
+            <i data-lucide="quote" style="width:16px;height:16px;color:#e11d48;flex-shrink:0;"></i>
+            <span>「出淤泥而不染，濯清漣而不妖，中通外直，不蔓不枝。」</span>
+          </div>
+        </article>
+
+        <!-- 柳 -->
+        <article class="plant-card" data-cat="parting" data-keywords="柳 柳樹 折柳 送別 離別 諧音留 灞橋">
+          <div>
+            <div class="plant-top-row">
+              <span class="plant-badge-code">離別經典寄情</span>
+              <button class="btn-audio" onclick="speakText('柳樹。象徵離別。由於柳和留諧音，所以古人有折柳相送的習俗。')" title="朗讀"><i data-lucide="volume-2" style="width:16px;height:16px;"></i></button>
+            </div>
+            <div class="plant-title-wrap">
+              <h3 class="plant-title serif">柳 <span>🌿</span></h3>
+              <span class="plant-epithet">灞橋折柳・依依惜別</span>
+            </div>
+            <div class="plant-meanings-box">
+              <div class="meaning-item">依依惜別、期盼留步（取「柳」與「留」諧音）</div>
+            </div>
+            <p class="plant-desc-box">
+              古人送別時總希望友人留下，柳絲柔長，象徵離愁牽纏不絕。「折柳相送」成為灞橋送行的千古風俗，借柔軟枝條傳遞無盡挽留之情。
+            </p>
+          </div>
+          <div class="plant-quote-box">
+            <i data-lucide="quote" style="width:16px;height:16px;color:#0d9488;flex-shrink:0;"></i>
+            <span>「渭城朝雨浥輕塵，客舍青青柳色新。勸君更盡一杯酒，西出陽關無故人。」</span>
+          </div>
+        </article>
+
+        <!-- 桃 -->
+        <article class="plant-card" data-cat="longevity" data-keywords="桃 桃花 壽桃 仙境 陶淵明 桃花源記 嬌豔女子 長壽">
+          <div>
+            <div class="plant-top-row">
+              <span class="plant-badge-code">仙境 ＆ 長壽 ＆ 美人</span>
+              <button class="btn-audio" onclick="speakText('桃。象徵長壽、容貌嬌豔的女子，以及與世隔絕的仙境。')" title="朗讀"><i data-lucide="volume-2" style="width:16px;height:16px;"></i></button>
+            </div>
+            <div class="plant-title-wrap">
+              <h3 class="plant-title serif">桃 <span>🍑</span></h3>
+              <span class="plant-epithet">桃花仙境・桃夭佳人</span>
+            </div>
+            <div class="plant-meanings-box">
+              <div class="meaning-item">1. 長壽延年（王母仙桃、壽桃）</div>
+              <div class="meaning-item">2. 容貌嬌豔的女子（桃之夭夭、人面桃花）</div>
+              <div class="meaning-item">3. 與世隔絕的理想仙境（桃花源記）</div>
+            </div>
+            <p class="plant-desc-box">
+              傳說桃為仙木神果，壽宴必備壽桃以求吉利延壽；桃花色彩豔麗，古詩經常用以比喻少女青春美貌；陶淵明寫《桃花源記》後，桃花更化身為心靈烏托邦。
+            </p>
+          </div>
+          <div class="plant-quote-box">
+            <i data-lucide="quote" style="width:16px;height:16px;color:#f43f5e;flex-shrink:0;"></i>
+            <span>「桃之夭夭，灼灼其華。之子于歸，宜其室家。」</span>
+          </div>
+        </article>
+
+        <!-- 紅豆 -->
+        <article class="plant-card" data-cat="parting" data-keywords="紅豆 相思豆 相思 王維 男女思慕 情意">
+          <div>
+            <div class="plant-top-row">
+              <span class="plant-badge-code">情深相思之寄託</span>
+              <button class="btn-audio" onclick="speakText('紅豆。又名相思豆。因豆色豔紅形似心臟，象徵深切相思之情。')" title="朗讀"><i data-lucide="volume-2" style="width:16px;height:16px;"></i></button>
+            </div>
+            <div class="plant-title-wrap">
+              <h3 class="plant-title serif">紅豆 <span>🫘</span></h3>
+              <span class="plant-epithet">玲瓏相思・情深似海</span>
+            </div>
+            <div class="plant-meanings-box">
+              <div class="meaning-item">相思愛戀、牽掛思慕之情</div>
+            </div>
+            <p class="plant-desc-box">
+              又稱「相思豆」。色澤晶瑩鮮紅，永不褪色，外型如跳動的心臟。常作為男女定情饋贈之物，文人雅士亦以此物互贈寄託深厚知己或故人之情。
+            </p>
+          </div>
+          <div class="plant-quote-box">
+            <i data-lucide="quote" style="width:16px;height:16px;color:#b91c1c;flex-shrink:0;"></i>
+            <span>「紅豆生南國，春來發幾枝？願君多採擷，此物最相思。」</span>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- 模組二：名花物語與歷史代言人探索 -->
+    <section id="stories-sec" class="content-section">
+      <div class="section-header">
+        <span class="section-badge">Module 02・Flower Legends</span>
+        <h2 class="section-title">名花物語與歷史代言人</h2>
+        <p class="section-desc">動人的歷史傳說與歷史人物，豐富了花木的花語與精神靈魂</p>
+      </div>
+
+      <div class="story-hero-grid">
+        <!-- 屈原 - 蘭花 -->
+        <div class="story-card">
+          <span class="story-person-badge">代言人：屈原（戰國愛國詩人）</span>
+          <h3 class="story-flower-title serif">1. 孤忠佩蘭自潔的悲壯之花</h3>
+          <p class="story-clue-text">
+            戰國時期楚國愛國詩人在《離騷》中曾以此花自喻其芳德操守。詩人最終因朝政腐敗無道、群小讒諂，政治理想破滅，悲憤投汨羅江自盡以明其志。
+          </p>
+          <div class="story-ans-reveal">
+            <span>代表花名：<b style="color:var(--primary);font-size:1.1rem;">蘭花</b></span>
+            <button class="btn-reveal-tag" onclick="speakText('屈原以蘭花自喻，象徵芳潔自守，不與濁世同流合污。')"><i data-lucide="volume-2" style="width:13px;height:13px;display:inline;"></i> 解說</button>
+          </div>
+        </div>
+
+        <!-- 陶淵明 - 桃花 -->
+        <div class="story-card">
+          <span class="story-person-badge">代言人：陶淵明（東晉田園隱士）</span>
+          <h3 class="story-flower-title serif">2. 避世桃源的理想世界之花</h3>
+          <p class="story-clue-text">
+            詩人敘述一位武陵漁夫沿溪前行偶遇繁盛花林，落英繽紛，進而發現與世隔絕、阡陌交通的和平村落。在詩文中寄託了作者心中永恆的無階級烏托邦。
+          </p>
+          <div class="story-ans-reveal">
+            <span>代表花名：<b style="color:var(--primary);font-size:1.1rem;">桃花</b></span>
+            <button class="btn-reveal-tag" onclick="speakText('陶淵明撰寫桃花源記，寄託避亂無爭的淳樸理想鄉。')"><i data-lucide="volume-2" style="width:13px;height:13px;display:inline;"></i> 解說</button>
+          </div>
+        </div>
+
+        <!-- 杜宇 - 杜鵑花 -->
+        <div class="story-card">
+          <span class="story-person-badge">代言人：杜宇／望帝（古蜀國王）</span>
+          <h3 class="story-flower-title serif">3. 啼血化鳥染紅山谷的泣血之花</h3>
+          <p class="story-clue-text">
+            傳說古蜀國君王死後化為子規鳥（杜鵑鳥），每逢暮春時節日夜哀哀鳴叫，口中啼血，將漫山遍野的花朵盡皆染得緋紅，寄寓刻骨銘心的哀思眷戀。
+          </p>
+          <div class="story-ans-reveal">
+            <span>代表花名：<b style="color:var(--primary);font-size:1.1rem;">杜鵑花</b></span>
+            <button class="btn-reveal-tag" onclick="speakText('蜀王杜宇啼血化為子規鳥，染紅滿山杜鵑花，李商隱詩云：望帝春心託杜鵑。')"><i data-lucide="volume-2" style="width:13px;height:13px;display:inline;"></i> 解說</button>
+          </div>
+        </div>
+
+        <!-- 林逋 - 梅花 -->
+        <div class="story-card">
+          <span class="story-person-badge">代言人：林逋／林和靖（北宋處士）</span>
+          <h3 class="story-flower-title serif">4. 孤山處士相伴一生的妻子之花</h3>
+          <p class="story-clue-text">
+            北宋高士隱居於杭州西湖孤山，長達二十餘年足跡不入城市，終生不仕、不娶妻室，唯植梅為妻、蓄鶴為子，享受超然物外的逍遙隱逸生活。
+          </p>
+          <div class="story-ans-reveal">
+            <span>代表花名：<b style="color:var(--primary);font-size:1.1rem;">梅花</b></span>
+            <button class="btn-reveal-tag" onclick="speakText('林逋梅妻鶴子，著有疏影橫斜水清淺，暗香浮動月黃昏千古詠梅絕唱。')"><i data-lucide="volume-2" style="width:13px;height:13px;display:inline;"></i> 解說</button>
+          </div>
+        </div>
+
+        <!-- 武則天 - 牡丹花 -->
+        <div class="story-card">
+          <span class="story-person-badge">代言人：武則天（一代女皇）</span>
+          <h3 class="story-flower-title serif">5. 抗旨貶洛陽驚動京城的百花之王</h3>
+          <p class="story-clue-text">
+            花朵碩大豐腴，國色天香，富貴昌盛。傳說女皇遊上苑下令嚴冬百花齊放，唯此花傲然抗命不遵。女皇大怒將其貶謫洛陽，不料來春盛開轟動天下。
+          </p>
+          <div class="story-ans-reveal">
+            <span>代表花名：<b style="color:var(--primary);font-size:1.1rem;">牡丹花</b></span>
+            <button class="btn-reveal-tag" onclick="speakText('牡丹花大豔麗象徵富貴，不畏女皇權威抗旨被貶洛陽，兼具王者富貴與傲然骨氣。')"><i data-lucide="volume-2" style="width:13px;height:13px;display:inline;"></i> 解說</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- 張潮《幽夢影》花卉知己全景透視 -->
+      <div class="matrix-box">
+        <h3 class="matrix-title serif"><i data-lucide="sparkles" style="color:var(--primary);display:inline;vertical-align:-2px;"></i> 張潮《幽夢影》之花卉千古知己圖譜</h3>
+        <div class="matrix-quote-banner">
+          「天下有一人知己，可以不恨。不獨人也，物亦有之。<br>
+          如：<b>菊</b>以淵明為知己，<b>梅</b>以和靖為知己，<b>竹</b>以子猷為知己，<br>
+          <b>蓮</b>以濂溪為知己，<b>桃</b>以避秦人為知己，<b>杏</b>以董奉為知己……。」
+        </div>
+
+        <div class="matrix-grid">
+          <div class="matrix-item-card">
+            <div class="matrix-item-head"><span>🌼 菊 ↔ 陶淵明</span> <small style="color:var(--primary);font-weight:700;">淡泊隱逸</small></div>
+            <p class="matrix-item-body">陶淵明不為五斗米折腰，躬耕東籬採菊，使菊花成為無欲則剛的隱士靈魂伴侶。</p>
+          </div>
+
+          <div class="matrix-item-card">
+            <div class="matrix-item-head"><span>🌸 梅 ↔ 林和靖</span> <small style="color:var(--primary);font-weight:700;">清高傲骨</small></div>
+            <p class="matrix-item-body">林逋隱居西湖孤山，不慕仕途，「梅妻鶴子」，相守一生，賦予梅花深情高節。</p>
+          </div>
+
+          <div class="matrix-item-card">
+            <div class="matrix-item-head"><span>🎋 竹 ↔ 王子猷</span> <small style="color:var(--primary);font-weight:700;">虛心有節</small></div>
+            <p class="matrix-item-body">東晉王徽之（字子猷）借宿空宅亦必命植竹，傲然道：「何可一日無此君！」以竹比君子。</p>
+          </div>
+
+          <div class="matrix-item-card">
+            <div class="matrix-item-head"><span>🪷 蓮 ↔ 周濂溪</span> <small style="color:var(--primary);font-weight:700;">不染不妖</small></div>
+            <p class="matrix-item-body">周敦頤（號濂溪先生）著《愛蓮說》，盛讚蓮花出淤泥不染，確立蓮花為君子至德象徵。</p>
+          </div>
+
+          <div class="matrix-item-card">
+            <div class="matrix-item-head"><span>🍑 桃 ↔ 避秦人</span> <small style="color:var(--primary);font-weight:700;">安居樂業</small></div>
+            <p class="matrix-item-body">桃花源中百姓為避秦時戰亂入山，在桃花盛開之處享受怡然自樂，桃花是其庇護者。</p>
+          </div>
+
+          <div class="matrix-item-card">
+            <div class="matrix-item-head"><span>🌿 杏 ↔ 董奉</span> <small style="color:var(--primary);font-weight:700;">濟世仁心</small></div>
+            <p class="matrix-item-body">三國名醫董奉治病不收錢，只令患者種杏樹，成杏林仙話，「杏林春暖」成醫界美譽。</p>
+          </div>
+        </div>
+
+        <div style="margin-top:1.5rem;background:white;padding:1rem 1.4rem;border-radius:12px;border:1px dashed #f43f5e;font-size:0.95rem;color:#475569;line-height:1.7;">
+          <b style="color:var(--primary-dark);">【張潮花言花語賞析】：</b><br>
+          「梅令人高，蘭令人幽，菊令人野，蓮令人淡，春海棠令人豔，牡丹令人豪……」──每種花木皆有其人格靈魂，觀花如觀人，修心如養花。
+        </div>
+      </div>
+    </section>
+
+    <!-- 模組三：成語大考驗與人比花嬌是非辨析 -->
+    <section id="idioms-sec" class="content-section">
+      <div class="section-header">
+        <span class="section-badge">Module 03・Idioms & Vocabulary</span>
+        <h2 class="section-title">花名成語挑戰 ＆「人比花嬌」是非辨析</h2>
+        <p class="section-desc">掌握語文中蘊藏的花木成語，精準辨析容貌儀態與會考易錯陷阱（點擊方框即時揭曉）</p>
+      </div>
+
+      <!-- 成語填空 (6大經典花名成語) -->
+      <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px;margin-bottom:1rem;">
+        <h3 style="font-size:1.35rem;font-weight:900;color:var(--primary-dark);margin-bottom:0;"><i data-lucide="edit-3" style="width:18px;height:18px;display:inline;"></i> 經典花名成語填空挑戰</h3>
+        <div style="display:flex;gap:8px;">
+          <button class="pill-btn" onclick="revealAllIdioms('#idioms-sec')"><i data-lucide="eye" style="width:13px;height:13px;display:inline;"></i> 一鍵揭曉釋義</button>
+          <button class="pill-btn" style="background:#f1f5f9;color:#475569;border-color:#cbd5e1;" onclick="hideAllIdioms('#idioms-sec')"><i data-lucide="eye-off" style="width:13px;height:13px;display:inline;"></i> 全部隱藏</button>
+        </div>
+      </div>
+
+      <div class="idiom-fill-grid">
+        <div class="idiom-card">
+          <div class="idiom-title">
+            <span class="idiom-char-box" onclick="toggleChar(this)">？</span><span>花椿樹</span>
+          </div>
+          <p class="idiom-desc blur-mask-box" onclick="toggleBlur(this)">
+            <span class="blur-mask-hint"><i data-lucide="eye" style="width:12px;height:12px;"></i> 點擊揭曉</span>
+            <b>【字詞】：</b>萱（萱草/忘憂草）<br><b>【釋義】：</b>借指父、母親雙親（椿萱並茂）。古稱父為椿庭，母為萱堂。
+          </p>
+        </div>
+
+        <div class="idiom-card">
+          <div class="idiom-title">
+            <span>舌粲</span><span class="idiom-char-box" onclick="toggleChar(this)">？</span><span>花</span>
+          </div>
+          <p class="idiom-desc blur-mask-box" onclick="toggleBlur(this)">
+            <span class="blur-mask-hint"><i data-lucide="eye" style="width:12px;height:12px;"></i> 點擊揭曉</span>
+            <b>【字詞】：</b>蓮（蓮花）<br><b>【釋義】：</b>形容口才極佳、說話生動動聽。亦作「舌燦蓮花」。
+          </p>
+        </div>
+
+        <div class="idiom-card">
+          <div class="idiom-title">
+            <span>人面</span><span class="idiom-char-box" onclick="toggleChar(this)">？</span><span>花</span>
+          </div>
+          <p class="idiom-desc blur-mask-box" onclick="toggleBlur(this)">
+            <span class="blur-mask-hint"><i data-lucide="eye" style="width:12px;height:12px;"></i> 點擊揭曉</span>
+            <b>【字詞】：</b>桃（桃花）<br><b>【釋義】：</b>崔護名句「人面桃花相映紅」。比喻重臨故地，追憶思念心上人卻人事皆非。
+          </p>
+        </div>
+
+        <div class="idiom-card">
+          <div class="idiom-title">
+            <span>蘭</span><span class="idiom-char-box" onclick="toggleChar(this)">？</span><span>齊芳</span>
+          </div>
+          <p class="idiom-desc blur-mask-box" onclick="toggleBlur(this)">
+            <span class="blur-mask-hint"><i data-lucide="eye" style="width:12px;height:12px;"></i> 點擊揭曉</span>
+            <b>【字詞】：</b>桂（桂花）<br><b>【釋義】：</b>蘭草與桂樹一同飄香。比喻子孫賢良顯達、榮耀門楣，家族繁榮興旺。
+          </p>
+        </div>
+
+        <div class="idiom-card">
+          <div class="idiom-title">
+            <span class="idiom-char-box" onclick="toggleChar(this)">？</span><span>花一現</span>
+          </div>
+          <p class="idiom-desc blur-mask-box" onclick="toggleBlur(this)">
+            <span class="blur-mask-hint"><i data-lucide="eye" style="width:12px;height:12px;"></i> 點擊揭曉</span>
+            <b>【字詞】：</b>曇（曇花）<br><b>【釋義】：</b>曇花多在夜間短暫盛開。比喻美好的人或事物出現後極其短暫迅速地消失。
+          </p>
+        </div>
+
+        <div class="idiom-card">
+          <div class="idiom-title">
+            <span>蕙質</span><span class="idiom-char-box" onclick="toggleChar(this)">？</span><span>心</span>
+          </div>
+          <p class="idiom-desc blur-mask-box" onclick="toggleBlur(this)">
+            <span class="blur-mask-hint"><i data-lucide="eye" style="width:12px;height:12px;"></i> 點擊揭曉</span>
+            <b>【字詞】：</b>蘭（蘭花）<br><b>【釋義】：</b>蕙草般潔淨、蘭花般純芳。比喻女子心地芳潔善良、品德高雅脫俗。
+          </p>
+        </div>
+      </div>
+
+      <!-- 人比花嬌 是非速測清單 (9大成語) -->
+      <div class="ox-table-wrap">
+        <div class="ox-table-head">
+          <div>
+            <h3 style="font-size:1.25rem;font-weight:900;color:#881337;">九、人比「花」嬌：是否可用來形容「女子容貌或儀態」？</h3>
+            <p style="font-size:0.85rem;color:var(--gray);margin-top:2px;">請點選 ○ 或 ╳ 進行即時互動辨析，綠色為正確、紅色為錯誤提示！</p>
+          </div>
+          <div style="display:flex;gap:8px;flex-wrap:wrap;">
+            <button class="pill-btn" onclick="revealAllOX()"><i data-lucide="eye" style="width:14px;height:14px;display:inline;"></i> 一鍵揭曉解析</button>
+            <button class="pill-btn" style="background:#f1f5f9;color:#475569;border-color:#cbd5e1;" onclick="hideAllOX()"><i data-lucide="eye-off" style="width:14px;height:14px;display:inline;"></i> 全部隱藏</button>
+          </div>
+        </div>
+
+        <div class="ox-interactive-list" id="oxList">
+          <!-- 1. 閉月羞花 (O) -->
+          <div class="ox-item-card" data-ans="o" data-id="1">
+            <div class="ox-item-top">
+              <span class="ox-word-title">1. 閉月羞花</span>
+              <div class="ox-choice-btns">
+                <button class="choice-btn" onclick="judgeOX(this, 'o', 'o')">○ 是</button>
+                <button class="choice-btn" onclick="judgeOX(this, 'x', 'o')">╳ 否</button>
+              </div>
+            </div>
+            <div class="ox-explain-txt"><b>【解答：○】</b>使月亮躲藏、使花朵羞愧。閉月代指貂蟬，羞花代指楊貴妃，盛讚女子容顏絕世傾城。</div>
+          </div>
+
+          <!-- 2. 鏡花水月 (X) -->
+          <div class="ox-item-card" data-ans="x" data-id="2">
+            <div class="ox-item-top">
+              <span class="ox-word-title">2. 鏡花水月</span>
+              <div class="ox-choice-btns">
+                <button class="choice-btn" onclick="judgeOX(this, 'o', 'x')">○ 是</button>
+                <button class="choice-btn" onclick="judgeOX(this, 'x', 'x')">╳ 否</button>
+              </div>
+            </div>
+            <div class="ox-explain-txt"><b>【解答：╳】</b>鏡中之花、水中之月。比喻虛幻空泛、不可捉摸之虛幻景象，非形容女子容貌。</div>
+          </div>
+
+          <!-- 3. 步步蓮花 (O) -->
+          <div class="ox-item-card" data-ans="o" data-id="3">
+            <div class="ox-item-top">
+              <span class="ox-word-title">3. 步步蓮花</span>
+              <div class="ox-choice-btns">
+                <button class="choice-btn" onclick="judgeOX(this, 'o', 'o')">○ 是</button>
+                <button class="choice-btn" onclick="judgeOX(this, 'x', 'o')">╳ 否</button>
+              </div>
+            </div>
+            <div class="ox-explain-txt"><b>【解答：○】</b>南齊東昏侯潘妃典故，地面鑿金蓮花，步步生蓮。形容女子走路姿態輕盈婀娜優美。</div>
+          </div>
+
+          <!-- 4. 妙筆生花 (X) -->
+          <div class="ox-item-card" data-ans="x" data-id="4">
+            <div class="ox-item-top">
+              <span class="ox-word-title">4. 妙筆生花</span>
+              <div class="ox-choice-btns">
+                <button class="choice-btn" onclick="judgeOX(this, 'o', 'x')">○ 是</button>
+                <button class="choice-btn" onclick="judgeOX(this, 'x', 'x')">╳ 否</button>
+              </div>
+            </div>
+            <div class="ox-explain-txt"><b>【解答：╳】</b>李白夢中筆頭生花。比喻文思敏捷、寫作才華橫溢超群，形容文采非形容女子容貌。</div>
+          </div>
+
+          <!-- 5. 芙蓉如面 (O) -->
+          <div class="ox-item-card" data-ans="o" data-id="5">
+            <div class="ox-item-top">
+              <span class="ox-word-title">5. 芙蓉如面</span>
+              <div class="ox-choice-btns">
+                <button class="choice-btn" onclick="judgeOX(this, 'o', 'o')">○ 是</button>
+                <button class="choice-btn" onclick="judgeOX(this, 'x', 'o')">╳ 否</button>
+              </div>
+            </div>
+            <div class="ox-explain-txt"><b>【解答：○】</b>白居易《長恨歌》「芙蓉如面柳如眉」。以嬌豔荷花比喻女子容貌嬌美動人。</div>
+          </div>
+
+          <!-- 6. 花容失色 (X - 陷阱題) -->
+          <div class="ox-item-card" data-ans="x" data-id="6">
+            <div class="ox-item-top">
+              <span class="ox-word-title" style="color:#b91c1c;">6. 花容失色 ⚠️</span>
+              <div class="ox-choice-btns">
+                <button class="choice-btn" onclick="judgeOX(this, 'o', 'x')">○ 是</button>
+                <button class="choice-btn" onclick="judgeOX(this, 'x', 'x')">╳ 否</button>
+              </div>
+            </div>
+            <div class="ox-explain-txt"><b>【解答：╳】</b><b>會考大陷阱！</b>形容因驚嚇或恐懼導致面容慘白失態，是形容受驚之神態，而非讚揚容貌儀態！</div>
+          </div>
+
+          <!-- 7. 花容月貌 (O) -->
+          <div class="ox-item-card" data-ans="o" data-id="7">
+            <div class="ox-item-top">
+              <span class="ox-word-title">7. 花容月貌</span>
+              <div class="ox-choice-btns">
+                <button class="choice-btn" onclick="judgeOX(this, 'o', 'o')">○ 是</button>
+                <button class="choice-btn" onclick="judgeOX(this, 'x', 'o')">╳ 否</button>
+              </div>
+            </div>
+            <div class="ox-explain-txt"><b>【解答：○】</b>如花般嬌豔、如月般皎潔。形容年輕女子美麗絕倫的容貌。</div>
+          </div>
+
+          <!-- 8. 錦上添花 (X) -->
+          <div class="ox-item-card" data-ans="x" data-id="8">
+            <div class="ox-item-top">
+              <span class="ox-word-title">8. 錦上添花</span>
+              <div class="ox-choice-btns">
+                <button class="choice-btn" onclick="judgeOX(this, 'o', 'x')">○ 是</button>
+                <button class="choice-btn" onclick="judgeOX(this, 'x', 'x')">╳ 否</button>
+              </div>
+            </div>
+            <div class="ox-explain-txt"><b>【解答：╳】</b>在織錦上繡花。比喻在美好的事物上再添光彩、美上加美，非形容女子容貌。</div>
+          </div>
+
+          <!-- 9. 黃花閨女 (O) -->
+          <div class="ox-item-card" data-ans="o" data-id="9">
+            <div class="ox-item-top">
+              <span class="ox-word-title">9. 黃花閨女</span>
+              <div class="ox-choice-btns">
+                <button class="choice-btn" onclick="judgeOX(this, 'o', 'o')">○ 是</button>
+                <button class="choice-btn" onclick="judgeOX(this, 'x', 'o')">╳ 否</button>
+              </div>
+            </div>
+            <div class="ox-explain-txt"><b>【解答：○】</b>古代少女貼黃花花鈿為飾。借代指未婚的年輕處女、少女。</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 模組四：拈花惹草──詩詞「草」之象徵與花草譬喻 -->
+    <section id="grass-sec" class="content-section">
+      <div class="section-header">
+        <span class="section-badge">Module 04・Grass & Metaphors</span>
+        <h2 class="section-title">拈花惹草：草之詩詞象徵與花草譬喻成語</h2>
+        <p class="section-desc">從古典詩詞中的「草」透視離愁與鄉情，掌握會考高頻出現的植物借喻成語</p>
+      </div>
+
+      <!-- 十、(一) 草的象徵是非題 -->
+      <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px;margin-bottom:0.8rem;">
+        <h3 style="font-size:1.35rem;font-weight:900;color:var(--primary-dark);margin-bottom:0;">
+          十、(一) 詩詞中「草」之意象：是否用來象徵「離愁」或「鄉情」？
+        </h3>
+        <div style="display:flex;gap:8px;">
+          <button class="pill-btn" onclick="revealAllBlur('#grass-sec .grass-desc-box')"><i data-lucide="eye" style="width:13px;height:13px;display:inline;"></i> 一鍵揭曉解析</button>
+          <button class="pill-btn" style="background:#f1f5f9;color:#475569;border-color:#cbd5e1;" onclick="hideAllBlur('#grass-sec .grass-desc-box')"><i data-lucide="eye-off" style="width:13px;height:13px;display:inline;"></i> 全部隱藏</button>
+        </div>
+      </div>
+
+      <div class="grass-verses-grid">
+        <!-- 1 -->
+        <div class="grass-verse-card">
+          <div>
+            <div class="grass-verse-text">「誰言寸草心，報得三春暉。」</div>
+            <div class="grass-verse-author">孟郊《遊子吟》</div>
+          </div>
+          <div class="grass-desc-box blur-mask-box" onclick="toggleBlur(this)" style="background:#fef2f2;padding:8px 12px;border-radius:8px;font-size:0.88rem;color:#991b1b;">
+            <span class="blur-mask-hint"><i data-lucide="eye" style="width:12px;height:12px;"></i> 點擊揭曉</span>
+            <b>【╳ 否】</b>以小草受春陽沐浴，象徵<b>子女微小孝心回報偉大母愛</b>，非離愁鄉情。
+          </div>
+        </div>
+
+        <!-- 2 -->
+        <div class="grass-verse-card">
+          <div>
+            <div class="grass-verse-text">「苔痕上階綠，草色入簾青。」</div>
+            <div class="grass-verse-author">劉禹錫《陋室銘》</div>
+          </div>
+          <div class="grass-desc-box blur-mask-box" onclick="toggleBlur(this)" style="background:#fef2f2;padding:8px 12px;border-radius:8px;font-size:0.88rem;color:#991b1b;">
+            <span class="blur-mask-hint"><i data-lucide="eye" style="width:12px;height:12px;"></i> 點擊揭曉</span>
+            <b>【╳ 否】</b>描繪陋室周遭生機盎然、環境<b>清幽脫俗無俗塵干擾</b>，非離愁鄉情。
+          </div>
+        </div>
+
+        <!-- 3 -->
+        <div class="grass-verse-card">
+          <div>
+            <div class="grass-verse-text">「青青河畔草，綿綿思遠道。」</div>
+            <div class="grass-verse-author">漢樂府《飲馬長城窟行》</div>
+          </div>
+          <div class="grass-desc-box blur-mask-box" onclick="toggleBlur(this)" style="background:#f0fdf4;padding:8px 12px;border-radius:8px;font-size:0.88rem;color:#166534;">
+            <span class="blur-mask-hint"><i data-lucide="eye" style="width:12px;height:12px;"></i> 點擊揭曉</span>
+            <b>【○ 是】</b>春草青青綿延不絕，起興抒發<b>對遠方征人綿延不斷的思念與鄉愁</b>。
+          </div>
+        </div>
+
+        <!-- 4 -->
+        <div class="grass-verse-card">
+          <div>
+            <div class="grass-verse-text">「種豆南山下，草盛豆苗稀。」</div>
+            <div class="grass-verse-author">陶淵明《歸園田居》</div>
+          </div>
+          <div class="grass-desc-box blur-mask-box" onclick="toggleBlur(this)" style="background:#fef2f2;padding:8px 12px;border-radius:8px;font-size:0.88rem;color:#991b1b;">
+            <span class="blur-mask-hint"><i data-lucide="eye" style="width:12px;height:12px;"></i> 點擊揭曉</span>
+            <b>【╳ 否】</b>實寫田間勞作實況，寄託<b>隱逸歸隱田園的農耕情趣</b>，非離愁鄉情。
+          </div>
+        </div>
+
+        <!-- 5 -->
+        <div class="grass-verse-card">
+          <div>
+            <div class="grass-verse-text">「離恨恰如春草，更行更遠還生。」</div>
+            <div class="grass-verse-author">李煜《清平樂》</div>
+          </div>
+          <div class="grass-desc-box blur-mask-box" onclick="toggleBlur(this)" style="background:#f0fdf4;padding:8px 12px;border-radius:8px;font-size:0.88rem;color:#166534;">
+            <span class="blur-mask-hint"><i data-lucide="eye" style="width:12px;height:12px;"></i> 點擊揭曉</span>
+            <b>【○ 是】</b>離愁如春草般生生不息、隨步綿延，極生動地比喻<b>無窮無盡的離愁別恨</b>。
+          </div>
+        </div>
+
+        <!-- 6 -->
+        <div class="grass-verse-card">
+          <div>
+            <div class="grass-verse-text">「樓上晴天碧四垂，樓前芳草接天涯，勸君莫上最高梯。」</div>
+            <div class="grass-verse-author">周邦彥《浣溪沙》</div>
+          </div>
+          <div class="grass-desc-box blur-mask-box" onclick="toggleBlur(this)" style="background:#f0fdf4;padding:8px 12px;border-radius:8px;font-size:0.88rem;color:#166534;">
+            <span class="blur-mask-hint"><i data-lucide="eye" style="width:12px;height:12px;"></i> 點擊揭曉</span>
+            <b>【○ 是】</b>登高遠眺芳草連天，更惹<b>天涯遊子無盡思鄉與離人別緒</b>，故勸莫登梯。
+          </div>
+        </div>
+      </div>
+
+      <!-- 十、(二) 花草譬喻成語 -->
+      <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px;margin:2.5rem 0 1rem;">
+        <h3 style="font-size:1.35rem;font-weight:900;color:var(--primary-dark);margin-bottom:0;">
+          十、(二) 以花草為譬喻的經典成語
+        </h3>
+        <div style="display:flex;gap:8px;">
+          <button class="pill-btn" onclick="revealAllIdioms('#grass-sec')"><i data-lucide="eye" style="width:13px;height:13px;display:inline;"></i> 一鍵揭曉釋義</button>
+          <button class="pill-btn" style="background:#f1f5f9;color:#475569;border-color:#cbd5e1;" onclick="hideAllIdioms('#grass-sec')"><i data-lucide="eye-off" style="width:13px;height:13px;display:inline;"></i> 全部隱藏</button>
+        </div>
+      </div>
+
+      <div class="idiom-fill-grid">
+        <div class="idiom-card">
+          <div class="idiom-title"><span>空谷幽</span><span class="idiom-char-box" onclick="toggleChar(this)">？</span></div>
+          <p class="idiom-desc blur-mask-box" onclick="toggleBlur(this)">
+            <span class="blur-mask-hint"><i data-lucide="eye" style="width:12px;height:12px;"></i> 點擊揭曉</span>
+            <b>【字詞】：</b>蘭<br><b>【說明】：</b>空谷中的幽蘭。比喻人品高潔、超塵脫俗、幽雅不慕虛名。
+          </p>
+        </div>
+
+        <div class="idiom-card">
+          <div class="idiom-title"><span class="idiom-char-box" onclick="toggleChar(this)">？</span><span>蘭玉樹</span></div>
+          <p class="idiom-desc blur-mask-box" onclick="toggleBlur(this)">
+            <span class="blur-mask-hint"><i data-lucide="eye" style="width:12px;height:12px;"></i> 點擊揭曉</span>
+            <b>【字詞】：</b>芝（芝蘭）<br><b>【說明】：</b>謝安問子弟。比喻德才兼備、優秀有出息的子弟晚輩。
+          </p>
+        </div>
+
+        <div class="idiom-card">
+          <div class="idiom-title"><span class="idiom-char-box" onclick="toggleChar(this)">？</span><span>蓽生輝</span></div>
+          <p class="idiom-desc blur-mask-box" onclick="toggleBlur(this)">
+            <span class="blur-mask-hint"><i data-lucide="eye" style="width:12px;height:12px;"></i> 點擊揭曉</span>
+            <b>【字詞】：</b>蓬（蓬草）<br><b>【說明】：</b>蓬草編成的門扉。客套話，形容貴客光臨簡陋居室，使主人增光不少。
+          </p>
+        </div>
+
+        <div class="idiom-card">
+          <div class="idiom-title"><span>蘭</span><span class="idiom-char-box" onclick="toggleChar(this)">？</span><span>同焚</span></div>
+          <p class="idiom-desc blur-mask-box" onclick="toggleBlur(this)">
+            <span class="blur-mask-hint"><i data-lucide="eye" style="width:12px;height:12px;"></i> 點擊揭曉</span>
+            <b>【字詞】：</b>艾（臭艾）<br><b>【說明】：</b>香蘭與臭艾一同被燒。比喻好的壞的一同毀滅、玉石俱焚。
+          </p>
+        </div>
+
+        <div class="idiom-card">
+          <div class="idiom-title"><span class="idiom-char-box" onclick="toggleChar(this)">？</span><span>刺在背</span></div>
+          <p class="idiom-desc blur-mask-box" onclick="toggleBlur(this)">
+            <span class="blur-mask-hint"><i data-lucide="eye" style="width:12px;height:12px;"></i> 點擊揭曉</span>
+            <b>【字詞】：</b>芒（芒刺）<br><b>【說明】：</b>芒刺扎在背上。形容極度惶恐、畏縮不安，坐臥皆不得安寧。
+          </p>
+        </div>
+
+        <div class="idiom-card">
+          <div class="idiom-title"><span>青出於</span><span class="idiom-char-box" onclick="toggleChar(this)">？</span></div>
+          <p class="idiom-desc blur-mask-box" onclick="toggleBlur(this)">
+            <span class="blur-mask-hint"><i data-lucide="eye" style="width:12px;height:12px;"></i> 點擊揭曉</span>
+            <b>【字詞】：</b>藍（藍草）<br><b>【說明】：</b>荀子勸學。靛青色從藍草中提取卻比藍草更青。比喻學生勝過老師，後起之秀超越前輩。
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 模組五：會考神仙挑戰賽 (12 題全真情境測驗) -->
+    <section id="quiz-sec" class="content-section">
+      <div class="section-header">
+        <span class="section-badge">Module 05・Exam Challenge</span>
+        <h2 class="section-title">會考神仙挑戰賽：花花世界全真診斷庫</h2>
+        <p class="section-desc">即時檢測學習成效，包含傳說典故、知己配對、是非辨析與成語陷阱精解</p>
+      </div>
+
+      <div class="quiz-container">
+        <div class="quiz-progress-bar-wrap">
+          <div class="quiz-progress-bar" id="quizProgressBar"></div>
+        </div>
+
+        <div class="quiz-meta-row">
+          <span class="quiz-q-num" id="quizQNum">題目 1 / 12</span>
+          <span class="quiz-score-badge" id="quizScoreBadge">得分：0 分</span>
+        </div>
+
+        <h3 class="quiz-question-title" id="quizQText">載入題目中...</h3>
+
+        <div class="quiz-options-list" id="quizOptList"></div>
+
+        <div class="quiz-explanation-box" id="quizExpBox"></div>
+
+        <div class="quiz-controls-row">
+          <button class="btn-quiz-next" id="quizNextBtn" onclick="nextQuizQuestion()">下一題 <i data-lucide="chevron-right"></i></button>
+        </div>
+      </div>
+    </section>
+
+    <!-- 模組六：花語文學造句工坊 -->
+    <section id="workshop-sec" class="content-section">
+      <div class="section-header">
+        <span class="section-badge">Module 06・Creative Writing</span>
+        <h2 class="section-title">花語文學造句工坊</h2>
+        <p class="section-desc">自選花木意象、寫作情境與修辭技法，一鍵組合生成文采斐然之佳句範例</p>
+      </div>
+
+      <div class="workshop-wrap">
+        <div class="workshop-selectors-row">
+          <div class="ws-field">
+            <label><i data-lucide="flower-2" style="width:14px;height:14px;display:inline;"></i> 選擇象徵花木：</label>
+            <select id="wsPlant">
+              <option value="蓮">🪷 蓮花（潔身自好、清高正直）</option>
+              <option value="梅">🌸 梅花（孤傲不屈、逆境傲雪）</option>
+              <option value="竹">🎋 竹子（虛心有節、堅毅正直）</option>
+              <option value="菊">🌼 菊花（高雅淡泊、隱逸自適）</option>
+              <option value="柳">🌿 柳樹（依依惜別、期盼留步）</option>
+              <option value="松">🌲 松樹（長壽康健、歲寒不凋）</option>
+            </select>
+          </div>
+
+          <div class="ws-field">
+            <label><i data-lucide="feather" style="width:14px;height:14px;display:inline;"></i> 選擇寫作主題：</label>
+            <select id="wsTopic">
+              <option value="品格修養">面對同儕壓力，堅守自我道德底線</option>
+              <option value="挫折奮起">遭遇升學挫折，依然昂首奮鬥不屈</option>
+              <option value="畢業送別">國中畢業離別，對好友的深深祝福</option>
+              <option value="淡泊自處">在競逐名利的浮躁社會中，保持平靜</option>
+            </select>
+          </div>
+
+          <div class="ws-field">
+            <label><i data-lucide="wand-2" style="width:14px;height:14px;display:inline;"></i> 融入修辭手法：</label>
+            <select id="wsRhetoric">
+              <option value="象徵法">象徵法（托物寄意）</option>
+              <option value="映襯法">映襯法（黑白對照）</option>
+              <option value="借代法">借代法（以特徵代本體）</option>
+            </select>
+          </div>
+        </div>
+
+        <div style="text-align:center;">
+          <button class="btn-ws-generate" onclick="generateSentence()">
+            <i data-lucide="sparkles"></i> 靈感點化・生成美文佳句
+          </button>
+        </div>
+
+        <div class="ws-result-box" id="wsResultBox">
+          <div class="ws-sentence-text" id="wsSentenceText"></div>
+          <div class="ws-sentence-analysis" id="wsSentenceAnalysis"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 模組七：專屬練習神器內嵌專區 -->
+    <section id="practice-sec" class="content-section">
+      <div class="section-header">
+        <span class="section-badge">Module 07・Interactive Practice Tools</span>
+        <h2 class="section-title">花花語文世界・專屬練習神器雙享庫</h2>
+        <p class="section-desc">整合「花花語文練習神器」與「詩詞常見意象練習神器」，支援 3D 翻轉卡片、意象測驗、是非速測與離線錯題本</p>
+      </div>
+
+      <!-- 神器切換分頁導覽 -->
+      <div class="practice-tabs-bar">
+        <button class="practice-tab-btn active" id="tab-tool-flower" onclick="switchPracticeTool('flower')">
+          <i data-lucide="flower-2"></i> 🌸 花花語文練習神器（植物✕名花✕成語）
+        </button>
+        <button class="practice-tab-btn" id="tab-tool-imagery" onclick="switchPracticeTool('imagery')">
+          <i data-lucide="book-open"></i> 📜 詩詞常見意象練習神器（全意象✕詩句測驗）
+        </button>
+      </div>
+
+      <div class="practice-embed-box">
+        <div class="practice-embed-bar">
+          <div style="display:flex;align-items:center;gap:8px;">
+            <span class="practice-badge" id="practiceBadgeText" style="background:var(--primary);color:white;padding:3px 10px;border-radius:999px;font-size:0.75rem;font-weight:800;">翰林 B3L04 愛蓮說</span>
+            <span id="practiceTitleText" style="font-weight:800;color:var(--primary-dark);font-size:0.95rem;">花花語文練習神器（嵌入模式）</span>
+          </div>
+          <a href="flower/flower-practice.html" target="_blank" id="practiceOpenBtn" class="pill-btn" style="text-decoration:none;">
+            <i data-lucide="external-link" style="width:14px;height:14px;display:inline;"></i> 另開獨立全螢幕
+          </a>
+        </div>
+        <div class="practice-iframe-wrap">
+          <iframe id="practiceIframe" src="flower/flower-practice.html" title="專屬練習神器"></iframe>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- 燈箱 Modal -->
+  <div class="lightbox-modal" id="lightboxModal" onclick="closeLightbox()">
+    <div class="lightbox-container" onclick="event.stopPropagation()">
+      <button class="lightbox-close-btn" onclick="closeLightbox()">&times;</button>
+      <img src="" alt="放大圖" class="lightbox-img" id="lightboxImg">
+      <div class="lightbox-caption" id="lightboxCaption"></div>
+    </div>
+  </div>
+
+  <!-- 頁尾宣告 -->
+  <footer>
+    <div class="footer-container">
+      <div class="footer-logos">
+        <img src="icon/seal-white.png" alt="學思軒" class="footer-seal" onerror="this.src='icon/seal-red.png'">
+        <img src="icon/slogan-god-dark.png" alt="只要有心人人都是國文神" class="footer-tagline-img">
+      </div>
+      <div class="footer-credit serif">
+        𖤐 本系統由學思軒黃于珊、王斐亭老師規劃設計 · 版權所有 © 2026 𖤐
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // 12 題會考神仙挑戰賽完整題庫
+    const quizData = [
+      {
+        q: "1. 戰國愛國詩人屈原在《離騷》中，最常藉由哪一種花卉來比喻自己品行高潔芬芳，不願隨波逐流？",
+        opts: ["(A) 菊花", "(B) 蘭花", "(C) 牡丹花", "(D) 荷花"],
+        ans: 1,
+        exp: "【解析】：屈原在《離騷》中以香草（如蘭花、蕙草）自喻芳潔品德，象徵在混亂濁世中仍潔身自愛。答案為 (B)。"
+      },
+      {
+        q: "2. 武陵漁夫順著溪水前行，意外發現落英繽紛的桃花林與世外樂土。請問「桃花」因哪一位作家的描寫，從此成為「世外仙境」的代名詞？",
+        opts: ["(A) 周敦頤", "(B) 林逋", "(C) 陶淵明", "(D) 屈原"],
+        ans: 2,
+        exp: "【解析】：東晉陶淵明作《桃花源記》，敘述避秦之人隱居桃花源，使桃花轉化為世外仙境之象徵。答案為 (C)。"
+      },
+      {
+        q: "3. 傳說蜀王杜宇死後化為子規鳥，暮春泣血染紅了滿山的花朵。請問此花為何？",
+        opts: ["(A) 杜鵑花", "(B) 牡丹花", "(C) 梅花", "(D) 玫瑰花"],
+        ans: 0,
+        exp: "【解析】：望帝杜宇泣血化鳥，血染滿山杜鵑花。李商隱名詩：「望帝春心託杜鵑」。答案為 (A)。"
+      },
+      {
+        q: "4. 張潮《幽夢影》云：「天下有一人知己，可以不恨。……如梅以和靖為知己，蓮以濂溪為知己。」句中的「和靖」與「濂溪」分別指哪兩位文人？",
+        opts: [
+          "(A) 林逋、周敦頤",
+          "(B) 陶淵明、王維",
+          "(C) 蘇軾、歐陽脩",
+          "(D) 謝安、董奉"
+        ],
+        ans: 0,
+        exp: "【解析】：北宋林逋隱居西湖孤山，諡和靖先生（梅妻鶴子）；周敦頤號濂溪先生，著《愛蓮說》。答案為 (A)。"
+      },
+      {
+        q: "5. 張潮《幽夢影》又言：「杏以董奉為知己」。後世常用哪一句成語來頌揚醫界仁心仁術、濟世救人？",
+        opts: ["(A) 桃李滿天下", "(B) 杏林春暖", "(C) 萱花椿樹", "(D) 芝蘭玉樹"],
+        ans: 1,
+        exp: "【解析】：三國名醫董奉治病不收報酬，只令重病者栽杏五株、輕者一株，數年成萬株杏林，故稱醫界為「杏林」，成語為「杏林春暖」。答案為 (B)。"
+      },
+      {
+        q: "6. 「客舍青青柳色新。勸君更盡一杯酒，西出陽關無故人。」古人在送別時常折柳相送，主要是因為「柳」與哪一個字諧音，藉以表達挽留不捨？",
+        opts: ["(A) 流", "(B) 留", "(C) 樓", "(D) 六"],
+        ans: 1,
+        exp: "【解析】：柳與「留」諧音，折柳贈別蘊含期盼對方「留下來、常相憶」的深情。答案為 (B)。"
+      },
+      {
+        q: "7. 下列成語中，哪一個「不能」用來形容女子的容貌或儀態？",
+        opts: ["(A) 閉月羞花", "(B) 芙蓉如面", "(C) 花容月貌", "(D) 花容失色"],
+        ans: 3,
+        exp: "【解析】：會考極常見考題！「花容失色」是形容因受到驚嚇或恐懼導致面容慘白，並非讚美女子容貌儀態之美。答案為 (D)。"
+      },
+      {
+        q: "8. 下列關於「花名成語」的填空，何者配對完全正確？",
+        opts: [
+          "(A) （曇）花椿樹：借指父母",
+          "(B) 舌粲（菊）花：形容口才好",
+          "(C) 蘭（桂）齊芳：比喻子孫顯達昌榮",
+          "(D) 蕙質（桃）心：比喻女子心靈高雅"
+        ],
+        ans: 2,
+        exp: "【解析】：(A)應為「萱花椿樹」；(B)應為「舌粲蓮花」；(D)應為「蕙質蘭心」。(C)蘭桂齊芳完全正確。答案為 (C)。"
+      },
+      {
+        q: "9. 「離恨恰如春草，更行更遠還生。」這句詞中將何種情感比喻成春草之連綿？",
+        opts: ["(A) 慈母對兒女的春暉愛心", "(B) 無窮無盡的離別幽恨", "(C) 陋室隱逸之脫俗情趣", "(D) 農家躬耕田園的辛勞"],
+        ans: 1,
+        exp: "【解析】：李煜《清平樂》以野火燒不盡、隨地綿延的春草，生動象徵離愁別恨之綿延難斷。答案為 (B)。"
+      },
+      {
+        q: "10. 下列各詩句中的「草」，哪一項「象徵離愁或鄉情」？",
+        opts: [
+          "(A) 誰言寸草心，報得三春暉",
+          "(B) 苔痕上階綠，草色入簾青",
+          "(C) 青青河畔草，綿綿思遠道",
+          "(D) 種豆南山下，草盛豆苗稀"
+        ],
+        ans: 2,
+        exp: "【解析】：(A)寸草心象徵孝心；(B)草色形容環境清幽；(C)以綿延春草起興，抒發對遠行者的相思鄉情；(D)描寫田間雜草農事。答案為 (C)。"
+      },
+      {
+        q: "11. 晉代謝玄被叔父謝安問及抱負時，回答希望子弟能「如芝蘭玉樹，欲使其生於階庭耳」。請問成語「芝蘭玉樹」借喻何者？",
+        opts: [
+          "(A) 高超精妙的文學造詣",
+          "(B) 德才優秀有出息的子弟後代",
+          "(C) 虛幻不切實際的榮華富貴",
+          "(D) 貧賤不能移的鄉野農人"
+        ],
+        ans: 1,
+        exp: "【解析】：芝蘭為香草，玉樹為嘉木。芝蘭玉樹比喻優秀、有出息且品格高潔的子弟後輩。答案為 (B)。"
+      },
+      {
+        q: "12. 「蘭艾同焚」這個成語中，「蘭」代表香草，「艾」代表臭草。請問該成語的真實涵義為何？",
+        opts: [
+          "(A) 善惡分明，疾惡如仇",
+          "(B) 香氣滿室，蓬蓽生輝",
+          "(C) 玉石俱焚，好的與壞的同歸於盡",
+          "(D) 後生晚輩才智遠超前輩師長"
+        ],
+        ans: 2,
+        exp: "【解析】：香草蘭與臭草艾一同被火燒毀，比喻玉石俱焚、賢愚不分、好壞同歸於盡。答案為 (C)。"
+      }
+    ];
+
+    let currentQ = 0;
+    let quizScore = 0;
+    let answered = false;
+
+    function renderQuiz() {
+      answered = false;
+      const q = quizData[currentQ];
+      document.getElementById('quizQNum').textContent = `題目 ${currentQ + 1} / ${quizData.length}`;
+      document.getElementById('quizProgressBar').style.width = `${((currentQ + 1) / quizData.length) * 100}%`;
+      document.getElementById('quizQText').textContent = q.q;
+
+      const optList = document.getElementById('quizOptList');
+      optList.innerHTML = '';
+
+      q.opts.forEach((opt, idx) => {
+        const btn = document.createElement('button');
+        btn.className = 'quiz-opt-btn';
+        btn.textContent = opt;
+        btn.onclick = () => selectQuizOpt(idx, btn);
+        optList.appendChild(btn);
+      });
+
+      const expBox = document.getElementById('quizExpBox');
+      expBox.style.display = 'none';
+      expBox.innerHTML = '';
+
+      document.getElementById('quizNextBtn').style.display = 'none';
+    }
+
+    function selectQuizOpt(userChoice, btn) {
+      if (answered) return;
+      answered = true;
+      const q = quizData[currentQ];
+      const optBtns = document.querySelectorAll('.quiz-opt-btn');
+
+      if (userChoice === q.ans) {
+        btn.classList.add('correct');
+        quizScore += 10;
+        document.getElementById('quizScoreBadge').textContent = `得分：${quizScore} 分`;
+      } else {
+        btn.classList.add('wrong');
+        optBtns[q.ans].classList.add('correct');
+      }
+
+      const expBox = document.getElementById('quizExpBox');
+      expBox.style.display = 'block';
+      expBox.innerHTML = `<b>【本題詳解】：</b><br>${q.exp}`;
+
+      const nextBtn = document.getElementById('quizNextBtn');
+      nextBtn.style.display = 'inline-flex';
+      if (currentQ === quizData.length - 1) {
+        nextBtn.innerHTML = '看測驗結算成績 <i data-lucide="award"></i>';
+        lucide.createIcons();
+      }
+    }
+
+    function nextQuizQuestion() {
+      if (currentQ < quizData.length - 1) {
+        currentQ++;
+        renderQuiz();
+      } else {
+        showQuizResult();
+      }
+    }
+
+    function showQuizResult() {
+      const container = document.querySelector('.quiz-container');
+      let title = '🎖️ 國文花神秀才！';
+      let msg = '表現不錯喔！部分題型再複習一下講義，就能達到百分之百掌握度！';
+      if (quizScore >= 110) {
+        title = '🌸 國文百花狀元仙子！';
+        msg = '太厲害了！你對國中會考植物象徵、名花典故與成語融會貫通，堪稱國文滿級分大神！';
+      } else if (quizScore < 70) {
+        title = '🌱 潛力花苗，再接再厲！';
+        msg = '別灰心，多利用上方圖鑑與練習神器的 3D 翻卡複習，再次挑戰一定能突飛猛進！';
+      }
+
+      container.innerHTML = `
+        <div style="text-align:center;padding:2rem 1rem;">
+          <h2 style="font-size:2.2rem;color:var(--primary-dark);margin-bottom:0.8rem;" class="serif">${title}</h2>
+          <div style="font-size:3.5rem;font-weight:900;color:var(--primary);margin-bottom:1rem;">${quizScore} <span style="font-size:1.5rem;color:var(--gray);">/ 120 分</span></div>
+          <p style="font-size:1.05rem;color:#475569;max-width:540px;margin:0 auto 2rem;line-height:1.7;">${msg}</p>
+          <button class="btn-ws-generate" onclick="restartQuiz()"><i data-lucide="rotate-ccw"></i> 重新挑戰會考題庫</button>
+        </div>
+      `;
+      lucide.createIcons();
+    }
+
+    function restartQuiz() {
+      currentQ = 0;
+      quizScore = 0;
+      location.reload();
+    }
+
+    // 植物卡片篩選
+    function filterPlants(category, btn) {
+      document.querySelectorAll('.pill-group .pill-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+
+      const cards = document.querySelectorAll('.plant-card');
+      cards.forEach(card => {
+        if (category === 'all' || card.dataset.cat.includes(category)) {
+          card.style.display = 'flex';
+        } else {
+          card.style.display = 'none';
+        }
+      });
+    }
+
+    function searchPlants() {
+      const query = document.getElementById('plantSearchInput').value.toLowerCase().trim();
+      const cards = document.querySelectorAll('.plant-card');
+      cards.forEach(card => {
+        const text = (card.dataset.keywords + card.innerText).toLowerCase();
+        if (!query || text.includes(query)) {
+          card.style.display = 'flex';
+        } else {
+          card.style.display = 'none';
+        }
+      });
+    }
+
+    // 模糊霧化卡片切換
+    function toggleBlur(el) {
+      el.classList.toggle('revealed');
+      const hint = el.querySelector('.blur-mask-hint');
+      if (hint) {
+        hint.style.display = el.classList.contains('revealed') ? 'none' : 'inline-flex';
+      }
+      lucide.createIcons();
+    }
+
+    function revealAllBlur(selector) {
+      document.querySelectorAll(selector).forEach(el => {
+        el.classList.add('revealed');
+        const hint = el.querySelector('.blur-mask-hint');
+        if (hint) hint.style.display = 'none';
+      });
+    }
+
+    function hideAllBlur(selector) {
+      document.querySelectorAll(selector).forEach(el => {
+        el.classList.remove('revealed');
+        const hint = el.querySelector('.blur-mask-hint');
+        if (hint) hint.style.display = 'inline-flex';
+        // 若該方框所在的成語卡片中有字詞方塊，亦一同重置回復「？」
+        const parentCard = el.closest('.idiom-card');
+        if (parentCard) {
+          parentCard.querySelectorAll('.idiom-char-box').forEach(c => {
+            c.textContent = '？';
+            c.classList.remove('revealed');
+          });
+        }
+      });
+      lucide.createIcons();
+    }
+
+    // 成語填空專用：一鍵揭曉（字詞填入、釋義解霧）
+    function revealAllIdioms(sectionSelector) {
+      const container = document.querySelector(sectionSelector);
+      if (!container) return;
+      container.querySelectorAll('.idiom-card').forEach(card => {
+        const charBox = card.querySelector('.idiom-char-box');
+        const descEl = card.querySelector('.idiom-desc');
+        const desc = descEl ? descEl.innerText : '';
+        const match = desc.match(/【字詞】：([^\n]+)/);
+        if (charBox && match) {
+          charBox.textContent = match[1].charAt(0);
+          charBox.classList.add('revealed');
+        }
+        if (descEl) {
+          descEl.classList.add('revealed');
+          const hint = descEl.querySelector('.blur-mask-hint');
+          if (hint) hint.style.display = 'none';
+        }
+      });
+    }
+
+    // 成語填空專用：全部隱藏（字詞回復「？」，釋義恢復模糊霧化）
+    function hideAllIdioms(sectionSelector) {
+      const container = document.querySelector(sectionSelector);
+      if (!container) return;
+      container.querySelectorAll('.idiom-card').forEach(card => {
+        const charBox = card.querySelector('.idiom-char-box');
+        if (charBox) {
+          charBox.textContent = '？';
+          charBox.classList.remove('revealed');
+        }
+        const descEl = card.querySelector('.idiom-desc');
+        if (descEl) {
+          descEl.classList.remove('revealed');
+          const hint = descEl.querySelector('.blur-mask-hint');
+          if (hint) hint.style.display = 'inline-flex';
+        }
+      });
+      lucide.createIcons();
+    }
+
+    // 成語填空個別點擊揭曉
+    function toggleChar(el) {
+      const parentCard = el.closest('.idiom-card');
+      const descEl = parentCard.querySelector('.idiom-desc');
+      const desc = descEl ? descEl.innerText : '';
+      const match = desc.match(/【字詞】：([^\n]+)/);
+      if (match) {
+        const char = match[1].charAt(0);
+        if (el.textContent === '？') {
+          el.textContent = char;
+          el.classList.add('revealed');
+          if (descEl && !descEl.classList.contains('revealed')) {
+            descEl.classList.add('revealed');
+            const hint = descEl.querySelector('.blur-mask-hint');
+            if (hint) hint.style.display = 'none';
+          }
+        } else {
+          el.textContent = '？';
+          el.classList.remove('revealed');
+        }
+      }
+    }
+
+    // 人比花嬌 OX 判斷
+    function judgeOX(btn, choice, correct) {
+      const parent = btn.closest('.ox-item-card');
+      const btns = parent.querySelectorAll('.choice-btn');
+      btns.forEach(b => {
+        b.classList.remove('selected-correct');
+        b.classList.remove('selected-wrong');
+      });
+
+      if (choice === correct) {
+        btn.classList.add('selected-correct');
+      } else {
+        btn.classList.add('selected-wrong');
+      }
+
+      parent.querySelector('.ox-explain-txt').style.display = 'block';
+    }
+
+    function revealAllOX() {
+      document.querySelectorAll('.ox-item-card').forEach(card => {
+        const ans = card.dataset.ans;
+        const btns = card.querySelectorAll('.choice-btn');
+        if (ans === 'o') {
+          btns[0].classList.add('selected-correct');
+        } else {
+          btns[1].classList.add('selected-correct');
+        }
+        card.querySelector('.ox-explain-txt').style.display = 'block';
+      });
+    }
+
+    function hideAllOX() {
+      document.querySelectorAll('.ox-item-card').forEach(card => {
+        const btns = card.querySelectorAll('.choice-btn');
+        btns.forEach(b => {
+          b.classList.remove('selected-correct');
+          b.classList.remove('selected-wrong');
+        });
+        card.querySelector('.ox-explain-txt').style.display = 'none';
+      });
+    }
+
+    // 語音朗讀
+    function speakText(text) {
+      if ('speechSynthesis' in window) {
+        window.speechSynthesis.cancel();
+        const utterance = new SpeechSynthesisUtterance(text);
+        utterance.lang = 'zh-TW';
+        utterance.rate = 0.95;
+        window.speechSynthesis.speak(utterance);
+      } else {
+        alert('您的瀏覽器不支援語音朗讀功能。');
+      }
+    }
+
+    // 燈箱功能
+    function openLightbox(imgSrc, caption) {
+      document.getElementById('lightboxImg').src = imgSrc;
+      document.getElementById('lightboxCaption').textContent = caption;
+      document.getElementById('lightboxModal').classList.add('show');
+    }
+
+    function closeLightbox() {
+      document.getElementById('lightboxModal').classList.remove('show');
+    }
+
+    // 文學造句工坊
+    function generateSentence() {
+      const plant = document.getElementById('wsPlant').value;
+      const topic = document.getElementById('wsTopic').value;
+      const rhetoric = document.getElementById('wsRhetoric').value;
+
+      let sentence = "";
+      let analysis = "";
+
+      if (plant === "蓮") {
+        sentence = "處在同儕盲從浮躁的喧囂泥淖中，我願作一朵幽雅的池中白蓮，出淤泥而不染，以純粹的赤子之心守護內心的一方淨土。";
+        analysis = `【名師點評】：巧妙運用《愛蓮說》「出淤泥而不染」的${rhetoric}，將外界誘惑比作淤泥，將自我品格比作青蓮，兼具映襯與象徵之美，文意清朗昂揚。`;
+      } else if (plant === "梅") {
+        sentence = "面對接踵而來的挫折寒霜，我不願自怨自艾，只願化身一枝凌霜傲雪的寒梅，在最凜冽的絕境中，綻放出最清幽動人的芬芳。";
+        analysis = `【名師點評】：化用林逋孤山處士的傲骨精神，以梅花的孤傲不屈${rhetoric}迎戰人生逆境，文字充滿古典張力與奮發意志。`;
+      } else if (plant === "竹") {
+        sentence = "青年立志當如翠竹，縱然歷經狂風暴雨的劇烈吹折，外在有挺拔之氣節，內在有虛懷若谷的謙遜，寧折不彎，立身天地之間。";
+        analysis = `【名師點評】：提煉竹子「中空有節」的雙重意涵，兼顧「謙遜」與「風骨」，極切合會考記敘抒情文的立意昇華。`;
+      } else if (plant === "菊") {
+        sentence = "當世人爭先恐後奔向喧鬧的名利場時，我選擇在東籬之下獨自品味一盞清茗，如秋菊般幽靜淡泊，自適而無悔。";
+        analysis = `【名師點評】：借代陶淵明「採菊東籬下」的隱逸心境，以「映襯對照」凸顯浮躁與平靜之別，格調超脫凡俗。`;
+      } else if (plant === "柳") {
+        sentence = "驪歌輕唱的畢業時節，灞橋的千條楊柳隨風依依牽絆，每一根柔韌的枝條，都寄託著我們對彼此未來最深長的祝福與挽留。";
+        analysis = `【名師點評】：巧妙扣合「折柳贈別」的文化密碼，藉柳絲柔長意象傳達同窗離情依依，情感綿長動人。`;
+      } else {
+        sentence = "歲寒然後知松柏之後凋，在最艱困艱難的命運關頭，唯有如老松般深紮磐石、堅韌挺立，方能迎來春暖花開的破曉。";
+        analysis = `【名師點評】：引用《論語》松柏之名言，以松樹四季常青象徵亂世中的真君子風度，立意高遠。`;
+      }
+
+      document.getElementById('wsSentenceText').textContent = sentence;
+      document.getElementById('wsSentenceAnalysis').innerHTML = analysis;
+      document.getElementById('wsResultBox').style.display = 'block';
+    }
+
+    // 練習神器切換邏輯
+    const PRACTICE_TOOLS_CONFIG = {
+      flower: {
+        title: "花花語文練習神器（嵌入模式）",
+        badge: "翰林 B3L04 愛蓮說",
+        src: "flower/flower-practice.html"
+      },
+      imagery: {
+        title: "詩詞常見意象練習神器（嵌入模式）",
+        badge: "語文學習集・詩詞意象",
+        src: "flower/poetry-imagery.html"
+      }
+    };
+
+    function switchPracticeTool(toolKey) {
+      const config = PRACTICE_TOOLS_CONFIG[toolKey];
+      if (!config) return;
+
+      document.querySelectorAll('.practice-tab-btn').forEach(btn => btn.classList.remove('active'));
+      const activeBtn = document.getElementById(toolKey === 'flower' ? 'tab-tool-flower' : 'tab-tool-imagery');
+      if (activeBtn) activeBtn.classList.add('active');
+
+      const iframe = document.getElementById('practiceIframe');
+      if (iframe) iframe.src = config.src;
+
+      const titleEl = document.getElementById('practiceTitleText');
+      if (titleEl) titleEl.textContent = config.title;
+
+      const badgeEl = document.getElementById('practiceBadgeText');
+      if (badgeEl) badgeEl.textContent = config.badge;
+
+      const openBtn = document.getElementById('practiceOpenBtn');
+      if (openBtn) openBtn.href = config.src;
+
+      lucide.createIcons();
+    }
+
+    // 初始化
+    window.addEventListener('DOMContentLoaded', () => {
+      renderQuiz();
+      lucide.createIcons();
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,1487 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>語文補給站｜中外俗諺大觀園旗艦學習殿堂</title>
+  <meta name="description" content="翰林國中國文 B3L05《生命中的碎珠》語文補給站：中外俗諺互動教學學習平台，收錄臺灣俗諺、英法德荷西等世界各國諺語與中國諺語精準對照、全真人語音朗讀、互動星盤、會考挑戰賽與專屬練習神器。">
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;600;700;900&family=Noto+Sans+TC:wght@300;400;500;700;900&family=Ma+Shan+Zheng&display=swap" rel="stylesheet">
+  
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <style>
+    :root {
+      /* 典雅翡翠綠與琉璃金/琥珀主題（切合常民智慧、田園哲理與人生碎珠意象） */
+      --primary: #059669;
+      --primary-dark: #047857;
+      --primary-light: #ecfdf5;
+      --primary-hover: #05845c;
+
+      --accent: #d97706;
+      --accent-dark: #b45309;
+      --accent-light: #fef3c7;
+
+      --blue: #2563eb;
+      --blue-light: #eff6ff;
+
+      --purple: #7c3aed;
+      --purple-light: #f5f3ff;
+
+      --rose: #e11d48;
+      --rose-light: #fff1f2;
+
+      --success: #10b981;
+      --success-light: #d1fae5;
+      --danger: #ef4444;
+      --danger-light: #fee2e2;
+
+      --dark: #0f172a;
+      --dark-card: #1e293b;
+      --gray: #64748b;
+      --light-bg: #f8fafc;
+      --card-bg: rgba(255, 255, 255, 0.98);
+      --border: #e2e8f0;
+      --radius: 20px;
+      --shadow: 0 10px 25px -5px rgba(5, 150, 105, 0.08), 0 8px 10px -6px rgba(0, 0, 0, 0.04);
+      --shadow-hover: 0 20px 35px -10px rgba(5, 150, 105, 0.2);
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Noto Sans TC', sans-serif;
+      background-color: var(--light-bg);
+      color: var(--dark);
+      line-height: 1.7;
+      background-image: 
+        radial-gradient(circle at 5% 10%, rgba(5, 150, 105, 0.05) 0%, transparent 45%),
+        radial-gradient(circle at 95% 85%, rgba(217, 119, 6, 0.05) 0%, transparent 45%),
+        radial-gradient(circle at 50% 50%, rgba(37, 99, 235, 0.03) 0%, transparent 60%);
+      background-attachment: fixed;
+    }
+
+    .serif { font-family: 'Noto Serif TC', serif; }
+    .calligraphy { font-family: 'Ma Shan Zheng', 'Noto Serif TC', cursive; }
+
+    /* 頂部導覽列 */
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(14px);
+      border-bottom: 1px solid var(--border);
+      padding: 0.75rem 1.5rem;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
+    }
+
+    .nav-container {
+      max-width: 1320px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    .brand-group {
+      display: flex;
+      align-items: center;
+      gap: 0.85rem;
+      text-decoration: none;
+    }
+
+    .brand-seal-img {
+      height: 48px;
+      width: auto;
+      object-fit: contain;
+      transition: transform 0.3s ease;
+      filter: drop-shadow(0 2px 4px rgba(0,0,0,0.08));
+    }
+    .brand-seal-img:hover {
+      transform: rotate(5deg) scale(1.08);
+    }
+
+    .brand-logo-img {
+      height: 48px;
+      width: auto;
+      object-fit: contain;
+      filter: drop-shadow(0 2px 4px rgba(0,0,0,0.08));
+    }
+
+    .brand-text { display: flex; flex-direction: column; }
+    .brand-title {
+      font-size: 1.35rem;
+      font-weight: 800;
+      color: var(--primary-dark);
+      letter-spacing: -0.5px;
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+    .brand-badge {
+      font-size: 0.72rem;
+      background: var(--primary-light);
+      color: var(--primary-dark);
+      padding: 0.15rem 0.55rem;
+      border-radius: 999px;
+      font-weight: 700;
+      width: fit-content;
+      margin-top: 2px;
+      border: 1px solid rgba(5, 150, 105, 0.2);
+    }
+
+    nav ul {
+      display: flex;
+      gap: 0.4rem;
+      list-style: none;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: var(--dark);
+      font-weight: 600;
+      padding: 0.45rem 0.85rem;
+      border-radius: 10px;
+      transition: all 0.2s ease;
+      font-size: 0.92rem;
+      display: flex;
+      align-items: center;
+      gap: 0.35rem;
+    }
+
+    nav a:hover, nav a.active {
+      background: var(--primary-light);
+      color: var(--primary-dark);
+    }
+
+    .nav-btn-tool {
+      background: linear-gradient(135deg, var(--primary), var(--primary-dark)) !important;
+      color: #ffffff !important;
+      padding: 0.48rem 1.1rem;
+      border-radius: 999px;
+      box-shadow: 0 4px 10px rgba(5, 150, 105, 0.25);
+    }
+    .nav-btn-tool:hover {
+      background: linear-gradient(135deg, var(--primary-dark), #065f46) !important;
+      color: #ffffff !important;
+      transform: translateY(-2px);
+      box-shadow: 0 6px 14px rgba(5, 150, 105, 0.35);
+    }
+    .nav-btn-tool.active {
+      background: linear-gradient(135deg, var(--primary-dark), #065f46) !important;
+      color: #ffffff !important;
+    }
+
+    /* 主容器 */
+    main {
+      max-width: 1320px;
+      margin: 2rem auto;
+      padding: 0 1.5rem;
+    }
+
+    /* Hero 全幅旗艦橫幅 */
+    .hero {
+      position: relative;
+      background: linear-gradient(135deg, #ecfdf5 0%, #fef3c7 50%, #eff6ff 100%);
+      border-radius: 28px;
+      border: 1px solid rgba(5, 150, 105, 0.15);
+      padding: 3.8rem 2.5rem;
+      margin-bottom: 2.8rem;
+      box-shadow: var(--shadow);
+      overflow: hidden;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .hero::after {
+      content: "中外・俗諺";
+      position: absolute;
+      right: 2%;
+      bottom: -30px;
+      font-size: 7.5rem;
+      font-family: 'Ma Shan Zheng', cursive;
+      color: rgba(5, 150, 105, 0.045);
+      pointer-events: none;
+      user-select: none;
+      white-space: nowrap;
+    }
+
+    .hero-content {
+      max-width: 900px;
+      margin: 0 auto;
+      z-index: 2;
+    }
+
+    .hero-badge-top {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: white;
+      color: var(--primary-dark);
+      padding: 6px 16px;
+      border-radius: 999px;
+      font-size: 0.88rem;
+      font-weight: 700;
+      margin-bottom: 1.2rem;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+      border: 1px solid #a7f3d0;
+    }
+
+    .hero-content h1 {
+      font-size: 3.1rem;
+      font-weight: 900;
+      color: var(--primary-dark);
+      margin-bottom: 1.2rem;
+      line-height: 1.25;
+    }
+
+    .hero-content h1 span {
+      background: linear-gradient(135deg, #059669, #d97706);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .hero-content p {
+      font-size: 1.18rem;
+      color: #475569;
+      margin-bottom: 2rem;
+      line-height: 1.8;
+    }
+
+    .feature-pills-row {
+      display: flex;
+      gap: 12px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .f-pill {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(255, 255, 255, 0.9);
+      padding: 8px 18px;
+      border-radius: 999px;
+      font-size: 0.92rem;
+      font-weight: 700;
+      color: #334155;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.04);
+      border: 1px solid rgba(5, 150, 105, 0.15);
+    }
+    .f-pill i { color: var(--primary); }
+
+    /* 通用區塊標題 */
+    .section-header {
+      margin-bottom: 2rem;
+      text-align: center;
+    }
+    .section-tag {
+      display: inline-block;
+      font-size: 0.84rem;
+      font-weight: 800;
+      color: var(--primary);
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      margin-bottom: 0.4rem;
+    }
+    .section-title {
+      font-size: 2.1rem;
+      font-weight: 900;
+      color: #1e293b;
+      margin-bottom: 0.6rem;
+    }
+    .section-desc {
+      font-size: 1.05rem;
+      color: #64748b;
+      max-width: 680px;
+      margin: 0 auto;
+    }
+
+    /* 區塊卡片外框 */
+    .content-section {
+      background: white;
+      border-radius: 24px;
+      border: 1px solid var(--border);
+      padding: 3rem 2.2rem;
+      margin-bottom: 3rem;
+      box-shadow: var(--shadow);
+    }
+
+    /* 模組一：精選教材解說圖 (支援 Lightbox) */
+    .material-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+      margin-top: 1.5rem;
+    }
+    .material-card {
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      overflow: hidden;
+      background: #f8fafc;
+      transition: all 0.3s ease;
+      cursor: pointer;
+    }
+    .material-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-hover);
+      border-color: var(--primary);
+    }
+    .material-img-wrap {
+      width: 100%;
+      height: 240px;
+      overflow: hidden;
+      background: #ffffff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-bottom: 1px solid var(--border);
+      position: relative;
+    }
+    .material-img-wrap img {
+      max-width: 100%;
+      max-height: 100%;
+      object-fit: contain;
+      transition: transform 0.3s ease;
+    }
+    .material-card:hover .material-img-wrap img {
+      transform: scale(1.04);
+    }
+    .material-info {
+      padding: 16px;
+    }
+    .material-title {
+      font-weight: 800;
+      font-size: 1.05rem;
+      color: #1e293b;
+      margin-bottom: 6px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .material-desc {
+      font-size: 0.88rem;
+      color: #64748b;
+      line-height: 1.5;
+    }
+
+    /* 燈箱 Lightbox */
+    .lightbox-modal {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.85);
+      z-index: 2000;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+    }
+    .lightbox-modal.active {
+      display: flex;
+    }
+    .lightbox-content {
+      max-width: 90vw;
+      max-height: 90vh;
+      border-radius: 12px;
+      box-shadow: 0 10px 40px rgba(0,0,0,0.5);
+    }
+    .lightbox-close {
+      position: absolute;
+      top: 25px;
+      right: 30px;
+      color: white;
+      font-size: 2.2rem;
+      cursor: pointer;
+      font-weight: 300;
+      transition: color 0.2s;
+    }
+    .lightbox-close:hover { color: #f87171; }
+
+    /* 模組二：核心定義與解題三部曲 */
+    .definition-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+      margin-bottom: 2.5rem;
+    }
+    .def-card {
+      background: #f8fafc;
+      border: 1px solid #e2e8f0;
+      border-radius: 16px;
+      padding: 24px;
+      transition: all 0.3s;
+    }
+    .def-card:hover {
+      border-color: var(--primary);
+      background: white;
+      box-shadow: 0 8px 20px rgba(5, 150, 105, 0.08);
+    }
+    .def-icon-circle {
+      width: 48px;
+      height: 48px;
+      border-radius: 12px;
+      background: var(--primary-light);
+      color: var(--primary);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 16px;
+    }
+    .def-title {
+      font-size: 1.2rem;
+      font-weight: 800;
+      color: #1e293b;
+      margin-bottom: 8px;
+    }
+    .def-text {
+      font-size: 0.95rem;
+      color: #475569;
+      line-height: 1.65;
+    }
+
+    .formula-banner {
+      background: linear-gradient(135deg, #047857 0%, #065f46 100%);
+      border-radius: 18px;
+      padding: 28px 32px;
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 20px;
+      box-shadow: 0 10px 25px rgba(4, 120, 87, 0.2);
+    }
+    .formula-title {
+      font-size: 1.5rem;
+      font-weight: 900;
+      margin-bottom: 6px;
+    }
+    .formula-desc {
+      font-size: 0.98rem;
+      color: #d1fae5;
+    }
+    .formula-steps {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+    .f-step {
+      background: rgba(255, 255, 255, 0.15);
+      border: 1px solid rgba(255, 255, 255, 0.25);
+      padding: 10px 18px;
+      border-radius: 12px;
+      font-size: 0.95rem;
+      font-weight: 700;
+      backdrop-filter: blur(8px);
+    }
+    /* 模組四：典範圖鑑與俗諺對照庫 */
+    .filter-bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 15px;
+      margin-bottom: 25px;
+      background: #f8fafc;
+      padding: 16px 20px;
+      border-radius: 16px;
+      border: 1px solid var(--border);
+    }
+    .search-input-wrap {
+      position: relative;
+      flex: 1;
+      min-width: 260px;
+    }
+    .search-input-wrap input {
+      width: 100%;
+      padding: 10px 14px 10px 42px;
+      border-radius: 10px;
+      border: 1px solid #cbd5e1;
+      font-size: 0.95rem;
+      outline: none;
+      transition: border 0.2s;
+    }
+    .search-input-wrap input:focus {
+      border-color: var(--primary);
+      box-shadow: 0 0 0 3px rgba(5, 150, 105, 0.12);
+    }
+    .search-input-wrap i {
+      position: absolute;
+      left: 14px;
+      top: 50%;
+      transform: translateY(-50%);
+      color: #94a3b8;
+    }
+
+    .reveal-all-btn {
+      padding: 10px 18px;
+      background: white;
+      border: 1px solid #cbd5e1;
+      border-radius: 10px;
+      font-weight: 700;
+      color: #334155;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      transition: all 0.2s;
+    }
+    .reveal-all-btn:hover {
+      background: var(--primary-light);
+      color: var(--primary-dark);
+      border-color: var(--primary);
+    }
+
+    .proverbs-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+    }
+    .proverb-card {
+      background: white;
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      padding: 24px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.03);
+      transition: all 0.25s ease;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    .proverb-card:hover {
+      border-color: var(--primary);
+      box-shadow: 0 10px 25px rgba(5, 150, 105, 0.1);
+      transform: translateY(-2px);
+    }
+    .p-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: 12px;
+    }
+    .p-origin-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      font-size: 0.8rem;
+      font-weight: 800;
+      padding: 3px 10px;
+      border-radius: 999px;
+      background: #f1f5f9;
+      color: #475569;
+    }
+    .tag-tw { background: #dcfce7; color: #166534; }
+    .tag-world { background: #eff6ff; color: #1e40af; }
+
+    .p-actions {
+      display: flex;
+      gap: 6px;
+    }
+    .tts-btn {
+      background: #f1f5f9;
+      border: none;
+      width: 32px;
+      height: 32px;
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      color: #475569;
+      transition: all 0.2s;
+    }
+    .tts-btn:hover {
+      background: var(--primary-light);
+      color: var(--primary-dark);
+    }
+
+    .p-origin-text {
+      font-family: 'Noto Serif TC', serif;
+      font-size: 1.45rem;
+      font-weight: 900;
+      color: #1e293b;
+      margin-bottom: 14px;
+      line-height: 1.4;
+    }
+
+    .p-match-container {
+      background: #f8fafc;
+      border-radius: 12px;
+      padding: 12px 14px;
+      margin-bottom: 12px;
+      border: 1px dashed #cbd5e1;
+    }
+    .p-match-label {
+      font-size: 0.82rem;
+      font-weight: 800;
+      color: #94a3b8;
+      margin-bottom: 4px;
+      display: flex;
+      align-items: center;
+      gap: 5px;
+    }
+    .p-match-target {
+      font-family: 'Noto Serif TC', serif;
+      font-size: 1.25rem;
+      font-weight: 800;
+      color: #b45309;
+      cursor: pointer;
+      user-select: none;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .p-match-target.blurred {
+      filter: blur(6px);
+      background: #e2e8f0;
+      border-radius: 6px;
+      color: transparent;
+    }
+
+    .p-explain-box {
+      font-size: 0.92rem;
+      color: #475569;
+      line-height: 1.6;
+      background: #fffbeb;
+      padding: 10px 14px;
+      border-radius: 10px;
+      border-left: 4px solid #f59e0b;
+      display: none;
+    }
+    .p-explain-box.show {
+      display: block;
+    }
+    /* 模組六：會考神仙挑戰賽 */
+    .arena-box {
+      max-width: 820px;
+      margin: 0 auto;
+      background: #f8fafc;
+      border-radius: 20px;
+      border: 1px solid #e2e8f0;
+      padding: 32px 28px;
+    }
+    .arena-header-bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 16px;
+    }
+    .arena-bar-wrap {
+      width: 100%;
+      height: 8px;
+      background: #e2e8f0;
+      border-radius: 999px;
+      margin-bottom: 22px;
+      overflow: hidden;
+    }
+    .arena-bar-inner {
+      height: 100%;
+      background: linear-gradient(90deg, var(--primary), var(--accent));
+      width: 0%;
+      transition: width 0.3s;
+    }
+    .arena-q-box {
+      background: white;
+      border-radius: 16px;
+      padding: 24px;
+      border: 1px solid #e2e8f0;
+      margin-bottom: 20px;
+      text-align: center;
+    }
+    .arena-q-country {
+      display: inline-block;
+      font-size: 0.85rem;
+      font-weight: 800;
+      color: var(--primary-dark);
+      background: var(--primary-light);
+      padding: 4px 12px;
+      border-radius: 999px;
+      margin-bottom: 10px;
+    }
+    .arena-q-text {
+      font-family: 'Noto Serif TC', serif;
+      font-size: 1.7rem;
+      font-weight: 900;
+      color: #1e293b;
+      line-height: 1.4;
+    }
+    .arena-options-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      margin-bottom: 20px;
+    }
+    .arena-opt-btn {
+      padding: 14px 16px;
+      background: white;
+      border: 2px solid #e2e8f0;
+      border-radius: 12px;
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: #1e293b;
+      cursor: pointer;
+      transition: all 0.2s;
+      text-align: center;
+    }
+    .arena-opt-btn:hover:not(:disabled) {
+      border-color: var(--primary);
+      background: #f0fdf4;
+    }
+    .arena-opt-btn.correct {
+      background: #d1fae5 !important;
+      border-color: #10b981 !important;
+      color: #065f46 !important;
+    }
+    .arena-opt-btn.wrong {
+      background: #fee2e2 !important;
+      border-color: #ef4444 !important;
+      color: #991b1b !important;
+    }
+    .arena-feedback {
+      display: none;
+      padding: 16px;
+      border-radius: 12px;
+      font-size: 0.95rem;
+      line-height: 1.6;
+      margin-bottom: 20px;
+    }
+    .arena-feedback.show { display: block; }
+    .arena-feedback.is-correct { background: #d1fae5; border-left: 5px solid #10b981; }
+    .arena-feedback.is-wrong { background: #fee2e2; border-left: 5px solid #ef4444; }
+    
+    .arena-next-btn {
+      display: none;
+      width: 100%;
+      padding: 14px;
+      background: var(--primary);
+      color: white;
+      border: none;
+      border-radius: 12px;
+      font-size: 1.05rem;
+      font-weight: 800;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+    .arena-next-btn:hover { background: var(--primary-dark); }
+    .arena-next-btn.show { display: block; }
+
+    .arena-result-box {
+      display: none;
+      text-align: center;
+      background: white;
+      border-radius: 20px;
+      padding: 35px 25px;
+      border: 1px solid #e2e8f0;
+    }
+    .arena-score-num {
+      font-size: 4rem;
+      font-weight: 900;
+      color: var(--primary);
+      margin: 10px 0;
+    }
+
+    /* 模組六：練習神器內嵌雙享庫專區 */
+    .practice-tabs-bar {
+      display: flex;
+      gap: 12px;
+      margin-bottom: 1.2rem;
+      flex-wrap: wrap;
+    }
+
+    .practice-tab-btn {
+      padding: 10px 22px;
+      border-radius: 999px;
+      font-size: 0.95rem;
+      font-weight: 800;
+      border: 2px solid var(--border);
+      background: white;
+      color: #475569;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      transition: all 0.25s;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.03);
+    }
+
+    .practice-tab-btn:hover {
+      border-color: var(--primary);
+      color: var(--primary);
+      transform: translateY(-2px);
+    }
+
+    .practice-tab-btn.active {
+      background: linear-gradient(135deg, var(--primary), var(--accent));
+      color: white;
+      border-color: transparent;
+      box-shadow: 0 4px 14px rgba(5, 150, 105, 0.3);
+    }
+
+    .practice-frame-box {
+      border: 2px solid var(--border);
+      border-radius: 20px;
+      overflow: hidden;
+      background: white;
+      box-shadow: var(--shadow);
+    }
+    .practice-frame-header {
+      background: #1e293b;
+      color: white;
+      padding: 14px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .practice-frame-title {
+      font-size: 0.95rem;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .practice-badge-pill {
+      background: var(--primary);
+      color: white;
+      padding: 3px 10px;
+      border-radius: 999px;
+      font-size: 0.78rem;
+      font-weight: 800;
+    }
+    .practice-open-btn {
+      color: #38bdf8;
+      text-decoration: none;
+      font-size: 0.88rem;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      transition: color 0.2s;
+    }
+    .practice-open-btn:hover { text-decoration: underline; color: #7dd3fc; }
+    .practice-iframe {
+      width: 100%;
+      height: 720px;
+      border: none;
+      display: block;
+    }
+
+    /* 頁尾 Footer - 典雅溫潤暖栗木/沉木茶褐漸層 */
+    footer {
+      background: linear-gradient(180deg, #2e1a12 0%, #1c0f0a 100%);
+      color: white;
+      padding: 3.5rem 1.5rem 2.5rem;
+      margin-top: 4rem;
+      border-top: 3px solid #854d0e;
+      text-align: center;
+    }
+    .footer-container {
+      max-width: 1320px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1.8rem;
+      text-align: center;
+    }
+    .footer-logos {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 1.5rem;
+      flex-wrap: wrap;
+    }
+    .footer-seal {
+      height: 60px;
+      width: auto;
+      object-fit: contain;
+      filter: drop-shadow(0 4px 10px rgba(0, 0, 0, 0.3));
+    }
+    .footer-tagline-img {
+      max-height: 46px;
+      width: auto;
+      object-fit: contain;
+    }
+    .footer-credit {
+      font-size: 0.95rem;
+      color: #fde68a;
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(253, 230, 138, 0.25);
+      padding: 0.6rem 1.6rem;
+      border-radius: 999px;
+      font-weight: 600;
+      letter-spacing: 0.5px;
+    }
+
+    @media (max-width: 900px) {
+      .material-grid { grid-template-columns: 1fr; }
+      .definition-grid { grid-template-columns: 1fr; }
+      .proverbs-grid { grid-template-columns: 1fr; }
+      .arena-options-grid { grid-template-columns: 1fr; }
+      .hero-content h1 { font-size: 2.3rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- 頂部導覽列 -->
+  <header>
+    <div class="nav-container">
+      <a href="index.html" class="brand-group">
+        <img src="icon/seal-red.png" alt="學思軒" class="brand-seal-img">
+        <img src="icon/logo-yuwen.png" alt="語文補給站" class="brand-logo-img">
+        <div class="brand-text">
+          <div class="brand-title serif">
+            中外俗諺大觀園
+            <i data-lucide="sparkles" size="18" color="#059669"></i>
+          </div>
+          <span class="brand-badge">翰林國文 B3L05《生命中的碎珠》語文補給站</span>
+        </div>
+      </a>
+
+      <nav>
+        <ul>
+          <li><a href="index.html"><i data-lucide="home" size="16"></i>總入口首頁</a></li>
+          <li><a href="#definition"><i data-lucide="book-open" size="16"></i>常民智慧</a></li>
+          <li><a href="#gallery"><i data-lucide="grid" size="16"></i>36組圖鑑</a></li>
+          <li><a href="#arena"><i data-lucide="award" size="16"></i>會考挑戰賽</a></li>
+          <li><a href="#practice-section" class="nav-btn-tool"><i data-lucide="gamepad-2" size="16"></i>練習神器</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- 全幅置中 Hero 旗艦橫幅 -->
+    <section class="hero">
+      <div class="hero-content">
+        <div class="hero-badge-top">
+          <i data-lucide="globe-2" size="16"></i>
+          國中跨域文化常識・中外常民智慧總匯
+        </div>
+        <h1 class="serif">
+          中外俗諺大觀園・<span>常民智慧萬花筒</span>
+        </h1>
+        <p>
+          源於土地的鮮活語言，凝聚千百年人生碎珠！收錄翰林 B3L05 臺灣俗諺 8 組與世界各國諺語 28 組，跨越語言藩籬，探索中外心靈共通的哲思與比喻精妙。
+        </p>
+        <div class="feature-pills-row">
+          <div class="f-pill"><i data-lucide="check-circle-2" size="16"></i>36 組全收錄典範圖鑑</div>
+          <div class="f-pill"><i data-lucide="volume-2" size="16"></i>全語音真人發音朗讀</div>
+          <div class="f-pill"><i data-lucide="award" size="16"></i>10 題會考神仙挑戰賽</div>
+          <div class="f-pill"><i data-lucide="gamepad-2" size="16"></i>雙享練習神器雙專區</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 模組一：核心定義與破題萬能三部曲 -->
+    <section id="definition" class="content-section">
+      <div class="section-header">
+        <span class="section-tag">Core Wisdom & Methodology</span>
+        <h2 class="section-title serif">什麼是俗諺？中外常民智慧的核心秘密</h2>
+        <p class="section-desc">「言者無心，聞者足戒。」諺語是民間集體智慧與生活經驗的精闢凝結。</p>
+      </div>
+
+      <div class="definition-grid">
+        <div class="def-card">
+          <div class="def-icon-circle"><i data-lucide="feather" size="24"></i></div>
+          <h3 class="def-title">什麼是「俗諺」？</h3>
+          <p class="def-text">
+            俗諺是流傳於民間簡練而富於哲理的定型化語句。多反映人民日常生活觀察、倫理道德或處世哲學，語言通俗生動，具高度說服力。
+          </p>
+        </div>
+        <div class="def-card">
+          <div class="def-icon-circle"><i data-lucide="shuffle" size="24"></i></div>
+          <h3 class="def-title">東方與西方的「同理心」</h3>
+          <p class="def-text">
+            人類情感相通，不同文化背景的民族，對「人情世故、努力奮鬥、因果報應」的體悟常不謀而合，形成跨越語言的對應映照。
+          </p>
+        </div>
+        <div class="def-card">
+          <div class="def-icon-circle"><i data-lucide="lightbulb" size="24"></i></div>
+          <h3 class="def-title">會考高頻核心題型</h3>
+          <p class="def-text">
+            會考國文常以「各國諺語」為題幹，測驗學生抓取關鍵意象（如：獅尾狗頭、火暖身焚身、水不能收），推論相通中文成語或諺語能力。
+          </p>
+        </div>
+      </div>
+
+      <div class="formula-banner">
+        <div>
+          <div class="formula-title">💡 俗諺解題三部曲：抽喻體 ➔ 抓情境 ➔ 對成語</div>
+          <div class="formula-desc">掌握解題金鑰，無論面對哪一國的外國諺語，都能秒殺破題！</div>
+        </div>
+        <div class="formula-steps">
+          <div class="f-step">步驟一：抽離具體物象（貓狼、火、狗頭）</div>
+          <div class="f-step">步驟二：提煉背後寓意（因果、雙刃、首領）</div>
+          <div class="f-step">步驟三：比對中文經典（曹操到、載舟覆舟）</div>
+        </div>
+      </div>
+    </section>
+    <!-- 模組二：典範圖鑑與俗諺對照庫 (36組) -->
+    <section id="gallery" class="content-section">
+      <div class="section-header">
+        <span class="section-tag">Interactive Encyclopedia</span>
+        <h2 class="section-title serif">36 組典範圖鑑與俗諺對照庫</h2>
+        <p class="section-desc">支援關鍵字搜尋、真人發音朗讀與逐項揭曉遮罩，學生可自主自我檢核。</p>
+      </div>
+
+      <div class="filter-bar">
+        <div class="search-input-wrap">
+          <i data-lucide="search" size="18"></i>
+          <input type="text" id="searchInput" placeholder="搜尋諺語關鍵字（如：土、狗、火、曹操、飲水思源）..." oninput="handleSearch()">
+        </div>
+        <button class="reveal-all-btn" onclick="toggleRevealAll()">
+          <i data-lucide="eye" size="16"></i>
+          <span id="revealAllBtnText">一鍵揭曉全部答案</span>
+        </button>
+      </div>
+
+      <div class="proverbs-grid" id="proverbsGrid">
+        <!-- JS 動態生成 36 張卡片 -->
+      </div>
+    </section>
+
+    <!-- 模組三：會考神仙挑戰賽 (10題) -->
+    <section id="arena" class="content-section">
+      <div class="section-header">
+        <span class="section-tag">Exam Battle Arena</span>
+        <h2 class="section-title serif">會考神仙挑戰賽・俗諺神射手</h2>
+        <p class="section-desc">模擬會考情境診斷測驗（10題精選），選項即時變色回饋、提供完整詳解與等級評定！</p>
+      </div>
+
+      <div class="arena-box">
+        <div id="arenaPlayArea">
+          <div class="arena-header-bar">
+            <span style="font-weight: 800; color: #64748b;" id="arenaCountText">第 1 / 10 題</span>
+            <span style="font-weight: 800; color: var(--primary);" id="arenaScoreText">累積分數：0 分</span>
+          </div>
+
+          <div class="arena-bar-wrap">
+            <div class="arena-bar-inner" id="arenaProgressBar"></div>
+          </div>
+
+          <div class="arena-q-box">
+            <span class="arena-q-country" id="arenaCountry">英國諺語</span>
+            <div class="arena-q-text" id="arenaPrompt">「牛找牛，馬找馬。」意思相當於哪句中國諺語？</div>
+          </div>
+
+          <div class="arena-options-grid" id="arenaOptionsGrid">
+            <!-- JS 動態生成 -->
+          </div>
+
+          <div class="arena-feedback" id="arenaFeedback"></div>
+          <button class="arena-next-btn" id="arenaNextBtn" onclick="nextArenaQuestion()">下一題</button>
+        </div>
+
+        <div class="arena-result-box" id="arenaResultBox">
+          <div style="font-size: 3.5rem;">🏆</div>
+          <h3 style="font-size: 1.6rem; font-weight: 900; color: #1e293b; margin-top: 10px;" id="arenaBadgeTitle">榮獲封號：俗諺天花板！</h3>
+          <div class="arena-score-num" id="arenaFinalScore">100 分</div>
+          <p style="color: #64748b; font-size: 1.05rem; line-height: 1.7; max-width: 500px; margin: 0 auto 20px;" id="arenaComment">太神了！滿分過關！你已完全貫通中外俗諺的所有比喻與深層哲理！</p>
+          <button class="reveal-all-btn" style="margin: 0 auto; background: var(--primary); color: white; border: none; padding: 12px 28px; font-size: 1rem;" onclick="startArena()">
+            <i data-lucide="rotate-ccw" size="18"></i>
+            重新挑戰測驗
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- 模組四：練習神器內嵌專區 -->
+    <section id="practice-section" class="content-section">
+      <div class="section-header">
+        <span class="section-tag">Practice Tool Embed</span>
+        <h2 class="section-title serif">專屬練習神器・雙享特訓館</h2>
+        <p class="section-desc">已為你內嵌無干擾互動練習神器，支援雙面3D翻卡、隨機闖關與分類總覽，並整合「古文格言練習神器」：</p>
+      </div>
+
+      <!-- 神器切換分頁導覽 -->
+      <div class="practice-tabs-bar">
+        <button class="practice-tab-btn active" id="tab-tool-proverb" onclick="switchPracticeTool('proverb')">
+          <i data-lucide="layers"></i> 🌍 中外俗諺對照練習神器（36組雙面閃卡）
+        </button>
+        <button class="practice-tab-btn" id="tab-tool-aphorism" onclick="switchPracticeTool('aphorism')">
+          <i data-lucide="book-marked"></i> 📜 古文格言練習神器（經典格言✕名句特訓）
+        </button>
+      </div>
+
+      <div class="practice-frame-box">
+        <div class="practice-frame-header">
+          <div class="practice-frame-title">
+            <span class="practice-badge-pill" id="practiceBadgeText">翰林 B3L05 生命中的碎珠</span>
+            <span id="practiceTitleText">中外俗諺對照練習神器（嵌入模式）</span>
+          </div>
+          <a href="proverb/proverb-practice.html" target="_blank" id="practiceOpenBtn" class="practice-open-btn">
+            另開全螢幕視窗
+            <i data-lucide="external-link" size="14"></i>
+          </a>
+        </div>
+        <iframe id="practiceIframe" src="proverb/proverb-practice.html" class="practice-iframe" title="專屬練習神器"></iframe>
+      </div>
+    </section>
+  </main>
+
+  <!-- 燈箱 Modal -->
+  <div class="lightbox-modal" id="lightboxModal" onclick="closeLightbox()">
+    <span class="lightbox-close">&times;</span>
+    <img src="" alt="放大教材" class="lightbox-content" id="lightboxImg" onclick="event.stopPropagation()">
+  </div>
+
+  <!-- 頁尾宣告 -->
+  <footer>
+    <div class="footer-container">
+      <div class="footer-logos">
+        <img src="icon/seal-white.png" alt="學思軒" class="footer-seal" onerror="this.src='icon/seal-red.png'">
+        <img src="icon/slogan-god-dark.png" alt="只要有心人人都是國文神" class="footer-tagline-img">
+      </div>
+      <div class="footer-credit serif">
+        𖤐 本系統由學思軒黃于珊、王斐亭老師規劃設計 · 版權所有 © 2026 𖤐
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // 36 組完整資料庫
+    const proverbDb = [
+      // (一) 臺灣俗諺 8 題
+      { id: 1, region: 'tw', country: '臺灣', origin: '軟土深掘', match: '柿子挑軟的吃', explain: '比喻欺凌弱小，專挑軟弱溫順的人下手欺負。', cultural: '農業社會鋤地時，軟泥容易深挖，引申為得寸進尺欺負善良人。', distractors: ['欲速則不達', '天生我才必有用', '飲水思源'] },
+      { id: 2, region: 'tw', country: '臺灣', origin: '吃緊挵破碗', match: '欲速則不達', explain: '比喻性急圖快反而壞了事情。', cultural: '急著吃飯反而把碗撞破了，提醒人戒急用忍、循序漸進。', distractors: ['柿子挑軟的吃', '船到橋頭自然直', '坐這山，望那山'] },
+      { id: 3, region: 'tw', country: '臺灣', origin: '食碗內，看碗外', match: '坐這山，望那山', explain: '比喻人心貪得無厭、不滿足於現狀，這山望著那山高。', cultural: '嘴裡吃著碗裡的飯，眼睛還死盯著外面的菜，指貪心與不知足。', distractors: ['飲水思源', '天生我才必有用', '來說是非者，便是是非人'] },
+      { id: 4, region: 'tw', country: '臺灣', origin: '一支草，一點露', match: '天生我才必有用', explain: '比喻天無絕人之路，每個人都有其生存價值與天賦造化。', cultural: '再微小卑微的野草，清晨都能獲有一滴朝露滋潤，勉人莫自暴自棄。', distractors: ['受人點滴之恩，必當湧泉以報', '柿子挑軟的吃', '欲速則不達'] },
+      { id: 5, region: 'tw', country: '臺灣', origin: '吃人一口，還人一斗', match: '受人點滴之恩，必當湧泉以報', explain: '比喻知恩圖報，受人恩惠當加倍報答。', cultural: '一口與一斗的鮮明對比，刻劃傳統人情重義厚報的美德。', distractors: ['飲水思源', '天生我才必有用', '船到橋頭自然直'] },
+      { id: 6, region: 'tw', country: '臺灣', origin: '歹瓜厚籽，歹人厚言語', match: '來說是非者，便是是非人', explain: '比喻惡人往往多嘴多舌、搬弄是非；常說別人是非的人本身就是是非之人。', cultural: '發育不良的劣質瓜種子特別多，不良之徒特別喜歡饒舌搬弄是非。', distractors: ['坐這山，望那山', '柿子挑軟的吃', '欲速則不達'] },
+      { id: 7, region: 'tw', country: '臺灣', origin: '食果子拜樹頭；食米飯敬鋤頭', match: '飲水思源', explain: '比喻做人不可忘本，時時心懷感恩報德。', cultural: '享受果實時感恩供養的果樹，吃米飯時尊敬耕作的鋤頭與農民。', distractors: ['受人點滴之恩，必當湧泉以報', '天生我才必有用', '船到橋頭自然直'] },
+      { id: 8, region: 'tw', country: '臺灣', origin: '時到時擔當，沒米才煮番薯湯', match: '船到橋頭自然直', explain: '比喻面臨困境時順其自然、見機行事，到時候自有解決之道。', cultural: '表現臺灣先民隨遇而安、樂觀豁達、因地制宜的生活智慧。', distractors: ['欲速則不達', '坐這山，望那山', '柿子挑軟的吃'] },
+
+      // (二) 世界各國諺語 (8題)
+      { id: 9, region: 'europe', country: '英國', origin: '牛找牛，馬找馬。', match: '物以類聚', explain: '比喻性格、志趣相同的人自然聚在一起。', cultural: '英國牧場物種分類的農牧比喻，對應漢語成語「物以類聚，人以群分」。', distractors: ['入境問俗', '割雞焉用牛刀', '百聞不如一見'] },
+      { id: 10, region: 'asia_africa', country: '日本', origin: '痛苦才想到神佛。', match: '平時不燒香，臨時抱佛腳', explain: '平時不加準備或敬奉，遇到緊急或痛苦危難時才倉促求救。', cultural: '神道與佛教文化反映出的常民心理，生動對照「臨時抱佛腳」。', distractors: ['預防勝於治療', '入境問俗', '好的開始是成功的一半'] },
+      { id: 11, region: 'asia_africa', country: '韓國', origin: '殺蚊子何必拔刀。', match: '割雞焉用牛刀', explain: '比喻大材小用，或辦小事毋須動用大力量。', cultural: '對付微小的蚊子卻拔出長刀，生動諷刺小題大作。', distractors: ['物以類聚', '百聞不如一見', '人要衣裝，佛要金裝'] },
+      { id: 12, region: 'europe', country: '法國', origin: '好開頭，事半成。', match: '好的開始是成功的一半', explain: '良好正確的開端對事情成功有決定性影響。', cultural: '法國浪漫哲思，強調起步與規劃的重要。', distractors: ['預防勝於治療', '平時不燒香，臨時抱佛腳', '入境問俗'] },
+      { id: 13, region: 'asia_africa', country: '日本', origin: '人要衣裳，馬要鞍！', match: '人要衣裝，佛要金裝', explain: '強調外在儀容修飾與包裝對形象的重要。', cultural: '儀容文化重禮數，人無衣不美，馬無鞍不駿。', distractors: ['物以類聚', '百聞不如一見', '割雞焉用牛刀'] },
+      { id: 14, region: 'europe', country: '英國', origin: '在羅馬，當如羅馬人。', match: '入境問俗', explain: '來到一個新地方，應遵守當地的風俗習慣（When in Rome, do as the Romans do）。', cultural: '古羅馬帝國統治與旅行傳統，告誡旅人尊重異國體制風俗。', distractors: ['物以類聚', '好的開始是成功的一半', '預防勝於治療'] },
+      { id: 15, region: 'europe', country: '德國', origin: '聽十次，不如看一次。', match: '百聞不如一見', explain: '親眼所見遠比道聽塗說更真實可靠。', cultural: '德國務實講求實證的精神，與漢書「百聞不如一見」遙相呼應。', distractors: ['預防勝於治療', '平時不燒香，臨時抱佛腳', '人要衣裝，佛要金裝'] },
+      { id: 16, region: 'europe', country: '西班牙', origin: '治傷，不如不受傷。', match: '預防勝於治療', explain: '事後補救彌補，遠不如事先做好防範預防。', cultural: '醫藥哲學，強調防微杜漸，對照「防患於未然」。', distractors: ['好的開始是成功的一半', '割雞焉用牛刀', '入境問俗'] },
+
+      // (三) 世界各國諺語 (10題)
+      { id: 17, region: 'europe', country: '西班牙', origin: '勤挖土，黃金就出土。', match: '有志者，事竟成', explain: '勤奮堅持努力工作，必能收穫寶貴回報。', cultural: '土地是最大的財富，只要勤勉挖掘耕耘，土地終將回饋黃金般的豐收。', distractors: ['家有一老，如有一寶', '生米煮成熟飯', '寧為雞口，不為牛後'] },
+      { id: 18, region: 'asia_africa', country: '以色列', origin: '家有老翁，屋有吉祥。', match: '家有一老，如有一寶', explain: '尊老敬老，長輩閱歷深厚能保家庭安泰幸福。', cultural: '希伯來敬重族長長老傳統，長者睿智為家庭吉祥之源。', distractors: ['惜花連盆，惜子連孫', '有志者，事竟成', '一個巴掌拍不響'] },
+      { id: 19, region: 'europe', country: '歐洲', origin: '說貓，貓來；說狼，狼來。', match: '說曹操，曹操到', explain: '方才提到某人，某人即刻現身。', cultural: '歐洲民間對貓與狼的迷信警惕，提到肉食獸牠便出現，對應漢語曹操典故。', distractors: ['牛牽到北京還是牛', '手頭錢多多，叫魔鬼上臺脫', '水能載舟，亦能覆舟'] },
+      { id: 20, region: 'europe', country: '英國', origin: '與其做獅尾，不如做狗頭。', match: '寧為雞口，不為牛後', explain: '寧願在小範圍內當首領作主，也不願在龐大團體處於從屬劣勢。', cultural: '西方重視個人獨立自主意志，比喻「寧當領袖不當附庸」。', distractors: ['有志者，事竟成', '生米煮成熟飯', '一個巴掌拍不響'] },
+      { id: 21, region: 'asia_africa', country: '剛果', origin: '你若愛獵人，也請愛獵狗。', match: '惜花連盆，惜子連孫', explain: '愛屋及烏，愛一個人也要包容關照與其相關聯的人事物。', cultural: '非洲叢林狩獵生活，獵犬是獵人的骨肉夥伴，愛獵人自當珍愛其獵犬。', distractors: ['家有一老，如有一寶', '水能載舟，亦能覆舟', '有錢可使鬼推磨'] },
+      { id: 22, region: 'asia_africa', country: '俾克米族', origin: '火可以暖身，也可以焚身。', match: '水能載舟，亦能覆舟', explain: '事物具有雙刃特質，能帶來利益亦能帶來損害，全在人如何善用。', cultural: '非洲叢林原住民對自然力量「火」的敬畏與哲學思辨。', distractors: ['有志者，事竟成', '牛牽到北京還是牛', '一個巴掌拍不響'] },
+      { id: 23, region: 'asia_africa', country: '肯亞', origin: '潑出去的水，再也不能收回。', match: '生米煮成熟飯', explain: '事情已成定局無法挽回翻案。', cultural: '水在東非乾旱氣候中極度珍貴，一旦傾覆便再無法收回，對應覆水難收。', distractors: ['寧為雞口，不為牛後', '說曹操，曹操到', '有錢可使鬼推磨'] },
+      { id: 24, region: 'europe', country: '法國', origin: '手頭錢多多，叫魔鬼上臺脫。', match: '有錢可使鬼推磨', explain: '諷刺金錢具備莫大誘惑力，重金能驅使人做任何荒誕之事。', cultural: '法式辛辣諷刺幽默，刻劃拜金社會錢可通神的荒謬。', distractors: ['生米煮成熟飯', '水能載舟，亦能覆舟', '惜花連盆，惜子連孫'] },
+      { id: 25, region: 'asia_africa', country: '以色列', origin: '把驢牽到耶路撒冷，仍然是驢。', match: '牛牽到北京還是牛', explain: '比喻人的本性頑劣或天資愚笨難移，即便換了崇高環境亦無法改變。', cultural: '聖城耶路撒冷再神聖，也無法改變驢子的愚頑本性。', distractors: ['說曹操，曹操到', '寧為雞口，不為牛後', '家有一老，如有一寶'] },
+      { id: 26, region: 'europe', country: '西班牙', origin: '一個銅板沒聲，兩個銅板響叮噹。', match: '一個巴掌拍不響', explain: '爭執或事情糾紛往往是雙方都有責任或因互動而起，單方面無法形成。', cultural: '硬幣碰撞發聲，指出雙方皆涉入其中的衝突本質。', distractors: ['水能載舟，亦能覆舟', '有志者，事竟成', '有錢可使鬼推磨'] },
+
+      // (四) 世界各國諺語 (10題)
+      { id: 27, region: 'europe', country: '挪威', origin: '無中總不會生有，多少有點苗頭。', match: '無風不起浪，空穴不來風', explain: '事物出現必有其前因由頭或線索，事出有因。', cultural: '北歐理性思維，認為凡事必有其發生的前兆與因果。', distractors: ['好事不出門，壞事傳千里', '龍生龍，鳳生鳳', '遠親不如近鄰'] },
+      { id: 28, region: 'europe', country: '荷蘭', origin: '若有安樂的窩，不會想要帝王家。', match: '金窩、銀窩不如自己的狗窩', explain: '無論外在榮華如何，自己溫暖安適的小家才是最讓人安心留戀的。', cultural: '荷蘭重視溫馨家庭文化（Gezellig），家再簡陋也是唯一的避風港。', distractors: ['前門拒虎，後門進狼', '虎毒不食子', '海水不可斗量'] },
+      { id: 29, region: 'asia_africa', country: '委內瑞拉', origin: '烏鴉生不出鴿子，鴨生不出鵝。', match: '龍生龍，鳳生鳳', explain: '強調遺傳或家庭背景對後代特徵的深刻影響。', cultural: '南美自然鳥禽觀察，物種血脈天性代代相傳。', distractors: ['無風不起浪，空穴不來風', '金窩、銀窩不如自己的狗窩', '知人知面不知心'] },
+      { id: 30, region: 'asia_africa', country: '柬埔寨', origin: '老虎不吃小虎子，老子不殺傻兒子。', match: '虎毒不食子', explain: '父母疼愛骨肉乃天性本能，即便是凶殘之物也不會殘害自己孩子。', cultural: '中南半島熱帶叢林野獸觀察，天倫骨肉至情超越一切。', distractors: ['遠親不如近鄰', '龍生龍，鳳生鳳', '人生自古誰無死，只是來早與來遲'] },
+      { id: 31, region: 'asia_africa', country: '土耳其', origin: '會叫的狗不用怕，不叫的狗才可怕。', match: '海水不可斗量', explain: '真正深藏不露、深不可測者往往不顯露聲色，不可單憑外貌表面判斷。', cultural: '歐亞十字路口生活經驗，警惕人注意沈默潛伏的威脅，不可貌相。', distractors: ['前門拒虎，後門進狼', '知人知面不知心', '好事不出門，壞事傳千里'] },
+      { id: 32, region: 'europe', country: '歐洲', origin: '剛躲過狼的口，猛一抬頭竟在熊口。', match: '前門拒虎，後門進狼', explain: '剛脫離一個險境，又立刻陷入另一個更凶險的危境。', cultural: '歐洲森林險境生存寓言，前有猛狼後有巨熊，凶險接踵而至。', distractors: ['無風不起浪，空穴不來風', '遠親不如近鄰', '金窩、銀窩不如自己的狗窩'] },
+      { id: 33, region: 'europe', country: '蘇格蘭', origin: '儘管活到一千歲，棺材還是要準備。', match: '人生自古誰無死，只是來早與來遲', explain: '人終究有一死，生老病死乃萬物不可抗拒之自然規律。', cultural: '蘇格蘭高地達觀堅毅的生死哲學，看待死亡泰然處之。', distractors: ['虎毒不食子', '海水不可斗量', '龍生龍，鳳生鳳'] },
+      { id: 34, region: 'europe', country: '歐洲', origin: '好名聲睡在火爐邊，壞名聲傳到天邊。', match: '好事不出門，壞事傳千里', explain: '良好德行聲譽流傳甚難且慢，惡名過錯卻能瞬間傳揚萬里。', cultural: '歐洲封建鄉村傳播生態，美德被忽略而流言蜚語漫天飛舞。', distractors: ['知人知面不知心', '無風不起浪，空穴不來風', '遠親不如近鄰'] },
+      { id: 35, region: 'europe', country: '歐洲', origin: '隔海的有錢兄弟，不如貧窮的隔壁鄰居。', match: '遠親不如近鄰', explain: '身在遠處的至親難以濟急，平日生活守望相助仍須仰賴近鄰。', cultural: '海洋相隔重洋萬里，急難之時遠水救不了近火，身邊鄰里最為切要。', distractors: ['虎毒不食子', '前門拒虎，後門進狼', '金窩、銀窩不如自己的狗窩'] },
+      { id: 36, region: 'asia_africa', country: '寮國', origin: '你可以看到他穿什麼，可不能看到他想什麼。', match: '知人知面不知心', explain: '外在衣著神態一眼可見，內在心性心思卻深沉難以窺測揣度。', cultural: '東南亞樸素農村智慧，告誡人不可僅以衣冠取人，人心難測。', distractors: ['海水不可斗量', '好事不出門，壞事傳千里', '龍生龍，鳳生鳳'] }
+    ];
+
+    let allRevealed = false;
+
+    // 渲染圖鑑卡片
+    function renderGallery(list) {
+      const grid = document.getElementById('proverbsGrid');
+      grid.innerHTML = '';
+
+      if (list.length === 0) {
+        grid.innerHTML = '<div style="grid-column: 1 / -1; text-align: center; padding: 40px; color: #94a3b8; font-size: 1.1rem;">沒有符合條件的俗諺，請嘗試其他關鍵字。</div>';
+        return;
+      }
+
+      list.forEach(p => {
+        const card = document.createElement('div');
+        card.className = 'proverb-card';
+
+        const tagClass = p.region === 'tw' ? 'tag-tw' : 'tag-world';
+        const tagText = p.region === 'tw' ? `臺灣俗諺・${p.country}` : `世界俗諺・${p.country}`;
+
+        card.innerHTML = `
+          <div>
+            <div class="p-header">
+              <span class="p-origin-tag ${tagClass}">
+                <i data-lucide="map-pin" size="12"></i>
+                ${tagText}
+              </span>
+              <div class="p-actions">
+                <button class="tts-btn" onclick="speakText('${p.origin} 相通於中國諺語 ${p.match}')" title="朗讀發音">
+                  <i data-lucide="volume-2" size="16"></i>
+                </button>
+              </div>
+            </div>
+
+            <div class="p-origin-text serif">
+              ${p.origin}
+            </div>
+
+            <div class="p-match-container">
+              <div class="p-match-label">
+                <i data-lucide="sparkles" size="14" color="#d97706"></i>
+                相通中國諺語（點擊揭曉）
+              </div>
+              <div class="p-match-target ${allRevealed ? '' : 'blurred'}" id="target-${p.id}" onclick="toggleSingle(${p.id})">
+                <span>${p.match}</span>
+                <i data-lucide="eye" size="16" color="#94a3b8"></i>
+              </div>
+            </div>
+
+            <div class="p-explain-box ${allRevealed ? 'show' : ''}" id="explain-${p.id}">
+              <strong>【意涵析辨】</strong>${p.explain}<br>
+              <span style="color:#78350f; font-size:0.86rem; margin-top:4px; display:inline-block;">💡 文化背景：${p.cultural}</span>
+            </div>
+          </div>
+        `;
+        grid.appendChild(card);
+      });
+
+      lucide.createIcons();
+    }
+
+    function toggleSingle(id) {
+      const target = document.getElementById(`target-${id}`);
+      const explain = document.getElementById(`explain-${id}`);
+      target.classList.toggle('blurred');
+      explain.classList.toggle('show');
+    }
+
+    function toggleRevealAll() {
+      allRevealed = !allRevealed;
+      const targets = document.querySelectorAll('.p-match-target');
+      const explains = document.querySelectorAll('.p-explain-box');
+
+      targets.forEach(t => {
+        if (allRevealed) t.classList.remove('blurred');
+        else t.classList.add('blurred');
+      });
+
+      explains.forEach(e => {
+        if (allRevealed) e.classList.add('show');
+        else e.classList.remove('show');
+      });
+
+      const btnSpan = document.getElementById('revealAllBtnText');
+      btnSpan.innerText = allRevealed ? '一鍵隱藏全部答案' : '一鍵揭曉全部答案';
+    }
+
+    // 搜尋功能
+    function handleSearch() {
+      const val = document.getElementById('searchInput').value.trim().toLowerCase();
+      let filtered = proverbDb;
+
+      if (val) {
+        filtered = filtered.filter(p => 
+          p.origin.toLowerCase().includes(val) ||
+          p.match.toLowerCase().includes(val) ||
+          p.country.toLowerCase().includes(val) ||
+          p.explain.toLowerCase().includes(val)
+        );
+      }
+
+      renderGallery(filtered);
+    }
+
+    // Web Speech API 發音
+    function speakText(text) {
+      if (!('speechSynthesis' in window)) {
+        alert('您的瀏覽器不支援語音合成朗讀功能');
+        return;
+      }
+      window.speechSynthesis.cancel();
+      const u = new SpeechSynthesisUtterance(text);
+      u.lang = 'zh-TW';
+      u.rate = 0.95;
+      window.speechSynthesis.speak(u);
+    }
+
+    // Lightbox
+    function openLightbox(src) {
+      document.getElementById('lightboxImg').src = src;
+      document.getElementById('lightboxModal').classList.add('active');
+    }
+    function closeLightbox() {
+      document.getElementById('lightboxModal').classList.remove('active');
+    }
+
+    // 專屬練習神器雙享庫切換
+    const PRACTICE_TOOLS_CONFIG = {
+      proverb: {
+        title: "中外俗諺對照練習神器（嵌入模式）",
+        badge: "翰林 B3L05 生命中的碎珠",
+        src: "proverb/proverb-practice.html"
+      },
+      aphorism: {
+        title: "古文格言練習神器（嵌入模式）",
+        badge: "語文學習集・經典格言",
+        src: "proverb/proverb-aphorism.html"
+      }
+    };
+
+    function switchPracticeTool(toolKey) {
+      const config = PRACTICE_TOOLS_CONFIG[toolKey];
+      if (!config) return;
+
+      document.querySelectorAll('.practice-tab-btn').forEach(btn => btn.classList.remove('active'));
+      const activeBtn = document.getElementById(toolKey === 'proverb' ? 'tab-tool-proverb' : 'tab-tool-aphorism');
+      if (activeBtn) activeBtn.classList.add('active');
+
+      const iframe = document.getElementById('practiceIframe');
+      if (iframe) iframe.src = config.src;
+
+      const titleEl = document.getElementById('practiceTitleText');
+      if (titleEl) titleEl.textContent = config.title;
+
+      const badgeEl = document.getElementById('practiceBadgeText');
+      if (badgeEl) badgeEl.textContent = config.badge;
+
+      const openBtn = document.getElementById('practiceOpenBtn');
+      if (openBtn) openBtn.href = config.src;
+
+      lucide.createIcons();
+    }
+
+    // 會考神仙挑戰賽
+    let arenaList = [];
+    let arenaIndex = 0;
+    let arenaScore = 0;
+
+    function startArena() {
+      arenaList = [...proverbDb].sort(() => 0.5 - Math.random()).slice(0, 10);
+      arenaIndex = 0;
+      arenaScore = 0;
+      document.getElementById('arenaPlayArea').style.display = 'block';
+      document.getElementById('arenaResultBox').style.display = 'none';
+      renderArenaQuestion();
+    }
+
+    function renderArenaQuestion() {
+      const q = arenaList[arenaIndex];
+      document.getElementById('arenaCountText').innerText = `第 ${arenaIndex + 1} / ${arenaList.length} 題`;
+      document.getElementById('arenaScoreText').innerText = `累積分數：${arenaScore} 分`;
+      document.getElementById('arenaProgressBar').style.width = `${(arenaIndex / arenaList.length) * 100}%`;
+
+      document.getElementById('arenaCountry').innerText = `${q.country}俗諺`;
+      document.getElementById('arenaPrompt').innerText = `「${q.origin}」相當於哪句中國諺語？`;
+
+      let options = [q.match];
+      if (q.distractors && q.distractors.length >= 3) {
+        options = [q.match, ...q.distractors.slice(0, 3)];
+      } else {
+        const otherMatches = proverbDb.filter(p => p.id !== q.id).map(p => p.match);
+        while (options.length < 4) {
+          const rand = otherMatches[Math.floor(Math.random() * otherMatches.length)];
+          if (!options.includes(rand)) options.push(rand);
+        }
+      }
+      options.sort(() => 0.5 - Math.random());
+
+      const grid = document.getElementById('arenaOptionsGrid');
+      grid.innerHTML = '';
+      options.forEach(opt => {
+        const btn = document.createElement('button');
+        btn.className = 'arena-opt-btn';
+        btn.innerText = opt;
+        btn.onclick = () => checkArenaAnswer(opt, q.match, btn);
+        grid.appendChild(btn);
+      });
+
+      const fb = document.getElementById('arenaFeedback');
+      fb.className = 'arena-feedback';
+      fb.innerHTML = '';
+      document.getElementById('arenaNextBtn').className = 'arena-next-btn';
+    }
+
+    function checkArenaAnswer(selected, correct, clickedBtn) {
+      const btns = document.querySelectorAll('.arena-opt-btn');
+      btns.forEach(b => b.disabled = true);
+
+      const fb = document.getElementById('arenaFeedback');
+      const q = arenaList[arenaIndex];
+
+      if (selected === correct) {
+        clickedBtn.classList.add('correct');
+        arenaScore += 10;
+        fb.className = 'arena-feedback show is-correct';
+        fb.innerHTML = `<strong>🎉 答對了！恭喜得分！</strong><br>${q.explain}（${q.cultural}）`;
+      } else {
+        clickedBtn.classList.add('wrong');
+        btns.forEach(b => {
+          if (b.innerText === correct) b.classList.add('correct');
+        });
+        fb.className = 'arena-feedback show is-wrong';
+        fb.innerHTML = `<strong>❌ 答錯了！正確答案為「${correct}」</strong><br>${q.explain}（${q.cultural}）`;
+      }
+
+      document.getElementById('arenaScoreText').innerText = `累積分數：${arenaScore} 分`;
+      document.getElementById('arenaNextBtn').className = 'arena-next-btn show';
+      document.getElementById('arenaProgressBar').style.width = `${((arenaIndex + 1) / arenaList.length) * 100}%`;
+    }
+
+    function nextArenaQuestion() {
+      arenaIndex++;
+      if (arenaIndex < arenaList.length) {
+        renderArenaQuestion();
+      } else {
+        showArenaResult();
+      }
+    }
+
+    function showArenaResult() {
+      document.getElementById('arenaPlayArea').style.display = 'none';
+      const resBox = document.getElementById('arenaResultBox');
+      resBox.style.display = 'block';
+      document.getElementById('arenaFinalScore').innerText = `${arenaScore} 分`;
+
+      let badge = '';
+      let comment = '';
+      if (arenaScore === 100) {
+        badge = '🏆 榮獲封號：俗諺天花板・會考滿分神射手！';
+        comment = '太神了！滿分過關！你已完全貫通中外俗諺的所有比喻、常民智慧與跨域哲理，會考國文俗諺題無人能敵！';
+      } else if (arenaScore >= 80) {
+        badge = '🥈 榮獲封號：諺語博學家・游刃有餘！';
+        comment = '非常優秀！對各國諺語與中文俗諺掌握度極高，多留意動物比喻（狗頭獅尾、貓狼）就能輕鬆奪得滿分！';
+      } else {
+        badge = '🥉 榮獲封號：智慧見習生・潛力無窮！';
+        comment = '別氣餒！掌握「抽喻體、抓情境、對成語」解題三部曲，再到下方的雙面閃卡神器多練習幾次，就能百發百中！';
+      }
+
+      document.getElementById('arenaBadgeTitle').innerText = badge;
+      document.getElementById('arenaComment').innerText = comment;
+      lucide.createIcons();
+    }
+
+    // 初始化
+    window.addEventListener('DOMContentLoaded', () => {
+      renderGallery(proverbDb);
+      startArena();
+      lucide.createIcons();
+    });
+  </script>
+</body>
+</html>

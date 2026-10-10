@@ -1,0 +1,3172 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>語文補給站｜疊字詞・聲情神采與疊韻之美旗艦學習殿堂</title>
+  <meta name="description" content="學思軒語文補給站：翰林國中國文 B3L02 古詩選專屬《疊字詞》AI 數位互動學習殿堂。收錄54組經典疊字詞、多義疊字深度對決、五大情意星盤羅盤、全真語音TTS朗讀、橘老師開唱解題避坑指南、詩境魔法創作工坊、會考神仙挑戰賽與專屬練習神器。無特殊字元英文路徑相容規格。">
+  <!-- Google Fonts: 典雅思源黑體、思源宋體與書法字型 -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;600;700;900&family=Noto+Sans+TC:wght@300;400;500;700;900&family=Ma+Shan+Zheng&display=swap" rel="stylesheet">
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <style>
+    :root {
+      --primary: #9333ea;
+      --primary-dark: #6b21a8;
+      --primary-light: #f3e8ff;
+      --primary-hover: #a855f7;
+
+      --secondary: #0284c7;
+      --secondary-dark: #0369a1;
+      --secondary-light: #e0f2fe;
+
+      --gold: #d97706;
+      --gold-dark: #b45309;
+      --gold-light: #fef3c7;
+
+      --emerald: #059669;
+      --emerald-dark: #047857;
+      --emerald-light: #d1fae5;
+
+      --rose: #e11d48;
+      --rose-dark: #be123c;
+      --rose-light: #ffe4e6;
+
+      --indigo: #4f46e5;
+      --indigo-light: #e0e7ff;
+
+      --dark: #0f172a;
+      --dark-card: #1e293b;
+      --gray: #64748b;
+      --gray-light: #f1f5f9;
+      --border: #e9d5ff;
+
+      --bg-page: #faf5ff;
+      --card-bg: rgba(255, 255, 255, 0.96);
+      --card-glass: rgba(255, 255, 255, 0.85);
+
+      --radius-sm: 8px;
+      --radius-md: 14px;
+      --radius-lg: 20px;
+      --radius-xl: 28px;
+
+      --shadow: 0 10px 25px -5px rgba(147, 51, 234, 0.08), 0 8px 10px -6px rgba(0, 0, 0, 0.04);
+      --shadow-hover: 0 20px 30px -10px rgba(147, 51, 234, 0.2);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Noto Sans TC', sans-serif;
+      background-color: var(--bg-page);
+      color: var(--dark);
+      line-height: 1.65;
+      background-image:
+        radial-gradient(circle at 10% 12%, rgba(147, 51, 234, 0.05) 0%, transparent 45%),
+        radial-gradient(circle at 90% 20%, rgba(2, 132, 199, 0.04) 0%, transparent 45%),
+        radial-gradient(circle at 50% 85%, rgba(217, 119, 6, 0.04) 0%, transparent 60%);
+      background-attachment: fixed;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .serif {
+      font-family: 'Noto Serif TC', serif;
+    }
+
+    .calligraphy {
+      font-family: 'Ma Shan Zheng', 'Noto Serif TC', cursive;
+    }
+
+    /* 頂部導覽列 */
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(14px);
+      border-bottom: 1px solid var(--border);
+      padding: 0.75rem 1.5rem;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
+    }
+
+    .nav-container {
+      max-width: 1320px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    .brand-group {
+      display: flex;
+      align-items: center;
+      gap: 0.85rem;
+      text-decoration: none;
+    }
+
+    .brand-seal-img {
+      height: 48px;
+      width: auto;
+      object-fit: contain;
+      transition: transform 0.3s ease;
+      filter: drop-shadow(0 2px 4px rgba(0,0,0,0.08));
+    }
+
+    .brand-seal-img:hover {
+      transform: rotate(5deg) scale(1.08);
+    }
+
+    .brand-logo-img {
+      height: 48px;
+      width: auto;
+      object-fit: contain;
+      filter: drop-shadow(0 2px 4px rgba(0,0,0,0.08));
+    }
+
+    .brand-text {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .brand-title {
+      font-size: 1.35rem;
+      font-weight: 800;
+      color: var(--primary-dark);
+      letter-spacing: -0.5px;
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+
+    .brand-badge {
+      font-size: 0.72rem;
+      background: var(--primary-light);
+      color: var(--primary-dark);
+      padding: 0.15rem 0.55rem;
+      border-radius: 999px;
+      font-weight: 700;
+      width: fit-content;
+      margin-top: 2px;
+      border: 1px solid rgba(147, 51, 234, 0.2);
+    }
+
+    nav ul {
+      display: flex;
+      gap: 0.45rem;
+      list-style: none;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: #475569;
+      font-weight: 600;
+      font-size: 0.92rem;
+      padding: 0.5rem 0.9rem;
+      border-radius: 10px;
+      transition: all 0.2s ease;
+      display: flex;
+      align-items: center;
+      gap: 0.35rem;
+    }
+
+    nav a:hover, nav a.active {
+      color: var(--primary);
+      background: var(--primary-light);
+      transform: translateY(-1px);
+    }
+
+    .nav-btn-highlight {
+      background: linear-gradient(135deg, var(--primary), var(--primary-dark)) !important;
+      color: #ffffff !important;
+      padding: 0.48rem 1.15rem;
+      border-radius: 999px;
+      box-shadow: 0 4px 10px rgba(147, 51, 234, 0.25);
+    }
+
+    .nav-btn-highlight:hover {
+      background: linear-gradient(135deg, var(--primary-dark), #581c87) !important;
+      color: #ffffff !important;
+      transform: translateY(-2px);
+      box-shadow: 0 6px 14px rgba(147, 51, 234, 0.35);
+    }
+
+    .nav-btn-highlight i {
+      color: #ffffff !important;
+    }
+
+    /* 主要內容容器 */
+    main {
+      flex: 1;
+      max-width: 1320px;
+      width: 100%;
+      margin: 2rem auto;
+      padding: 0 1.5rem;
+    }
+
+    /* Hero 全幅旗艦橫幅 */
+    .hero {
+      position: relative;
+      background: linear-gradient(135deg, #faf5ff 0%, #f3e8ff 45%, #ede9fe 80%, #fef3c7 100%);
+      border-radius: 28px;
+      border: 1px solid rgba(147, 51, 234, 0.2);
+      padding: 3.8rem 2.5rem;
+      margin-bottom: 2.8rem;
+      box-shadow: var(--shadow);
+      overflow: hidden;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .hero::after {
+      content: '疊字・韻律';
+      position: absolute;
+      right: 2%;
+      bottom: -35px;
+      font-size: 7.5rem;
+      font-family: 'Ma Shan Zheng', cursive;
+      color: rgba(147, 51, 234, 0.05);
+      pointer-events: none;
+      user-select: none;
+      white-space: nowrap;
+    }
+
+    .hero-content {
+      max-width: 920px;
+      margin: 0 auto;
+      z-index: 2;
+    }
+
+    .hero-badge-top {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: white;
+      color: var(--primary-dark);
+      padding: 6px 18px;
+      border-radius: 999px;
+      font-size: 0.88rem;
+      font-weight: 700;
+      margin-bottom: 1.2rem;
+      box-shadow: 0 2px 8px rgba(147, 51, 234, 0.12);
+      border: 1px solid rgba(147, 51, 234, 0.2);
+    }
+
+    .hero-title {
+      font-size: 2.9rem;
+      font-weight: 900;
+      letter-spacing: -1px;
+      line-height: 1.25;
+      margin-bottom: 1.2rem;
+      background: linear-gradient(135deg, var(--primary-dark) 20%, #7c3aed 60%, #c026d3 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .hero-subtitle {
+      font-size: 1.15rem;
+      color: #475569;
+      line-height: 1.8;
+      margin-bottom: 2rem;
+    }
+
+    .hero-features-pills {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 0.75rem;
+    }
+
+    .hero-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.45rem;
+      background: rgba(255, 255, 255, 0.9);
+      padding: 0.45rem 1.1rem;
+      border-radius: 999px;
+      font-size: 0.88rem;
+      font-weight: 600;
+      color: #334155;
+      border: 1px solid rgba(147, 51, 234, 0.15);
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.03);
+    }
+
+    .hero-pill i {
+      color: var(--emerald);
+      width: 16px;
+      height: 16px;
+    }
+
+    /* 區塊標準化排版 */
+    .content-section {
+      background: var(--card-bg);
+      border-radius: var(--radius-xl);
+      padding: 3rem 2.5rem;
+      margin-bottom: 3rem;
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow);
+      position: relative;
+    }
+
+    .section-header {
+      text-align: center;
+      max-width: 800px;
+      margin: 0 auto 2.5rem;
+    }
+
+    .section-tag {
+      display: inline-block;
+      font-size: 0.8rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      color: var(--primary);
+      background: var(--primary-light);
+      padding: 0.25rem 0.85rem;
+      border-radius: 999px;
+      margin-bottom: 0.75rem;
+    }
+
+    .section-title {
+      font-size: 2.1rem;
+      font-weight: 800;
+      color: var(--dark);
+      margin-bottom: 0.75rem;
+    }
+
+    .section-desc {
+      font-size: 1.02rem;
+      color: var(--gray);
+      line-height: 1.7;
+    }
+
+    /* 單元一：核心定義卡片與萬能公式 */
+    .formula-banner {
+      background: linear-gradient(135deg, #1e1b4b 0%, #312e81 50%, #4c1d95 100%);
+      color: white;
+      border-radius: var(--radius-lg);
+      padding: 2.2rem;
+      margin-bottom: 2.2rem;
+      box-shadow: 0 10px 25px rgba(49, 46, 129, 0.25);
+      border: 1px solid rgba(167, 139, 250, 0.3);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .formula-banner::after {
+      content: 'AA / AABB';
+      position: absolute;
+      right: 20px;
+      bottom: -15px;
+      font-size: 5rem;
+      font-weight: 900;
+      font-family: 'Noto Serif TC', serif;
+      opacity: 0.08;
+      pointer-events: none;
+    }
+
+    .formula-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: rgba(234, 179, 8, 0.2);
+      color: #fef08a;
+      border: 1px solid rgba(253, 224, 71, 0.4);
+      padding: 4px 12px;
+      border-radius: 999px;
+      font-size: 0.82rem;
+      font-weight: 700;
+      margin-bottom: 1rem;
+    }
+
+    .formula-title {
+      font-size: 1.75rem;
+      font-weight: 800;
+      margin-bottom: 0.85rem;
+      color: #ffffff;
+    }
+
+    .formula-steps-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1.2rem;
+      margin-top: 1.4rem;
+    }
+
+    .formula-step-card {
+      background: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(8px);
+      border-radius: var(--radius-md);
+      padding: 1.25rem;
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      transition: transform 0.2s ease;
+    }
+
+    .formula-step-card:hover {
+      transform: translateY(-2px);
+      background: rgba(255, 255, 255, 0.14);
+    }
+
+    .formula-step-num {
+      width: 28px;
+      height: 28px;
+      background: #f59e0b;
+      color: #1e1b4b;
+      font-weight: 900;
+      border-radius: 50%;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.9rem;
+      margin-bottom: 0.65rem;
+    }
+
+    .formula-step-title {
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: #ffffff;
+      margin-bottom: 0.4rem;
+    }
+
+    .formula-step-desc {
+      font-size: 0.9rem;
+      color: #e0e7ff;
+      line-height: 1.6;
+    }
+
+    /* 橘老師開唱解題避坑專區 */
+    .teacher-orange-box {
+      background: linear-gradient(135deg, #fffbeb 0%, #fef3c7 100%);
+      border-radius: var(--radius-lg);
+      border: 2px dashed #f59e0b;
+      padding: 1.8rem 2rem;
+      margin-bottom: 2.5rem;
+      box-shadow: 0 4px 15px rgba(245, 158, 11, 0.1);
+      display: flex;
+      gap: 1.5rem;
+      align-items: center;
+    }
+
+    .teacher-avatar-col {
+      flex-shrink: 0;
+      text-align: center;
+    }
+
+    .teacher-badge-tag {
+      background: linear-gradient(135deg, #d97706, #b45309);
+      color: white;
+      padding: 4px 12px;
+      border-radius: 999px;
+      font-size: 0.82rem;
+      font-weight: 800;
+      display: inline-block;
+      margin-top: 6px;
+      box-shadow: 0 2px 6px rgba(217, 119, 6, 0.25);
+    }
+
+    .teacher-orange-icon {
+      font-size: 3.2rem;
+      line-height: 1;
+      display: inline-block;
+      filter: drop-shadow(0 4px 6px rgba(217, 119, 6, 0.2));
+      animation: floatOrange 3s ease-in-out infinite;
+    }
+
+    @keyframes floatOrange {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-5px); }
+    }
+
+    .teacher-content-col h4 {
+      font-size: 1.35rem;
+      font-weight: 800;
+      color: #92400e;
+      margin-bottom: 0.65rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .teacher-content-col p {
+      font-size: 0.98rem;
+      color: #78350f;
+      line-height: 1.75;
+    }
+
+    .teacher-content-col .highlight-pill {
+      background: #fde68a;
+      color: #92400e;
+      padding: 2px 7px;
+      border-radius: 6px;
+      font-weight: 700;
+      border: 1px solid rgba(217, 119, 6, 0.25);
+    }
+
+    /* 單元二：多維度星盤羅盤導覽 */
+    .compass-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+      gap: 1.2rem;
+      margin-bottom: 2rem;
+    }
+
+    .compass-card {
+      background: white;
+      border: 2px solid var(--border);
+      border-radius: var(--radius-md);
+      padding: 1.4rem;
+      text-align: center;
+      cursor: pointer;
+      transition: all 0.25s ease;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .compass-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-hover);
+      border-color: var(--primary);
+    }
+
+    .compass-card.active {
+      border-color: var(--primary);
+      background: linear-gradient(180deg, #ffffff 0%, var(--primary-light) 100%);
+      box-shadow: 0 8px 20px rgba(147, 51, 234, 0.18);
+    }
+
+    .compass-icon-box {
+      width: 52px;
+      height: 52px;
+      border-radius: 14px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 0.85rem;
+      font-size: 1.5rem;
+      transition: transform 0.2s ease;
+    }
+
+    .compass-card:hover .compass-icon-box {
+      transform: scale(1.1);
+    }
+
+    .compass-card.c-scene .compass-icon-box { background: #e0f2fe; color: #0284c7; }
+    .compass-card.c-emotion .compass-icon-box { background: #fee2e2; color: #e11d48; }
+    .compass-card.c-action .compass-icon-box { background: #fef3c7; color: #d97706; }
+    .compass-card.c-nature .compass-icon-box { background: #d1fae5; color: #059669; }
+    .compass-card.c-sound .compass-icon-box { background: #f3e8ff; color: #9333ea; }
+
+    .compass-title {
+      font-size: 1.15rem;
+      font-weight: 800;
+      color: var(--dark);
+      margin-bottom: 0.35rem;
+    }
+
+    .compass-desc {
+      font-size: 0.85rem;
+      color: var(--gray);
+      line-height: 1.5;
+    }
+
+    .compass-count-badge {
+      display: inline-block;
+      margin-top: 0.65rem;
+      font-size: 0.75rem;
+      font-weight: 700;
+      padding: 2px 8px;
+      border-radius: 999px;
+      background: var(--gray-light);
+      color: #475569;
+    }
+
+    /* 單元三：典範圖鑑與句型資料庫 */
+    .filter-bar {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.85rem;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 1.8rem;
+      background: #f8fafc;
+      padding: 1rem 1.4rem;
+      border-radius: var(--radius-md);
+      border: 1px solid #e2e8f0;
+    }
+
+    .search-box {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      background: white;
+      border: 1px solid #cbd5e1;
+      padding: 0.55rem 1rem;
+      border-radius: 10px;
+      flex: 1;
+      min-width: 240px;
+      max-width: 400px;
+    }
+
+    .search-box input {
+      border: none;
+      outline: none;
+      font-size: 0.92rem;
+      width: 100%;
+      background: transparent;
+      color: var(--dark);
+    }
+
+    .filter-actions {
+      display: flex;
+      gap: 0.6rem;
+      flex-wrap: wrap;
+    }
+
+    .btn-filter-action {
+      background: white;
+      border: 1px solid #cbd5e1;
+      padding: 0.5rem 0.95rem;
+      border-radius: 8px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: #334155;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      transition: all 0.2s ease;
+    }
+
+    .btn-filter-action:hover {
+      background: var(--primary-light);
+      color: var(--primary-dark);
+      border-color: var(--primary);
+    }
+
+    .btn-filter-action.active {
+      background: var(--primary);
+      color: white;
+      border-color: var(--primary);
+    }
+
+    .cards-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+      gap: 1.6rem;
+    }
+
+    .vocab-card {
+      background: white;
+      border-radius: var(--radius-md);
+      border: 1px solid #e2e8f0;
+      padding: 1.5rem;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
+      transition: all 0.25s ease;
+      display: flex;
+      flex-direction: column;
+      position: relative;
+    }
+
+    .vocab-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-hover);
+      border-color: var(--primary);
+    }
+
+    .card-top-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: 0.9rem;
+    }
+
+    .card-word-group {
+      display: flex;
+      align-items: baseline;
+      gap: 0.6rem;
+    }
+
+    .card-word {
+      font-size: 1.75rem;
+      font-weight: 900;
+      color: var(--primary-dark);
+      letter-spacing: 1px;
+    }
+
+    .card-bopomofo {
+      font-size: 0.92rem;
+      color: var(--rose-dark);
+      font-weight: 700;
+      background: var(--rose-light);
+      padding: 2px 8px;
+      border-radius: 6px;
+    }
+
+    .card-category-tag {
+      font-size: 0.75rem;
+      font-weight: 700;
+      padding: 3px 9px;
+      border-radius: 999px;
+      background: var(--gray-light);
+      color: #475569;
+    }
+
+    .card-badge-row {
+      display: flex;
+      gap: 0.4rem;
+      margin-bottom: 0.8rem;
+    }
+
+    .badge-polysemy {
+      font-size: 0.72rem;
+      font-weight: 700;
+      background: #fef3c7;
+      color: #92400e;
+      border: 1px solid rgba(217, 119, 6, 0.3);
+      padding: 2px 7px;
+      border-radius: 6px;
+    }
+
+    .badge-star {
+      font-size: 0.72rem;
+      font-weight: 700;
+      background: #fef08a;
+      color: #854d0e;
+      border: 1px solid #facc15;
+      padding: 2px 7px;
+      border-radius: 6px;
+    }
+
+    .card-definitions-list {
+      display: flex;
+      flex-direction: column;
+      gap: 0.85rem;
+      margin-bottom: 1.1rem;
+      flex: 1;
+    }
+
+    .def-item-box {
+      background: #f8fafc;
+      border-left: 3px solid var(--primary);
+      border-radius: 0 8px 8px 0;
+      padding: 0.75rem 0.9rem;
+    }
+
+    .def-meaning-row {
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: #1e293b;
+      margin-bottom: 0.35rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .def-example-row {
+      font-size: 0.92rem;
+      color: #475569;
+      line-height: 1.55;
+    }
+
+    .def-example-row .hl-word {
+      color: var(--primary);
+      font-weight: 800;
+    }
+
+    .card-toggle-expl-box {
+      margin-top: 0.4rem;
+      border-top: 1px dashed #e2e8f0;
+      padding-top: 0.75rem;
+    }
+
+    .btn-toggle-expl {
+      background: #ede9fe;
+      border: none;
+      color: var(--primary-dark);
+      font-size: 0.82rem;
+      font-weight: 700;
+      padding: 5px 12px;
+      border-radius: 6px;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      transition: all 0.2s ease;
+      width: 100%;
+      justify-content: center;
+    }
+
+    .btn-toggle-expl:hover {
+      background: #ddd6fe;
+    }
+
+    .card-expl-content {
+      display: block;
+      margin-top: 0.65rem;
+      font-size: 0.85rem;
+      color: #4c1d95;
+      background: #f5f3ff;
+      padding: 0.75rem;
+      border-radius: 8px;
+      line-height: 1.6;
+    }
+
+    .card-actions-bar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-top: 1px solid #f1f5f9;
+      padding-top: 0.85rem;
+      margin-top: auto;
+    }
+
+    .btn-tts {
+      background: #e0f2fe;
+      color: #0369a1;
+      border: none;
+      padding: 6px 12px;
+      border-radius: 8px;
+      font-size: 0.85rem;
+      font-weight: 700;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      transition: all 0.2s ease;
+    }
+
+    .btn-tts:hover {
+      background: #bae6fd;
+      transform: translateY(-1px);
+    }
+
+    /* 單元四：多義疊字深度對決特訓卡 */
+    .polysemy-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 1.5rem;
+      margin-bottom: 2rem;
+    }
+
+    .poly-card {
+      background: white;
+      border: 1px solid #e2e8f0;
+      border-radius: var(--radius-md);
+      padding: 1.4rem;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.03);
+    }
+
+    .poly-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-bottom: 2px solid var(--primary-light);
+      padding-bottom: 0.75rem;
+      margin-bottom: 1rem;
+    }
+
+    .poly-word {
+      font-size: 1.5rem;
+      font-weight: 900;
+      color: var(--primary-dark);
+    }
+
+    .poly-tag {
+      background: #fef3c7;
+      color: #92400e;
+      font-size: 0.75rem;
+      font-weight: 800;
+      padding: 3px 8px;
+      border-radius: 6px;
+    }
+
+    .poly-item {
+      margin-bottom: 0.75rem;
+      padding: 0.65rem 0.85rem;
+      background: #f8fafc;
+      border-radius: 8px;
+      border-left: 3px solid #cbd5e1;
+    }
+
+    .poly-item:last-child {
+      margin-bottom: 0;
+    }
+
+    .poly-item.active-poly {
+      border-left-color: var(--primary);
+      background: #faf5ff;
+    }
+
+    .poly-num {
+      display: inline-block;
+      font-weight: 800;
+      color: var(--primary);
+      margin-right: 4px;
+    }
+
+    .poly-phrase {
+      font-weight: 700;
+      color: #1e293b;
+    }
+
+    .poly-meaning {
+      font-size: 0.9rem;
+      color: #64748b;
+      margin-top: 2px;
+    }
+
+    /* 單元五：詩境魔法創作工坊 */
+    .workshop-box {
+      background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
+      border: 1px solid #e2e8f0;
+      border-radius: var(--radius-lg);
+      padding: 2.2rem;
+    }
+
+    .workshop-stepper {
+      display: flex;
+      gap: 1rem;
+      margin-bottom: 1.8rem;
+      flex-wrap: wrap;
+    }
+
+    .step-btn {
+      flex: 1;
+      min-width: 140px;
+      background: white;
+      border: 2px solid #e2e8f0;
+      border-radius: var(--radius-md);
+      padding: 0.9rem 1rem;
+      cursor: pointer;
+      text-align: center;
+      transition: all 0.2s ease;
+    }
+
+    .step-btn.active {
+      border-color: var(--primary);
+      background: var(--primary-light);
+      box-shadow: 0 4px 12px rgba(147, 51, 234, 0.15);
+    }
+
+    .step-btn-title {
+      font-size: 1rem;
+      font-weight: 800;
+      color: var(--dark);
+      margin-bottom: 0.25rem;
+    }
+
+    .step-btn-desc {
+      font-size: 0.78rem;
+      color: var(--gray);
+    }
+
+    .picker-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.6rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .pick-chip {
+      background: white;
+      border: 1px solid #cbd5e1;
+      padding: 0.55rem 1.1rem;
+      border-radius: 999px;
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: #334155;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+
+    .pick-chip:hover {
+      border-color: var(--primary);
+      color: var(--primary);
+    }
+
+    .pick-chip.active {
+      background: var(--primary);
+      color: white;
+      border-color: var(--primary);
+      box-shadow: 0 4px 10px rgba(147, 51, 234, 0.25);
+    }
+
+    .workshop-result-panel {
+      background: white;
+      border-radius: var(--radius-md);
+      border: 1px solid #e2e8f0;
+      padding: 1.8rem;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.04);
+      text-align: center;
+    }
+
+    .result-verse {
+      font-size: 1.85rem;
+      font-weight: 900;
+      color: var(--primary-dark);
+      margin-bottom: 0.85rem;
+      letter-spacing: 2px;
+    }
+
+    .result-analysis {
+      font-size: 1rem;
+      color: #475569;
+      line-height: 1.7;
+      max-width: 800px;
+      margin: 0 auto 1.4rem;
+    }
+
+    .workshop-actions-row {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+    }
+
+    /* 單元六：會考神仙挑戰賽 (Quiz) */
+    .quiz-container {
+      max-width: 860px;
+      margin: 0 auto;
+    }
+
+    .quiz-stats-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 1rem;
+    }
+
+    .quiz-progress-text {
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: var(--gray);
+    }
+
+    .quiz-score-badge {
+      background: var(--primary-light);
+      color: var(--primary-dark);
+      font-size: 0.95rem;
+      font-weight: 800;
+      padding: 4px 14px;
+      border-radius: 999px;
+      border: 1px solid rgba(147, 51, 234, 0.25);
+    }
+
+    .quiz-bar-outer {
+      background: #e2e8f0;
+      height: 10px;
+      border-radius: 999px;
+      overflow: hidden;
+      margin-bottom: 2rem;
+    }
+
+    .quiz-bar-inner {
+      background: linear-gradient(90deg, var(--primary), #c026d3);
+      height: 100%;
+      width: 0%;
+      transition: width 0.3s ease;
+    }
+
+    .quiz-card-box {
+      background: white;
+      border: 1px solid #e2e8f0;
+      border-radius: var(--radius-lg);
+      padding: 2.2rem;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.04);
+      margin-bottom: 1.5rem;
+    }
+
+    .q-source-tag {
+      display: inline-block;
+      font-size: 0.75rem;
+      font-weight: 800;
+      color: var(--primary);
+      background: var(--primary-light);
+      padding: 3px 9px;
+      border-radius: 6px;
+      margin-bottom: 0.85rem;
+    }
+
+    .q-stem {
+      font-size: 1.25rem;
+      font-weight: 800;
+      line-height: 1.6;
+      color: var(--dark);
+      margin-bottom: 1.5rem;
+    }
+
+    .q-options-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 0.85rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .q-opt-btn {
+      background: #f8fafc;
+      border: 2px solid #e2e8f0;
+      border-radius: var(--radius-md);
+      padding: 1rem 1.2rem;
+      text-align: left;
+      font-size: 1rem;
+      font-weight: 600;
+      color: #1e293b;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      line-height: 1.5;
+    }
+
+    .q-opt-btn:hover:not(:disabled) {
+      border-color: var(--primary);
+      background: var(--primary-light);
+      transform: translateX(4px);
+    }
+
+    .q-opt-btn.correct {
+      background: #dcfce7 !important;
+      border-color: #22c55e !important;
+      color: #15803d !important;
+    }
+
+    .q-opt-btn.wrong {
+      background: #fee2e2 !important;
+      border-color: #ef4444 !important;
+      color: #b91c1c !important;
+    }
+
+    .q-explanation-box {
+      display: none;
+      background: #faf5ff;
+      border-left: 4px solid var(--primary);
+      border-radius: 0 10px 10px 0;
+      padding: 1.2rem 1.4rem;
+      margin-top: 1.2rem;
+      font-size: 0.95rem;
+      color: #4c1d95;
+      line-height: 1.7;
+    }
+
+    .quiz-nav-row {
+      display: flex;
+      justify-content: flex-end;
+      margin-top: 1.5rem;
+    }
+
+    .btn-next-q {
+      background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+      color: white;
+      border: none;
+      padding: 0.65rem 1.6rem;
+      border-radius: 999px;
+      font-size: 0.95rem;
+      font-weight: 700;
+      cursor: pointer;
+      display: none;
+      align-items: center;
+      gap: 6px;
+      transition: all 0.2s ease;
+      box-shadow: 0 4px 10px rgba(147, 51, 234, 0.25);
+    }
+
+    .btn-next-q:hover {
+      background: linear-gradient(135deg, var(--primary-dark), #581c87);
+      transform: translateY(-2px);
+    }
+
+    .quiz-result-view {
+      display: none;
+      text-align: center;
+      background: white;
+      border-radius: var(--radius-lg);
+      padding: 3rem 2rem;
+      border: 1px solid #e2e8f0;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    }
+
+    .result-badge-icon {
+      font-size: 4.5rem;
+      margin-bottom: 1rem;
+    }
+
+    .result-final-score {
+      font-size: 2.8rem;
+      font-weight: 900;
+      color: var(--primary-dark);
+      margin-bottom: 0.75rem;
+    }
+
+    .result-comment {
+      font-size: 1.1rem;
+      color: #475569;
+      margin-bottom: 1.8rem;
+    }
+
+    .btn-restart-quiz {
+      background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+      color: white;
+      border: none;
+      padding: 0.8rem 2rem;
+      border-radius: 999px;
+      font-size: 1rem;
+      font-weight: 700;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      transition: all 0.2s ease;
+      box-shadow: 0 4px 15px rgba(147, 51, 234, 0.25);
+    }
+
+    /* 單元七：練習神器內嵌專區 */
+    .practice-tabs-row {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      margin-bottom: 1.5rem;
+      flex-wrap: wrap;
+    }
+
+    .btn-practice-tab {
+      background: white;
+      border: 2px solid #e2e8f0;
+      border-radius: 999px;
+      padding: 0.6rem 1.6rem;
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: #475569;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      transition: all 0.2s ease;
+    }
+
+    .btn-practice-tab.active {
+      background: var(--primary);
+      color: white;
+      border-color: var(--primary);
+      box-shadow: 0 4px 12px rgba(147, 51, 234, 0.25);
+    }
+
+    .iframe-wrapper {
+      position: relative;
+      width: 100%;
+      height: 720px;
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      border: 2px solid var(--border);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+      background: #ffffff;
+    }
+
+    .iframe-wrapper iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+
+    .iframe-actions-row {
+      display: flex;
+      justify-content: flex-end;
+      gap: 0.8rem;
+      margin-top: 1rem;
+    }
+
+    .btn-fullscreen {
+      background: white;
+      border: 1px solid #cbd5e1;
+      padding: 0.5rem 1rem;
+      border-radius: 8px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: #334155;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      text-decoration: none;
+      transition: all 0.2s ease;
+    }
+
+    .btn-fullscreen:hover {
+      background: var(--primary-light);
+      color: var(--primary-dark);
+      border-color: var(--primary);
+    }
+
+    /* 頁尾 Footer - 典雅溫潤暖栗木/沉木茶褐漸層 */
+    footer {
+      background: linear-gradient(180deg, #2e1a12 0%, #1c0f0a 100%);
+      color: white;
+      padding: 3.5rem 1.5rem 2.5rem;
+      margin-top: auto;
+      border-top: 3px solid #854d0e;
+      text-align: center;
+    }
+
+    .footer-container {
+      max-width: 1320px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1.8rem;
+      text-align: center;
+    }
+
+    .footer-logos {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 1.5rem;
+      flex-wrap: wrap;
+    }
+
+    .footer-seal {
+      height: 60px;
+      width: auto;
+      object-fit: contain;
+      filter: drop-shadow(0 4px 10px rgba(0, 0, 0, 0.3));
+    }
+
+    .footer-tagline-img {
+      max-height: 46px;
+      width: auto;
+      object-fit: contain;
+    }
+
+    .footer-credit {
+      font-size: 0.95rem;
+      color: #fde68a;
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(253, 230, 138, 0.25);
+      padding: 0.6rem 1.6rem;
+      border-radius: 999px;
+      font-weight: 600;
+      letter-spacing: 0.5px;
+    }
+
+    /* RWD 適應 */
+    @media (max-width: 768px) {
+      .hero-title { font-size: 2.1rem; }
+      .section-title { font-size: 1.65rem; }
+      .content-section { padding: 2rem 1.2rem; }
+      .cards-grid { grid-template-columns: 1fr; }
+      .teacher-orange-box { flex-direction: column; text-align: center; }
+      .iframe-wrapper { height: 600px; }
+      nav ul { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- 頂部品牌導覽列 -->
+  <header>
+    <div class="nav-container">
+      <a href="index.html" class="brand-group">
+        <img src="icon/seal-red.png" alt="學思軒" class="brand-seal-img">
+        <img src="icon/logo-yuwen.png" alt="語文補給站" class="brand-logo-img">
+        <div class="brand-text">
+          <div class="brand-title serif">語文補給站</div>
+          <span class="brand-badge">翰林國文 B3L02《古詩選》・疊字詞專屬旗艦</span>
+        </div>
+      </a>
+      <nav>
+        <ul>
+          <li><a href="index.html"><i data-lucide="home" style="width:16px;"></i>首頁</a></li>
+          <li><a href="#formula"><i data-lucide="book-open" style="width:16px;"></i>核心定義</a></li>
+          <li><a href="#compass"><i data-lucide="compass" style="width:16px;"></i>意象星盤</a></li>
+          <li><a href="#gallery"><i data-lucide="grid" style="width:16px;"></i>典範圖鑑</a></li>
+          <li><a href="#polysemy"><i data-lucide="split" style="width:16px;"></i>多義辨析</a></li>
+          <li><a href="#workshop"><i data-lucide="sparkles" style="width:16px;"></i>魔法工坊</a></li>
+          <li><a href="#quiz"><i data-lucide="award" style="width:16px;"></i>會考挑戰</a></li>
+          <li><a href="#practice" class="nav-btn-highlight"><i data-lucide="gamepad-2" style="width:16px;"></i>練習神器</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- Hero 橫幅 -->
+    <section class="hero">
+      <div class="hero-content">
+        <div class="hero-badge-top">
+          <i data-lucide="sparkles" style="width:16px; color:#d97706;"></i>
+          翰林國中 B3L02 古詩選・語文補給站旗艦學習殿堂
+        </div>
+        <h1 class="hero-title serif">疊字詞・聲情神采與疊韻之美</h1>
+        <p class="hero-subtitle">
+          青青河畔草，鬱鬱園中柳。迢迢牽牛星，皎皎河漢女。<br>
+          重疊重現的字形與音節，如何構築出古典詩詞無窮的音樂韻律、深遠情思與生動神態？
+        </p>
+        <div class="hero-features-pills">
+          <span class="hero-pill"><i data-lucide="check-circle-2"></i> 54組課文與會考經典疊字詞</span>
+          <span class="hero-pill"><i data-lucide="check-circle-2"></i> 10大高頻多義疊字深度對決</span>
+          <span class="hero-pill"><i data-lucide="check-circle-2"></i> 橘老師開唱解題避坑指南</span>
+          <span class="hero-pill"><i data-lucide="check-circle-2"></i> 全真真人語音 TTS 發音</span>
+          <span class="hero-pill"><i data-lucide="check-circle-2"></i> 雙款專屬練習神器直接內嵌</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- 單元一：核心定義與萬能公式 -->
+    <section id="formula" class="content-section">
+      <div class="section-header">
+        <span class="section-tag">Unit 01・Core Concept & Rule</span>
+        <h2 class="section-title serif">核心定義與解題萬能公式</h2>
+        <p class="section-desc">掌握疊字構詞原理、修辭美感與會考試題判斷的三大金鑰匙</p>
+      </div>
+
+      <div class="formula-banner">
+        <span class="formula-badge"><i data-lucide="key" style="width:14px;"></i> 核心解構公式</span>
+        <h3 class="formula-title serif">疊字詞解構三步法：字重疊 ➔ 音節連 ➔ 意象生</h3>
+        <p style="font-size: 1.05rem; line-height: 1.7; opacity: 0.95;">
+          疊字詞是將同一個字重疊使用，增強語氣、豐富節奏、加深描繪生動感的構詞方式。在古典詩歌（如《古詩十九首》）中大量運用，既摹擬自然物象，又寄託細膩幽微的情思。
+        </p>
+        <div class="formula-steps-grid">
+          <div class="formula-step-card">
+            <div class="formula-step-num">1</div>
+            <div class="formula-step-title">審視字形與構詞型態</div>
+            <div class="formula-step-desc">辨識 AA 式（如：茫茫、青青、洋洋）、AABB 式（如：熙熙攘攘、卿卿我我）或重字雙聲疊韻之特徵。</div>
+          </div>
+          <div class="formula-step-card">
+            <div class="formula-step-num">2</div>
+            <div class="formula-step-title">抓取上下文受詞與搭配</div>
+            <div class="formula-step-desc">依據語境判定描摹客體：如「海浪滔滔」摹水流、「滔滔不絕」摹口才、「滔滔者天下皆是」摹社會紛亂。</div>
+          </div>
+          <div class="formula-step-card">
+            <div class="formula-step-num">3</div>
+            <div class="formula-step-title">防坑：疊字詞 ≠ 狀聲詞</div>
+            <div class="formula-step-desc">牢記橘老師提點！並非所有疊字皆為擬音，更多是形容情態、容貌、心緒與景致（如：沾沾、朗朗、涓涓、汲汲）。</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 橘老師開唱解題避坑專區 -->
+      <div class="teacher-orange-box">
+        <div class="teacher-avatar-col">
+          <div class="teacher-orange-icon">🍊</div>
+          <span class="teacher-badge-tag">橘老師開唱</span>
+        </div>
+        <div class="teacher-content-col">
+          <h4 class="serif"><i data-lucide="alert-triangle" style="width:20px; color:#d97706;"></i> 考前避坑特訓：疊字詞不等於狀聲詞！</h4>
+          <p>
+            各位同學要特別注意！會考與段考最愛設下陷阱：<b>「疊字詞不等於狀聲詞，狀聲詞也不一定是疊字詞」</b>！<br>
+            例如：<span class="highlight-pill">「沾沾」自喜</span>（暗自高興貌）、<span class="highlight-pill">「朗朗」上口</span>（聲音清晰響亮，形容誦讀之態）、<span class="highlight-pill">「涓涓」細流</span>（細水慢流貌）、<span class="highlight-pill">「汲汲」營營</span>（努力求取不休息貌）、<span class="highlight-pill">憂心「忡忡」</span>（心憂貌），<b>全部都不是狀聲詞</b>！考題常混入擬音題中誤導，一定要睜大眼睛看清詞意喔！
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 單元二：五大情意星盤羅盤導覽 -->
+    <section id="compass" class="content-section">
+      <div class="section-header">
+        <span class="section-tag">Unit 02・Semantic Compass</span>
+        <h2 class="section-title serif">多維度情意星盤羅盤導覽</h2>
+        <p class="section-desc">點擊下方五大主題分類羅盤，即時過濾並連動下方典範圖鑑資料庫</p>
+      </div>
+
+      <div class="compass-grid">
+        <div class="compass-card c-scene active" onclick="filterByCategory('all')">
+          <div class="compass-icon-box">🌟</div>
+          <h3 class="compass-title serif">全體典範庫</h3>
+          <p class="compass-desc">完整收錄課本講義 54 組疊字詞全貌</p>
+          <span class="compass-count-badge">54 詞</span>
+        </div>
+        <div class="compass-card c-nature" onclick="filterByCategory('景物自然')">
+          <div class="compass-icon-box">🌊</div>
+          <h3 class="compass-title serif">景物自然與空間</h3>
+          <p class="compass-desc">蒼蒼、茫茫、滔滔、涓涓、曖曖等水天草木</p>
+          <span class="compass-count-badge">12 詞</span>
+        </div>
+        <div class="compass-card c-emotion" onclick="filterByCategory('情感心緒')">
+          <div class="compass-icon-box">💭</div>
+          <h3 class="compass-title serif">內心情感與心境</h3>
+          <p class="compass-desc">悽悽、忡忡、慼慼、惴惴、怏怏、懌懌等憂樂</p>
+          <span class="compass-count-badge">14 詞</span>
+        </div>
+        <div class="compass-card c-action" onclick="filterByCategory('神態舉止')">
+          <div class="compass-icon-box">💃</div>
+          <h3 class="compass-title serif">神態容顏與風度</h3>
+          <p class="compass-desc">翩翩、姍姍、楚楚、亭亭、皎皎、諄諄等風采</p>
+          <span class="compass-count-badge">15 詞</span>
+        </div>
+        <div class="compass-card c-sound" onclick="filterByCategory('事理氣勢')">
+          <div class="compass-icon-box">📜</div>
+          <h3 class="compass-title serif">事理氣勢與動態</h3>
+          <p class="compass-desc">洋洋、芸芸、格格、汲汲、循循、喋喋等動態</p>
+          <span class="compass-count-badge">13 詞</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- 單元三：典範圖鑑與句型資料庫 -->
+    <section id="gallery" class="content-section">
+      <div class="section-header">
+        <span class="section-tag">Unit 03・Reduplication Gallery</span>
+        <h2 class="section-title serif">典範圖鑑與句型資料庫</h2>
+        <p class="section-desc">收錄 54 組經典疊字詞，支援關鍵字即時搜尋、白話釋義、經典名句與全真人語音朗讀</p>
+      </div>
+
+      <!-- 搜尋與篩選列 -->
+      <div class="filter-bar">
+        <div class="search-box">
+          <i data-lucide="search" style="width:18px; color:#94a3b8;"></i>
+          <input type="text" id="searchInput" placeholder="輸入疊字詞、釋義、例句（如：茫茫、洋洋、水勢）..." oninput="handleSearch()">
+        </div>
+        <div class="filter-actions">
+          <button class="btn-filter-action" id="btn-toggle-all-expl" onclick="toggleAllExplanations()">
+            <i data-lucide="eye-off" style="width:15px;"></i> 一鍵隱藏全部考點解析
+          </button>
+          <button class="btn-filter-action" onclick="filterByBadge('polysemy')">
+            <i data-lucide="layers" style="width:15px;"></i> 僅顯示多義疊字
+          </button>
+          <button class="btn-filter-action" onclick="filterByBadge('star')">
+            <i data-lucide="star" style="width:15px;"></i> 僅顯示會考星標題
+          </button>
+          <button class="btn-filter-action" onclick="resetFilters()">
+            <i data-lucide="rotate-ccw" style="width:15px;"></i> 重設條件
+          </button>
+        </div>
+      </div>
+
+      <!-- 卡片網格 -->
+      <div class="cards-grid" id="cardsGrid">
+        <!-- 由 JavaScript 動態生成 54 張典範卡片 -->
+      </div>
+    </section>
+
+    <!-- 單元四：多義疊字深度對決特訓卡 -->
+    <section id="polysemy" class="content-section">
+      <div class="section-header">
+        <span class="section-tag">Unit 04・Polysemy Breakdown</span>
+        <h2 class="section-title serif">多義疊字深度對決特訓</h2>
+        <p class="section-desc">同一疊字詞在不同詩句情境下有截然不同的釋義，會考辨析必備核心攻略</p>
+      </div>
+
+      <div class="polysemy-grid">
+        <div class="poly-card">
+          <div class="poly-header">
+            <span class="poly-word serif">耿耿</span>
+            <span class="poly-tag">★ 會考雙義常考</span>
+          </div>
+          <div class="poly-item active-poly">
+            <span class="poly-num">①</span> <span class="poly-phrase">耿耿於懷</span>
+            <div class="poly-meaning">內心掛念、煩躁不安的樣子。</div>
+          </div>
+          <div class="poly-item">
+            <span class="poly-num">②</span> <span class="poly-phrase">忠心耿耿</span>
+            <div class="poly-meaning">形容誠信守節、正直堅定。</div>
+          </div>
+        </div>
+
+        <div class="poly-card">
+          <div class="poly-header">
+            <span class="poly-word serif">翩翩</span>
+            <span class="poly-tag">★ 姿態神韻常考</span>
+          </div>
+          <div class="poly-item active-poly">
+            <span class="poly-num">①</span> <span class="poly-phrase">風度翩翩</span>
+            <div class="poly-meaning">舉止灑脫、風流儒雅的樣子。</div>
+          </div>
+          <div class="poly-item">
+            <span class="poly-num">②</span> <span class="poly-phrase">翩翩起舞</span>
+            <div class="poly-meaning">行動輕快敏捷、飄逸飛舞的樣子。</div>
+          </div>
+        </div>
+
+        <div class="poly-card">
+          <div class="poly-header">
+            <span class="poly-word serif">楚楚</span>
+            <span class="poly-tag">★ 視覺神態常考</span>
+          </div>
+          <div class="poly-item active-poly">
+            <span class="poly-num">①</span> <span class="poly-phrase">楚楚動人 / 楚楚可憐</span>
+            <div class="poly-meaning">形容姿態嬌豔動人，惹人憐愛。</div>
+          </div>
+          <div class="poly-item">
+            <span class="poly-num">②</span> <span class="poly-phrase">衣冠楚楚</span>
+            <div class="poly-meaning">服裝整齊鮮明的樣子。</div>
+          </div>
+        </div>
+
+        <div class="poly-card">
+          <div class="poly-header">
+            <span class="poly-word serif">嫋嫋（裊裊）</span>
+            <span class="poly-tag">★ 音感與視覺互通</span>
+          </div>
+          <div class="poly-item active-poly">
+            <span class="poly-num">①</span> <span class="poly-phrase">餘音嫋嫋</span>
+            <div class="poly-meaning">形容音調悠揚不絕，綿長入耳。</div>
+          </div>
+          <div class="poly-item">
+            <span class="poly-num">②</span> <span class="poly-phrase">炊煙嫋嫋 / 輕煙嫋嫋</span>
+            <div class="poly-meaning">煙氣縈迴繚繞、輕柔上升的樣子。</div>
+          </div>
+        </div>
+
+        <div class="poly-card">
+          <div class="poly-header">
+            <span class="poly-word serif">洋洋</span>
+            <span class="poly-tag">★ 神態與氣象常考</span>
+          </div>
+          <div class="poly-item active-poly">
+            <span class="poly-num">①</span> <span class="poly-phrase">洋洋得意 / 意氣洋洋</span>
+            <div class="poly-meaning">心滿意足、神氣自滿的樣子。</div>
+          </div>
+          <div class="poly-item">
+            <span class="poly-num">②</span> <span class="poly-phrase">洋洋大觀 / 河水洋洋</span>
+            <div class="poly-meaning">眾多壯盛、水勢盛大的樣子。</div>
+          </div>
+        </div>
+
+        <div class="poly-card">
+          <div class="poly-header">
+            <span class="poly-word serif">茫茫</span>
+            <span class="poly-tag">★ 視野空間常考</span>
+          </div>
+          <div class="poly-item active-poly">
+            <span class="poly-num">①</span> <span class="poly-phrase">人海茫茫 / 暮色茫茫</span>
+            <div class="poly-meaning">廣大無邊、浩瀚無際的樣子。</div>
+          </div>
+          <div class="poly-item">
+            <span class="poly-num">②</span> <span class="poly-phrase">前途茫茫 / 視茫茫</span>
+            <div class="poly-meaning">目視不明、未知茫然的樣子。</div>
+          </div>
+        </div>
+
+        <div class="poly-card">
+          <div class="poly-header">
+            <span class="poly-word serif">鬱鬱</span>
+            <span class="poly-tag">★ 景物心境雙關</span>
+          </div>
+          <div class="poly-item active-poly">
+            <span class="poly-num">①</span> <span class="poly-phrase">鬱鬱蔥蔥 / 蓊蓊鬱鬱</span>
+            <div class="poly-meaning">草木興盛繁榮、茂盛生機之態。</div>
+          </div>
+          <div class="poly-item">
+            <span class="poly-num">②</span> <span class="poly-phrase">鬱鬱寡歡</span>
+            <div class="poly-meaning">心中憂愁悶悶不樂的樣子。</div>
+          </div>
+        </div>
+
+        <div class="poly-card">
+          <div class="poly-header">
+            <span class="poly-word serif">慼慼（戚戚）</span>
+            <span class="poly-tag">★ 《論語》與《孟子》</span>
+          </div>
+          <div class="poly-item active-poly">
+            <span class="poly-num">①</span> <span class="poly-phrase">小人長戚戚 / 不戚戚於貧賤</span>
+            <div class="poly-meaning">心懷憂愁恐懼、患得患失。</div>
+          </div>
+          <div class="poly-item">
+            <span class="poly-num">②</span> <span class="poly-phrase">於我心有慼慼焉</span>
+            <div class="poly-meaning">內心深有同感、觸動感發的樣子。</div>
+          </div>
+        </div>
+
+        <div class="poly-card">
+          <div class="poly-header">
+            <span class="poly-word serif">悠悠</span>
+            <span class="poly-tag">★ 四種義項大滿貫</span>
+          </div>
+          <div class="poly-item active-poly">
+            <span class="poly-num">①</span> <span class="poly-phrase">念天地之悠悠</span>
+            <div class="poly-meaning">渺遠無盡、長遠久遠的時間空間。</div>
+          </div>
+          <div class="poly-item">
+            <span class="poly-num">②</span> <span class="poly-phrase">悠悠我心</span>
+            <div class="poly-meaning">憂思深切、綿綿不絕的愁緒。</div>
+          </div>
+          <div class="poly-item">
+            <span class="poly-num">③</span> <span class="poly-phrase">悠悠之談 / 悠悠眾口</span>
+            <div class="poly-meaning">荒謬不經、或是眾多之人。</div>
+          </div>
+          <div class="poly-item">
+            <span class="poly-num">④</span> <span class="poly-phrase">白雲悠悠</span>
+            <div class="poly-meaning">閒適自在、從容飄浮的樣子。</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 單元五：詩境魔法創作工坊 -->
+    <section id="workshop" class="content-section">
+      <div class="section-header">
+        <span class="section-tag">Unit 05・Poetry Workshop</span>
+        <h2 class="section-title serif">詩境魔法創作工坊</h2>
+        <p class="section-desc">自由切換三大經典古典意境，挑選靈魂疊字詞，即時生成沉浸式詩句與美感解析</p>
+      </div>
+
+      <div class="workshop-box">
+        <div class="workshop-stepper">
+          <div class="step-btn active" id="scene-btn-gushi" onclick="selectWorkshopScene('gushi')">
+            <div class="step-btn-title serif">《古詩十九首》情思</div>
+            <div class="step-btn-desc">迢迢牽牛、脈脈不語之相思</div>
+          </div>
+          <div class="step-btn" id="scene-btn-landscape" onclick="selectWorkshopScene('landscape')">
+            <div class="step-btn-title serif">壯闊山川與行旅</div>
+            <div class="step-btn-desc">滔滔大江、蒼蒼暮煙之孤客</div>
+          </div>
+          <div class="step-btn" id="scene-btn-scholar" onclick="selectWorkshopScene('scholar')">
+            <div class="step-btn-title serif">文人雅士與性靈</div>
+            <div class="step-btn-desc">楚楚風骨、翩翩起舞之灑脫</div>
+          </div>
+        </div>
+
+        <div style="font-weight: 700; color: #475569; margin-bottom: 0.6rem; font-size: 0.95rem;">
+          步驟二：請點選搭配的疊字詞靈魂意象
+        </div>
+        <div class="picker-row" id="workshopWordPicker">
+          <!-- 由 JS 依場景產生晶片標籤 -->
+        </div>
+
+        <div class="workshop-result-panel">
+          <div class="result-verse serif" id="workshopVerse">詩句生成中...</div>
+          <p class="result-analysis" id="workshopAnalysis">意象賞析解析載入中...</p>
+          <div class="workshop-actions-row">
+            <button class="btn-tts" onclick="speakWorkshopVerse()">
+              <i data-lucide="volume-2" style="width:16px;"></i> 真人語音朗誦生成的詩句
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 單元六：會考神仙挑戰賽 (Quiz) -->
+    <section id="quiz" class="content-section">
+      <div class="section-header">
+        <span class="section-tag">Unit 06・Exam Master Challenge</span>
+        <h2 class="section-title serif">會考神仙挑戰賽</h2>
+        <p class="section-desc">精選 10 題高頻國中基測、會考與名校段考疊字詞診斷試題，即時答題回饋與詳盡解析</p>
+      </div>
+
+      <div class="quiz-container">
+        <!-- 狀態列 -->
+        <div class="quiz-stats-header">
+          <span class="quiz-progress-text" id="quiz-progress-text">第 1 / 10 題</span>
+          <span class="quiz-score-badge" id="quiz-score-badge">當前得分：0 分</span>
+        </div>
+        <div class="quiz-bar-outer">
+          <div class="quiz-bar-inner" id="quiz-progress-bar"></div>
+        </div>
+
+        <!-- 試題卡片 -->
+        <div class="quiz-card-box" id="quiz-card-box">
+          <span class="q-source-tag" id="q-source-tag">會考經典試題</span>
+          <h3 class="q-stem serif" id="q-stem">題目加載中...</h3>
+          <div class="q-options-grid" id="q-options-grid"></div>
+
+          <!-- 解析區塊 -->
+          <div class="q-explanation-box" id="q-explanation-box"></div>
+
+          <div class="quiz-nav-row">
+            <button class="btn-next-q" id="btn-next-question" onclick="handleNextQuestion()">
+              下一題 <i data-lucide="arrow-right" style="width:16px;"></i>
+            </button>
+          </div>
+        </div>
+
+        <!-- 結算成績畫面 -->
+        <div class="quiz-result-view" id="quiz-result-view">
+          <div class="result-badge-icon" id="result-badge-icon">🏆</div>
+          <div class="result-final-score serif" id="result-final-score">100 分</div>
+          <p class="result-comment" id="result-comment">太神了！所有疊字詞考點已全部精熟！</p>
+          <button class="btn-restart-quiz" onclick="restartQuiz()">
+            <i data-lucide="rotate-ccw" style="width:18px;"></i> 重新挑戰會考題庫
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- 單元七：練習神器內嵌專區 -->
+    <section id="practice" class="content-section">
+      <div class="section-header">
+        <span class="section-tag">Unit 07・Practice Tools</span>
+        <h2 class="section-title serif">練習神器內嵌專區</h2>
+        <p class="section-desc">已將專屬練習神器以標準英文路徑複製至本單元資料夾，可直接在下方暢玩或另開全螢幕體驗！</p>
+      </div>
+
+      <div class="practice-tabs-row">
+        <button class="btn-practice-tab active" id="tab-words" onclick="switchPracticeTab('words')">
+          <i data-lucide="sparkles" style="width:18px;"></i> [神器一] 疊字詞練習神器（101 題）
+        </button>
+        <button class="btn-practice-tab" id="tab-idioms" onclick="switchPracticeTab('idioms')">
+          <i data-lucide="book-marked" style="width:18px;"></i> [神器二] 疊字成語練習神器（95 題）
+        </button>
+      </div>
+
+      <div class="iframe-wrapper">
+        <iframe id="practiceIframe" src="reduplication/reduplication-words-practice.html" title="疊字詞練習神器"></iframe>
+      </div>
+
+      <div class="iframe-actions-row">
+        <a id="btnOpenNewTab" href="reduplication/reduplication-words-practice.html" target="_blank" class="btn-fullscreen">
+          <i data-lucide="external-link" style="width:16px;"></i> 另開新視窗全螢幕練習
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <!-- 頁尾宣告 -->
+  <footer>
+    <div class="footer-container">
+      <div class="footer-logos">
+        <img src="icon/seal-white.png" alt="學思軒" class="footer-seal" onerror="this.src='icon/seal-red.png'">
+        <img src="icon/slogan-god-dark.png" alt="只要有心人人都是國文神" class="footer-tagline-img">
+      </div>
+      <div class="footer-credit serif">
+        𖤐 本系統由學思軒黃于珊、王斐亭老師規劃設計 · 版權所有 © 2026 𖤐
+      </div>
+    </div>
+  </footer>
+  <script>
+// Lucide Icons 初始化
+lucide.createIcons();
+
+// ==========================================
+// 54 組疊字詞完整典範資料庫 (根據講義完整提取)
+// ==========================================
+const vocabData = [
+  {
+    id: 1,
+    word: '斑斑',
+    bopomofo: 'ㄅㄢ ㄅㄢ',
+    category: '景物自然',
+    isPolysemy: true,
+    isStar: false,
+    defs: [
+      { meaning: '點點的痕跡', example: '血跡斑斑，令人觸目驚心。' },
+      { meaning: '文彩明顯的樣子', example: '他風度優雅，文質斑斑。' }
+    ],
+    explanation: '「斑斑」形容點狀分佈的色彩或斑駁痕跡；「文質斑斑」亦作「文質彬彬」，形容文采與質樸兼備。'
+  },
+  {
+    id: 2,
+    word: '茫茫',
+    bopomofo: 'ㄇㄤˊ ㄇㄤˊ',
+    category: '景物自然',
+    isPolysemy: true,
+    isStar: false,
+    defs: [
+      { meaning: '廣大無邊的樣子', example: '在人海茫茫之中，能與知己相逢是莫大的緣分。' },
+      { meaning: '目視不明的樣子', example: '年過花甲，髮蒼蒼，視茫茫，齒牙動搖。' },
+      { meaning: '不明的樣子', example: '初出茅廬的青年，對未知的前途茫茫。' }
+    ],
+    explanation: '常用於空間之浩渺（人海茫茫、暮色茫茫）或視覺模糊（視茫茫），亦可引申為前景不明朗。'
+  },
+  {
+    id: 3,
+    word: '泛泛',
+    bopomofo: 'ㄈㄢˋ ㄈㄢˋ',
+    category: '事理氣勢',
+    isPolysemy: true,
+    isStar: false,
+    defs: [
+      { meaning: '尋常的、浮淺的', example: '我與他只是泛泛之交，並無深談過心事。' },
+      { meaning: '漂浮的樣子', example: '信宿漁人還泛泛，清江月夜任輕舟。' }
+    ],
+    explanation: '「泛泛之交」形容交情淺薄平常；作漂浮義時描摹舟楫輕浮水面之閒適。'
+  },
+  {
+    id: 4,
+    word: '蕩蕩',
+    bopomofo: 'ㄉㄤˋ ㄉㄤˋ',
+    category: '情感心緒',
+    isPolysemy: true,
+    isStar: false,
+    defs: [
+      { meaning: '坦蕩蕩：行事光明磊落', example: '君子心中坦蕩蕩，襟懷坦白不欺暗室。' },
+      { meaning: '空蕩蕩：一無所有的樣子', example: '家人外出旅行後，諾大的房子顯得空蕩蕩的。' }
+    ],
+    explanation: '《論語》：「君子坦蕩蕩，小人長戚戚。」形容心胸開朗寬廣、心無私念；口語中常疊作「空蕩蕩」。'
+  },
+  {
+    id: 5,
+    word: '迢迢',
+    bopomofo: 'ㄊㄧㄠˊ ㄊㄧㄠˊ',
+    category: '景物自然',
+    isPolysemy: true,
+    isStar: false,
+    defs: [
+      { meaning: '遙遠的樣子', example: '迢迢牽牛星，皎皎河漢女。（《古詩十九首》）' },
+      { meaning: '悠長的樣子', example: '迢迢不斷如春水，離愁漸遠漸無窮。' }
+    ],
+    explanation: '《古詩十九首》開篇名句，音韻悠揚，描繪牽牛星與織女星隔著銀河遙遙相對之路途修遠。'
+  },
+  {
+    id: 6,
+    word: '了了',
+    bopomofo: 'ㄌㄧㄠˇ ㄌㄧㄠˇ',
+    category: '神態舉止',
+    isPolysemy: true,
+    isStar: false,
+    defs: [
+      { meaning: '聰明慧黠的樣子', example: '小時了了，大未必佳。（《世說新語》）' },
+      { meaning: '明白、清楚的樣子', example: '這件事的原委複雜，他其實不甚了了。' }
+    ],
+    explanation: '孔融十歲謁李膺時的千古名句，指幼時聰慧過人；在日常語句中常作「不甚了了」表不清楚。'
+  },
+  {
+    id: 7,
+    word: '亭亭',
+    bopomofo: 'ㄊㄧㄥˊ ㄊㄧㄥˊ',
+    category: '神態舉止',
+    isPolysemy: false,
+    isStar: false,
+    defs: [
+      { meaning: '高聳直立的樣子', example: '少女亭亭玉立，氣質清新高雅。' }
+    ],
+    explanation: '常用於形容女子身材苗條修長，亦可形容蓮花或松柏修長挺拔之姿（如周敦頤《愛蓮說》「香遠益清，亭亭淨植」）。'
+  },
+  {
+    id: 8,
+    word: '格格',
+    bopomofo: 'ㄍㄜˊ ㄍㄜˊ',
+    category: '事理氣勢',
+    isPolysemy: true,
+    isStar: false,
+    defs: [
+      { meaning: '形容笑聲', example: '看見逗趣的小丑，孩子們格格大笑。' },
+      { meaning: '形容鳥鳴之聲', example: '晨光初露，林間格格價飛。' }
+    ],
+    explanation: '疊字狀聲詞，可摹清脆歡悅之笑聲，亦可摹山林野鳥振羽啼鳴之聲。'
+  },
+  {
+    id: 9,
+    word: '汲汲',
+    bopomofo: 'ㄐㄧˊ ㄐㄧˊ',
+    category: '事理氣勢',
+    isPolysemy: false,
+    isStar: false,
+    defs: [
+      { meaning: '努力求取、不休息的樣子', example: '汲汲營營於名利，往往忽略了身邊平實的幸福。' }
+    ],
+    explanation: '《五柳先生傳》：「不戚戚於貧賤，不汲汲於富貴。」形容為追求某目標而急迫奔波鑽營之態。'
+  },
+  {
+    id: 10,
+    word: '息息',
+    bopomofo: 'ㄒㄧˊ ㄒㄧˊ',
+    category: '事理氣勢',
+    isPolysemy: false,
+    isStar: false,
+    defs: [
+      { meaning: '呼吸相續，極為密切', example: '環境生態保護與每位國民的健康息息相關。' }
+    ],
+    explanation: '「息息相關」指呼吸一呼一吸相互關聯，比喻關係極其緊密融洽。'
+  },
+  {
+    id: 11,
+    word: '沾沾',
+    bopomofo: 'ㄓㄢ ㄓㄢ',
+    category: '情感心緒',
+    isPolysemy: false,
+    isStar: true,
+    defs: [
+      { meaning: '暗自喜歡、得意的樣子', example: '取得一點小成就便沾沾自喜，容易招致失敗。' }
+    ],
+    explanation: '【橘老師避坑重點】「沾沾」為形容自滿心態之疊字詞，絕非狀聲詞！'
+  },
+  {
+    id: 12,
+    word: '忡忡',
+    bopomofo: 'ㄔㄨㄥ ㄔㄨㄥ',
+    category: '情感心緒',
+    isPolysemy: false,
+    isStar: true,
+    defs: [
+      { meaning: '心憂恐懼的樣子', example: '面對即將來襲的強烈颱風，全村居民憂心忡忡。' }
+    ],
+    explanation: '《詩經・召南・草蟲》：「未見君子，憂心忡忡。」形容心緒沉重焦慮，非擬音詞。'
+  },
+  {
+    id: 13,
+    word: '冉冉',
+    bopomofo: 'ㄖㄢˇ ㄖㄢˇ',
+    category: '景物自然',
+    isPolysemy: false,
+    isStar: true,
+    defs: [
+      { meaning: '緩慢行進、漸漸升起之貌', example: '朝陽自東方海平線冉冉上升，金光普照大地。' }
+    ],
+    explanation: '形容動作緩慢流暢或時光推移（如老之冉冉將至）。'
+  },
+  {
+    id: 14,
+    word: '溶溶',
+    bopomofo: 'ㄖㄨㄥˊ ㄖㄨㄥˊ',
+    category: '景物自然',
+    isPolysemy: false,
+    isStar: true,
+    defs: [
+      { meaning: '潮溼、水盛流動貌', example: '月色溶溶夜，春風細細吹。' }
+    ],
+    explanation: '形容水流盛大安詳或月光如水漫溢之靜美意境。'
+  },
+  {
+    id: 15,
+    word: '皎皎',
+    bopomofo: 'ㄐㄧㄠˇ ㄐㄧㄠˇ',
+    category: '景物自然',
+    isPolysemy: true,
+    isStar: true,
+    defs: [
+      { meaning: '潔白無瑕的樣子', example: '皎皎白駒，在彼空谷。（《詩經》）' },
+      { meaning: '明亮澄澈的樣子', example: '迢迢牽牛星，皎皎河漢女。（《古詩十九首》）' }
+    ],
+    explanation: '形容月色、星光耀眼明徹，或品格如同白雪般純白無瑕。'
+  },
+  {
+    id: 16,
+    word: '行行',
+    bopomofo: 'ㄏㄤˊ ㄏㄤˊ / ㄒㄧㄥˊ',
+    category: '事理氣勢',
+    isPolysemy: true,
+    isStar: true,
+    defs: [
+      { meaning: '剛強的樣子（ㄏㄤˋ）', example: '行行鄙夫志，往往顯露出魯莽之氣。' },
+      { meaning: '各個行業（ㄏㄤˊ）', example: '俗話說行行出狀元，只要努力皆可成才。' },
+      { meaning: '施行辦理（ㄒㄧㄥˊ）', example: '平日當行行好事，廣結善緣。' },
+      { meaning: '慢步行走（ㄒㄧㄥˊ）', example: '行行重行行，與君生別離。（《古詩十九首》）' }
+    ],
+    explanation: '字同而音義多元：念 ㄏㄤˋ 為剛強；念 ㄏㄤˊ 為行業；念 ㄒㄧㄥˊ 則為行走或實行。'
+  },
+  {
+    id: 17,
+    word: '惺惺',
+    bopomofo: 'ㄒㄧㄥ ㄒㄧㄥ',
+    category: '神態舉止',
+    isPolysemy: true,
+    isStar: true,
+    defs: [
+      { meaning: '虛情假意、扭捏做態', example: '他那假惺惺的道歉，根本毫無誠意。' },
+      { meaning: '聰明、伶俐惺惺相惜', example: '兩位圍棋大師棋逢敵手，惺惺相惜。' }
+    ],
+    explanation: '「假惺惺」指虛偽矯揉；而「惺惺相惜」則指富有才華之聰明人彼此互相欽佩。'
+  },
+  {
+    id: 18,
+    word: '蒼蒼',
+    bopomofo: 'ㄘㄤ ㄘㄤ',
+    category: '景物自然',
+    isPolysemy: true,
+    isStar: false,
+    defs: [
+      { meaning: '深青色（草木林森）', example: '兩岸青山蒼蒼，鬱鬱蔥蔥。' },
+      { meaning: '茂盛生長之貌', example: '蒹葭蒼蒼，白露為霜。（《詩經》）' },
+      { meaning: '斑白灰白之貌', example: '老人家白髮蒼蒼，眼神卻依舊炯炯有神。' }
+    ],
+    explanation: '兼具青色、茂盛與蒼白三種意象，全視上下文主體（山水、蘆葦、頭髮）而定。'
+  },
+  {
+    id: 19,
+    word: '洋洋',
+    bopomofo: 'ㄧㄤˊ ㄧㄤˊ',
+    category: '事理氣勢',
+    isPolysemy: true,
+    isStar: false,
+    defs: [
+      { meaning: '水勢盛大的樣子', example: '河水洋洋，北流活活。' },
+      { meaning: '得意的樣子', example: '考了滿分，他洋洋得意地向同學炫耀。' },
+      { meaning: '充滿神采之貌', example: '獲獎選手神氣昂揚，意氣洋洋走上領獎台。' },
+      { meaning: '眾多壯盛貌', example: '這部百科全書洋洋大觀，收錄廣博。' }
+    ],
+    explanation: '《論語》：「洋洋乎盈耳哉！」可形容水盛、得意志滿、或是著作卷帙浩繁。'
+  },
+  {
+    id: 20,
+    word: '芸芸',
+    bopomofo: 'ㄩㄣˊ ㄩㄣˊ',
+    category: '事理氣勢',
+    isPolysemy: false,
+    isStar: false,
+    defs: [
+      { meaning: '眾多的樣子（亦作云云）', example: '在芸芸眾生之中，每個人都在為理想奔忙。' }
+    ],
+    explanation: '《老子》：「萬物云云，各復歸其根。」形容世間眾人、世態多元廣布。'
+  },
+  {
+    id: 21,
+    word: '怏怏',
+    bopomofo: 'ㄧㄤˋ ㄧㄤˋ',
+    category: '情感心緒',
+    isPolysemy: false,
+    isStar: true,
+    defs: [
+      { meaning: '不快樂、心中怨恨不平貌', example: '願望落空後，他整天怏怏不樂。' }
+    ],
+    explanation: '形容因心中失意或有所不甘而表現出的鬱鬱沈悶神情。'
+  },
+  {
+    id: 22,
+    word: '戚戚',
+    bopomofo: 'ㄑㄧ ㄑㄧ',
+    category: '情感心緒',
+    isPolysemy: true,
+    isStar: false,
+    defs: [
+      { meaning: '憂愁恐懼患得患失', example: '君子坦蕩蕩，小人長戚戚。（《論語》）' },
+      { meaning: '內心深有感動觸發', example: '讀了他的回憶錄，於我心有戚戚焉。（《孟子》）' }
+    ],
+    explanation: '亦寫作「慼慼」。「小人長戚戚」為憂心忡忡；「於我心有戚戚焉」為同理共鳴。'
+  },
+  {
+    id: 23,
+    word: '悽悽',
+    bopomofo: 'ㄑㄧ ㄑㄧ',
+    category: '情感心緒',
+    isPolysemy: false,
+    isStar: true,
+    defs: [
+      { meaning: '悲傷哀痛慘痛的樣子', example: '這場意外奪去親人生命，令人感到悽悽慘慘。' }
+    ],
+    explanation: '形容悲痛欲絕或寒涼蕭瑟之氛圍，李清照詞「淒淒慘慘戚戚」即為著名用例。'
+  },
+  {
+    id: 24,
+    word: '楚楚',
+    bopomofo: 'ㄔㄨˇ ㄔㄨˇ',
+    category: '神態舉止',
+    isPolysemy: true,
+    isStar: false,
+    defs: [
+      { meaning: '鮮明整齊的樣子', example: '宴會上賓客衣冠楚楚，儀態大方。' },
+      { meaning: '形容姿態嬌豔惹人憐愛', example: '她楚楚可憐的模樣，令在場眾人不忍苛責。' }
+    ],
+    explanation: '「衣冠楚楚」形容衣著鮮明整齊；「楚楚動人」則形容女子柔美嬌弱、惹人顧惜。'
+  },
+  {
+    id: 25,
+    word: '悠悠',
+    bopomofo: 'ㄧㄡ ㄧㄡ',
+    category: '情感心緒',
+    isPolysemy: true,
+    isStar: true,
+    defs: [
+      { meaning: '渺遠無盡的樣子', example: '前不見古人，後不見來者。念天地之悠悠。（陳子昂）' },
+      { meaning: '憂思深長之貌', example: '青青子衿，悠悠我心。（《詩經》）' },
+      { meaning: '荒謬不合事理', example: '此乃悠悠之談，不可輕易聽信。' },
+      { meaning: '眾多之人', example: '悠悠眾口，難以一一堵塞辨白。' }
+    ],
+    explanation: '會考超高頻核心疊字詞！兼含時空久遠、思緒綿延、荒謬不經與市井眾口等四種用法。'
+  },
+  {
+    id: 26,
+    word: '勃勃',
+    bopomofo: 'ㄅㄛˊ ㄅㄛˊ',
+    category: '事理氣勢',
+    isPolysemy: false,
+    isStar: false,
+    defs: [
+      { meaning: '旺盛盛大、生機充滿貌', example: '少年意氣風發，野心勃勃／生機勃勃。' }
+    ],
+    explanation: '形容生氣、雄心或興致蓬勃旺盛、奔放不息。'
+  },
+  {
+    id: 27,
+    word: '滔滔',
+    bopomofo: 'ㄊㄠ ㄊㄠ',
+    category: '景物自然',
+    isPolysemy: true,
+    isStar: true,
+    defs: [
+      { meaning: '水流滾滾不絕貌', example: '大江東去，波浪滔滔奔流入海。' },
+      { meaning: '形容說話連續不停口才敏捷', example: '辯論名手滔滔不絕，氣勢如虹。' },
+      { meaning: '形容天下混亂紛擾', example: '滔滔者天下皆是也，而誰以易之？（《論語》）' }
+    ],
+    explanation: '《論語》名句「滔滔者天下皆是」，形容時局混亂動盪如大水漫溢；「滔滔不絕」則形容口若懸河。'
+  },
+  {
+    id: 28,
+    word: '翩翩',
+    bopomofo: 'ㄆㄧㄢ ㄆㄧㄢ',
+    category: '神態舉止',
+    isPolysemy: true,
+    isStar: true,
+    defs: [
+      { meaning: '行動輕快敏捷的樣子', example: '彩蝶在花叢間翩翩起舞。' },
+      { meaning: '舉止灑脫、風度優雅', example: '他談吐不俗，真是一位風度翩翩的美少年。' }
+    ],
+    explanation: '形容飛舞輕盈，或形容君子文士儀態風流瀟灑。'
+  },
+  {
+    id: 29,
+    word: '靡靡',
+    bopomofo: 'ㄇㄧˇ ㄇㄧˇ',
+    category: '事理氣勢',
+    isPolysemy: false,
+    isStar: false,
+    defs: [
+      { meaning: '頹廢淫蕩、萎靡不振', example: '商紂王喜好靡靡之音，終致國家社稷敗亡。' }
+    ],
+    explanation: '「靡靡之音」指使人沉溺低俗、意志消沉之音樂，引申為頹廢風氣。'
+  },
+  {
+    id: 30,
+    word: '纍纍',
+    bopomofo: 'ㄌㄟˊ ㄌㄟˊ',
+    category: '景物自然',
+    isPolysemy: false,
+    isStar: true,
+    defs: [
+      { meaning: '繁多、重積成串的樣子', example: '秋天到了，果園中碩大的果實纍纍掛滿枝頭。' }
+    ],
+    explanation: '注音 ㄌㄟˊ ㄌㄟˊ。形容果實結實眾多，不可寫作「雷雷」或念錯音。'
+  },
+  {
+    id: 31,
+    word: '嫋嫋',
+    bopomofo: 'ㄋㄧㄠˇ ㄋㄧㄠˇ',
+    category: '景物自然',
+    isPolysemy: true,
+    isStar: true,
+    defs: [
+      { meaning: '音調悠揚綿長不絕', example: '餘音嫋嫋，不絕如縷。（蘇軾《赤壁賦》）' },
+      { meaning: '縈迴繚繞輕柔飄動貌', example: '暮色漸深，山村中飄起輕煙嫋嫋。' }
+    ],
+    explanation: '亦作「裊裊」。兼具聽覺悠長（餘音嫋嫋）與視覺柔美繚繞（炊煙嫋嫋）之美。'
+  },
+  {
+    id: 32,
+    word: '寥寥',
+    bopomofo: 'ㄌㄧㄠˊ ㄌㄧㄠˊ',
+    category: '事理氣勢',
+    isPolysemy: true,
+    isStar: false,
+    defs: [
+      { meaning: '數量稀少不多的樣子', example: '大雨滂沱，前來聽講的聽眾寥寥無幾。' },
+      { meaning: '空虛、孤寂冷清貌', example: '寂寂寥寥人境外，空山唯有白雲知。' }
+    ],
+    explanation: '形容人數或物件極少（寥寥無幾），亦可摹空寂遼遠之境。'
+  },
+  {
+    id: 33,
+    word: '睽睽',
+    bopomofo: 'ㄎㄨㄟˊ ㄎㄨㄟˊ',
+    category: '神態舉止',
+    isPolysemy: false,
+    isStar: false,
+    defs: [
+      { meaning: '張著眼睛注視凝望之貌', example: '在眾目睽睽之下，他坦然承認了自己的過失。' }
+    ],
+    explanation: '「眾目睽睽」形容許多人的目光聚集盯視，眾目注視下無所遁形。'
+  },
+  {
+    id: 34,
+    word: '涓涓',
+    bopomofo: 'ㄐㄩㄢ ㄐㄩㄢ',
+    category: '景物自然',
+    isPolysemy: false,
+    isStar: true,
+    defs: [
+      { meaning: '細水慢流的樣子', example: '山澗中流淌著涓涓細流，清澈見底。' }
+    ],
+    explanation: '【避坑】形容流水纖細平緩，為形容態樣之詞，絕非擬聲狀聲詞！'
+  },
+  {
+    id: 35,
+    word: '岌岌',
+    bopomofo: 'ㄐㄧˊ ㄐㄧˊ',
+    category: '事理氣勢',
+    isPolysemy: false,
+    isStar: false,
+    defs: [
+      { meaning: '極度危險、搖搖欲墜貌', example: '年久失修的老宅在強震後岌岌可危。' }
+    ],
+    explanation: '「岌岌可危」形容情勢十分危急險峻，隨時有崩塌潰散之虞。'
+  },
+  {
+    id: 36,
+    word: '纖纖',
+    bopomofo: 'ㄒㄧㄢ ㄒㄧㄢ',
+    category: '神態舉止',
+    isPolysemy: false,
+    isStar: true,
+    defs: [
+      { meaning: '細長柔美的樣子', example: '纖纖擢素手，札札弄機杼。（《古詩十九首》）' }
+    ],
+    explanation: '形容雙手或指頭纖細柔白美觀，為古典詩詞形容佳人之名句。'
+  },
+  {
+    id: 37,
+    word: '栩栩',
+    bopomofo: 'ㄒㄩˇ ㄒㄩˇ',
+    category: '神態舉止',
+    isPolysemy: false,
+    isStar: false,
+    defs: [
+      { meaning: '生動逼真、活靈活現', example: '畫家筆下的駿馬栩栩如生，宛若奔馳眼前。' }
+    ],
+    explanation: '《莊子・齊物論》：「昔者莊周夢為胡蝶，栩栩然胡蝶也。」形容藝術描繪鮮活生動。'
+  },
+  {
+    id: 38,
+    word: '循循',
+    bopomofo: 'ㄒㄩㄣˊ ㄒㄩㄣˊ',
+    category: '神態舉止',
+    isPolysemy: false,
+    isStar: false,
+    defs: [
+      { meaning: '逐步引導、規矩有序貌', example: '夫子循循然善誘人，博我以文，約我以禮。' }
+    ],
+    explanation: '《論語》名句，讚揚孔子善於按部就班、有條不紊地啟發指導學生。'
+  },
+  {
+    id: 39,
+    word: '悻悻',
+    bopomofo: 'ㄒㄧㄥˋ ㄒㄧㄥˋ',
+    category: '情感心緒',
+    isPolysemy: false,
+    isStar: false,
+    defs: [
+      { meaning: '憤恨難平、怒氣未消貌', example: '比賽失利後，他悻悻然轉身離場。' }
+    ],
+    explanation: '形容心中憤怒、怨恨不服輸之神態反應。'
+  },
+  {
+    id: 40,
+    word: '欣欣',
+    bopomofo: 'ㄒㄧㄣ ㄒㄧㄣ',
+    category: '景物自然',
+    isPolysemy: true,
+    isStar: false,
+    defs: [
+      { meaning: '草木興盛繁榮貌', example: '春回大地，草木欣欣向榮。' },
+      { meaning: '喜悅高興的樣子', example: '聽到好消息，大家欣欣然喜上眉梢。' }
+    ],
+    explanation: '陶淵明《歸去來兮辭》：「木欣欣以向榮，泉涓涓而始流。」形容草木繁盛或內心歡樂。'
+  },
+  {
+    id: 41,
+    word: '惴惴',
+    bopomofo: 'ㄓㄨㄟˋ ㄓㄨㄟˋ',
+    category: '情感心緒',
+    isPolysemy: false,
+    isStar: false,
+    defs: [
+      { meaning: '憂懼戒慎、提心吊膽貌', example: '等待放榜的時刻，考生們無不惴惴不安。' }
+    ],
+    explanation: '形容內心恐懼緊張、擔憂發生意外之忐忑不安神態。'
+  },
+  {
+    id: 42,
+    word: '諄諄',
+    bopomofo: 'ㄓㄨㄣ ㄓㄨㄣ',
+    category: '神態舉止',
+    isPolysemy: false,
+    isStar: true,
+    defs: [
+      { meaning: '叮嚀告誡、教誨不倦貌', example: '老師的諄諄教誨，我至今銘記在心。' }
+    ],
+    explanation: '形容長輩或師長懇切耐心地反覆教導叮囑，態度懇切慈祥。'
+  },
+  {
+    id: 43,
+    word: '憧憧',
+    bopomofo: 'ㄔㄨㄥ ㄔㄨㄥ',
+    category: '景物自然',
+    isPolysemy: false,
+    isStar: false,
+    defs: [
+      { meaning: '晃動搖曳、閃爍不定貌', example: '夜半風吹林竹，只見鬼影憧憧、人心惶惶。' }
+    ],
+    explanation: '形容影子或人群往來晃動、飄忽不定，亦可形容心緒紛雜（心旌憧憧）。'
+  },
+  {
+    id: 44,
+    word: '莘莘',
+    bopomofo: 'ㄕㄣ ㄕㄣ',
+    category: '神態舉止',
+    isPolysemy: false,
+    isStar: false,
+    defs: [
+      { meaning: '眾多繁盛的樣子', example: '校園裡充滿了朝氣蓬勃的莘莘學子。' }
+    ],
+    explanation: '注意注音念 ㄕㄣ ㄕㄣ，不可念作 ㄒㄧㄣ ㄒㄧㄣ。「莘莘學子」專指眾多學生。'
+  },
+  {
+    id: 45,
+    word: '姍姍',
+    bopomofo: 'ㄕㄢ ㄕㄢ',
+    category: '神態舉止',
+    isPolysemy: false,
+    isStar: false,
+    defs: [
+      { meaning: '走路緩慢從容的姿態', example: '會議即將結束，他才姍姍來遲。' }
+    ],
+    explanation: '《漢書》：「立而望之，偏何姍姍其來遲。」形容從容緩步而來，引申為遲到。'
+  },
+  {
+    id: 46,
+    word: '鑿鑿',
+    bopomofo: 'ㄗㄠˊ ㄗㄠˊ',
+    category: '事理氣勢',
+    isPolysemy: false,
+    isStar: false,
+    defs: [
+      { meaning: '確實可信、確鑿不移', example: '目擊者言之鑿鑿，證明被告當時確在現場。' }
+    ],
+    explanation: '「言之鑿鑿」指說話證據確鑿、真實可信，絕非捕風捉影。'
+  },
+  {
+    id: 47,
+    word: '熠熠',
+    bopomofo: 'ㄧˋ ㄧˋ',
+    category: '景物自然',
+    isPolysemy: false,
+    isStar: true,
+    defs: [
+      { meaning: '閃亮光耀、明亮耀眼貌', example: '夏夜晴空中，滿天星光熠熠生輝。' }
+    ],
+    explanation: '形容星光、鑽石或眼眸閃亮發光，注音為 ㄧˋ ㄧˋ。'
+  },
+  {
+    id: 48,
+    word: '娓娓',
+    bopomofo: 'ㄨㄟˇ ㄨㄟˇ',
+    category: '神態舉止',
+    isPolysemy: false,
+    isStar: false,
+    defs: [
+      { meaning: '談論不倦、生動好聽貌', example: '老爺爺坐在搖椅上，娓娓道來當年的冒險故事。' }
+    ],
+    explanation: '「娓娓道來」形容說話連續動聽，令人聽得津津有味、不覺厭倦。'
+  },
+  {
+    id: 49,
+    word: '鬱鬱',
+    bopomofo: 'ㄩˋ ㄩˋ',
+    category: '景物自然',
+    isPolysemy: true,
+    isStar: false,
+    defs: [
+      { meaning: '悶悶不樂、胸懷憂結貌', example: '經歷挫折之後，他鬱鬱寡歡，閉門不出。' },
+      { meaning: '茂盛生長、蒼翠之貌', example: '鬱鬱園中柳，青青河畔草。（《古詩十九首》）' }
+    ],
+    explanation: '兼表自然草木之蓬勃繁茂，與人心情緒之抑鬱寡歡，詩歌中常藉以比興。'
+  },
+  {
+    id: 50,
+    word: '曖曖',
+    bopomofo: 'ㄞˋ ㄞˋ',
+    category: '景物自然',
+    isPolysemy: true,
+    isStar: true,
+    defs: [
+      { meaning: '昏暗不明、朦朧隱約貌', example: '曖曖遠人村，依依墟里煙。（陶淵明《歸園田居》）' },
+      { meaning: '光輝暗藏、不露鋒芒', example: '在涅貴不緇，曖曖內含光。（崔瑗《座右銘》）' }
+    ],
+    explanation: '《座右銘》經典考題！「曖曖內含光」形容有道德之人內在蘊含光芒而不張揚。'
+  },
+  {
+    id: 51,
+    word: '躍躍',
+    bopomofo: 'ㄩㄝˋ ㄩㄝˋ',
+    category: '情感心緒',
+    isPolysemy: true,
+    isStar: true,
+    defs: [
+      { meaning: '心動不定、極想嘗試貌', example: '看見舞台上的演出，他也躍躍欲試。' },
+      { meaning: '喜悅高興貌', example: '聞之躍躍以喜，手舞足蹈。' }
+    ],
+    explanation: '「躍躍欲試」形容心情激動急切，渴望立刻動手一試。'
+  },
+  {
+    id: 52,
+    word: '凜凜',
+    bopomofo: 'ㄌㄧㄣˇ ㄌㄧㄣˇ',
+    category: '事理氣勢',
+    isPolysemy: true,
+    isStar: false,
+    defs: [
+      { meaning: '態度嚴肅令人敬畏之貌', example: '大將軍跨坐駿馬，神態威風凜凜。' },
+      { meaning: '寒冷刺骨之貌', example: '北風呼嘯，冰霜凜凜逼人。' }
+    ],
+    explanation: '可形容寒氣逼人之嚴冬氣候，亦可形容威嚴不可侵犯之神采儀表。'
+  },
+  {
+    id: 53,
+    word: '惶惶',
+    bopomofo: 'ㄏㄨㄤˊ ㄏㄨㄤˊ',
+    category: '情感心緒',
+    isPolysemy: false,
+    isStar: false,
+    defs: [
+      { meaning: '心中惶恐不安、恐懼害怕貌', example: '假消息肆虐引發人心惶惶不可終日。' }
+    ],
+    explanation: '形容恐慌焦慮之神態，常與「人心惶惶」連用。'
+  },
+  {
+    id: 54,
+    word: '耿耿',
+    bopomofo: 'ㄍㄥˇ ㄍㄥˇ',
+    category: '情感心緒',
+    isPolysemy: true,
+    isStar: false,
+    defs: [
+      { meaning: '形容誠信守節、正直正直', example: '諸葛亮輔佐蜀漢，忠心耿耿，鞠躬盡瘁。' },
+      { meaning: '心中掛懷、煩躁不安貌', example: '昔日那句無心的話，至今仍讓他耿耿於懷。' }
+    ],
+    explanation: '「忠心耿耿」形容操守正直堅貞；「耿耿於懷」則形容心有掛念難以釋懷。'
+  }
+];
+
+// ==========================================
+// 圖鑑互動渲染邏輯
+// ==========================================
+let currentCategory = 'all';
+let currentBadge = 'all';
+let currentKeyword = '';
+let isAllExplOpen = true;
+
+function renderCards() {
+  const container = document.getElementById('cardsGrid');
+  if (!container) return;
+  container.innerHTML = '';
+
+  const filtered = vocabData.filter(item => {
+    // 分類過濾
+    if (currentCategory !== 'all' && item.category !== currentCategory) return false;
+    // 標籤過濾
+    if (currentBadge === 'polysemy' && !item.isPolysemy) return false;
+    if (currentBadge === 'star' && !item.isStar) return false;
+    // 關鍵字搜尋
+    if (currentKeyword.trim() !== '') {
+      const kw = currentKeyword.trim().toLowerCase();
+      const matchWord = item.word.toLowerCase().includes(kw);
+      const matchBopomofo = item.bopomofo.toLowerCase().includes(kw);
+      const matchExpl = item.explanation.toLowerCase().includes(kw);
+      const matchDefs = item.defs.some(d => d.meaning.toLowerCase().includes(kw) || d.example.toLowerCase().includes(kw));
+      if (!matchWord && !matchBopomofo && !matchExpl && !matchDefs) return false;
+    }
+    return true;
+  });
+
+  if (filtered.length === 0) {
+    container.innerHTML = `
+      <div style="grid-column: 1/-1; text-align: center; padding: 3rem; background: white; border-radius: 14px; border: 1px dashed #cbd5e1;">
+        <div style="font-size: 3rem; margin-bottom: 0.8rem;">🔍</div>
+        <h3 style="font-size: 1.25rem; font-weight: 800; color: #475569; margin-bottom: 0.4rem;">找不到符合條件的疊字詞</h3>
+        <p style="font-size: 0.95rem; color: #94a3b8;">請嘗試清除關鍵字或點擊重設條件按鈕</p>
+      </div>
+    `;
+    return;
+  }
+
+  filtered.forEach(item => {
+    const card = document.createElement('div');
+    card.className = 'vocab-card';
+    card.id = `card-${item.id}`;
+
+    let defsHtml = item.defs.map((def, idx) => {
+      const highlightedEx = def.example.replace(new RegExp(item.word, 'g'), `<span class="hl-word">${item.word}</span>`);
+      return `
+        <div class="def-item-box">
+          <div class="def-meaning-row">
+            <span><span style="color: var(--primary); margin-right: 4px;">${idx + 1}.</span> ${def.meaning}</span>
+          </div>
+          <div class="def-example-row">
+            <span style="font-weight: 700; color: #64748b; font-size: 0.82rem;">【例】</span>${highlightedEx}
+          </div>
+        </div>
+      `;
+    }).join('');
+
+    let badgesHtml = '';
+    if (item.isPolysemy) {
+      badgesHtml += `<span class="badge-polysemy">★ 多義疊字</span>`;
+    }
+    if (item.isStar) {
+      badgesHtml += `<span class="badge-star">★ 會考重點</span>`;
+    }
+
+    card.innerHTML = `
+      <div class="card-top-row">
+        <div class="card-word-group">
+          <span class="card-word serif">${item.word}</span>
+          <span class="card-bopomofo">${item.bopomofo}</span>
+        </div>
+        <span class="card-category-tag">${item.category}</span>
+      </div>
+
+      ${badgesHtml ? `<div class="card-badge-row">${badgesHtml}</div>` : ''}
+
+      <div class="card-definitions-list">
+        ${defsHtml}
+      </div>
+
+      <div class="card-toggle-expl-box">
+        <button class="btn-toggle-expl" onclick="toggleCardExpl(${item.id})">
+          <i data-lucide="info" style="width:14px;"></i> <span id="expl-btn-text-${item.id}">${isAllExplOpen ? '隱藏考點解析' : '查看考點解析'}</span>
+        </button>
+        <div class="card-expl-content" id="expl-content-${item.id}" style="display: ${isAllExplOpen ? 'block' : 'none'};">
+          <b>【會考考點解析】</b>${item.explanation}
+        </div>
+      </div>
+
+      <div class="card-actions-bar">
+        <button class="btn-tts" onclick="speakCard(${item.id})">
+          <i data-lucide="volume-2" style="width:15px;"></i> 語音朗讀
+        </button>
+        <span style="font-size: 0.8rem; color: #94a3b8; font-weight: 600;">#${item.id}</span>
+      </div>
+    `;
+
+    container.appendChild(card);
+  });
+
+  lucide.createIcons();
+}
+
+function toggleCardExpl(id) {
+  const content = document.getElementById(`expl-content-${id}`);
+  const btnText = document.getElementById(`expl-btn-text-${id}`);
+  if (!content) return;
+  const isCurrentlyOpen = content.style.display !== 'none' && window.getComputedStyle(content).display !== 'none';
+  if (isCurrentlyOpen) {
+    content.style.display = 'none';
+    btnText.textContent = '查看考點解析';
+  } else {
+    content.style.display = 'block';
+    btnText.textContent = '隱藏考點解析';
+  }
+}
+
+function toggleAllExplanations() {
+  isAllExplOpen = !isAllExplOpen;
+  const btn = document.getElementById('btn-toggle-all-expl');
+  vocabData.forEach(item => {
+    const content = document.getElementById(`expl-content-${item.id}`);
+    const btnText = document.getElementById(`expl-btn-text-${item.id}`);
+    if (content) {
+      content.style.display = isAllExplOpen ? 'block' : 'none';
+      if (btnText) btnText.textContent = isAllExplOpen ? '隱藏考點解析' : '查看考點解析';
+    }
+  });
+  btn.innerHTML = isAllExplOpen
+    ? `<i data-lucide="eye-off" style="width:15px;"></i> 一鍵隱藏全部考點解析`
+    : `<i data-lucide="eye" style="width:15px;"></i> 一鍵揭曉全部考點解析`;
+  lucide.createIcons();
+}
+
+function filterByCategory(cat) {
+  currentCategory = cat;
+  document.querySelectorAll('.compass-card').forEach(el => el.classList.remove('active'));
+  const cardMap = {
+    'all': 0, '景物自然': 1, '情感心緒': 2, '神態舉止': 3, '事理氣勢': 4
+  };
+  const cards = document.querySelectorAll('.compass-grid .compass-card');
+  if (cards[cardMap[cat]]) cards[cardMap[cat]].classList.add('active');
+  renderCards();
+}
+
+function filterByBadge(badge) {
+  currentBadge = (currentBadge === badge) ? 'all' : badge;
+  renderCards();
+}
+
+function handleSearch() {
+  currentKeyword = document.getElementById('searchInput').value;
+  renderCards();
+}
+
+function resetFilters() {
+  currentCategory = 'all';
+  currentBadge = 'all';
+  currentKeyword = '';
+  document.getElementById('searchInput').value = '';
+  document.querySelectorAll('.compass-card').forEach(el => el.classList.remove('active'));
+  document.querySelector('.compass-card').classList.add('active');
+  renderCards();
+}
+
+// ==========================================
+// 全真真人語音 TTS (Web Speech API)
+// ==========================================
+function speakText(text) {
+  if (!('speechSynthesis' in window)) {
+    alert('您的瀏覽器不支援語音朗讀功能！');
+    return;
+  }
+  window.speechSynthesis.cancel();
+  const utterance = new SpeechSynthesisUtterance(text);
+  utterance.lang = 'zh-TW';
+  utterance.rate = 0.95;
+  utterance.pitch = 1.0;
+  window.speechSynthesis.speak(utterance);
+}
+
+function speakCard(id) {
+  const item = vocabData.find(x => x.id === id);
+  if (!item) return;
+  let textToRead = `${item.word}。${item.bopomofo}。`;
+  item.defs.forEach((d, idx) => {
+    textToRead += `第${idx + 1}義：${d.meaning}。例句：${d.example}。`;
+  });
+  speakText(textToRead);
+}
+
+// ==========================================
+// 詩境魔法創作工坊 (Interactive Workshop)
+// ==========================================
+const workshopScenes = {
+  gushi: {
+    title: '《古詩十九首》情思',
+    words: ['迢迢', '皎皎', '纖纖', '札札', '盈盈', '脈脈', '鬱鬱', '青青'],
+    templates: {
+      '迢迢': {
+        verse: '迢迢牽牛星，皎皎河漢女。',
+        analysis: '【相思迢遞】描繪牛郎織女隔河遠望，空間之修遠映襯內心相思之深切悠長。'
+      },
+      '皎皎': {
+        verse: '皎皎河漢女，微霜浸玉階。',
+        analysis: '【冰清玉潔】以皎潔銀河與織女明眸互相輝映，象徵純潔忠貞無瑕之相守。'
+      },
+      '纖纖': {
+        verse: '纖纖擢素手，札札弄機杼。',
+        analysis: '【柔荑弄梭】生動刻畫思婦白皙柔長之手指翻飛弄機，動作優雅卻蘊含無奈。'
+      },
+      '札札': {
+        verse: '札札弄機杼，更深人未眠。',
+        analysis: '【機杼聲碎】重疊的織布機聲，既是寫實之聲景，更敲擊著深夜孤獨愁懷。'
+      },
+      '盈盈': {
+        verse: '盈盈一水間，脈脈不得語。',
+        analysis: '【秋水脈脈】形容一泓清澈如注的銀河之水，咫尺天涯，含蓄深婉。'
+      },
+      '脈脈': {
+        verse: '脈脈不得語，凝眸向碧天。',
+        analysis: '【含情不語】描摹深情凝視、心照不宣而難以言表的哀怨神態。'
+      },
+      '鬱鬱': {
+        verse: '鬱鬱園中柳，青青河畔草。',
+        analysis: '【草木繁榮】以春日繁盛茂密之柳色，反襯出遊子未歸、青春易逝的感傷。'
+      },
+      '青青': {
+        verse: '青青河畔草，綿綿思遠道。',
+        analysis: '【春色連綿】河畔青草鋪展無垠，象徵思念之情如同青草般生生不息、綿延天涯。'
+      }
+    }
+  },
+  landscape: {
+    title: '壯闊山川與行旅',
+    words: ['滔滔', '蒼蒼', '茫茫', '洋洋', '悠悠', '冉冉'],
+    templates: {
+      '滔滔': {
+        verse: '大江滔滔奔東海，滾滾煙塵照古今。',
+        analysis: '【水勢滾滾】極力摹擬江流奔騰之氣勢，象徵時光流逝與歷史滄桑無可挽回。'
+      },
+      '蒼蒼': {
+        verse: '蒹葭蒼蒼露如霜，孤帆遠影水雲長。',
+        analysis: '【山水蒼茫】以蒼翠茂密之草木與浩瀚水天，營造出行客追尋理想的悠遠情境。'
+      },
+      '茫茫': {
+        verse: '野曠天低樹，江清月近人；暮色茫茫何處家。',
+        analysis: '【天地蒼渺】廣大無邊之夜色中，突顯行旅異鄉孤獨無助的心緒。'
+      },
+      '洋洋': {
+        verse: '河水洋洋東逝水，壯士慷慨展風雲。',
+        analysis: '【浩蕩長流】描摹大水浩渺壯闊，賦予詩人吞吐天地、意氣奮發的胸襟。'
+      },
+      '悠悠': {
+        verse: '念天地之悠悠，獨愴然而涕下。',
+        analysis: '【千古浩嘆】陳子昂登幽州臺名句，以時空之無限對比個體生命之短暫渺小。'
+      },
+      '冉冉': {
+        verse: '落日冉冉墜荒巒，殘霞斜照大江邊。',
+        analysis: '【時光推移】緩緩降落之落日，傳遞出歲月不居、時不我待的從容與沉靜。'
+      }
+    }
+  },
+  scholar: {
+    title: '文人雅士與性靈',
+    words: ['楚楚', '翩翩', '栩栩', '諄諄', '耿耿', '曖曖'],
+    templates: {
+      '楚楚': {
+        verse: '衣冠楚楚臨風立，一片清光透素琴。',
+        analysis: '【儀表整肅】描寫文人君子衣著端莊鮮明、高雅自持之名士風采。'
+      },
+      '翩翩': {
+        verse: '翩翩公子度若雲，落筆生花萬卷春。',
+        analysis: '【瀟灑儒雅】描寫才俊舉止灑脫靈動，如雲舒捲，才華橫溢。'
+      },
+      '栩栩': {
+        verse: '莊周栩栩化飛蝶，寄意紅塵天地寬。',
+        analysis: '【逍遙化境】莊周夢蝶之神韻，象徵超脫世俗紛擾、物我兩忘之最高心靈境界。'
+      },
+      '諄諄': {
+        verse: '夫子諄諄傳大道，杏壇風化化千秋。',
+        analysis: '【長者垂範】描摹師長耐心教誨、循循善誘，如同春風化雨般潤澤學子心田。'
+      },
+      '耿耿': {
+        verse: '忠心耿耿照日月，寸丹長寄報明君。',
+        analysis: '【高風亮節】表現志士仁人堅貞不屈、光明磊落、至死不渝之愛國節操。'
+      },
+      '曖曖': {
+        verse: '曖曖內含光自守，不爭喧鬧自成芳。',
+        analysis: '【韜光養晦】崔瑗《座右銘》精神，君子內在德性輝耀卻深藏若虛，不露鋒芒。'
+      }
+    }
+  }
+};
+
+let selectedSceneKey = 'gushi';
+let selectedWord = '迢迢';
+
+function selectWorkshopScene(sceneKey) {
+  selectedSceneKey = sceneKey;
+  document.querySelectorAll('.step-btn').forEach(btn => btn.classList.remove('active'));
+  const btn = document.getElementById(`scene-btn-${sceneKey}`);
+  if (btn) btn.classList.add('active');
+
+  const scene = workshopScenes[sceneKey];
+  selectedWord = scene.words[0];
+  renderWorkshopWordPicker();
+  updateWorkshopOutput();
+}
+
+function renderWorkshopWordPicker() {
+  const picker = document.getElementById('workshopWordPicker');
+  if (!picker) return;
+  picker.innerHTML = '';
+  const scene = workshopScenes[selectedSceneKey];
+
+  scene.words.forEach(word => {
+    const chip = document.createElement('div');
+    chip.className = `pick-chip ${word === selectedWord ? 'active' : ''}`;
+    chip.textContent = word;
+    chip.onclick = () => {
+      selectedWord = word;
+      renderWorkshopWordPicker();
+      updateWorkshopOutput();
+    };
+    picker.appendChild(chip);
+  });
+}
+
+function updateWorkshopOutput() {
+  const scene = workshopScenes[selectedSceneKey];
+  const data = scene.templates[selectedWord];
+  const verseEl = document.getElementById('workshopVerse');
+  const analysisEl = document.getElementById('workshopAnalysis');
+
+  const highlighted = data.verse.replace(
+    new RegExp(selectedWord, 'g'),
+    `<span style="color: var(--primary); text-decoration: underline;">${selectedWord}</span>`
+  );
+
+  verseEl.innerHTML = highlighted;
+  analysisEl.innerHTML = data.analysis;
+}
+
+function speakWorkshopVerse() {
+  const scene = workshopScenes[selectedSceneKey];
+  const data = scene.templates[selectedWord];
+  speakText(`${data.verse}。${data.analysis}`);
+}
+
+// ==========================================
+// 會考神仙挑戰賽 (10 題高頻診斷題庫)
+// ==========================================
+const quizQuestions = [
+  {
+    id: 1,
+    source: '《古詩十九首》經典名句考題',
+    stem: '在《古詩十九首》「迢迢牽牛星，皎皎河漢女。纖纖擢素手，札札弄機杼」中，關於疊字詞的說明何者「錯誤」？',
+    options: [
+      'A. 「迢迢」形容牽牛星路途遙遠的樣子',
+      'B. 「皎皎」形容河漢女明亮潔白的容顏與星光',
+      'C. 「纖纖」描繪女子手指纖細柔長之態',
+      'D. 「札札」形容織布機聲，屬於形容走路腳步輕快的詞語'
+    ],
+    answer: 3,
+    explanation: '正確答案為 (D)。「札札」為象聲詞，摹擬織布機梭子穿梭運轉之聲，並非形容走路腳步輕快；形容走路輕盈者為「翩翩」或「姍姍」。'
+  },
+  {
+    id: 2,
+    source: '橘老師開唱・疊字詞避坑診斷題',
+    stem: '下列文句中的疊字詞，何者「屬於」擬摹聲音的狀聲詞？',
+    options: [
+      'A. 取得一點成就便「沾沾」自喜，終難成大器',
+      'B. 滿山林木鬱閉，只聽得山鳥「格格」價飛',
+      'C. 面對突如其來的考驗，全體職員憂心「忡忡」',
+      'D. 山澗「涓涓」細流，滋潤了乾涸的原野'
+    ],
+    answer: 1,
+    explanation: '正確答案為 (B)。(B)「格格」為狀聲詞，形容鳥鳴之聲；(A)「沾沾」形容暗自得意自滿；(C)「忡忡」形容心憂恐懼；(D)「涓涓」形容細水慢流貌，皆非狀聲詞。'
+  },
+  {
+    id: 3,
+    source: '歷屆會考高頻多義辨析題',
+    stem: '下列各選項「 」中的「悠悠」，何者詞義與其他三者「不同」？',
+    options: [
+      'A. 念天地之「悠悠」，獨愴然而涕下',
+      'B. 「悠悠」我心，豈無他人',
+      'C. 白雲千載空「悠悠」，黃鶴一去不復返',
+      'D. 荒煙蔓草，「悠悠」歲月不知流向何方'
+    ],
+    answer: 1,
+    explanation: '正確答案為 (B)。(B)「悠悠我心」之「悠悠」形容憂思長久深切；而 (A)、(C)、(D) 皆指時間或空間渺遠無盡、悠遠長久之貌。'
+  },
+  {
+    id: 4,
+    source: '《論語》經典文句疊字題',
+    stem: '孔子曾言：「君子坦蕩蕩，小人長戚戚。」句中「坦蕩蕩」與「戚戚」的對比，意在說明什麼？',
+    options: [
+      'A. 君子居處寬敞高大，小人居處逼仄寒酸',
+      'B. 君子心胸光明磊落，小人常懷憂慮、患得患失',
+      'C. 君子言行緩慢從容，小人行事急躁衝動',
+      'D. 君子地位尊貴顯赫，小人命運悲慘淒苦'
+    ],
+    answer: 1,
+    explanation: '正確答案為 (B)。「坦蕩蕩」指平坦寬廣，比喻心胸光明正大、坦然無私；「戚戚」指心懷憂懼、私念多而患得患失。'
+  },
+  {
+    id: 5,
+    source: '多義字「耿耿」語境判讀題',
+    stem: '下列各文句中的「耿耿」，何者與「耿耿於懷」的「耿耿」意思相同？',
+    options: [
+      'A. 諸葛武侯忠心「耿耿」，鞠躬盡瘁死而後已',
+      'B. 那件未解的懸案始終讓他夜不能寐，心懷「耿耿」',
+      'C. 關羽義薄雲天，其「耿耿」忠烈之氣照耀青史',
+      'D. 岳飛精忠報國，「耿耿」丹心日月可鑒'
+    ],
+    answer: 1,
+    explanation: '正確答案為 (B)。題幹「耿耿於懷」與 (B) 之「耿耿」皆指心有掛懷、煩躁不安之態；(A)、(C)、(D) 皆指誠信守節、忠貞剛正之義。'
+  },
+  {
+    id: 6,
+    source: '名篇《座右銘》經典成語題',
+    stem: '崔瑗《座右銘》名句「在涅貴不緇，曖曖內含光」，其中「曖曖」一詞的意涵為何？',
+    options: [
+      'A. 昏暗無光，形容人糊塗愚昧',
+      'B. 閃爍發亮，形容才華鋒芒畢露',
+      'C. 表面含蓄內藏光芒，形容君子自持而不耀眼於外',
+      'D. 閃爍不定，形容人行事鬼祟心懷不軌'
+    ],
+    answer: 2,
+    explanation: '正確答案為 (C)。「曖曖」本義為昏暗不明，在此引申為光輝內藏、隱而不揚之貌，形容才德深藏若虛、謙沖自牧。'
+  },
+  {
+    id: 7,
+    source: '形音義與疊字讀音檢測題',
+    stem: '下列文句中的疊字詞，其注音何者完全正確？',
+    options: [
+      'A. 果園中碩果「纍纍」：ㄌㄟˇ ㄌㄟˇ',
+      'B. 校園裡充滿「莘莘」學子：ㄒㄧㄣ ㄒㄧㄣ',
+      'C. 行行「鄙」夫志：ㄏㄤˋ ㄅㄧˇ',
+      'D. 星光「熠熠」生輝：ㄒㄧˊ ㄒㄧˊ'
+    ],
+    answer: 2,
+    explanation: '正確答案為 (C)。(A)「纍纍」注音為 ㄌㄟˊ ㄌㄟˊ；(B)「莘莘」注音為 ㄕㄣ ㄕㄣ；(C)「行行」剛強貌注音 ㄏㄤˋ 正確；(D)「熠熠」注音為 ㄧˋ ㄧˋ。'
+  },
+  {
+    id: 8,
+    source: '字義辨析・「洋洋」情境題',
+    stem: '下列文句中的「洋洋」，何者用來形容「水勢盛大」？',
+    options: [
+      'A. 他在演講台上表現出色，引得全場意氣「洋洋」',
+      'B. 這部歷史大劇格局宏大，氣象「洋洋」大觀',
+      'C. 他考取第一志願後，整天「洋洋」得意',
+      'D. 大江東流，「洋洋」浩蕩，奔騰入海'
+    ],
+    answer: 3,
+    explanation: '正確答案為 (D)。(D)「洋洋」浩蕩形容水勢廣大壯闊；(A)與(C)形容心滿意足、得意之態；(B)「洋洋大觀」形容豐富繁多之態。'
+  },
+  {
+    id: 9,
+    source: '姿態神韻疊字辨析題',
+    stem: '「那位少年舉止瀟灑，風度＿＿；在舞會中步態輕盈，起舞＿＿。」空格處最適合填入哪一組疊字詞？',
+    options: [
+      'A. 亭亭／姍姍',
+      'B. 翩翩／翩翩',
+      'C. 楚楚／款款',
+      'D. 栩栩／星星'
+    ],
+    answer: 1,
+    explanation: '正確答案為 (B)。「翩翩」既可形容舉止瀟灑、文雅有致（風度翩翩），亦可形容動作輕快飛揚（翩翩起舞），為經典雙關詞。'
+  },
+  {
+    id: 10,
+    source: '會考綜合題・語意正確性檢定',
+    stem: '下列各文句「 」中疊字詞的運用，何者最為「恰當」？',
+    options: [
+      'A. 面對老人的求救，他「悻悻」然熱心伸出援手',
+      'B. 他做事向來光明正大，心中的念頭「空蕩蕩」的毫無罣礙',
+      'C. 老師幾番「諄諄」教誨，終於喚醒了迷途的學子',
+      'D. 剛升上七年級的弟弟，成天為升學感到「沾沾」自喜'
+    ],
+    answer: 2,
+    explanation: '正確答案為 (C)。(A)「悻悻然」為憤恨不平貌，與熱心援助矛盾；(B)光明正大應作「坦蕩蕩」；(C)「諄諄」教誨運用精準恰當；(D)為升學憂慮不可用表示自滿的「沾沾自喜」。'
+  }
+];
+
+let currentQIndex = 0;
+let quizScore = 0;
+
+function renderQuestion() {
+  const q = quizQuestions[currentQIndex];
+  document.getElementById('quiz-progress-text').textContent = `第 ${currentQIndex + 1} / ${quizQuestions.length} 題`;
+  document.getElementById('quiz-score-badge').textContent = `當前得分：${quizScore} 分`;
+
+  const pct = (currentQIndex / quizQuestions.length) * 100;
+  document.getElementById('quiz-progress-bar').style.width = `${pct}%`;
+
+  document.getElementById('q-source-tag').textContent = q.source;
+  document.getElementById('q-stem').textContent = q.stem;
+
+  const optsContainer = document.getElementById('q-options-grid');
+  optsContainer.innerHTML = '';
+
+  q.options.forEach((optText, idx) => {
+    const btn = document.createElement('button');
+    btn.className = 'q-opt-btn';
+    btn.textContent = optText;
+    btn.onclick = () => handleSelectOption(idx);
+    optsContainer.appendChild(btn);
+  });
+
+  document.getElementById('q-explanation-box').style.display = 'none';
+  document.getElementById('btn-next-question').style.display = 'none';
+}
+
+function handleSelectOption(selectedIdx) {
+  const q = quizQuestions[currentQIndex];
+  const optBtns = document.querySelectorAll('.q-opt-btn');
+
+  optBtns.forEach((btn, idx) => {
+    btn.disabled = true;
+    if (idx === q.answer) {
+      btn.classList.add('correct');
+    } else if (idx === selectedIdx) {
+      btn.classList.add('wrong');
+    }
+  });
+
+  const isCorrect = (selectedIdx === q.answer);
+  if (isCorrect) {
+    quizScore += 10;
+    document.getElementById('quiz-score-badge').textContent = `當前得分：${quizScore} 分`;
+  }
+
+  const expBox = document.getElementById('q-explanation-box');
+  expBox.innerHTML = `
+    <div style="font-weight: 800; margin-bottom: 6px; color: ${isCorrect ? '#15803d' : '#b91c1c'};">
+      ${isCorrect ? '🎉 答對了！' : '❌ 答錯囉！'}
+    </div>
+    <div>${q.explanation}</div>
+  `;
+  expBox.style.display = 'block';
+
+  const nextBtn = document.getElementById('btn-next-question');
+  if (currentQIndex < quizQuestions.length - 1) {
+    nextBtn.innerHTML = `下一題 <i data-lucide="arrow-right" style="width:16px;"></i>`;
+  } else {
+    nextBtn.innerHTML = `查看結算成績 <i data-lucide="award" style="width:16px;"></i>`;
+  }
+  nextBtn.style.display = 'inline-flex';
+  lucide.createIcons();
+}
+
+function handleNextQuestion() {
+  if (currentQIndex < quizQuestions.length - 1) {
+    currentQIndex++;
+    renderQuestion();
+  } else {
+    showQuizResult();
+  }
+}
+
+function showQuizResult() {
+  document.getElementById('quiz-card-box').style.display = 'none';
+  document.querySelector('.quiz-stats-header').style.display = 'none';
+  document.querySelector('.quiz-bar-outer').style.display = 'none';
+
+  const resultView = document.getElementById('quiz-result-view');
+  resultView.style.display = 'block';
+
+  document.getElementById('result-final-score').textContent = `${quizScore} 分`;
+
+  const badgeIcon = document.getElementById('result-badge-icon');
+  const comment = document.getElementById('result-comment');
+
+  if (quizScore === 100) {
+    badgeIcon.textContent = '👑';
+    comment.textContent = '神乎其技！滿分通過！你已經徹底掌握國中段考與會考所有疊字詞重點考點！';
+  } else if (quizScore >= 80) {
+    badgeIcon.textContent = '🌟';
+    comment.textContent = '表現優異！對疊字詞有極深刻的理解，再複習一下多義疊字對決就無懈可擊了！';
+  } else if (quizScore >= 60) {
+    badgeIcon.textContent = '💪';
+    comment.textContent = '順利及格！多留意「疊字詞≠狀聲詞」與「悠悠、耿耿」等多義考點喔！';
+  } else {
+    badgeIcon.textContent = '📖';
+    comment.textContent = '加油！建議回到上方「典範圖鑑」多聽幾次語音並詳讀橘老師解題避坑指南！';
+  }
+}
+
+function restartQuiz() {
+  currentQIndex = 0;
+  quizScore = 0;
+
+  document.getElementById('quiz-card-box').style.display = 'block';
+  document.querySelector('.quiz-stats-header').style.display = 'flex';
+  document.querySelector('.quiz-bar-outer').style.display = 'block';
+  document.getElementById('quiz-result-view').style.display = 'none';
+
+  renderQuestion();
+}
+
+// ==========================================
+// 練習神器切換邏輯
+// ==========================================
+function switchPracticeTab(type) {
+  const tabWords = document.getElementById('tab-words');
+  const tabIdioms = document.getElementById('tab-idioms');
+  const iframe = document.getElementById('practiceIframe');
+  const openBtn = document.getElementById('btnOpenNewTab');
+
+  if (type === 'words') {
+    tabWords.classList.add('active');
+    tabIdioms.classList.remove('active');
+    iframe.src = 'reduplication/reduplication-words-practice.html';
+    openBtn.href = 'reduplication/reduplication-words-practice.html';
+    openBtn.innerHTML = '<i data-lucide="external-link" style="width:16px;"></i> 另開新視窗全螢幕練習 [疊字詞]';
+  } else {
+    tabIdioms.classList.add('active');
+    tabWords.classList.remove('active');
+    iframe.src = 'reduplication/reduplication-idioms-practice.html';
+    openBtn.href = 'reduplication/reduplication-idioms-practice.html';
+    openBtn.innerHTML = '<i data-lucide="external-link" style="width:16px;"></i> 另開新視窗全螢幕練習 [疊字成語]';
+  }
+  lucide.createIcons();
+}
+
+// 頁面初次加載
+window.addEventListener('DOMContentLoaded', () => {
+  renderCards();
+  selectWorkshopScene('gushi');
+  renderQuestion();
+});
+
+</script>
+</body>
+</html>

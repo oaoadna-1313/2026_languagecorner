@@ -1,0 +1,1134 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>語文補給站｜花花語文世界專屬練習神器</title>
+  <meta name="description" content="翰林國中國文B3L04愛蓮說語文補給站：花花語文世界專屬練習神器，包含植物象徵、名花物語、花草成語翻卡特訓、連連看配對挑戰、是非速辨與錯題本。">
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@600;700;900&family=Noto+Sans+TC:wght@400;500;700;900&display=swap" rel="stylesheet">
+  
+  <script src="https://unpkg.com/lucide@latest"></script>
+  
+  <style>
+    :root {
+      --primary: #e11d48;
+      --primary-dark: #be123c;
+      --primary-light: #ffe4e6;
+      --accent: #f59e0b;
+      --accent-light: #fef3c7;
+      --teal: #0d9488;
+      --teal-light: #ccfbf1;
+      --purple: #7c3aed;
+      --purple-light: #ede9fe;
+      --success: #10b981;
+      --success-light: #d1fae5;
+      --danger: #ef4444;
+      --danger-light: #fee2e2;
+      --bg: #fff5f5;
+      --card-bg: #ffffff;
+      --text: #1f2937;
+      --muted: #6b7280;
+      --border: #fecdd3;
+      --shadow: 0 10px 25px -5px rgba(225, 29, 72, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.04);
+      --radius: 18px;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    
+    body {
+      font-family: 'Noto Sans TC', sans-serif;
+      background-color: var(--bg);
+      color: var(--text);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 16px 14px 40px;
+      background-image:
+        radial-gradient(circle at 10% 10%, rgba(225, 29, 72, 0.04) 0%, transparent 45%),
+        radial-gradient(circle at 90% 90%, rgba(13, 148, 136, 0.04) 0%, transparent 45%);
+    }
+
+    header {
+      width: 100%;
+      max-width: 680px;
+      text-align: center;
+      margin-bottom: 18px;
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: var(--primary-light);
+      color: var(--primary-dark);
+      padding: 5px 14px;
+      border-radius: 999px;
+      font-size: 0.8rem;
+      font-weight: 700;
+      margin-bottom: 8px;
+    }
+
+    h1 {
+      font-family: 'Noto Serif TC', serif;
+      font-size: 1.65rem;
+      color: var(--primary-dark);
+      font-weight: 900;
+      letter-spacing: -0.5px;
+      margin-bottom: 4px;
+    }
+
+    .subtitle {
+      font-size: 0.9rem;
+      color: var(--muted);
+    }
+
+    /* 分頁標籤列 */
+    .tab-bar {
+      display: flex;
+      gap: 6px;
+      margin-bottom: 20px;
+      background: #fed7aa;
+      background: rgba(225, 29, 72, 0.08);
+      padding: 5px;
+      border-radius: 14px;
+      width: 100%;
+      max-width: 580px;
+      flex-wrap: wrap;
+    }
+
+    .tab-btn {
+      flex: 1;
+      min-width: 120px;
+      padding: 9px 10px;
+      border: none;
+      border-radius: 10px;
+      background: transparent;
+      color: #881337;
+      font-size: 0.88rem;
+      font-weight: 700;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      transition: all 0.25s ease;
+    }
+
+    .tab-btn.active {
+      background: white;
+      color: var(--primary-dark);
+      box-shadow: 0 4px 10px rgba(0,0,0,0.06);
+    }
+
+    /* 視圖面板 */
+    .view-panel {
+      display: none;
+      width: 100%;
+      max-width: 620px;
+      flex-direction: column;
+      align-items: center;
+      animation: fadeIn 0.3s ease;
+    }
+
+    .view-panel.active { display: flex; }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(6px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* 分類膠囊列 */
+    .filter-pills {
+      display: flex;
+      gap: 6px;
+      margin-bottom: 16px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .pill {
+      padding: 5px 12px;
+      border-radius: 999px;
+      font-size: 0.82rem;
+      font-weight: 600;
+      background: white;
+      border: 1px solid var(--border);
+      color: var(--muted);
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+
+    .pill.active {
+      background: var(--primary);
+      border-color: var(--primary);
+      color: white;
+    }
+
+    /* 3D 翻轉卡片 */
+    .card-scene {
+      width: 100%;
+      max-width: 520px;
+      height: 460px;
+      perspective: 1000px;
+      margin-bottom: 16px;
+      cursor: pointer;
+      user-select: none;
+    }
+
+    .card-3d {
+      width: 100%;
+      height: 100%;
+      position: relative;
+      transform-style: preserve-3d;
+      transition: transform 0.55s cubic-bezier(0.4, 0, 0.2, 1);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+    }
+
+    .card-3d.flipped {
+      transform: rotateY(180deg);
+    }
+
+    .card-face {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      backface-visibility: hidden;
+      border-radius: var(--radius);
+      padding: 24px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      border: 2px solid var(--border);
+      background: white;
+    }
+
+    .card-front {
+      background: linear-gradient(145deg, #ffffff 0%, #fff1f2 100%);
+    }
+
+    .card-back {
+      transform: rotateY(180deg);
+      background: linear-gradient(145deg, #fff1f2 0%, #ffffff 100%);
+      border-color: #f43f5e;
+    }
+
+    .card-header-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .card-topic-tag {
+      font-size: 0.78rem;
+      font-weight: 800;
+      padding: 3px 10px;
+      border-radius: 999px;
+      background: var(--primary-light);
+      color: var(--primary-dark);
+    }
+
+    .card-actions-row {
+      display: flex;
+      gap: 6px;
+    }
+
+    .icon-action-btn {
+      background: rgba(255, 255, 255, 0.8);
+      border: 1px solid #fed7aa;
+      border-radius: 50%;
+      width: 34px;
+      height: 34px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--muted);
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+
+    .icon-action-btn:hover {
+      background: var(--primary-light);
+      color: var(--primary-dark);
+    }
+
+    .icon-action-btn.starred {
+      color: var(--accent);
+      background: var(--accent-light);
+      border-color: var(--accent);
+    }
+
+    .card-main {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 10px 0;
+    }
+
+    .card-front .card-main {
+      gap: 16px;
+    }
+
+    .card-back .card-main {
+      justify-content: flex-start;
+      gap: 10px;
+      overflow-y: auto;
+      max-height: 350px;
+      padding: 6px 4px;
+      scrollbar-width: thin;
+    }
+
+    .card-q-title {
+      font-family: 'Noto Serif TC', serif;
+      font-size: 1.85rem;
+      font-weight: 900;
+      color: #881337;
+      margin-bottom: 6px;
+      line-height: 1.4;
+    }
+
+    .card-prompt-hint {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 8px 18px;
+      background: #fff1f2;
+      border: 1px dashed #f43f5e;
+      border-radius: 999px;
+      color: #be123c;
+      font-size: 0.92rem;
+      font-weight: 700;
+    }
+
+    .card-clue-box {
+      background: #fff7ed;
+      padding: 10px 14px;
+      border-radius: 10px;
+      font-size: 0.92rem;
+      color: #9a3412;
+      line-height: 1.55;
+      border: 1px dashed #f97316;
+      width: 100%;
+      text-align: left;
+    }
+
+    .card-ans-title {
+      font-family: 'Noto Serif TC', serif;
+      font-size: 1.7rem;
+      font-weight: 900;
+      color: var(--primary);
+      margin-bottom: 4px;
+    }
+
+    .card-ans-desc {
+      font-size: 0.95rem;
+      color: #4b5563;
+      line-height: 1.6;
+      text-align: left;
+      background: white;
+      padding: 12px 14px;
+      border-radius: 10px;
+      border: 1px solid #fee2e2;
+      width: 100%;
+    }
+
+    .card-footer-tip {
+      font-size: 0.8rem;
+      color: #9ca3af;
+      text-align: center;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 4px;
+    }
+
+    /* 卡片切換控制鍵 */
+    .controls-row {
+      display: flex;
+      gap: 12px;
+      align-items: center;
+      width: 100%;
+      max-width: 480px;
+      justify-content: space-between;
+      margin-bottom: 15px;
+    }
+
+    .ctrl-btn {
+      padding: 10px 18px;
+      border-radius: 12px;
+      border: 1px solid var(--border);
+      background: white;
+      color: var(--text);
+      font-weight: 700;
+      font-size: 0.9rem;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      transition: all 0.2s;
+    }
+
+    .ctrl-btn:hover {
+      background: var(--primary-light);
+      color: var(--primary-dark);
+      border-color: #f43f5e;
+    }
+
+    .card-counter {
+      font-size: 0.95rem;
+      font-weight: 800;
+      color: var(--primary-dark);
+    }
+
+    /* 連連看配對面板 */
+    .match-panel {
+      width: 100%;
+      background: white;
+      padding: 20px;
+      border-radius: var(--radius);
+      border: 2px solid var(--border);
+      box-shadow: var(--shadow);
+    }
+
+    .match-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 16px;
+      padding-bottom: 12px;
+      border-bottom: 1px solid #fecdd3;
+    }
+
+    .match-score {
+      font-size: 0.9rem;
+      font-weight: 800;
+      color: var(--primary);
+    }
+
+    .match-cols-wrap {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+
+    .match-col {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .match-item {
+      padding: 12px 14px;
+      border: 2px solid #fed7aa;
+      border: 2px solid #ffe4e6;
+      border-radius: 12px;
+      background: #fff;
+      font-size: 0.88rem;
+      font-weight: 600;
+      color: #374151;
+      cursor: pointer;
+      transition: all 0.2s;
+      min-height: 58px;
+      display: flex;
+      align-items: center;
+      line-height: 1.4;
+    }
+
+    .match-item:hover {
+      border-color: var(--primary);
+      background: #fff1f2;
+    }
+
+    .match-item.selected {
+      border-color: var(--primary);
+      background: var(--primary-light);
+      color: var(--primary-dark);
+      box-shadow: 0 0 0 2px var(--primary);
+    }
+
+    .match-item.matched {
+      border-color: var(--success);
+      background: var(--success-light);
+      color: #065f46;
+      cursor: default;
+      pointer-events: none;
+      opacity: 0.85;
+    }
+
+    /* 是非速辨判斷板 */
+    .ox-card-container {
+      width: 100%;
+      background: white;
+      padding: 24px;
+      border-radius: var(--radius);
+      border: 2px solid var(--border);
+      box-shadow: var(--shadow);
+      text-align: center;
+      margin-bottom: 16px;
+    }
+
+    .ox-q-badge {
+      font-size: 0.8rem;
+      font-weight: 800;
+      color: var(--purple);
+      background: var(--purple-light);
+      padding: 4px 12px;
+      border-radius: 999px;
+      display: inline-block;
+      margin-bottom: 14px;
+    }
+
+    .ox-q-text {
+      font-family: 'Noto Serif TC', serif;
+      font-size: 1.55rem;
+      font-weight: 900;
+      color: #1f2937;
+      margin-bottom: 10px;
+    }
+
+    .ox-q-desc {
+      font-size: 0.95rem;
+      color: var(--muted);
+      line-height: 1.6;
+      margin-bottom: 22px;
+      min-height: 48px;
+    }
+
+    .ox-btns-row {
+      display: flex;
+      gap: 16px;
+      justify-content: center;
+    }
+
+    .btn-ox {
+      flex: 1;
+      max-width: 150px;
+      padding: 14px 20px;
+      border-radius: 14px;
+      font-size: 1.6rem;
+      font-weight: 900;
+      cursor: pointer;
+      border: none;
+      transition: all 0.2s;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 4px;
+    }
+
+    .btn-o {
+      background: #dcfce7;
+      color: #15803d;
+      border: 2px solid #86efac;
+    }
+    .btn-o:hover {
+      background: #bbf7d0;
+      transform: translateY(-2px);
+    }
+
+    .btn-x {
+      background: #fee2e2;
+      color: #b91c1c;
+      border: 2px solid #fca5a5;
+    }
+    .btn-x:hover {
+      background: #fecaca;
+      transform: translateY(-2px);
+    }
+
+    .ox-feedback-box {
+      margin-top: 18px;
+      padding: 14px;
+      border-radius: 12px;
+      font-size: 0.92rem;
+      line-height: 1.5;
+      text-align: left;
+      display: none;
+      animation: fadeIn 0.2s;
+    }
+
+    .ox-feedback-box.correct {
+      background: var(--success-light);
+      color: #065f46;
+      border: 1px solid #6ee7b7;
+    }
+
+    .ox-feedback-box.wrong {
+      background: var(--danger-light);
+      color: #991b1b;
+      border: 1px solid #fca5a5;
+    }
+
+    /* 錯題本專區 */
+    .mistake-list {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .mistake-card {
+      background: white;
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 16px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.03);
+    }
+
+    .empty-state {
+      text-align: center;
+      padding: 40px 20px;
+      color: var(--muted);
+    }
+    .empty-state i {
+      width: 48px;
+      height: 48px;
+      color: #cbd5e1;
+      margin-bottom: 12px;
+    }
+
+    /* 返回旗艦殿堂按鈕 */
+    .back-home-wrap {
+      margin-top: 30px;
+      text-align: center;
+    }
+    .btn-back-main {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      color: var(--primary-dark);
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 0.92rem;
+      padding: 8px 18px;
+      border-radius: 999px;
+      background: white;
+      border: 1px solid var(--border);
+      transition: all 0.2s;
+    }
+    .btn-back-main:hover {
+      background: var(--primary-light);
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="badge"><i data-lucide="flower-2" style="width:14px;height:14px;"></i> 翰林 B3L04 愛蓮說・語文補給站</div>
+    <h1>花花語文世界・專屬練習神器</h1>
+    <p class="subtitle">植物象徵 × 名花物語 × 知己配對 × 花草成語辨析</p>
+  </header>
+
+  <!-- 模式切換 -->
+  <div class="tab-bar">
+    <button class="tab-btn active" onclick="switchTab('flashcard')"><i data-lucide="layers" style="width:16px;height:16px;"></i> 翻卡特訓</button>
+    <button class="tab-btn" onclick="switchTab('match')"><i data-lucide="shuffle" style="width:16px;height:16px;"></i> 配對挑戰</button>
+    <button class="tab-btn" onclick="switchTab('ox')"><i data-lucide="check-circle" style="width:16px;height:16px;"></i> 是非快答</button>
+    <button class="tab-btn" onclick="switchTab('mistakes')"><i data-lucide="bookmark" style="width:16px;height:16px;"></i> 錯題／收藏</button>
+  </div>
+
+  <!-- 面板 1：翻卡特訓 -->
+  <section id="panel-flashcard" class="view-panel active">
+    <div class="filter-pills">
+      <button class="pill active" onclick="filterCards('all', this)">全部 (26)</button>
+      <button class="pill" onclick="filterCards('symbol', this)">植物象徵</button>
+      <button class="pill" onclick="filterCards('story', this)">名花物語</button>
+      <button class="pill" onclick="filterCards('friend', this)">幽夢影知己</button>
+      <button class="pill" onclick="filterCards('idiom', this)">花草成語</button>
+    </div>
+
+    <div class="card-scene" onclick="flipCurrentCard()">
+      <div class="card-3d" id="mainCard">
+        <!-- 正面 -->
+        <div class="card-face card-front">
+          <div class="card-header-row">
+            <span class="card-topic-tag" id="cardTag">名花物語</span>
+            <div class="card-actions-row" onclick="event.stopPropagation()">
+              <button class="icon-action-btn" id="starBtn" onclick="toggleStarCurrent()" title="收藏本題"><i data-lucide="star" style="width:16px;height:16px;"></i></button>
+              <button class="icon-action-btn" onclick="speakCurrentText()" title="語音朗讀題目"><i data-lucide="volume-2" style="width:16px;height:16px;"></i></button>
+            </div>
+          </div>
+          <div class="card-main">
+            <h2 class="card-q-title" id="cardQ">點擊卡片開始</h2>
+            <div class="card-prompt-hint">
+              <i data-lucide="help-circle" style="width:15px;height:15px;"></i> 點擊卡片翻面看意涵與精解
+            </div>
+          </div>
+          <div class="card-footer-tip">
+            <i data-lucide="rotate-cw" style="width:14px;height:14px;"></i> 點擊卡片翻面看解答與精解
+          </div>
+        </div>
+        <!-- 背面 -->
+        <div class="card-face card-back">
+          <div class="card-header-row">
+            <span class="card-topic-tag" style="background:#fee2e2;color:#991b1b;">詳細解答與口訣</span>
+            <div class="card-actions-row" onclick="event.stopPropagation()">
+              <button class="icon-action-btn" onclick="speakCurrentAnswer()" title="朗讀解答"><i data-lucide="volume-2" style="width:16px;height:16px;"></i></button>
+            </div>
+          </div>
+          <div class="card-main">
+            <h3 class="card-ans-title" id="cardAns">答案</h3>
+            <div class="card-clue-box" id="cardClue">提示說明區</div>
+            <div class="card-ans-desc" id="cardExp">解析說明</div>
+          </div>
+          <div class="card-footer-tip">
+            <i data-lucide="rotate-ccw" style="width:14px;height:14px;"></i> 再次點擊翻回正面
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 控制列 -->
+    <div class="controls-row">
+      <button class="ctrl-btn" onclick="prevCard()"><i data-lucide="chevron-left"></i> 上一題</button>
+      <div class="card-counter" id="cardCounter">1 / 26</div>
+      <button class="ctrl-btn" onclick="nextCard()">下一題 <i data-lucide="chevron-right"></i></button>
+    </div>
+  </section>
+
+  <!-- 面板 2：配對挑戰 -->
+  <section id="panel-match" class="view-panel">
+    <div class="match-panel">
+      <div class="match-header">
+        <div>
+          <span style="font-weight:800;color:var(--primary-dark);">知己與典故配對速配</span>
+          <span style="font-size:0.8rem;color:var(--muted);margin-left:6px;">(點擊左欄後點擊右欄相符項目)</span>
+        </div>
+        <div class="match-score" id="matchScore">配對進度：0 / 6</div>
+      </div>
+      <div class="match-cols-wrap">
+        <div class="match-col" id="colLeft"></div>
+        <div class="match-col" id="colRight"></div>
+      </div>
+      <div style="margin-top:16px;text-align:center;">
+        <button class="ctrl-btn" style="margin:0 auto;" onclick="initMatchGame()"><i data-lucide="refresh-cw"></i> 重新開始配對</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- 面板 3：是非快答 -->
+  <section id="panel-ox" class="view-panel">
+    <div class="ox-card-container">
+      <div class="ox-q-badge" id="oxCategory">單元辨析：人比花嬌（形容女子容貌儀態）</div>
+      <div class="ox-q-text" id="oxTarget">閉月羞花</div>
+      <div class="ox-q-desc" id="oxQuestion">本詞語是否可用來形容女子的容貌或儀態？</div>
+      
+      <div class="ox-btns-row" id="oxBtns">
+        <button class="btn-ox btn-o" onclick="checkOX(true)"><span>○</span><small style="font-size:0.85rem;">是</small></button>
+        <button class="btn-ox btn-x" onclick="checkOX(false)"><span>╳</span><small style="font-size:0.85rem;">否</small></button>
+      </div>
+
+      <div class="ox-feedback-box" id="oxFeedback"></div>
+      
+      <div style="margin-top:18px;display:flex;justify-content:space-between;align-items:center;">
+        <span style="font-size:0.85rem;color:var(--muted);" id="oxCounter">第 1 / 15 題</span>
+        <button class="ctrl-btn" id="oxNextBtn" style="display:none;" onclick="nextOX()">下一題 <i data-lucide="arrow-right"></i></button>
+      </div>
+    </div>
+  </section>
+
+  <!-- 面板 4：錯題本／星號收藏 -->
+  <section id="panel-mistakes" class="view-panel">
+    <div style="width:100%;margin-bottom:12px;display:flex;justify-content:space-between;align-items:center;">
+      <h3 style="font-size:1.1rem;font-weight:800;color:var(--primary-dark);"><i data-lucide="star" style="width:18px;height:18px;display:inline;vertical-align:-2px;color:var(--accent);"></i> 我的收藏與錯題</h3>
+      <button class="ctrl-btn" style="padding:4px 10px;font-size:0.8rem;" onclick="clearAllStars()"><i data-lucide="trash-2"></i> 清空收藏</button>
+    </div>
+    <div class="mistake-list" id="mistakeList">
+      <div class="empty-state">
+        <i data-lucide="inbox"></i>
+        <p>目前尚無收藏的題目！<br>在翻卡或測驗時點擊右上角星號 ★ 即可加入複習清單。</p>
+      </div>
+    </div>
+  </section>
+
+  <div class="back-home-wrap">
+    <a href="../flower.html" class="btn-back-main"><i data-lucide="arrow-left"></i> 返回花花語文世界旗艦殿堂</a>
+  </div>
+
+  <script>
+    // 題庫資料
+    const cardData = [
+      // 植物象徵
+      { id: 's1', type: 'symbol', tag: '植物象徵', q: '松樹', clue: '四季常青，祝壽常與仙鶴同繪。寒冬挺拔不凋。', ans: '長壽、逆境不屈之君子', exp: '常與鶴祝壽（青春永駐）。古語：「松柏後凋於歲寒，雞鳴不已於風雨」。' },
+      { id: 's2', type: 'symbol', tag: '植物象徵', q: '竹子', clue: '生命力強，中空有節，修長挺拔，夏不畏暑冬不屈霜。', ans: '堅毅正直，謙虛有節的君子', exp: '竹中空象徵「謙虛」，有節象徵「氣節節操」，伐後復生象徵「堅忍不拔」。' },
+      { id: 's3', type: 'symbol', tag: '植物象徵', q: '梅花', clue: '群花凋落後獨自綻放，傲立雪中，暗香浮動。', ans: '孤傲不屈，堅忍高潔的君子', exp: '與松、竹並稱「歲寒三友」；與蘭、竹、菊並稱「四君子」。' },
+      { id: 's4', type: 'symbol', tag: '植物象徵', q: '蘭花', clue: '生長於深山野谷，不驕不媚，香氣清幽淡遠。', ans: '幽雅高潔的君子、賢人', exp: '「蘭為王者香」，代表「人不知而不慍」超凡脫俗之君子品格。' },
+      { id: 's5', type: 'symbol', tag: '植物象徵', q: '柳樹', clue: '古人送別依依不捨，常折枝相贈。', ans: '離別贈別（諧音「留」）', exp: '柳與「留」諧音，折柳贈別期盼對方留下來，灞橋折柳為千古名習。' },
+      { id: 's6', type: 'symbol', tag: '植物象徵', q: '桃（桃花/仙桃）', clue: '傳說西王母仙果；陶淵明寄託理想村落；亦喻美人面。', ans: '1.長壽 2.美貌女子 3.世外仙境', exp: '祝壽用壽桃；《詩經》「桃之夭夭灼灼其華」喻女子之美；《桃花源記》喻仙境。' },
+      { id: 's7', type: 'symbol', tag: '植物象徵', q: '紅豆（相思豆）', clue: '色澤艷紅形似心臟，王維曾詠「此物最相思」。', ans: '相思思慕之情', exp: '男女傳情互贈之信物，文人雅士常藉此抒發羈旅眷戀或深切思念。' },
+
+      // 名花物語代言人
+      { id: 'm1', type: 'story', tag: '名花物語', q: '屈原的代言花卉', clue: '戰國愛國詩人，於《離騷》中佩此花自喻芳潔，後投汨羅江。', ans: '蘭花', exp: '屈原以蘭草香草自喻，象徵高潔純真之品性與不願同流合污的志節。' },
+      { id: 'm2', type: 'story', tag: '名花物語', q: '陶淵明的代言花木', clue: '武陵漁夫緣溪行發現世外桃源，寄託安居樂業理想。', ans: '桃花（亦愛菊）', exp: '陶淵明著《桃花源記》，使桃花成為遠離塵俗紛擾的理想世界象徵。' },
+      { id: 'm3', type: 'story', tag: '名花物語', q: '杜宇（望帝）的代言花卉', clue: '蜀王死後化為子規鳥，暮春悲啼，泣血染紅滿山花朵。', ans: '杜鵑花', exp: '望帝春心託杜鵑，杜鵑鳥鳴啼杜鵑花開，充滿悲壯淒美之傳奇色彩。' },
+      { id: 'm4', type: 'story', tag: '名花物語', q: '林逋（林和靖）的代言花卉', clue: '北宋隱居西湖孤山，終生不娶不仕，梅妻鶴子。', ans: '梅花', exp: '「疏影橫斜水清淺，暗香浮動月黃昏」，林逋為梅花最佳代言人。' },
+      { id: 'm5', type: 'story', tag: '名花物語', q: '武則天的代言花卉', clue: '女皇下令百花嚴冬齊放，唯此花傲骨抗旨，被貶洛陽。', ans: '牡丹花', exp: '牡丹不屈淫威被貶洛陽，名滿天下，成為富貴與骨氣並存的百花王。' },
+
+      // 幽夢影知己
+      { id: 'f1', type: 'friend', tag: '幽夢影知己', q: '菊以誰為知己？', clue: '「採菊東籬下，悠然見南山。」晉代田園隱逸大師。', ans: '陶淵明', exp: '菊為花之隱逸者也，陶淵明獨愛菊，兩者為靈魂知己。' },
+      { id: 'f2', type: 'friend', tag: '幽夢影知己', q: '梅以誰為知己？', clue: '西湖孤山處士，愛梅成痴，養鶴為子。', ans: '林逋（林和靖）', exp: '林逋隱居孤山二十年，以梅為妻，為梅花千古知己。' },
+      { id: 'f3', type: 'friend', tag: '幽夢影知己', q: '蓮以誰為知己？', clue: '北宋理學開山鼻祖，著《愛蓮說》，號濂溪先生。', ans: '周敦頤（濂溪）', exp: '「予獨愛蓮之出淤泥而不染」，周敦頤視蓮為君子知音。' },
+      { id: 'f4', type: 'friend', tag: '幽夢影知己', q: '桃以誰為知己？', clue: '躲避秦朝暴政動亂而隱居山洞中的世外淳樸百姓。', ans: '避秦人（桃花源中人）', exp: '桃花源中男女悉如外人，桃林庇護避秦人安居樂業。' },
+      { id: 'f5', type: 'friend', tag: '幽夢影知己', q: '杏以誰為知己？', clue: '三國名醫，為人治病不收錢，只命重病者種杏五株。', ans: '董奉', exp: '董奉醫德高尚成杏林仙話，「杏林春暖」、「譽滿杏林」代指醫界。' },
+      { id: 'f6', type: 'friend', tag: '幽夢影知己', q: '竹以誰為知己？', clue: '東晉名士王徽之，借住空宅亦必植竹，曰：「何可一日無此君！」', ans: '王子猷（王徽之）', exp: '王子猷愛竹成癖，竹因此成為文人雅士風骨標竿。' },
+
+      // 花草成語
+      { id: 'i1', type: 'idiom', tag: '花草成語', q: '（ ）花椿樹', clue: '借指父母親雙親安康長壽。', ans: '萱（萱草/忘憂草）', exp: '椿代表父親（莊子八千歲大椿），萱代表母親（北堂萱草忘憂）。' },
+      { id: 'i2', type: 'idiom', tag: '花草成語', q: '舌粲（ ）花', clue: '形容說話口才極好，言談動聽生動。', ans: '蓮（蓮花）', exp: '佛家傳說高僧講法，天雨寶花，口中生蓮，形容口才辨給。' },
+      { id: 'i3', type: 'idiom', tag: '花草成語', q: '人面（ ）花', clue: '比喻重臨舊地，追念往昔心上人卻人事已非。', ans: '桃（桃花）', exp: '唐代崔護名句：「去年今日此門中，人面桃花相映紅。」' },
+      { id: 'i4', type: 'idiom', tag: '花草成語', q: '蘭（ ）齊芳', clue: '比喻子孫昌盛顯達，門第光耀繁盛。', ans: '桂（桂花）', exp: '蘭草與桂樹皆芳香秀美，象徵優秀人才齊聚一堂。' },
+      { id: 'i5', type: 'idiom', tag: '花草成語', q: '（ ）花一現', clue: '比喻美好人事物一出現便迅速短暫消失。', ans: '曇（曇花）', exp: '曇花常於夜間短暫盛開數小時即凋萎，比喻稀有或短暫。' },
+      { id: 'i6', type: 'idiom', tag: '花草成語', q: '蕙質（ ）心', clue: '形容女子聰慧芳潔的心地、高雅的品格修養。', ans: '蘭（蘭草）', exp: '蕙草純潔、蘭草幽香，用以盛讚女子兼具才德容貌。' },
+      { id: 'i7', type: 'idiom', tag: '花草成語', q: '（ ）蘭玉樹', clue: '以香花、名草比喻品行高尚優秀的子弟晚輩。', ans: '芝（芝蘭）', exp: '《世說新語》謝安問子弟何願，謝玄對曰：「譬如芝蘭玉樹，欲使其生於階庭耳。」' },
+      { id: 'i8', type: 'idiom', tag: '花草成語', q: '蘭（ ）同焚', clue: '香草與臭惡之草一同被焚毀。比喻玉石俱焚、好壞同歸於盡。', ans: '艾（艾草/臭草）', exp: '蘭為香草，艾為惡臭野草，同焚意味賢良與奸佞一併受害。' }
+    ];
+
+    // 配對資料庫
+    const matchPairs = [
+      { id: 1, left: '屈原（愛國詩人）', right: '佩蘭自喻・離騷潔白' },
+      { id: 2, left: '陶淵明（田園隱士）', right: '採菊東籬・桃花源夢' },
+      { id: 3, left: '林和靖（孤山處士）', right: '梅妻鶴子・疏影暗香' },
+      { id: 4, left: '周濂溪（周敦頤）', right: '愛蓮之清・不蔓不枝' },
+      { id: 5, left: '董奉（三國名醫）', right: '杏林春暖・濟世救人' },
+      { id: 6, left: '王子猷（王徽之）', right: '何可一日・無此君竹' }
+    ];
+
+    // 是非快答題庫 (講義第九、十單元全收錄)
+    const oxData = [
+      // 人比花嬌 (形容女子容貌儀態)
+      { id: 1, category: '人比花嬌', target: '閉月羞花', isO: true, exp: '○ 正確！形容女子容貌極美，使月亮閉藏、花朵羞愧（閉月貂蟬、羞花楊貴妃）。' },
+      { id: 2, category: '人比花嬌', target: '鏡花水月', isO: false, exp: '╳ 錯誤！鏡中花、水中月，比喻空幻虛無不可捉摸之景象，非形容女子。' },
+      { id: 3, category: '人比花嬌', target: '步步蓮花', isO: true, exp: '○ 正確！形容女子儀態婀娜、步履輕盈優美（南齊潘妃典故）。' },
+      { id: 4, category: '人比花嬌', target: '妙筆生花', isO: false, exp: '╳ 錯誤！比喻文思敏捷、寫作文筆極為精妙高超，形容文采非女子。' },
+      { id: 5, category: '人比花嬌', target: '芙蓉如面', isO: true, exp: '○ 正確！白居易《長恨歌》「芙蓉如面柳如眉」，以荷花比喻女子嬌美容顏。' },
+      { id: 6, category: '人比花嬌', target: '花容失色', isO: false, exp: '╳ 錯誤！會考常考陷阱！形容驚恐慌亂導致臉色慘白，非讚揚女子容貌儀態。' },
+      { id: 7, category: '人比花嬌', target: '花容月貌', isO: true, exp: '○ 正確！形容女子如花般嬌美、如月般皎潔的動人容顏。' },
+      { id: 8, category: '人比花嬌', target: '錦上添花', isO: false, exp: '╳ 錯誤！比喻好上加好、美上增光，非形容女子容貌儀態。' },
+      { id: 9, category: '人比花嬌', target: '黃花閨女', isO: true, exp: '○ 正確！古稱未婚的年輕少女，借代青春女子。' },
+      
+      // 拈花惹草 (草是否象徵離愁/鄉情？)
+      { id: 10, category: '詩詞草象徵', target: '誰言寸草心，報得三春暉。', isO: false, exp: '╳ 錯誤！孟郊《遊子吟》，以小草感念春陽比喻子女孝心回報偉大母愛，非離愁鄉情。' },
+      { id: 11, category: '詩詞草象徵', target: '苔痕上階綠，草色入簾青。', isO: false, exp: '╳ 錯誤！劉禹錫《陋室銘》，描繪陋室環境清幽秀雅、生機盎然，非離愁鄉情。' },
+      { id: 12, category: '詩詞草象徵', target: '青青河畔草，綿綿思遠道。', isO: true, exp: '○ 正確！漢樂府《飲馬長城窟行》，以綿延無盡的青草起興，抒發對遠行之人的深切思念。' },
+      { id: 13, category: '詩詞草象徵', target: '種豆南山下，草盛豆苗稀。', isO: false, exp: '╳ 錯誤！陶淵明《歸園田居》，寫田園耕作生活與雜草叢生之農家實況，非離愁鄉情。' },
+      { id: 14, category: '詩詞草象徵', target: '離恨恰如春草，更行更遠還生。', isO: true, exp: '○ 正確！李煜《清平樂》，以春草斬之復生、隨路綿延，生動比喻無窮無盡的離別幽恨。' },
+      { id: 15, category: '詩詞草象徵', target: '樓前芳草接天涯，勸君莫上最高梯。', isO: true, exp: '○ 正確！周邦彥《浣溪沙》，芳草連天象徵天涯路遠，登高易惹離愁幽緒。' }
+    ];
+
+    let currentCardIndex = 0;
+    let filteredList = [...cardData];
+    let starredIds = JSON.parse(localStorage.getItem('flower_starred') || '[]');
+
+    function initFlashcard() {
+      renderCurrentCard();
+    }
+
+    function renderCurrentCard() {
+      if (filteredList.length === 0) return;
+      const card = filteredList[currentCardIndex];
+      const mainCard = document.getElementById('mainCard');
+      mainCard.classList.remove('flipped');
+
+      document.getElementById('cardTag').textContent = card.tag;
+      document.getElementById('cardQ').textContent = card.q;
+      document.getElementById('cardClue').textContent = card.clue;
+      document.getElementById('cardAns').textContent = card.ans;
+      document.getElementById('cardExp').textContent = card.exp;
+      document.getElementById('cardCounter').textContent = `${currentCardIndex + 1} / ${filteredList.length}`;
+
+      const starBtn = document.getElementById('starBtn');
+      if (starredIds.includes(card.id)) {
+        starBtn.classList.add('starred');
+      } else {
+        starBtn.classList.remove('starred');
+      }
+      lucide.createIcons();
+    }
+
+    function flipCurrentCard() {
+      document.getElementById('mainCard').classList.toggle('flipped');
+    }
+
+    function nextCard() {
+      if (currentCardIndex < filteredList.length - 1) {
+        currentCardIndex++;
+        renderCurrentCard();
+      } else {
+        currentCardIndex = 0;
+        renderCurrentCard();
+      }
+    }
+
+    function prevCard() {
+      if (currentCardIndex > 0) {
+        currentCardIndex--;
+        renderCurrentCard();
+      } else {
+        currentCardIndex = filteredList.length - 1;
+        renderCurrentCard();
+      }
+    }
+
+    function filterCards(type, el) {
+      document.querySelectorAll('.filter-pills .pill').forEach(p => p.classList.remove('active'));
+      el.classList.add('active');
+      if (type === 'all') {
+        filteredList = [...cardData];
+      } else {
+        filteredList = cardData.filter(c => c.type === type);
+      }
+      currentCardIndex = 0;
+      renderCurrentCard();
+    }
+
+    function toggleStarCurrent() {
+      const card = filteredList[currentCardIndex];
+      const idx = starredIds.indexOf(card.id);
+      if (idx > -1) {
+        starredIds.splice(idx, 1);
+      } else {
+        starredIds.push(card.id);
+      }
+      localStorage.setItem('flower_starred', JSON.stringify(starredIds));
+      renderCurrentCard();
+      renderMistakes();
+    }
+
+    function speakCurrentText() {
+      const card = filteredList[currentCardIndex];
+      const u = new SpeechSynthesisUtterance(card.q);
+      u.lang = 'zh-TW';
+      speechSynthesis.speak(u);
+    }
+
+    function speakCurrentAnswer() {
+      const card = filteredList[currentCardIndex];
+      const u = new SpeechSynthesisUtterance(`答案是：${card.ans}。線索要點：${card.clue}。解析：${card.exp}`);
+      u.lang = 'zh-TW';
+      speechSynthesis.speak(u);
+    }
+
+    /* 配對遊戲邏輯 */
+    let selectedLeft = null;
+    let selectedRight = null;
+    let matchDoneCount = 0;
+
+    function initMatchGame() {
+      matchDoneCount = 0;
+      selectedLeft = null;
+      selectedRight = null;
+      document.getElementById('matchScore').textContent = `配對進度：0 / ${matchPairs.length}`;
+      
+      const leftCol = document.getElementById('colLeft');
+      const rightCol = document.getElementById('colRight');
+      leftCol.innerHTML = '';
+      rightCol.innerHTML = '';
+
+      const shuffledLeft = [...matchPairs].sort(() => Math.random() - 0.5);
+      const shuffledRight = [...matchPairs].sort(() => Math.random() - 0.5);
+
+      shuffledLeft.forEach(item => {
+        const div = document.createElement('div');
+        div.className = 'match-item';
+        div.dataset.id = item.id;
+        div.textContent = item.left;
+        div.onclick = () => selectLeftItem(div, item.id);
+        leftCol.appendChild(div);
+      });
+
+      shuffledRight.forEach(item => {
+        const div = document.createElement('div');
+        div.className = 'match-item';
+        div.dataset.id = item.id;
+        div.textContent = item.right;
+        div.onclick = () => selectRightItem(div, item.id);
+        rightCol.appendChild(div);
+      });
+    }
+
+    function selectLeftItem(el, id) {
+      if (el.classList.contains('matched')) return;
+      document.querySelectorAll('#colLeft .match-item').forEach(i => i.classList.remove('selected'));
+      el.classList.add('selected');
+      selectedLeft = { el, id };
+      checkMatch();
+    }
+
+    function selectRightItem(el, id) {
+      if (el.classList.contains('matched')) return;
+      document.querySelectorAll('#colRight .match-item').forEach(i => i.classList.remove('selected'));
+      el.classList.add('selected');
+      selectedRight = { el, id };
+      checkMatch();
+    }
+
+    function checkMatch() {
+      if (selectedLeft && selectedRight) {
+        if (selectedLeft.id === selectedRight.id) {
+          selectedLeft.el.classList.remove('selected');
+          selectedRight.el.classList.remove('selected');
+          selectedLeft.el.classList.add('matched');
+          selectedRight.el.classList.add('matched');
+          matchDoneCount++;
+          document.getElementById('matchScore').textContent = `配對進度：${matchDoneCount} / ${matchPairs.length}`;
+          selectedLeft = null;
+          selectedRight = null;
+
+          if (matchDoneCount === matchPairs.length) {
+            setTimeout(() => {
+              alert('🎉 太棒了！恭喜完成全部名花知己配對挑戰！');
+            }, 300);
+          }
+        } else {
+          const l = selectedLeft.el;
+          const r = selectedRight.el;
+          l.style.borderColor = 'var(--danger)';
+          r.style.borderColor = 'var(--danger)';
+          setTimeout(() => {
+            l.classList.remove('selected');
+            r.classList.remove('selected');
+            l.style.borderColor = '';
+            r.style.borderColor = '';
+            selectedLeft = null;
+            selectedRight = null;
+          }, 450);
+        }
+      }
+    }
+
+    /* 是非快答邏輯 */
+    let currentOxIndex = 0;
+    function renderOX() {
+      const q = oxData[currentOxIndex];
+      document.getElementById('oxCategory').textContent = q.category === '人比花嬌' ? '單元九：人比花嬌（形容女子容貌儀態）' : '單元十：草之象徵（是否表達離愁或鄉情）';
+      document.getElementById('oxTarget').textContent = q.target;
+      document.getElementById('oxQuestion').textContent = q.category === '人比花嬌' ? '本詞語是否可用來形容女子的容貌或儀態？' : '本詩句中的「草」是否用來象徵「離愁」或「鄉情」？';
+      document.getElementById('oxCounter').textContent = `第 ${currentOxIndex + 1} / ${oxData.length} 題`;
+      
+      const fb = document.getElementById('oxFeedback');
+      fb.style.display = 'none';
+      fb.className = 'ox-feedback-box';
+      fb.innerHTML = '';
+      
+      document.getElementById('oxBtns').style.display = 'flex';
+      document.getElementById('oxNextBtn').style.display = 'none';
+    }
+
+    function checkOX(userChoice) {
+      const q = oxData[currentOxIndex];
+      const isCorrect = userChoice === q.isO;
+      const fb = document.getElementById('oxFeedback');
+      fb.style.display = 'block';
+
+      if (isCorrect) {
+        fb.className = 'ox-feedback-box correct';
+        fb.innerHTML = `<strong>太棒了，答對了！</strong><br>${q.exp}`;
+      } else {
+        fb.className = 'ox-feedback-box wrong';
+        fb.innerHTML = `<strong>再注意一下喔！</strong><br>${q.exp}`;
+      }
+
+      document.getElementById('oxBtns').style.display = 'none';
+      document.getElementById('oxNextBtn').style.display = 'inline-flex';
+    }
+
+    function nextOX() {
+      if (currentOxIndex < oxData.length - 1) {
+        currentOxIndex++;
+        renderOX();
+      } else {
+        alert('🎉 恭喜完成全部是非判斷速測！');
+        currentOxIndex = 0;
+        renderOX();
+      }
+    }
+
+    /* 錯題與收藏清單 */
+    function renderMistakes() {
+      const listContainer = document.getElementById('mistakeList');
+      if (starredIds.length === 0) {
+        listContainer.innerHTML = `
+          <div class="empty-state">
+            <i data-lucide="inbox"></i>
+            <p>目前尚無收藏的題目！<br>在翻卡或測驗時點擊右上角星號 ★ 即可加入複習清單。</p>
+          </div>
+        `;
+        lucide.createIcons();
+        return;
+      }
+
+      let html = '';
+      starredIds.forEach(id => {
+        const item = cardData.find(c => c.id === id);
+        if (item) {
+          html += `
+            <div class="mistake-card">
+              <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:6px;">
+                <span class="card-topic-tag">${item.tag}</span>
+                <button class="icon-action-btn starred" onclick="removeStar('${item.id}')" title="取消收藏"><i data-lucide="star" style="width:14px;height:14px;"></i></button>
+              </div>
+              <h4 style="font-size:1.15rem;font-weight:800;color:var(--primary-dark);margin-bottom:4px;">${item.q}</h4>
+              <p style="font-size:0.9rem;color:#4b5563;margin-bottom:6px;"><b>提示：</b>${item.clue}</p>
+              <div style="background:#fff1f2;padding:8px 12px;border-radius:8px;font-size:0.9rem;color:#991b1b;">
+                <b>解答：</b>${item.ans} <br><small style="color:#6b7280;">${item.exp}</small>
+              </div>
+            </div>
+          `;
+        }
+      });
+      listContainer.innerHTML = html;
+      lucide.createIcons();
+    }
+
+    function removeStar(id) {
+      const idx = starredIds.indexOf(id);
+      if (idx > -1) {
+        starredIds.splice(idx, 1);
+        localStorage.setItem('flower_starred', JSON.stringify(starredIds));
+        renderCurrentCard();
+        renderMistakes();
+      }
+    }
+
+    function clearAllStars() {
+      if (confirm('確定要清空所有收藏題目嗎？')) {
+        starredIds = [];
+        localStorage.setItem('flower_starred', JSON.stringify(starredIds));
+        renderCurrentCard();
+        renderMistakes();
+      }
+    }
+
+    /* 模式切換 */
+    function switchTab(tabId) {
+      document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
+      document.querySelectorAll('.view-panel').forEach(p => p.classList.remove('active'));
+
+      event.currentTarget.classList.add('active');
+      document.getElementById(`panel-${tabId}`).classList.add('active');
+
+      if (tabId === 'match') {
+        initMatchGame();
+      } else if (tabId === 'ox') {
+        renderOX();
+      } else if (tabId === 'mistakes') {
+        renderMistakes();
+      }
+      lucide.createIcons();
+    }
+
+    // 初始化
+    window.addEventListener('DOMContentLoaded', () => {
+      initFlashcard();
+      lucide.createIcons();
+    });
+  </script>
+</body>
+</html>

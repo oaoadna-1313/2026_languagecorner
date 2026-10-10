@@ -971,37 +971,56 @@
       flex-wrap: wrap;
     }
 
-    /* 頁尾 */
+    /* 頁尾 Footer - 典雅溫潤暖栗木/沉木茶褐漸層 */
     footer {
-      background: #0f172a;
-      color: #94a3b8;
-      padding: 3rem 1.5rem 2rem;
+      background: linear-gradient(180deg, #2e1a12 0%, #1c0f0a 100%);
+      color: white;
+      padding: 3.5rem 1.5rem 2.5rem;
+      border-top: 3px solid #854d0e;
       text-align: center;
       margin-top: 4rem;
     }
 
-    .footer-content {
-      max-width: 800px;
+    .footer-container {
+      max-width: 1320px;
       margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1.8rem;
+      text-align: center;
     }
 
-    .footer-logo {
-      height: 48px;
-      margin-bottom: 1.2rem;
-      filter: brightness(0) invert(1);
+    .footer-logos {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 1.5rem;
+      flex-wrap: wrap;
     }
 
-    .footer-text {
-      font-size: 0.9rem;
-      line-height: 1.7;
+    .footer-seal {
+      height: 60px;
+      width: auto;
+      object-fit: contain;
+      filter: drop-shadow(0 4px 10px rgba(0, 0, 0, 0.3));
     }
 
-    .footer-copy {
-      font-size: 0.8rem;
-      color: #64748b;
-      margin-top: 1.5rem;
-      border-top: 1px solid #1e293b;
-      padding-top: 1.5rem;
+    .footer-tagline-img {
+      max-height: 46px;
+      width: auto;
+      object-fit: contain;
+    }
+
+    .footer-credit {
+      font-size: 0.95rem;
+      color: #fde68a;
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(253, 230, 138, 0.25);
+      padding: 0.6rem 1.6rem;
+      border-radius: 999px;
+      font-weight: 600;
+      letter-spacing: 0.5px;
     }
 
     /* 浮動回頂端按鈕 */
@@ -1901,19 +1920,15 @@
     <i data-lucide="chevron-up"></i>
   </button>
 
-  <!-- 頁尾 -->
+  <!-- 頁尾宣告 -->
   <footer>
-    <div class="footer-content">
-      <img src="icon/logo-xsw-dark.png" alt="學思軒" class="footer-logo">
-      <div style="margin-bottom:1rem;">
-        <img src="icon/banner-practice-center.png" alt="資源整合中心" style="max-height:55px;width:auto;">
+    <div class="footer-container">
+      <div class="footer-logos">
+        <img src="icon/seal-white.png" alt="學思軒" class="footer-seal" onerror="this.src='icon/seal-red.png'">
+        <img src="icon/slogan-god-dark.png" alt="只要有心人人都是國文神" class="footer-tagline-img">
       </div>
-      <p class="footer-text">
-        學思軒團隊策劃・國中國文旗艦級 AI 數位互動教材專用網頁<br>
-        本單元依據翰林版國中國文「語文補給站 語一 詞類・詞性」精心編制
-      </p>
-      <div class="footer-copy">
-        © 2026 學思軒 (XueSiXuan) All Rights Reserved.｜建議使用 Chrome / Safari / Edge 獲得最佳互動體驗
+      <div class="footer-credit serif">
+        𖤐 本系統由學思軒黃于珊、王斐亭老師規劃設計 · 版權所有 © 2026 𖤐
       </div>
     </div>
   </footer>

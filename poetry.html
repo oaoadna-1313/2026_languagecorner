@@ -1,0 +1,2592 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>語文補給站｜古詩選・詩詞表現手法與常見意象互動學習殿堂</title>
+  <meta name="description" content="學思軒語文補給站：翰林國中國文 B3L02 古詩選專屬互動學習殿堂。全方位解構六大詩詞表現手法（借景抒情、直抒胸臆、託物言志、動靜結合、以動襯靜、對比映襯）與四大維度51種古典詩詞意象，收錄全真語音TTS、典範圖鑑庫、會考實戰挑戰賽與內嵌雙練習神器。">
+  <!-- Google Fonts: 典雅思源黑體、思源宋體與書法字型 -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;600;700;900&family=Noto+Sans+TC:wght@300;400;500;700;900&family=Ma+Shan+Zheng&display=swap" rel="stylesheet">
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <style>
+    :root {
+      --primary: #4338ca;
+      --primary-dark: #312e81;
+      --primary-light: #e0e7ff;
+      --primary-hover: #4f46e5;
+
+      --accent: #d97706;
+      --accent-light: #fef3c7;
+      --accent-dark: #b45309;
+
+      --emerald: #059669;
+      --emerald-light: #d1fae5;
+      --rose: #e11d48;
+      --rose-light: #ffe4e6;
+      --purple: #7c3aed;
+      --purple-light: #ede9fe;
+      --cyan: #0891b2;
+      --cyan-light: #cffafe;
+
+      --dark: #0f172a;
+      --dark-card: #1e293b;
+      --gray: #64748b;
+      --gray-light: #f8fafc;
+      --border: #e2e8f0;
+
+      --bg-page: #fbfbfe;
+      --card-bg: rgba(255, 255, 255, 0.98);
+      --card-glass: rgba(255, 255, 255, 0.88);
+
+      --radius-sm: 8px;
+      --radius-md: 14px;
+      --radius-lg: 20px;
+      --radius-xl: 28px;
+
+      --shadow: 0 10px 25px -5px rgba(67, 56, 202, 0.08), 0 8px 10px -6px rgba(0, 0, 0, 0.04);
+      --shadow-hover: 0 20px 30px -10px rgba(67, 56, 202, 0.18);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Noto Sans TC', sans-serif;
+      background-color: var(--bg-page);
+      color: var(--dark);
+      line-height: 1.68;
+      background-image:
+        radial-gradient(circle at 10% 12%, rgba(67, 56, 202, 0.05) 0%, transparent 45%),
+        radial-gradient(circle at 90% 22%, rgba(217, 119, 6, 0.05) 0%, transparent 45%),
+        radial-gradient(circle at 50% 80%, rgba(5, 150, 105, 0.03) 0%, transparent 60%);
+      background-attachment: fixed;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .serif {
+      font-family: 'Noto Serif TC', serif;
+    }
+
+    .calligraphy {
+      font-family: 'Ma Shan Zheng', 'Noto Serif TC', cursive;
+    }
+
+    /* 頂部導覽列 */
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: rgba(255, 255, 255, 0.96);
+      backdrop-filter: blur(14px);
+      border-bottom: 1px solid var(--border);
+      padding: 0.75rem 1.5rem;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
+    }
+
+    .nav-container {
+      max-width: 1320px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    .brand-group {
+      display: flex;
+      align-items: center;
+      gap: 0.85rem;
+      text-decoration: none;
+    }
+
+    .brand-seal-img {
+      height: 48px;
+      width: auto;
+      object-fit: contain;
+      transition: transform 0.3s ease;
+      filter: drop-shadow(0 2px 4px rgba(0,0,0,0.08));
+    }
+
+    .brand-seal-img:hover {
+      transform: rotate(5deg) scale(1.08);
+    }
+
+    .brand-logo-img {
+      height: 48px;
+      width: auto;
+      object-fit: contain;
+    }
+
+    .brand-text {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .brand-title {
+      font-size: 1.35rem;
+      font-weight: 800;
+      color: var(--primary-dark);
+      letter-spacing: -0.5px;
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+
+    .brand-badge {
+      font-size: 0.75rem;
+      background: var(--primary-light);
+      color: var(--primary-dark);
+      padding: 2px 8px;
+      border-radius: 999px;
+      font-weight: 700;
+    }
+
+    .brand-subtitle {
+      font-size: 0.82rem;
+      color: var(--gray);
+      letter-spacing: 0.5px;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 0.5rem;
+      list-style: none;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    .nav-links li a {
+      text-decoration: none;
+      color: #334155;
+      font-size: 0.92rem;
+      font-weight: 600;
+      padding: 0.5rem 0.85rem;
+      border-radius: var(--radius-sm);
+      transition: all 0.2s ease;
+      display: flex;
+      align-items: center;
+      gap: 0.35rem;
+    }
+
+    .nav-links li a:hover {
+      background: var(--primary-light);
+      color: var(--primary);
+    }
+
+    .nav-btn-highlight {
+      background: linear-gradient(135deg, var(--primary), var(--purple)) !important;
+      color: white !important;
+      box-shadow: 0 4px 10px rgba(67, 56, 202, 0.25);
+    }
+
+    .nav-btn-highlight:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 6px 14px rgba(67, 56, 202, 0.35);
+    }
+
+    .nav-btn-highlight i {
+      color: #ffffff !important;
+    }
+
+    /* 主內容容器 */
+    main {
+      flex: 1;
+      max-width: 1320px;
+      width: 100%;
+      margin: 2rem auto;
+      padding: 0 1.5rem;
+    }
+
+    /* Hero 全幅旗艦橫幅 */
+    .hero {
+      position: relative;
+      background: linear-gradient(135deg, #eef2ff 0%, #e0e7ff 45%, #fef3c7 100%);
+      border-radius: 28px;
+      border: 1px solid rgba(67, 56, 202, 0.2);
+      padding: 3.8rem 2.5rem;
+      margin-bottom: 2.8rem;
+      box-shadow: var(--shadow);
+      overflow: hidden;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .hero::after {
+      content: "詩境・意象";
+      position: absolute;
+      right: 2%;
+      bottom: -35px;
+      font-size: 7.5rem;
+      font-family: 'Ma Shan Zheng', cursive;
+      color: rgba(67, 56, 202, 0.05);
+      pointer-events: none;
+      user-select: none;
+      white-space: nowrap;
+    }
+
+    .hero-content {
+      max-width: 950px;
+      margin: 0 auto;
+      z-index: 2;
+    }
+
+    .hero-badge-top {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: white;
+      color: var(--primary-dark);
+      padding: 6px 18px;
+      border-radius: 999px;
+      font-size: 0.88rem;
+      font-weight: 700;
+      margin-bottom: 1.2rem;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+      border: 1px solid #c7d2fe;
+    }
+
+    .hero-content h1 {
+      font-size: 3.1rem;
+      font-weight: 900;
+      color: var(--primary-dark);
+      margin-bottom: 1.2rem;
+      line-height: 1.28;
+      letter-spacing: -1px;
+    }
+
+    .hero-content h1 span {
+      background: linear-gradient(135deg, var(--primary), var(--accent));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .hero-content p {
+      font-size: 1.16rem;
+      color: #334155;
+      margin-bottom: 2rem;
+      line-height: 1.8;
+    }
+
+    .hero-tags {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 0.85rem;
+    }
+
+    .hero-tag {
+      background: white;
+      padding: 0.55rem 1.25rem;
+      border-radius: 999px;
+      font-size: 0.92rem;
+      font-weight: 700;
+      color: #334155;
+      border: 1px solid #c7d2fe;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.03);
+      display: flex;
+      align-items: center;
+      gap: 0.45rem;
+    }
+
+    .hero-tag i {
+      color: #059669;
+    }
+
+    /* 通用章節抬頭 */
+    .section-header {
+      margin-bottom: 2.2rem;
+      text-align: center;
+    }
+
+    .section-badge {
+      display: inline-block;
+      font-size: 0.82rem;
+      font-weight: 800;
+      color: var(--primary);
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      margin-bottom: 0.4rem;
+    }
+
+    .section-title {
+      font-family: 'Noto Serif TC', serif;
+      font-size: 2.2rem;
+      font-weight: 900;
+      color: var(--dark);
+      letter-spacing: -0.5px;
+    }
+
+    .section-desc {
+      color: var(--gray);
+      font-size: 1.02rem;
+      margin-top: 0.4rem;
+    }
+
+    /* 區塊卡片共通樣式 */
+    .content-section {
+      background: var(--card-bg);
+      border-radius: var(--radius-xl);
+      border: 1px solid var(--border);
+      padding: 2.8rem 2.2rem;
+      margin-bottom: 3.5rem;
+      box-shadow: var(--shadow);
+    }
+
+    /* 萬能解題心法橫幅 */
+    .formula-banner {
+      background: linear-gradient(135deg, #1e1b4b 0%, #312e81 100%);
+      color: white;
+      border-radius: var(--radius-lg);
+      padding: 2.2rem;
+      margin-bottom: 2.5rem;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1.5rem;
+      border: 1px solid rgba(199, 210, 254, 0.2);
+    }
+
+    .formula-item {
+      background: rgba(255, 255, 255, 0.08);
+      border-radius: var(--radius-md);
+      padding: 1.25rem;
+      border-left: 4px solid var(--accent);
+    }
+
+    .formula-title {
+      font-size: 1.15rem;
+      font-weight: 800;
+      color: #fde68a;
+      margin-bottom: 0.4rem;
+      display: flex;
+      align-items: center;
+      gap: 0.45rem;
+    }
+
+    .formula-desc {
+      font-size: 0.92rem;
+      color: #e2e8f0;
+      line-height: 1.6;
+    }
+
+    /* 六大手法卡片 Grid */
+    .technique-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+      gap: 1.5rem;
+      margin-top: 1.5rem;
+    }
+
+    .tech-card {
+      background: white;
+      border-radius: var(--radius-lg);
+      border: 1px solid var(--border);
+      padding: 1.8rem;
+      transition: all 0.3s ease;
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .tech-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-hover);
+      border-color: var(--primary-light);
+    }
+
+    .tech-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      font-size: 0.8rem;
+      font-weight: 800;
+      padding: 4px 12px;
+      border-radius: 999px;
+      margin-bottom: 0.85rem;
+      align-self: flex-start;
+    }
+
+    .badge-jie-jing { background: #e0e7ff; color: #3730a3; }
+    .badge-zhi-jie { background: #fef3c7; color: #92400e; }
+    .badge-tuo-wu { background: #d1fae5; color: #065f46; }
+    .badge-dong-jing { background: #cffafe; color: #155e75; }
+    .badge-chen-jing { background: #ede9fe; color: #5b21b6; }
+    .badge-dui-bi { background: #ffe4e6; color: #9f1239; }
+
+    .tech-name {
+      font-family: 'Noto Serif TC', serif;
+      font-size: 1.5rem;
+      font-weight: 800;
+      color: var(--dark);
+      margin-bottom: 0.6rem;
+    }
+
+    .tech-concept {
+      font-size: 0.95rem;
+      color: #475569;
+      line-height: 1.65;
+      margin-bottom: 1.2rem;
+      flex-grow: 1;
+    }
+
+    .tech-formula-box {
+      background: var(--gray-light);
+      border-radius: var(--radius-sm);
+      padding: 0.75rem 1rem;
+      margin-bottom: 1rem;
+      border-left: 3px solid var(--primary);
+      font-size: 0.88rem;
+      color: #334155;
+    }
+
+    .tech-sample-box {
+      background: #faf5ff;
+      border-radius: var(--radius-sm);
+      padding: 0.85rem 1rem;
+      border: 1px dashed #d8b4fe;
+    }
+
+    .sample-verse {
+      font-family: 'Noto Serif TC', serif;
+      font-weight: 700;
+      color: var(--primary-dark);
+      font-size: 1.05rem;
+      margin-bottom: 0.3rem;
+    }
+
+    .sample-source {
+      font-size: 0.82rem;
+      color: var(--gray);
+    }
+
+    /* 意象四大星盤維度導覽 */
+    .compass-nav {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 1rem;
+      margin-bottom: 2rem;
+    }
+
+    .compass-card {
+      background: white;
+      border: 2px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 1.4rem 0.65rem;
+      text-align: center;
+      cursor: pointer;
+      transition: all 0.25s ease;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .compass-card:hover, .compass-card.active {
+      border-color: var(--primary);
+      background: var(--primary-light);
+      transform: translateY(-3px);
+      box-shadow: 0 8px 18px rgba(67, 56, 202, 0.12);
+    }
+
+    .compass-icon-wrapper {
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      background: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 0.75rem;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.06);
+      color: var(--primary);
+    }
+
+    .compass-card.active .compass-icon-wrapper {
+      background: var(--primary);
+      color: white;
+    }
+
+    .compass-title {
+      font-family: 'Noto Serif TC', serif;
+      font-size: 1.12rem;
+      font-weight: 800;
+      color: var(--dark);
+      margin-bottom: 0.3rem;
+      white-space: nowrap;
+    }
+
+    .compass-count {
+      font-size: 0.8rem;
+      color: var(--gray);
+      font-weight: 600;
+      white-space: nowrap;
+    }
+
+    /* 意象標籤速查膠囊區：全部選項完整呈現，無卷軸拘束 */
+    .imagery-chips-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.65rem;
+      margin-bottom: 2rem;
+      padding: 1.4rem;
+      background: var(--gray-light);
+      border-radius: var(--radius-md);
+      border: 1px solid var(--border);
+    }
+
+    .imagery-chip {
+      background: white;
+      border: 1px solid var(--border);
+      padding: 0.4rem 0.95rem;
+      border-radius: 999px;
+      font-size: 0.88rem;
+      font-weight: 600;
+      color: #334155;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+    }
+
+    .imagery-chip:hover, .imagery-chip.active {
+      background: var(--primary);
+      color: white;
+      border-color: var(--primary);
+      transform: scale(1.04);
+    }
+
+    /* 資料庫探究工具列 */
+    .db-toolbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+      margin-bottom: 1.8rem;
+      background: var(--gray-light);
+      padding: 1rem 1.4rem;
+      border-radius: var(--radius-md);
+    }
+
+    .search-box {
+      display: flex;
+      align-items: center;
+      background: white;
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      padding: 0.5rem 1.2rem;
+      width: 100%;
+      max-width: 420px;
+      gap: 0.5rem;
+    }
+
+    .search-box input {
+      border: none;
+      outline: none;
+      width: 100%;
+      font-size: 0.95rem;
+      color: var(--dark);
+      background: transparent;
+    }
+
+    .db-view-switchers {
+      display: flex;
+      gap: 0.5rem;
+    }
+
+    .tab-btn {
+      padding: 0.55rem 1.25rem;
+      border-radius: 999px;
+      border: 1px solid var(--border);
+      background: white;
+      font-size: 0.9rem;
+      font-weight: 700;
+      cursor: pointer;
+      color: #475569;
+      transition: all 0.2s;
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+
+    .tab-btn.active {
+      background: var(--primary);
+      color: white;
+      border-color: var(--primary);
+    }
+
+    .action-controls {
+      display: flex;
+      gap: 0.5rem;
+      align-items: center;
+    }
+
+    .btn-action-small {
+      padding: 0.45rem 0.95rem;
+      border-radius: var(--radius-sm);
+      border: 1px solid var(--border);
+      background: white;
+      font-size: 0.85rem;
+      font-weight: 600;
+      cursor: pointer;
+      color: #334155;
+      display: flex;
+      align-items: center;
+      gap: 0.35rem;
+      transition: all 0.2s;
+    }
+
+    .btn-action-small:hover {
+      background: var(--primary-light);
+      color: var(--primary);
+    }
+
+    /* 典範資料卡片清單 */
+    .verse-card-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .verse-card {
+      background: white;
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 1.6rem;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.03);
+      transition: all 0.25s ease;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .verse-card:hover {
+      box-shadow: 0 10px 24px rgba(67, 56, 202, 0.1);
+      border-color: #c7d2fe;
+    }
+
+    .verse-card-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: 0.9rem;
+      gap: 0.5rem;
+    }
+
+    .verse-tag-group {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+    }
+
+    .verse-badge {
+      font-size: 0.78rem;
+      font-weight: 700;
+      padding: 3px 10px;
+      border-radius: 999px;
+      background: var(--primary-light);
+      color: var(--primary-dark);
+    }
+
+    .verse-audio-btn {
+      background: #f1f5f9;
+      border: none;
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      color: #475569;
+      transition: all 0.2s;
+      flex-shrink: 0;
+    }
+
+    .verse-audio-btn:hover {
+      background: var(--primary);
+      color: white;
+      transform: scale(1.08);
+    }
+
+    .verse-audio-btn.playing {
+      background: var(--rose);
+      color: white;
+      animation: pulse 1s infinite alternate;
+    }
+
+    @keyframes pulse {
+      0% { transform: scale(1); }
+      100% { transform: scale(1.12); }
+    }
+
+    .verse-text {
+      font-family: 'Noto Serif TC', serif;
+      font-size: 1.3rem;
+      font-weight: 800;
+      color: #1e1b4b;
+      line-height: 1.55;
+      margin-bottom: 0.6rem;
+    }
+
+    .verse-source {
+      font-size: 0.88rem;
+      color: var(--gray);
+      margin-bottom: 1.1rem;
+      display: flex;
+      align-items: center;
+      gap: 0.35rem;
+    }
+
+    /* 逐項遮罩與探究區 */
+    .inspect-box {
+      margin-top: auto;
+      border-top: 1px solid var(--border);
+      padding-top: 1rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.65rem;
+    }
+
+    .inspect-item {
+      background: #f8fafc;
+      border-radius: var(--radius-sm);
+      padding: 0.65rem 0.95rem;
+      font-size: 0.9rem;
+      cursor: pointer;
+      transition: all 0.2s;
+      position: relative;
+    }
+
+    .inspect-label {
+      font-weight: 700;
+      color: #334155;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 0.25rem;
+    }
+
+    .inspect-val {
+      color: #475569;
+      line-height: 1.55;
+      transition: filter 0.25s;
+    }
+
+    .inspect-val.masked {
+      filter: blur(5px);
+      user-select: none;
+      opacity: 0.6;
+    }
+
+    .inspect-val.revealed {
+      filter: none;
+      user-select: text;
+      opacity: 1;
+    }
+
+    /* 會考挑戰賽樣式 */
+    .quiz-container {
+      max-width: 860px;
+      margin: 0 auto;
+    }
+
+    .quiz-progress-bar {
+      height: 8px;
+      background: #e2e8f0;
+      border-radius: 999px;
+      margin-bottom: 1.8rem;
+      overflow: hidden;
+    }
+
+    .quiz-progress-fill {
+      height: 100%;
+      background: linear-gradient(90deg, var(--primary), var(--emerald));
+      width: 10%;
+      transition: width 0.3s ease;
+    }
+
+    .quiz-card {
+      background: white;
+      border: 1px solid var(--border);
+      border-radius: var(--radius-xl);
+      padding: 2.2rem;
+      box-shadow: var(--shadow);
+    }
+
+    .quiz-meta {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 1.2rem;
+    }
+
+    .quiz-num-badge {
+      background: var(--primary-light);
+      color: var(--primary-dark);
+      font-weight: 800;
+      padding: 4px 14px;
+      border-radius: 999px;
+      font-size: 0.88rem;
+    }
+
+    .quiz-score-badge {
+      font-weight: 700;
+      color: var(--accent-dark);
+      font-size: 0.95rem;
+      display: flex;
+      align-items: center;
+      gap: 0.35rem;
+    }
+
+    .quiz-question {
+      font-family: 'Noto Serif TC', serif;
+      font-size: 1.25rem;
+      font-weight: 800;
+      color: var(--dark);
+      line-height: 1.7;
+      margin-bottom: 1.8rem;
+    }
+
+    .quiz-options {
+      display: flex;
+      flex-direction: column;
+      gap: 0.85rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .quiz-option {
+      border: 2px solid var(--border);
+      border-radius: var(--radius-md);
+      padding: 1rem 1.4rem;
+      background: white;
+      font-size: 1.02rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.2s;
+      text-align: left;
+      display: flex;
+      align-items: center;
+      gap: 0.85rem;
+    }
+
+    .quiz-option:hover:not(.disabled) {
+      border-color: var(--primary);
+      background: var(--primary-light);
+      transform: translateX(4px);
+    }
+
+    .quiz-option.correct {
+      border-color: var(--emerald) !important;
+      background: #ecfdf5 !important;
+      color: #065f46 !important;
+    }
+
+    .quiz-option.wrong {
+      border-color: var(--rose) !important;
+      background: #fff1f2 !important;
+      color: #9f1239 !important;
+    }
+
+    .quiz-option.disabled {
+      cursor: default;
+      pointer-events: none;
+    }
+
+    .quiz-opt-letter {
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      background: #f1f5f9;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 800;
+      flex-shrink: 0;
+    }
+
+    .quiz-option.correct .quiz-opt-letter {
+      background: var(--emerald);
+      color: white;
+    }
+
+    .quiz-option.wrong .quiz-opt-letter {
+      background: var(--rose);
+      color: white;
+    }
+
+    .quiz-feedback {
+      display: none;
+      background: #f8fafc;
+      border-radius: var(--radius-md);
+      padding: 1.4rem;
+      margin-top: 1.4rem;
+      border-left: 5px solid var(--primary);
+      animation: fadeIn 0.3s ease;
+    }
+
+    .quiz-feedback.show {
+      display: block;
+    }
+
+    .feedback-title {
+      font-weight: 800;
+      margin-bottom: 0.4rem;
+      display: flex;
+      align-items: center;
+      gap: 0.45rem;
+      font-size: 1.05rem;
+    }
+
+    .feedback-correct { color: var(--emerald); }
+    .feedback-wrong { color: var(--rose); }
+
+    .feedback-explanation {
+      font-size: 0.95rem;
+      color: #334155;
+      line-height: 1.7;
+    }
+
+    .quiz-next-btn {
+      margin-top: 1.2rem;
+      background: var(--primary);
+      color: white;
+      border: none;
+      border-radius: 999px;
+      padding: 0.75rem 2rem;
+      font-weight: 700;
+      font-size: 1rem;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.45rem;
+      transition: all 0.2s;
+    }
+
+    .quiz-next-btn:hover {
+      background: var(--primary-hover);
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(67, 56, 202, 0.3);
+    }
+
+    /* 結算報告卡 */
+    .quiz-summary-card {
+      display: none;
+      text-align: center;
+      padding: 3rem 2rem;
+      background: white;
+      border-radius: var(--radius-xl);
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow);
+    }
+
+    .summary-trophy {
+      font-size: 4rem;
+      margin-bottom: 1rem;
+    }
+
+    .summary-score-large {
+      font-size: 3.5rem;
+      font-weight: 900;
+      color: var(--primary-dark);
+      font-family: 'Noto Serif TC', serif;
+      margin-bottom: 0.6rem;
+    }
+
+    /* 魔法創作工坊 */
+    .creator-panel {
+      background: #f8fafc;
+      border-radius: var(--radius-lg);
+      padding: 2rem;
+      border: 1px solid var(--border);
+    }
+
+    .creator-controls {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 1.2rem;
+      margin-bottom: 1.8rem;
+    }
+
+    .control-group label {
+      display: block;
+      font-weight: 700;
+      color: #334155;
+      margin-bottom: 0.5rem;
+      font-size: 0.92rem;
+    }
+
+    .control-group select {
+      width: 100%;
+      padding: 0.7rem 1rem;
+      border-radius: var(--radius-sm);
+      border: 1px solid var(--border);
+      background: white;
+      font-size: 0.95rem;
+      outline: none;
+      font-family: inherit;
+      color: var(--dark);
+    }
+
+    .creator-btn {
+      background: linear-gradient(135deg, var(--primary), var(--purple));
+      color: white;
+      border: none;
+      padding: 0.85rem 2.2rem;
+      border-radius: 999px;
+      font-size: 1.05rem;
+      font-weight: 800;
+      cursor: pointer;
+      box-shadow: 0 4px 12px rgba(67, 56, 202, 0.25);
+      transition: all 0.2s;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .creator-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 18px rgba(67, 56, 202, 0.35);
+    }
+
+    .creator-result-card {
+      margin-top: 1.8rem;
+      background: white;
+      border-radius: var(--radius-md);
+      padding: 1.8rem;
+      border: 2px dashed #c7d2fe;
+      animation: fadeIn 0.4s ease;
+    }
+
+    .result-verse {
+      font-family: 'Noto Serif TC', serif;
+      font-size: 1.45rem;
+      font-weight: 800;
+      color: var(--primary-dark);
+      margin-bottom: 0.8rem;
+    }
+
+    .result-desc {
+      font-size: 0.96rem;
+      color: #334155;
+      line-height: 1.7;
+    }
+
+    /* 練習神器內嵌專區 */
+    .practice-container {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+
+    .practice-tabs {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+      justify-content: center;
+      margin-bottom: 0.5rem;
+    }
+
+    .practice-tab-btn {
+      padding: 0.85rem 1.8rem;
+      border-radius: 999px;
+      border: 2px solid var(--primary);
+      background: white;
+      color: var(--primary);
+      font-weight: 800;
+      font-size: 1rem;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      transition: all 0.25s;
+    }
+
+    .practice-tab-btn:hover, .practice-tab-btn.active {
+      background: var(--primary);
+      color: white;
+      box-shadow: 0 6px 16px rgba(67, 56, 202, 0.25);
+    }
+
+    .practice-actions-bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+      background: #f1f5f9;
+      padding: 0.85rem 1.4rem;
+      border-radius: var(--radius-md);
+    }
+
+    .btn-external {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.45rem;
+      background: white;
+      border: 1px solid var(--border);
+      padding: 0.5rem 1.2rem;
+      border-radius: 999px;
+      font-weight: 700;
+      font-size: 0.9rem;
+      color: #334155;
+      text-decoration: none;
+      transition: all 0.2s;
+    }
+
+    .btn-external:hover {
+      background: var(--primary-light);
+      color: var(--primary);
+      border-color: var(--primary);
+    }
+
+    .iframe-wrapper {
+      position: relative;
+      width: 100%;
+      height: 840px;
+      border-radius: var(--radius-lg);
+      border: 1px solid var(--border);
+      overflow: hidden;
+      background: white;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.05);
+    }
+
+    .iframe-wrapper iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+
+    /* 頁尾 Footer - 典雅溫潤暖栗木/沉木茶褐漸層 */
+    footer {
+      background: linear-gradient(180deg, #2e1a12 0%, #1c0f0a 100%);
+      color: white;
+      padding: 3.5rem 1.5rem 2.5rem;
+      border-top: 3px solid #854d0e;
+      text-align: center;
+      margin-top: 4rem;
+    }
+
+    .footer-container {
+      max-width: 1320px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1.8rem;
+      text-align: center;
+    }
+
+    .footer-logos {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 1.5rem;
+      flex-wrap: wrap;
+    }
+
+    .footer-seal {
+      height: 60px;
+      width: auto;
+      object-fit: contain;
+      filter: drop-shadow(0 4px 10px rgba(0, 0, 0, 0.3));
+    }
+
+    .footer-tagline-img {
+      max-height: 46px;
+      width: auto;
+      object-fit: contain;
+    }
+
+    .footer-credit {
+      font-size: 0.95rem;
+      color: #fde68a;
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(253, 230, 138, 0.25);
+      padding: 0.6rem 1.6rem;
+      border-radius: 999px;
+      font-weight: 600;
+      letter-spacing: 0.5px;
+    }
+
+    /* 動畫 */
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(6px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* RWD 適應 */
+    @media (max-width: 1024px) {
+      .compass-nav {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+
+    @media (max-width: 768px) {
+      .hero {
+        padding: 2.5rem 1.25rem;
+      }
+      .hero-content h1 {
+        font-size: 2.1rem;
+      }
+      .content-section {
+        padding: 1.8rem 1.2rem;
+      }
+      .compass-nav {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .iframe-wrapper {
+        height: 650px;
+      }
+      .db-toolbar {
+        flex-direction: column;
+        align-items: stretch;
+      }
+      .search-box {
+        max-width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- 頂部導覽列 -->
+  <header>
+    <div class="nav-container">
+      <a href="index.html" class="brand-group">
+        <img src="icon/seal-red.png" alt="學思軒" class="brand-seal-img">
+        <img src="icon/logo-yuwen.png" alt="語文補給站" class="brand-logo-img">
+        <div class="brand-text">
+          <div class="brand-title">
+            語文補給站
+            <span class="brand-badge">B03L02 古詩選</span>
+          </div>
+          <div class="brand-subtitle">詩詞表現手法 & 常見意象互動學習殿堂</div>
+        </div>
+      </a>
+
+      <ul class="nav-links">
+        <li><a href="index.html"><i data-lucide="home"></i>首頁總覽</a></li>
+        <li><a href="#techniques"><i data-lucide="sparkles"></i>表現手法</a></li>
+        <li><a href="#imagery-nav"><i data-lucide="compass"></i>意象星盤</a></li>
+        <li><a href="#database"><i data-lucide="book-open"></i>典範圖鑑庫</a></li>
+        <li><a href="#quiz-zone"><i data-lucide="award"></i>會考挑戰賽</a></li>
+        <li><a href="#creator-zone"><i data-lucide="wand-2"></i>靈感工坊</a></li>
+        <li><a href="#practice-zone" class="nav-btn-highlight"><i data-lucide="gamepad-2"></i>練習神器</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <!-- 主內容區 -->
+  <main>
+
+    <!-- Hero 旗艦全幅橫幅 -->
+    <section class="hero">
+      <div class="hero-content">
+        <div class="hero-badge-top">
+          <i data-lucide="feather"></i> 翰林國中國文 B03L02 古詩選・核心國學修辭神器
+        </div>
+        <h1>
+          古典詩境・造境心法<br>
+          <span>詩詞表現手法與常見意象全方位解析</span>
+        </h1>
+        <p>
+          詩歌是凝練的語言藝術。詩人將深邃的情感融鑄於物象之中，藉由<strong>借景抒情、直抒胸臆、託物言志、動靜結合、以動襯靜、對比映襯</strong>等精妙筆法，造就千古絕唱。本互動學習殿堂為你解鎖解題密碼，奠定會考極致實力！
+        </p>
+        <div class="hero-tags">
+          <div class="hero-tag"><i data-lucide="check-circle-2"></i> 六大表現手法萬能公式</div>
+          <div class="hero-tag"><i data-lucide="check-circle-2"></i> 四大維度 51 款經典意象</div>
+          <div class="hero-tag"><i data-lucide="check-circle-2"></i> Web Speech API 全真語音朗讀</div>
+          <div class="hero-tag"><i data-lucide="check-circle-2"></i> 10 題會考情境診斷挑戰賽</div>
+          <div class="hero-tag"><i data-lucide="check-circle-2"></i> 內嵌雙練習神器隨開隨練</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 模組一：六大表現手法核心解構 -->
+    <section id="techniques" class="content-section">
+      <div class="section-header">
+        <span class="section-badge">Module 01</span>
+        <h2 class="section-title">六大詩詞表現手法・解題萬能公式</h2>
+        <p class="section-desc">掌握詩人造境與抒情的核心脈絡，看清會考題幹陷阱與判讀心法</p>
+      </div>
+
+      <!-- 萬能公式橫幅 -->
+      <div class="formula-banner">
+        <div class="formula-item">
+          <div class="formula-title"><i data-lucide="eye"></i> 借景抒情：情景交融</div>
+          <div class="formula-desc">「一切景語皆情語」。不直說愁苦，而描寫殘月、江雨、枯藤、楓火，將千言萬語化入山川景物。</div>
+        </div>
+        <div class="formula-item">
+          <div class="formula-title"><i data-lucide="zap"></i> 直接抒情：直抒胸臆</div>
+          <div class="formula-desc">不假外物掩飾，心聲如破竹直出。「人生自古誰無死」、「仰天大笑出門去」，氣勢磅礡、真情畢露。</div>
+        </div>
+        <div class="formula-item">
+          <div class="formula-title"><i data-lucide="shield-check"></i> 託物言志：物我同一</div>
+          <div class="formula-desc">物有其天然物理特性（梅傲雪、竹有節、蟬飲露、灰清白），詩人藉物言明自身人格志向與節操。</div>
+        </div>
+      </div>
+
+      <!-- 六大手法卡片清單 -->
+      <div class="technique-grid">
+
+        <!-- 1. 借景抒情 -->
+        <div class="tech-card">
+          <span class="tech-badge badge-jie-jing"><i data-lucide="cloud-sun"></i> 景入情懷</span>
+          <h3 class="tech-name">借景抒情（寓情於景）</h3>
+          <p class="tech-concept">
+            詩人帶著主觀的情感去看客觀自然景物，使景物染上濃郁的情感色彩。讀者透過景物的淒清、蕭瑟或明媚，自然體會詩人內心的哀愁、思念或愉悅。
+          </p>
+          <div class="tech-formula-box">
+            <b>💡 破解口訣：</b>前句描摹客觀景緻（月、霜、雨、煙波）➔ 意在暗示羈旅思鄉或感傷之情。
+          </div>
+          <div class="tech-sample-box">
+            <div class="sample-verse">「月落烏啼霜滿天，江楓漁火對愁眠。」</div>
+            <div class="sample-source">張繼《楓橋夜泊》・借秋夜淒冷之景抒遊子孤寂愁思</div>
+          </div>
+        </div>
+
+        <!-- 2. 直接抒情 -->
+        <div class="tech-card">
+          <span class="tech-badge badge-zhi-jie"><i data-lucide="flame"></i> 直白坦率</span>
+          <h3 class="tech-name">直接抒情（直抒胸臆）</h3>
+          <p class="tech-concept">
+            詩人不借助客觀事物或景物作為媒介，而是直接、坦白、淋漓盡致地傾吐內心的真切感受與志向，具有強烈的感染力與節奏感。
+          </p>
+          <div class="tech-formula-box">
+            <b>💡 破解口訣：</b>句中直接出現強烈情緒字眼（愁、死、涕、笑、悲）➔ 斬釘截鐵陳述志向或慨嘆。
+          </div>
+          <div class="tech-sample-box">
+            <div class="sample-verse">「人生自古誰無死？留取丹心照汗青。」</div>
+            <div class="sample-source">文天祥《過零丁洋》・直抒捨生取義、以死報國的浩然正氣</div>
+          </div>
+        </div>
+
+        <!-- 3. 託物言志 -->
+        <div class="tech-card">
+          <span class="tech-badge badge-tuo-wu"><i data-lucide="flower-2"></i> 詠物寄懷</span>
+          <h3 class="tech-name">託物言志</h3>
+          <p class="tech-concept">
+            以具體客觀的事物（常為動植物或人造器物）為描寫對象，藉由該事物的物理特徵、生長習性，寄託詩人自己的人生理想、道德操守或政治抱負。
+          </p>
+          <div class="tech-formula-box">
+            <b>💡 破解口訣：</b>表面寫物（梅、竹、蟬、石灰、蜜蜂）➔ 核心本質在寫人（高潔、剛勁、勤勞、清白）。
+          </div>
+          <div class="tech-sample-box">
+            <div class="sample-verse">「千磨萬擊還堅勁，任爾東西南北風。」</div>
+            <div class="sample-source">鄭燮《竹石》・借破岩勁竹象徵剛正不阿、不畏風暴的堅貞傲骨</div>
+          </div>
+        </div>
+
+        <!-- 4. 動靜結合 -->
+        <div class="tech-card">
+          <span class="tech-badge badge-dong-jing"><i data-lucide="activity"></i> 動靜互生</span>
+          <h3 class="tech-name">動靜結合</h3>
+          <p class="tech-concept">
+            將處於相對靜止狀態的物象與處於動態運動的物象安排在同一畫面中，使靜景顯得有生氣、動景顯得更鮮明，相互映襯，構成生動活潑的空間層次。
+          </p>
+          <div class="tech-formula-box">
+            <b>💡 破解口訣：</b>靜態畫面（照、合、直）＋ 動態景象（流、斜、飛、拍岸）並置呈現在同一聯詩中。
+          </div>
+          <div class="tech-sample-box">
+            <div class="sample-verse">「明月松間照，清泉石上流。」</div>
+            <div class="sample-source">王維《山居秋暝》・靜謐月照與潺潺泉流動靜交錯，生機盎然</div>
+          </div>
+        </div>
+
+        <!-- 5. 以動襯靜 -->
+        <div class="tech-card">
+          <span class="tech-badge badge-chen-jing"><i data-lucide="volume-2"></i> 以聲反襯</span>
+          <h3 class="tech-name">以動襯靜（以聲襯寂）</h3>
+          <p class="tech-concept">
+            以局部的、短暫的、細微的動態或聲響（如鳥啼、落花、鐘聲、犬吠），反面襯托出周遭環境的極致空靈與深邃寧靜。「蟬噪林逾靜，鳥鳴山更幽。」
+          </p>
+          <div class="tech-formula-box">
+            <b>💡 破解口訣：</b>出現聲音（鳥鳴、鐘聲、犬吠、落花）➔ 但整體氛圍卻是「山更幽、林更靜、禪院深」。
+          </div>
+          <div class="tech-sample-box">
+            <div class="sample-verse">「月出驚山鳥，時鳴春澗中。」</div>
+            <div class="sample-source">王維《鳥鳴澗》・月升驚鳥啼叫的微動，反襯春夜山澗極致幽寂</div>
+          </div>
+        </div>
+
+        <!-- 6. 對比（映襯） -->
+        <div class="tech-card">
+          <span class="tech-badge badge-dui-bi"><i data-lucide="split"></i> 強烈反差</span>
+          <h3 class="tech-name">對比（映襯反襯）</h3>
+          <p class="tech-concept">
+            將兩種性質完全相反、或者反差極大的事物、情境、身分、或今昔盛衰並置描寫，在鮮明的對照中使正反雙方的特徵更為突出，深化批判或感傷主旨。
+          </p>
+          <div class="tech-formula-box">
+            <b>💡 破解口訣：</b>富 vs 貧（朱門 vs 凍死骨）、昔盛 vs 今衰（錦衣宮女 vs 鷓鴣飛）、前線死生 vs 帳下歌舞。
+          </div>
+          <div class="tech-sample-box">
+            <div class="sample-verse">「朱門酒肉臭，路有凍死骨。」</div>
+            <div class="sample-source">杜甫《自京赴奉先縣》・富貴奢靡與底層餓死並列，強烈揭露社會不公</div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- 模組二：四大意象星盤矩陣 -->
+    <section id="imagery-nav" class="content-section">
+      <div class="section-header">
+        <span class="section-badge">Module 02</span>
+        <h2 class="section-title">詩詞常見意象星盤・四大維度導覽</h2>
+        <p class="section-desc">點擊維度星盤卡片或下方膠囊，即時過濾並定位 51 款經典詩詞文化象徵</p>
+      </div>
+
+      <!-- 四大星盤按鈕 -->
+      <div class="compass-nav">
+        <div class="compass-card active" onclick="filterImageryCategory('all')">
+          <div class="compass-icon-wrapper"><i data-lucide="layout-grid"></i></div>
+          <div class="compass-title">全部意象總覽</div>
+          <div class="compass-count">收錄 51 款常見意象</div>
+        </div>
+        <div class="compass-card" onclick="filterImageryCategory('plant')">
+          <div class="compass-icon-wrapper"><i data-lucide="trees"></i></div>
+          <div class="compass-title">植物花木篇</div>
+          <div class="compass-count">14 種高潔草木</div>
+        </div>
+        <div class="compass-card" onclick="filterImageryCategory('animal')">
+          <div class="compass-icon-wrapper"><i data-lucide="feather"></i></div>
+          <div class="compass-title">飛禽走獸篇</div>
+          <div class="compass-count">13 種靈動生靈</div>
+        </div>
+        <div class="compass-card" onclick="filterImageryCategory('object')">
+          <div class="compass-icon-wrapper"><i data-lucide="cup-soda"></i></div>
+          <div class="compass-title">器物地景篇</div>
+          <div class="compass-count">12 種行旅人事</div>
+        </div>
+        <div class="compass-card" onclick="filterImageryCategory('nature')">
+          <div class="compass-icon-wrapper"><i data-lucide="cloud-rain"></i></div>
+          <div class="compass-title">天時自然篇</div>
+          <div class="compass-count">12 種日月風雨</div>
+        </div>
+      </div>
+
+      <!-- 快速意象晶片膠囊 -->
+      <div class="imagery-chips-container" id="imageryChipsArea">
+        <!-- JS 動態生成膠囊 -->
+      </div>
+    </section>
+
+    <!-- 模組三：典範圖鑑與詩詞句型資料庫 -->
+    <section id="database" class="content-section">
+      <div class="section-header">
+        <span class="section-badge">Module 03</span>
+        <h2 class="section-title">典範圖鑑庫・沉浸式互動探究</h2>
+        <p class="section-desc">支援關鍵字搜尋、真人語音 TTS 朗讀、出處語譯逐項遮罩與一鍵揭曉</p>
+      </div>
+
+      <!-- 工具列 -->
+      <div class="db-toolbar">
+        <div class="db-view-switchers">
+          <button class="tab-btn active" id="tabTechniques" onclick="switchMainTab('tech')">
+            <i data-lucide="sparkles"></i> 表現手法資料庫 (41句)
+          </button>
+          <button class="tab-btn" id="tabImageries" onclick="switchMainTab('image')">
+            <i data-lucide="compass"></i> 常見意象資料庫 (51款)
+          </button>
+        </div>
+
+        <div class="search-box">
+          <i data-lucide="search" style="color: #94a3b8;"></i>
+          <input type="text" id="dbSearchInput" placeholder="搜尋詩句、手法、意象、作者或象徵意義..." oninput="handleDbSearch()">
+        </div>
+
+        <div class="action-controls">
+          <button class="btn-action-small" onclick="toggleAllMasks(true)"><i data-lucide="eye-off"></i> 一鍵遮罩</button>
+          <button class="btn-action-small" onclick="toggleAllMasks(false)"><i data-lucide="eye"></i> 一鍵揭曉</button>
+          <button class="btn-action-small" onclick="stopSpeech()"><i data-lucide="volume-x"></i> 停止語音</button>
+        </div>
+      </div>
+
+      <!-- 詩詞卡片展示區 -->
+      <div class="verse-card-grid" id="verseCardsContainer">
+        <!-- JS 動態渲染 -->
+      </div>
+    </section>
+
+    <!-- 模組四：會考神仙挑戰賽 -->
+    <section id="quiz-zone" class="content-section">
+      <div class="section-header">
+        <span class="section-badge">Module 04</span>
+        <h2 class="section-title">詩意探微・會考實戰模擬挑戰賽</h2>
+        <p class="section-desc">精選 10 題高頻會考情境題，即時診斷表現手法判讀、意象內涵與課文素養</p>
+      </div>
+
+      <div class="quiz-container">
+        <!-- 進度條 -->
+        <div class="quiz-progress-bar">
+          <div class="quiz-progress-fill" id="quizProgressFill"></div>
+        </div>
+
+        <!-- 測驗卡片 -->
+        <div class="quiz-card" id="quizQuestionCard">
+          <div class="quiz-meta">
+            <span class="quiz-num-badge" id="quizNumBadge">第 1 / 10 題</span>
+            <span class="quiz-score-badge"><i data-lucide="star"></i> 目前累計：<span id="currentScore">0</span> 分</span>
+          </div>
+
+          <div class="quiz-question" id="quizQuestionText">載入題目中...</div>
+
+          <div class="quiz-options" id="quizOptionsContainer">
+            <!-- JS 動態生成選項 -->
+          </div>
+
+          <!-- 解析回饋區 -->
+          <div class="quiz-feedback" id="quizFeedbackBox">
+            <div class="feedback-title" id="feedbackTitle"></div>
+            <div class="feedback-explanation" id="feedbackExp"></div>
+            <button class="quiz-next-btn" id="quizNextBtn" onclick="nextQuestion()">下一題 <i data-lucide="arrow-right"></i></button>
+          </div>
+        </div>
+
+        <!-- 結算報告卡 -->
+        <div class="quiz-summary-card" id="quizSummaryCard">
+          <div class="summary-trophy" id="summaryIcon">🏆</div>
+          <div class="summary-score-large" id="summaryScoreText">100 分</div>
+          <h3 id="summaryTitle" style="font-size: 1.5rem; margin-bottom: 0.8rem; color: var(--primary-dark);">國文詩境大神！</h3>
+          <p id="summaryDesc" style="color: #475569; max-width: 500px; margin: 0 auto 2rem; line-height: 1.7;">
+            你對古典詩詞的表現手法與常見意象瞭若指掌，連最幽微的「以動襯靜」與深邃意象都難不倒你！
+          </p>
+          <button class="quiz-next-btn" onclick="restartQuiz()"><i data-lucide="rotate-ccw"></i> 重新挑戰</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- 模組五：詩意魔術師・靈感工坊 -->
+    <section id="creator-zone" class="content-section">
+      <div class="section-header">
+        <span class="section-badge">Module 05</span>
+        <h2 class="section-title">詩意魔術師・意象與手法靈感創作工坊</h2>
+        <p class="section-desc">自由挑選核心意象、表現手法與情感基調，動態生成詩境解構卡與鑑賞錦囊</p>
+      </div>
+
+      <div class="creator-panel">
+        <div class="creator-controls">
+          <div class="control-group">
+            <label for="selImagery"><i data-lucide="compass"></i> 核心意象選擇：</label>
+            <select id="selImagery">
+              <option value="梧桐">梧桐（深秋寂寞・淒清哀愁）</option>
+              <option value="折柳">折柳（依依惜別・挽留友朋）</option>
+              <option value="明月">明月（思鄉懷遠・期盼團圓）</option>
+              <option value="梅花">梅花（傲雪凌霜・堅貞高潔）</option>
+              <option value="杜鵑">杜鵑（啼血思歸・亡國悲音）</option>
+              <option value="客船">客船（江海飄零・孤寂隱逸）</option>
+              <option value="竹石">竹石（虛心有節・剛正不阿）</option>
+              <option value="浮萍">浮萍（身世浮沉・漂泊無依）</option>
+            </select>
+          </div>
+
+          <div class="control-group">
+            <label for="selTech"><i data-lucide="sparkles"></i> 表現手法搭配：</label>
+            <select id="selTech">
+              <option value="借景抒情">借景抒情（寓情於景・情景交融）</option>
+              <option value="以動襯靜">以動襯靜（以微聲反襯深邃空寂）</option>
+              <option value="託物言志">託物言志（借物理寄託高潔人格）</option>
+              <option value="動靜結合">動靜結合（靜動相映・層次生動）</option>
+              <option value="對比映襯">對比映襯（今昔盛衰或極端反差）</option>
+              <option value="直接抒情">直接抒情（坦率真摯・豪邁慨嘆）</option>
+            </select>
+          </div>
+
+          <div class="control-group">
+            <label for="selTone"><i data-lucide="heart"></i> 情感基調設定：</label>
+            <select id="selTone">
+              <option value="羈旅思鄉">羈旅思鄉・天涯遊子無盡牽掛</option>
+              <option value="送別留戀">送別留戀・知己各奔前程依依不捨</option>
+              <option value="逆境堅守">逆境堅守・不媚權貴孤芳自賞</option>
+              <option value="興亡感懷">興亡感懷・物是人非歷史滄桑</option>
+              <option value="超脫恬淡">超脫恬淡・回歸自然東籬悠然</option>
+            </select>
+          </div>
+        </div>
+
+        <div style="text-align: center;">
+          <button class="creator-btn" onclick="generatePoeticCard()">
+            <i data-lucide="wand-2"></i> 即時生成詩境鑑賞卡
+          </button>
+        </div>
+
+        <div class="creator-result-card" id="creatorResultCard" style="display: none;">
+          <div class="result-verse" id="resTitle">詩境鑑賞卡</div>
+          <div class="result-desc" id="resDesc">點擊上方按鈕生成</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 模組六：練習神器內嵌專區 -->
+    <section id="practice-zone" class="content-section">
+      <div class="section-header">
+        <span class="section-badge">Module 06</span>
+        <h2 class="section-title">練習神器內嵌專區・隨測隨練</h2>
+        <p class="section-desc">免切換頁面即可進行 3D 閃卡記憶、字義測驗與錯題本特訓，亦可另開新視窗全螢幕體驗</p>
+      </div>
+
+      <div class="practice-container">
+        <!-- 切換 Tab -->
+        <div class="practice-tabs">
+          <button class="practice-tab-btn active" id="btnPracTech" onclick="switchPracticeIframe('tech')">
+            <i data-lucide="sparkles"></i> 詩詞表現手法練習神器
+          </button>
+          <button class="practice-tab-btn" id="btnPracImage" onclick="switchPracticeIframe('image')">
+            <i data-lucide="compass"></i> 詩詞常見意象練習神器
+          </button>
+        </div>
+
+        <!-- 頂部工具按鈕 -->
+        <div class="practice-actions-bar">
+          <div style="display: flex; align-items: center; gap: 0.5rem; font-weight: 700; color: #334155;">
+            <i data-lucide="monitor" style="color: var(--primary);"></i>
+            <span id="currentIframeTitle">【詩詞表現手法】練習神器</span>
+          </div>
+
+          <div style="display: flex; gap: 0.6rem; align-items: center;">
+            <a href="poetry/poetry-technique-practice.html" target="_blank" class="btn-external" id="linkExternalPrac">
+              <i data-lucide="external-link"></i> 另開新分頁全螢幕練習
+            </a>
+            <a href="index.html" class="btn-external">
+              <i data-lucide="home"></i> 返回總部首頁
+            </a>
+          </div>
+        </div>
+
+        <!-- iframe 載具 -->
+        <div class="iframe-wrapper">
+          <iframe id="practiceIframe" src="poetry/poetry-technique-practice.html" title="練習神器"></iframe>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- 頁尾宣告 -->
+  <footer>
+    <div class="footer-container">
+      <div class="footer-logos">
+        <img src="icon/seal-white.png" alt="學思軒" class="footer-seal" onerror="this.src='icon/seal-red.png'">
+        <img src="icon/slogan-god-dark.png" alt="只要有心人人都是國文神" class="footer-tagline-img">
+      </div>
+      <div class="footer-credit serif">
+        𖤐 本系統由學思軒黃于珊、王斐亭老師規劃設計 · 版權所有 © 2026 𖤐
+      </div>
+    </div>
+  </footer>
+
+  <!-- 資料與邏輯腳本 -->
+  <script>
+    /* ==========================================================================
+       1. 表現手法題庫資料 (來自 [語文學習集練習神器]詩詞表現手法NEW)
+       ========================================================================== */
+    const techniqueData = [
+      {
+        "idiom": "借景抒情",
+        "original": "月落烏啼霜滿天，江楓漁火對愁眠。",
+        "source_text": "張繼《楓橋夜泊》",
+        "meaning": "借秋夜江景抒發羈旅之愁",
+        "translation": "月亮已落下，烏鴉啼叫寒霜鋪滿天空，對著江邊楓樹和漁船的燈火，伴著滿懷愁緒難以入眠。",
+        "sentence": "借明月、啼烏、霜天、江楓、漁火等秋夜淒清之景，自然抒發遊子旅途中的孤寂與愁思。"
+      },
+      {
+        "idiom": "借景抒情",
+        "original": "國破山河在，城春草木深。感時花濺淚，恨別鳥驚心。",
+        "source_text": "杜甫《春望》",
+        "meaning": "借荒涼春景抒發亡國傷時之悲",
+        "translation": "國都淪陷只有山河依舊，春天長安城裡草木茂密荒涼。感傷國事見花開亦不禁落淚，怨恨別離聞鳥鳴也驚動心魄。",
+        "sentence": "借長安城破後荒蕪破敗的春景，將詩人深沉的亡國之痛與感時傷懷之情融注於景物之中。"
+      },
+      {
+        "idiom": "借景抒情",
+        "original": "枯藤老樹昏鴉，小橋流水人家，古道西風瘦馬。",
+        "source_text": "馬致遠《天淨沙·秋思》",
+        "meaning": "借蕭瑟秋景烘托遊子孤寂",
+        "translation": "枯萎的藤蔓纏繞著老樹，黃昏歸巢的烏鴉在枝頭啼叫；小橋邊流水潺潺映著幾戶人家，荒涼古道上秋風陣陣，遊子騎著疲瘦的馬。",
+        "sentence": "純用九種典型秋景意象羅列疊加，借蕭瑟冷落的秋暮景色，強烈烘托出天涯遊子無盡的孤寂淒涼。"
+      },
+      {
+        "idiom": "借景抒情",
+        "original": "寒雨連江夜入吳，平明送客楚山孤。",
+        "source_text": "王昌齡《芙蓉樓送辛漸》",
+        "meaning": "借迷濛江雨、孤山抒送別離情",
+        "translation": "迷濛的冷雨連夜灑滿江面來到吳地，清晨送別友人時，只見楚山孤零零地佇立在遠方。",
+        "sentence": "借連江冷雨與楚山孤峙的迷茫景致，將離別的感傷與自身孤高堅定之志融為一體。"
+      },
+      {
+        "idiom": "借景抒情",
+        "original": "日暮鄉關何處是？煙波江上使人愁。",
+        "source_text": "崔顥《黃鶴樓》",
+        "meaning": "借江上煙波抒發鄉愁",
+        "translation": "黃昏時分極目遠眺，我的故鄉究竟在哪裡？只見江面上茫茫的煙波，更增添了無盡的鄉愁。",
+        "sentence": "以黃昏薄暮、江面煙波浩渺的蒼茫景色作結，寄託了遊子深沉而難以排解的思鄉之情。"
+      },
+      {
+        "idiom": "借景抒情",
+        "original": "孤帆遠影碧空盡，唯見長江天際流。",
+        "source_text": "李白《黃鶴樓送孟浩然之廣陵》",
+        "meaning": "借長江流水表達依依不捨",
+        "translation": "那孤單的帆影漸漸遠去消逝在蔚藍的天空盡頭，眼中只看得見浩蕩的長江水奔流向天邊。",
+        "sentence": "目光隨孤帆遠去而凝望江水，借浩渺無邊的長江逝水，含蓄深情地表達對友人的依依惜別。"
+      },
+      {
+        "idiom": "借景抒情",
+        "original": "潯陽江頭夜送客，楓葉荻花秋瑟瑟。",
+        "source_text": "白居易《琵琶行》",
+        "meaning": "借秋夜蕭瑟江景渲染悲涼氛圍",
+        "translation": "夜晚在潯陽江頭送別客人，楓葉與荻花在瑟瑟的秋風中搖曳蕭條。",
+        "sentence": "開篇借江頭秋風吹拂楓葉荻花的蕭瑟景象，為全詩定下了悲涼感傷的基調，營造出送別的淒冷意境。"
+      },
+      {
+        "idiom": "借景抒情",
+        "original": "梧桐更兼細雨，到黃昏、點點滴滴。",
+        "source_text": "李清照《聲聲慢》",
+        "meaning": "借黃昏細雨表現極致愁緒",
+        "translation": "何況那梧桐樹又飄著綿綿細雨，到了黃昏時分，更是一點一滴落在心頭。",
+        "sentence": "借黃昏時分打在梧桐葉上的點滴細雨，將女詞人國破家亡、孑然一人的極致愁苦化為具體感人的情境。"
+      },
+      {
+        "idiom": "借景抒情",
+        "original": "孤舟蓑笠翁，獨釣寒江雪。",
+        "source_text": "柳宗元《江雪》",
+        "meaning": "借冰天雪地之景表現孤傲不屈的孤寂心境",
+        "translation": "江上一葉孤單的小舟，一位身披蓑衣頭戴斗笠的老漁翁，獨自冒著漫天風雪在寒冷的江面上垂釣。",
+        "sentence": "借千里冰封、萬徑人蹤滅的酷寒雪景，生動勾勒出詩人在遭受政治打擊後堅貞孤傲、清高不屈的人格形象。"
+      },
+      {
+        "idiom": "直接抒情",
+        "original": "抽刀斷水水更流，舉杯消愁愁更愁。",
+        "source_text": "李白《宣州謝朓樓餞別校書叔雲》",
+        "meaning": "直言內心愁悶難解",
+        "translation": "抽出寶刀想斬斷水流，水流反而更急；舉起酒杯想要消解愁悶，內心的愁苦卻更為沉重。",
+        "sentence": "以斬水與借酒消愁為喻，直抒胸臆，淋漓盡致地表達出詩人內心苦悶無法排解之情。"
+      },
+      {
+        "idiom": "直接抒情",
+        "original": "人生自古誰無死？留取丹心照汗青。",
+        "source_text": "文天祥《過零丁洋》",
+        "meaning": "直抒以死報國之決心",
+        "translation": "自古以來人生在世誰能免於一死？只要留下這一片赤誠的忠心，永遠光照在史冊之中。",
+        "sentence": "直抒胸臆，以慷慨激昂的反問與宣言，表達捨生取義、以死報國的崇高氣節與堅定信念。"
+      },
+      {
+        "idiom": "直接抒情",
+        "original": "前不見古人，後不見來者。念天地之悠悠，獨愴然而涕下！",
+        "source_text": "陳子昂《登幽州臺歌》",
+        "meaning": "直抒懷才不遇與宇宙蒼茫之孤獨",
+        "translation": "往前看見不到古代招賢納士的明君，往後看望不見未來禮賢下士的賢王。想到天地如此遼闊久遠，不禁孤單悲傷地落下了眼淚！",
+        "sentence": "直接傾吐對時空浩渺的深刻感慨，直抒懷才不遇的深沉悲慨與巨大的宇宙孤獨感。"
+      },
+      {
+        "idiom": "直接抒情",
+        "original": "安能摧眉折腰事權貴，使我不得開心顏！",
+        "source_text": "李白《夢遊天姥吟留別》",
+        "meaning": "直陳不事權貴的傲骨",
+        "translation": "我怎能低頭彎腰去侍奉逢迎權貴之人，讓自己無法展現舒心開懷的笑容！",
+        "sentence": "結尾以直抒胸臆的有力語句，斬釘截鐵地表明詩人不向權貴妥協的傲骨與對人格尊嚴的堅守。"
+      },
+      {
+        "idiom": "直接抒情",
+        "original": "仰天大笑出門去，我輩豈是蓬蒿人。",
+        "source_text": "李白《南陵別兒童入京》",
+        "meaning": "直抒豪邁自信與得意之情",
+        "translation": "我仰天長笑著邁步出門遠行，我們這樣的人難道甘心長久做個平庸的鄉野草民嗎！",
+        "sentence": "直接表達詩人奉詔入京時的欣喜若狂、豪邁自信與對前途充滿抱負的得意之情。"
+      },
+      {
+        "idiom": "直接抒情",
+        "original": "莫等閒，白了少年頭，空悲切！",
+        "source_text": "岳飛《滿江紅》",
+        "meaning": "直言惜時奮進之志",
+        "translation": "千萬不要虛度光陰等閒視之，等到少年時滿頭青絲變成白髮，才來徒然悲傷痛苦！",
+        "sentence": "直截了當發出勸勉與自勵之聲，直言珍惜光陰、奮發圖強以報效國家的雄心壯志。"
+      },
+      {
+        "idiom": "直接抒情",
+        "original": "出師未捷身先死，長使英雄淚滿襟。",
+        "source_text": "杜甫《蜀相》",
+        "meaning": "直抒對諸葛亮功業未成的痛惜",
+        "translation": "出兵征戰尚未奪得勝利自己卻先病逝，這遺恨千百年來常常讓後世的英雄豪傑淚水濕透了衣襟。",
+        "sentence": "直抒胸臆，直接表達對諸葛亮一生鞠躬盡瘁、壯志未酬的無限痛惜與深切緬懷。"
+      },
+      {
+        "idiom": "直接抒情",
+        "original": "我勸天公重抖擻，不拘一格降人才。",
+        "source_text": "龔自珍《己亥雜詩》",
+        "meaning": "直抒改革期望與求才渴望",
+        "translation": "我奉勸上天重新振作抖擻精神，打破傳統常規的條框，降下各式各樣的優秀人才。",
+        "sentence": "直接向天公發出呼籲，直抒強烈的改革願望與對突破體制、渴求優秀人才的急切之情。"
+      },
+      {
+        "idiom": "直接抒情",
+        "original": "獨在異鄉為異客，每逢佳節倍思親。",
+        "source_text": "王維《九月九日憶山東兄弟》",
+        "meaning": "直抒重陽佳節思念親人之情",
+        "translation": "獨自一人身處異鄉作客，每當遇上歡慶的佳節，思念遠方親人的情懷就更加倍增。",
+        "sentence": "不加掩飾與修飾，直接抒發身為遊子在重陽佳節對故鄉親人最真摯、最深切的思念之情。"
+      },
+      {
+        "idiom": "託物言志",
+        "original": "居高聲自遠，非是藉秋風。",
+        "source_text": "虞世南《蟬》",
+        "meaning": "借蟬品格高潔自喻清高",
+        "translation": "蟬棲息在高處聲音自然傳播得遙遠，這並不是憑藉著秋風的力量。",
+        "sentence": "詩人藉蟬棲高飲露、鳴聲悠遠的特性，自喻立身品格高潔者自能名聲遠播，無須依附權貴。"
+      },
+      {
+        "idiom": "託物言志",
+        "original": "不要人誇好顏色，只留清氣滿乾坤。",
+        "source_text": "王冕《墨梅》",
+        "meaning": "借梅花自抒不媚世俗的清操",
+        "translation": "不需要別人誇獎它的顏色好看，只願散發出陣陣清香之氣充溢在天地之間。",
+        "sentence": "詩人借墨梅表達自己不向世俗獻媚的高尚情操，託物言志，彰顯孤芳自守、不同流合污的品格。"
+      },
+      {
+        "idiom": "託物言志",
+        "original": "千磨萬擊還堅勁，任爾東西南北風。",
+        "source_text": "鄭燮《竹石》",
+        "meaning": "借堅韌竹石象徵不屈氣節",
+        "translation": "歷經千萬次磨難與打擊依然堅韌挺拔，任憑你颳起東西南北各個方向的狂風。",
+        "sentence": "藉由扎根破岩、歷經風吹雨打依然挺立的竹石，寄託詩人堅韌剛正、絕不向惡勢力低頭的傲骨。"
+      },
+      {
+        "idiom": "託物言志",
+        "original": "粉骨碎身渾不怕，要留清白在人間。",
+        "source_text": "于謙《石灰吟》",
+        "meaning": "借石灰焚燒自喻清白剛烈之志",
+        "translation": "哪怕粉身碎骨也全無畏懼，只要將一身清白純潔的本色留在人間。",
+        "sentence": "藉石灰焚燒煆燒、化為碎屑仍潔白如故的特點，表明詩人為國為民不怕犧牲、誓守清白節操的志向。"
+      },
+      {
+        "idiom": "託物言志",
+        "original": "零落成泥碾作塵，只有香如故。",
+        "source_text": "陸游《卜算子·詠梅》",
+        "meaning": "借殘梅幽香表明至死不渝的節操",
+        "translation": "即使凋落飄零被碾壓化作泥土塵埃，那清幽淡雅的芬芳依然如故、未曾改變。",
+        "sentence": "藉殘梅雖化作塵泥仍幽香長存的形象，表明詩人雖身處逆境甚至死而後已，亦堅守愛國節操與品格。"
+      },
+      {
+        "idiom": "託物言志",
+        "original": "落紅不是無情物，化作春泥更護花。",
+        "source_text": "龔自珍《己亥雜詩》",
+        "meaning": "借落花護根表達培育後進、奉獻報國之情",
+        "translation": "凋落的花朵絕非無情之物，即使化成了春天的泥土，也要繼續滋養保護新生的花朵生長。",
+        "sentence": "藉落花歸根化泥仍滋潤花木的自然現象，表達自己雖辭官歸鄉，仍一心培育後進、奉獻報國的赤誠。"
+      },
+      {
+        "idiom": "託物言志",
+        "original": "荷盡已無擎雨蓋，菊殘猶有傲霜枝。",
+        "source_text": "蘇軾《贈劉景文》",
+        "meaning": "借傲霜菊花勉勵友人堅守品格",
+        "translation": "荷花凋謝已不再有像傘一樣撐雨的荷葉，菊花雖然殘落卻依然挺立著傲霜的枝條。",
+        "sentence": "藉荷敗而殘菊挺立傲霜的意象，勉勵友人劉景文要珍惜歲暮年華，在逆境中保持堅貞不屈的高風亮節。"
+      },
+      {
+        "idiom": "託物言志",
+        "original": "採菊東籬下，悠然見南山。",
+        "source_text": "陶淵明《飲酒》",
+        "meaning": "借菊與南山表現歸隱自然的高逸志趣",
+        "translation": "在東籬之下採摘菊花，悠然自得之中，遠處秀麗的南山映入眼簾。",
+        "sentence": "藉採菊東籬、悠然望山的田園生活意象，生動表現詩人脫離官場拘束、回歸自然的恬淡心境與高潔志趣。"
+      },
+      {
+        "idiom": "託物言志",
+        "original": "採得百花成蜜後，為誰辛苦為誰甜？",
+        "source_text": "羅隱《蜂》",
+        "meaning": "借蜜蜂採蜜諷刺勞動成果被剝削",
+        "translation": "採集了千萬種花朵好不容易釀造出甘甜的蜂蜜之後，究竟是為了誰辛苦奔波？又到底便宜了誰品嚐這份甜美？",
+        "sentence": "藉蜜蜂辛勤採蜜卻無法享用成果的生動描寫，深刻諷刺剝削者不勞而獲，並表達對底層勞動人民的深切同情。"
+      },
+      {
+        "idiom": "動靜結合",
+        "original": "明月松間照，清泉石上流。",
+        "source_text": "王維《山居秋暝》",
+        "meaning": "靜照之月與奔流之泉相映生輝",
+        "translation": "皎潔的明月透過松林間隙灑下清輝，清澈的泉水在山石上潺潺流動。",
+        "sentence": "明月穿松為靜景，清泉流石為動景，二者動靜結合、相映成趣，構成了清新秀麗、生機勃勃的山水幽境。"
+      },
+      {
+        "idiom": "動靜結合",
+        "original": "綠樹村邊合，青山郭外斜。",
+        "source_text": "孟浩然《過故人莊》",
+        "meaning": "靜態樹合與山勢延展",
+        "translation": "翠綠的樹木環抱著村莊四周，青翠的山巒在城外綿延傾斜。",
+        "sentence": "「合」字寫出綠樹環抱村莊的靜謐之態，「斜」字寫出青山向城外綿延起伏的動態之勢，動靜結合描繪出田園美景。"
+      },
+      {
+        "idiom": "動靜結合",
+        "original": "兩個黃鸝鳴翠柳，一行白鷺上青天。",
+        "source_text": "杜甫《絕句》",
+        "meaning": "翠柳靜與白鷺飛動相映",
+        "translation": "兩隻黃鸝在翠綠的柳樹梢上婉轉鳴唱，一行白鷺展翅排成一列直飛向蔚藍的天空。",
+        "sentence": "黃鸝鳴柳為局部近景、動中有靜，白鷺直飛上天為遠景長空、動態壯闊，動靜結合展現春日生機。"
+      },
+      {
+        "idiom": "動靜結合",
+        "original": "亂石穿空，驚濤拍岸，捲起千堆雪。",
+        "source_text": "蘇軾《念奴嬌·赤壁懷古》",
+        "meaning": "靜態奇石與洶湧波濤",
+        "translation": "陡峭不平的奇石直刺天空，洶湧狂暴的波濤猛烈拍擊江岸，捲起千萬堆如白雪般的浪花。",
+        "sentence": "「亂石穿空」描繪奇石高聳險峻的靜景，「驚濤拍岸」展現江水奔騰拍擊的動景，動靜結合營造出赤壁雄渾磅礡的氣勢。"
+      },
+      {
+        "idiom": "動靜結合",
+        "original": "大漠孤煙直，長河落日圓。",
+        "source_text": "王維《使至塞上》",
+        "meaning": "直線升煙與滾滾長河、落日相襯",
+        "translation": "廣袤無垠的沙漠中一縷烽煙筆直升起，奔騰的長河盡頭一輪落日格外滾圓。",
+        "sentence": "「孤煙直」寫烽煙裊裊上升之態，「落日圓」寫夕陽沉降與長河奔流，動靜相襯勾勒出塞外雄渾壯闊的空間畫面。"
+      },
+      {
+        "idiom": "以動襯靜",
+        "original": "月出驚山鳥，時鳴春澗中。",
+        "source_text": "王維《鳥鳴澗》",
+        "meaning": "鳥鳴動態反襯春山深幽寂靜",
+        "translation": "明月升起的光芒驚動了山林中的棲鳥，牠們不時在春天的山澗溪谷中鳴叫啼唱。",
+        "sentence": "用月亮升起驚飛山鳥、春澗啼鳴的「動」，深刻反襯出春夜山澗極其深幽寂靜的氛圍。"
+      },
+      {
+        "idiom": "以動襯靜",
+        "original": "蟬噪林逾靜，鳥鳴山更幽。",
+        "source_text": "王籍《入若耶溪》",
+        "meaning": "以蟬鳴鳥叫襯托山林寧靜",
+        "translation": "蟬聲喧鬧嘶鳴反而更顯出樹林的幽靜，鳥兒啼唱鳴囀更襯托出山嶺的清幽深邃。",
+        "sentence": "借蟬聲之「噪」與鳥鳴之「響」，以聲音的動態反襯出山林深處超塵脫俗的幽靜。"
+      },
+      {
+        "idiom": "以動襯靜",
+        "original": "萬籟此俱寂，但餘鐘磬音。",
+        "source_text": "常建《題破山寺後禪院》",
+        "meaning": "以悠遠鐘聲反襯禪院極致幽靜",
+        "translation": "此時此刻世間的一切聲響都歸於沉寂，天地間只剩下悠揚綿長的鐘磬梵音在迴盪。",
+        "sentence": "在萬物俱寂的背景下，以悠遠悠長的鐘磬之聲，有力反襯出佛門禪院超脫塵俗的極致清幽與寂靜。"
+      },
+      {
+        "idiom": "以動襯靜",
+        "original": "人閒桂花落，夜靜春山空。",
+        "source_text": "王維《鳥鳴澗》",
+        "meaning": "以落花細微動態襯托夜山空寂",
+        "translation": "人心閒適恬淡靜靜看著桂花輕輕飄落，夜色寂靜深沉使得春天的山林更顯空靈。",
+        "sentence": "桂花極其細微無聲的飄落，唯有在極靜之夜與心閒之人方能察覺，以細微之動反襯春山深邃空寂。"
+      },
+      {
+        "idiom": "以動襯靜",
+        "original": "狗吠深巷中，雞鳴桑樹顛。",
+        "source_text": "陶淵明《歸園田居》",
+        "meaning": "以雞犬之聲反襯鄉村恬淡安寧",
+        "translation": "深遠幽長的巷子裡傳來幾聲狗吠，高高的桑樹枝頭響起雄雞的啼鳴。",
+        "sentence": "以深巷犬吠與樹頂雞啼的鄉野之聲，以動襯靜，生動襯托出田園生活的恬淡祥和、遠離塵世紛擾的安寧。"
+      },
+      {
+        "idiom": "對比",
+        "original": "朱門酒肉臭，路有凍死骨。",
+        "source_text": "杜甫《自京赴奉先縣詠懷五百字》",
+        "meaning": "貴族奢靡與底層餓死對比",
+        "translation": "富貴人家的豪門宅邸裡酒肉多得吃不完而腐爛發臭，冷落的道路旁卻橫躺著挨餓受凍而死的百姓骸骨。",
+        "sentence": "把統治階層極盡奢靡的富足生活和貧苦百姓悲慘死於凍餓的境遇進行強烈對比，揭露社會極端不公。"
+      },
+      {
+        "idiom": "對比",
+        "original": "越王勾踐破吳歸，義士還家盡錦衣。宮女如花滿春殿，只今惟有鷓鴣飛。",
+        "source_text": "李白《越中覽古》",
+        "meaning": "往昔盛況與今日荒涼對比",
+        "translation": "越王勾踐滅吳後凱旋歸來，勇士們榮歸故里個個身披華麗錦衣。昔日宮殿中如花似玉的宮女充溢其間，如今天地茫茫只剩下幾隻鷓鴣在荒煙蔓草中飛翔。",
+        "sentence": "將往昔破吳凱旋、宮人如花的極致繁盛與今日宮闈荒涼、唯餘鷓鴣的淒涼景象作鮮明對比，抒發盛衰無常的懷古之悲。"
+      },
+      {
+        "idiom": "對比",
+        "original": "戰士軍前半死生，美人帳下猶歌舞。",
+        "source_text": "高適《燕歌行》",
+        "meaning": "前線士卒浴血與將軍沉溺享樂對比",
+        "translation": "前線的將士們在戰場上浴血拚殺歷經生死考驗，後方的將領主帳內美女們卻依然在輕歌曼舞、尋歡作樂。",
+        "sentence": "透過前線浴血搏命之慘烈與軍帳奢靡享樂之荒唐的強烈對比，尖銳諷刺並揭露了將帥腐敗無能、罔顧士兵死活。"
+      },
+      {
+        "idiom": "對比",
+        "original": "昔我往矣，楊柳依依。今我來思，雨雪霏霏。",
+        "source_text": "《詩經·小雅·採薇》",
+        "meaning": "出征時春景與歸來時冬雪、今昔哀樂對比",
+        "translation": "回想當初我出征離開家鄉時，楊柳隨風輕拂依依不捨。如今我歷經艱險返回故里，只見漫天風雪紛紛揚揚。",
+        "sentence": "以昔日出征時春光明媚的楊柳依依，與今日復員歸家時嚴冬大雪的霏霏交加進行今昔對比，深刻表現征戰之苦與歲月滄桑。"
+      },
+      {
+        "idiom": "對比",
+        "original": "去來江口守空船，繞船月明江水寒。夜深忽夢少年事，夢啼妝淚紅闌干。",
+        "source_text": "白居易《琵琶行》",
+        "meaning": "少年風光與老年孤寂淒涼對比",
+        "translation": "商人出外經商走後我常在江口獨守空船，明月環照江水淒寒徹骨。深夜忽然夢見年少時的歡樂繁華，夢醒時淚水洗去胭脂紅粉縱橫流淌。",
+        "sentence": "將琵琶女少時「一曲紅綃不知數」的熱鬧風光，與老大嫁作商人婦後在寒江冷月下獨守空船的淒涼進行深刻對比。"
+      },
+      {
+        "idiom": "對比",
+        "original": "宣室求賢訪逐臣，賈生才調更無倫。可憐夜半虛前席，不問蒼生問鬼神。",
+        "source_text": "李商隱《賈生》",
+        "meaning": "帝王貌似求才求賢與實則迷信鬼神對比",
+        "translation": "漢文帝在宣室思求賢臣召見被貶逐的賈誼，賈誼卓越超群的才華更是無人能及。只可惜君王深談至半夜感動得移席前傾，所詢問的卻不是天下黎民蒼生之事，而是鬼神迷信的虛妄之談。",
+        "sentence": "將文帝看似誠懇求賢的姿態，與其徹夜促膝卻「不問蒼生問鬼神」的荒謬本質進行辛辣對比，深刻諷刺最高統治者不恤民情。"
+      },
+      {
+        "idiom": "對比",
+        "original": "去年今日此門中，人面桃花相映紅。人面不知何處去，桃花依舊笑春風。",
+        "source_text": "崔護《題都城南莊》",
+        "meaning": "去年相逢之喜與今年物是人非之悲對比",
+        "translation": "去年的今天就在這扇莊門之中，姑娘嬌豔的容顏與盛開的桃花互相輝映顯得格外粉紅。如今那姑娘的面容不知已去向何處，只有滿樹桃花依然在春風中含笑盛開。",
+        "sentence": "將去年門中人面桃花相映的歡欣偶遇，與今年桃花依舊但伊人不見的失落惆悵進行對比，寫出物是人非的無限感傷。"
+      }
+    ];
+
+    /* ==========================================================================
+       2. 常見意象題庫資料 (來自 [語文學習集練習神器]詩詞常見意象NEW)
+       ========================================================================== */
+    const imageryData = [
+      {"category": "plant", "idiom": "梅花", "meaning": "傲霜鬥雪、堅貞不屈、高潔脫俗", "source_text": "王安石〈梅花〉", "original": "牆角數枝梅，凌寒獨自開。", "translation": "牆角邊有幾枝梅花，冒著嚴寒獨自綻放。", "sentence": "在古典詩詞中，「梅花」常作為歲寒三友與花中四君子之一，象徵不屈不撓的高尚節操。"},
+      {"category": "plant", "idiom": "竹子", "meaning": "虛心謙遜、堅韌不拔、剛正不阿", "source_text": "鄭燮〈竹石〉", "original": "咬定青山不放鬆，立根原在破岩中。", "translation": "緊緊咬定青山絕不放鬆，把根深深扎在破裂的岩石之中。", "sentence": "「竹子」中空象徵虛心，有節象徵節操，常被詩人借以表達剛毅正直的品格。"},
+      {"category": "plant", "idiom": "菊花", "meaning": "恬淡隱逸、孤傲不群、傲霜高潔", "source_text": "陶淵明〈飲酒〉", "original": "採菊東籬下，悠然見南山。", "translation": "在東籬之下採摘菊花，悠然自得地遠望南山。", "sentence": "自陶淵明後，「菊花」成為花中隱士的代表，常用來表現淡泊名利與孤高情懷。"},
+      {"category": "plant", "idiom": "松樹／松柏", "meaning": "堅毅長青、卓爾不群、經得起考驗", "source_text": "《論語》", "original": "歲寒，然後知松柏之後彫也。", "translation": "到了嚴寒的季節，才知道松柏是最後凋謝的。", "sentence": "古人常以「松樹／松柏」經冬不凋的特性，比喻君子在亂世逆境中依然堅守節操。"},
+      {"category": "plant", "idiom": "柳樹／折柳", "meaning": "依依惜別、挽留之情", "source_text": "王維〈送元二使安西〉", "original": "渭城朝雨浥輕塵，客舍青青柳色新。", "translation": "渭城清晨的細雨濕潤了路上的塵土，客棧旁青翠的柳樹顯得格外清新。", "sentence": "因為「柳」與「留」諧音，古人送別常有折柳相贈的習俗，「柳樹／折柳」遂成惜別代表。"},
+      {"category": "plant", "idiom": "梧桐", "meaning": "淒清寂寞、深秋哀愁", "source_text": "李煜〈相見歡〉", "original": "寂寞梧桐深院鎖清秋。", "translation": "寂寞的梧桐樹佇立在深院中，彷彿將蕭瑟的清秋深鎖其中。", "sentence": "古代有梧桐一葉落而知秋之說，因此詩詞中「梧桐」多用以烘托秋意蕭瑟與內心寂寥。"},
+      {"category": "plant", "idiom": "蓮花／荷花", "meaning": "出淤泥而不染、品格高潔；男女相戀", "source_text": "周敦頤〈愛蓮說〉", "original": "出淤泥而不染，濯清漣而不妖。", "translation": "從淤泥中生長出來卻不受污染，經過清水的洗滌卻不顯妖媚。", "sentence": "「蓮花／荷花」既象徵品格高潔的君子，又因「蓮」諧音「憐」而常在樂府中寄託愛意。"},
+      {"category": "plant", "idiom": "蘭花", "meaning": "幽芳自賞、賢者之德、高雅脫俗", "source_text": "《孔子家語》", "original": "芝蘭生於深林，不以無人而不芳。", "translation": "芝蘭生長在深山幽林之中，並不因為沒有人欣賞就不散發芳香。", "sentence": "作為花中四君子之一，「蘭花」常被用來比喻賢者的美德以及尋求知己的渴望。"},
+      {"category": "plant", "idiom": "萱草", "meaning": "忘憂、思念母親、母愛代稱", "source_text": "孟郊〈遊子吟〉", "original": "誰言寸草心，報得三春暉。", "translation": "有誰敢說小草那微弱的心意，能夠報答得了春天陽光的深厚恩情呢？", "sentence": "古稱「萱草」為忘憂草，種於北堂，故在傳統詩詞文化中成為母親與母愛的代稱。"},
+      {"category": "plant", "idiom": "豆蔻", "meaning": "少女青春年少（指十三、四歲少女）", "source_text": "杜牧〈贈別〉", "original": "娉娉嫋嫋十三餘，豆蔻梢頭二月初。", "translation": "體態輕盈美好的十三歲少女，就像二月初含苞待放的豆蔻花梢。", "sentence": "杜牧這首詩讓「豆蔻」成為成語「豆蔻年華」的出處，專指十三、四歲的青春少女。"},
+      {"category": "plant", "idiom": "紅豆（相思子）", "meaning": "男女相思、深情眷戀", "source_text": "王維〈相思〉", "original": "紅豆生南國，春來發幾枝。願君多採擷，此物最相思。", "translation": "紅豆生長在南方，春天來時不知長出多少新枝。希望你多多採摘，因為它最能寄託思念。", "sentence": "在傳統文學中，「紅豆（相思子）」是最經典表達男女相思與深情愛戀的信物。"},
+      {"category": "plant", "idiom": "桃李", "meaning": "學生門生、作育英才；青春容顏", "source_text": "《史記》", "original": "桃李不言，下自成蹊。", "translation": "桃樹和李樹雖然不會說話，但因其花果美好，樹下自然踩出了一條小路。", "sentence": "成語「桃李滿天下」便是以「桃李」代稱培育出的優秀門生與學生。"},
+      {"category": "plant", "idiom": "浮萍", "meaning": "漂泊無定、身世流離", "source_text": "文天祥〈過零丁洋〉", "original": "山河破碎風飄絮，身世浮沉雨打萍。", "translation": "國家山河破碎如同狂風中飄散的柳絮，個人身世坎坷宛如暴雨中漂泊的浮萍。", "sentence": "「浮萍」隨波逐流且無根生長，常被詩人借以感嘆身世漂泊、命運無依。"},
+      {"category": "plant", "idiom": "桑梓", "meaning": "故鄉、家鄉", "source_text": "毛澤東詩詞", "original": "埋骨何須桑梓地，人生無處不青山。", "translation": "埋葬遺體何必一定要在故鄉的土地上，人生在世處處都有青山可以安身。", "sentence": "古代居宅周圍常栽種桑樹與梓樹，後世遂以「桑梓」借代為家鄉。"},
+      {"category": "animal", "idiom": "猿猴／猿啼", "meaning": "哀傷悲戚、旅途淒涼", "source_text": "酈道元《水經注》", "original": "巴東三峽巫峽長，猿鳴三聲淚沾裳。", "translation": "巴東三峽中的巫峽最為狹長，猿猴悲鳴幾聲就令人淚濕衣裳。", "sentence": "「猿猴／猿啼」聲調高亢淒厲，常在行旅詩文中用以加深行客的哀傷與孤寂。"},
+      {"category": "animal", "idiom": "鴻雁／大雁", "meaning": "書信傳遞、遊子思鄉懷親", "source_text": "李清照〈一剪梅〉", "original": "雲中誰寄錦書來？雁字回時，月滿西樓。", "translation": "仰望雲天，不知是誰寄來了書信？當大雁排成字形飛回時，月光已灑滿了西樓。", "sentence": "典出蘇武牧羊的「鴻雁傳書」，使「鴻雁／大雁」成為傳遞音訊與思鄉的象徵。"},
+      {"category": "animal", "idiom": "杜鵑（子規）", "meaning": "哀傷淒涼、思鄉思歸、亡國之痛", "source_text": "白居易〈琵琶行〉", "original": "其間旦暮聞何物？杜鵑啼血猿哀鳴。", "translation": "在這裡早晚能聽到什麼聲音呢？只有杜鵑啼血的悲鳴和猿猴哀痛的叫聲。", "sentence": "傳說蜀王望帝魂化杜鵑，鳴聲如「不如歸去」，故「杜鵑（子規）」常象徵思鄉與亡國悲音。"},
+      {"category": "animal", "idiom": "寒蟬", "meaning": "淒涼落寞、時序入秋、悲戚告別", "source_text": "柳永〈雨霖鈴〉", "original": "寒蟬淒切，對長亭晚，驟雨初歇。", "translation": "秋後的蟬發出淒涼急促的鳴叫，面對著長亭已近傍晚，陣雨剛剛停歇。", "sentence": "入秋之後的「寒蟬」生命短暫、叫聲淒楚，是古代離別詞中極為常見的背景意象。"},
+      {"category": "animal", "idiom": "黃鸝", "meaning": "春意盎然、生機蓬勃、歡欣愉悅", "source_text": "杜甫〈絕句〉", "original": "兩個黃鸝鳴翠柳，一行白鷺上青天。", "translation": "兩隻黃鸝在翠綠的柳樹間鳴唱，一行白鷺展翅飛向蔚藍的天空。", "sentence": "詩人常用活潑婉轉的「黃鸝」啼鳴，來勾勒出春天生機蓬勃、歡愉美好的景色。"},
+      {"category": "animal", "idiom": "青鳥", "meaning": "傳遞音訊的使者、專遞相思", "source_text": "李商隱〈無題〉", "original": "蓬山此去無多路，青鳥殷勤為探看。", "translation": "從這裡到蓬萊仙山並沒有多少路程，希望青鳥能殷勤地代我前往探望問候。", "sentence": "傳說「青鳥」是西王母身旁的使者，在詩詞中多用以寄託為戀人傳遞相思訊息。"},
+      {"category": "animal", "idiom": "鴛鴦", "meaning": "夫妻恩愛、永不分離", "source_text": "盧照鄰〈長安古意〉", "original": "得成比目何辭死，願作鴛鴦不羨仙。", "translation": "若能化作比目魚哪怕死去也不推辭，只願做一雙恩愛的鴛鴦連神仙也不羨慕。", "sentence": "「鴛鴦」出雙入對、形影不離，自古即是象徵夫妻恩愛與美好愛情的典範。"},
+      {"category": "animal", "idiom": "孤雁／失群雁", "meaning": "孤獨漂泊、漂零無依的遊子", "source_text": "杜甫〈孤雁〉", "original": "孤雁不飲啄，飛鳴聲念群。", "translation": "離群的孤雁不肯喝水啄食，一邊高飛一邊哀鳴著想念雁群。", "sentence": "詩人常以失群的「孤雁／失群雁」自喻，抒發自己流落異鄉、無依無靠的孤獨淒涼。"},
+      {"category": "animal", "idiom": "烏鴉／昏鴉", "meaning": "衰敗荒涼、日暮遲暮、淒清孤寂", "source_text": "馬致遠〈天淨沙·秋思〉", "original": "枯藤老樹昏鴉，小橋流水人家。", "translation": "枯萎的藤蔓纏繞著老樹，黃昏歸巢的烏鴉在枝頭啼叫，小橋旁流水潺潺，幾戶人家座落其中。", "sentence": "黃昏時分的「烏鴉／昏鴉」常用於描寫暮色蕭條與荒涼破敗的意境。"},
+      {"category": "animal", "idiom": "蟋蟀（促織）", "meaning": "歲暮秋涼、閨婦思夫、時節變遷", "source_text": "杜甫〈促織〉", "original": "促織甚微細，哀音何動人。", "translation": "蟋蟀的體型雖然非常微小，但牠發出的哀傷鳴聲多麼令人感動。", "sentence": "「蟋蟀（促織）」秋夜鳴叫如催人織布禦寒，常勾起閨中婦女對遠行丈夫的牽掛。"},
+      {"category": "animal", "idiom": "鯤鵬／大鵬", "meaning": "志向遠大、展翅高飛、壯志凌雲", "source_text": "《莊子·逍遙遊》", "original": "水擊三千里，摶扶搖而上者九萬里。", "translation": "翅膀拍打水面激起三千里的波濤，乘著旋風盤旋飛上九萬里的高空。", "sentence": "莊子筆下的「鯤鵬／大鵬」展翅九萬里，成為後世比喻胸懷大志、前程遠大的經典象徵。"},
+      {"category": "animal", "idiom": "雄鷹", "meaning": "威武勇猛、英姿颯爽、豪情壯志", "source_text": "王維〈觀獵〉", "original": "草枯鷹眼疾，雪盡馬蹄輕。", "translation": "荒草枯黃使獵鷹的雙眼更加敏銳，積雪融盡讓奔馳的馬蹄顯得格外輕快。", "sentence": "在邊塞詩與狩獵詩中，「雄鷹」常展現出剛健敏銳的姿態與豪邁不凡的英雄氣概。"},
+      {"category": "animal", "idiom": "蟬", "meaning": "棲高飲露、品格高潔、超然物外", "source_text": "虞世南〈蟬〉", "original": "居高聲自遠，非是藉秋風。", "translation": "蟬棲息在高處聲音自然傳播得遙遠，這並不是憑藉著秋風的力量。", "sentence": "古人認為蟬餐風飲露，清高自守，常用來寄託士大夫高潔的人格志向。"},
+      {"category": "object", "idiom": "酒", "meaning": "借酒消愁、歡聚餞別、豪邁放達", "source_text": "李白〈宣州謝朓樓餞別校書叔雲〉", "original": "抽刀斷水水更流，舉杯消愁愁更愁。", "translation": "拔刀想要斬斷水流而水流更加湍急，舉起酒杯想要消解愁悶卻使愁緒更深。", "sentence": "文人墨客常藉「酒」消解心中的鬱悶，或在歡宴離別時表達放達不羈的情懷。"},
+      {"category": "object", "idiom": "舟／客船", "meaning": "漂泊流浪、孤獨宦遊、江湖隱逸", "source_text": "張繼〈楓橋夜泊〉", "original": "姑蘇城外寒山寺，夜半鐘聲到客船。", "translation": "姑蘇城外的寒山寺，半夜傳來的鐘聲悠悠迴盪到了遊子的客船上。", "sentence": "一葉扁「舟／客船」漂於江海，既象徵宦途飄零的孤寂，也寄託退隱江湖的超然之想。"},
+      {"category": "object", "idiom": "長亭／短亭", "meaning": "陸路送別、依依惜別之所", "source_text": "李白〈菩薩蠻〉", "original": "何處是歸程？長亭更短亭。", "translation": "究竟哪裡才是回家的路途？只見一個個長亭接著短亭綿延不絕。", "sentence": "古代驛道設有「長亭／短亭」供行人歇息，因而成為詩詞中表現親友依依惜別的經典地標。"},
+      {"category": "object", "idiom": "羌笛／胡笳", "meaning": "邊塞荒涼、戍卒思鄉、異域愁音", "source_text": "王之渙〈涼州詞〉", "original": "羌笛何須怨楊柳，春風不度玉門關。", "translation": "何必用羌笛吹奏幽怨的《折楊柳》曲調呢？因為春風本來就吹不到玉門關以西。", "sentence": "邊疆樂器「羌笛／胡笳」音調淒涼幽怨，常勾起戍邊將士對家鄉親人的深切思念。"},
+      {"category": "object", "idiom": "登樓／憑欄", "meaning": "遠眺思鄉、憂國傷時、滿腹愁緒", "source_text": "晏殊〈蝶戀花〉", "original": "獨上高樓，望盡天涯路。", "translation": "獨自登上高樓，極目遠眺那天際盡頭延伸的道路。", "sentence": "「登樓／憑欄」極目遠眺，在古典詩詞中往往伴隨著強烈的去國懷鄉與感時傷世之情。"},
+      {"category": "object", "idiom": "闌干（雕欄玉砌）", "meaning": "故國舊夢、物是人非、榮華不再", "source_text": "李煜〈虞美人〉", "original": "雕欄玉砌應猶在，只是朱顏改。", "translation": "雕花的欄杆、玉石的台階應該都還在吧，只是宮殿中昔日美人的容顏已經改變。", "sentence": "李煜詞中以「闌干（雕欄玉砌）」的依舊存在，反襯昔日繁華落盡與亡國之痛。"},
+      {"category": "object", "idiom": "烽火／狼煙", "meaning": "戰爭爆發、邊防告急、戰亂連綿", "source_text": "杜甫〈春望〉", "original": "烽火連三月，家書抵萬金。", "translation": "連綿的戰火已經連續燃燒了三個月，此時一封家信的價值抵得上萬兩黃金。", "sentence": "古代以燃燒柴草與狼糞示警，「烽火／狼煙」遂成為邊關告急與戰亂頻仍的代稱。"},
+      {"category": "object", "idiom": "砧聲（搗衣）", "meaning": "征婦思念遠方戍邊丈夫", "source_text": "李白〈子夜吳歌〉", "original": "長安一片月，萬戶搗衣聲。", "translation": "長安城籠罩在皎潔的月色中，千家萬戶傳來了婦女秋夜搗衣的敲打聲。", "sentence": "秋夜「砧聲（搗衣）」是婦女為遠征戍邊的丈夫製作冬衣之聲，寄託著無盡的相思與牽掛。"},
+      {"category": "object", "idiom": "殘燈／孤燈", "meaning": "孤單寂寥、徹夜難眠、相思愁苦", "source_text": "馬戴〈灞上秋居〉", "original": "落葉他鄉樹，寒燈獨夜人。", "translation": "異鄉的樹木在秋風中落葉紛飛，一盞微弱的寒燈陪伴著孤獨度夜的人。", "sentence": "「殘燈／孤燈」昏暗搖曳的光芒，最能襯托出遊子夜半難眠、孤寂落寞的心境。"},
+      {"category": "object", "idiom": "琴／瑟", "meaning": "知音相惜、寄託哀思、夫妻和美", "source_text": "李商隱〈錦瑟〉", "original": "錦瑟無端五十絃，一弦一柱思華年。", "translation": "華美的錦瑟為何無緣無故有五十條弦？每一根弦每一個音柱都讓人追憶起美好的青春。", "sentence": "「琴／瑟」除了象徵知音間的惺惺相惜，在傳統文化中也常用於形容夫妻和睦與寄託哀思。"},
+      {"category": "object", "idiom": "尺素／錦書", "meaning": "遠方書信、深情寄託", "source_text": "秦觀〈踏莎行〉", "original": "驛寄梅花，魚傳尺素，砌成此恨無重數。", "translation": "驛使寄來了梅花，游魚傳來了遠方的書信，這些反而堆積起無數重重疊疊的離恨。", "sentence": "古時將書信書寫於一尺長的絹帛上，故稱「尺素／錦書」，代表來自遠方的深情問候。"},
+      {"category": "object", "idiom": "雙鯉魚", "meaning": "書信、音訊", "source_text": "漢樂府〈飲馬長城窟行〉", "original": "客從遠方來，遺我雙鯉魚。呼兒烹鯉魚，中有尺素書。", "translation": "有客人從遠方到來，送給我一對鯉魚狀的木盒。叫孩子剖開木盒，裡面藏有一封用素帛寫的書信。", "sentence": "古代將信件裝入鯉魚形的木匣中，後世遂以「雙鯉魚」借代為書信與音訊。"},
+      {"category": "nature", "idiom": "月亮（嬋娟／玉盤）", "meaning": "離愁別緒、思鄉懷親、渴望團圓", "source_text": "杜甫〈月夜憶舍弟〉", "original": "露從今夜白，月是故鄉明。", "translation": "從今夜開始天氣轉涼白露凝結，天上的明月還是覺得故鄉的最為明亮。", "sentence": "「月亮（嬋娟／玉盤）」的圓缺暗合人事的聚散，是古人表達思鄉與企盼團圓的核心意象。"},
+      {"category": "nature", "idiom": "江水／逝水", "meaning": "時光飛逝、歷史滄桑、無盡愁緒", "source_text": "李煜〈虞美人〉", "original": "問君能有幾多愁？恰似一江春水向東流。", "translation": "若要問心中的愁悶究竟有多少？就像那一整江春水滾滾向東奔流不息。", "sentence": "奔流不息的「江水／逝水」常被詩人借喻為時光的消逝、王朝的興衰以及綿綿無絕期的愁恨。"},
+      {"category": "nature", "idiom": "春風", "meaning": "生機盎然、溫暖希望、皇恩撫育", "source_text": "王安石〈元日〉", "original": "爆竹聲中一歲除，春風送暖入屠蘇。", "translation": "在陣陣歡慶的爆竹聲中送走了舊的一年，溫暖的春風吹拂將暖意送入了屠蘇酒中。", "sentence": "吹拂大地的「春風」帶來溫暖與萬物復甦的生機，古典詩中亦常用來比喻帝王的恩澤。"},
+      {"category": "nature", "idiom": "雪／霜", "meaning": "環境艱困逆境、高潔孤傲、歲暮寒苦", "source_text": "柳宗元〈江雪〉", "original": "孤舟蓑笠翁，獨釣寒江雪。", "translation": "江上一葉孤舟，一位身披蓑衣頭戴斗笠的老翁，獨自冒著漫天風雪垂釣。", "sentence": "詩人常以潔白冰冷的「雪／霜」象徵嚴峻惡劣的環境，並藉此凸顯自身的高潔與傲骨。"},
+      {"category": "nature", "idiom": "西風／秋風", "meaning": "衰敗落寞、淒清肅殺、遊子思歸", "source_text": "馬致遠〈天淨沙·秋思〉", "original": "古道西風瘦馬。夕陽西下，斷腸人在天涯。", "translation": "蕭瑟的秋風吹拂著荒涼的古道，旅人牽著疲憊的瘦馬。夕陽西沉，極度悲傷的遊子漂泊在天涯海角。", "sentence": "秋天吹拂的「西風／秋風」帶來蕭瑟肅殺的寒意，最容易引發遊子思鄉與感傷遲暮的情緒。"},
+      {"category": "nature", "idiom": "孤煙／落日", "meaning": "邊塞遼闊蒼茫、孤寂蕭瑟", "source_text": "王維〈使至塞上〉", "original": "大漠孤煙直，長河落日圓。", "translation": "遼闊無邊的沙漠上一道烽煙直上雲霄，滾滾黃河的盡頭一輪落日格外滾圓。", "sentence": "「孤煙／落日」勾勒出西北邊陲壯闊蒼茫的自然景致，帶有雄渾而孤寂的美感。"},
+      {"category": "nature", "idiom": "夕陽／斜陽", "meaning": "遲暮惋惜、歷史興亡、思鄉惆悵", "source_text": "李商隱〈登樂遊原〉", "original": "夕陽無限好，只是近黃昏。", "translation": "夕陽西下的景色雖然美好無比，只可惜天色已經接近黃昏。", "sentence": "「夕陽／斜陽」西沉象徵美好事物的消逝，常被詩人借以感嘆人生暮年與朝代盛極而衰。"},
+      {"category": "nature", "idiom": "浮雲", "meaning": "遊子漂泊無定；奸佞遮蔽賢良", "source_text": "李白〈登金陵鳳凰臺〉", "original": "總為浮雲能蔽日，長安不見使人愁。", "translation": "總是因為天上的浮雲遮蔽了太陽，望不見帝都長安更令人內心憂愁。", "sentence": "「浮雲」隨風漂浮不定，既比喻遊子漂泊，亦常借喻為朝廷中蒙蔽君王的奸佞小人。"},
+      {"category": "nature", "idiom": "夜雨／暮雨", "meaning": "淒涼落寞、愁緒綿綿、客居羈旅", "source_text": "李商隱〈夜雨寄北〉", "original": "君問歸期未有期，巴山夜雨漲秋池。", "translation": "你詢問我何時能夠歸去，我卻還無法確定歸期；今夜巴山的秋雨綿綿，早已漲滿了水池。", "sentence": "淒清的「夜雨／暮雨」點滴打在心頭，在古典詩歌中常渲染出孤寂羈旅與綿延不盡的愁緒。"},
+      {"category": "nature", "idiom": "芳草／春草", "meaning": "離恨綿延、思念無盡、遊子未歸", "source_text": "李煜〈清平樂〉", "original": "離恨恰如春草，更行更遠還生。", "translation": "心中的離別愁恨就像春天的野草，人走得越遠，那愁緒越是不斷地蔓延滋生。", "sentence": "古人以春草繁茂蔓延的特性，將「芳草／春草」比喻為無窮無盡的離愁別恨與牽掛。"},
+      {"category": "nature", "idiom": "落花／殘紅", "meaning": "青春消逝、生命短暫、傷春惜時", "source_text": "龔自珍〈己亥雜詩〉", "original": "落紅不是無情物，化作春泥更護花。", "translation": "凋落的花朵絕非無情之物，即使化成了春天的泥土，也要繼續滋養保護花朵生長。", "sentence": "「落花／殘紅」象徵春光已逝與青春不再，常引發詩人對歲月無情與生命短暫的感慨。"},
+      {"category": "nature", "idiom": "東風", "meaning": "春天降臨、生機美好、得勢良機", "source_text": "朱熹〈春日〉", "original": "等閒識得東風面，萬紫千紅總是春。", "translation": "隨意就能辨認出春風的面貌，只見百花齊放、萬紫千紅，處處都是春天的景色。", "sentence": "東方屬春，「東風」代指溫暖的春風，既象徵生機降臨，亦常比喻事業發展的良機。"}
+    ];
+
+    /* ==========================================================================
+       3. 會考模擬挑戰賽題庫 (10 題情境素養題)
+       ========================================================================== */
+    const quizQuestions = [
+      {
+        question: "王維《鳥鳴澗》：「月出驚山鳥，時鳴春澗中。」這兩句詩所運用的主要表現手法為何？",
+        options: [
+          { text: "A. 託物言志", correct: false },
+          { text: "B. 以動襯靜", correct: true },
+          { text: "C. 借景抒情，直指亡國之痛", correct: false },
+          { text: "D. 誇飾諷刺", correct: false }
+        ],
+        explanation: "詩人藉由月亮升起的光芒驚動了山鳥、在春澗中啼鳴的局部微動與聲響，反襯出春夜山澗極致幽深寧靜的空寂氛圍，屬於典型的「以動襯靜」。"
+      },
+      {
+        question: "下列詩句中，何者所運用的表現手法屬於「直接抒情（直抒胸臆）」？",
+        options: [
+          { text: "A. 月落烏啼霜滿天，江楓漁火對愁眠", correct: false },
+          { text: "B. 人生自古誰無死？留取丹心照汗青", correct: true },
+          { text: "C. 荷盡已無擎雨蓋，菊殘猶有傲霜枝", correct: false },
+          { text: "D. 枯藤老樹昏鴉，小橋流水人家", correct: false }
+        ],
+        explanation: "文天祥《過零丁洋》「人生自古誰無死？留取丹心照汗青」不借物象掩飾，直接向天地慷慨直陳捨生取義、以死報國的浩然正氣，為「直接抒情」。A、D 為借景抒情，C 為託物言志。"
+      },
+      {
+        question: "古典詩詞常藉由植物意象寄託品格情懷。下列「植物意象」與其象徵意義的對應，何者「錯誤」？",
+        options: [
+          { text: "A. 竹子 —— 虛心謙遜、節操剛勁", correct: false },
+          { text: "B. 菊花 —— 恬淡隱逸、孤傲不屈", correct: false },
+          { text: "C. 浮萍 —— 作育英才、學生門生", correct: true },
+          { text: "D. 萱草 —— 忘憂解愁、思念母親", correct: false }
+        ],
+        explanation: "「浮萍」無根隨波逐流，象徵身世飄零、漂泊無定；代指「作育英才、學生門生」的意象為「桃李」（如桃李滿天下）。"
+      },
+      {
+        question: "杜甫《自京赴奉先縣詠懷五百字》：「朱門酒肉臭，路有凍死骨。」其表現手法與下列何者最相近？",
+        options: [
+          { text: "A. 戰士軍前半死生，美人帳下猶歌舞", correct: true },
+          { text: "B. 明月松間照，清泉石上流", correct: false },
+          { text: "C. 採菊東籬下，悠然見南山", correct: false },
+          { text: "D. 孤舟蓑笠翁，獨釣寒江雪", correct: false }
+        ],
+        explanation: "題幹「朱門酒肉臭，路有凍死骨」是貴族豪門奢靡與底層百姓凍死的強烈「對比（映襯）」。A 選項高適《燕歌行》將前線士卒浴血死生與後方將軍帳下歌舞作極端對比，手法相同。B 為動靜結合，C、D 為借景抒情/託物言志。"
+      },
+      {
+        question: "李商隱《無題》：「蓬山此去無多路，青鳥殷勤為探看。」句中的「青鳥」在古典詩詞中通常象徵何種意義？",
+        options: [
+          { text: "A. 預兆戰亂連綿的凶鳥", correct: false },
+          { text: "B. 傳遞相思與音訊的使者", correct: true },
+          { text: "C. 象徵年華老去的哀音", correct: false },
+          { text: "D. 隱逸田園的世外高人", correct: false }
+        ],
+        explanation: "神話傳說「青鳥」為西王母傳遞訊息的神鳥，在傳統文學中常用以借代為戀人間傳遞相思情愫或探問消息的「信使」。"
+      },
+      {
+        question: "關於「託物言志」與「借景抒情」的差別，下列分析何者最為精準？",
+        options: [
+          { text: "A. 託物言志只寫自然山川，借景抒情只寫人工建築", correct: false },
+          { text: "B. 託物言志重在借客觀事物的物理特質寄託人格理想；借景抒情重在營造氛圍以渲染主觀心境", correct: true },
+          { text: "C. 託物言志必定押韻，借景抒情則不需押韻", correct: false },
+          { text: "D. 兩者完全相同，只是古代與現代稱呼不同", correct: false }
+        ],
+        explanation: "「託物言志」重在事物本身特質（如石灰之清白、松竹之堅貞），詩人以物自喻其精神節操；「借景抒情」則是透過整體景觀氛圍（如煙波、楓火、落日）自然折射詩人的愁思喜怒。"
+      },
+      {
+        question: "古人送別朋友時常折柳相贈，在詩歌中「柳樹／折柳」成為經典的送別意象。此習俗主要源於何種文化諧音？",
+        options: [
+          { text: "A. 「柳」諧音「留」，表達依依不捨、希望友人停留之意", correct: true },
+          { text: "B. 「柳」諧音「流」，祝賀友人順流而下航向萬里", correct: false },
+          { text: "C. 「柳」諧音「六」，象徵六六大順、一路平安", correct: false },
+          { text: "D. 「柳」諧音「扭」，祈願扭轉乾坤平步青雲", correct: false }
+        ],
+        explanation: "古代折柳送別，因「柳」與「留」字音相近，藉此含蓄傳達「挽留、不捨得你走」的惜別深情。"
+      },
+      {
+        question: "白居易《琵琶行》：「其間旦暮聞何物？杜鵑啼血猿哀鳴。」詩中「杜鵑（子規）」的啼鳴在古典文學中常代表何種情感？",
+        options: [
+          { text: "A. 喜報春訊、欣欣向榮", correct: false },
+          { text: "B. 哀怨淒涼、思鄉思歸或亡國之痛", correct: true },
+          { text: "C. 豪邁奔放、壯志凌雲", correct: false },
+          { text: "D. 夫妻和睦、白頭偕老", correct: false }
+        ],
+        explanation: "相傳蜀王杜宇死後化為杜鵑，鳴聲如「不如歸去」，夜夜啼鳴至於口角流血，故在詩詞中常象徵極致哀怨、思歸心切與家國之痛。"
+      },
+      {
+        question: "王維《使至塞上》：「大漠孤煙直，長河落日圓。」這兩句千古名句在寫景手法上的最大特色為何？",
+        options: [
+          { text: "A. 以動襯靜，描寫塞外寧靜安詳", correct: false },
+          { text: "B. 動靜結合，將升騰的烽煙與滾圓落日長河相襯，展現雄渾壯闊的空間美", correct: true },
+          { text: "C. 誇飾極甚，諷刺邊疆將領無能", correct: false },
+          { text: "D. 倒裝句法，顛倒主語與賓語", correct: false }
+        ],
+        explanation: "「孤煙直」寫烽煙裊裊上升之動態，「落日圓」寫夕陽沉降與長河奔流，一縱一橫、動靜相映，勾勒出塞外極其蒼茫雄渾之景。"
+      },
+      {
+        question: "下列各句古典詩詞名句與其核心意象所象徵之內涵，何者「完全正確」？",
+        options: [
+          { text: "A. 「雲中誰寄錦書來？雁字回時」—— 鴻雁象徵傳遞音訊與思鄉", correct: true },
+          { text: "B. 「雕欄玉砌應猶在，只是朱顏改」—— 闌干象徵邊關告急戰事頻仍", correct: false },
+          { text: "C. 「寂寞梧桐深院鎖清秋」—— 梧桐象徵春天百花齊放生機勃勃", correct: false },
+          { text: "D. 「水擊三千里，摶扶搖而上者九萬里」—— 鯤鵬象徵漂泊流浪身世淒涼", correct: false }
+        ],
+        explanation: "A 正確。B 雕欄玉砌象徵故國舊夢與宮闕物是人非；C 梧桐一葉知秋，象徵深秋淒清哀愁；D 鯤鵬展翅九萬里，象徵壯志凌雲、胸懷大志。"
+      }
+    ];
+
+    /* ==========================================================================
+       4. 應用狀態管理與初始化
+       ========================================================================== */
+    let currentMainTab = 'tech'; // 'tech' or 'image'
+    let currentCompassCat = 'all';
+    let currentSearchTerm = '';
+    let speechSynth = window.speechSynthesis;
+    let currentUtterance = null;
+
+    // 測驗狀態
+    let quizIndex = 0;
+    let quizScore = 0;
+    let hasAnsweredCurrent = false;
+
+    document.addEventListener('DOMContentLoaded', () => {
+      lucide.createIcons();
+      renderImageryChips();
+      renderVerseCards();
+      initQuiz();
+    });
+
+    /* ==========================================================================
+       5. 意象膠囊與四大維度過濾
+       ========================================================================== */
+    function filterImageryCategory(cat) {
+      currentCompassCat = cat;
+      document.querySelectorAll('.compass-card').forEach((card, i) => {
+        card.classList.remove('active');
+      });
+      event.currentTarget.classList.add('active');
+      renderImageryChips();
+      if (currentMainTab === 'image') {
+        renderVerseCards();
+      }
+    }
+
+    function renderImageryChips() {
+      const container = document.getElementById('imageryChipsArea');
+      let filtered = imageryData;
+      if (currentCompassCat !== 'all') {
+        filtered = imageryData.filter(item => item.category === currentCompassCat);
+      }
+      container.innerHTML = filtered.map(item => `
+        <span class="imagery-chip" onclick="quickFilterImagery('${item.idiom}')">
+          <i data-lucide="tag" style="width: 14px; height: 14px;"></i> ${item.idiom}
+        </span>
+      `).join('');
+      lucide.createIcons();
+    }
+
+    function quickFilterImagery(word) {
+      switchMainTab('image');
+      document.getElementById('dbSearchInput').value = word;
+      currentSearchTerm = word.toLowerCase();
+      renderVerseCards();
+      document.getElementById('database').scrollIntoView({ behavior: 'smooth' });
+    }
+
+    /* ==========================================================================
+       6. 典範資料庫渲染與互動功能
+       ========================================================================== */
+    function switchMainTab(tab) {
+      currentMainTab = tab;
+      document.getElementById('tabTechniques').classList.toggle('active', tab === 'tech');
+      document.getElementById('tabImageries').classList.toggle('active', tab === 'image');
+      renderVerseCards();
+    }
+
+    function handleDbSearch() {
+      currentSearchTerm = document.getElementById('dbSearchInput').value.trim().toLowerCase();
+      renderVerseCards();
+    }
+
+    function renderVerseCards() {
+      const container = document.getElementById('verseCardsContainer');
+      let data = currentMainTab === 'tech' ? techniqueData : imageryData;
+
+      // 篩選搜尋
+      if (currentSearchTerm) {
+        data = data.filter(item => 
+          (item.idiom && item.idiom.toLowerCase().includes(currentSearchTerm)) ||
+          (item.original && item.original.toLowerCase().includes(currentSearchTerm)) ||
+          (item.source_text && item.source_text.toLowerCase().includes(currentSearchTerm)) ||
+          (item.meaning && item.meaning.toLowerCase().includes(currentSearchTerm)) ||
+          (item.sentence && item.sentence.toLowerCase().includes(currentSearchTerm))
+        );
+      } else if (currentMainTab === 'image' && currentCompassCat !== 'all') {
+        data = data.filter(item => item.category === currentCompassCat);
+      }
+
+      if (data.length === 0) {
+        container.innerHTML = `
+          <div style="grid-column: 1/-1; text-align: center; padding: 3rem; color: #94a3b8;">
+            <i data-lucide="inbox" style="width: 48px; height: 48px; margin: 0 auto 0.8rem; display: block;"></i>
+            沒有找到相符的詩詞項目，請更換關鍵字重新搜尋！
+          </div>
+        `;
+        lucide.createIcons();
+        return;
+      }
+
+      container.innerHTML = data.map((item, idx) => {
+        const isTech = currentMainTab === 'tech';
+        const badgeText = isTech ? `【手法】${item.idiom}` : `【意象】${item.idiom}`;
+        const labelOne = isTech ? '主要主旨' : '象徵意涵';
+
+        return `
+          <div class="verse-card" id="card-${currentMainTab}-${idx}">
+            <div class="verse-card-header">
+              <div class="verse-tag-group">
+                <span class="verse-badge">${badgeText}</span>
+              </div>
+              <button class="verse-audio-btn" onclick="playAudio('${item.original}。${item.source_text}。${item.meaning}')" title="朗讀詩句與解析">
+                <i data-lucide="volume-2" style="width: 18px; height: 18px;"></i>
+              </button>
+            </div>
+
+            <div class="verse-text">${item.original}</div>
+            <div class="verse-source"><i data-lucide="book" style="width: 14px; height: 14px;"></i> ${item.source_text}</div>
+
+            <div class="inspect-box">
+              <div class="inspect-item" onclick="toggleSingleMask(this)">
+                <div class="inspect-label">
+                  <span><i data-lucide="sparkles" style="width: 14px; height: 14px; display: inline;"></i> ${labelOne}</span>
+                  <small style="color: var(--primary);">點擊揭曉</small>
+                </div>
+                <div class="inspect-val revealed">${item.meaning}</div>
+              </div>
+
+              <div class="inspect-item" onclick="toggleSingleMask(this)">
+                <div class="inspect-label">
+                  <span><i data-lucide="languages" style="width: 14px; height: 14px; display: inline;"></i> 白話語譯</span>
+                  <small style="color: var(--primary);">點擊揭曉</small>
+                </div>
+                <div class="inspect-val revealed">${item.translation}</div>
+              </div>
+
+              <div class="inspect-item" onclick="toggleSingleMask(this)">
+                <div class="inspect-label">
+                  <span><i data-lucide="file-text" style="width: 14px; height: 14px; display: inline;"></i> 鑑賞解析</span>
+                  <small style="color: var(--primary);">點擊揭曉</small>
+                </div>
+                <div class="inspect-val revealed">${item.sentence}</div>
+              </div>
+            </div>
+          </div>
+        `;
+      }).join('');
+
+      lucide.createIcons();
+    }
+
+    function toggleSingleMask(el) {
+      const val = el.querySelector('.inspect-val');
+      if (val.classList.contains('masked')) {
+        val.classList.remove('masked');
+        val.classList.add('revealed');
+      } else {
+        val.classList.remove('revealed');
+        val.classList.add('masked');
+      }
+    }
+
+    function toggleAllMasks(mask) {
+      document.querySelectorAll('.inspect-val').forEach(el => {
+        if (mask) {
+          el.classList.remove('revealed');
+          el.classList.add('masked');
+        } else {
+          el.classList.remove('masked');
+          el.classList.add('revealed');
+        }
+      });
+    }
+
+    /* ==========================================================================
+       7. Web Speech API 全真語音朗讀
+       ========================================================================== */
+    function playAudio(text) {
+      if (!('speechSynthesis' in window)) {
+        alert('您的瀏覽器不支援 Web Speech API 語音朗讀功能！');
+        return;
+      }
+      stopSpeech();
+
+      currentUtterance = new SpeechSynthesisUtterance(text);
+      currentUtterance.lang = 'zh-TW';
+      currentUtterance.rate = 0.95;
+      currentUtterance.pitch = 1.0;
+
+      currentUtterance.onend = () => {
+        document.querySelectorAll('.verse-audio-btn').forEach(b => b.classList.remove('playing'));
+      };
+
+      speechSynth.speak(currentUtterance);
+      if (event && event.currentTarget) {
+        event.currentTarget.classList.add('playing');
+      }
+    }
+
+    function stopSpeech() {
+      if (speechSynth && speechSynth.speaking) {
+        speechSynth.cancel();
+      }
+      document.querySelectorAll('.verse-audio-btn').forEach(b => b.classList.remove('playing'));
+    }
+
+    /* ==========================================================================
+       8. 會考挑戰賽互動邏輯
+       ========================================================================== */
+    function initQuiz() {
+      quizIndex = 0;
+      quizScore = 0;
+      hasAnsweredCurrent = false;
+      document.getElementById('currentScore').innerText = quizScore;
+      document.getElementById('quizSummaryCard').style.display = 'none';
+      document.getElementById('quizQuestionCard').style.display = 'block';
+      loadQuizQuestion();
+    }
+
+    function loadQuizQuestion() {
+      hasAnsweredCurrent = false;
+      const q = quizQuestions[quizIndex];
+      const progressPercent = ((quizIndex + 1) / quizQuestions.length) * 100;
+      document.getElementById('quizProgressFill').style.width = `${progressPercent}%`;
+      document.getElementById('quizNumBadge').innerText = `第 ${quizIndex + 1} / ${quizQuestions.length} 題`;
+      document.getElementById('quizQuestionText').innerText = q.question;
+
+      const optsContainer = document.getElementById('quizOptionsContainer');
+      optsContainer.innerHTML = q.options.map((opt, i) => `
+        <button class="quiz-option" onclick="chooseOption(${i})">
+          <span class="quiz-opt-letter">${String.fromCharCode(65 + i)}</span>
+          <span>${opt.text}</span>
+        </button>
+      `).join('');
+
+      document.getElementById('quizFeedbackBox').classList.remove('show');
+      lucide.createIcons();
+    }
+
+    function chooseOption(optIndex) {
+      if (hasAnsweredCurrent) return;
+      hasAnsweredCurrent = true;
+
+      const q = quizQuestions[quizIndex];
+      const isCorrect = q.options[optIndex].correct;
+      const optionButtons = document.querySelectorAll('.quiz-option');
+
+      optionButtons.forEach((btn, i) => {
+        btn.classList.add('disabled');
+        if (q.options[i].correct) {
+          btn.classList.add('correct');
+        } else if (i === optIndex) {
+          btn.classList.add('wrong');
+        }
+      });
+
+      if (isCorrect) {
+        quizScore += 10;
+        document.getElementById('currentScore').innerText = quizScore;
+        document.getElementById('feedbackTitle').innerHTML = '<i data-lucide="check-circle" class="feedback-correct"></i> <span class="feedback-correct">回答正確！太棒了！</span>';
+      } else {
+        document.getElementById('feedbackTitle').innerHTML = '<i data-lucide="alert-circle" class="feedback-wrong"></i> <span class="feedback-wrong">回答有誤！請看解析：</span>';
+      }
+
+      document.getElementById('feedbackExp').innerText = q.explanation;
+      document.getElementById('quizFeedbackBox').classList.add('show');
+      lucide.createIcons();
+    }
+
+    function nextQuestion() {
+      if (quizIndex < quizQuestions.length - 1) {
+        quizIndex++;
+        loadQuizQuestion();
+      } else {
+        showQuizSummary();
+      }
+    }
+
+    function showQuizSummary() {
+      document.getElementById('quizQuestionCard').style.display = 'none';
+      const summaryCard = document.getElementById('quizSummaryCard');
+      summaryCard.style.display = 'block';
+      document.getElementById('summaryScoreText').innerText = `${quizScore} 分`;
+
+      if (quizScore >= 90) {
+        document.getElementById('summaryIcon').innerText = '🏆';
+        document.getElementById('summaryTitle').innerText = '太神了！古詩選造境宗師！';
+        document.getElementById('summaryDesc').innerText = '你對六大表現手法與詩詞意象的掌握無懈可擊，會考國學常識與詩歌閱讀題必能輕鬆斬獲滿分！';
+      } else if (quizScore >= 70) {
+        document.getElementById('summaryIcon').innerText = '⭐';
+        document.getElementById('summaryTitle').innerText = '實力優秀！古典詩意探微高手！';
+        document.getElementById('summaryDesc').innerText = '大部分的詩意象徵與手法都已精準掌握，建議至典範圖鑑庫針對「以動襯靜」與易混淆意象再做複習！';
+      } else {
+        document.getElementById('summaryIcon').innerText = '🌱';
+        document.getElementById('summaryTitle').innerText = '再接再厲！持續精進詩境底蘊！';
+        document.getElementById('summaryDesc').innerText = '別灰心！多加利用下方的【練習神器】進行 3D 雙面翻卡特訓，熟悉經典例句後定能大幅進步！';
+      }
+    }
+
+    function restartQuiz() {
+      initQuiz();
+    }
+
+    /* ==========================================================================
+       9. 魔法創作工坊動態生成
+       ========================================================================== */
+    function generatePoeticCard() {
+      const img = document.getElementById('selImagery').value;
+      const tech = document.getElementById('selTech').value;
+      const tone = document.getElementById('selTone').value;
+
+      const titles = {
+        '梧桐': '深院梧桐・點滴離愁',
+        '折柳': '灞陵折柳・千里相送',
+        '明月': '冰輪高懸・千里共嬋娟',
+        '梅花': '孤山墨梅・凌寒清操',
+        '杜鵑': '子規夜啼・蜀道哀思',
+        '客船': '寒江扁舟・一蓑煙雨',
+        '竹石': '破岩勁竹・傲立風霜',
+        '浮萍': '雨打浮萍・天涯身世'
+      };
+
+      const explanations = {
+        '借景抒情': `詩人選擇以<strong>【${img}】</strong>作為感情載體，在<strong>【${tone}】</strong>的情境下，不直陳胸臆，而是將萬千心緒細膩滲透於物象景致之中。此種寫法含蓄蘊藉，達到「景外有情、情外有境」的深遠意境。`,
+        '以動襯靜': `以<strong>【${img}】</strong>的微妙動態或聲響為引子，在<strong>【${tone}】</strong>的心境中反襯出天地萬物的深邃與寧靜，正所謂「蟬噪林逾靜，鳥鳴山更幽」，深化詩篇的清幽禪意。`,
+        '託物言志': `藉由<strong>【${img}】</strong>與生俱來的物理稟賦，在<strong>【${tone}】</strong>的考驗中物我交融，表達詩人堅守人格操守、誓不向庸俗權貴低頭的高尚情操。`,
+        '動靜結合': `將靜態的<strong>【${img}】</strong>與奔流開闔的動態景象巧妙結合，於<strong>【${tone}】</strong>中呈現鮮活立體的層次美感，構成了壯闊與深婉兼具的詩意空間。`,
+        '對比映襯': `透過<strong>【${img}】</strong>昔日之盛與今日之衰、或主客境遇的強烈反差，在<strong>【${tone}】</strong>中激盪出扣人心弦的心靈震撼，深刻凸顯主題主旨。`,
+        '直接抒情': `詩人直面<strong>【${img}】</strong>，不再掩抑內心情懷，於<strong>【${tone}】</strong>中長歌當哭或仰天長嘯，語言真率直切，淋漓酣暢！`
+      };
+
+      document.getElementById('resTitle').innerHTML = `【${titles[img] || img}】✕【${tech}】`;
+      document.getElementById('resDesc').innerHTML = `
+        <p style="margin-bottom: 0.8rem;">
+          <b>✦ 意象特徵：</b>古典詩詞中之核心象徵，寄託詩人豐富的審美想像與歷史文化沉澱。
+        </p>
+        <p style="margin-bottom: 0.8rem;">
+          <b>✦ 造境解構：</b>${explanations[tech]}
+        </p>
+        <div style="background: #eef2ff; padding: 0.8rem 1rem; border-radius: 8px; border-left: 4px solid var(--primary); font-size: 0.92rem; color: #312e81;">
+          <b>💡 會考寫作與鑑賞金句靈感：</b>「當詩人凝視${img}，筆鋒融注${tone}之情，縱然一字不提悲喜，千古讀者已共沐其境。」
+        </div>
+      `;
+      document.getElementById('creatorResultCard').style.display = 'block';
+      lucide.createIcons();
+    }
+
+    /* ==========================================================================
+       10. 練習神器雙向切換
+       ========================================================================== */
+    function switchPracticeIframe(type) {
+      const iframe = document.getElementById('practiceIframe');
+      const titleSpan = document.getElementById('currentIframeTitle');
+      const externalLink = document.getElementById('linkExternalPrac');
+      const btnTech = document.getElementById('btnPracTech');
+      const btnImage = document.getElementById('btnPracImage');
+
+      if (type === 'tech') {
+        iframe.src = 'poetry/poetry-technique-practice.html';
+        titleSpan.innerText = '【詩詞表現手法】練習神器';
+        externalLink.href = 'poetry/poetry-technique-practice.html';
+        btnTech.classList.add('active');
+        btnImage.classList.remove('active');
+      } else {
+        iframe.src = 'poetry/poetry-imagery-practice.html';
+        titleSpan.innerText = '【詩詞常見意象】練習神器';
+        externalLink.href = 'poetry/poetry-imagery-practice.html';
+        btnImage.classList.add('active');
+        btnTech.classList.remove('active');
+      }
+    }
+  </script>
+</body>
+</html>

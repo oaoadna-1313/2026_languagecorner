@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>學思軒・語文補給站｜國語文 AI 數位互動教材入口網</title>
-  <meta name="description" content="學思軒語文補給站：國中國語文旗艦級 AI 數位互動教材導覽首頁，整合移覺修辭、傳統節日、二十四節氣與專屬練習神器。">
+  <title>學思軒・語文補給站｜國語文數位互動教材入口網</title>
+  <meta name="description" content="學思軒語文補給站：國中國語文旗艦級數位互動教材與專屬練習神器導覽首頁。">
   <!-- Google Fonts: 典雅思源黑體、思源宋體與書法字型 -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -338,6 +338,42 @@
       box-shadow: 0 0 0 4px rgba(194, 65, 12, 0.12), var(--shadow-md);
     }
 
+    /* 課次快速篩選標籤 */
+    .lesson-filter-chips {
+      display: flex;
+      justify-content: center;
+      gap: 0.55rem;
+      flex-wrap: wrap;
+      margin-top: 1.15rem;
+    }
+
+    .lesson-chip {
+      background: white;
+      border: 1.5px solid #e2e8f0;
+      color: #475569;
+      font-size: 0.85rem;
+      font-weight: 700;
+      padding: 0.4rem 0.95rem;
+      border-radius: 999px;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+      font-family: inherit;
+    }
+
+    .lesson-chip:hover {
+      border-color: var(--primary);
+      color: var(--primary);
+      transform: translateY(-1px);
+    }
+
+    .lesson-chip.active {
+      background: var(--primary);
+      border-color: var(--primary);
+      color: white;
+      box-shadow: 0 4px 12px rgba(194, 65, 12, 0.25);
+    }
+
     /* 區塊通用抬頭 */
     .section-header {
       display: flex;
@@ -418,6 +454,34 @@
       border-top: 6px solid #0284c7;
     }
 
+    .flagship-card.flower-card {
+      border-top: 6px solid #e11d48;
+    }
+
+    .flagship-card.proverb-card {
+      border-top: 6px solid #059669;
+    }
+
+    .flagship-card.onomatopoeia-card {
+      border-top: 6px solid #0284c7;
+    }
+
+    .flagship-card.color-card {
+      border-top: 6px solid #e11d48;
+    }
+
+    .flagship-card.bird-card {
+      border-top: 6px solid #0284c7;
+    }
+
+    .flagship-card.reduplication-card {
+      border-top: 6px solid #9333ea;
+    }
+
+    .flagship-card.poetry-card {
+      border-top: 6px solid #4338ca;
+    }
+
     .flagship-banner {
       padding: 2rem 2.2rem 1.5rem;
       position: relative;
@@ -437,6 +501,34 @@
 
     .inversion-card .flagship-banner {
       background: linear-gradient(135deg, #f0f9ff 0%, #fef3c7 100%);
+    }
+
+    .flower-card .flagship-banner {
+      background: linear-gradient(135deg, #fff1f2 0%, #fffbeb 100%);
+    }
+
+    .proverb-card .flagship-banner {
+      background: linear-gradient(135deg, #ecfdf5 0%, #fef3c7 100%);
+    }
+
+    .onomatopoeia-card .flagship-banner {
+      background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
+    }
+
+    .color-card .flagship-banner {
+      background: linear-gradient(135deg, #fff1f2 0%, #fef3c7 50%, #eff6ff 100%);
+    }
+
+    .bird-card .flagship-banner {
+      background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 50%, #fef3c7 100%);
+    }
+
+    .reduplication-card .flagship-banner {
+      background: linear-gradient(135deg, #faf5ff 0%, #f3e8ff 100%);
+    }
+
+    .poetry-card .flagship-banner {
+      background: linear-gradient(135deg, #eef2ff 0%, #e0e7ff 100%);
     }
 
     .flagship-tag-row {
@@ -474,6 +566,41 @@
       color: white;
     }
 
+    .flower-card .flagship-category {
+      background: #e11d48;
+      color: white;
+    }
+
+    .bird-card .flagship-category {
+      background: #0284c7;
+      color: white;
+    }
+
+    .proverb-card .flagship-category {
+      background: #059669;
+      color: white;
+    }
+
+    .onomatopoeia-card .flagship-category {
+      background: #0284c7;
+      color: white;
+    }
+
+    .color-card .flagship-category {
+      background: #e11d48;
+      color: white;
+    }
+
+    .reduplication-card .flagship-category {
+      background: #9333ea;
+      color: white;
+    }
+
+    .poetry-card .flagship-category {
+      background: #4338ca;
+      color: white;
+    }
+
     .flagship-level {
       font-size: 0.82rem;
       font-weight: 700;
@@ -498,43 +625,17 @@
     }
 
     .flagship-body {
-      padding: 1.75rem 2.2rem;
+      padding: 0 2.2rem 2rem;
       flex: 1;
       display: flex;
       flex-direction: column;
-      justify-content: space-between;
-      gap: 1.5rem;
+      justify-content: flex-end;
     }
-
-    .flagship-features {
-      list-style: none;
-      display: flex;
-      flex-direction: column;
-      gap: 0.75rem;
-    }
-
-    .flagship-features li {
-      display: flex;
-      align-items: flex-start;
-      gap: 0.65rem;
-      font-size: 0.96rem;
-      color: #334155;
-      line-height: 1.5;
-    }
-
-    .flagship-features li i {
-      flex-shrink: 0;
-      margin-top: 3px;
-    }
-
-    .holiday-card .flagship-features li i { color: #ea580c; }
-    .yijay-card .flagship-features li i { color: #7c3aed; }
-    .pos-card .flagship-features li i { color: #0d9488; }
 
     .flagship-action-box {
-      margin-top: auto;
-      padding-top: 1.25rem;
-      border-top: 1px solid #f1f5f9;
+      margin-top: 0.5rem;
+      padding-top: 1rem;
+      border-top: 1px solid rgba(0, 0, 0, 0.05);
       display: flex;
       gap: 0.85rem;
       flex-wrap: wrap;
@@ -601,6 +702,83 @@
       box-shadow: 0 8px 20px rgba(2, 132, 199, 0.3);
     }
 
+    .flower-card .btn-enter-primary {
+      background: linear-gradient(135deg, #e11d48, #be123c);
+      color: white;
+    }
+
+    .flower-card .btn-enter-primary:hover {
+      background: linear-gradient(135deg, #be123c, #9f1239);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 20px rgba(225, 29, 72, 0.3);
+    }
+
+    .proverb-card .btn-enter-primary {
+      background: linear-gradient(135deg, #059669, #047857);
+      color: white;
+    }
+
+    .proverb-card .btn-enter-primary:hover {
+      background: linear-gradient(135deg, #047857, #065f46);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 20px rgba(5, 150, 105, 0.3);
+    }
+
+    .onomatopoeia-card .btn-enter-primary {
+      background: linear-gradient(135deg, #0284c7, #0369a1);
+      color: white;
+    }
+
+    .onomatopoeia-card .btn-enter-primary:hover {
+      background: linear-gradient(135deg, #0369a1, #075985);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 20px rgba(2, 132, 199, 0.3);
+    }
+
+    .color-card .btn-enter-primary {
+      background: linear-gradient(135deg, #e11d48, #be123c);
+      color: white;
+    }
+
+    .color-card .btn-enter-primary:hover {
+      background: linear-gradient(135deg, #be123c, #9f1239);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 20px rgba(225, 29, 72, 0.3);
+    }
+
+    .bird-card .btn-enter-primary {
+      background: linear-gradient(135deg, #0284c7, #0369a1);
+      color: white;
+    }
+
+    .bird-card .btn-enter-primary:hover {
+      background: linear-gradient(135deg, #0369a1, #075985);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 20px rgba(2, 132, 199, 0.3);
+    }
+
+    .reduplication-card .btn-enter-primary {
+      background: linear-gradient(135deg, #9333ea, #7e22ce);
+      color: white;
+    }
+
+    .reduplication-card .btn-enter-primary:hover {
+      background: linear-gradient(135deg, #7e22ce, #6b21a8);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 20px rgba(147, 51, 234, 0.3);
+    }
+
+    .poetry-card .btn-enter-primary {
+      background: linear-gradient(135deg, #4338ca, #3730a3);
+      color: white;
+    }
+
+    .poetry-card .btn-enter-primary:hover {
+      background: linear-gradient(135deg, #3730a3, #312e81);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 20px rgba(67, 56, 202, 0.35);
+    }
+
     /* 練習神器模組精選區 (5個小卡片網格) */
     .practice-section {
       margin-bottom: 4rem;
@@ -653,6 +831,9 @@
     .practice-icon-box.green { background: #dcfce7; color: #15803d; }
     .practice-icon-box.blue { background: #dbeafe; color: #1d4ed8; }
     .practice-icon-box.teal { background: #ccfbf1; color: #0f766e; }
+    .practice-icon-box.indigo { background: #e0e7ff; color: #4338ca; }
+    .practice-icon-box.amber { background: #fef3c7; color: #d97706; }
+    .practice-icon-box.rose { background: #ffe4e6; color: #e11d48; }
 
     .practice-card-title {
       font-size: 1.18rem;
@@ -681,7 +862,7 @@
 
     .practice-card-btn {
       width: 100%;
-      padding: 0.7rem 1rem;
+      padding: 0.75rem 1rem;
       border-radius: 10px;
       background: #f8fafc;
       border: 1px solid #cbd5e1;
@@ -700,6 +881,8 @@
       background: var(--dark);
       color: white;
       border-color: var(--dark);
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(15, 23, 42, 0.15);
     }
 
     /* 航向偉大航道橫幅 (學習地圖) */
@@ -794,13 +977,13 @@
       line-height: 1.65;
     }
 
-    /* 頁尾 Footer */
+    /* 頁尾 Footer - 典雅溫潤暖栗木/沉木茶褐漸層 */
     footer {
-      background: linear-gradient(180deg, #1e293b, #0f172a);
+      background: linear-gradient(180deg, #2e1a12 0%, #1c0f0a 100%);
       color: white;
       padding: 3.5rem 1.5rem 2.5rem;
       margin-top: auto;
-      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      border-top: 3px solid #854d0e;
     }
 
     .footer-container {
@@ -836,9 +1019,9 @@
 
     .footer-credit {
       font-size: 0.95rem;
-      color: #e2e8f0;
+      color: #fde68a;
       background: rgba(255, 255, 255, 0.08);
-      border: 1px solid rgba(255, 255, 255, 0.15);
+      border: 1px solid rgba(253, 230, 138, 0.25);
       padding: 0.6rem 1.6rem;
       border-radius: 999px;
       font-weight: 600;
@@ -957,15 +1140,13 @@
         <img src="icon/logo-yuwen.png" alt="語文補給站" class="brand-logo-img" onerror="this.src='icon/logo-yuwen.png'">
         <div class="brand-text">
           <div class="brand-title serif">學思軒・語文補給站</div>
-          <span class="brand-badge">國中國語文 AI 數位教材整合總部</span>
+          <span class="brand-badge">國中國語文數位教材整合總部</span>
         </div>
       </a>
       <nav>
         <ul>
           <li><a href="#flagship-sec"><i data-lucide="sparkles"></i> 旗艦學習殿堂</a></li>
           <li><a href="#practice-sec" class="highlight-nav"><i data-lucide="gamepad-2"></i> 練習神器專區</a></li>
-          <li><a href="#roadmap-sec"><i data-lucide="map"></i> 學習航道圖</a></li>
-          <li><a href="#features-sec"><i data-lucide="award"></i> 教學特色</a></li>
         </ul>
       </nav>
     </div>
@@ -981,24 +1162,32 @@
         跨領域・高互動・全語音・會考實戰精萃
       </div>
       <h1 class="hero-title serif">
-        學思軒・國語文 <span>AI 數位互動教材殿堂</span>
+        學思軒・語文補給站・<span>數位互動教材</span>
       </h1>
-      <p class="hero-desc">
-        專為國中學生與國語文教學設計，融匯「古典文學意境、跨領域科普常識、互動五感圖鑑、即時會考闖關與練習神器」，打破傳統講義框架，開啟全新自主探索殿堂！
-      </p>
 
       <div class="hero-features-bar">
-        <div class="hero-feature-chip"><i data-lucide="check-circle-2" style="color:#10b981; width:16px;"></i> 4 大旗艦主題殿堂</div>
-        <div class="hero-feature-chip"><i data-lucide="check-circle-2" style="color:#10b981; width:16px;"></i> 12 款專屬練習神器</div>
+        <div class="hero-feature-chip"><i data-lucide="check-circle-2" style="color:#10b981; width:16px;"></i> 11 大旗艦主題殿堂</div>
+        <div class="hero-feature-chip"><i data-lucide="check-circle-2" style="color:#10b981; width:16px;"></i> 23 款專屬練習神器</div>
         <div class="hero-feature-chip"><i data-lucide="check-circle-2" style="color:#10b981; width:16px;"></i> 全真人語音發音朗讀</div>
         <div class="hero-feature-chip"><i data-lucide="check-circle-2" style="color:#10b981; width:16px;"></i> 跨載具響應式支援（手機/平板/電腦）</div>
       </div>
 
-      <!-- 即時快速篩選搜尋 -->
+      <!-- 即時快速篩選搜尋（支援課次與關鍵字） -->
       <div class="search-filter-box">
         <div class="search-input-wrapper">
           <i data-lucide="search" class="search-icon"></i>
-          <input type="text" id="courseSearch" class="search-input" placeholder="快速搜尋教材、修辭、節慶、節氣、詩詞、倒裝或練習神器..." oninput="filterCourses()">
+          <input type="text" id="courseSearch" class="search-input" placeholder="依課次（如：B3L01）或關鍵字快速搜尋..." oninput="filterCourses()">
+        </div>
+        <!-- 課次快速篩選標籤 -->
+        <div class="lesson-filter-chips">
+          <button type="button" class="lesson-chip active" onclick="filterByLesson('', this)">全部課次</button>
+          <button type="button" class="lesson-chip" onclick="filterByLesson('B3L01', this)">B3L01 田園之秋選</button>
+          <button type="button" class="lesson-chip" onclick="filterByLesson('B3L02', this)">B3L02 古詩選</button>
+          <button type="button" class="lesson-chip" onclick="filterByLesson('B3L03', this)">B3L03 下雨天，真好</button>
+          <button type="button" class="lesson-chip" onclick="filterByLesson('B3L04', this)">B3L04 愛蓮說</button>
+          <button type="button" class="lesson-chip" onclick="filterByLesson('B3L05', this)">B3L05 生命中的碎珠</button>
+          <button type="button" class="lesson-chip" onclick="filterByLesson('B3L06', this)">B3L06 鳥</button>
+          <button type="button" class="lesson-chip" onclick="filterByLesson('語文常識一', this)">B3語文常識一 詞性</button>
         </div>
       </div>
     </section>
@@ -1010,7 +1199,7 @@
           <h2 class="section-title serif"><i data-lucide="crown"></i> 旗艦學習殿堂主題</h2>
           <p class="section-desc">深度結合課文情境、觀念圖解、典範圖鑑與即時互動測驗的主題式教學網頁</p>
         </div>
-        <span class="section-count">4 大主題殿堂</span>
+        <span class="section-count">11 大主題殿堂</span>
       </div>
 
       <div class="flagship-grid">
@@ -1019,18 +1208,12 @@
           <div class="flagship-banner">
             <div class="flagship-tag-row">
               <span class="flagship-category">核心修辭特訓</span>
-              <span class="flagship-level"><i data-lucide="book-open" style="width:15px;"></i> 翰林國文精選</span>
+              <span class="flagship-level"><i data-lucide="book-open" style="width:15px;"></i> 翰林 B3L01 田園之秋選</span>
             </div>
             <h3 class="flagship-title serif">移覺（通感）修辭互動學習殿堂</h3>
             <p class="flagship-subtitle">打破五感界線・喚醒文字感知！掌握文學中最具立體感的感官互換魔法。</p>
           </div>
           <div class="flagship-body">
-            <ul class="flagship-features">
-              <li><i data-lucide="check-circle-2"></i> <b>五感羅盤互動切換</b>：視覺、聽覺、嗅覺、味覺、觸覺雙向移轉示範。</li>
-              <li><i data-lucide="check-circle-2"></i> <b>30 句典範圖鑑庫</b>：涵蓋課本經典與跨作家名篇，支援全語音朗讀。</li>
-              <li><i data-lucide="check-circle-2"></i> <b>會考實戰與造句工坊</b>：內建 5 題會考闖關與創意造句即時診斷回饋。</li>
-              <li><i data-lucide="check-circle-2"></i> <b>內嵌練習神器</b>：隨頁隨測，強化手感記憶。</li>
-            </ul>
             <div class="flagship-action-box">
               <a href="yijay.html" class="btn-enter-primary">
                 <i data-lucide="sparkles"></i> 進入移覺學習殿堂
@@ -1044,18 +1227,12 @@
           <div class="flagship-banner">
             <div class="flagship-tag-row">
               <span class="flagship-category">國學與跨科素養</span>
-              <span class="flagship-level"><i data-lucide="sun-moon" style="width:15px;"></i> 會考必考主題</span>
+              <span class="flagship-level"><i data-lucide="sun-moon" style="width:15px;"></i> 翰林 B3L03 下雨天，真好</span>
             </div>
             <h3 class="flagship-title serif">時序之美：傳統節日與二十四節氣殿堂</h3>
             <p class="flagship-subtitle">歲月流轉・天地同歌！融合國文詩詞意境與自然科普天文曆法的跨領域旗艦殿堂。</p>
           </div>
           <div class="flagship-body">
-            <ul class="flagship-features">
-              <li><i data-lucide="check-circle-2"></i> <b>曆法大解密</b>：破解陽曆、陰曆與陰陽合曆迷思，精準掌握二十四節氣本質。</li>
-              <li><i data-lucide="check-circle-2"></i> <b>10 大傳統節日深度探索</b>：由春至冬，含由來、習俗、代表食物與精選詩詞。</li>
-              <li><i data-lucide="check-circle-2"></i> <b>20 題詩詞密碼獵手</b>：一鍵展開白話語譯與關鍵字提示，輕鬆解鎖詩意。</li>
-              <li><i data-lucide="check-circle-2"></i> <b>10 題會考神射手測驗</b>：即時算分、錯題詳解剖析與多款內嵌練習神器。</li>
-            </ul>
             <div class="flagship-action-box">
               <a href="holiday.html" class="btn-enter-primary">
                 <i data-lucide="sun-moon"></i> 進入時序之美殿堂
@@ -1069,18 +1246,12 @@
           <div class="flagship-banner">
             <div class="flagship-tag-row">
               <span class="flagship-category">語法常識旗艦</span>
-              <span class="flagship-level"><i data-lucide="layers" style="width:15px;"></i> 翰林語文補給站</span>
+              <span class="flagship-level"><i data-lucide="layers" style="width:15px;"></i> 翰林 B3語文常識一 詞性</span>
             </div>
             <h3 class="flagship-title serif">詞類與詞性・AI 互動學習殿堂</h3>
             <p class="flagship-subtitle">字詞句層級解析・實詞虛詞全景宇宙！掌握成語結構、轉品密碼與 100 題流行歌詞資料庫。</p>
           </div>
           <div class="flagship-body">
-            <ul class="flagship-features">
-              <li><i data-lucide="check-circle-2"></i> <b>語文五大層級與詞類體系</b>：字 ➔ 詞 ➔ 句 ➔ 段 ➔ 篇，實詞六類與虛詞四類全圖鑑。</li>
-              <li><i data-lucide="check-circle-2"></i> <b>複詞探索與音韻殿堂</b>：同義、偏義複詞 vs 雙聲疊韻聯綿詞互動發音辨析。</li>
-              <li><i data-lucide="check-circle-2"></i> <b>詞性一百流行歌詞庫</b>：收錄五月天、周杰倫等 100 題歌詞例句，支援真人語音朗讀。</li>
-              <li><i data-lucide="check-circle-2"></i> <b>三大進階實戰學習集</b>：詞性活用、轉品判定、詞性對照雙向擂台與結構魔法工坊。</li>
-            </ul>
             <div class="flagship-action-box">
               <a href="pos.html" class="btn-enter-primary">
                 <i data-lucide="sparkles"></i> 進入詞性學習殿堂
@@ -1100,12 +1271,6 @@
             <p class="flagship-subtitle">去掉四隻刺蝟，動前名後！掌握古人強調賓語的文言語序樞紐與還原秘技。</p>
           </div>
           <div class="flagship-body">
-            <ul class="flagship-features">
-              <li><i data-lucide="check-circle-2"></i> <b>五步還原法與口訣</b>：「刺蝟退場、動前名後、喂前面的統統不准動」終極心法。</li>
-              <li><i data-lucide="check-circle-2"></i> <b>16 組全收錄典範圖鑑</b>：初級 7 題 + 進階宇宙無敵難 9 題，逐句分析與真人語音朗讀。</li>
-              <li><i data-lucide="check-circle-2"></i> <b>魔法還原工坊</b>：即時組裝主語、副詞、名詞與動詞，動態展示正常語序還原軌跡。</li>
-              <li><i data-lucide="check-circle-2"></i> <b>會考神仙挑戰賽與練習神器</b>：10 題隨機挑戰賽，內嵌翻卡練習神器無縫整合。</li>
-            </ul>
             <div class="flagship-action-box">
               <a href="inversion.html" class="btn-enter-primary">
                 <i data-lucide="sparkles"></i> 進入倒裝句法殿堂
@@ -1113,22 +1278,240 @@
             </div>
           </div>
         </article>
+
+        <!-- 殿堂 5：花花語文世界：植物象徵・名花物語旗艦殿堂 -->
+        <article class="flagship-card flower-card course-item" data-keywords="花花語文世界 花花世界 植物 象徵 名花物語 代言人 幽夢影 知己 屈原 陶淵明 杜宇 林逋 武則天 閉月羞花 花容失色 步步蓮花 離恨恰如春草 空谷幽蘭 愛蓮說 翰林 國文 會考">
+          <div class="flagship-banner">
+            <div class="flagship-tag-row">
+              <span class="flagship-category">國學與文學象徵</span>
+              <span class="flagship-level"><i data-lucide="flower-2" style="width:15px;"></i> 翰林 B3L04 愛蓮說</span>
+            </div>
+            <h3 class="flagship-title serif">花花語文世界・旗艦學習殿堂</h3>
+            <p class="flagship-subtitle">水陸草木・千古寄情！解鎖 9 大植物象徵、5 大名花物語、知己圖譜與是非辨析。</p>
+          </div>
+          <div class="flagship-body">
+            <div class="flagship-action-box">
+              <a href="flower.html" class="btn-enter-primary">
+                <i data-lucide="sparkles"></i> 進入花花語文殿堂
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <!-- 殿堂 6：中外俗諺大觀園旗艦學習殿堂 -->
+        <article class="flagship-card proverb-card course-item" data-keywords="俗諺 諺語 中外俗諺 臺灣俗諺 生命中的碎珠 軟土深掘 吃緊挵破碗 食碗內看碗外 一支草一點露 飲水思源 物以類聚 平時不燒香 割雞焉用牛刀 說曹操曹操到 寧為雞口 覆水難收 有錢可使鬼推磨 狗窩 虎毒不食子 遠親不如近鄰 翰林 國文 會考">
+          <div class="flagship-banner">
+            <div class="flagship-tag-row">
+              <span class="flagship-category">常民智慧旗艦</span>
+              <span class="flagship-level"><i data-lucide="globe-2" style="width:15px;"></i> 翰林 B3L05 生命中的碎珠</span>
+            </div>
+            <h3 class="flagship-title serif">中外俗諺大觀園・旗艦學習殿堂</h3>
+            <p class="flagship-subtitle">常民智慧萬花筒・跨域哲思人生碎珠！探索臺灣俗諺與世界各國諺語對照中國俗諺奧秘。</p>
+          </div>
+          <div class="flagship-body">
+            <div class="flagship-action-box">
+              <a href="proverb.html" class="btn-enter-primary">
+                <i data-lucide="sparkles"></i> 進入中外俗諺殿堂
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <!-- 殿堂 7：萬籟俱寂與聲歷其境——狀聲詞旗艦學習殿堂 -->
+        <article class="flagship-card onomatopoeia-card course-item" data-keywords="狀聲詞 象聲詞 擬聲詞 摹聲詞 聽覺摹寫 鳥 翰林 B3L06 哈哈 呵呵 噗哧 嘎嘎 咯咯 哇哇 呱呱 嗚嗚咽咽 琅琅 咿唔 牙牙 轆轆 喃喃 嘖嘖 嗷嗷 撲通 吱吱喳喳 啁啾 啾啾 關關 間關 嚶嚶 不如歸去 瑟瑟 蕭蕭 颯颯 淅淅瀝瀝 滴滴答答 班馬 泠泠 潺潺 潺湲 幽咽 淙淙 濺濺 鏗鏘 鋃鐺 霍霍 丁丁 札札 唧唧 轟隆 格格 沙沙 必必剝剝 嗡嗡 簌簌 國文 會考">
+          <div class="flagship-banner">
+            <div class="flagship-tag-row">
+              <span class="flagship-category">核心常識旗艦</span>
+              <span class="flagship-level"><i data-lucide="volume-2" style="width:15px;"></i> 翰林 B3L06《鳥》</span>
+            </div>
+            <h3 class="flagship-title serif">萬籟俱寂・聲歷其境——狀聲詞旗艦殿堂</h3>
+            <p class="flagship-subtitle">摹聲常識全攻略！收錄人聲、鳥鳴、走獸、風雨、山泉、金石、器物 8 大類別典範語境與全真語音。</p>
+          </div>
+          <div class="flagship-body">
+            <div class="flagship-action-box">
+              <a href="onomatopoeia.html" class="btn-enter-primary">
+                <i data-lucide="sparkles"></i> 進入狀聲詞殿堂
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <!-- 殿堂 8：五彩斑斕——顏色字判斷旗艦學習殿堂 -->
+        <article class="flagship-card color-card course-item" data-keywords="顏色字 顏色 判斷 實指 非指 緋紅 丹楓 朱曦 赤焰 彤雲 絳衣 赭土 黔首 在涅貴不緇 朝如青絲 素絲 明眸皓齒 縞衣 碧海 蒼天 滄海一粟 縹碧 黛青 蔚藍 殺青 垂青 爐火純青 青史 青出於藍 青睞 慘綠少年 明日黃花 人老珠黃 白丁 不白之冤 真相大白 黑名單 背黑鍋 墨守成規 烏合之眾 赤手空拳 一片丹心 紅顏薄命 青春 飛黃騰達 鳥 翰林 B3L06 國文 會考">
+          <div class="flagship-banner">
+            <div class="flagship-tag-row">
+              <span class="flagship-category">文化與修辭旗艦</span>
+              <span class="flagship-level"><i data-lucide="feather" style="width:15px;"></i> 翰林 B3L06《鳥》</span>
+            </div>
+            <h3 class="flagship-title serif">五彩斑斕・顏色字判斷旗艦殿堂</h3>
+            <p class="flagship-subtitle">真假色彩全解密！透析「實指真顏色」與「借代比喻假色彩」，103 組詞彙全圖鑑與會考診斷挑戰賽。</p>
+          </div>
+          <div class="flagship-body">
+            <div class="flagship-action-box">
+              <a href="color.html" class="btn-enter-primary">
+                <i data-lucide="sparkles"></i> 進入顏色字殿堂
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <!-- 殿堂 9：詩中的鳥類・古典詩詞禽鳥意象旗艦殿堂 -->
+        <article class="flagship-card bird-card course-item" data-keywords="詩中的鳥類 鳥 禽鳥 詩詞 意象 雎鳩 黃鸝 燕子 杜鵑 白鷺 烏鴉 鴻雁 鶴 沙鷗 喜鵲 鸚鵡 鷓鴣 鴛鴦 蒼鷹 雕 隼 雉 斑鳩 鵪鶉 布穀鳥 畫眉鳥 戴勝 鴝鵒 鸕鶿 翠鳥 鸛 鴨 鵝 鵜鶘 鴟鴞 鵩鳥 晨風 鷦鷯 鵾雞 䴙䴘 鴞 鵠 伯勞 鶺鴒 鴇 孔雀 黃雀 白鷴 白頭翁 鶩 鷂 鳳凰 青鸞 精衛 青鳥 大鵬 鵷鶵 翰林 B3L06 國文 會考">
+          <div class="flagship-banner">
+            <div class="flagship-tag-row">
+              <span class="flagship-category">禽鳥意象旗艦</span>
+              <span class="flagship-level"><i data-lucide="feather" style="width:15px;"></i> 翰林 B3L06《鳥》</span>
+            </div>
+            <h3 class="flagship-title serif">詩中的鳥類・古典禽鳥意象旗艦殿堂</h3>
+            <p class="flagship-subtitle">飛羽寄情・文人密碼！收錄 52 種古典詩詞禽鳥圖鑑、八大文化象徵星盤、全真語音與 15 字極簡速記口訣卡。</p>
+          </div>
+          <div class="flagship-body">
+            <div class="flagship-action-box">
+              <a href="bird.html" class="btn-enter-primary">
+                <i data-lucide="sparkles"></i> 進入詩中的鳥類殿堂
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <!-- 殿堂 10：疊字詞・聲情神采與疊韻之美旗艦殿堂 -->
+        <article class="flagship-card reduplication-card course-item" data-keywords="疊字詞 疊字 疊字成語 古詩選 迢迢 皎皎 纖纖 札札 悠悠 耿耿 楚楚 翩翩 滔滔 鬱鬱 曖曖 戚戚 慼慼 斑斑 茫茫 翰林 B3L02 國文 會考">
+          <div class="flagship-banner">
+            <div class="flagship-tag-row">
+              <span class="flagship-category">音韻修辭旗艦</span>
+              <span class="flagship-level"><i data-lucide="sparkles" style="width:15px;"></i> 翰林 B3L02《古詩選》</span>
+            </div>
+            <h3 class="flagship-title serif">疊字詞・聲情神采與疊韻之美旗艦殿堂</h3>
+            <p class="flagship-subtitle">字重疊・音節連・意象生！收錄 54 組經典疊字詞、多義疊字深度對決、五大情意星盤羅盤、全真語音與雙款專屬練習神器。</p>
+          </div>
+          <div class="flagship-body">
+            <div class="flagship-action-box">
+              <a href="reduplication.html" class="btn-enter-primary">
+                <i data-lucide="sparkles"></i> 進入疊字詞殿堂
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <!-- 殿堂 11：古典詩境・詩詞表現手法與常見意象旗艦殿堂 -->
+        <article class="flagship-card poetry-card course-item" data-keywords="詩詞表現手法 詩詞常見意象 古詩選 借景抒情 直抒胸臆 託物言志 動靜結合 以動襯靜 對比 映襯 梅花 竹子 菊花 松柏 柳樹 折柳 梧桐 蓮花 萱草 豆蔻 紅豆 浮萍 桑梓 鴻雁 杜鵑 寒蟬 黃鸝 青鳥 鴛鴦 烏鴉 蟋蟀 鯤鵬 雄鷹 酒 客船 長亭 羌笛 烽火 砧聲 殘燈 月亮 江水 春風 雪霜 西風 孤煙 夕陽 浮雲 翰林 B3L02 國文 會考">
+          <div class="flagship-banner">
+            <div class="flagship-tag-row">
+              <span class="flagship-category">古典詩境旗艦</span>
+              <span class="flagship-level"><i data-lucide="feather" style="width:15px;"></i> 翰林 B3L02《古詩選》</span>
+            </div>
+            <h3 class="flagship-title serif">古典詩境・詩詞表現手法與常見意象殿堂</h3>
+            <p class="flagship-subtitle">造境心法・文人密碼！全方位解構六大表現手法（借景/直抒/託物/動靜/以動襯靜/對比）與四大維度 51 款古典意象，全真語音與雙款專屬練習神器。</p>
+          </div>
+          <div class="flagship-body">
+            <div class="flagship-action-box">
+              <a href="poetry.html" class="btn-enter-primary">
+                <i data-lucide="sparkles"></i> 進入詩境與意象殿堂
+              </a>
+            </div>
+          </div>
+        </article>
       </div>
     </section>
 
-    <!-- 練習神器專區 (12 大互動練習卡片) -->
+    <!-- 練習神器專區 (23 款互動練習卡片) -->
     <section id="practice-sec" class="practice-section">
       <div class="section-header">
         <div>
           <h2 class="section-title serif"><i data-lucide="gamepad-2"></i> 學思軒練習神器專區</h2>
           <p class="section-desc">輕量、高效、好玩的單元配對與快問快答，適合課堂互動搶答或課後自我檢測</p>
         </div>
-        <span class="section-count">12 款專屬神器</span>
+        <span class="section-count">23 款專屬神器</span>
       </div>
 
       <div class="practice-grid">
+        <!-- 神器 0-0a：詩詞表現手法練習神器 -->
+        <div class="practice-card course-item" data-keywords="詩詞表現手法 表現手法 借景抒情 直抒胸臆 託物言志 動靜結合 以動襯靜 對比 映襯 古詩選 練習神器 翰林 B3L02">
+          <div>
+            <div class="practice-card-header">
+              <div class="practice-icon-box indigo"><i data-lucide="sparkles"></i></div>
+              <div>
+                <h3 class="practice-card-title">詩詞表現手法練習神器</h3>
+                <span class="practice-card-tag">修辭造境・41題特訓</span>
+              </div>
+            </div>
+            <p class="practice-card-desc">收錄 41 句古典詩詞名句，針對六大表現手法進行 3D 雙面翻卡特訓、即時測驗解析與個人錯題本。</p>
+          </div>
+          <a href="poetry/poetry-technique-practice.html" class="practice-card-btn" target="_blank">
+            <i data-lucide="external-link" style="width:16px;"></i> 開啟表現手法練習
+          </a>
+        </div>
+
+        <!-- 神器 0-0b：詩詞常見意象練習神器 -->
+        <div class="practice-card course-item" data-keywords="詩詞常見意象 常見意象 意象 梅花 竹子 菊花 柳樹 梧桐 鴻雁 杜鵑 寒蟬 鴛鴦 浮萍 烽火 殘燈 月亮 翰林 B3L02 練習神器">
+          <div>
+            <div class="practice-card-header">
+              <div class="practice-icon-box amber"><i data-lucide="compass"></i></div>
+              <div>
+                <h3 class="practice-card-title">詩詞常見意象練習神器</h3>
+                <span class="practice-card-tag">文化象徵・51款特訓</span>
+              </div>
+            </div>
+            <p class="practice-card-desc">收錄 51 款經典詩詞意象與象徵意涵，支援雙向翻卡記憶、快速快問快答與錯誤題目精準強化。</p>
+          </div>
+          <a href="poetry/poetry-imagery-practice.html" class="practice-card-btn" target="_blank">
+            <i data-lucide="external-link" style="width:16px;"></i> 開啟常見意象練習
+          </a>
+        </div>
+
+        <!-- 神器 0-1：疊字詞練習神器 -->
+        <div class="practice-card course-item" data-keywords="疊字詞 疊字 練習神器 古詩選 迢迢 皎皎 纖纖 札札 悠悠 耿耿 楚楚 翩翩 滔滔 鬱鬱 曖曖 戚戚 慼慼 斑斑 茫茫 翰林 B3L02">
+          <div>
+            <div class="practice-card-header">
+              <div class="practice-icon-box purple"><i data-lucide="sparkles"></i></div>
+              <div>
+                <h3 class="practice-card-title">疊字詞練習神器</h3>
+                <span class="practice-card-tag">音韻字義・101題特訓</span>
+              </div>
+            </div>
+            <p class="practice-card-desc">收錄 101 組課內外經典疊字詞，支援 3D 雙面翻卡特訓、即時測驗解析、全卷大卷瀏覽與個人錯題本。</p>
+          </div>
+          <a href="reduplication/reduplication-words-practice.html" class="practice-card-btn" target="_blank">
+            <i data-lucide="external-link" style="width:16px;"></i> 開啟疊字詞練習
+          </a>
+        </div>
+
+        <!-- 神器 0-2：疊字成語練習神器 -->
+        <div class="practice-card course-item" data-keywords="疊字成語 疊字 成語 練習神器 人人自危 小心翼翼 井井有條 心心相印 文質彬彬 斤斤計較 翰林 B3L02">
+          <div>
+            <div class="practice-card-header">
+              <div class="practice-icon-box purple"><i data-lucide="book-marked"></i></div>
+              <div>
+                <h3 class="practice-card-title">疊字成語練習神器</h3>
+                <span class="practice-card-tag">AABB・95題成語庫</span>
+              </div>
+            </div>
+            <p class="practice-card-desc">精選 95 組會考高頻疊字成語，透過雙面翻卡、釋義測驗、情境例句與錯題特訓加深記憶。</p>
+          </div>
+          <a href="reduplication/reduplication-idioms-practice.html" class="practice-card-btn" target="_blank">
+            <i data-lucide="external-link" style="width:16px;"></i> 開啟疊字成語練習
+          </a>
+        </div>
+
+        <!-- 神器 0：詩中的鳥類練習神器 -->
+        <div class="practice-card course-item" data-keywords="詩中的鳥類 鳥 禽鳥 詩詞 練習神器 雎鳩 黃鸝 燕子 杜鵑 白鷺 烏鴉 鴻雁 鶴 沙鷗 喜鵲 鸚鵡 鷓鴣 鴛鴦 蒼鷹 大鵬 翰林 B3L06">
+          <div>
+            <div class="practice-card-header">
+              <div class="practice-icon-box blue"><i data-lucide="feather"></i></div>
+              <div>
+                <h3 class="practice-card-title">詩中的鳥類練習神器</h3>
+                <span class="practice-card-tag">禽鳥意象・名句速配</span>
+              </div>
+            </div>
+            <p class="practice-card-desc">收錄 52 種古典詩詞禽鳥意象，支援 3D 雙面翻卡特訓、快問快答、全卷瀏覽與個人錯題本。</p>
+          </div>
+          <a href="bird/bird-practice.html" class="practice-card-btn" target="_blank">
+            <i data-lucide="external-link" style="width:16px;"></i> 開啟詩中的鳥類練習
+          </a>
+        </div>
+
         <!-- 神器 1：節慶詩詞句練習神器 -->
-        <div class="practice-card course-item" data-keywords="節慶 詩詞 節日 練習神器 寒食 清明 端午 七夕 中秋 重陽 詩詞句">
+        <div class="practice-card course-item" data-keywords="節慶 詩詞 節日 練習神器 寒食 清明 端午 七夕 中秋 重陽 詩詞句 翰林 B3L03 下雨天，真好">
           <div>
             <div class="practice-card-header">
               <div class="practice-icon-box orange"><i data-lucide="flame"></i></div>
@@ -1145,7 +1528,7 @@
         </div>
 
         <!-- 神器 2：二十四節氣練習神器 -->
-        <div class="practice-card course-item" data-keywords="二十四節氣 節氣 練習神器 春夏秋冬 四季 太陽 陽曆 農業">
+        <div class="practice-card course-item" data-keywords="二十四節氣 節氣 練習神器 春夏秋冬 四季 太陽 陽曆 農業 翰林 B3L03 下雨天，真好">
           <div>
             <div class="practice-card-header">
               <div class="practice-icon-box green"><i data-lucide="leaf"></i></div>
@@ -1162,7 +1545,7 @@
         </div>
 
         <!-- 神器 3：季節關鍵字詞練習神器 -->
-        <div class="practice-card course-item" data-keywords="季節 關鍵字 練習神器 東風 荷花 金風 朔風 季節詞彙">
+        <div class="practice-card course-item" data-keywords="季節 關鍵字 練習神器 東風 荷花 金風 朔風 季節詞彙 翰林 B3L03 下雨天，真好">
           <div>
             <div class="practice-card-header">
               <div class="practice-icon-box blue"><i data-lucide="tag"></i></div>
@@ -1179,7 +1562,7 @@
         </div>
 
         <!-- 神器 4：季節相關詞句練習神器 -->
-        <div class="practice-card course-item" data-keywords="季節 相關詞句 練習神器 四季詩詞 意境鑑賞 詞句判讀">
+        <div class="practice-card course-item" data-keywords="季節 相關詞句 練習神器 四季詩詞 意境鑑賞 詞句判讀 翰林 B3L03 下雨天，真好">
           <div>
             <div class="practice-card-header">
               <div class="practice-icon-box teal"><i data-lucide="book-marked"></i></div>
@@ -1196,7 +1579,7 @@
         </div>
 
         <!-- 神器 5：移覺（通感）修辭練習神器 -->
-        <div class="practice-card course-item" data-keywords="移覺 通感 修辭 練習神器 視覺 聽覺 嗅覺 味覺 觸覺 感官">
+        <div class="practice-card course-item" data-keywords="移覺 通感 修辭 練習神器 視覺 聽覺 嗅覺 味覺 觸覺 感官 翰林 B3L01 田園之秋選">
           <div>
             <div class="practice-card-header">
               <div class="practice-icon-box purple"><i data-lucide="wand-2"></i></div>
@@ -1213,7 +1596,7 @@
         </div>
 
         <!-- 神器 6：同義反義偏義複詞練習神器 -->
-        <div class="practice-card course-item" data-keywords="同義 反義 偏義 複詞 練習神器 構詞 規則 判斷 恩怨 忘記 國家 朋友 聲音">
+        <div class="practice-card course-item" data-keywords="同義 反義 偏義 複詞 練習神器 構詞 規則 判斷 恩怨 忘記 國家 朋友 聲音 翰林 B3語文常識一 詞性">
           <div>
             <div class="practice-card-header">
               <div class="practice-icon-box green"><i data-lucide="sparkles"></i></div>
@@ -1230,7 +1613,7 @@
         </div>
 
         <!-- 神器 7：量詞練習神器 -->
-        <div class="practice-card course-item" data-keywords="量詞 名量詞 動量詞 練習神器 計算單位 把 部 匹 門 方 副 幅 道 帖 幀 幢 撮 度量衡">
+        <div class="practice-card course-item" data-keywords="量詞 名量詞 動量詞 練習神器 計算單位 把 部 匹 門 方 副 幅 道 帖 幀 幢 撮 度量衡 翰林 B3語文常識一 詞性">
           <div>
             <div class="practice-card-header">
               <div class="practice-icon-box orange"><i data-lucide="scale"></i></div>
@@ -1247,7 +1630,7 @@
         </div>
 
         <!-- 神器 8：連接詞運用練習神器 -->
-        <div class="practice-card course-item" data-keywords="連接詞 連詞 練習神器 並列 選擇 轉折 遞進 承接 比較 因果 條件 假設 目的 複句">
+        <div class="practice-card course-item" data-keywords="連接詞 連詞 練習神器 並列 選擇 轉折 遞進 承接 比較 因果 條件 假設 目的 複句 翰林 B3語文常識一 詞性">
           <div>
             <div class="practice-card-header">
               <div class="practice-icon-box teal"><i data-lucide="git-merge"></i></div>
@@ -1264,7 +1647,7 @@
         </div>
 
         <!-- 神器 9：詞性判斷練習神器 -->
-        <div class="practice-card course-item" data-keywords="詞性 判斷 練習神器 名詞 動詞 形容詞 副詞 介詞 連詞 代詞 數詞 量詞 助詞 嘆詞 實詞 虛詞">
+        <div class="practice-card course-item" data-keywords="詞性 判斷 練習神器 名詞 動詞 形容詞 副詞 介詞 連詞 代詞 數詞 量詞 助詞 嘆詞 實詞 虛詞 翰林 B3語文常識一 詞性">
           <div>
             <div class="practice-card-header">
               <div class="practice-icon-box blue"><i data-lucide="target"></i></div>
@@ -1281,7 +1664,7 @@
         </div>
 
         <!-- 神器 10：詞性活用判斷練習神器 -->
-        <div class="practice-card course-item" data-keywords="詞性 活用 轉品 練習神器 名詞作動詞 形容詞作動詞 文言 轉品活用 解析 語法">
+        <div class="practice-card course-item" data-keywords="詞性 活用 轉品 練習神器 名詞作動詞 形容詞作動詞 文言 轉品活用 解析 語法 翰林 B3語文常識一 詞性">
           <div>
             <div class="practice-card-header">
               <div class="practice-icon-box purple"><i data-lucide="shuffle"></i></div>
@@ -1298,7 +1681,7 @@
         </div>
 
         <!-- 神器 11：詞性結構判斷練習神器 -->
-        <div class="practice-card course-item" data-keywords="詞性 結構 成語 四字詞 練習神器 名動名動 副形副形 動名動名 形名形名 詞語結構">
+        <div class="practice-card course-item" data-keywords="詞性 結構 成語 四字詞 練習神器 名動名動 副形副形 動名動名 形名形名 詞語結構 翰林 B3語文常識一 詞性">
           <div>
             <div class="practice-card-header">
               <div class="practice-icon-box green"><i data-lucide="layout-grid"></i></div>
@@ -1315,7 +1698,7 @@
         </div>
 
         <!-- 神器 12：「賓語提前」倒裝句法練習神器 -->
-        <div class="practice-card course-item" data-keywords="倒裝 倒裝句 賓語提前 練習神器 菊之愛 蓮之愛 唯利是圖 唯你是問 何陋之有 閃卡 翻卡 測驗 愛蓮說 句型">
+        <div class="practice-card course-item" data-keywords="倒裝 倒裝句 賓語提前 練習神器 菊之愛 蓮之愛 唯利是圖 唯你是問 何陋之有 閃卡 翻卡 測驗 愛蓮說 句型 翰林 B3L04 愛蓮說">
           <div>
             <div class="practice-card-header">
               <div class="practice-icon-box blue"><i data-lucide="sparkles"></i></div>
@@ -1330,36 +1713,107 @@
             <i data-lucide="external-link" style="width:16px;"></i> 開啟倒裝句法練習
           </a>
         </div>
-      </div>
-    </section>
 
- 
-    <!-- 教學特色與設計哲學 (三欄) -->
-    <section id="features-sec">
-      <div class="section-header">
-        <div>
-          <h2 class="section-title serif"><i data-lucide="sparkle"></i> 教學特色與設計理念</h2>
-          <p class="section-desc">為師生打造兼具美感、互動性與實用價值的現代數位語文學習資源</p>
-        </div>
-      </div>
-
-      <div class="features-grid">
-        <div class="feature-box">
-          <div class="feature-box-icon"><i data-lucide="smartphone"></i></div>
-          <h3 class="serif">單一檔案・離線免裝・隨開即用</h3>
-          <p>純前端極簡架構，無須資料庫與複雜後端，支援跨平台手機、平板、電子白板與個人電腦，離線亦可輕鬆存取教學。</p>
+        <!-- 神器 13：花花語文世界專屬練習神器 -->
+        <div class="practice-card course-item" data-keywords="花花語文世界 花花世界 植物 象徵 名花物語 知己 配對 是非 翻卡 閃卡 錯題 練習神器 愛蓮說 菊 蓮 梅 蘭 竹 柳 桃 翰林 B3L04 愛蓮說">
+          <div>
+            <div class="practice-card-header">
+              <div class="practice-icon-box rose"><i data-lucide="flower-2"></i></div>
+              <div>
+                <h3 class="practice-card-title">花花語文世界練習神器</h3>
+                <span class="practice-card-tag">植物象徵・配對速測</span>
+              </div>
+            </div>
+            <p class="practice-card-desc">整合 26 張 3D 雙面翻卡特訓、名花知己連連看配對、人比花嬌是非快打與個人錯題收藏本。</p>
+          </div>
+          <a href="flower/flower-practice.html" class="practice-card-btn" target="_blank">
+            <i data-lucide="external-link" style="width:16px;"></i> 開啟花花世界練習
+          </a>
         </div>
 
-        <div class="feature-box">
-          <div class="feature-box-icon"><i data-lucide="volume-2"></i></div>
-          <h3 class="serif">全真人語音・視覺動態圖解</h3>
-          <p>內建 Web Speech 語音發音與精心繪製的教材架構圖、字詞卡片，照顧視覺與聽覺多元學習需求，提升記憶留存率。</p>
+        <!-- 神器 14：中外俗諺對照練習神器 -->
+        <div class="practice-card course-item" data-keywords="俗諺 諺語 中外俗諺 臺灣俗諺 練習神器 生命中的碎珠 軟土深掘 吃緊挵破碗 食碗內看碗外 一支草一點露 飲水思源 物以類聚 閃卡 翻卡 測驗 題庫 翰林 B3L05 生命中的碎珠">
+          <div>
+            <div class="practice-card-header">
+              <div class="practice-icon-box green"><i data-lucide="layers"></i></div>
+              <div>
+                <h3 class="practice-card-title">中外俗諺對照練習神器</h3>
+                <span class="practice-card-tag">常民智慧・雙面閃卡</span>
+              </div>
+            </div>
+            <p class="practice-card-desc">彙整 36 組臺灣俗諺與世界各國諺語，支援 3D 雙面翻卡、相通中國諺語詳解與隨堂闖關測驗。</p>
+          </div>
+          <a href="proverb/proverb-practice.html" class="practice-card-btn" target="_blank">
+            <i data-lucide="external-link" style="width:16px;"></i> 開啟俗諺練習神器
+          </a>
         </div>
 
-        <div class="feature-box">
-          <div class="feature-box-icon"><i data-lucide="target"></i></div>
-          <h3 class="serif">素養導向・會考題庫即時反饋</h3>
-          <p>整合歷年國中會考經典題型，搭配詳解剖析與防作弊安全機制，讓學生在互動操作中輕鬆建立解題信心。</p>
+        <!-- 神器 15：詩詞常見意象練習神器 -->
+        <div class="practice-card course-item" data-keywords="詩詞常見意象 詩詞 意象 植物 動物 象徵 翻卡 測驗 錯題本 梅花 竹子 菊花 蓮花 柳樹 鴻雁 杜鵑 猿啼 詩句 愛蓮說 花花語文世界 翰林 B3L04 愛蓮說">
+          <div>
+            <div class="practice-card-header">
+              <div class="practice-icon-box indigo"><i data-lucide="book-open"></i></div>
+              <div>
+                <h3 class="practice-card-title">詩詞常見意象練習神器</h3>
+                <span class="practice-card-tag">意象典故・詩句測驗</span>
+              </div>
+            </div>
+            <p class="practice-card-desc">彙整 36 大會考高頻詩詞意象（梅、竹、菊、松、柳、梧桐、鴻雁等），含雙向測驗與智慧錯題本。</p>
+          </div>
+          <a href="flower/poetry-imagery.html" class="practice-card-btn" target="_blank">
+            <i data-lucide="external-link" style="width:16px;"></i> 開啟意象練習神器
+          </a>
+        </div>
+
+        <!-- 神器 16：古文格言練習神器 -->
+        <div class="practice-card course-item" data-keywords="古文格言 格言 練習神器 古文 經典 名言 名句 閃卡 翻卡 測驗 錯題本 國文 會考 語文學習集 翰林 B3L05 生命中的碎珠">
+          <div>
+            <div class="practice-card-header">
+              <div class="practice-icon-box amber"><i data-lucide="book-marked"></i></div>
+              <div>
+                <h3 class="practice-card-title">古文格言練習神器</h3>
+                <span class="practice-card-tag">名家格言・哲思名句</span>
+              </div>
+            </div>
+            <p class="practice-card-desc">彙整先秦兩漢至明清經典古文格言，支援雙面 3D 翻卡、白話翻譯、核心道理闡釋與錯題收藏特訓。</p>
+          </div>
+          <a href="proverb/proverb-aphorism.html" class="practice-card-btn" target="_blank">
+            <i data-lucide="external-link" style="width:16px;"></i> 開啟古文格言練習
+          </a>
+        </div>
+
+        <!-- 神器 17：狀聲詞練習神器 -->
+        <div class="practice-card course-item" data-keywords="狀聲詞 象聲詞 擬聲詞 摹聲詞 練習神器 閃卡 翻卡 測驗 錯題本 國文 會考 語文學習集 翰林 B3L06 鳥">
+          <div>
+            <div class="practice-card-header">
+              <div class="practice-icon-box blue"><i data-lucide="volume-2"></i></div>
+              <div>
+                <h3 class="practice-card-title">狀聲詞練習神器</h3>
+                <span class="practice-card-tag">聽覺摹寫・聲景全集</span>
+              </div>
+            </div>
+            <p class="practice-card-desc">收錄 62 題完整狀聲詞庫，支援 3D 雙面翻卡特訓、四選一釋義測驗、語句填空挑戰與錯題本專區。</p>
+          </div>
+          <a href="onomatopoeia/onomatopoeia-practice.html" class="practice-card-btn" target="_blank">
+            <i data-lucide="external-link" style="width:16px;"></i> 開啟狀聲詞練習
+          </a>
+        </div>
+
+        <!-- 神器 18：顏色字判斷練習神器 -->
+        <div class="practice-card course-item" data-keywords="顏色字 顏色 顏色字判斷 練習神器 實指 非指 緋紅 丹楓 朱曦 赤焰 彤雲 絳衣 赭土 黔首 在涅貴不緇 朝如青絲 素絲 明眸皓齒 縞衣 碧海 蒼天 滄海一粟 縹碧 黛青 蔚藍 殺青 垂青 爐火純青 青史 青出於藍 青睞 慘綠少年 明日黃花 人老珠黃 白丁 不白之冤 真相大白 黑名單 背黑鍋 墨守成規 烏合之眾 赤手空拳 一片丹心 紅顏薄命 青春 飛黃騰達 翻卡 測驗 錯題本 國文 會考 語文學習集 翰林 B3L06 鳥">
+          <div>
+            <div class="practice-card-header">
+              <div class="practice-icon-box rose"><i data-lucide="palette"></i></div>
+              <div>
+                <h3 class="practice-card-title">顏色字判斷練習神器</h3>
+                <span class="practice-card-tag">實指非指・字義剖析</span>
+              </div>
+            </div>
+            <p class="practice-card-desc">收錄 98 組經典顏色字詞庫，支援 3D 雙面翻卡特訓、快問快答測驗、大卷練習與錯題本專區。</p>
+          </div>
+          <a href="color/color-practice.html" class="practice-card-btn" target="_blank">
+            <i data-lucide="external-link" style="width:16px;"></i> 開啟顏色字練習
+          </a>
         </div>
       </div>
     </section>
@@ -1393,7 +1847,16 @@
     // 初始化 Lucide 圖標
     lucide.createIcons();
 
-    // 搜尋過濾功能
+    // 課次與關鍵字複合過濾功能
+    let currentLessonFilter = '';
+
+    function filterByLesson(lessonCode, btn) {
+      currentLessonFilter = lessonCode;
+      document.querySelectorAll('.lesson-chip').forEach(el => el.classList.remove('active'));
+      if (btn) btn.classList.add('active');
+      filterCourses();
+    }
+
     function filterCourses() {
       const query = document.getElementById('courseSearch').value.trim().toLowerCase();
       const items = document.querySelectorAll('.course-item');
@@ -1401,7 +1864,11 @@
       items.forEach(item => {
         const keywords = (item.getAttribute('data-keywords') || '').toLowerCase();
         const text = item.textContent.toLowerCase();
-        if (!query || keywords.includes(query) || text.includes(query)) {
+        
+        const matchesQuery = !query || keywords.includes(query) || text.includes(query);
+        const matchesLesson = !currentLessonFilter || keywords.includes(currentLessonFilter.toLowerCase()) || text.includes(currentLessonFilter.toLowerCase());
+
+        if (matchesQuery && matchesLesson) {
           item.style.display = '';
         } else {
           item.style.display = 'none';

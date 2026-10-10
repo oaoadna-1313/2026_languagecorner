@@ -1001,31 +1001,51 @@
       background: #f8fafc;
     }
 
-    /* 頁尾 */
+    /* 頁尾 Footer - 典雅溫潤暖栗木/沉木茶褐漸層 */
     footer {
-      background: #09090b;
-      color: #94a3b8;
-      padding: 3.5rem 1.5rem;
-      border-top: 1px solid #27272a;
+      background: linear-gradient(180deg, #2e1a12 0%, #1c0f0a 100%);
+      color: white;
+      padding: 3.5rem 1.5rem 2.5rem;
+      border-top: 3px solid #854d0e;
       text-align: center;
       margin-top: 4rem;
     }
-    .footer-content {
-      max-width: 900px;
+    .footer-container {
+      max-width: 1320px;
       margin: 0 auto;
       display: flex;
       flex-direction: column;
       align-items: center;
-      gap: 1.2rem;
+      gap: 1.8rem;
+      text-align: center;
     }
-    .footer-logo {
-      height: 48px;
-      filter: brightness(0) invert(1);
-      opacity: 0.85;
+    .footer-logos {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 1.5rem;
+      flex-wrap: wrap;
     }
-    .footer-text {
-      font-size: 0.92rem;
-      line-height: 1.8;
+    .footer-seal {
+      height: 60px;
+      width: auto;
+      object-fit: contain;
+      filter: drop-shadow(0 4px 10px rgba(0, 0, 0, 0.3));
+    }
+    .footer-tagline-img {
+      max-height: 46px;
+      width: auto;
+      object-fit: contain;
+    }
+    .footer-credit {
+      font-size: 0.95rem;
+      color: #fde68a;
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(253, 230, 138, 0.25);
+      padding: 0.6rem 1.6rem;
+      border-radius: 999px;
+      font-weight: 600;
+      letter-spacing: 0.5px;
     }
 
     @media (max-width: 768px) {
@@ -1365,16 +1385,15 @@
     </section>
   </main>
 
-  <!-- 底部 Footer -->
+  <!-- 頁尾宣告 -->
   <footer>
-    <div class="footer-content">
-      <img src="icon/seal-white.png" alt="學思軒印" class="footer-logo" onerror="this.style.display='none'">
-      <div class="footer-text">
-        學思軒團隊策劃・國中國文專用 AI 數位互動教材
-        <br>
-        依據翰林版國中國文第三冊《愛蓮說》語文補給站教材精心建置
-        <br>
-        © 2026 學思軒・語文補給站 版權所有
+    <div class="footer-container">
+      <div class="footer-logos">
+        <img src="icon/seal-white.png" alt="學思軒" class="footer-seal" onerror="this.src='icon/seal-red.png'">
+        <img src="icon/slogan-god-dark.png" alt="只要有心人人都是國文神" class="footer-tagline-img">
+      </div>
+      <div class="footer-credit serif">
+        𖤐 本系統由學思軒黃于珊、王斐亭老師規劃設計 · 版權所有 © 2026 𖤐
       </div>
     </div>
   </footer>

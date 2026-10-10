@@ -1,0 +1,1721 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>學思軒・語文補給站｜五彩斑斕——顏色字判斷旗艦學習殿堂</title>
+  <meta name="description" content="翰林國中國文B3L06鳥語文補給站：顏色字判斷旗艦學習殿堂。103組詞彙全面析辨、實指與非指色彩深度剖析、文化星盤羅盤、會考診斷挑戰賽與專屬練習神器無縫整合。">
+
+  <!-- Google Fonts: 典雅思源宋體、思源黑體與書法字型 -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;600;700;900&family=Noto+Sans+TC:wght@300;400;500;700;900&family=Ma+Shan+Zheng&display=swap" rel="stylesheet">
+
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <style>
+    :root {
+      --primary: #e11d48;         /* 胭脂緋紅 */
+      --primary-dark: #be123c;
+      --primary-light: #ffe4e6;
+      --primary-hover: #9f1239;
+
+      --secondary: #4338ca;       /* 玄青靛藍 */
+      --secondary-dark: #312e81;
+      --secondary-light: #e0e7ff;
+
+      --emerald: #059669;         /* 翠玉竹青 */
+      --emerald-dark: #047857;
+      --emerald-light: #d1fae5;
+
+      --amber: #d97706;           /* 丹楓琥珀 */
+      --amber-dark: #b45309;
+      --amber-light: #fef3c7;
+
+      --cyan: #0891b2;            /* 滄海縹碧 */
+      --cyan-light: #cffafe;
+
+      --dark: #0f172a;
+      --dark-card: #1e293b;
+      --gray: #64748b;
+      --gray-light: #f8fafc;
+      --border: #f1f5f9;
+      --border-accent: #fecdd3;
+
+      --bg-page: #faf8f5;
+      --card-bg: rgba(255, 255, 255, 0.98);
+
+      --radius-sm: 8px;
+      --radius-md: 14px;
+      --radius-lg: 22px;
+      --radius-xl: 28px;
+
+      --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.04);
+      --shadow-md: 0 10px 25px -5px rgba(225, 29, 72, 0.08), 0 8px 10px -6px rgba(0, 0, 0, 0.04);
+      --shadow-lg: 0 20px 35px -10px rgba(225, 29, 72, 0.16), 0 10px 15px -5px rgba(0, 0, 0, 0.04);
+      --shadow-glow: 0 0 25px rgba(225, 29, 72, 0.18);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Noto Sans TC', sans-serif;
+      background-color: var(--bg-page);
+      color: var(--dark);
+      line-height: 1.7;
+      background-image: 
+        radial-gradient(circle at 8% 12%, rgba(225, 29, 72, 0.04) 0%, transparent 45%),
+        radial-gradient(circle at 92% 20%, rgba(67, 56, 202, 0.04) 0%, transparent 45%),
+        radial-gradient(circle at 50% 80%, rgba(5, 150, 105, 0.03) 0%, transparent 60%);
+      background-attachment: fixed;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .serif { font-family: 'Noto Serif TC', serif; }
+    .calligraphy { font-family: 'Ma Shan Zheng', 'Noto Serif TC', cursive; }
+
+    /* 頂部導覽列 */
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(14px);
+      border-bottom: 1px solid rgba(225, 29, 72, 0.12);
+      padding: 0.75rem 1.5rem;
+      box-shadow: 0 4px 18px rgba(0, 0, 0, 0.03);
+    }
+
+    .nav-container {
+      max-width: 1320px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    .brand-group {
+      display: flex;
+      align-items: center;
+      gap: 0.85rem;
+      text-decoration: none;
+    }
+
+    .brand-seal-img {
+      height: 48px;
+      width: auto;
+      object-fit: contain;
+      transition: transform 0.3s ease;
+      filter: drop-shadow(0 2px 4px rgba(0,0,0,0.08));
+    }
+    .brand-seal-img:hover {
+      transform: rotate(5deg) scale(1.08);
+    }
+
+    .brand-logo-img {
+      height: 48px;
+      width: auto;
+      object-fit: contain;
+      filter: drop-shadow(0 2px 4px rgba(0,0,0,0.08));
+    }
+
+    .brand-text { display: flex; flex-direction: column; }
+    .brand-title {
+      font-size: 1.35rem;
+      font-weight: 800;
+      color: var(--primary-dark);
+      letter-spacing: -0.5px;
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+
+    .brand-badge {
+      font-size: 0.72rem;
+      background: var(--primary-light);
+      color: var(--primary-dark);
+      padding: 0.15rem 0.55rem;
+      border-radius: 999px;
+      font-weight: 700;
+      width: fit-content;
+      margin-top: 2px;
+      border: 1px solid rgba(225, 29, 72, 0.2);
+    }
+
+    nav ul {
+      display: flex;
+      list-style: none;
+      gap: 0.4rem;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: var(--dark);
+      font-weight: 600;
+      padding: 0.45rem 0.85rem;
+      border-radius: 10px;
+      transition: all 0.2s ease;
+      font-size: 0.92rem;
+      display: flex;
+      align-items: center;
+      gap: 0.35rem;
+    }
+
+    nav a:hover, nav a.active {
+      background: var(--primary-light);
+      color: var(--primary-dark);
+    }
+
+    .nav-btn-tool {
+      background: linear-gradient(135deg, var(--primary), var(--primary-dark)) !important;
+      color: #ffffff !important;
+      padding: 0.48rem 1.15rem;
+      border-radius: 999px;
+      box-shadow: 0 4px 10px rgba(225, 29, 72, 0.25);
+    }
+    .nav-btn-tool:hover {
+      background: linear-gradient(135deg, var(--primary-dark), #9f1239) !important;
+      color: #ffffff !important;
+      transform: translateY(-2px);
+      box-shadow: 0 6px 14px rgba(225, 29, 72, 0.35);
+    }
+
+    /* 主容器 */
+    main {
+      max-width: 1320px;
+      margin: 2rem auto;
+      padding: 0 1.5rem;
+      flex: 1;
+    }
+
+    /* Hero 全幅旗艦橫幅 */
+    .hero {
+      position: relative;
+      background: linear-gradient(135deg, #fff1f2 0%, #fef3c7 40%, #e0e7ff 100%);
+      border-radius: var(--radius-xl);
+      border: 1px solid rgba(225, 29, 72, 0.15);
+      padding: 3.8rem 2.5rem;
+      margin-bottom: 2.8rem;
+      box-shadow: var(--shadow-md);
+      overflow: hidden;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .hero::after {
+      content: "五彩・斑斕";
+      position: absolute;
+      right: 2%;
+      bottom: -35px;
+      font-size: 8rem;
+      font-family: 'Ma Shan Zheng', cursive;
+      color: rgba(225, 29, 72, 0.05);
+      pointer-events: none;
+      user-select: none;
+      white-space: nowrap;
+    }
+
+    .hero-content {
+      max-width: 960px;
+      margin: 0 auto;
+      z-index: 2;
+    }
+
+    .hero-badge-top {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: white;
+      color: var(--primary-dark);
+      padding: 6px 18px;
+      border-radius: 999px;
+      font-size: 0.9rem;
+      font-weight: 700;
+      margin-bottom: 1.2rem;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+      border: 1px solid #fecdd3;
+    }
+
+    .hero-content h1 {
+      font-size: 3.1rem;
+      font-weight: 900;
+      color: var(--primary-dark);
+      margin-bottom: 1.1rem;
+      line-height: 1.25;
+      background: linear-gradient(135deg, #be123c, #4338ca);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .hero-desc {
+      font-size: 1.15rem;
+      color: #475569;
+      line-height: 1.85;
+      margin-bottom: 1.8rem;
+      max-width: 820px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .hero-features {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      margin-top: 0.5rem;
+    }
+
+    .feature-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: rgba(255, 255, 255, 0.85);
+      padding: 0.45rem 1rem;
+      border-radius: 999px;
+      font-size: 0.88rem;
+      font-weight: 600;
+      color: #334155;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.03);
+      border: 1px solid rgba(225, 29, 72, 0.12);
+    }
+
+    /* 區塊通用樣式 */
+    .content-section {
+      margin-bottom: 3.5rem;
+      scroll-margin-top: 90px;
+    }
+
+    .section-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      margin-bottom: 1.8rem;
+      border-bottom: 2px solid rgba(225, 29, 72, 0.1);
+      padding-bottom: 0.85rem;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    .section-tag {
+      display: inline-block;
+      font-size: 0.78rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: var(--primary);
+      margin-bottom: 0.25rem;
+    }
+
+    .section-title {
+      font-size: 1.85rem;
+      font-weight: 800;
+      color: var(--dark);
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+    }
+
+    .section-desc {
+      color: var(--gray);
+      font-size: 0.95rem;
+      margin-top: 0.25rem;
+    }
+
+    /* 核心定義卡片與心法橫幅 */
+    .def-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5rem;
+      margin-bottom: 1.8rem;
+    }
+    @media (max-width: 860px) {
+      .def-grid { grid-template-columns: 1fr; }
+    }
+
+    .def-card {
+      background: var(--card-bg);
+      border-radius: var(--radius-lg);
+      padding: 2rem;
+      box-shadow: var(--shadow-sm);
+      border: 1px solid var(--border);
+      position: relative;
+      overflow: hidden;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .def-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-md);
+    }
+
+    .def-card.real {
+      border-top: 5px solid var(--emerald);
+    }
+    .def-card.metaphor {
+      border-top: 5px solid var(--primary);
+    }
+
+    .def-card-header {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      margin-bottom: 1rem;
+    }
+
+    .def-icon-box {
+      width: 44px;
+      height: 44px;
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .def-icon-box.green { background: var(--emerald-light); color: var(--emerald); }
+    .def-icon-box.rose { background: var(--primary-light); color: var(--primary); }
+
+    .def-card-title {
+      font-size: 1.35rem;
+      font-weight: 800;
+      color: var(--dark);
+    }
+
+    .def-card p {
+      color: #334155;
+      font-size: 0.96rem;
+      line-height: 1.75;
+      margin-bottom: 1rem;
+    }
+
+    .def-examples {
+      background: #f8fafc;
+      padding: 1rem;
+      border-radius: var(--radius-md);
+      border-left: 3px solid var(--gray);
+      font-size: 0.9rem;
+      color: #475569;
+    }
+    .def-examples strong { color: var(--dark); }
+
+    .rules-banner {
+      background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+      color: #ffffff;
+      border-radius: var(--radius-lg);
+      padding: 2rem 2.5rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1.2rem;
+      box-shadow: var(--shadow-md);
+    }
+
+    .rules-banner-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 1rem;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+      padding-bottom: 0.8rem;
+    }
+
+    .rules-banner-title {
+      font-size: 1.35rem;
+      font-weight: 800;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      color: #fecdd3;
+    }
+
+    .rules-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1rem;
+    }
+    @media (max-width: 900px) {
+      .rules-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 540px) {
+      .rules-grid { grid-template-columns: 1fr; }
+    }
+
+    .rule-box {
+      background: rgba(255, 255, 255, 0.06);
+      padding: 1.1rem;
+      border-radius: var(--radius-md);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      transition: background 0.2s;
+    }
+    .rule-box:hover {
+      background: rgba(255, 255, 255, 0.12);
+    }
+    .rule-step {
+      font-size: 0.78rem;
+      color: #f43f5e;
+      font-weight: 800;
+      margin-bottom: 0.3rem;
+      text-transform: uppercase;
+    }
+    .rule-head {
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: #ffffff;
+      margin-bottom: 0.4rem;
+    }
+    .rule-txt {
+      font-size: 0.85rem;
+      color: #cbd5e1;
+      line-height: 1.6;
+    }
+
+    /* 五大色系羅盤 Matrix */
+    .matrix-container {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 1rem;
+      margin-bottom: 1.5rem;
+    }
+    @media (max-width: 960px) {
+      .matrix-container { grid-template-columns: repeat(3, 1fr); }
+    }
+    @media (max-width: 600px) {
+      .matrix-container { grid-template-columns: repeat(2, 1fr); }
+    }
+
+    .matrix-card {
+      background: var(--card-bg);
+      border-radius: var(--radius-md);
+      padding: 1.2rem;
+      border: 2px solid transparent;
+      cursor: pointer;
+      transition: all 0.25s ease;
+      box-shadow: var(--shadow-sm);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      gap: 0.4rem;
+    }
+    .matrix-card:hover {
+      transform: translateY(-3px);
+      box-shadow: var(--shadow-md);
+    }
+    .matrix-card.active {
+      border-color: var(--primary);
+      background: #fff1f2;
+    }
+
+    .matrix-dot {
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      margin-bottom: 0.3rem;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+    }
+    .matrix-title {
+      font-size: 1.05rem;
+      font-weight: 800;
+      color: var(--dark);
+    }
+    .matrix-chars {
+      font-size: 0.82rem;
+      color: #64748b;
+      line-height: 1.4;
+    }
+
+    /* 典範圖鑑工具列 */
+    .gallery-toolbar {
+      background: var(--card-bg);
+      border-radius: var(--radius-lg);
+      padding: 1.25rem 1.5rem;
+      margin-bottom: 1.5rem;
+      box-shadow: var(--shadow-sm);
+      border: 1px solid var(--border);
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .toolbar-row-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    .search-box {
+      position: relative;
+      flex: 1;
+      min-width: 260px;
+    }
+    .search-box input {
+      width: 100%;
+      padding: 0.65rem 1rem 0.65rem 2.6rem;
+      border: 1.5px solid var(--border);
+      border-radius: 999px;
+      font-size: 0.95rem;
+      outline: none;
+      transition: border-color 0.2s, box-shadow 0.2s;
+    }
+    .search-box input:focus {
+      border-color: var(--primary);
+      box-shadow: 0 0 0 3px rgba(225, 29, 72, 0.12);
+    }
+    .search-icon {
+      position: absolute;
+      left: 0.95rem;
+      top: 50%;
+      transform: translateY(-50%);
+      color: #94a3b8;
+    }
+
+    .btn-reveal-all {
+      background: white;
+      color: var(--primary-dark);
+      border: 1.5px solid var(--primary);
+      padding: 0.6rem 1.25rem;
+      border-radius: 999px;
+      font-weight: 700;
+      font-size: 0.9rem;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      transition: all 0.2s;
+    }
+    .btn-reveal-all:hover {
+      background: var(--primary-light);
+    }
+
+    .filter-chips {
+      display: flex;
+      gap: 0.5rem;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+
+    .chip-btn {
+      padding: 0.4rem 0.9rem;
+      border-radius: 999px;
+      border: 1px solid #e2e8f0;
+      background: #f8fafc;
+      color: #475569;
+      font-size: 0.86rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+    .chip-btn:hover {
+      background: #e2e8f0;
+    }
+    .chip-btn.active {
+      background: var(--primary);
+      color: white;
+      border-color: var(--primary);
+      box-shadow: 0 2px 6px rgba(225, 29, 72, 0.25);
+    }
+
+    /* 圖鑑卡片 Grid */
+    .cards-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(290px, 1fr));
+      gap: 1.25rem;
+    }
+
+    .word-card {
+      background: var(--card-bg);
+      border-radius: var(--radius-md);
+      padding: 1.35rem;
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow-sm);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: transform 0.25s, box-shadow 0.25s, border-color 0.25s;
+      cursor: pointer;
+      position: relative;
+    }
+    .word-card:hover {
+      transform: translateY(-3px);
+      box-shadow: var(--shadow-md);
+      border-color: var(--border-accent);
+    }
+
+    .card-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: 0.8rem;
+    }
+
+    .card-family-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      font-size: 0.78rem;
+      font-weight: 700;
+      padding: 2px 8px;
+      border-radius: 6px;
+    }
+    .tag-red { background: #ffe4e6; color: #be123c; }
+    .tag-black { background: #f1f5f9; color: #334155; }
+    .tag-white { background: #f8fafc; color: #64748b; border: 1px solid #e2e8f0; }
+    .tag-blue_green { background: #d1fae5; color: #047857; }
+    .tag-yellow_other { background: #fef3c7; color: #b45309; }
+
+    .card-tts-btn {
+      background: none;
+      border: none;
+      color: #94a3b8;
+      cursor: pointer;
+      padding: 4px;
+      border-radius: 6px;
+      transition: color 0.2s, background 0.2s;
+    }
+    .card-tts-btn:hover {
+      color: var(--primary);
+      background: #ffe4e6;
+    }
+
+    .card-word {
+      font-size: 1.65rem;
+      font-weight: 900;
+      color: var(--dark);
+      margin-bottom: 0.6rem;
+      letter-spacing: 0.5px;
+    }
+
+    .card-badge-judge {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      padding: 4px 10px;
+      border-radius: 8px;
+      font-size: 0.85rem;
+      font-weight: 800;
+      margin-bottom: 0.8rem;
+      transition: filter 0.2s;
+    }
+    .badge-real {
+      background: #d1fae5;
+      color: #065f46;
+      border: 1px solid #a7f3d0;
+    }
+    .badge-fake {
+      background: #fee2e2;
+      color: #991b1b;
+      border: 1px solid #fecaca;
+    }
+    .badge-blurred {
+      filter: blur(5px);
+      user-select: none;
+      opacity: 0.6;
+    }
+
+    .card-details {
+      background: #f8fafc;
+      padding: 0.85rem;
+      border-radius: var(--radius-sm);
+      font-size: 0.88rem;
+      line-height: 1.6;
+      color: #475569;
+      display: none;
+      border-left: 3px solid var(--primary);
+      margin-top: 0.6rem;
+    }
+    .card-details.show {
+      display: block;
+      animation: fadeIn 0.3s ease;
+    }
+
+    .card-prompt-hint {
+      font-size: 0.78rem;
+      color: #94a3b8;
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      margin-top: 0.5rem;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(4px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* 會考挑戰賽 */
+    .arena-container {
+      background: var(--card-bg);
+      border-radius: var(--radius-xl);
+      padding: 2.5rem;
+      box-shadow: var(--shadow-md);
+      border: 1px solid rgba(225, 29, 72, 0.12);
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .arena-status-bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 1.2rem;
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: #475569;
+    }
+
+    .arena-progress-wrap {
+      width: 100%;
+      height: 8px;
+      background: #e2e8f0;
+      border-radius: 999px;
+      overflow: hidden;
+      margin-bottom: 1.8rem;
+    }
+    .arena-progress-inner {
+      height: 100%;
+      background: linear-gradient(90deg, var(--primary), #fb7185);
+      width: 0%;
+      transition: width 0.3s ease;
+    }
+
+    .arena-question-text {
+      font-size: 1.35rem;
+      font-weight: 800;
+      color: var(--dark);
+      line-height: 1.6;
+      margin-bottom: 1.5rem;
+    }
+
+    .arena-options-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 0.85rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .arena-opt-btn {
+      padding: 1rem 1.25rem;
+      border: 1.5px solid #e2e8f0;
+      background: white;
+      border-radius: var(--radius-md);
+      font-size: 1.02rem;
+      font-weight: 600;
+      text-align: left;
+      cursor: pointer;
+      transition: all 0.2s;
+      color: #334155;
+    }
+    .arena-opt-btn:hover:not(:disabled) {
+      border-color: var(--primary);
+      background: #fff1f2;
+      transform: translateX(4px);
+    }
+    .arena-opt-btn.correct {
+      background: #d1fae5 !important;
+      border-color: var(--emerald) !important;
+      color: #065f46 !important;
+    }
+    .arena-opt-btn.wrong {
+      background: #fee2e2 !important;
+      border-color: var(--primary) !important;
+      color: #991b1b !important;
+    }
+
+    .arena-feedback {
+      display: none;
+      padding: 1.2rem;
+      border-radius: var(--radius-md);
+      font-size: 0.95rem;
+      line-height: 1.7;
+      margin-bottom: 1.5rem;
+    }
+    .arena-feedback.show { display: block; }
+    .arena-feedback.is-correct {
+      background: #ecfdf5;
+      border-left: 4px solid var(--emerald);
+      color: #065f46;
+    }
+    .arena-feedback.is-wrong {
+      background: #fff1f2;
+      border-left: 4px solid var(--primary);
+      color: #9f1239;
+    }
+
+    .arena-next-btn {
+      display: none;
+      background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+      color: white;
+      padding: 0.75rem 2rem;
+      border-radius: 999px;
+      font-size: 1rem;
+      font-weight: 700;
+      border: none;
+      cursor: pointer;
+      margin: 0 auto;
+      box-shadow: 0 4px 12px rgba(225, 29, 72, 0.3);
+    }
+    .arena-next-btn.show { display: inline-flex; align-items: center; gap: 0.5rem; }
+
+    /* 結果結算 */
+    .arena-result-box {
+      display: none;
+      text-align: center;
+      padding: 2.5rem 1rem;
+    }
+    .result-score {
+      font-size: 4rem;
+      font-weight: 900;
+      color: var(--primary);
+      margin: 0.5rem 0;
+    }
+    .result-badge-title {
+      font-size: 1.45rem;
+      font-weight: 800;
+      color: var(--dark);
+      margin-bottom: 0.8rem;
+    }
+    .result-comment {
+      color: #475569;
+      font-size: 1.05rem;
+      max-width: 620px;
+      margin: 0 auto 1.8rem auto;
+      line-height: 1.8;
+    }
+    .btn-restart {
+      background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+      color: white;
+      padding: 0.75rem 2rem;
+      border-radius: 999px;
+      font-size: 1rem;
+      font-weight: 700;
+      border: none;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    /* 探究魔法工坊 */
+    .workshop-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5rem;
+    }
+    .workshop-card {
+      background: var(--card-bg);
+      border-radius: var(--radius-lg);
+      padding: 1.8rem;
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow-sm);
+      transition: transform 0.25s;
+    }
+    .workshop-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-md);
+    }
+    .workshop-badge {
+      display: inline-block;
+      font-size: 0.78rem;
+      font-weight: 800;
+      padding: 3px 10px;
+      border-radius: 999px;
+      background: var(--secondary-light);
+      color: var(--secondary);
+      margin-bottom: 0.8rem;
+    }
+    .workshop-card h3 {
+      font-size: 1.25rem;
+      font-weight: 800;
+      color: var(--dark);
+      margin-bottom: 0.6rem;
+    }
+    .workshop-card p {
+      color: #475569;
+      font-size: 0.92rem;
+      line-height: 1.7;
+    }
+
+    /* 練習神器嵌入區 */
+    .practice-embed-box {
+      background: var(--card-bg);
+      border-radius: var(--radius-xl);
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow-md);
+      overflow: hidden;
+    }
+
+    .practice-embed-header {
+      background: linear-gradient(135deg, #fff1f2, #ffe4e6);
+      padding: 1.25rem 1.8rem;
+      border-bottom: 1px solid rgba(225, 29, 72, 0.15);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    .embed-title-group {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+    .embed-icon-badge {
+      width: 42px;
+      height: 42px;
+      background: var(--primary);
+      color: white;
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 4px 10px rgba(225, 29, 72, 0.25);
+    }
+    .embed-title-text {
+      font-size: 1.2rem;
+      font-weight: 800;
+      color: var(--primary-dark);
+    }
+    .embed-desc-text {
+      font-size: 0.82rem;
+      color: #64748b;
+    }
+
+    .btn-open-fullscreen {
+      background: white;
+      color: var(--primary-dark);
+      border: 1.5px solid var(--primary);
+      padding: 0.55rem 1.2rem;
+      border-radius: 999px;
+      font-weight: 700;
+      font-size: 0.88rem;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      transition: all 0.2s;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.04);
+    }
+    .btn-open-fullscreen:hover {
+      background: var(--primary);
+      color: white;
+    }
+
+    .iframe-wrapper {
+      width: 100%;
+      height: 850px;
+      background: #f8fafc;
+      position: relative;
+    }
+    .iframe-wrapper iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+
+    /* 頁尾 Footer - 典雅溫潤暖栗木/沉木茶褐漸層 */
+    footer {
+      background: linear-gradient(180deg, #2e1a12 0%, #1c0f0a 100%);
+      color: white;
+      padding: 3.5rem 1.5rem 2.5rem;
+      margin-top: 4rem;
+      border-top: 3px solid #854d0e;
+      text-align: center;
+    }
+    .footer-container {
+      max-width: 1320px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1.8rem;
+      text-align: center;
+    }
+    .footer-logos {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 1.5rem;
+      flex-wrap: wrap;
+    }
+    .footer-seal {
+      height: 60px;
+      width: auto;
+      object-fit: contain;
+      filter: drop-shadow(0 4px 10px rgba(0, 0, 0, 0.3));
+    }
+    .footer-tagline-img {
+      max-height: 46px;
+      width: auto;
+      object-fit: contain;
+    }
+    .footer-credit {
+      font-size: 0.95rem;
+      color: #fde68a;
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(253, 230, 138, 0.25);
+      padding: 0.6rem 1.6rem;
+      border-radius: 999px;
+      font-weight: 600;
+      letter-spacing: 0.5px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- 頂部品牌導覽列 -->
+  <header>
+    <div class="nav-container">
+      <a href="index.html" class="brand-group">
+        <img src="icon/seal-red.png" alt="學思軒" class="brand-seal-img">
+        <img src="icon/logo-yuwen.png" alt="語文補給站" class="brand-logo-img">
+        <div class="brand-text">
+          <span class="brand-title serif">五彩斑斕・顏色字</span>
+          <span class="brand-badge">翰林 B3L06 鳥・語文補給站</span>
+        </div>
+      </a>
+      <nav>
+        <ul>
+          <li><a href="index.html"><i data-lucide="home" size="16"></i>首頁</a></li>
+          <li><a href="#definition"><i data-lucide="book-open" size="16"></i>核心法則</a></li>
+          <li><a href="#matrix"><i data-lucide="compass" size="16"></i>色彩星盤</a></li>
+          <li><a href="#gallery"><i data-lucide="palette" size="16"></i>典範圖鑑</a></li>
+          <li><a href="#arena"><i data-lucide="swords" size="16"></i>會考挑戰</a></li>
+          <li><a href="#workshop"><i data-lucide="sparkles" size="16"></i>魔法工坊</a></li>
+          <li><a href="#practice-sec" class="nav-btn-tool"><i data-lucide="gamepad-2" size="16"></i>練習神器</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- 全幅 Hero 旗艦橫幅 -->
+    <section class="hero">
+      <div class="hero-content">
+        <div class="hero-badge-top">
+          <i data-lucide="feather" size="16"></i>
+          <span>翰林國中國文 B3L06 鳥［語文補給站］五彩斑斕</span>
+        </div>
+        <h1 class="serif">五彩斑斕：顏色字判斷旗艦學習殿堂</h1>
+        <p class="hero-desc">
+          透析「實指真色彩」與「借代比喻假顏色」！精準破解會考高頻陷阱題，收錄 103 組詞彙全圖鑑、五大色系文化解密、會考神仙挑戰賽與專屬練習神器無縫內嵌。
+        </p>
+        <div class="hero-features">
+          <span class="feature-pill"><i data-lucide="check" size="14" color="#e11d48"></i> 103 組詞彙全面析辨</span>
+          <span class="feature-pill"><i data-lucide="check" size="14" color="#e11d48"></i> 實指 vs. 非指雙色對比</span>
+          <span class="feature-pill"><i data-lucide="check" size="14" color="#e11d48"></i> 五大色系羅盤連動</span>
+          <span class="feature-pill"><i data-lucide="check" size="14" color="#e11d48"></i> 3D 互動圖鑑與真人發音</span>
+          <span class="feature-pill"><i data-lucide="check" size="14" color="#e11d48"></i> 15 題會考神仙挑戰賽</span>
+          <span class="feature-pill"><i data-lucide="check" size="14" color="#e11d48"></i> 專屬練習神器直接嵌入</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- 單元一：核心定義與破題心法 -->
+    <section id="definition" class="content-section">
+      <div class="section-header">
+        <div>
+          <span class="section-tag">Core Distinction & Methodology</span>
+          <h2 class="section-title serif"><i data-lucide="book-marked" color="#e11d48"></i> 單元一：核心法則與破題心法</h2>
+          <p class="section-desc">透析眼睛看得見的「真顏色」，與引申借代比喻的「假顏色」</p>
+        </div>
+      </div>
+
+      <div class="def-grid">
+        <div class="def-card real">
+          <div class="def-card-header">
+            <div class="def-icon-box green"><i data-lucide="check-circle-2"></i></div>
+            <h3 class="def-card-title serif">【實指顏色】（真色彩）</h3>
+          </div>
+          <p>
+            字詞在語境中<strong>具體描繪客觀物體受光反射出的實際色彩</strong>，能為肉眼所直接辨識感知。不論是單純名詞、形容詞或狀語，只要本義為色彩呈現即屬此類。
+          </p>
+          <div class="def-examples">
+            <strong>💡 代表典範：</strong><br>
+            • <strong>緋</strong>紅（鮮紅）、<strong>丹</strong>楓（紅葉）、<strong>朱</strong>曦（朝陽之紅）<br>
+            • 在涅貴不<strong>緇</strong>（黑）、朝如<strong>青</strong>絲（黑髮）、其色<strong>墨</strong>（黑）<br>
+            • <strong>素</strong>絲（白絹）、明眸<strong>皓</strong>齒（潔白）、<strong>縞</strong>衣（白衣服）<br>
+            • 草色入簾<strong>青</strong>（綠草）、<strong>殺青</strong>（竹簡青皮綠色）、<strong>慘綠</strong>少年（綠色官服）
+          </div>
+        </div>
+
+        <div class="def-card metaphor">
+          <div class="def-card-header">
+            <div class="def-icon-box rose"><i data-lucide="alert-circle"></i></div>
+            <h3 class="def-card-title serif">【非指顏色】（假顏色／借代／比喻／詞素）</h3>
+          </div>
+          <p>
+            字面上雖含有顏色字，但在特定語境中已經<strong>轉化為借代、抽象比喻、引申義、專有名詞或外來音譯</strong>，失去了描摹色彩的實質功能。
+          </p>
+          <div class="def-examples">
+            <strong>💡 代表典範：</strong><br>
+            • <strong>借代身分與事物：</strong><strong>白丁</strong>（平民）、<strong>紅顏</strong>（美女）、<strong>青史</strong>（歷史）<br>
+            • <strong>抽象引申：</strong>真相大<strong>白</strong>（清楚）、<strong>黑</strong>名單（隱密非法）、一片<strong>丹</strong>心（赤誠忠心）<br>
+            • <strong>人名與神獸：</strong><strong>墨</strong>守成規（戰國墨子）、飛<strong>黃</strong>騰達（神馬名）<br>
+            • <strong>音譯與實物：</strong><strong>紅</strong>不讓（全壘打 Home Run）、<strong>烏</strong>合之眾（烏鴉聚集）
+          </div>
+        </div>
+      </div>
+
+      <!-- 四步破題心法 -->
+      <div class="rules-banner">
+        <div class="rules-banner-header">
+          <div class="rules-banner-title serif">
+            <i data-lucide="sparkles"></i> 會考滿分心法：顏色字秒殺四字真言
+          </div>
+          <span style="font-size: 0.85rem; color: #cbd5e1;">學思軒國文科教研組獨家研發</span>
+        </div>
+        <div class="rules-grid">
+          <div class="rule-box">
+            <div class="rule-step">Step 01</div>
+            <div class="rule-head">看語境</div>
+            <div class="rule-txt">將詞語放回全句，判斷是描繪物體外觀之色，還是形容抽象感受與事物狀態。</div>
+          </div>
+          <div class="rule-box">
+            <div class="rule-step">Step 02</div>
+            <div class="rule-head">查字源</div>
+            <div class="rule-txt">拆解該字古文字本義：如墨子之墨、烏鴉之烏、空無之赤、辯白之白，切莫望文生義。</div>
+          </div>
+          <div class="rule-box">
+            <div class="rule-step">Step 03</div>
+            <div class="rule-head">分實虛</div>
+            <div class="rule-txt">「實」能見光影色調，「虛」表借代、引申、比喻或音譯，兩者涇渭分明。</div>
+          </div>
+          <div class="rule-box">
+            <div class="rule-step">Step 04</div>
+            <div class="rule-head">防陷阱</div>
+            <div class="rule-txt">特別熟記常考四大陷阱：「慘綠少年（綠衣）」、「殺青（竹皮綠）」、「青史（竹皮綠）」、「青睞（黑眼珠）」。</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 單元二：五大色系文化羅盤 -->
+    <section id="matrix" class="content-section">
+      <div class="section-header">
+        <div>
+          <span class="section-tag">Color Compass & Cultural Matrix</span>
+          <h2 class="section-title serif"><i data-lucide="compass" color="#e11d48"></i> 單元二：五大色系文化羅盤</h2>
+          <p class="section-desc">點擊下方色系卡片，即時過濾全圖鑑中的對應詞彙！</p>
+        </div>
+      </div>
+
+      <div class="matrix-container">
+        <div class="matrix-card" onclick="filterByFamily('red', this)">
+          <div class="matrix-dot" style="background: #e11d48;"></div>
+          <div class="matrix-title serif">朱赤紅系</div>
+          <div class="matrix-chars">緋、丹、朱、赤、彤、絳、赭、殷、硃</div>
+        </div>
+        <div class="matrix-card" onclick="filterByFamily('black', this)">
+          <div class="matrix-dot" style="background: #1e293b;"></div>
+          <div class="matrix-title serif">玄墨黑系</div>
+          <div class="matrix-chars">墨、烏、黔、皂、玄、緇、青、黧、黝</div>
+        </div>
+        <div class="matrix-card" onclick="filterByFamily('white', this)">
+          <div class="matrix-dot" style="background: #ffffff; border: 2px solid #cbd5e1;"></div>
+          <div class="matrix-title serif">素皓白系</div>
+          <div class="matrix-chars">素、皓、縞、白、魚肚白、斑白</div>
+        </div>
+        <div class="matrix-card" onclick="filterByFamily('blue_green', this)">
+          <div class="matrix-dot" style="background: #059669;"></div>
+          <div class="matrix-title serif">青碧藍綠系</div>
+          <div class="matrix-chars">青、碧、蒼、滄、縹、黛、蔚、翠、藍</div>
+        </div>
+        <div class="matrix-card" onclick="filterByFamily('yellow_other', this)">
+          <div class="matrix-dot" style="background: #d97706;"></div>
+          <div class="matrix-title serif">黃金灰其他系</div>
+          <div class="matrix-chars">黃、金、灰、釉、泥土</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 單元三：典範圖鑑與顏色字全資料庫 -->
+    <section id="gallery" class="content-section">
+      <div class="section-header">
+        <div>
+          <span class="section-tag">Interactive Encyclopedia</span>
+          <h2 class="section-title serif"><i data-lucide="palette" color="#e11d48"></i> 單元三：典範圖鑑與全字庫檢索</h2>
+          <p class="section-desc">完整收錄 103 組國中古文經典詞彙，點擊卡片解開精闢字義剖析！</p>
+        </div>
+      </div>
+
+      <div class="gallery-toolbar">
+        <div class="toolbar-row-top">
+          <div class="search-box">
+            <i data-lucide="search" size="18" class="search-icon"></i>
+            <input type="text" id="searchInput" placeholder="搜尋詞語、顏色字、解析關鍵字（如：緋紅、青、墨...）" oninput="handleSearch()">
+          </div>
+          <button class="btn-reveal-all" onclick="toggleRevealAll()">
+            <i data-lucide="eye" size="16"></i>
+            <span id="revealAllText">一鍵揭曉全部答案</span>
+          </button>
+        </div>
+
+        <div class="filter-chips">
+          <span style="font-size: 0.85rem; font-weight: 700; color: #64748b; margin-right: 4px;">篩選：</span>
+          <button class="chip-btn active" onclick="setFilter('all', this)">全部收錄 (<span id="count-all">103</span>)</button>
+          <button class="chip-btn" onclick="setFilter('real', this)">實指顏色 (<span id="count-real">0</span>)</button>
+          <button class="chip-btn" onclick="setFilter('fake', this)">非指顏色 (<span id="count-fake">0</span>)</button>
+          <button class="chip-btn" onclick="setFilter('family-red', this)">🔴 紅色系</button>
+          <button class="chip-btn" onclick="setFilter('family-black', this)">⚫ 黑色系</button>
+          <button class="chip-btn" onclick="setFilter('family-white', this)">⚪ 白色系</button>
+          <button class="chip-btn" onclick="setFilter('family-blue_green', this)">🔵 青綠藍系</button>
+          <button class="chip-btn" onclick="setFilter('family-yellow_other', this)">🟡 黃金灰系</button>
+        </div>
+      </div>
+
+      <div class="cards-grid" id="cardsGrid">
+        <!-- 卡片由 JavaScript 動態生成 -->
+      </div>
+    </section>
+
+    <!-- 單元四：會考神仙挑戰賽 -->
+    <section id="arena" class="content-section">
+      <div class="section-header">
+        <div>
+          <span class="section-tag">Exam Battle Arena</span>
+          <h2 class="section-title serif"><i data-lucide="swords" color="#e11d48"></i> 單元四：會考神仙挑戰賽</h2>
+          <p class="section-desc">挑戰 10 題高頻歷屆會考題型，即時變色回饋與精闢考點解析</p>
+        </div>
+      </div>
+
+      <div class="arena-container">
+        <div id="arenaPlayArea">
+          <div class="arena-status-bar">
+            <span id="arenaQuestionNum"><i data-lucide="flag" size="16"></i> 第 1 / 10 題</span>
+            <span id="arenaScoreNum"><i data-lucide="award" size="16"></i> 累積分數：0 分</span>
+          </div>
+          <div class="arena-progress-wrap">
+            <div class="arena-progress-inner" id="arenaProgressBar"></div>
+          </div>
+
+          <div class="arena-question-text serif" id="arenaQuestionText">
+            載入題目中...
+          </div>
+
+          <div class="arena-options-grid" id="arenaOptionsGrid">
+            <!-- 選項由 JS 生成 -->
+          </div>
+
+          <div class="arena-feedback" id="arenaFeedback"></div>
+
+          <div style="text-align: center;">
+            <button class="arena-next-btn" id="arenaNextBtn" onclick="nextQuestion()">
+              <span>下一題</span> <i data-lucide="arrow-right" size="16"></i>
+            </button>
+          </div>
+        </div>
+
+        <div class="arena-result-box" id="arenaResultBox">
+          <div style="font-size: 3rem;">🎉</div>
+          <div class="result-score" id="resultScore">100 分</div>
+          <div class="result-badge-title serif" id="resultBadge">【丹青聖手・五彩字神】</div>
+          <p class="result-comment" id="resultComment">
+            太厲害了！你已完全貫通古代文學顏色字的實指與非指奧秘，會考國文絕對勢如破竹！
+          </p>
+          <button class="btn-restart" onclick="startArena()">
+            <i data-lucide="rotate-ccw" size="16"></i> 重新挑戰試煉
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- 單元五：色彩魔法探究工坊 -->
+    <section id="workshop" class="content-section">
+      <div class="section-header">
+        <div>
+          <span class="section-tag">Cultural Secrets Workshop</span>
+          <h2 class="section-title serif"><i data-lucide="sparkles" color="#e11d48"></i> 單元五：色彩文化魔法工坊</h2>
+          <p class="section-desc">解密古代文人筆下的色彩冷知識與文化密碼</p>
+        </div>
+      </div>
+
+      <div class="workshop-grid">
+        <div class="workshop-card">
+          <span class="workshop-badge">常考之王</span>
+          <h3 class="serif">千面郎君「青」字大變身</h3>
+          <p>
+            「青」在古漢語中可涵蓋三種截然不同的色彩！<br>
+            • <strong>指藍色：</strong>「青天白日」、「青出於藍」<br>
+            • <strong>指綠色：</strong>「草色入簾青」、「青翠」、「殺青」<br>
+            • <strong>指黑色：</strong>「朝如青絲暮成雪」、「青眼」、「青睞」（指黑眼珠正視）
+          </p>
+        </div>
+
+        <div class="workshop-card">
+          <span class="workshop-badge">服色密碼</span>
+          <h3 class="serif">秦漢百姓的「黔首」與「白丁」</h3>
+          <p>
+            古代身分制度嚴明，服裝色彩即代表階級！<br>
+            • <strong>黔首：</strong>「黔」為黑色。秦代平民無爵位不可戴冠冕，露出黑髮，故稱黔首。<br>
+            • <strong>白丁：</strong>古代未入仕途的平民穿著未染色的白色麻布衣，故引申為沒有功名與知識的人。
+          </p>
+        </div>
+
+        <div class="workshop-card">
+          <span class="workshop-badge">千古奇冤</span>
+          <h3 class="serif">「慘綠少年」不是臉色發綠！</h3>
+          <p>
+            「慘綠少年」典出唐代李肇《國史補》。禮部侍郎潘孟陽母親暗中觀察座中賓客，唯獨稱讚一位穿著淺綠色官服的青年姿容瀟灑！「慘」通「䅟」，為淺色之意；因此「慘綠少年」在古代是稱讚<strong>風度翩翩、意氣風發的美少年</strong>！
+          </p>
+        </div>
+
+        <div class="workshop-card">
+          <span class="workshop-badge">文具典故</span>
+          <h3 class="serif">電影與書籍為何要「殺青」？</h3>
+          <p>
+            在紙張發明前，古人削竹為簡。新砍下的青竹表面青翠濕潤，容易遭蠹蟲蛀蝕。工匠須將竹簡放在火上炙烤去其青汁與水分，此工序稱為「殺青」或「汗青」。後世便引申為<strong>作品大功告成、定稿殺青</strong>！
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 單元六：專屬練習神器內嵌專區 -->
+    <section id="practice-sec" class="content-section">
+      <div class="section-header">
+        <div>
+          <span class="section-tag">Interactive Practice Tool Embed</span>
+          <h2 class="section-title serif"><i data-lucide="gamepad-2" color="#e11d48"></i> 單元六：專屬練習神器內嵌專區</h2>
+          <p class="section-desc">無縫整合 3D 雙面翻卡特訓、快問快答與專屬錯題本</p>
+        </div>
+      </div>
+
+      <div class="practice-embed-box">
+        <div class="practice-embed-header">
+          <div class="embed-title-group">
+            <div class="embed-icon-badge">
+              <i data-lucide="layers"></i>
+            </div>
+            <div>
+              <div class="embed-title-text serif">語文學習集・顏色字判斷練習神器</div>
+              <div class="embed-desc-text">支援 3D 雙面翻卡特訓、快問快答、全卷模式與個人專屬 LocalStorage 錯題本</div>
+            </div>
+          </div>
+          <a href="color/color-practice.html" target="_blank" class="btn-open-fullscreen">
+            <i data-lucide="external-link" size="16"></i> 另開全螢幕練習
+          </a>
+        </div>
+        <div class="iframe-wrapper">
+          <iframe src="color/color-practice.html" title="顏色字判斷練習神器" loading="lazy"></iframe>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- 頁尾宣告 -->
+  <footer>
+    <div class="footer-container">
+      <div class="footer-logos">
+        <img src="icon/seal-white.png" alt="學思軒" class="footer-seal" onerror="this.src='icon/seal-red.png'">
+        <img src="icon/slogan-god-dark.png" alt="只要有心人人都是國文神" class="footer-tagline-img">
+      </div>
+      <div class="footer-credit serif">
+        𖤐 本系統由學思軒黃于珊、王斐亭老師規劃設計 · 版權所有 © 2026 𖤐
+      </div>
+    </div>
+  </footer>
+
+  <!-- 資料庫與腳本 -->
+  <script>
+    const colorDb = [{"id": 1, "word": "緋紅", "isColor": true, "family": "red", "meaning": "形容鮮紅的顏色。", "analysis": "「緋」指紅色。緋紅形容顏色鮮紅。"}, {"id": 2, "word": "丹楓", "isColor": true, "family": "red", "meaning": "經霜葉紅的楓樹。", "analysis": "「丹」指紅色。丹楓指入秋後葉子轉紅的楓樹。"}, {"id": 3, "word": "朱曦", "isColor": true, "family": "red", "meaning": "紅色的陽光。", "analysis": "「朱」指紅色，曦指陽光。形容早晨紅色的陽光。"}, {"id": 4, "word": "赤焰", "isColor": true, "family": "red", "meaning": "紅色的火焰。", "analysis": "「赤」指紅色。形容火光紅艷。"}, {"id": 5, "word": "彤雲", "isColor": true, "family": "red", "meaning": "紅色的雲。", "analysis": "「彤」指紅色。彤雲即紅雲，多指將下雪前的陰雲或晚霞。"}, {"id": 6, "word": "絳衣", "isColor": true, "family": "red", "meaning": "深紅色的衣服。", "analysis": "「絳」指深紅色。絳衣即深紅色的衣裳。"}, {"id": 7, "word": "赭土", "isColor": true, "family": "red", "meaning": "紅褐色的泥土。", "analysis": "「赭」指紅褐色。"}, {"id": 8, "word": "唇紅齒白", "isColor": true, "family": "red", "meaning": "形容面容美麗。", "analysis": "「紅」與「白」在此皆指實際的顏色，形容嘴唇紅潤、牙齒潔白。"}, {"id": 9, "word": "萬紫千紅", "isColor": true, "family": "red", "meaning": "形容百花盛開的景象。", "analysis": "「紫」與「紅」實指花朵的豐富色彩。"}, {"id": 10, "word": "面紅耳赤", "isColor": true, "family": "red", "meaning": "形容羞愧、焦急或生氣的樣子。", "analysis": "「紅」與「赤」皆指臉部充血呈現的紅色。"}, {"id": 11, "word": "殷紅", "isColor": true, "family": "red", "meaning": "發黑的紅色。", "analysis": "「殷」在此指暗紅色，多用來形容血跡。"}, {"id": 12, "word": "硃砂", "isColor": true, "family": "red", "meaning": "一種紅色的礦物。", "analysis": "「硃」指紅色。硃砂可用作顏料 or 中藥。"}, {"id": 13, "word": "奼紫嫣紅", "isColor": true, "family": "red", "meaning": "形容花開得嬌豔多彩。", "analysis": "「紫」和「紅」實指花朵顏色。"}, {"id": 14, "word": "白裏透紅", "isColor": true, "family": "red", "meaning": "形容皮膚白皙而潤澤。", "analysis": "「紅」指皮膚透出的血色。"}, {"id": 15, "word": "滿面紅光", "isColor": true, "family": "red", "meaning": "形容臉色紅潤，氣色好。", "analysis": "「紅」實指臉上的紅潤氣色。"}, {"id": 16, "word": "緋聞", "isColor": false, "family": "red", "meaning": "指感情方面的傳聞。", "analysis": "「緋」原指紅色，此處引申為桃花、男女情愛相關的新聞。"}, {"id": 17, "word": "紅不讓", "isColor": false, "family": "red", "meaning": "棒球術語「全壘打」。", "analysis": "為英語 Home Run 的音譯，與顏色無關。"}, {"id": 18, "word": "紅利積點", "isColor": false, "family": "red", "meaning": "指利潤或獎金。", "analysis": "「紅」此處指利潤、好處，非指實際顏色。"}, {"id": 19, "word": "當紅炸子雞", "isColor": false, "family": "red", "meaning": "比喻正受歡迎、受重視的人。", "analysis": "「紅」引申為受歡迎、得意、發達。"}, {"id": 20, "word": "赤手空拳", "isColor": false, "family": "red", "meaning": "指空手，沒有武器。", "analysis": "「赤」在此指「空無所有」，非指紅色。"}, {"id": 21, "word": "一片丹心", "isColor": false, "family": "red", "meaning": "指赤誠的心。", "analysis": "「丹」原指紅色，此處引申為「赤誠、忠誠」之意。"}, {"id": 22, "word": "紅顏薄命", "isColor": false, "family": "red", "meaning": "指美女命運多舛。", "analysis": "「紅顏」借代為美女、女子，非單指顏色。"}, {"id": 23, "word": "眼紅", "isColor": false, "family": "red", "meaning": "比喻嫉妒。", "analysis": "形容看見別人有權勢或好處而極度羨慕、嫉妒。"}, {"id": 24, "word": "看破紅塵", "isColor": false, "family": "red", "meaning": "指看透世俗的繁華與煩惱。", "analysis": "「紅塵」指熱鬧繁華的人世間，非指紅色塵土。"}, {"id": 25, "word": "開門紅", "isColor": false, "family": "red", "meaning": "比喻開始就取得好成績。", "analysis": "「紅」引申為順利、成功。"}, {"id": 26, "word": "紅娘", "isColor": false, "family": "red", "meaning": "比喻媒人。", "analysis": "源自《西廂記》中的人物名，代指促成姻緣的人。"}, {"id": 27, "word": "走紅", "isColor": false, "family": "red", "meaning": "指變得受歡迎。", "analysis": "「紅」指受人注目、運氣好。"}, {"id": 28, "word": "赤子之心", "isColor": false, "family": "red", "meaning": "指純潔善良的心。", "analysis": "「赤子」指初生的嬰兒（皮膚泛紅），引申為純真無邪。"}, {"id": 29, "word": "滾滾紅塵", "isColor": false, "family": "red", "meaning": "指人群熙來攘往的俗世。。", "analysis": "「紅塵」指俗世、繁華熱鬧的地方。"}, {"id": 30, "word": "其色墨", "isColor": true, "family": "black", "meaning": "形容顏色像墨一樣黑。", "analysis": "「墨」指黑色。"}, {"id": 31, "word": "烏鴉", "isColor": true, "family": "black", "meaning": "一種身體黑色的鳥。", "analysis": "「烏」指黑色。"}, {"id": 32, "word": "黔首", "isColor": true, "family": "black", "meaning": "指平民百姓。", "analysis": "「黔」是黑色。古代平民不戴冠，露出黑髮，故稱黔首。"}, {"id": 33, "word": "玄端", "isColor": true, "family": "black", "meaning": "古代黑色的禮服。", "analysis": "「玄」指黑色（帶赤的黑色）。"}, {"id": 34, "word": "在涅貴不緇", "isColor": true, "family": "black", "meaning": "處於汙濁環境而不被汙染。", "analysis": "「緇」指黑色。涅是黑泥。指在黑泥中也不會被染黑。"}, {"id": 35, "word": "朝如青絲", "isColor": true, "family": "black", "meaning": "指黑髮。", "analysis": "「青」在此指黑色。形容黑髮（後接「暮成雪」）。"}, {"id": 36, "word": "黧黑", "isColor": true, "family": "black", "meaning": "黑中帶黃的顏色。", "analysis": "「黧」指黑中帶黃，通常形容膚色。"}, {"id": 37, "word": "黝黑", "isColor": true, "family": "black", "meaning": "深黑色。", "analysis": "「黝」指青黑色，常用來形容皮膚曬得很黑。"}, {"id": 38, "word": "烏溜溜", "isColor": true, "family": "black", "meaning": "形容黑而明亮。", "analysis": "常形容眼珠或頭髮的顏色。"}, {"id": 39, "word": "烏雲密布", "isColor": true, "family": "black", "meaning": "黑雲堆積。", "analysis": "「烏」指黑色的雲。"}, {"id": 40, "word": "墨鏡", "isColor": true, "family": "black", "meaning": "黑色鏡片的眼鏡。", "analysis": "「墨」指黑色。"}, {"id": 41, "word": "月黑風高", "isColor": true, "family": "black", "meaning": "月亮無光，夜色漆黑。", "analysis": "「黑」形容夜晚黑色。"}, {"id": 42, "word": "近墨者黑", "isColor": true, "family": "black", "meaning": "比喻接近壞人容易變壞。", "analysis": "「黑」實指被染黑。比喻接近壞人容易變壞。"}, {"id": 43, "word": "青紅皂白", "isColor": true, "family": "black", "meaning": "青紅皂白指各種不同的顏色。比喻事情的是非情由。", "analysis": "「皂」指黑色。"}, {"id": 44, "word": "黑名單", "isColor": false, "family": "black", "meaning": "指列入不受歡迎或需注意的名單。", "analysis": "「黑」引申為隱密的、非法的或不受歡迎的。"}, {"id": 45, "word": "背黑鍋", "isColor": false, "family": "black", "meaning": "比喻代人受過、被冤枉。", "analysis": "「黑」此處非指顏色，而是指不明之冤或罪名。"}, {"id": 46, "word": "黑社會", "isColor": false, "family": "black", "meaning": "專門從事非法活動的組織。", "analysis": "「黑」引申為非法的、地下的、見不得光的。"}, {"id": 47, "word": "墨守成規", "isColor": false, "family": "black", "meaning": "比喻思想保守，不肯改變。", "analysis": "「墨」指戰國時期的墨子（善於守城），與顏色無關。"}, {"id": 48, "word": "烏合之眾", "isColor": false, "family": "black", "meaning": "比喻暫時湊合，無組織紀律的一群人。", "analysis": "「烏」指烏鴉。意指像烏鴉一樣雜亂地聚集，非指顏色。"}, {"id": 49, "word": "混淆黑白", "isColor": false, "family": "black", "meaning": "比喻顛倒是非。", "analysis": "「黑白」在此借代為是非、對錯。"}, {"id": 50, "word": "腹黑", "isColor": false, "family": "black", "meaning": "指口蜜腹劍，心地陰險。", "analysis": "「黑」比喻陰險、壞心。"}, {"id": 51, "word": "抹黑", "isColor": false, "family": "black", "meaning": "比覽醜化、詆毀。", "analysis": "「黑」比喻醜聞或壞名聲。"}, {"id": 52, "word": "黑箱作業", "isColor": false, "family": "black", "meaning": "指辦事過程不公開、不透明。", "analysis": "「黑」引申為不公開、隱密的。"}, {"id": 53, "word": "黑市", "isColor": false, "family": "black", "meaning": "非法交易的市場。", "analysis": "「黑」指非法的、地下的交易。"}, {"id": 54, "word": "素絲", "isColor": true, "family": "white", "meaning": "白色的絲。", "analysis": "「素」指職色、未染色的絲。"}, {"id": 55, "word": "明眸皓齒", "isColor": true, "family": "white", "meaning": "明亮的眼睛，潔白的牙齒。", "analysis": "「皓」指白色、潔白。"}, {"id": 56, "word": "縞衣", "isColor": true, "family": "white", "meaning": "白色的絲衣。", "analysis": "「縞」指白色的絲織品。"}, {"id": 57, "word": "白頭偕老", "isColor": true, "family": "white", "meaning": "實指頭髮變白。", "analysis": "「白」實指頭髮變白。"}, {"id": 58, "word": "東方既白", "isColor": true, "family": "white", "meaning": "天色發白。", "analysis": "「白」指天亮時的白色光亮。"}, {"id": 59, "word": "蒼白", "isColor": true, "family": "white", "meaning": "灰白、無血色。", "analysis": "「蒼」指灰白色，形容臉色不好。"}, {"id": 60, "word": "魚肚白", "isColor": true, "family": "white", "meaning": "黎明時天空呈現的顏色。", "analysis": "形容像魚肚子一樣的灰白色。"}, {"id": 61, "word": "兩鬢斑白", "isColor": true, "family": "white", "meaning": "頭髮花白。", "analysis": "形容年紀大，頭髮變白。"}, {"id": 62, "word": "白丁", "isColor": false, "family": "white", "meaning": "指沒有功名或知識淺薄的人。", "analysis": "古代平民穿白衣，引申為沒有官職或知識的人。"}, {"id": 63, "word": "白白浪費", "isColor": false, "family": "white", "meaning": "徒然、無代價地。", "analysis": "「白」在此指徒然、無效，非指顏色。"}, {"id": 64, "word": "不白之冤", "isColor": false, "family": "white", "meaning": "沒有辯明、解釋清楚的冤屈。", "analysis": "「白」在此指辯白、陳述、弄清楚。"}, {"id": 65, "word": "真相大白", "isColor": false, "family": "white", "meaning": "真實情況完全顯露出來。", "analysis": "「白」在此指顯露、彰明、清楚。"}, {"id": 66, "word": "素琴", "isColor": false, "family": "white", "meaning": "不加雕飾的琴。", "analysis": "「素」在此指樸素、單純、不加裝飾的。"}, {"id": 67, "word": "素稔", "isColor": false, "family": "white", "meaning": "平日就很熟悉。", "analysis": "「素」在此指平日、向來。"}, {"id": 68, "word": "白手起家", "isColor": false, "family": "white", "meaning": "形容在沒有基礎或條件下創立事業。", "analysis": "「白手」指空手，引申為沒有資金或憑藉。"}, {"id": 69, "word": "白費心機", "isColor": false, "family": "white", "meaning": "徒勞無功。", "analysis": "「白」指徒然、無效。"}, {"id": 70, "word": "白吃白喝", "isColor": false, "family": "white", "meaning": "不付錢而吃喝。", "analysis": "「白」指免費、不付代價。"}, {"id": 71, "word": "白日夢", "isColor": false, "family": "white", "meaning": "白天的夢，比喻幻想。", "analysis": "「白日」指白天，非指顏色。"}, {"id": 72, "word": "碧海", "isColor": true, "family": "blue_green", "meaning": "深青色的海。", "analysis": "「碧」指深青色或青綠色。"}, {"id": 73, "word": "蒼天", "isColor": true, "family": "blue_green", "meaning": "深青色的天。", "analysis": "「蒼」指深青色。"}, {"id": 74, "word": "滄海一粟", "isColor": true, "family": "blue_green", "meaning": "深青色大海中的一粒米。", "analysis": "「滄」指深青色。"}, {"id": 75, "word": "縹碧", "isColor": true, "family": "blue_green", "meaning": "淡青色。", "analysis": "「縹」指淡青色；「碧」指青綠色。"}, {"id": 76, "word": "草色入簾青", "isColor": true, "family": "blue_green", "meaning": "形容草色映入簾中。", "analysis": "「青」實指草的綠色。"}, {"id": 77, "word": "黛青", "isColor": true, "family": "blue_green", "meaning": "青黑色。", "analysis": "「黛」指青黑色的顏料。"}, {"id": 78, "word": "蔚藍", "isColor": true, "family": "blue_green", "meaning": "深藍色。", "analysis": "「蔚」形容草木茂盛，此處指深藍。"}, {"id": 79, "word": "翠綠", "isColor": true, "family": "blue_green", "meaning": "像翡翠一樣的綠色。", "analysis": "「翠」指綠色。"}, {"id": 80, "word": "青苔", "isColor": true, "family": "blue_green", "meaning": "綠色的苔蘚。", "analysis": "「青」在此指綠色。"}, {"id": 81, "word": "碧玉", "isColor": true, "family": "blue_green", "meaning": "綠色的玉石。", "analysis": "「碧」指青綠色。"}, {"id": 82, "word": "青翠", "isColor": true, "family": "blue_green", "meaning": "鮮綠色。", "analysis": "「青」指綠色。"}, {"id": 83, "word": "殺青", "isColor": true, "family": "blue_green", "meaning": "指著作完成或電影拍完。", "analysis": "「青」指竹皮的綠色。"}, {"id": 84, "word": "垂青", "isColor": true, "family": "blue_green", "meaning": "指受到重視或喜愛。", "analysis": "「青」指眼珠的黑色（青眼）。"}, {"id": 85, "word": "爐火純青", "isColor": true, "family": "blue_green", "meaning": "比喻學問或技藝達到完美境界。", "analysis": "「青」指火焰最高溫時呈現的青色。"}, {"id": 86, "word": "青史", "isColor": true, "family": "blue_green", "meaning": "指歷史。", "analysis": "「青」指竹簡的綠色。"}, {"id": 87, "word": "青出於藍", "isColor": true, "family": "blue_green", "meaning": "比喻學生超過老師。", "analysis": "「青」指靛青色，「藍」指藍草。"}, {"id": 88, "word": "青睞", "isColor": true, "family": "blue_green", "meaning": "重視、好意相待的意思。", "analysis": "「青」指眼珠的黑色。"}, {"id": 89, "word": "慘綠少年", "isColor": true, "family": "blue_green", "meaning": "指風度翩翩、意氣風發的青年才俊。", "analysis": "「綠」指綠色衣服。"}, {"id": 90, "word": "明日黃花", "isColor": true, "family": "yellow_other", "meaning": "重陽節後枯萎的菊花。", "analysis": "「黃花」實指菊花。"}, {"id": 91, "word": "人老珠黃", "isColor": true, "family": "yellow_other", "meaning": "形容珍珠年久變黃。", "analysis": "「黃」是實指顏色。"}, {"id": 92, "word": "黃毛丫頭", "isColor": true, "family": "yellow_other", "meaning": "指年輕懂事的女孩。", "analysis": "「黃」指幼兒頭髮稀疏呈現的黃色。"}, {"id": 93, "word": "泛黃", "isColor": true, "family": "yellow_other", "meaning": "呈現黃色。", "analysis": "實指紙張變舊的顏色。"}, {"id": 94, "word": "灰白", "isColor": true, "family": "white", "meaning": "淺灰色。", "analysis": "實指顏色。"}, {"id": 95, "word": "金玉良言", "isColor": false, "family": "yellow_other", "meaning": "比喻珍貴的勸告。", "analysis": "「金」比喻珍貴。"}, {"id": 96, "word": "固若金湯", "isColor": false, "family": "yellow_other", "meaning": "比喻防守堅固。", "analysis": "「金」指金屬喻堅固。"}, {"id": 97, "word": "掃黃", "isColor": false, "family": "yellow_other", "meaning": "取締色情。", "analysis": "「黃」指色情刊物或活動。"}, {"id": 98, "word": "心灰意冷", "isColor": false, "family": "yellow_other", "meaning": "意志消沈。", "analysis": "「灰」比喻消沈。"}, {"id": 99, "word": "青春", "isColor": false, "family": "blue_green", "meaning": "指年輕、少壯的歲月，比喻生命蓬勃旺盛的時期。", "analysis": "「青」在此借代指年少、年輕，非單純指顏色。"}, {"id": 100, "word": "青年", "isColor": false, "family": "blue_green", "meaning": "指十幾歲至三十幾歲之間的年輕人。", "analysis": "「青」在此引申指年輕、少壯，非指綠色或青色。"}, {"id": 101, "word": "飛黃騰達", "isColor": false, "family": "yellow_other", "meaning": "比喻官職或事業迅速升遷、得意洋洋。", "analysis": "「飛黃」是古代傳說中的神馬名，與顏色無關。"}, {"id": 102, "word": "釉彩", "isColor": false, "family": "yellow_other", "meaning": "指陶瓷表面經高溫燒成光滑玻璃質的塗料物質。", "analysis": "「釉」為礦物原料與化學塗層名稱，非單指顏色。"}, {"id": 103, "word": "灰頭土臉", "isColor": false, "family": "yellow_other", "meaning": "形容面容蒙上塵土、狼狽不堪的樣子。", "analysis": "「灰」指塵灰，「土」指泥土，兩者皆為物質名稱，引申為狼狽貌。"}];
+    const arenaDb = [{"id": 1, "question": "「慘綠少年」在古代文人筆下的原意為何？", "options": ["穿著淺綠色官服、風度翩翩的美少年", "臉色發綠、身患重疾的貧病少年", "遭遇慘澹、孤苦無依的苦命少年", "意志消沉、整天無所事事的墮落少年"], "answer": 0, "explain": "唐代潘孟陽拜禮部侍郎，其母見席上賓客皆庸庸碌碌，唯見一人風姿秀拔，讚其為「慘綠少年」。「慘」通「䅟」，意為淺色，「綠」實指綠色袍服，後指風度翩翩、意氣風發的青年才俊。"}, {"id": 2, "question": "李白詩句「君不見高堂明鏡悲白髮，朝如青絲暮成雪」，句中的「青」字實指何種顏色？", "options": ["黑色（烏黑的秀髮）", "青綠色（如青草般的顏色）", "藍色（像晴空的顏色）", "蒼白色（灰暗斑白的顏色）"], "answer": 0, "explain": "「朝如青絲」形容早晨還是烏黑光亮的秀髮，傍晚已如雪白。「青」在此專指「黑色」。「其色墨」之「墨」亦為黑色。"}, {"id": 3, "question": "下列各選項詞語中的「顏色字」，何者「實指真正的顏色」？", "options": ["「緋」紅的花朵", "「緋」聞滿天飛", "領取「紅」利積點", "打出「紅」不讓"], "answer": 0, "explain": "「緋紅」之「緋」實指鮮紅色。「緋聞」借指男女桃色傳聞；「紅利」指利潤；「紅不讓」為 Home Run 全壘打之音譯，皆非指顏色。"}, {"id": 4, "question": "周敦頤《愛蓮說》中「出淤泥而不染」的意境，與成語「在涅貴不緇」相近。其中「緇」字所代表的顏色為何？", "options": ["黑色", "白色", "紅色", "青色"], "answer": 0, "explain": "「涅」指可做黑色染料的礬石泥，「緇」指黑色。全句指處於汙濁黑泥中，最可貴的是不被染成黑色。"}, {"id": 5, "question": "下列成語或詞語中的「白」字，何者「非指顏色」？", "options": ["真相大「白」", "素絲「縞」衣", "明眸「皓」齒", "兩鬢「斑白」"], "answer": 0, "explain": "「真相大白」之「白」意為「清楚、彰明、顯露」，並非色彩。「素絲」之素為未染之白絹，「縞」為白絹，「皓」為潔白，「斑白」為花白，皆為實指顏色。"}, {"id": 6, "question": "「青出於藍，而勝於藍」這句名言中的「青」與「藍」，所指的意涵為何？", "options": ["「青」指靛青染料，「藍」指蓼藍草（皆指顏色）", "「青」指萬里晴空，「藍」指深藍大海", "「青」指青春少年，「藍」指藍天白雲", "「青」指翠綠竹林，「藍」指天然寶石"], "answer": 0, "explain": "《荀子・勸學》：「青，取之於藍，而青於藍。」「青」指提煉出的靛青染料，「藍」指草本植物蓼藍。比喻學生勝過老師。"}, {"id": 7, "question": "秦始皇統一天下後，下令將平民百姓稱作「黔首」。此稱呼與哪種顏色有關？", "options": ["黑色（平民無官帽，露出黑髮）", "白色（平民身穿素白麻布）", "紅色（平民戴紅頭巾）", "黃色（黃帝炎黃子孫之色）"], "answer": 0, "explain": "「黔」指黑色。古時平民不可戴冠，直接以黑巾裹頭或露出黑髮，故秦朝稱百姓為「黔首」。"}, {"id": 8, "question": "「墨守成規」中的「墨」字，其本來意思為何？", "options": ["戰國思想家「墨子」的姓名，與顏色無關", "黑色的墨汁，比喻死板僵化", "古代五刑中的「墨刑」（刺字於臉）", "書法繪畫所用的徽墨，比喻文人雅士"], "answer": 0, "explain": "戰國墨子善於守城，曾挫敗公輸般的雲梯進攻。後世引申為不知變通守舊。「墨」為墨子姓氏，非顏色字。"}, {"id": 9, "question": "現代影視作品拍攝完成或書籍印刷完畢常稱為「殺青」，此詞中的「青」字來源為何？", "options": ["古代削去竹簡青皮、用火烘烤汗青去水分", "用青綠色顏料在書卷末尾加蓋印記", "代表作品如同青春歲月一樣生生不息", "古代帝王以青銅刀刻字封卷的儀式"], "answer": 0, "explain": "古代以竹簡製書，新砍竹子表皮青綠含水分，易生蟲蛀。須在火上炙烤去其青汁，稱為「殺青」或「汗青」。故「青」實指竹皮之綠色。"}, {"id": 10, "question": "成語「青紅皂白」常用來比喻事情的是非情由。其中「皂」字代表何種顏色？", "options": ["黑色", "白色", "透明色", "灰綠色"], "answer": 0, "explain": "「皂」在古代專指黑色（如皂衣、不分皂白）。「青紅皂白」即青色、紅色、黑色、白色，比喻事物的是非黑白曲直。"}, {"id": 11, "question": "下列詞語中的「赤」字，何者意思為「空無所有、徒手」，屬於「非指顏色」？", "options": ["「赤」手空拳", "「赤」焰沖天", "面紅耳「赤」", "「赤」兔追風"], "answer": 0, "explain": "「赤手空拳」之「赤」意為「光禿、空無、徒手」，非指顏色。「赤焰」、「面紅耳赤」、「赤兔」之「赤」皆實指紅色。"}, {"id": 12, "question": "阮籍能為「青白眼」，遇嵇康等人則見青眼，遇嵇喜則見白眼。今日「青睞」、「垂青」中的「青」實指人體的何處？", "options": ["正視時顯露的「黑眼珠」（青＝黑）", "斜眼看人時眼白泛出的青光", "年輕人如青草般清澈的眼眸", "眼皮上塗抹的青黑色黛粉"], "answer": 0, "explain": "古代稱黑眼珠為「青眼」，斜視露出眼白為「白眼」。以黑眼珠正視表示看重、喜愛，故「青睞」、「垂青」之「青」實指黑眼珠之色（青＝黑）。"}, {"id": 13, "question": "「滄海一粟」與「縹碧」皆為描繪水色山光之美詞，其中「滄」與「縹」分別表示何種色彩？", "options": ["「滄」為深青色，「縹」為淡青色", "「滄」為蒼白無色，「縹」為翠綠色", "「滄」為漆黑如墨，「縹」為深藍色", "「滄」為湛藍如天，「縹」為深褐色"], "answer": 0, "explain": "「滄」指深青色（滄海即深青色的大海）；「縹」指淡青色（縹碧指淡青碧綠之水）。"}, {"id": 14, "question": "蘇軾詞云：「相逢不用忙歸去，明日黃花蝶也愁。」句中「明日黃花」的「黃花」實指何者？", "options": ["九月九日重陽節後枯萎過期的菊花", "三月春天盛開後掉落的油菜花", "夏日盛開隨風飄散的向日葵", "初冬落盡葉片的枯木黃枝"], "answer": 0, "explain": "「黃花」指菊花。九月九日重陽節賞菊，重陽過後菊花漸萎。「明日黃花」實指過時事物，其中的「黃」實指菊花之黃色。"}, {"id": 15, "question": "下列詞語中的字詞，何者為神馬之名，因而「非指顏色」？", "options": ["飛「黃」騰達", "人老珠「黃」", "「黃」毛丫頭", "枯紙泛「黃」"], "answer": 0, "explain": "「飛黃騰達」中的「飛黃」又名乘黃，是古代神話傳說中的神馬名，乘之可壽二千歲。此詞比喻升遷得意，與顏色無關。"}];
+
+    let currentFilter = 'all';
+    let allRevealed = false;
+
+    // 統計數量
+    function updateCounts() {
+      document.getElementById('count-all').innerText = colorDb.length;
+      document.getElementById('count-real').innerText = colorDb.filter(x => x.isColor).length;
+      document.getElementById('count-fake').innerText = colorDb.filter(x => !x.isColor).length;
+    }
+
+    // 渲染圖鑑卡片
+    function renderCards(list) {
+      const grid = document.getElementById('cardsGrid');
+      grid.innerHTML = '';
+
+      if (list.length === 0) {
+        grid.innerHTML = '<div style="grid-column: 1 / -1; text-align: center; padding: 40px; color: #94a3b8; font-size: 1.1rem;">沒有符合條件的詞語，請嘗試其他關鍵字。</div>';
+        return;
+      }
+
+      list.forEach(item => {
+        const card = document.createElement('div');
+        card.className = 'word-card';
+        card.onclick = () => toggleCardDetails(item.id);
+
+        const familyTags = {
+          'red': { text: '🔴 朱赤紅系', class: 'tag-red' },
+          'black': { text: '⚫ 玄墨黑系', class: 'tag-black' },
+          'white': { text: '⚪ 素皓白系', class: 'tag-white' },
+          'blue_green': { text: '🔵 青綠藍系', class: 'tag-blue_green' },
+          'yellow_other': { text: '🟡 黃金灰系', class: 'tag-yellow_other' }
+        };
+        const fam = familyTags[item.family] || { text: '🎨 其他色系', class: 'tag-white' };
+
+        const badgeClass = item.isColor ? 'badge-real' : 'badge-fake';
+        const badgeText = item.isColor ? '✓ 實指顏色（真色）' : '✕ 非指顏色（假色）';
+        const blurClass = allRevealed ? '' : 'badge-blurred';
+
+        card.innerHTML = `
+          <div>
+            <div class="card-top">
+              <span class="card-family-tag ${fam.class}">${fam.text}</span>
+              <button class="card-tts-btn" onclick="event.stopPropagation(); speakText('${item.word}，${item.isColor ? '實指顏色' : '非指顏色'}，${item.analysis}')" title="朗讀發音">
+                <i data-lucide="volume-2" size="18"></i>
+              </button>
+            </div>
+            <div class="card-word serif">${item.word}</div>
+            <div>
+              <span class="card-badge-judge ${badgeClass} ${blurClass}" id="badge-${item.id}">
+                ${badgeText}
+              </span>
+            </div>
+            <div class="card-prompt-hint">
+              <i data-lucide="mouse-pointer-click" size="13"></i> 點擊展開字義與解構
+            </div>
+          </div>
+          <div class="card-details ${allRevealed ? 'show' : ''}" id="details-${item.id}">
+            <div style="font-weight: 700; color: #1e293b; margin-bottom: 3px;">【釋義】${item.meaning}</div>
+            <div style="color: #64748b; font-size: 0.85rem;">【解析】${item.analysis}</div>
+          </div>
+        `;
+        grid.appendChild(card);
+      });
+
+      lucide.createIcons();
+    }
+
+    // 單張卡片切換展開
+    function toggleCardDetails(id) {
+      const details = document.getElementById(`details-${id}`);
+      const badge = document.getElementById(`badge-${id}`);
+      if (details) details.classList.toggle('show');
+      if (badge) badge.classList.remove('badge-blurred');
+    }
+
+    // 一鍵揭曉 / 隱藏
+    function toggleRevealAll() {
+      allRevealed = !allRevealed;
+      const badges = document.querySelectorAll('.card-badge-judge');
+      const details = document.querySelectorAll('.card-details');
+
+      badges.forEach(b => {
+        if (allRevealed) b.classList.remove('badge-blurred');
+        else b.classList.add('badge-blurred');
+      });
+
+      details.forEach(d => {
+        if (allRevealed) d.classList.add('show');
+        else d.classList.remove('show');
+      });
+
+      document.getElementById('revealAllText').innerText = allRevealed ? '一鍵隱藏全部答案' : '一鍵揭曉全部答案';
+    }
+
+    // 關鍵字搜尋
+    function handleSearch() {
+      const query = document.getElementById('searchInput').value.trim().toLowerCase();
+      let filtered = filterList(currentFilter);
+
+      if (query) {
+        filtered = filtered.filter(item => 
+          item.word.toLowerCase().includes(query) ||
+          item.meaning.toLowerCase().includes(query) ||
+          item.analysis.toLowerCase().includes(query)
+        );
+      }
+
+      renderCards(filtered);
+    }
+
+    // 依類別過濾
+    function setFilter(type, btn) {
+      currentFilter = type;
+      document.querySelectorAll('.chip-btn').forEach(b => b.classList.remove('active'));
+      document.querySelectorAll('.matrix-card').forEach(c => c.classList.remove('active'));
+      if (btn) btn.classList.add('active');
+
+      const query = document.getElementById('searchInput').value.trim().toLowerCase();
+      let list = filterList(type);
+      if (query) {
+        list = list.filter(item => 
+          item.word.toLowerCase().includes(query) ||
+          item.meaning.toLowerCase().includes(query) ||
+          item.analysis.toLowerCase().includes(query)
+        );
+      }
+      renderCards(list);
+    }
+
+    function filterByFamily(family, cardEl) {
+      document.querySelectorAll('.matrix-card').forEach(c => c.classList.remove('active'));
+      if (cardEl) cardEl.classList.add('active');
+
+      document.querySelectorAll('.chip-btn').forEach(b => b.classList.remove('active'));
+      currentFilter = 'family-' + family;
+
+      const query = document.getElementById('searchInput').value.trim().toLowerCase();
+      let list = colorDb.filter(x => x.family === family);
+      if (query) {
+        list = list.filter(item => 
+          item.word.toLowerCase().includes(query) ||
+          item.meaning.toLowerCase().includes(query) ||
+          item.analysis.toLowerCase().includes(query)
+        );
+      }
+      renderCards(list);
+
+      const target = document.getElementById('gallery');
+      target.scrollIntoView({ behavior: 'smooth' });
+    }
+
+    function filterList(type) {
+      if (type === 'all') return colorDb;
+      if (type === 'real') return colorDb.filter(x => x.isColor);
+      if (type === 'fake') return colorDb.filter(x => !x.isColor);
+      if (type.startsWith('family-')) {
+        const fam = type.replace('family-', '');
+        return colorDb.filter(x => x.family === fam);
+      }
+      return colorDb;
+    }
+
+    // Web Speech API 朗讀
+    function speakText(text) {
+      if (!('speechSynthesis' in window)) {
+        alert('您的瀏覽器不支援語音合成朗讀功能');
+        return;
+      }
+      window.speechSynthesis.cancel();
+      const u = new SpeechSynthesisUtterance(text);
+      u.lang = 'zh-TW';
+      u.rate = 0.95;
+      window.speechSynthesis.speak(u);
+    }
+
+    // 會考挑戰賽邏輯
+    let currentArenaQuestions = [];
+    let currentQIndex = 0;
+    let arenaScore = 0;
+
+    function startArena() {
+      currentArenaQuestions = [...arenaDb].sort(() => 0.5 - Math.random()).slice(0, 10);
+      currentQIndex = 0;
+      arenaScore = 0;
+      document.getElementById('arenaPlayArea').style.display = 'block';
+      document.getElementById('arenaResultBox').style.display = 'none';
+      renderArenaQuestion();
+    }
+
+    function renderArenaQuestion() {
+      const q = currentArenaQuestions[currentQIndex];
+      document.getElementById('arenaQuestionNum').innerHTML = `<i data-lucide="flag" size="16"></i> 第 ${currentQIndex + 1} / ${currentArenaQuestions.length} 題`;
+      document.getElementById('arenaScoreNum').innerHTML = `<i data-lucide="award" size="16"></i> 累積分數：${arenaScore} 分`;
+      document.getElementById('arenaProgressBar').style.width = `${(currentQIndex / currentArenaQuestions.length) * 100}%`;
+
+      document.getElementById('arenaQuestionText').innerText = q.question;
+
+      const grid = document.getElementById('arenaOptionsGrid');
+      grid.innerHTML = '';
+      q.options.forEach((opt, idx) => {
+        const btn = document.createElement('button');
+        btn.className = 'arena-opt-btn';
+        btn.innerText = opt;
+        btn.onclick = () => checkAnswer(idx, q.answer, btn, q);
+        grid.appendChild(btn);
+      });
+
+      const fb = document.getElementById('arenaFeedback');
+      fb.className = 'arena-feedback';
+      fb.innerHTML = '';
+      document.getElementById('arenaNextBtn').className = 'arena-next-btn';
+
+      lucide.createIcons();
+    }
+
+    function checkAnswer(selectedIdx, correctIdx, btnEl, q) {
+      const btns = document.querySelectorAll('.arena-opt-btn');
+      btns.forEach(b => b.disabled = true);
+
+      const fb = document.getElementById('arenaFeedback');
+
+      if (selectedIdx === correctIdx) {
+        btnEl.classList.add('correct');
+        arenaScore += 10;
+        fb.className = 'arena-feedback show is-correct';
+        fb.innerHTML = `<strong>🎉 答對了！恭喜得分！</strong><br>${q.explain}`;
+      } else {
+        btnEl.classList.add('wrong');
+        btns[correctIdx].classList.add('correct');
+        fb.className = 'arena-feedback show is-wrong';
+        fb.innerHTML = `<strong>❌ 答錯了！正確答案為：${q.options[correctIdx]}</strong><br>${q.explain}`;
+      }
+
+      document.getElementById('arenaScoreNum').innerHTML = `<i data-lucide="award" size="16"></i> 累積分數：${arenaScore} 分`;
+      document.getElementById('arenaNextBtn').className = 'arena-next-btn show';
+      document.getElementById('arenaProgressBar').style.width = `${((currentQIndex + 1) / currentArenaQuestions.length) * 100}%`;
+    }
+
+    function nextQuestion() {
+      currentQIndex++;
+      if (currentQIndex < currentArenaQuestions.length) {
+        renderArenaQuestion();
+      } else {
+        finishArena();
+      }
+    }
+
+    function finishArena() {
+      document.getElementById('arenaPlayArea').style.display = 'none';
+      const res = document.getElementById('arenaResultBox');
+      res.style.display = 'block';
+
+      document.getElementById('resultScore').innerText = `${arenaScore} 分`;
+
+      let badge = '';
+      let comment = '';
+      if (arenaScore === 100) {
+        badge = '🏆【丹青聖手・五彩字神】';
+        comment = '太震撼了！滿分完美過關！你已完全貫通古代文學顏色字的實指與非指奧秘，會考國文顏色字題目無人能敵！';
+      } else if (arenaScore >= 80) {
+        badge = '🥈【色彩博學家・筆墨生輝】';
+        comment = '非常優秀！對大部分顏色字掌握度極高，多留意四大陷阱（慘綠少年、殺青、青史、青睞）就能輕鬆攻克滿分！';
+      } else {
+        badge = '🥉【調色見習生・潛力無限】';
+        comment = '別氣餒！掌握「看語境、查字源、分實虛、防陷阱」四字真言，再到下方的專屬練習神器特訓幾次，保證迅速躍升！';
+      }
+
+      document.getElementById('resultBadge').innerText = badge;
+      document.getElementById('resultComment').innerText = comment;
+      lucide.createIcons();
+    }
+
+    // 初始化
+    window.addEventListener('DOMContentLoaded', () => {
+      updateCounts();
+      renderCards(colorDb);
+      startArena();
+      lucide.createIcons();
+    });
+  </script>
+</body>
+</html>
