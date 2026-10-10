@@ -358,22 +358,27 @@
       display: flex;
       align-items: stretch;
       justify-content: space-between;
-      gap: 1rem;
+      gap: 0.5rem;
       margin-bottom: 2rem;
-      flex-wrap: wrap;
+      flex-wrap: nowrap;
+      width: 100%;
     }
 
     .hierarchy-node {
-      flex: 1;
-      min-width: 200px;
+      flex: 1 1 0;
+      min-width: 0;
       background: #f8fafc;
       border: 2px solid #e2e8f0;
       border-radius: var(--radius-md);
-      padding: 1.2rem;
+      padding: 1.1rem 0.5rem;
       text-align: center;
       position: relative;
       transition: all 0.3s ease;
       cursor: pointer;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
     }
 
     .hierarchy-node:hover, .hierarchy-node.active {
@@ -385,13 +390,14 @@
 
     .hierarchy-tag {
       display: inline-block;
-      font-size: 0.75rem;
+      font-size: 0.72rem;
       font-weight: 700;
-      padding: 0.2rem 0.6rem;
+      padding: 0.2rem 0.55rem;
       border-radius: 999px;
       background: #e2e8f0;
       color: #475569;
       margin-bottom: 0.5rem;
+      white-space: nowrap;
     }
 
     .hierarchy-node.active .hierarchy-tag {
@@ -403,13 +409,15 @@
       font-size: 1.6rem;
       font-weight: 900;
       color: var(--dark);
-      margin-bottom: 0.4rem;
+      margin-bottom: 0.35rem;
+      line-height: 1.1;
     }
 
     .hierarchy-desc {
-      font-size: 0.85rem;
+      font-size: 0.8rem;
       color: var(--gray);
       line-height: 1.45;
+      word-break: break-word;
     }
 
     .hierarchy-arrow {
@@ -417,7 +425,21 @@
       align-items: center;
       justify-content: center;
       color: #94a3b8;
-      font-size: 1.5rem;
+      font-size: 1.25rem;
+      flex-shrink: 0;
+      padding: 0 0.15rem;
+    }
+
+    @media (max-width: 900px) {
+      .hierarchy-container {
+        overflow-x: auto;
+        padding-bottom: 0.8rem;
+        -webkit-overflow-scrolling: touch;
+      }
+      .hierarchy-node {
+        flex: 0 0 160px;
+        min-width: 160px;
+      }
     }
 
     /* 詞類架構全景樹狀卡片 */
