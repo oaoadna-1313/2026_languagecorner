@@ -482,6 +482,10 @@
       border-top: 6px solid #4338ca;
     }
 
+    .flagship-card.oldpoem-card {
+      border-top: 6px solid #a62b2b;
+    }
+
     .flagship-banner {
       padding: 2rem 2.2rem 1.5rem;
       position: relative;
@@ -529,6 +533,10 @@
 
     .poetry-card .flagship-banner {
       background: linear-gradient(135deg, #eef2ff 0%, #e0e7ff 100%);
+    }
+
+    .oldpoem-card .flagship-banner {
+      background: linear-gradient(135deg, #fdf8f6 0%, #fef2f2 100%);
     }
 
     .flagship-tag-row {
@@ -598,6 +606,11 @@
 
     .poetry-card .flagship-category {
       background: #4338ca;
+      color: white;
+    }
+
+    .oldpoem-card .flagship-category {
+      background: #a62b2b;
       color: white;
     }
 
@@ -777,6 +790,17 @@
       background: linear-gradient(135deg, #3730a3, #312e81);
       transform: translateY(-2px);
       box-shadow: 0 8px 20px rgba(67, 56, 202, 0.35);
+    }
+
+    .oldpoem-card .btn-enter-primary {
+      background: linear-gradient(135deg, #a62b2b, #7f1d1d);
+      color: white;
+    }
+
+    .oldpoem-card .btn-enter-primary:hover {
+      background: linear-gradient(135deg, #7f1d1d, #5a1414);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 20px rgba(166, 43, 43, 0.35);
     }
 
     /* 練習神器模組精選區 (5個小卡片網格) */
@@ -1166,7 +1190,7 @@
       </h1>
 
       <div class="hero-features-bar">
-        <div class="hero-feature-chip"><i data-lucide="check-circle-2" style="color:#10b981; width:16px;"></i> 11 大旗艦主題殿堂</div>
+        <div class="hero-feature-chip"><i data-lucide="check-circle-2" style="color:#10b981; width:16px;"></i> 12 大旗艦主題殿堂</div>
         <div class="hero-feature-chip"><i data-lucide="check-circle-2" style="color:#10b981; width:16px;"></i> 23 款專屬練習神器</div>
         <div class="hero-feature-chip"><i data-lucide="check-circle-2" style="color:#10b981; width:16px;"></i> 全真人語音發音朗讀</div>
         <div class="hero-feature-chip"><i data-lucide="check-circle-2" style="color:#10b981; width:16px;"></i> 跨載具響應式支援（手機/平板/電腦）</div>
@@ -1199,12 +1223,12 @@
           <h2 class="section-title serif"><i data-lucide="crown"></i> 旗艦學習殿堂主題</h2>
           <p class="section-desc">深度結合課文情境、觀念圖解、典範圖鑑與即時互動測驗的主題式教學網頁</p>
         </div>
-        <span class="section-count">11 大主題殿堂</span>
+        <span class="section-count">12 大主題殿堂</span>
       </div>
 
       <div class="flagship-grid">
-        <!-- 殿堂 1：移覺（通感）修辭互動學習殿堂 -->
-        <article class="flagship-card yijay-card course-item" data-keywords="移覺 通感 修辭 視覺 聽覺 嗅覺 味覺 觸覺 翰林 國文 課文 圖鑑 造句 會考">
+        <!-- 殿堂 1：移覺（通感）修辭互動學習殿堂 (B3L01 田園之秋選) -->
+        <article class="flagship-card yijay-card course-item" data-keywords="移覺 通感 修辭 視覺 聽覺 嗅覺 味覺 觸覺 翰林 國文 課文 圖鑑 造句 會考 B3L01 田園之秋選">
           <div class="flagship-banner">
             <div class="flagship-tag-row">
               <span class="flagship-category">核心修辭特訓</span>
@@ -1222,159 +1246,45 @@
           </div>
         </article>
 
-        <!-- 殿堂 2：時序之美：傳統節日與二十四節氣 -->
-        <article class="flagship-card holiday-card course-item" data-keywords="時序之美 節日 傳統節日 二十四節氣 曆法 詩詞 節令 農曆 陽曆 陰陽合曆 會考">
+        <!-- 殿堂 2：古詩十九首・互動學習殿堂 (B3L02 古詩選) -->
+        <article class="flagship-card oldpoem-card course-item" data-keywords="古詩十九首 古詩選 翰林 B3L02 昭明文選 行行重行行 青青河畔草 青青陵上柏 今日良宴會 西北有高樓 涉江採芙蓉 明月皎夜光 冉冉孤生竹 庭中有奇樹 迢迢牽牛星 迴車駕言邁 東城高且長 驅車上東門 去者日以疏 生年不滿百 凜凜歲云暮 孟冬寒氣至 客從遠方來 明月何皎皎 五言之冠冕 沈德潛 劉勰 鍾嶸 國文 會考">
           <div class="flagship-banner">
             <div class="flagship-tag-row">
-              <span class="flagship-category">國學與跨科素養</span>
-              <span class="flagship-level"><i data-lucide="sun-moon" style="width:15px;"></i> 翰林 B3L03 下雨天，真好</span>
+              <span class="flagship-category">文學經典旗艦</span>
+              <span class="flagship-level"><i data-lucide="book-open" style="width:15px;"></i> 翰林 B3L02《古詩選》</span>
             </div>
-            <h3 class="flagship-title serif">時序之美：傳統節日與二十四節氣殿堂</h3>
-            <p class="flagship-subtitle">歲月流轉・天地同歌！融合國文詩詞意境與自然科普天文曆法的跨領域旗艦殿堂。</p>
+            <h3 class="flagship-title serif">《古詩十九首》數位互動學習殿堂</h3>
+            <p class="flagship-subtitle">文溫以麗，意悲而遠，一字千金！全十九首漢代五言抒情詩冠冕，整合逐聯對照、230+ 訓詁注釋、全篇賞析、全真語音朗讀與隨堂互動挑戰。</p>
           </div>
           <div class="flagship-body">
             <div class="flagship-action-box">
-              <a href="holiday.html" class="btn-enter-primary">
-                <i data-lucide="sun-moon"></i> 進入時序之美殿堂
+              <a href="oldpoem19.html" class="btn-enter-primary">
+                <i data-lucide="book-open"></i> 進入古詩十九首殿堂
               </a>
             </div>
           </div>
         </article>
 
-        <!-- 殿堂 3：詞類與詞性・互動學習殿堂 -->
-        <article class="flagship-card pos-card course-item" data-keywords="詞性 詞類 語一 實詞 虛詞 名詞 動詞 形容詞 副詞 代詞 數量詞 介詞 連詞 助詞 嘆詞 轉品 聯綿詞 複詞 偏義複詞 同義複詞 歌詞一百 翰林 國文 會考">
+        <!-- 殿堂 3：古典詩境・詩詞表現手法與常見意象旗艦殿堂 (B3L02 古詩選) -->
+        <article class="flagship-card poetry-card course-item" data-keywords="詩詞表現手法 詩詞常見意象 古詩選 借景抒情 直抒胸臆 託物言志 動靜結合 以動襯靜 對比 映襯 梅花 竹子 菊花 松柏 柳樹 折柳 梧桐 蓮花 萱草 豆蔻 紅豆 浮萍 桑梓 鴻雁 杜鵑 寒蟬 黃鸝 青鳥 鴛鴦 烏鴉 蟋蟀 鯤鵬 雄鷹 酒 客船 長亭 羌笛 烽火 砧聲 殘燈 月亮 江水 春風 雪霜 西風 孤煙 夕陽 浮雲 翰林 B3L02 國文 會考">
           <div class="flagship-banner">
             <div class="flagship-tag-row">
-              <span class="flagship-category">語法常識旗艦</span>
-              <span class="flagship-level"><i data-lucide="layers" style="width:15px;"></i> 翰林 B3語文常識一 詞性</span>
+              <span class="flagship-category">古典詩境旗艦</span>
+              <span class="flagship-level"><i data-lucide="feather" style="width:15px;"></i> 翰林 B3L02《古詩選》</span>
             </div>
-            <h3 class="flagship-title serif">詞類與詞性・互動學習殿堂</h3>
-            <p class="flagship-subtitle">字詞句層級解析・實詞虛詞全景宇宙！掌握成語結構、轉品密碼與 100 題流行歌詞資料庫。</p>
+            <h3 class="flagship-title serif">古典詩境・詩詞表現手法與常見意象殿堂</h3>
+            <p class="flagship-subtitle">造境心法・文人密碼！全方位解構六大表現手法（借景/直抒/託物/動靜/以動襯靜/對比）與四大維度 51 款古典意象，全真語音與雙款專屬練習神器。</p>
           </div>
           <div class="flagship-body">
             <div class="flagship-action-box">
-              <a href="pos.html" class="btn-enter-primary">
-                <i data-lucide="sparkles"></i> 進入詞性學習殿堂
+              <a href="poetry.html" class="btn-enter-primary">
+                <i data-lucide="sparkles"></i> 進入詩境與意象殿堂
               </a>
             </div>
           </div>
         </article>
 
-        <!-- 殿堂 4：「賓語提前」倒裝句法旗艦學習殿堂 -->
-        <article class="flagship-card inversion-card course-item" data-keywords="倒裝 倒裝句 賓語提前 愛蓮說 菊之愛 蓮之愛 牡丹之愛 主義是從 馬首是瞻 唯你是問 唯利是圖 唯命是從 唯兄嫂是依 何陋之有 何罪之有 何難之有 父母唯其疾之憂 句型 語法 會考 翰林 國文">
-          <div class="flagship-banner">
-            <div class="flagship-tag-row">
-              <span class="flagship-category">核心句型旗艦</span>
-              <span class="flagship-level"><i data-lucide="sparkles" style="width:15px;"></i> 翰林 B3L04 愛蓮說</span>
-            </div>
-            <h3 class="flagship-title serif">「賓語提前」倒裝句法旗艦殿堂</h3>
-            <p class="flagship-subtitle">去掉四隻刺蝟，動前名後！掌握古人強調賓語的文言語序樞紐與還原秘技。</p>
-          </div>
-          <div class="flagship-body">
-            <div class="flagship-action-box">
-              <a href="inversion.html" class="btn-enter-primary">
-                <i data-lucide="sparkles"></i> 進入倒裝句法殿堂
-              </a>
-            </div>
-          </div>
-        </article>
-
-        <!-- 殿堂 5：花花語文世界：植物象徵・名花物語旗艦殿堂 -->
-        <article class="flagship-card flower-card course-item" data-keywords="花花語文世界 花花世界 植物 象徵 名花物語 代言人 幽夢影 知己 屈原 陶淵明 杜宇 林逋 武則天 閉月羞花 花容失色 步步蓮花 離恨恰如春草 空谷幽蘭 愛蓮說 翰林 國文 會考">
-          <div class="flagship-banner">
-            <div class="flagship-tag-row">
-              <span class="flagship-category">國學與文學象徵</span>
-              <span class="flagship-level"><i data-lucide="flower-2" style="width:15px;"></i> 翰林 B3L04 愛蓮說</span>
-            </div>
-            <h3 class="flagship-title serif">花花語文世界・旗艦學習殿堂</h3>
-            <p class="flagship-subtitle">水陸草木・千古寄情！解鎖 9 大植物象徵、5 大名花物語、知己圖譜與是非辨析。</p>
-          </div>
-          <div class="flagship-body">
-            <div class="flagship-action-box">
-              <a href="flower.html" class="btn-enter-primary">
-                <i data-lucide="sparkles"></i> 進入花花語文殿堂
-              </a>
-            </div>
-          </div>
-        </article>
-
-        <!-- 殿堂 6：中外俗諺大觀園旗艦學習殿堂 -->
-        <article class="flagship-card proverb-card course-item" data-keywords="俗諺 諺語 中外俗諺 臺灣俗諺 生命中的碎珠 軟土深掘 吃緊挵破碗 食碗內看碗外 一支草一點露 飲水思源 物以類聚 平時不燒香 割雞焉用牛刀 說曹操曹操到 寧為雞口 覆水難收 有錢可使鬼推磨 狗窩 虎毒不食子 遠親不如近鄰 翰林 國文 會考">
-          <div class="flagship-banner">
-            <div class="flagship-tag-row">
-              <span class="flagship-category">常民智慧旗艦</span>
-              <span class="flagship-level"><i data-lucide="globe-2" style="width:15px;"></i> 翰林 B3L05 生命中的碎珠</span>
-            </div>
-            <h3 class="flagship-title serif">中外俗諺大觀園・旗艦學習殿堂</h3>
-            <p class="flagship-subtitle">常民智慧萬花筒・跨域哲思人生碎珠！探索臺灣俗諺與世界各國諺語對照中國俗諺奧秘。</p>
-          </div>
-          <div class="flagship-body">
-            <div class="flagship-action-box">
-              <a href="proverb.html" class="btn-enter-primary">
-                <i data-lucide="sparkles"></i> 進入中外俗諺殿堂
-              </a>
-            </div>
-          </div>
-        </article>
-
-        <!-- 殿堂 7：萬籟俱寂與聲歷其境——狀聲詞旗艦學習殿堂 -->
-        <article class="flagship-card onomatopoeia-card course-item" data-keywords="狀聲詞 象聲詞 擬聲詞 摹聲詞 聽覺摹寫 鳥 翰林 B3L06 哈哈 呵呵 噗哧 嘎嘎 咯咯 哇哇 呱呱 嗚嗚咽咽 琅琅 咿唔 牙牙 轆轆 喃喃 嘖嘖 嗷嗷 撲通 吱吱喳喳 啁啾 啾啾 關關 間關 嚶嚶 不如歸去 瑟瑟 蕭蕭 颯颯 淅淅瀝瀝 滴滴答答 班馬 泠泠 潺潺 潺湲 幽咽 淙淙 濺濺 鏗鏘 鋃鐺 霍霍 丁丁 札札 唧唧 轟隆 格格 沙沙 必必剝剝 嗡嗡 簌簌 國文 會考">
-          <div class="flagship-banner">
-            <div class="flagship-tag-row">
-              <span class="flagship-category">核心常識旗艦</span>
-              <span class="flagship-level"><i data-lucide="volume-2" style="width:15px;"></i> 翰林 B3L06《鳥》</span>
-            </div>
-            <h3 class="flagship-title serif">萬籟俱寂・聲歷其境——狀聲詞旗艦殿堂</h3>
-            <p class="flagship-subtitle">摹聲常識全攻略！收錄人聲、鳥鳴、走獸、風雨、山泉、金石、器物 8 大類別典範語境與全真語音。</p>
-          </div>
-          <div class="flagship-body">
-            <div class="flagship-action-box">
-              <a href="onomatopoeia.html" class="btn-enter-primary">
-                <i data-lucide="sparkles"></i> 進入狀聲詞殿堂
-              </a>
-            </div>
-          </div>
-        </article>
-
-        <!-- 殿堂 8：五彩斑斕——顏色字判斷旗艦學習殿堂 -->
-        <article class="flagship-card color-card course-item" data-keywords="顏色字 顏色 判斷 實指 非指 緋紅 丹楓 朱曦 赤焰 彤雲 絳衣 赭土 黔首 在涅貴不緇 朝如青絲 素絲 明眸皓齒 縞衣 碧海 蒼天 滄海一粟 縹碧 黛青 蔚藍 殺青 垂青 爐火純青 青史 青出於藍 青睞 慘綠少年 明日黃花 人老珠黃 白丁 不白之冤 真相大白 黑名單 背黑鍋 墨守成規 烏合之眾 赤手空拳 一片丹心 紅顏薄命 青春 飛黃騰達 鳥 翰林 B3L06 國文 會考">
-          <div class="flagship-banner">
-            <div class="flagship-tag-row">
-              <span class="flagship-category">文化與修辭旗艦</span>
-              <span class="flagship-level"><i data-lucide="feather" style="width:15px;"></i> 翰林 B3L06《鳥》</span>
-            </div>
-            <h3 class="flagship-title serif">五彩斑斕・顏色字判斷旗艦殿堂</h3>
-            <p class="flagship-subtitle">真假色彩全解密！透析「實指真顏色」與「借代比喻假色彩」，103 組詞彙全圖鑑與會考診斷挑戰賽。</p>
-          </div>
-          <div class="flagship-body">
-            <div class="flagship-action-box">
-              <a href="color.html" class="btn-enter-primary">
-                <i data-lucide="sparkles"></i> 進入顏色字殿堂
-              </a>
-            </div>
-          </div>
-        </article>
-
-        <!-- 殿堂 9：詩中的鳥類・古典詩詞禽鳥意象旗艦殿堂 -->
-        <article class="flagship-card bird-card course-item" data-keywords="詩中的鳥類 鳥 禽鳥 詩詞 意象 雎鳩 黃鸝 燕子 杜鵑 白鷺 烏鴉 鴻雁 鶴 沙鷗 喜鵲 鸚鵡 鷓鴣 鴛鴦 蒼鷹 雕 隼 雉 斑鳩 鵪鶉 布穀鳥 畫眉鳥 戴勝 鴝鵒 鸕鶿 翠鳥 鸛 鴨 鵝 鵜鶘 鴟鴞 鵩鳥 晨風 鷦鷯 鵾雞 䴙䴘 鴞 鵠 伯勞 鶺鴒 鴇 孔雀 黃雀 白鷴 白頭翁 鶩 鷂 鳳凰 青鸞 精衛 青鳥 大鵬 鵷鶵 翰林 B3L06 國文 會考">
-          <div class="flagship-banner">
-            <div class="flagship-tag-row">
-              <span class="flagship-category">禽鳥意象旗艦</span>
-              <span class="flagship-level"><i data-lucide="feather" style="width:15px;"></i> 翰林 B3L06《鳥》</span>
-            </div>
-            <h3 class="flagship-title serif">詩中的鳥類・古典禽鳥意象旗艦殿堂</h3>
-            <p class="flagship-subtitle">飛羽寄情・文人密碼！收錄 52 種古典詩詞禽鳥圖鑑、八大文化象徵星盤、全真語音與 15 字極簡速記口訣卡。</p>
-          </div>
-          <div class="flagship-body">
-            <div class="flagship-action-box">
-              <a href="bird.html" class="btn-enter-primary">
-                <i data-lucide="sparkles"></i> 進入詩中的鳥類殿堂
-              </a>
-            </div>
-          </div>
-        </article>
-
-        <!-- 殿堂 10：疊字詞・聲情神采與疊韻之美旗艦殿堂 -->
+        <!-- 殿堂 4：疊字詞・聲情神采與疊韻之美旗艦殿堂 (B3L02 古詩選) -->
         <article class="flagship-card reduplication-card course-item" data-keywords="疊字詞 疊字 疊字成語 古詩選 迢迢 皎皎 纖纖 札札 悠悠 耿耿 楚楚 翩翩 滔滔 鬱鬱 曖曖 戚戚 慼慼 斑斑 茫茫 翰林 B3L02 國文 會考">
           <div class="flagship-banner">
             <div class="flagship-tag-row">
@@ -1393,20 +1303,153 @@
           </div>
         </article>
 
-        <!-- 殿堂 11：古典詩境・詩詞表現手法與常見意象旗艦殿堂 -->
-        <article class="flagship-card poetry-card course-item" data-keywords="詩詞表現手法 詩詞常見意象 古詩選 借景抒情 直抒胸臆 託物言志 動靜結合 以動襯靜 對比 映襯 梅花 竹子 菊花 松柏 柳樹 折柳 梧桐 蓮花 萱草 豆蔻 紅豆 浮萍 桑梓 鴻雁 杜鵑 寒蟬 黃鸝 青鳥 鴛鴦 烏鴉 蟋蟀 鯤鵬 雄鷹 酒 客船 長亭 羌笛 烽火 砧聲 殘燈 月亮 江水 春風 雪霜 西風 孤煙 夕陽 浮雲 翰林 B3L02 國文 會考">
+        <!-- 殿堂 5：時序之美：傳統節日與二十四節氣 (B3L03 下雨天，真好) -->
+        <article class="flagship-card holiday-card course-item" data-keywords="時序之美 節日 傳統節日 二十四節氣 曆法 詩詞 節令 農曆 陽曆 陰陽合曆 會考 B3L03 下雨天，真好">
           <div class="flagship-banner">
             <div class="flagship-tag-row">
-              <span class="flagship-category">古典詩境旗艦</span>
-              <span class="flagship-level"><i data-lucide="feather" style="width:15px;"></i> 翰林 B3L02《古詩選》</span>
+              <span class="flagship-category">國學與跨科素養</span>
+              <span class="flagship-level"><i data-lucide="sun-moon" style="width:15px;"></i> 翰林 B3L03 下雨天，真好</span>
             </div>
-            <h3 class="flagship-title serif">古典詩境・詩詞表現手法與常見意象殿堂</h3>
-            <p class="flagship-subtitle">造境心法・文人密碼！全方位解構六大表現手法（借景/直抒/託物/動靜/以動襯靜/對比）與四大維度 51 款古典意象，全真語音與雙款專屬練習神器。</p>
+            <h3 class="flagship-title serif">時序之美：傳統節日與二十四節氣殿堂</h3>
+            <p class="flagship-subtitle">歲月流轉・天地同歌！融合國文詩詞意境與自然科普天文曆法的跨領域旗艦殿堂。</p>
           </div>
           <div class="flagship-body">
             <div class="flagship-action-box">
-              <a href="poetry.html" class="btn-enter-primary">
-                <i data-lucide="sparkles"></i> 進入詩境與意象殿堂
+              <a href="holiday.html" class="btn-enter-primary">
+                <i data-lucide="sun-moon"></i> 進入時序之美殿堂
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <!-- 殿堂 6：詞類與詞性・互動學習殿堂 (B3語文常識一 詞性) -->
+        <article class="flagship-card pos-card course-item" data-keywords="詞性 詞類 語一 實詞 虛詞 名詞 動詞 形容詞 副詞 代詞 數量詞 介詞 連詞 助詞 嘆詞 轉品 聯綿詞 複詞 偏義複詞 同義複詞 歌詞一百 翰林 國文 會考 語文常識一">
+          <div class="flagship-banner">
+            <div class="flagship-tag-row">
+              <span class="flagship-category">語法常識旗艦</span>
+              <span class="flagship-level"><i data-lucide="layers" style="width:15px;"></i> 翰林 B3語文常識一 詞性</span>
+            </div>
+            <h3 class="flagship-title serif">詞類與詞性・互動學習殿堂</h3>
+            <p class="flagship-subtitle">字詞句層級解析・實詞虛詞全景宇宙！掌握成語結構、轉品密碼與 100 題流行歌詞資料庫。</p>
+          </div>
+          <div class="flagship-body">
+            <div class="flagship-action-box">
+              <a href="pos.html" class="btn-enter-primary">
+                <i data-lucide="sparkles"></i> 進入詞性學習殿堂
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <!-- 殿堂 7：「賓語提前」倒裝句法旗艦學習殿堂 (B3L04 愛蓮說) -->
+        <article class="flagship-card inversion-card course-item" data-keywords="倒裝 倒裝句 賓語提前 愛蓮說 菊之愛 蓮之愛 牡丹之愛 主義是從 馬首是瞻 唯你是問 唯利是圖 唯命是從 唯兄嫂是依 何陋之有 何罪之有 何難之有 父母唯其疾之憂 句型 語法 會考 翰林 國文 B3L04">
+          <div class="flagship-banner">
+            <div class="flagship-tag-row">
+              <span class="flagship-category">核心句型旗艦</span>
+              <span class="flagship-level"><i data-lucide="sparkles" style="width:15px;"></i> 翰林 B3L04 愛蓮說</span>
+            </div>
+            <h3 class="flagship-title serif">「賓語提前」倒裝句法旗艦殿堂</h3>
+            <p class="flagship-subtitle">去掉四隻刺蝟，動前名後！掌握古人強調賓語的文言語序樞紐與還原秘技。</p>
+          </div>
+          <div class="flagship-body">
+            <div class="flagship-action-box">
+              <a href="inversion.html" class="btn-enter-primary">
+                <i data-lucide="sparkles"></i> 進入倒裝句法殿堂
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <!-- 殿堂 8：花花語文世界：植物象徵・名花物語旗艦殿堂 (B3L04 愛蓮說) -->
+        <article class="flagship-card flower-card course-item" data-keywords="花花語文世界 花花世界 植物 象徵 名花物語 代言人 幽夢影 知己 屈原 陶淵明 杜宇 林逋 武則天 閉月羞花 花容失色 步步蓮花 離恨恰如春草 空谷幽蘭 愛蓮說 翰林 國文 會考 B3L04">
+          <div class="flagship-banner">
+            <div class="flagship-tag-row">
+              <span class="flagship-category">國學與文學象徵</span>
+              <span class="flagship-level"><i data-lucide="flower-2" style="width:15px;"></i> 翰林 B3L04 愛蓮說</span>
+            </div>
+            <h3 class="flagship-title serif">花花語文世界・旗艦學習殿堂</h3>
+            <p class="flagship-subtitle">水陸草木・千古寄情！解鎖 9 大植物象徵、5 大名花物語、知己圖譜與是非辨析。</p>
+          </div>
+          <div class="flagship-body">
+            <div class="flagship-action-box">
+              <a href="flower.html" class="btn-enter-primary">
+                <i data-lucide="sparkles"></i> 進入花花語文殿堂
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <!-- 殿堂 9：中外俗諺大觀園旗艦學習殿堂 (B3L05 生命中的碎珠) -->
+        <article class="flagship-card proverb-card course-item" data-keywords="俗諺 諺語 中外俗諺 臺灣俗諺 生命中的碎珠 軟土深掘 吃緊挵破碗 食碗內看碗外 一支草一點露 飲水思源 物以類聚 平時不燒香 割雞焉用牛刀 說曹操曹操到 寧為雞口 覆水難收 有錢可使鬼推磨 狗窩 虎毒不食子 遠親不如近鄰 翰林 國文 會考 B3L05">
+          <div class="flagship-banner">
+            <div class="flagship-tag-row">
+              <span class="flagship-category">常民智慧旗艦</span>
+              <span class="flagship-level"><i data-lucide="globe-2" style="width:15px;"></i> 翰林 B3L05 生命中的碎珠</span>
+            </div>
+            <h3 class="flagship-title serif">中外俗諺大觀園・旗艦學習殿堂</h3>
+            <p class="flagship-subtitle">常民智慧萬花筒・跨域哲思人生碎珠！探索臺灣俗諺與世界各國諺語對照中國俗諺奧秘。</p>
+          </div>
+          <div class="flagship-body">
+            <div class="flagship-action-box">
+              <a href="proverb.html" class="btn-enter-primary">
+                <i data-lucide="sparkles"></i> 進入中外俗諺殿堂
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <!-- 殿堂 10：萬籟俱寂與聲歷其境——狀聲詞旗艦學習殿堂 (B3L06 鳥) -->
+        <article class="flagship-card onomatopoeia-card course-item" data-keywords="狀聲詞 象聲詞 擬聲詞 摹聲詞 聽覺摹寫 鳥 翰林 B3L06 哈哈 呵呵 噗哧 嘎嘎 咯咯 哇哇 呱呱 嗚嗚咽咽 琅琅 咿唔 牙牙 轆轆 喃喃 嘖嘖 嗷嗷 撲通 吱吱喳喳 啁啾 啾啾 關關 間關 嚶嚶 不如歸去 瑟瑟 蕭蕭 颯颯 淅淅瀝瀝 滴滴答答 班馬 泠泠 潺潺 潺湲 幽咽 淙淙 濺濺 鏗鏘 鋃鐺 霍霍 丁丁 札札 唧唧 轟隆 格格 沙沙 必必剝剝 嗡嗡 簌簌 國文 會考">
+          <div class="flagship-banner">
+            <div class="flagship-tag-row">
+              <span class="flagship-category">核心常識旗艦</span>
+              <span class="flagship-level"><i data-lucide="volume-2" style="width:15px;"></i> 翰林 B3L06《鳥》</span>
+            </div>
+            <h3 class="flagship-title serif">萬籟俱寂・聲歷其境——狀聲詞旗艦殿堂</h3>
+            <p class="flagship-subtitle">摹聲常識全攻略！收錄人聲、鳥鳴、走獸、風雨、山泉、金石、器物 8 大類別典範語境與全真語音。</p>
+          </div>
+          <div class="flagship-body">
+            <div class="flagship-action-box">
+              <a href="onomatopoeia.html" class="btn-enter-primary">
+                <i data-lucide="sparkles"></i> 進入狀聲詞殿堂
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <!-- 殿堂 11：五彩斑斕——顏色字判斷旗艦學習殿堂 (B3L06 鳥) -->
+        <article class="flagship-card color-card course-item" data-keywords="顏色字 顏色 判斷 實指 非指 緋紅 丹楓 朱曦 赤焰 彤雲 絳衣 赭土 黔首 在涅貴不緇 朝如青絲 素絲 明眸皓齒 縞衣 碧海 蒼天 滄海一粟 縹碧 黛青 蔚藍 殺青 垂青 爐火純青 青史 青出於藍 青睞 慘綠少年 明日黃花 人老珠黃 白丁 不白之冤 真相大白 黑名單 背黑鍋 墨守成規 烏合之眾 赤手空拳 一片丹心 紅顏薄命 青春 飛黃騰達 鳥 翰林 B3L06 國文 會考">
+          <div class="flagship-banner">
+            <div class="flagship-tag-row">
+              <span class="flagship-category">文化與修辭旗艦</span>
+              <span class="flagship-level"><i data-lucide="feather" style="width:15px;"></i> 翰林 B3L06《鳥》</span>
+            </div>
+            <h3 class="flagship-title serif">五彩斑斕・顏色字判斷旗艦殿堂</h3>
+            <p class="flagship-subtitle">真假色彩全解密！透析「實指真顏色」與「借代比喻假色彩」，103 組詞彙全圖鑑與會考診斷挑戰賽。</p>
+          </div>
+          <div class="flagship-body">
+            <div class="flagship-action-box">
+              <a href="color.html" class="btn-enter-primary">
+                <i data-lucide="sparkles"></i> 進入顏色字殿堂
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <!-- 殿堂 12：詩中的鳥類・古典詩詞禽鳥意象旗艦殿堂 (B3L06 鳥) -->
+        <article class="flagship-card bird-card course-item" data-keywords="詩中的鳥類 鳥 禽鳥 詩詞 意象 雎鳩 黃鸝 燕子 杜鵑 白鷺 烏鴉 鴻雁 鶴 沙鷗 喜鵲 鸚鵡 鷓鴣 鴛鴦 蒼鷹 雕 隼 雉 斑鳩 鵪鶉 布穀鳥 畫眉鳥 戴勝 鴝鵒 鸕鶿 翠鳥 鸛 鴨 鵝 鵜鶘 鴟鴞 鵩鳥 晨風 鷦鷯 鵾雞 䴙䴘 鴞 鵠 伯勞 鶺鴒 鴇 孔雀 黃雀 白鷴 白頭翁 鶩 鷂 鳳凰 青鸞 精衛 青鳥 大鵬 鵷鶵 翰林 B3L06 國文 會考">
+          <div class="flagship-banner">
+            <div class="flagship-tag-row">
+              <span class="flagship-category">禽鳥意象旗艦</span>
+              <span class="flagship-level"><i data-lucide="feather" style="width:15px;"></i> 翰林 B3L06《鳥》</span>
+            </div>
+            <h3 class="flagship-title serif">詩中的鳥類・古典禽鳥意象旗艦殿堂</h3>
+            <p class="flagship-subtitle">飛羽寄情・文人密碼！收錄 52 種古典詩詞禽鳥圖鑑、八大文化象徵星盤、全真語音與 15 字極簡速記口訣卡。</p>
+          </div>
+          <div class="flagship-body">
+            <div class="flagship-action-box">
+              <a href="bird.html" class="btn-enter-primary">
+                <i data-lucide="sparkles"></i> 進入詩中的鳥類殿堂
               </a>
             </div>
           </div>

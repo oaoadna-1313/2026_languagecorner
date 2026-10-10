@@ -1,0 +1,2255 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>《古詩十九首》數位互動學習殿堂｜漢代五言抒情詩冠冕</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Ma+Shan+Zheng&family=Noto+Serif+TC:wght@400;500;600;700;900&family=Noto+Sans+TC:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <style>
+    :root {
+      --bg-primary: #fbf9f4;
+      --bg-secondary: #f4ede2;
+      --bg-card: #ffffff;
+      --bg-accent: #ede3d1;
+      --text-primary: #221d19;
+      --text-secondary: #5a524a;
+      --text-muted: #8b8075;
+      --color-cinnabar: #a62b2b;
+      --color-cinnabar-dark: #7f1d1d;
+      --color-cinnabar-light: #fbeae8;
+      --color-gold: #b45309;
+      --color-gold-light: #fef3c7;
+      --color-bamboo: #2b593f;
+      --color-bamboo-light: #e8f3ec;
+      --color-indigo: #1e3a5f;
+      --color-indigo-light: #e6eef8;
+      --border-color: #e5dac9;
+      --border-focus: #a62b2b;
+      --shadow-sm: 0 1px 3px rgba(34, 29, 25, 0.05);
+      --shadow-md: 0 4px 12px rgba(34, 29, 25, 0.08);
+      --shadow-lg: 0 10px 25px rgba(34, 29, 25, 0.12);
+      --font-body: 'Noto Serif TC', 'PingFang TC', 'Microsoft JhengHei', serif;
+      --font-calligraphy: 'Ma Shan Zheng', cursive, 'Noto Serif TC', serif;
+      --radius-sm: 6px;
+      --radius-md: 10px;
+      --radius-lg: 16px;
+      --radius-full: 9999px;
+      --content-max-w: 1200px;
+      --base-font-size: 16px;
+    }
+
+    /* Dark Mode / Night Ink Mode */
+    body.theme-dark {
+      --bg-primary: #171513;
+      --bg-secondary: #221e1a;
+      --bg-card: #2c2722;
+      --bg-accent: #38312b;
+      --text-primary: #eee8de;
+      --text-secondary: #c5bbae;
+      --text-muted: #8e8376;
+      --color-cinnabar: #dc3e3e;
+      --color-cinnabar-dark: #991b1b;
+      --color-cinnabar-light: #3e1b1b;
+      --color-gold: #d97706;
+      --color-gold-light: #422a0a;
+      --color-bamboo: #3d805b;
+      --color-bamboo-light: #162f22;
+      --color-indigo: #487cb7;
+      --color-indigo-light: #122238;
+      --border-color: #423b33;
+      --border-focus: #dc3e3e;
+      --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.3);
+      --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.4);
+      --shadow-lg: 0 10px 25px rgba(0, 0, 0, 0.5);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      font-size: var(--base-font-size);
+    }
+
+    body {
+      font-family: var(--font-body);
+      background-color: var(--bg-primary);
+      color: var(--text-primary);
+      line-height: 1.75;
+      transition: background-color 0.3s ease, color 0.3s ease;
+      position: relative;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* Watermark Calligraphy */
+    .bg-watermark {
+      position: fixed;
+      right: -2rem;
+      bottom: -1rem;
+      font-family: var(--font-calligraphy);
+      font-size: clamp(8rem, 20vw, 22rem);
+      color: var(--text-muted);
+      opacity: 0.04;
+      pointer-events: none;
+      z-index: 0;
+      line-height: 1;
+      user-select: none;
+    }
+
+    /* Sticky Header */
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background-color: rgba(251, 249, 244, 0.94);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border-color);
+      box-shadow: var(--shadow-sm);
+      transition: background-color 0.3s;
+    }
+    body.theme-dark .site-header {
+      background-color: rgba(23, 21, 19, 0.94);
+    }
+
+    .header-inner {
+      max-width: var(--content-max-w);
+      margin: 0 auto;
+      padding: 0.75rem 1.25rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+    }
+
+    .header-brand {
+      display: flex;
+      align-items: center;
+      gap: 0.85rem;
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .brand-seal-img {
+      height: 48px;
+      width: auto;
+      object-fit: contain;
+      transition: transform 0.3s ease;
+      filter: drop-shadow(0 2px 4px rgba(0,0,0,0.08));
+    }
+
+    .brand-seal-img:hover {
+      transform: rotate(5deg) scale(1.08);
+    }
+
+    .brand-logo-img {
+      height: 48px;
+      width: auto;
+      object-fit: contain;
+      filter: drop-shadow(0 2px 4px rgba(0,0,0,0.08));
+    }
+
+    .brand-text {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .brand-text h1 {
+      font-size: 1.25rem;
+      font-weight: 800;
+      color: var(--color-cinnabar-dark);
+      letter-spacing: -0.5px;
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+      margin: 0;
+    }
+    body.theme-dark .brand-text h1 {
+      color: #f87171;
+    }
+
+    .brand-badge {
+      font-size: 0.72rem;
+      background: var(--color-cinnabar-light);
+      color: var(--color-cinnabar-dark);
+      padding: 0.15rem 0.55rem;
+      border-radius: 999px;
+      font-weight: 600;
+      width: fit-content;
+      margin-top: 2px;
+      border: 1px solid rgba(166, 43, 43, 0.2);
+    }
+    body.theme-dark .brand-badge {
+      background: rgba(220, 62, 62, 0.2);
+      color: #fca5a5;
+    }
+
+    .header-nav-list {
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    .header-nav-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      padding: 0.45rem 0.85rem;
+      border-radius: var(--radius-md);
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: var(--text-primary);
+      text-decoration: none;
+      transition: all 0.2s ease;
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+    }
+    .header-nav-link:hover {
+      background: var(--bg-accent);
+      border-color: var(--color-cinnabar);
+      color: var(--color-cinnabar);
+    }
+
+    .header-tools {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      flex-wrap: wrap;
+    }
+
+    .tool-btn {
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      color: var(--text-primary);
+      padding: 0.4rem 0.75rem;
+      border-radius: var(--radius-md);
+      font-size: 0.85rem;
+      font-family: inherit;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      transition: all 0.2s;
+      box-shadow: var(--shadow-sm);
+    }
+    .tool-btn:hover {
+      background: var(--bg-accent);
+      border-color: var(--color-cinnabar);
+      color: var(--color-cinnabar);
+    }
+    .tool-btn.active {
+      background: var(--color-cinnabar);
+      border-color: var(--color-cinnabar);
+      color: #fff;
+    }
+
+    /* Hero Section */
+    .hero-section {
+      position: relative;
+      z-index: 1;
+      padding: 2.5rem 1.25rem 2rem;
+      background: linear-gradient(180deg, var(--bg-secondary) 0%, var(--bg-primary) 100%);
+      border-bottom: 1px solid var(--border-color);
+    }
+
+    .hero-inner {
+      max-width: var(--content-max-w);
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: var(--color-cinnabar-light);
+      color: var(--color-cinnabar-dark);
+      padding: 0.35rem 1rem;
+      border-radius: var(--radius-full);
+      font-size: 0.85rem;
+      font-weight: 600;
+      margin-bottom: 1rem;
+      border: 1px solid rgba(166, 43, 43, 0.2);
+    }
+    body.theme-dark .hero-badge {
+      color: #fca5a5;
+    }
+
+    .hero-title {
+      font-family: var(--font-body);
+      font-size: clamp(1.8rem, 4vw, 2.75rem);
+      font-weight: 900;
+      letter-spacing: 0.08em;
+      margin-bottom: 0.75rem;
+      color: var(--text-primary);
+    }
+    .hero-title span {
+      color: var(--color-cinnabar);
+      position: relative;
+    }
+
+    .hero-quote {
+      max-width: 800px;
+      margin: 0.75rem auto 1.5rem;
+      font-size: 0.95rem;
+      color: var(--text-secondary);
+      line-height: 1.8;
+      font-style: italic;
+      position: relative;
+      padding: 0 1.5rem;
+    }
+
+    .hero-stats {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 1.5rem;
+      flex-wrap: wrap;
+      margin-top: 1.25rem;
+    }
+
+    .stat-item {
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+      font-size: 0.85rem;
+      color: var(--text-muted);
+    }
+    .stat-item strong {
+      color: var(--color-cinnabar);
+      font-size: 1.15rem;
+    }
+
+    /* Main Container */
+    .main-container {
+      max-width: var(--content-max-w);
+      margin: 0 auto;
+      padding: 1.5rem 1.25rem 4rem;
+      position: relative;
+      z-index: 1;
+      flex: 1;
+      width: 100%;
+    }
+
+    /* Navigation Compass (TOC & Filter) */
+    .compass-nav {
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-lg);
+      padding: 1.25rem;
+      margin-bottom: 1.75rem;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .compass-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 1rem;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+    }
+
+    .compass-title {
+      font-size: 1rem;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      color: var(--text-primary);
+    }
+
+    /* Search Box */
+    .search-wrap {
+      position: relative;
+      flex: 1;
+      max-width: 380px;
+    }
+    .search-input {
+      width: 100%;
+      padding: 0.45rem 1rem 0.45rem 2.2rem;
+      border-radius: var(--radius-full);
+      border: 1px solid var(--border-color);
+      background: var(--bg-primary);
+      color: var(--text-primary);
+      font-family: inherit;
+      font-size: 0.85rem;
+      outline: none;
+      transition: all 0.2s;
+    }
+    .search-input:focus {
+      border-color: var(--color-cinnabar);
+      background: var(--bg-card);
+      box-shadow: 0 0 0 3px rgba(166, 43, 43, 0.15);
+    }
+    .search-icon {
+      position: absolute;
+      left: 0.75rem;
+      top: 50%;
+      transform: translateY(-50%);
+      color: var(--text-muted);
+      pointer-events: none;
+      font-size: 0.9rem;
+    }
+    .clear-search-btn {
+      position: absolute;
+      right: 0.75rem;
+      top: 50%;
+      transform: translateY(-50%);
+      background: none;
+      border: none;
+      color: var(--text-muted);
+      cursor: pointer;
+      font-size: 0.8rem;
+      display: none;
+    }
+
+    /* Theme Filter Pills */
+    .theme-pills {
+      display: flex;
+      gap: 0.4rem;
+      flex-wrap: wrap;
+      margin-bottom: 1rem;
+      padding-bottom: 0.75rem;
+      border-bottom: 1px dashed var(--border-color);
+    }
+
+    .theme-pill {
+      background: var(--bg-primary);
+      border: 1px solid var(--border-color);
+      color: var(--text-secondary);
+      padding: 0.3rem 0.75rem;
+      border-radius: var(--radius-full);
+      font-size: 0.8rem;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+    .theme-pill:hover {
+      background: var(--bg-accent);
+      color: var(--text-primary);
+    }
+    .theme-pill.active {
+      background: var(--color-cinnabar);
+      border-color: var(--color-cinnabar);
+      color: #fff;
+      font-weight: 600;
+    }
+
+    /* Poem Select Pills (1..19) */
+    .poem-pills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.45rem;
+    }
+
+    .poem-pill {
+      background: var(--bg-primary);
+      border: 1px solid var(--border-color);
+      color: var(--text-primary);
+      padding: 0.4rem 0.7rem;
+      border-radius: var(--radius-md);
+      font-size: 0.85rem;
+      cursor: pointer;
+      transition: all 0.2s;
+      display: flex;
+      align-items: center;
+      gap: 0.35rem;
+      white-space: nowrap;
+    }
+    .poem-pill:hover {
+      background: var(--bg-accent);
+      border-color: var(--color-gold);
+      transform: translateY(-1px);
+    }
+    .poem-pill.active {
+      background: linear-gradient(135deg, var(--color-cinnabar), var(--color-cinnabar-dark));
+      border-color: var(--color-cinnabar);
+      color: #fff;
+      font-weight: 600;
+      box-shadow: 0 3px 8px rgba(166, 43, 43, 0.25);
+    }
+    .pill-num {
+      font-size: 0.75rem;
+      opacity: 0.8;
+      font-family: monospace;
+    }
+
+    /* Search Results Box */
+    .search-results-panel {
+      display: none;
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-lg);
+      padding: 1.25rem;
+      margin-bottom: 1.75rem;
+      box-shadow: var(--shadow-md);
+    }
+    .search-results-title {
+      font-size: 0.95rem;
+      font-weight: 700;
+      margin-bottom: 0.75rem;
+      color: var(--color-cinnabar);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .search-items-list {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+      max-height: 280px;
+      overflow-y: auto;
+    }
+    .search-item {
+      padding: 0.6rem 0.85rem;
+      border-radius: var(--radius-md);
+      background: var(--bg-primary);
+      border: 1px solid var(--border-color);
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+    .search-item:hover {
+      border-color: var(--color-cinnabar);
+      background: var(--bg-accent);
+    }
+    .search-item-header {
+      font-size: 0.8rem;
+      font-weight: 700;
+      color: var(--color-cinnabar);
+      margin-bottom: 0.2rem;
+    }
+    .search-item-snippet {
+      font-size: 0.85rem;
+      color: var(--text-secondary);
+    }
+    .search-highlight {
+      background-color: #fef08a;
+      color: #854d0e;
+      padding: 0 0.15rem;
+      border-radius: 2px;
+      font-weight: 600;
+    }
+
+    /* Poem Stage Card */
+    .poem-stage {
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow-md);
+      overflow: hidden;
+      margin-bottom: 2rem;
+    }
+
+    /* Poem Stage Header */
+    .poem-banner {
+      background: linear-gradient(135deg, var(--bg-secondary) 0%, var(--bg-card) 100%);
+      padding: 1.75rem 1.5rem 1.25rem;
+      border-bottom: 1px solid var(--border-color);
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 1.25rem;
+      flex-wrap: wrap;
+    }
+
+    .poem-meta {
+      flex: 1;
+      min-width: 260px;
+    }
+
+    .poem-tags {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      flex-wrap: wrap;
+      margin-bottom: 0.5rem;
+    }
+    .tag-badge {
+      font-size: 0.75rem;
+      padding: 0.2rem 0.6rem;
+      border-radius: var(--radius-full);
+      font-weight: 600;
+    }
+    .tag-theme {
+      background: var(--color-cinnabar-light);
+      color: var(--color-cinnabar-dark);
+      border: 1px solid rgba(166, 43, 43, 0.2);
+    }
+    .tag-sub {
+      background: var(--color-indigo-light);
+      color: var(--color-indigo);
+    }
+
+    .poem-title-display {
+      font-size: clamp(1.6rem, 3.5vw, 2.2rem);
+      font-weight: 900;
+      letter-spacing: 0.05em;
+      color: var(--text-primary);
+      margin-bottom: 0.35rem;
+      display: flex;
+      align-items: baseline;
+      gap: 0.75rem;
+      flex-wrap: wrap;
+    }
+    .poem-id-label {
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--color-cinnabar);
+      font-family: var(--font-calligraphy);
+    }
+
+    .poem-core-emotion {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+
+    .poem-stage-actions {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      flex-wrap: wrap;
+    }
+
+    /* TTS Audio Bar */
+    .audio-player-bar {
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+      background: var(--bg-primary);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-full);
+      padding: 0.25rem 0.6rem;
+    }
+    .audio-btn {
+      background: none;
+      border: none;
+      color: var(--text-primary);
+      cursor: pointer;
+      font-size: 1rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0.25rem;
+      border-radius: 50%;
+      transition: all 0.2s;
+    }
+    .audio-btn:hover {
+      color: var(--color-cinnabar);
+    }
+    .speed-select {
+      background: transparent;
+      border: none;
+      color: var(--text-secondary);
+      font-size: 0.75rem;
+      font-family: inherit;
+      cursor: pointer;
+      outline: none;
+    }
+
+    /* Tabs Navigation */
+    .poem-tabs-nav {
+      display: flex;
+      border-bottom: 1px solid var(--border-color);
+      background: var(--bg-primary);
+      overflow-x: auto;
+      scrollbar-width: thin;
+    }
+
+    .tab-btn {
+      padding: 0.85rem 1.25rem;
+      background: transparent;
+      border: none;
+      border-bottom: 3px solid transparent;
+      font-family: inherit;
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: var(--text-secondary);
+      cursor: pointer;
+      white-space: nowrap;
+      transition: all 0.2s;
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+    .tab-btn:hover {
+      color: var(--color-cinnabar);
+      background: rgba(166, 43, 43, 0.03);
+    }
+    .tab-btn.active {
+      color: var(--color-cinnabar);
+      border-bottom-color: var(--color-cinnabar);
+      background: var(--bg-card);
+    }
+
+    /* Tab Content Area */
+    .tab-pane {
+      display: none;
+      padding: 1.75rem 1.5rem;
+    }
+    .tab-pane.active {
+      display: block;
+      animation: fadeIn 0.25s ease;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(4px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* TAB 1: Verses & Translation */
+    .view-mode-bar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 0.75rem;
+      margin-bottom: 1.5rem;
+      flex-wrap: wrap;
+      padding-bottom: 0.75rem;
+      border-bottom: 1px dashed var(--border-color);
+    }
+    .mode-btn-group {
+      display: flex;
+      gap: 0.35rem;
+      flex-wrap: wrap;
+    }
+    .mode-btn {
+      background: var(--bg-primary);
+      border: 1px solid var(--border-color);
+      color: var(--text-secondary);
+      padding: 0.35rem 0.75rem;
+      border-radius: var(--radius-full);
+      font-size: 0.8rem;
+      cursor: pointer;
+      transition: all 0.2s;
+      font-family: inherit;
+    }
+    .mode-btn:hover {
+      background: var(--bg-accent);
+      color: var(--text-primary);
+    }
+    .mode-btn.active {
+      background: var(--color-bamboo);
+      border-color: var(--color-bamboo);
+      color: #fff;
+      font-weight: 600;
+    }
+
+    /* Couplets List */
+    .couplets-container {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .couplet-card {
+      background: var(--bg-primary);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-md);
+      padding: 1.15rem 1.25rem;
+      transition: all 0.25s;
+      position: relative;
+      border-left: 4px solid var(--border-color);
+    }
+    .couplet-card:hover {
+      border-left-color: var(--color-cinnabar);
+      box-shadow: var(--shadow-sm);
+      background: var(--bg-card);
+    }
+
+    .couplet-original {
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: var(--text-primary);
+      margin-bottom: 0.5rem;
+      letter-spacing: 0.08em;
+      line-height: 1.6;
+    }
+
+    .couplet-translation {
+      font-size: 0.95rem;
+      color: var(--text-secondary);
+      line-height: 1.65;
+      padding-left: 0.75rem;
+      border-left: 2px solid var(--border-color);
+      margin-top: 0.35rem;
+    }
+
+    /* Interactive Cloze / Blank in Verses */
+    .cloze-blank {
+      display: inline-block;
+      min-width: 1.8em;
+      padding: 0 0.35rem;
+      margin: 0 0.15rem;
+      background: var(--bg-accent);
+      border-bottom: 2px solid var(--color-cinnabar);
+      color: transparent;
+      border-radius: var(--radius-sm);
+      cursor: pointer;
+      user-select: none;
+      transition: all 0.2s;
+      font-weight: bold;
+      text-align: center;
+    }
+    .cloze-blank.revealed {
+      background: rgba(166, 43, 43, 0.1);
+      color: var(--color-cinnabar);
+    }
+    .cloze-blank::after {
+      content: '?';
+      color: var(--color-cinnabar);
+      opacity: 0.7;
+      font-size: 0.85em;
+    }
+    .cloze-blank.revealed::after {
+      content: '';
+    }
+
+    /* Note interactive link inside verse */
+    .note-link {
+      cursor: pointer;
+      text-decoration: underline dotted var(--color-cinnabar);
+      text-underline-offset: 4px;
+      color: inherit;
+      transition: color 0.2s;
+    }
+    .note-link:hover {
+      color: var(--color-cinnabar);
+      background-color: rgba(166, 43, 43, 0.08);
+      border-radius: 2px;
+    }
+
+    /* TAB 2: Annotations */
+    .annotations-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+      gap: 1rem;
+    }
+
+    .note-card {
+      background: var(--bg-primary);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-md);
+      padding: 1rem 1.15rem;
+      transition: all 0.2s;
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+    .note-card:hover {
+      border-color: var(--color-gold);
+      box-shadow: var(--shadow-sm);
+      background: var(--bg-card);
+    }
+
+    .note-card-header {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      flex-wrap: wrap;
+    }
+    .note-num {
+      background: var(--color-cinnabar-light);
+      color: var(--color-cinnabar-dark);
+      font-size: 0.75rem;
+      font-weight: 700;
+      padding: 0.15rem 0.45rem;
+      border-radius: var(--radius-sm);
+    }
+    .note-term {
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--color-cinnabar-dark);
+      letter-spacing: 0.03em;
+    }
+    body.theme-dark .note-term {
+      color: #f87171;
+    }
+
+    .note-expl {
+      font-size: 0.9rem;
+      color: var(--text-primary);
+      line-height: 1.65;
+    }
+
+    .note-supp {
+      background: var(--bg-secondary);
+      border-left: 3px solid var(--color-gold);
+      padding: 0.4rem 0.6rem;
+      border-radius: var(--radius-sm);
+      font-size: 0.82rem;
+      color: var(--text-secondary);
+      line-height: 1.6;
+      margin-top: 0.25rem;
+    }
+
+    /* TAB 3: Analysis */
+    .analysis-container {
+      display: flex;
+      flex-direction: column;
+      gap: 1.25rem;
+    }
+
+    .analysis-card {
+      background: var(--bg-primary);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      transition: all 0.2s;
+    }
+    .analysis-card:hover {
+      border-color: var(--color-indigo);
+    }
+
+    .analysis-card-title {
+      background: linear-gradient(90deg, var(--bg-secondary), var(--bg-primary));
+      padding: 0.85rem 1.25rem;
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--color-indigo);
+      border-bottom: 1px solid var(--border-color);
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    body.theme-dark .analysis-card-title {
+      color: #93c5fd;
+    }
+
+    .analysis-card-body {
+      padding: 1.15rem 1.25rem;
+      font-size: 0.95rem;
+      color: var(--text-primary);
+      line-height: 1.8;
+    }
+    .analysis-para {
+      margin-bottom: 0.85rem;
+    }
+    .analysis-para:last-child {
+      margin-bottom: 0;
+    }
+
+    /* TAB 4: Quizzes */
+    .quiz-container {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+
+    .quiz-card {
+      background: var(--bg-primary);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-md);
+      padding: 1.25rem 1.4rem;
+      transition: all 0.2s;
+    }
+
+    .quiz-q-title {
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--text-primary);
+      margin-bottom: 1rem;
+      display: flex;
+      gap: 0.6rem;
+      line-height: 1.6;
+    }
+    .q-badge {
+      background: var(--color-cinnabar);
+      color: #fff;
+      font-size: 0.75rem;
+      font-weight: 700;
+      padding: 0.15rem 0.5rem;
+      border-radius: var(--radius-sm);
+      height: fit-content;
+      margin-top: 0.15rem;
+      flex-shrink: 0;
+    }
+
+    .quiz-options {
+      display: flex;
+      flex-direction: column;
+      gap: 0.6rem;
+      margin-bottom: 1rem;
+    }
+
+    .quiz-option-btn {
+      text-align: left;
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-md);
+      padding: 0.65rem 1rem;
+      font-family: inherit;
+      font-size: 0.9rem;
+      color: var(--text-primary);
+      cursor: pointer;
+      transition: all 0.2s;
+      line-height: 1.5;
+    }
+    .quiz-option-btn:hover {
+      background: var(--bg-accent);
+      border-color: var(--color-cinnabar);
+    }
+    .quiz-option-btn.correct {
+      background: #ecfdf5;
+      border-color: #10b981;
+      color: #065f46;
+      font-weight: 600;
+    }
+    .quiz-option-btn.wrong {
+      background: #fef2f2;
+      border-color: #ef4444;
+      color: #991b1b;
+    }
+
+    .quiz-feedback {
+      display: none;
+      background: var(--bg-secondary);
+      border-left: 4px solid var(--color-bamboo);
+      padding: 0.85rem 1rem;
+      border-radius: var(--radius-sm);
+      font-size: 0.88rem;
+      line-height: 1.65;
+      color: var(--text-primary);
+    }
+    .quiz-feedback.show {
+      display: block;
+      animation: fadeIn 0.25s ease;
+    }
+
+    /* Modal Tooltip for Quick Note */
+    .note-tooltip {
+      position: fixed;
+      z-index: 200;
+      background: var(--bg-card);
+      border: 1px solid var(--color-cinnabar);
+      border-radius: var(--radius-md);
+      padding: 0.85rem 1rem;
+      box-shadow: var(--shadow-lg);
+      max-width: 320px;
+      font-size: 0.88rem;
+      line-height: 1.6;
+      display: none;
+      animation: fadeIn 0.2s ease;
+    }
+
+    /* Bottom Navigation Bar (Prev / Next Poem) */
+    .poem-nav-footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1.25rem;
+      border-top: 1px solid var(--border-color);
+      background: var(--bg-secondary);
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+    .nav-arrow-btn {
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      color: var(--text-primary);
+      padding: 0.5rem 1rem;
+      border-radius: var(--radius-md);
+      font-family: inherit;
+      font-size: 0.9rem;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      transition: all 0.2s;
+    }
+    .nav-arrow-btn:hover {
+      border-color: var(--color-cinnabar);
+      color: var(--color-cinnabar);
+      background: var(--bg-accent);
+    }
+
+    /* Comprehensive Section / Hall of Fame */
+    .anthology-guide {
+      margin-top: 3rem;
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-lg);
+      padding: 2rem 1.75rem;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .guide-title {
+      font-size: 1.35rem;
+      font-weight: 900;
+      color: var(--color-cinnabar-dark);
+      text-align: center;
+      margin-bottom: 1.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+    }
+    body.theme-dark .guide-title {
+      color: #f87171;
+    }
+
+    .critics-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.25rem;
+      margin-bottom: 2rem;
+    }
+
+    .critic-card {
+      background: var(--bg-primary);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-md);
+      padding: 1.25rem;
+    }
+    .critic-author {
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: var(--color-gold);
+      margin-bottom: 0.4rem;
+    }
+    .critic-content {
+      font-size: 0.88rem;
+      color: var(--text-secondary);
+      line-height: 1.7;
+    }
+
+    /* Themes Matrix Table */
+    .theme-matrix {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.88rem;
+      margin-top: 1rem;
+    }
+    .theme-matrix th, .theme-matrix td {
+      border: 1px solid var(--border-color);
+      padding: 0.75rem 1rem;
+      text-align: left;
+    }
+    .theme-matrix th {
+      background: var(--bg-secondary);
+      color: var(--text-primary);
+      font-weight: 700;
+    }
+    .theme-matrix tr:hover {
+      background: var(--bg-primary);
+    }
+
+    /* Standard Warm Footer System */
+    footer {
+      background: linear-gradient(180deg, #2e1a12 0%, #1c0f0a 100%);
+      color: white;
+      padding: 3.5rem 1.5rem 2.5rem;
+      margin-top: auto;
+      border-top: 3px solid #854d0e;
+    }
+
+    .footer-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1.8rem;
+      text-align: center;
+    }
+
+    .footer-logos {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 1.5rem;
+      flex-wrap: wrap;
+    }
+
+    .footer-seal {
+      height: 60px;
+      width: auto;
+      object-fit: contain;
+      filter: drop-shadow(0 4px 10px rgba(0, 0, 0, 0.3));
+    }
+
+    .footer-tagline-img {
+      max-height: 46px;
+      width: auto;
+      object-fit: contain;
+    }
+
+    .footer-credit {
+      font-size: 0.95rem;
+      color: #fde68a;
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(253, 230, 138, 0.25);
+      padding: 0.6rem 1.6rem;
+      border-radius: 999px;
+      font-weight: 600;
+      letter-spacing: 0.5px;
+    }
+
+    .footer-notes {
+      font-size: 0.85rem;
+      color: #94a3b8;
+      max-width: 750px;
+      line-height: 1.65;
+    }
+
+    /* Toast Notification */
+    .toast-msg {
+      position: fixed;
+      bottom: 2rem;
+      left: 50%;
+      transform: translateX(-50%) translateY(100px);
+      background: rgba(28, 25, 23, 0.95);
+      color: #fff;
+      padding: 0.6rem 1.25rem;
+      border-radius: var(--radius-full);
+      font-size: 0.85rem;
+      box-shadow: var(--shadow-lg);
+      z-index: 300;
+      transition: transform 0.3s cubic-bezier(0.18, 0.89, 0.32, 1.28);
+      pointer-events: none;
+    }
+    .toast-msg.show {
+      transform: translateX(-50%) translateY(0);
+    }
+
+    /* Print Styles */
+    @media print {
+      body {
+        background: #fff !important;
+        color: #000 !important;
+      }
+      .site-header, .compass-nav, .search-results-panel, .poem-tabs-nav, .view-mode-bar, .poem-stage-actions, .poem-nav-footer, .anthology-guide, .site-footer, .bg-watermark {
+        display: none !important;
+      }
+      .main-container {
+        padding: 0 !important;
+        max-width: 100% !important;
+      }
+      .poem-stage {
+        border: none !important;
+        box-shadow: none !important;
+      }
+      .tab-pane {
+        display: block !important;
+        page-break-inside: avoid;
+        padding: 1rem 0 !important;
+      }
+      .couplet-card {
+        border: 1px solid #ccc !important;
+        page-break-inside: avoid;
+      }
+      .cloze-blank {
+        color: #000 !important;
+        background: none !important;
+        border: none !important;
+      }
+      .cloze-blank::after {
+        display: none !important;
+      }
+    }
+
+    /* Mobile Adaptations */
+    @media (max-width: 640px) {
+      .header-inner {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      .header-tools {
+        width: 100%;
+        justify-content: space-between;
+      }
+      .poem-banner {
+        flex-direction: column;
+      }
+      .couplet-original {
+        font-size: 1.15rem;
+      }
+      .annotations-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="bg-watermark">古詩十九</div>
+
+  <!-- Header -->
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="index.html" class="header-brand" title="回到語文補給站首頁">
+        <img src="icon/seal-red.png" alt="學思軒" class="brand-seal-img">
+        <img src="icon/logo-yuwen.png" alt="語文補給站" class="brand-logo-img" onerror="this.src='icon/logo-yuwen.png'">
+        <div class="brand-text">
+          <h1 class="serif">古詩十九首 <span>互動學習殿堂</span></h1>
+          <span class="brand-badge">翰林 B3L02《古詩選》・漢代五言抒情冠冕</span>
+        </div>
+      </a>
+
+      <div class="header-tools">
+        <!-- Return Home Button -->
+        <a href="index.html" class="header-nav-link" title="返回語文補給站首頁">
+          <i data-lucide="home" style="width:16px;height:16px;"></i> 首頁
+        </a>
+
+        <!-- Audio recitation controls -->
+        <div class="audio-player-bar" title="Web Speech API 真人語音朗讀">
+          <button class="audio-btn" id="ttsPlayBtn" onclick="togglePlayPoem()" title="朗讀整首詩">▶ 朗讀</button>
+          <button class="audio-btn" id="ttsStopBtn" onclick="stopSpeech()" title="停止朗讀">⏹</button>
+          <select class="speed-select" id="ttsRateSelect" onchange="changeSpeechRate()" title="語速調節">
+            <option value="0.8">0.8x</option>
+            <option value="1.0" selected>1.0x</option>
+            <option value="1.2">1.2x</option>
+          </select>
+        </div>
+
+        <!-- Font size scaler -->
+        <button class="tool-btn" onclick="cycleFontSize()" title="調整字體大小">🔠 字級</button>
+
+        <!-- Dark/Light Theme -->
+        <button class="tool-btn" onclick="toggleTheme()" title="切換素箋/夜讀主題" id="themeBtn">🌙 夜讀</button>
+
+        <!-- Print friendly -->
+        <button class="tool-btn" onclick="window.print()" title="列印本篇學習單">🖨️ 列印</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero-section">
+    <div class="hero-inner">
+      <div class="hero-badge">📜 國中國文高層次文學精讀專題</div>
+      <h2 class="hero-title">「文溫以麗，意悲而遠，<span>一字千金</span>」</h2>
+      <p class="hero-quote">
+        「古詩十九首，不必一人之辭，一時之作。大率逐臣棄婦、朋友闊絕、遊子他鄉、死生新故之感。初無奇闢之思，驚險之句，而西京古詩，皆在其下。」
+        <br><small>—— 清・沈德潛《古詩源》</small>
+      </p>
+
+      <div class="hero-stats">
+        <div class="stat-item">收錄詩篇 <strong>19</strong> 首</div>
+        <div class="stat-item">典範詩聯 <strong>142</strong> 聯</div>
+        <div class="stat-item">訓詁注釋 <strong>230+</strong> 條</div>
+        <div class="stat-item">深度賞析 <strong>19</strong> 篇全解</div>
+        <div class="stat-item">互動隨堂題庫 <strong>50+</strong> 題</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Main Container -->
+  <main class="main-container">
+
+    <!-- Compass Navigator -->
+    <nav class="compass-nav" aria-label="古詩十九首導覽羅盤">
+      <div class="compass-header">
+        <div class="compass-title">
+          <span>🧭</span> 導覽羅盤：全十九首快速研讀
+        </div>
+        <!-- Search bar -->
+        <div class="search-wrap">
+          <span class="search-icon">🔍</span>
+          <input type="text" id="searchInput" class="search-input" placeholder="全文檢索原文、白話譯文、注釋或名句..." oninput="handleSearch(this.value)">
+          <button class="clear-search-btn" id="clearSearchBtn" onclick="clearSearch()">✕</button>
+        </div>
+      </div>
+
+      <!-- Theme Filter Pills -->
+      <div class="theme-pills" id="themePillsContainer">
+        <!-- Rendered by JS -->
+      </div>
+
+      <!-- 19 Poem Pills -->
+      <div class="poem-pills" id="poemPillsContainer">
+        <!-- Rendered by JS -->
+      </div>
+    </nav>
+
+    <!-- Search Results Panel (Conditional) -->
+    <div class="search-results-panel" id="searchResultsPanel">
+      <div class="search-results-title">
+        <span id="searchResultsCount">檢索結果</span>
+        <button class="tool-btn" style="padding:0.2rem 0.5rem;font-size:0.75rem;" onclick="clearSearch()">關閉搜尋</button>
+      </div>
+      <div class="search-items-list" id="searchItemsList">
+        <!-- Injected by JS -->
+      </div>
+    </div>
+
+    <!-- Active Poem Stage Card -->
+    <article class="poem-stage" id="poemStage">
+      <!-- Poem Banner -->
+      <div class="poem-banner">
+        <div class="poem-meta">
+          <div class="poem-tags">
+            <span class="tag-badge tag-theme" id="poemThemeBadge">思婦閨怨</span>
+            <span class="tag-badge tag-sub" id="poemTagBadge">遊子遠行・自重珍攝</span>
+            <span class="tag-badge" style="background:var(--bg-accent);color:var(--text-secondary);" id="poemSourceBadge">《昭明文選》</span>
+          </div>
+          <div class="poem-title-display">
+            <span class="poem-id-label" id="poemNumLabel">第一首</span>
+            <span id="poemTitleText">《行行重行行》</span>
+          </div>
+          <div class="poem-core-emotion" id="poemCoreEmotion">
+            <span>💭 核心意旨：生別離之苦・自重珍攝</span>
+          </div>
+        </div>
+
+        <div class="poem-stage-actions">
+          <button class="tool-btn" id="favBtn" onclick="toggleFavorite()" title="加入我的詩篇收藏">⭐ 收藏</button>
+          <button class="tool-btn" onclick="copyPoemText()" title="複製全篇詩文與白話語譯">📋 複製</button>
+        </div>
+      </div>
+
+      <!-- Poem Tabs Navigation -->
+      <div class="poem-tabs-nav">
+        <button class="tab-btn active" onclick="switchTab('tab-verses')" id="tabBtn-verses">
+          <span>📜</span> 詩文與語譯
+        </button>
+        <button class="tab-btn" onclick="switchTab('tab-notes')" id="tabBtn-notes">
+          <span>📖</span> 字詞注釋與典故 (<span id="notesCountBadge">0</span>)
+        </button>
+        <button class="tab-btn" onclick="switchTab('tab-analysis')" id="tabBtn-analysis">
+          <span>🖋️</span> 篇章深度賞析
+        </button>
+        <button class="tab-btn" onclick="switchTab('tab-quiz')" id="tabBtn-quiz">
+          <span>🎯</span> 隨堂互動挑戰 (<span id="quizCountBadge">0</span>)
+        </button>
+      </div>
+
+      <!-- Tab 1: Verses & Translation -->
+      <div class="tab-pane active" id="tab-verses">
+        <div class="view-mode-bar">
+          <div class="mode-btn-group">
+            <button class="mode-btn active" onclick="setVerseMode('parallel')" id="modeBtn-parallel">📖 逐聯對照</button>
+            <button class="mode-btn" onclick="setVerseMode('original-only')" id="modeBtn-original-only">🪶 沉浸誦讀 (僅原文)</button>
+            <button class="mode-btn" onclick="setVerseMode('trans-only')" id="modeBtn-trans-only">💬 僅看語譯</button>
+            <button class="mode-btn" onclick="setVerseMode('cloze')" id="modeBtn-cloze">✏️ 挖空背誦自測</button>
+          </div>
+          <div style="font-size:0.8rem;color:var(--text-muted);" id="modeTip">
+            💡 提示：點擊原文中帶底線字詞可快速查看釋義；挖空模式下點擊空格可揭曉原字。
+          </div>
+        </div>
+
+        <div class="couplets-container" id="coupletsList">
+          <!-- Rendered by JS -->
+        </div>
+      </div>
+
+      <!-- Tab 2: Annotations -->
+      <div class="tab-pane" id="tab-notes">
+        <div style="margin-bottom:1rem;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:0.5rem;">
+          <div style="font-size:0.9rem;color:var(--text-muted);">
+            收錄說文段注、廣雅、毛詩傳及李善注等經典訓詁資料與文法修辭說明。
+          </div>
+          <input type="text" id="noteFilterInput" placeholder="篩選字詞釋義..." oninput="filterNotes(this.value)" style="padding:0.3rem 0.75rem;border-radius:var(--radius-full);border:1px solid var(--border-color);background:var(--bg-primary);font-size:0.8rem;color:var(--text-primary);outline:none;">
+        </div>
+        <div class="annotations-grid" id="annotationsList">
+          <!-- Rendered by JS -->
+        </div>
+      </div>
+
+      <!-- Tab 3: Analysis -->
+      <div class="tab-pane" id="tab-analysis">
+        <div class="analysis-container" id="analysisContainer">
+          <!-- Rendered by JS -->
+        </div>
+      </div>
+
+      <!-- Tab 4: Quizzes -->
+      <div class="tab-pane" id="tab-quiz">
+        <div style="margin-bottom:1.25rem;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:0.5rem;">
+          <div style="font-size:0.9rem;color:var(--text-muted);">
+            針對本詩設計的字詞辨析、修辭技巧與主旨理解評量。點擊選項即可獲得即時詳解反饋！
+          </div>
+          <button class="tool-btn" onclick="resetCurrentQuiz()" style="font-size:0.8rem;">🔄 重新測驗</button>
+        </div>
+        <div class="quiz-container" id="quizContainer">
+          <!-- Rendered by JS -->
+        </div>
+      </div>
+
+      <!-- Bottom Nav Footer -->
+      <div class="poem-nav-footer">
+        <button class="nav-arrow-btn" onclick="navigatePoem(-1)" id="prevPoemBtn">
+          <span>⬅</span> <span id="prevPoemTitle">上一首</span>
+        </button>
+        <span style="font-size:0.85rem;color:var(--text-muted);" id="currentPoemIndexStatus">第 1 / 19 首</span>
+        <button class="nav-arrow-btn" onclick="navigatePoem(1)" id="nextPoemBtn">
+          <span id="nextPoemTitle">下一首</span> <span>➡</span>
+        </button>
+      </div>
+    </article>
+
+    <!-- Anthology Guide & Hall of Fame -->
+    <section class="anthology-guide">
+      <h3 class="guide-title">
+        <span>🏛️</span> 《古詩十九首》文學全景與名家品賞
+      </h3>
+
+      <div class="critics-grid">
+        <div class="critic-card">
+          <div class="critic-author">梁・劉勰《文心雕龍》</div>
+          <div class="critic-content">
+            「觀其結體散骨，憲章漢代，氣韻天成，可謂五言之冠冕。」讚譽其為文人五言詩發展成熟的頂峰標竿。
+          </div>
+        </div>
+        <div class="critic-card">
+          <div class="critic-author">梁・鍾嶸《詩品》</div>
+          <div class="critic-content">
+            「文溫以麗，意悲而遠，驚心動魄，可謂幾乎一字千金。」推崇其語言溫潤質樸，意境深沉遼遠，具有震撼人心的感染力。
+          </div>
+        </div>
+        <div class="critic-card">
+          <div class="critic-author">宋・蘇軾</div>
+          <div class="critic-content">
+            「古詩十九首，天下之至文也。」對十九首高度凝練、由近及遠的寫真筆法極為景仰。
+          </div>
+        </div>
+      </div>
+
+      <!-- Thematic Matrix -->
+      <h4 style="font-size:1.05rem;margin-bottom:0.75rem;font-weight:700;color:var(--text-primary);">
+        📊 十九首主題分類對照矩陣
+      </h4>
+      <div style="overflow-x:auto;">
+        <table class="theme-matrix">
+          <thead>
+            <tr>
+              <th style="width:130px;">核心主題</th>
+              <th style="width:220px;">篇名編號</th>
+              <th>主要情感與文學特徵</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>思婦閨怨</strong></td>
+              <td>01、02、08、09、10、16、17、18、19</td>
+              <td>生別離之痛、空閨孤寂、托物寄遠（折花、遺綺、牽牛織女）、月夜相思、夢醒悵惘。</td>
+            </tr>
+            <tr>
+              <td><strong>及時行樂</strong></td>
+              <td>03、04、12、15</td>
+              <td>歲月流馳、人生短促如寄，以宴樂、秉燭夜遊抗拒死亡之憂，兼具及早立名與避世矛盾。</td>
+            </tr>
+            <tr>
+              <td><strong>生命感懷</strong></td>
+              <td>11、13、14</td>
+              <td>出郭觀墓、見北邙松柏摧折，感悟滄海桑田與人事無常，發出立德留名與還鄉之嘆。</td>
+            </tr>
+            <tr>
+              <td><strong>遊子懷思</strong></td>
+              <td>06</td>
+              <td>涉江採擷芙蓉，欲寄遠方伊人而不可得，抒發關山阻隔之同心離居長恨。</td>
+            </tr>
+            <tr>
+              <td><strong>求索悲歌與世態</strong></td>
+              <td>05、07</td>
+              <td>高樓聽曲感念知音難覓；昔日同窗好友青雲得志後翻臉背棄，沉痛控訴世態炎涼。</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Quick Note Tooltip -->
+  <div class="note-tooltip" id="noteTooltip"></div>
+
+  <!-- Toast Notification -->
+  <div class="toast-msg" id="toastMsg">提示訊息</div>
+
+  <!-- 頁尾宣告 -->
+  <footer>
+    <div class="footer-container">
+      <div class="footer-logos">
+        <img src="icon/seal-white.png" alt="學思軒" class="footer-seal" onerror="this.src='icon/seal-red.png'">
+        <img src="icon/slogan-god-dark.png" alt="只要有心人人都是國文神" class="footer-tagline-img">
+      </div>
+      <div class="footer-credit serif">
+        𖤐 本系統由學思軒黃于珊、王斐亭老師規劃設計 · 版權所有 © 2026 𖤐
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    /* ==========================================================================
+       POEMS DATABASE (Embedded for 100% offline and file:// compatibility)
+       ========================================================================== */
+    const POEMS_DATA = [{"id": 1, "title": "行行重行行", "theme": "思婦閨怨", "tag": "遊子遠行・思婦閨怨", "core_emotion": "生別離之苦・自重珍攝", "raw_header": "古詩十九首學習講義（一）《行行重行行》", "lines": [{"original": "行行重行行，與君生別離。", "translation": "走了又走，走個不停，和你生生的分離。"}, {"original": "相去萬餘里，各在天一涯。", "translation": "我們彼此相隔一萬多里，各自在天的一邊。"}, {"original": "道路阻且長，會面安可知？", "translation": "道路險阻而且長遠，能否見面怎能知道？"}, {"original": "胡馬依北風，越鳥巢南枝。", "translation": "胡馬南來之後，依然依戀著北風；\n越鳥北飛之後，依然築巢於南向的樹枝。"}, {"original": "相去日已遠，衣帶日已緩。", "translation": "相離日漸遙遠了，衣帶日漸寬鬆了。"}, {"original": "浮雲蔽白日，遊子不顧返。", "translation": "浮雲遮蔽了太陽，而使遊子不想回家。"}, {"original": "思君令人老，歲月忽已晚。", "translation": "思念使我衰老，時光流逝、忽然已經到了歲暮時候。"}, {"original": "棄置勿復道，努力加餐飯。", "translation": "拋開這些不要再說了，請你勉力多吃些飯。"}], "annotations": [{"num": "1", "term": "行行重行行", "terms": ["行行重行行", "重", "各在天一涯"], "explanation": "行之不止、走個不停；有愈走愈遠之意。重：音ㄔㄨㄥˊ，又。兩「行行」相疊，是為了加重語氣。", "supplement": ""}, {"num": "2", "term": "與君生別離", "terms": ["與君生別離", "君", "各在天一涯"], "explanation": "和你生生的分離；有別後難以再見之意。君：指丈夫。", "supplement": ""}, {"num": "3", "term": "相去萬餘里", "terms": ["相去萬餘里", "相去", "去", "萬餘里", "各在天一涯"], "explanation": "相隔一萬多里。相去：相隔。去：距離。萬餘里：言相隔遙遠。", "supplement": ""}, {"num": "4", "term": "各在天一涯", "terms": ["各在天一涯", "廣雅", "」涯"], "explanation": "各自在天的一邊；意指相隔遙遠。廣雅：「涯，方也。」涯：本指水邊；亦指邊遠之地。", "supplement": ""}, {"num": "5", "term": "阻且長", "terms": ["阻且長", "阻", "各在天一涯"], "explanation": "險阻而且長遠。阻：險也。", "supplement": ""}, {"num": "6", "term": "會面安可知", "terms": ["會面安可知", "安", "各在天一涯"], "explanation": "能否見面怎能知道。安：豈、怎。", "supplement": ""}, {"num": "7", "term": "胡馬依北風", "terms": ["胡馬依北風", "胡馬", "依", "各在天一涯"], "explanation": "胡馬南來之後，依然依戀著北風；比喻不忘本。胡馬：北方胡地所產的馬（古稱北狄為「胡」，指匈奴）。依：依戀。", "supplement": ""}, {"num": "8", "term": "越鳥巢南枝", "terms": ["越鳥巢南枝", "越鳥", "巢", "各在天一涯"], "explanation": "越鳥北飛之後，依然築巢於南向的樹枝；比喻不忘本。越鳥：南方越地的鳥。巢：築巢（名詞轉動詞）。", "supplement": "【補充】：胡馬依北風，越鳥巢南枝：意指禽鳥尚且有情，何況是人？以比喻抒情，情感念舊而又濃烈。"}, {"num": "9", "term": "相去日已遠", "terms": ["相去日已遠", "相去", "日", "已", "各在天一涯"], "explanation": "相離日漸遙遠了；意指離別已久。相去：相隔、相離。日：日漸。已：同「以」。", "supplement": ""}, {"num": "10", "term": "衣帶日已緩", "terms": ["衣帶日已緩", "帶", "日", "已", "緩", "各在天一涯"], "explanation": "衣帶日漸寬鬆了；意指人因思念而漸漸消瘦。帶：繫衣褲的腰帶。日：日漸。已：同「以」。緩：寬鬆。", "supplement": ""}, {"num": "11", "term": "浮雲蔽白日", "terms": ["浮雲蔽白日", "蔽", "浮雲", "白日", "各在天一涯"], "explanation": "浮雲遮蔽了太陽；意指遊子在外被小人迷惑。蔽：遮蔽。浮雲：喻丈夫的新歡（或喻朝中邪佞小人）。白日：喻丈夫（或喻賢君）。", "supplement": "【補充】：《文選》李善注：「浮雲之蔽白日，以喻邪佞之毀忠良，故遊子之行不顧反也。」"}, {"num": "12", "term": "遊子不顧返", "terms": ["遊子不顧返", "遊子", "子", "不顧", "顧", "反", "各在天一涯"], "explanation": "遊子不想回家。遊子：遠遊在外的人。子：人。不顧：不想。顧：念、想。反：同「返」。", "supplement": ""}, {"num": "13", "term": "思君令人老", "terms": ["思君令人老", "令", "各在天一涯"], "explanation": "思念你使我衰老。令：使。", "supplement": ""}, {"num": "14", "term": "歲月忽已晚", "terms": ["歲月忽已晚", "歲月", "忽", "晚", "各在天一涯"], "explanation": "時光流逝，忽然已經到了歲暮時候；意指一年將盡、年華逝去。歲月：時光、時間。忽：忽然、很快地。晚：歲暮。", "supplement": ""}, {"num": "15", "term": "棄置勿復道", "terms": ["棄置勿復道", "棄置", "捐", "復", "道", "各在天一涯"], "explanation": "拋開這些不要再說了。棄置：拋棄、放下。捐：棄也。復：再。道：說。", "supplement": ""}, {"num": "16", "term": "努力加餐飯", "terms": ["努力加餐飯", "努力", "加餐飯", "加", "各在天一涯"], "explanation": "勉力多吃些飯；當時勉人自我保重的用語。努力：勉力。加餐飯：多吃飯。加：多。", "supplement": ""}], "analysis": [{"title": "一、 背景與出處介紹", "content": ["《古詩十九首》是漢代古詩中最精華的部分，代表了五言抒情詩最高成就。沈德潛於《古詩源》中評價道：「古詩十九首，不必一人之辭，一時之作。大率逐臣棄婦、朋友闊絕、遊子他鄉、死生新故之感。或寓言，或顯言，或反覆言。初無奇闢之思，驚險之句，而西京古詩，皆在其下。」", "本詩選自《昭明文選》，為《古詩十九首》的第一首。題名「行行重行行」是以詩的首句命名。本詩以第一人稱、妻子自敘的口吻，敘寫思婦對於丈夫遠行羈旅、久別未歸的深切懷念與摯愛之情。"]}, {"title": "二、 脈絡與情感轉折", "content": ["1. 追敘別離與遙遠（第 1～6 句）：詩端先以追敘的筆法，從往昔「行行重行行」的別離寫起，逐句加深筆墨。直到如今相去萬里、各自在天涯時，傾洩乖隔兩地的滿腹愁情與對見面無期的無奈。", "2. 物尚有情與懷疑思念（第 7～12 句）：連用「胡馬依北風，越鳥巢南枝」說明禽物不忘本，其情猶在，何況是人？以此堅信良人定亦懷念自己。隨後以「浮雲蔽白日，遊子不顧反」，因思念而懷疑，因懷疑而更加思念兩個典故，吐訴內心的愁苦之情。", "3. 埋愁於心與體貼祝福（第 13～16 句）：最後以「棄置勿復道，努力加餐飯」，將思念與怨尤埋在心中，轉以極其體貼關愛的語氣，勸良人各自珍重。雖然思婦羈旅不歸，但思婦未予苛責，體現了「思而不怨、溫柔敦厚」的詩教傳統。尤以「相去日已遠，衣帶日已緩」與「思君令人老，歲月忽已晚」，意思相同的兩句反覆低吟，民歌韻味極濃。"]}, {"title": "三、 修辭方法總整理（本詩七大修辭）", "content": ["1. 比興：「胡馬依北風，越鳥巢南枝」——因「胡馬」、「越鳥」的習性而聯想遊子，是「興」；以馬依北風、鳥巢南枝比喻人不忘本，是「比」。此句正是比興兼具的經典名句。", "2. 轉品：「越鳥巢南枝」的「巢」（名詞轉動詞，意為築巢）；「棄置勿復道」的「道」（名詞轉動詞，意為講說）。", "3. 類疊：「行行重行行」——以疊字「行行」描寫走個不停、愈走愈遠，屬於類疊修辭中的疊字。", "4. 借代：「努力加餐飯」的「餐飯」（借代指身體保重）；「衣帶日已緩」的「衣帶」（借代指人消瘦形體）。", "5. 誇飾：「相去萬餘里」、「各在天一涯」——極力渲染距離極其遙遠。", "6. 譬喻（借喻）：「浮雲蔽白日」——原意為「小人蔽忠良」或「新歡蔽夫君，如浮雲蔽白日」，省去本體與喻詞，屬於譬喻修辭中的「借喻」。", "7. 錯綜：「相去日已遠，衣帶日已緩」與「思君令人老，歲月忽已晚」——兩句表達意思相近而變換字句與表達型態，屬於錯綜修辭。"]}], "quizzes": [{"q": "《行行重行行》中「胡馬依北風，越鳥巢南枝」所運用的修辭手法與寓意為何？", "options": ["A. 借代；描寫胡越兩地物產豐饒", "B. 譬喻；借禽鳥戀舊本能，堅信遊子必定不忘故土與舊情", "C. 誇飾；描繪塞外風光之苦寒", "D. 轉品；將名詞胡與越轉為形容詞"], "ans": 1, "exp": "「胡馬依北風，越鳥巢南枝」連用胡馬戀北、越鳥巢南之本能，以物猶有情起興與譬喻，深信遠行丈夫定亦懷念故里與故人。"}, {"q": "詩句「相去日已遠，衣帶日已緩」中，「衣帶日已緩」主要表達何種情感？", "options": ["A. 離別已久，思婦因日夜憂思而日益消瘦", "B. 貧困潦倒，衣服寬大不合身", "C. 生活優渥，心寬體胖", "D. 氣候轉暖，換穿寬鬆春衫"], "ans": 0, "exp": "「衣帶日已緩」借衣服變得寬鬆，具體形象地表現出思婦因相思成疾、日漸消瘦的苦楚，與柳永「為伊消得人憔悴，衣帶漸寬終不悔」意境相通。"}, {"q": "「浮雲蔽白日，遊子不顧反」在李善《文選》注中，常被解讀為何種寄託寓意？", "options": ["A. 描寫暴風雨即將來臨的景象", "B. 隱喻朝中邪佞小人蒙蔽賢明君王，致使忠良流落他鄉難返", "C. 諷刺遊子留戀異鄉風景不思進取", "D. 讚頌天象高遠廣大"], "ans": 1, "exp": "李善注指出：「浮雲之蔽白日，以喻邪佞之毀忠良，故遊子之行不顧反也。」傳統注家常以此作為政治寄託解讀。"}, {"q": "全詩結尾「棄捐勿復道，努力加餐飯」，展現出思婦怎樣的情懷與心態？", "options": ["A. 憤怒絕望，決定與丈夫恩斷義絕", "B. 轉悲苦為溫柔寬厚的祝願，深自克制愁緒，叮嚀丈夫保重珍攝", "C. 貪戀美食，逃避現實生活", "D. 滿腹埋怨，諷刺丈夫在外的奢華生活"], "ans": 1, "exp": "結尾思婦強自壓抑無邊的幽怨，轉而殷切叮囑「努力加餐飯」，體現出中國古典詩歌「怨而不怒、溫柔敦厚」的深沉情致。"}]}, {"id": 2, "title": "青青河畔草", "theme": "思婦閨怨", "tag": "春日傷逝・空房孤寂", "core_emotion": "昔為倡女・難守空房", "raw_header": "古詩十九首學習講義（二）《青青河畔草》", "lines": [{"original": "青青河畔草，鬱鬱園中柳。", "translation": "河邊的青草翠綠絲絲，園裡的柳樹茂盛繁密。"}, {"original": "盈盈樓上女，皎皎當窗牖。", "translation": "樓上的女子儀態優美，臉色潔白的臨靠著窗戶。"}, {"original": "娥娥紅粉妝，纖纖出素手。", "translation": "紅粉妝飾著美好的容貌，伸出柔白細嫩的手來。"}, {"original": "昔為倡家女，今為蕩子婦。", "translation": "以前是從事歌唱樂舞的女子，現在是羈旅在外蕩子的妻子。"}, {"original": "蕩子行不歸，空床難獨守。", "translation": "羈旅在外的蕩子遠遊不回來，女子很難獨自守著空寂的床。"}], "annotations": [{"num": "1", "term": "青青", "terms": ["青青", "青"], "explanation": "形容草的顏色翠綠。青：顏色翠綠。", "supplement": ""}, {"num": "2", "term": "畔", "terms": ["畔"], "explanation": "音ㄆㄢˋ，邊也。", "supplement": ""}, {"num": "3", "term": "鬱鬱", "terms": ["鬱鬱", "鬱"], "explanation": "草木叢聚，有茂密之意。鬱：積也，木聚生也，有草木茂盛之意。", "supplement": "【補充】：青青河畔草，鬱鬱園中柳：倒裝句，即「河畔草青青，園中柳鬱鬱」。"}, {"num": "4", "term": "盈盈", "terms": ["盈盈", "盈", "《廣雅》"], "explanation": "儀態美好。盈：通「贏」。《廣雅》：「盈，容也。」", "supplement": ""}, {"num": "5", "term": "皎皎", "terms": ["皎皎", "皎"], "explanation": "潔白的樣子；此指臉色潔白。皎：音ㄐㄧㄠˇ，潔白。", "supplement": ""}, {"num": "6", "term": "當", "terms": ["當"], "explanation": "臨、對著。", "supplement": ""}, {"num": "7", "term": "窗牖", "terms": ["窗牖", "牖", "《說文》段注"], "explanation": "窗戶。牖：音ㄧㄡˇ，窗也。《說文》段注：在屋曰窗，在牆曰牖。", "supplement": ""}, {"num": "8", "term": "娥娥", "terms": ["娥娥", "娥"], "explanation": "美好的樣子；指容貌美好。娥：美好貌。", "supplement": ""}, {"num": "9", "term": "紅粉妝", "terms": ["紅粉妝", "粉", "妝"], "explanation": "以紅色的粉妝飾。粉：敷臉化妝之用。妝：飾也。", "supplement": "【補充】：娥娥紅粉妝：倒裝句，即「妝紅粉娥娥」。"}, {"num": "10", "term": "纖纖", "terms": ["纖纖", "纖"], "explanation": "柔細的樣子。纖：細也。", "supplement": ""}, {"num": "11", "term": "纖纖出素手", "terms": ["纖纖出素手"], "explanation": "倒裝句，即「出素纖纖手」。", "supplement": ""}, {"num": "12", "term": "素", "terms": ["素"], "explanation": "白色，指手的膚色。", "supplement": ""}, {"num": "13", "term": "昔為倡家女", "terms": ["昔為倡家女", "為", "昔", "倡家女"], "explanation": "為：音ㄨㄟˊ，是。昔：以前。倡家女：即倡女，古代從事歌唱樂舞的女子。", "supplement": ""}, {"num": "14", "term": "蕩子婦", "terms": ["蕩子婦", "蕩子"], "explanation": "羈旅不歸的男子的妻子。蕩子：離家遠遊、羈旅不歸的人。", "supplement": ""}, {"num": "15", "term": "行", "terms": ["行"], "explanation": "指遠行、遠遊。", "supplement": ""}, {"num": "16", "term": "空床難獨守", "terms": ["空床難獨守"], "explanation": "倒裝句，即「難獨守空床」，意指備受孤寂之苦煎熬。", "supplement": ""}], "analysis": [{"title": "一、 背景與寫作視角", "content": ["《青青河畔草》選自《昭明文選》，為《古詩十九首》的第二首。本詩係以「第三者旁觀」的筆法，敘寫思婦獨守空閨、春日感傷孤寂的情形。"]}, {"title": "二、 脈絡與情感轉折", "content": ["1. 景物起興與對比：青草蔓延不絕，綠柳茂盛扶疏，春日的大地到處充滿盎然的生機，唯獨不見羈旅遠遊的蕩子歸來。思婦在樓上眺望，在窗前徘徊，在想念之中情難以堪，正是本詩敘寫的動機。", "2. 鏡頭由遠而近與細緻描寫：詩端先以「青草、鬱柳」起興，敘寫春來不見伊人的愁傷之後，將筆鋒一轉，著力描寫思婦。全詩不過十句，但作者從「盈盈樓上女」到「纖纖出素手」，不惜筆墨，以連續的動作「當」、「出」來描寫外貌，就用了四句。", "3. 坦率自然與真摯動人：全詩從河畔草到園中柳，而樓上女，描寫由遠而近，層次井然。連以坦率的字眼敘寫，只就此時、此境、此景、此物、此人著墨，情感頗為自然真摯。本詩雖然寫出婦人昔為倡女、今為蕩婦的寄人身世，卻沒有怨悱之言，展現出極高的抒情藝術。"]}, {"title": "三、 修辭方法總整理（本詩三大修辭）", "content": ["1. 倒裝（五處倒裝）：• 「青青河畔草」——即「河畔草青青」。", "• 「鬱鬱園中柳」——即「園中柳鬱鬱」。", "• 「娥娥紅粉妝」——即「妝紅粉娥娥」。", "• 「纖纖出素手」——即「出素纖纖手」。", "• 「空床難獨守」——即「難獨守空床」。", "2. 映襯：「昔為倡家女，今為蕩子婦」——以「昔」（以前倡家）與「今」（今日蕩婦）進行映襯。", "3. 疊字（六組疊字三大類）：本詩連用六組疊字，因各組疊字的詞性與描寫對象不同，不覺呆板，反而產生自然靈動的效果：", "• 描寫自然事物：青青（河畔草）、鬱鬱（園中柳）。", "• 描寫容貌儀態：盈盈（樓上女）、皎皎（當窗牖）。", "• 描寫妝飾外貌：娥娥（紅粉妝）、纖纖（出素手）。"]}], "quizzes": [{"q": "《青青河畔草》開篇「青青河畔草，鬱鬱園中柳」，在章法上屬於何種手法？", "options": ["A. 觸景起興，以春意盎然的自然生機反襯思婦獨處的寂寞淒清", "B. 純粹客觀寫景，與後文人物毫無關聯", "C. 直抒胸臆，宣洩心中的不滿", "D. 虛構想像，描寫秋日凋零之景"], "ans": 0, "exp": "起首二句以春草綠柳繁茂起興，以樂景襯哀情，大地生機盎然更反襯出樓上思婦的孤單失落。"}, {"q": "詩中描寫思婦儀容「娥娥紅粉妝，纖纖出素手」，連用疊字的作用為何？", "options": ["A. 增加句式字數，湊成五言", "B. 音律和諧流暢，細膩生動地摹寫思婦的美貌姿態與動作", "C. 表現作者詞彙貧乏", "D. 營造緊張急促的氣氛"], "ans": 1, "exp": "全詩連用「青青、鬱鬱、盈盈、娥娥、纖纖」等疊字，摹聲描形，音韻和諧，極富音樂美與形象美。"}, {"q": "詩句「昔為倡家女，今為蕩子婦」說明了詩中女主角的身世轉變為何？", "options": ["A. 從貴族千金淪落為乞丐", "B. 過去是賣藝歌女，如今嫁作遠行遊子之妻", "C. 過去是農家女，如今成了王侯夫人", "D. 過去與丈夫同甘共苦，如今被拋棄出門"], "ans": 1, "exp": "「昔為倡家女，今為蕩子婦」坦率道出其身世背景，從昔日歌樓舞榭的歡場女子，到如今守候遠遊不歸的遊子之妻，道盡飄零寄人的人生酸楚。"}]}, {"id": 3, "title": "青青陵上柏", "theme": "及時行樂", "tag": "人生短暫・及時行樂", "core_emotion": "富貴無常・自我娛遣", "raw_header": "古詩十九首學習講義（三）《青青陵上柏》", "lines": [{"original": "青青陵上柏，磊磊澗中石。", "translation": "丘陵上的柏樹翠綠茂盛，山谷裡的石頭到處堆積。"}, {"original": "人生天地間，忽如遠行客。", "translation": "人生活在天地之間，迅速有如遠赴異地的旅者。"}, {"original": "斗酒相娛樂，聊厚不為薄。", "translation": "以少量的酒自我娛樂取樂，姑且把它視為厚酒而不是薄酒。"}, {"original": "驅車策駑馬，遊戲宛與洛。", "translation": "駕著車子、鞭策遲鈍的馬匹，到宛縣和洛陽遊玩。"}, {"original": "洛中何鬱鬱，冠帶自相索。", "translation": "洛陽城裡多麼的繁華美盛，戴帽束帶的顯貴者自行相互來往。"}, {"original": "長衢羅夾巷，王侯多第宅。", "translation": "小巷羅列在大路的不同兩旁，在這裡很多王侯的住宅。"}, {"original": "兩宮遙相望，雙闕百餘尺。", "translation": "南宮、北宮遙遙相對，宮門前兩側的望樓有一百多尺高。"}, {"original": "極宴娛心意，戚戚何所迫？", "translation": "王侯以盛宴娛樂自己的心意，為何內心卻被憂思所逼迫呢？"}], "annotations": [{"num": "1", "term": "青青", "terms": ["青青", "青"], "explanation": "顏色翠綠的樣子。青：顏色翠綠。", "supplement": ""}, {"num": "2", "term": "陵", "terms": ["陵"], "explanation": "大阜為陵；陵即土山、丘陵。", "supplement": ""}, {"num": "3", "term": "磊磊", "terms": ["磊磊", "磊"], "explanation": "眾石堆積的樣子。磊：音ㄌㄟˇ，眾石。", "supplement": ""}, {"num": "4", "term": "澗", "terms": ["澗"], "explanation": "山夾水為澗，即山間的流水。", "supplement": "【補充】：柏樹常青，與人生的短暫對比；澗石堅定，與人生的無常對比。起首二句是作者觸景生情之「興」，也是以彼狀此之「比」。"}, {"num": "5", "term": "忽", "terms": ["忽"], "explanation": "迅速。", "supplement": ""}, {"num": "6", "term": "遠行客", "terms": ["遠行客", "客"], "explanation": "遠赴異地的旅者。客：旅者。", "supplement": ""}, {"num": "7", "term": "斗酒", "terms": ["斗酒", "斗"], "explanation": "少量的酒。斗：量器名，容一斗。", "supplement": ""}, {"num": "8", "term": "相娛樂", "terms": ["相娛樂", "相"], "explanation": "自我娛樂取樂。相：代詞性助詞，表示「我」。", "supplement": ""}, {"num": "9", "term": "聊厚不為薄", "terms": ["聊厚不為薄", "聊", "為", "厚、薄"], "explanation": "姑且視為厚酒，而不是薄酒。聊：姑且。為：是。厚、薄：均指「酒」。", "supplement": "【補充】：起首六句，因見青柏與澗石的茂盛、堅定，有感於人生的短暫無常，而以薄酒自我排遣。"}, {"num": "10", "term": "驅車", "terms": ["驅車", "驅"], "explanation": "駕車。驅：鞭策使進，此指駕也。", "supplement": ""}, {"num": "11", "term": "策駑馬", "terms": ["策駑馬", "策", "駑"], "explanation": "駕車。策：馬策，即馬鞭；此當動詞用，鞭策。駑：音ㄋㄨˊ，遲鈍的馬，即劣馬。", "supplement": ""}, {"num": "12", "term": "遊戲", "terms": ["遊戲"], "explanation": "遊玩。", "supplement": ""}, {"num": "13", "term": "宛與洛", "terms": ["宛與洛", "宛", "洛"], "explanation": "宛：宛縣，南陽郡治所在，東漢有南都之稱。洛：洛陽，東漢首都。", "supplement": ""}, {"num": "14", "term": "何鬱鬱", "terms": ["何鬱鬱", "何", "鬱鬱"], "explanation": "多麼美盛。何：多麼。鬱鬱：美盛的樣子；此處為轉化修辭（形容城市繁華美盛）。", "supplement": ""}, {"num": "15", "term": "冠帶", "terms": ["冠帶", "冠", "帶"], "explanation": "帽子、腰帶；借代為「顯貴者」。冠：官吏之禮帽。帶：束腰之帶。", "supplement": ""}, {"num": "16", "term": "自相索", "terms": ["自相索", "自", "相", "索"], "explanation": "自行相互來往。源自《易經》「同氣相求」。自：自己，指顯貴者。相：互相。索：求也，此指來往。", "supplement": ""}, {"num": "17", "term": "長衢", "terms": ["長衢", "衢"], "explanation": "四通八達的大路。衢：音ㄑㄩˊ，四通八達的路。", "supplement": ""}, {"num": "18", "term": "羅夾巷", "terms": ["羅夾巷", "羅", "夾巷"], "explanation": "小巷羅列在大路兩旁。羅：列也。夾巷：在大路兩旁的小巷。", "supplement": ""}, {"num": "19", "term": "第宅", "terms": ["第宅", "第", "《漢書》"], "explanation": "王侯的住宅。第：住宅，因有等第之分，故曰第。《漢書》：「為列侯者賜大第。」", "supplement": ""}, {"num": "20", "term": "兩宮", "terms": ["兩宮"], "explanation": "洛陽城內的南宮和北宮。蔡質《官典職》：「南宮、北宮，相去七里。」", "supplement": ""}, {"num": "21", "term": "雙闕", "terms": ["雙闕"], "explanation": "音ㄑㄩㄝˋ，觀也。古時天子或諸侯宮門前兩側的高臺望樓，臺上有樓用以遠望，稱為闕。", "supplement": ""}, {"num": "22", "term": "極宴", "terms": ["極宴", "極"], "explanation": "盛宴。極：盛。", "supplement": ""}, {"num": "23", "term": "戚戚何所迫", "terms": ["戚戚何所迫", "迫"], "explanation": "我又何必被憂思所逼迫？或指「為何王侯內心卻被憂思所逼迫」？戚戚：憂也。迫：逼也。意指王侯雖然日窮奢極侈，但內心卻始終憂思不安。", "supplement": ""}], "analysis": [{"title": "一、 背景與主旨旨趣", "content": ["《青青陵上柏》選自《昭明文選》，為《古詩十九首》的第三首，主旨在於敘寫「人生短暫，不如及時行樂」。東漢晚年朝政敗壞，達官貴人競修土木、極盡奢華，權臣獨攬大權；有志之士想撥亂反正卻自身難保，有的被誣為「黨人」身繫囹圄，有的被禁錮終身。於是「人生無常、自我娛遣」成為當時士人避世寫照，進而創作出這首氣勢磅礡又帶著無奈感的傑作。"]}, {"title": "二、 結構脈絡與鋪陳藝術", "content": ["1. 起興與對比：詩前部由「青青陵上柏，磊磊澗中石」起興。青柏常青、澗石堅定，以此映襯出人生的短暫無常與迅速流逝（「忽如遠行客」）。", "2. 飲酒排遣與遊洛動機：因感於人生無常，詩人以「斗酒相娛樂，聊厚不為薄」自我排遣，進而引發「驅車策駑馬，遊戲宛與洛」的遊歷動機。", "3. 繁華景致與矛盾反思：後部由驅車遊洛陽，鋪敘洛中顯貴來往（「冠帶自相索」）、街巷宅第林立（「王侯多第宅」）到宮殿雙闕之雄偉（「雙闕百餘尺」）。連以兩句相銜、合敘一景，節奏緊湊有序。最後以「極宴娛心意，戚戚何所迫」做結，揭示出權貴雖享極宴奢華，內心卻充滿被憂患威脅逼迫的無奈與不安。"]}, {"title": "三、 修辭方法總整理（本詩六大修辭）", "content": ["1. 借代：「冠帶自相索」——「冠帶」（帽子與腰帶）借代為「顯貴者」。", "2. 轉品：「驅車策駑馬」——「策」本為名詞（馬鞭），在此轉為動詞（鞭策、駕馭）。", "3. 譬喻（明喻）：「人生天地間，忽如遠行客。」——將短暫的人生比喻為遠赴異地的旅客。", "4. 疊字（靈活運用）：• 「青青」（陵上柏）：形容柏樹之茂盛翠綠。", "• 「磊磊」（澗中石）：形容石頭堆積眾多。", "• 「鬱鬱」（洛中何鬱鬱）：形容城市之繁華美盛。", "• 「戚戚」（何所迫）：形容內心之憂思不安。", "5. 映襯：「極宴娛心意，戚戚何所迫」——以外在的「娛樂歡宴」與內心的「憂愁逼迫（戚戚）」互相映襯。", "6. 轉化（擬物/擬人）：「洛中何鬱鬱」——將原形容草木茂盛的「鬱鬱」，轉用來形容都市景象的繁華美盛。"]}], "quizzes": [{"q": "《青青陵上柏》開篇「青青陵上柏，磊磊澗中石」，作者藉此自然物象表達何種對比？", "options": ["A. 以柏之常青、石之堅定，反襯人生短暫與生命無常", "B. 讚頌大自然永恆不滅的美景", "C. 暗喻隱士的高尚節操", "D. 說明陵墓建築工程浩大"], "ans": 0, "exp": "陵上柏歷冬長青，澗中石歷久不移，而「人生天地間，忽如遠行客」，作者以此永恆之物反襯出人生之短暫如白駒過隙。"}, {"q": "詩中「人生天地間，忽如遠行客」運用了何種修辭？", "options": ["A. 頂真", "B. 譬喻（明喻）", "C. 借代", "D. 倒裝"], "ans": 1, "exp": "「忽如遠行客」使用喻詞「如」，將人生寄居於天地之間比作短暫寄宿的過客，是典型的明喻。"}, {"q": "詩末「極宴娛心意，戚戚何所迫」呈現出士人何種矛盾深層心理？", "options": ["A. 宴飲奢華無度，狂歡不知節制", "B. 表面追求及時行樂以自我麻醉，內心卻始終被死亡與時代動盪的憂懼逼迫", "C. 讚揚洛陽權貴生活無憂無慮", "D. 表達對山林隱居生活的嚮往"], "ans": 1, "exp": "雖然極盡宴樂以圖歡娛，但反問「戚戚何所迫」，揭示出及時行樂背後其實隱藏著對生命流逝與東漢末年政治黑暗的深沉焦慮。"}]}, {"id": 4, "title": "今日良宴會", "theme": "仕途功名", "tag": "盛宴促座・策足要津", "core_emotion": "爭名逐利・不居坎坷", "raw_header": "古詩十九首學習講義（四）《今日良宴會》", "lines": [{"original": "今日良宴會，歡樂難具陳。", "translation": "今天美好的飲宴聚會，歡快娛樂難以詳細述說。"}, {"original": "彈箏奮逸響，新聲妙入神。", "translation": "彈奏古箏，用力撥發出奔放的樂音，新流行的曲調高妙得如入神境。"}, {"original": "令德唱高言，識曲聽其真。", "translation": "賢德的人發出高妙的言論，知音的人能聽出曲中的真意。"}, {"original": "齊心同所願，含意俱未申。", "translation": "眾人都有相同的願望，心中的意思都沒有說出來。"}, {"original": "人生寄一世，奄忽若飆塵。", "translation": "人的一生寄託在塵世之上，急速得有如狂風捲起的塵埃。"}, {"original": "何不策高足，先據要路津？", "translation": "為何不鞭打駿馬，先佔據重要的路口和渡口？"}, {"original": "無為守窮賤，褡軻長苦辛。", "translation": "不要守著貧賤窮困，永遠忍受著困頓失意與勞苦艱辛。"}], "annotations": [{"num": "1", "term": "今日良宴會", "terms": ["今日良宴會", "良"], "explanation": "今天美好的飲宴聚會。良：善、好。", "supplement": ""}, {"num": "2", "term": "歡樂難具陳", "terms": ["歡樂難具陳", "具", "陳"], "explanation": "歡愉快樂難以詳細述說。具：詳細。陳：述說。", "supplement": ""}, {"num": "3", "term": "彈箏奮逸響", "terms": ["彈箏奮逸響", "箏", "奮", "逸響"], "explanation": "彈奏古箏，用力撥發出奔放的樂音。箏：古樂器名，五弦，魏晉改為十二弦，唐以後定為十三弦。奮：猛然用力。逸響：奔放的樂音。", "supplement": ""}, {"num": "4", "term": "新聲妙入神", "terms": ["新聲妙入神", "新聲", "聲", "入神"], "explanation": "新流行的曲調高妙，有如入於神境。新聲：新流行從西北傳入的曲調。聲：曲調。入神：入於神境，極言音樂美妙。", "supplement": ""}, {"num": "5", "term": "令德唱高言", "terms": ["令德唱高言", "令德", "令", "唱", "高言"], "explanation": "賢德的人發出高妙的言論。令德：借指「令德者」，實指顯貴者。令：賢、善。唱：歌詠，此指發言。又，「唱」亦作「倡」，倡導，有首先發言之意。高言：高妙的言論。", "supplement": ""}, {"num": "6", "term": "識曲聽其真", "terms": ["識曲聽其真", "識曲", "真", "註"], "explanation": "知音的人聽出曲中的真意。識曲：辨知曲辭的人，即知音者。真：真意。註：奢談樂音或人生的道理；「識曲」者，則從曲中體會曲辭或人生的真諦。", "supplement": ""}, {"num": "7", "term": "齊心同所願", "terms": ["齊心同所願", "齊心", "齊"], "explanation": "眾人都有相同的心願。齊心：同心。齊：同也。", "supplement": ""}, {"num": "8", "term": "含意俱未申", "terms": ["含意俱未申", "含意", "申"], "explanation": "隱含的意思都沒有說出來。含意：隱含的意思。申：說也。互文修辭。", "supplement": ""}, {"num": "9", "term": "人生寄一世", "terms": ["人生寄一世", "寄"], "explanation": "人生寄託在塵世之上。寄：託也。極言人生短暫。", "supplement": ""}, {"num": "10", "term": "奄忽若飆塵", "terms": ["奄忽若飆塵", "奄忽", "飆"], "explanation": "疾速得有如狂風捲起的塵埃。奄忽：迅速。奄音ㄧㄢˇ，忽然、快速。飆：音ㄅㄧㄠ，暴風。", "supplement": "【補充】：「人生寄一世」即「人一生（如）寄世」，屬於省略喻詞的略喻。「人生寄一世」與「飆塵」三者均具明喻、誇飾特點。"}, {"num": "11", "term": "何不策高足", "terms": ["何不策高足", "策", "高足"], "explanation": "為何不鞭打駿馬。策：鞭策使進，有鞭打之意，動詞。高足：駿馬。", "supplement": ""}, {"num": "12", "term": "先據要路津", "terms": ["先據要路津", "路", "津"], "explanation": "先佔據重要的路口和渡口；意指位居要職，以求富貴顯達。路：路口。津：渡口。", "supplement": "【補充】據要路津：就整句而言，據如要路津般的職位，是譬喻；就語辭而言，以「路津」借代要職，語意明析且不失於熱中的期盼。"}, {"num": "13", "term": "無為守窮賤", "terms": ["無為守窮賤", "無為", "無", "為"], "explanation": "不要守著貧賤窮困。無為：即「毋為」，不要。無：通「毋」。為：助詞。", "supplement": ""}, {"num": "14", "term": "褡軻長苦辛", "terms": ["褡軻長苦辛", "褡軻", "長", "苦辛"], "explanation": "永遠忍受著困難失意與勞苦艱辛。褡軻：音ㄎㄢˇ ㄎㄜˇ，即「坎坷」，困頓失意。長：永遠。苦辛：勞苦艱辛。", "supplement": ""}], "analysis": [{"title": "一、 背景與寫作旨趣", "content": ["《今日良宴會》選自《昭明文選》，為《古詩十九首》的第四首，旨敘客中對酒聽歌，勸人不要長守坎坷，而應及早追求功名。因「河清不可俟，人命不可延」（趙壹《疾邪詩》），所以作者勸人「何不策高足，先據要路津」，不要長守坎坷而做苦自己。因「順風激靡草，富貴者稱賢」，兩句在演奏會上，「令德」才能唱其高言，勸人及早追求功名利祿。詩從宴會起筆，因聆聽新聲而心有所感，寫下這首富有深意的作品。"]}, {"title": "二、 句義解讀與反諷藝術", "content": ["「令德」並非真有美德，因此詩以「高言」稱之，乍看是褒，其實是貶，這是反諷，也是倒反修辭。「令德」言出而不違，卻未認真合我意；「識曲」者能辨其真而無高位，則將處於坎坷之中而一世苦辛；因此作者勸人及早追求功名利祿。"]}, {"title": "三、 修辭方法總整理（本詩六大修辭）", "content": ["1. 借代：• 「何不策高足」之「高足」：借代「駿馬」。", "• 「令德唱高言」之「令德」：借代「令德者」（顯貴者）。", "• 「先據要路津」之「要路津」：借代「要職」。", "2. 譬喻：• 「奄忽若飆塵」：『若』，譬喻；『飆塵』，極寫短暫，屬於誇飾兼明喻。", "• 「先據要路津」：『要路津』，譬喻要職。", "3. 轉品：「令德唱高言」之「令」字：動詞轉名詞，意指「賢、善」。", "4. 轉化（具體化/形象化）：「人生寄一世」之「寄」字：將抽象的人生形象化了。", "5. 倒反（反諷）：「令德唱高言」之「令德」：雖有「高言」，卻未能「識其真」；實為反諷。", "6. 映襯：「何不策高足，先據要路津」與「無為守窮賤，褡軻長苦辛」形成鮮明映襯。"]}], "quizzes": [{"q": "《今日良宴會》中「何不策高足，先據要路津」的「要路津」借代為何？", "options": ["A. 交通繁忙的水陸碼頭", "B. 顯赫顯貴的官職要位或權力樞紐", "C. 風景秀麗的旅遊勝地", "D. 遠離塵囂的隱居之地"], "ans": 1, "exp": "「要路津」本指交通要道與渡口，此處借代為顯赫的仕途權位與政治樞紐。"}, {"q": "「無為守貧賤，轗軻長苦辛」反映出東漢末年文人士子何種真實心態？", "options": ["A. 甘於貧困安貧樂道的高尚情懷", "B. 面對亂世功名難測，企圖奮力一搏躋身權貴以脫離苦境的現實無奈", "C. 批判追求富貴者的貪婪", "D. 奉行道家清靜無為的思想"], "ans": 1, "exp": "東漢末年世態炎涼，「富貴者稱賢」，士人深感人生苦短與世態冷暖，因此產生了擺脫坎坷、爭取功名的世俗自白與掙扎。"}, {"q": "關於《今日良宴會》之文學主旨，下列敘述何者最為適切？", "options": ["A. 體現《古詩十九首》「仕途功名」之核心主題，敘述爭名逐利・不居坎坷", "B. 描寫田園隱居之樂，提倡消極避世", "C. 記錄邊疆戰火之殘酷，批判好大喜功", "D. 記述神仙道術之修煉，企求羽化登仙"], "ans": 0, "exp": "本詩選自《昭明文選》，屬於《古詩十九首》之代表作，核心情感為「爭名逐利・不居坎坷」，反映東漢士人或思婦之真摯心聲。"}, {"q": "在《今日良宴會》的詩歌藝術表現上，下列何者符合《古詩十九首》「質樸真切」的寫作風格？", "options": ["A. 堆砌華麗冷僻的典故與辭藻", "B. 善用起興與譬喻，言淺而意深，情景交融", "C. 採用嚴格平仄對仗之近體格律", "D. 運用激昂狂放之敘事筆調"], "ans": 1, "exp": "《古詩十九首》被劉勰譽為「五言之冠冕」，鍾嶸譽為「驚心動魄，幾乎一字千金」，其最大特徵即為不求奇僻、言近旨遠、善用比興與白描。"}]}, {"id": 5, "title": "西北有高樓", "theme": "求索悲歌", "tag": "高樓悲歌・知音難逢", "core_emotion": "雙鵠高飛・託意高遠", "raw_header": "古詩十九首學習講義（五）《西北有高樓》", "lines": [{"original": "西北有高樓，上與浮雲齊。", "translation": "西北方有一座高樓，樓頂與飄浮的雲朵齊平。"}, {"original": "交疏結綺窗，阿閣三重階。", "translation": "窗上雕刻著交錯的疏網圖案，套著有花紋的絲織品；四周都是帶有迴廊的樓閣，樓前有三層臺階。"}, {"original": "上有弦歌聲，音響一何悲！", "translation": "樓上傳來彈琴唱歌的聲音，樂音多麼悲傷！"}, {"original": "誰能為此曲？無乃杞梁妻。", "translation": "有誰能彈唱出這樣的曲子？莫非是像杞梁妻一樣心懷哀怨的人？"}, {"original": "清商隨風發，中曲正徘徊。", "translation": "清亮悲涼的曲調隨著清風發出，演奏到曲中時聲音流連往復。"}, {"original": "一彈再三嘆，慷慨有餘哀。", "translation": "彈奏一曲多次發出感嘆，氣概豪爽中帶有不盡的哀傷。"}, {"original": "不惜歌者苦，但傷知音稀。", "translation": "並非可惜彈歌者內心的痛苦，而是傷感世上知音太少。"}, {"original": "願為雙鴻鵠，奮翅起高飛。", "translation": "願能化作一對高飛的大雁，振翅飛向遠方。"}], "annotations": [{"num": "1", "term": "西北有高樓", "terms": ["西北有高樓"], "explanation": "西北方有一座高樓。", "supplement": ""}, {"num": "2", "term": "上與浮雲齊", "terms": ["上與浮雲齊"], "explanation": "樓頂與飄浮的雲朵齊平；極寫樓臺之高。", "supplement": ""}, {"num": "3", "term": "交疏", "terms": ["交疏", "疏"], "explanation": "交錯的疏網圖案。疏：窗上刻為疏網之紋。", "supplement": ""}, {"num": "4", "term": "結綺", "terms": ["結綺", "結", "綺"], "explanation": "繫著有花紋的絲織品。結：繫也。綺：有花紋的絲織品。", "supplement": ""}, {"num": "5", "term": "阿閣", "terms": ["阿閣", "阿", "閣"], "explanation": "四邊都有翹檐迴廊的樓閣。阿：音ㄜ，屋角處崛起的高簷。閣：樓。", "supplement": ""}, {"num": "6", "term": "三重階", "terms": ["三重階", "重"], "explanation": "三層臺階。重：層。", "supplement": ""}, {"num": "7", "term": "弦歌", "terms": ["弦歌", "弦", "歌"], "explanation": "彈琴唱歌。弦：樂器上發聲的絲繩，此處借指弦樂（如琴、瑟）。歌：詠、唱。", "supplement": ""}, {"num": "8", "term": "音響", "terms": ["音響", "音", "響"], "explanation": "歌聲、樂音。音：「聲成文謂之音」（樂記），指歌聲。響：應聲，指伴奏。", "supplement": ""}, {"num": "9", "term": "一何", "terms": ["一何", "一"], "explanation": "多麼。一：助詞。", "supplement": ""}, {"num": "10", "term": "誰能「為」此曲", "terms": ["誰能「為」此曲"], "explanation": "彈唱。", "supplement": ""}, {"num": "11", "term": "無乃", "terms": ["無乃"], "explanation": "莫非是、難道不是。無乃：是。", "supplement": ""}, {"num": "", "term": "12. 〔杞梁妻〕：琴曲名，又", "terms": ["12. 〔杞梁妻〕：琴曲名，又"], "explanation": "12. 〔杞梁妻〕：琴曲名，又名《杞梁妻嘆》。\n【典故】《琴操》：「杞梁死後，妻嘆曰：上則無父，中則無夫，下則無子，將何以立吾節？亦死而已！援琴而鼓之，曲終，遂自投淄水而死。」杞梁為齊國大夫，戰死於莒國。", "supplement": "【補充】「無乃杞梁妻」：莫非是有如杞梁妻處境之人，屬於譬喻修辭。"}, {"num": "", "term": "13. 〔清商〕：商聲、淒清悲", "terms": ["13. 〔清商〕：商聲、淒清悲"], "explanation": "13. 〔清商〕：商聲、淒清悲涼的商聲。商：宮商角徵羽五音之一，其聲淒清悲涼。\n【典故】杜佑《通典》：「清商，係漢魏六朝之遺樂。」", "supplement": ""}, {"num": "14", "term": "中曲", "terms": ["中曲"], "explanation": "曲中。", "supplement": ""}, {"num": "15", "term": "徘徊", "terms": ["徘徊"], "explanation": "流連往復，此指曲調往復低回；屬於轉化修辭。", "supplement": ""}, {"num": "16", "term": "一彈", "terms": ["一彈"], "explanation": "彈完一曲。", "supplement": ""}, {"num": "", "term": "17. 〔再三嘆〕：再以泛聲反", "terms": ["17. 〔再三嘆〕：再以泛聲反"], "explanation": "17. 〔再三嘆〕：再以泛聲反覆和奏。再三：反覆。嘆：嗟也，此指泛聲和奏。\n【典故】《樂記》：「壹唱而三嘆，有遺音者矣。」", "supplement": ""}, {"num": "18", "term": "慷慨", "terms": ["慷慨", "《說文》"], "explanation": "失意感嘆。《說文》：「慷慨，壯士不得志於心也。」", "supplement": ""}, {"num": "19", "term": "餘哀", "terms": ["餘哀"], "explanation": "不盡的哀傷。", "supplement": ""}, {"num": "20", "term": "不惜歌者苦", "terms": ["不惜歌者苦", "惜", "苦"], "explanation": "惜：憐惜。苦：悲苦。", "supplement": ""}, {"num": "", "term": "21. 〔但傷知音稀〕：但：只", "terms": ["21. 〔但傷知音稀〕：但：只"], "explanation": "21. 〔但傷知音稀〕：但：只是。知音：瞭解曲意的人。\n【補充說明】歌者以歌唱敘其悲苦，如能得到知音撫慰，則不悲苦；若遍尋不著知音，其苦無從抒發，將苦不堪言。\n【典故】《列子》：「伯牙善鼓琴，鍾子期善聽。伯牙鼓琴，志在高山，鍾子期曰：善哉！峨峨兮若泰山。志在流水，鍾子期曰：善哉！洋洋兮若江河。伯牙每有所念，鍾子期必得之。」", "supplement": ""}, {"num": "22", "term": "鴻鵠", "terms": ["鴻鵠"], "explanation": "鴻，即鴈。朱駿聲《說文通訓定聲》：「凡鴻鵠連文者，即鴈。」鴻鵠又指天鵝。", "supplement": "【補充】鴻鵠善鳴，照應上句「但傷知音稀」；善飛，照應下句「奮翅起高飛」。「雙鴻鵠」指歌者與聽者。"}, {"num": "23", "term": "奮翅", "terms": ["奮翅"], "explanation": "振翅。", "supplement": ""}, {"num": "24", "term": "高飛", "terms": ["高飛"], "explanation": "遠也。《廣雅·釋話》：「高，遠也。」", "supplement": "【補充】「願為雙鴻鵠，奮翅起高飛」：意指欲與歌者遠離悲苦的人世，投向理想的境地，屬於象徵修辭。作者頗有「同是天涯淪落人」的感傷。"}], "analysis": [{"title": "一、 背景與寫作旨趣", "content": ["《西北有高樓》選自《昭明文選》，為《古詩十九首》的第五首，係因聆聽歌曲而抒發知音難遇，不如高舉遠引的感慨。本詩先寫樓景，再寫聲景——先敘歌聲，再敘歌者；次寫聲象——曲音與曲意，末抒「知音稀」的感慨，並以知音自居，表達願為雙鴻鵠、奮翅高飛遠離塵世的願望。"]}, {"title": "二、 結構脈絡與彈唱視覺", "content": ["就樂歌而言，「上有弦歌聲，音響一何悲」是總說，「清商隨風發」等三句為詳敘。就聽唱而言，從「清商隨風發」而「中曲正徘徊」，而「一彈再三嘆」，恰好構成一幅動態的彈唱視覺。就描寫而言，首句以「清商」的「清」字形容曲調；次句以人的「徘徊」，轉化而寫成弦歌的低唱；三句以「三嘆」的「嘆」字，將人的情感移到曲樂之上，屬於轉化修辭。詩中聽者與歌者始終不曾會面，只是藉著歌聲飄來的旋律而遙想其人、其境，餘音蕩漾。"]}, {"title": "三、 修辭方法總整理（本詩五大修辭）", "content": ["1. 轉化：「中曲正徘徊」：以人的「徘徊」，將抽象的樂音低回形象化。", "2. 誇飾：「西北有高樓，上與浮雲齊」：以「上與浮雲齊」極寫樓臺之高峻。", "3. 映襯：「不惜歌者苦」與「但傷知音稀」形成對比映襯。", "4. 譬喻：「誰能為此曲，無乃杞梁妻」：以「杞梁妻」譬喻與其相同悲苦境遇的人。", "5. 象徵：「願為雙鴻鵠，奮翅起高飛」：象徵欲與歌者遠離悲苦的人世，投向理想的境地。作者頗有「同是天涯淪落人」的感傷。"]}], "quizzes": [{"q": "《西北有高樓》中「願為雙鴻鵠，奮翅起高飛」抒發了詩人何種宏願？", "options": ["A. 希望能像候鳥一樣四處遷徙覓食", "B. 渴望覓得精神上的知音，與其一同奮翅遠舉、擺脫塵俗羈絆", "C. 祈求能獲賜高官厚祿", "D. 表現獵捕飛鳥的射藝"], "ans": 1, "exp": "高樓琴聲慷慨悲涼，「知音世所稀」，詩人渴望化作一對比翼高飛的鴻鵠，遠離塵世污濁，尋求心靈上的知音共鳴。"}, {"q": "詩中描繪琴聲「一彈再三歎，慷慨有餘哀」，主要烘托出何種意境？", "options": ["A. 歡騰熱鬧的宮廷樂曲", "B. 悲壯淒美、知音不逢的深沉哀傷", "C. 幽默風趣的市井小調", "D. 催人入眠的平緩搖籃曲"], "ans": 1, "exp": "「慷慨有餘哀」精準刻畫了東漢末年文人慷慨悲涼、才不見用、知音難遇的心靈悲歌。"}, {"q": "關於《西北有高樓》之文學主旨，下列敘述何者最為適切？", "options": ["A. 體現《古詩十九首》「求索悲歌」之核心主題，敘述雙鵠高飛・託意高遠", "B. 描寫田園隱居之樂，提倡消極避世", "C. 記錄邊疆戰火之殘酷，批判好大喜功", "D. 記述神仙道術之修煉，企求羽化登仙"], "ans": 0, "exp": "本詩選自《昭明文選》，屬於《古詩十九首》之代表作，核心情感為「雙鵠高飛・託意高遠」，反映東漢士人或思婦之真摯心聲。"}, {"q": "在《西北有高樓》的詩歌藝術表現上，下列何者符合《古詩十九首》「質樸真切」的寫作風格？", "options": ["A. 堆砌華麗冷僻的典故與辭藻", "B. 善用起興與譬喻，言淺而意深，情景交融", "C. 採用嚴格平仄對仗之近體格律", "D. 運用激昂狂放之敘事筆調"], "ans": 1, "exp": "《古詩十九首》被劉勰譽為「五言之冠冕」，鍾嶸譽為「驚心動魄，幾乎一字千金」，其最大特徵即為不求奇僻、言近旨遠、善用比興與白描。"}]}, {"id": 6, "title": "涉江采芙蓉", "theme": "遊子懷思", "tag": "江南采芰・遠道思鄉", "core_emotion": "采芳欲遺・涉江望鄉", "raw_header": "古詩十九首學習講義（六）《涉江采芙蓉》", "lines": [{"original": "涉江采芙蓉，蘭澤多芳草。", "translation": "渡過江水採摘蓮花，水邊澤地有很多芳香的蘭花。"}, {"original": "采之欲遺誰？所思在遠道。", "translation": "採摘花將送給誰呢？所思念的人在遙遠的地方。"}, {"original": "還顧望舊鄉，長路漫浩浩。", "translation": "回過頭來眺望故鄉，路途遙遠沒有盡頭。"}, {"original": "同心而離居，憂傷以終老。", "translation": "心相契合卻分離住在兩地，憂愁感傷而終其一生。"}], "annotations": [{"num": "1", "term": "涉江采芙蓉", "terms": ["涉江采芙蓉", "涉", "采", "芙蓉"], "explanation": "渡過江水採摘蓮花。涉：音ㄕㄜˋ，徒步渡水。采：通「採」。芙蓉：蓮花。", "supplement": ""}, {"num": "2", "term": "蘭澤多芳草", "terms": ["蘭澤多芳草", "澤", "芳草"], "explanation": "水澤地有很多芳香的蘭花。澤：聚水之處。芳草：指蘭花。", "supplement": ""}, {"num": "3", "term": "采之欲遺誰", "terms": ["采之欲遺誰", "遺", "之", "欲"], "explanation": "遺：音ㄨㄟˋ，贈送。之：指花。欲：將、想。", "supplement": ""}, {"num": "4", "term": "所思在遠道", "terms": ["所思在遠道", "所思", "遠道"], "explanation": "所思念的人在遙遠的地方。所思：指「所思之人」。遠道：遠方，指舊鄉。", "supplement": "【補充】：「采之欲遺誰，所思在遠道」句，詩由採花的喜，轉為無法貽贈的悲。下文均從「所思在遠道」句開啟。"}, {"num": "5", "term": "還顧", "terms": ["還顧", "還、顧", "還"], "explanation": "回頭看。還、顧：同義重複詞。還：音ㄏㄨㄢˊ。", "supplement": ""}, {"num": "6", "term": "舊鄉", "terms": ["舊鄉"], "explanation": "故鄉。", "supplement": ""}, {"num": "", "term": "7. 〔漫浩浩〕：即「漫漫浩浩", "terms": ["7. 〔漫浩浩〕：即「漫漫浩浩"], "explanation": "7. 〔漫浩浩〕：即「漫漫浩浩」，路途遙遠，沒有盡頭。漫：音ㄇㄢˋ，遠也。浩浩：水勢廣大的樣子；此以物性相擬，轉化而成「路途遙遠」的意思。\n【補充說明】：「還顧望舊鄉」就人主觀的遠眺而言；「長路漫浩浩」則就路客觀的距離而言。", "supplement": ""}, {"num": "8", "term": "同心", "terms": ["同心"], "explanation": "即「一心」，心相契合。", "supplement": ""}, {"num": "9", "term": "離居", "terms": ["離居"], "explanation": "分離居住。", "supplement": ""}, {"num": "10", "term": "憂傷以終老", "terms": ["憂傷以終老", "以", "終老"], "explanation": "憂愁感傷而終其一生。以：而，連詞。終老：終生。", "supplement": ""}], "analysis": [{"title": "一、 背景與寫作旨趣", "content": ["《涉江采芙蓉》選自《昭明文選》，為《古詩十九首》的第六首，旨敘客居異鄉的遊子，思念妻子卻無法相聚的愁情，是一首懷人的詩歌。通篇從喜到悲，從採、思、顧、望到憂傷，逐層加深筆墨，逐句深刻情感。"]}, {"title": "二、 虛實相間與層層遞進", "content": ["就寫法而言：一、二句實寫涉江採花，三、四句虛寫思念佳人，五、六句實寫遠眺故鄉，七、八句虛寫心裡的憂傷。詩在兩次虛實相間的筆法之中，情與景渾然契合在一起。", "就內容而言：一二句寫物，三四句寫人，五六句寫境，七八句寫心。詩在物與人、境（物）與心（人）的反覆之下，情感一層深似一層。以「長路漫浩浩」抒發沸騰激情後，馬上以「憂傷以終老」沉入無奈的深淵，使詩的主題鮮明突出。"]}, {"title": "三、 修辭方法總整理（本詩四大修辭）", "content": ["1. 借代：「采之欲遺誰，所思在遠道」之「所思」，借指「所思之人」。", "2. 轉化：「長路漫浩浩」之「浩浩」，本指水勢廣大；此以物性相擬，轉化而成「路途遙遠」之意。", "3. 映襯：「同心而離居」之「同心」與「離居」，屬於映襯修辭中的「雙襯」。", "4. 用典（化用《楚辭》語句）：• 化用《楚辭·招魂》：「皋蘭被徑兮斯路漸」 → 「涉江采芙蓉，蘭澤多芳草」。", "• 化用《楚辭·九歌》：「被石蘭兮帶杜衡，折芳馨兮遺所思」 → 「采之欲遺誰，所思在遠道」。", "• 化用《楚辭·離騷》：「路曼曼其修遠兮」 → 「還顧望舊鄉，長路漫浩浩」。", "• 化用《楚辭·離騷》：「何離心之可同乎？」 → 「同心而離居，憂傷以終老」。", "（李因篤評：「思友懷鄉，寄情蘭茝，離騷千言，括之略盡。」）"]}], "quizzes": [{"q": "《涉江采芙蓉》中「涉江采芙蓉，蘭澤多芳草」，詩人「采芙蓉」的動機為何？", "options": ["A. 採集藥草以治療疾病", "B. 想要寄贈給遠方心中所思念的伊人", "C. 販售蓮花以維持生計", "D. 參加端午節的民俗競渡"], "ans": 1, "exp": "「采之欲遺誰？所思在遠道。」詩人涉江採擷象徵純潔相思的芙蓉芳草，是為了贈與遠方的至親摯愛。"}, {"q": "「同心而離居，憂傷以終老」是全詩的情感高潮，表現了何種悲劇體驗？", "options": ["A. 夫妻志同道合、心心相印，卻因現實關山阻隔無法相聚，只能抱憾終老", "B. 朋友間因意見不合而絕交", "C. 歲月流逝、容顏老去的自然悲哀", "D. 漂泊者返鄉後的失落"], "ans": 0, "exp": "「同心」何等美好，「離居」又何等殘酷，兩者強烈碰撞，道盡無可奈何的深沉悲哀。"}, {"q": "關於《涉江采芙蓉》之文學主旨，下列敘述何者最為適切？", "options": ["A. 體現《古詩十九首》「遊子懷思」之核心主題，敘述采芳欲遺・涉江望鄉", "B. 描寫田園隱居之樂，提倡消極避世", "C. 記錄邊疆戰火之殘酷，批判好大喜功", "D. 記述神仙道術之修煉，企求羽化登仙"], "ans": 0, "exp": "本詩選自《昭明文選》，屬於《古詩十九首》之代表作，核心情感為「采芳欲遺・涉江望鄉」，反映東漢士人或思婦之真摯心聲。"}, {"q": "在《涉江采芙蓉》的詩歌藝術表現上，下列何者符合《古詩十九首》「質樸真切」的寫作風格？", "options": ["A. 堆砌華麗冷僻的典故與辭藻", "B. 善用起興與譬喻，言淺而意深，情景交融", "C. 採用嚴格平仄對仗之近體格律", "D. 運用激昂狂放之敘事筆調"], "ans": 1, "exp": "《古詩十九首》被劉勰譽為「五言之冠冕」，鍾嶸譽為「驚心動魄，幾乎一字千金」，其最大特徵即為不求奇僻、言近旨遠、善用比興與白描。"}]}, {"id": 7, "title": "明月皎夜光", "theme": "世態炎涼", "tag": "歲月流馳・昔友反目", "core_emotion": "人情翻覆・世態炎涼", "raw_header": "古詩十九首學習講義（七）\n《明月皎夜光》", "lines": [{"original": "明月皎夜光，促織鳴東壁。", "translation": "明亮的月光皎潔照耀著夜空，蟋蟀在東牆下發出急促的鳴叫。"}, {"original": "玉衡指孟冬，眾星何歷歷。", "translation": "北鬥星的斗柄指向初冬，夜空中的眾星是多麼清晰明亮。"}, {"original": "白露沾野草，時節忽復易。", "translation": "潔白的露水沾濕了野草，時節轉瞬間又發生了變換。"}, {"original": "秋蟬鳴樹木，玄鳥逝安適？", "translation": "秋天蟬兒在樹木間鳴叫，燕子飛走了要飛去哪裡呢？"}, {"original": "昔我同門友，高舉振翅翮。", "translation": "過去和我同窗學習的朋友們，如今都飛黃騰達、高舉騰躍。"}, {"original": "齊齊同心意，中路忽有棄。", "translation": "過去大家齊心協力志同道合，半路中卻把我拋棄冷落。"}, {"original": "顧不念攜手，同心而離居。", "translation": "難道不念及過去手拉手的情意，同心相好卻落得天各一方？"}, {"original": "昔如響應影，今如水火敵。", "translation": "過去親密如聲響與迴響、身體與影子，如今卻像水火般勢不兩立。"}, {"original": "昔如膠投漆，今如冰炭隔。", "translation": "過去感情濃密得像膠漆相融，如今卻像冰與炭般相隔相反。"}, {"original": "良無盤石固，虛名復何益？", "translation": "友情實在不像盤石那般堅固，追求那些虛妄的名聲又有何好處？"}], "annotations": [{"num": "1", "term": "促織鳴東壁", "terms": ["促織鳴東壁", "促織"], "explanation": "蟋蟀在東牆下鳴叫。促織：蟋蟀。", "supplement": ""}, {"num": "2", "term": "玉衡指孟冬", "terms": ["玉衡指孟冬", "玉衡", "孟冬"], "explanation": "北鬥星的斗柄指向初冬（陰曆十月）。玉衡：北鬥七星的第五星，此泛指北斗星。孟冬：初冬，陰曆十月。", "supplement": ""}, {"num": "3", "term": "眾星何歷歷", "terms": ["眾星何歷歷", "歷歷"], "explanation": "眾星分明清新的樣子。歷歷：分明貌。", "supplement": ""}, {"num": "4", "term": "時節忽復易", "terms": ["時節忽復易", "易"], "explanation": "季節轉瞬間又發生了變換。易：改變、更易。", "supplement": ""}, {"num": "5", "term": "玄鳥逝安適", "terms": ["玄鳥逝安適", "逝", "安適", "適"], "explanation": "燕子飛走了要到哪裡去？玄鳥：燕子。逝：往、飛去。安適：何處、往何處去（安：何；適：往）。", "supplement": ""}, {"num": "6", "term": "高舉振翅翮", "terms": ["高舉振翅翮", "翅翮"], "explanation": "飛黃騰達，躍升顯貴。翅翮：鳥羽翅膀，借代羽翼或才幹。", "supplement": ""}, {"num": "7", "term": "齊齊同心意", "terms": ["齊齊同心意", "齊齊"], "explanation": "大家齊心協力志同道合。齊齊：整齊一致。", "supplement": ""}, {"num": "8", "term": "昔如響應影", "terms": ["昔如響應影"], "explanation": "過去親密如聲音與迴響、身體與影子，比喻關係極為密切。", "supplement": ""}, {"num": "9", "term": "昔如膠投漆", "terms": ["昔如膠投漆"], "explanation": "過去感情濃密如膠漆相融，比喻親密無間。", "supplement": ""}, {"num": "10", "term": "良無盤石固", "terms": ["良無盤石固", "良", "盤石"], "explanation": "友情實在不像磐石般堅固。良：實在。盤石：大石頭，比喻堅固不移。", "supplement": ""}], "analysis": [{"title": "【一、出處與旨意】", "content": ["《明月皎夜光》選自《昭明文選》，為《古詩十九首》第七首，旨在敘寫詩人感歎歲月流逝、時序更迭，並因昔日同門好友飛黃騰達後翻臉不認人、背棄誓言而發出人情冷暖、世態炎涼的沉痛感歎。"]}, {"title": "【二、情脈轉折與結構脈絡】", "content": ["1. 景物感懷（明月皎夜光…玄鳥逝安適）：由秋夜明月、蟋蟀鳴叫、北鬥轉移、白露沾草、秋蟬玄鳥起興，感歎季節更替與時光飛逝。", "2. 昔今對比（昔我同門友…今如水火敵）：由物候變化聯想到昔日同門友人，昔日同心相隨，今日顯達後卻棄絕舊交，勢如水火。", "3. 沉痛批判（良無盤石固，虛名復何益）：揭示世俗交情如紙薄、功利交友之虛偽，感歎虛名無益。"]}, {"title": "【三、修辭特色分析】", "content": ["1. 譬喻：以「響應影」、「膠投漆」比喻昔日交情親密；以「水火敵」、「冰炭隔」比喻今日翻臉成仇。", "2. 映襯：昔日親密與今日冷酷成強烈映襯（昔如響影/今如水火；昔如膠漆/今如冰炭）。", "3. 設問（激問）：「玄鳥逝安適？」、「虛名復何益？」"]}], "quizzes": [{"q": "《明月皎夜光》中「昔我同門友，高步登青雲。不念攜手好，棄我如遺跡」，控訴了何種社會現實？", "options": ["A. 科舉考試的不公", "B. 往日同窗好友一旦飛黃騰達，立即背棄舊情、翻臉不認人的炎涼世態", "C. 戰亂時期親友離散的痛苦", "D. 商業貿易中的欺詐行為"], "ans": 1, "exp": "這段詩句沉痛控訴昔日同窗好友青雲直上後，將昔日攜手之情棄如敝屣，是東漢末期仕途險惡、世態炎涼的縮影。"}, {"q": "關於《明月皎夜光》之文學主旨，下列敘述何者最為適切？", "options": ["A. 體現《古詩十九首》「世態炎涼」之核心主題，敘述人情翻覆・世態炎涼", "B. 描寫田園隱居之樂，提倡消極避世", "C. 記錄邊疆戰火之殘酷，批判好大喜功", "D. 記述神仙道術之修煉，企求羽化登仙"], "ans": 0, "exp": "本詩選自《昭明文選》，屬於《古詩十九首》之代表作，核心情感為「人情翻覆・世態炎涼」，反映東漢士人或思婦之真摯心聲。"}, {"q": "在《明月皎夜光》的詩歌藝術表現上，下列何者符合《古詩十九首》「質樸真切」的寫作風格？", "options": ["A. 堆砌華麗冷僻的典故與辭藻", "B. 善用起興與譬喻，言淺而意深，情景交融", "C. 採用嚴格平仄對仗之近體格律", "D. 運用激昂狂放之敘事筆調"], "ans": 1, "exp": "《古詩十九首》被劉勰譽為「五言之冠冕」，鍾嶸譽為「驚心動魄，幾乎一字千金」，其最大特徵即為不求奇僻、言近旨遠、善用比興與白描。"}]}, {"id": 8, "title": "冉冉孤生竹", "theme": "思婦閨怨", "tag": "新婚遠別・依附信任", "core_emotion": "菟絲女蘿・情深願託", "raw_header": "古詩十九首學習講義（八）\n《冉冉孤生竹》", "lines": [{"original": "冉冉孤生竹，結根泰山阿。", "translation": "柔弱下垂的孤竹，把根紮在泰山的山坳裡。"}, {"original": "與君為新婚，兔絲附女蘿。", "translation": "我和你新近結為夫妻，就像菟絲花依附著女蘿草。"}, {"original": "兔絲生有時，夫婦會有宜。", "translation": "菟絲花生長開花自有適當的時節，夫婦相會結合也該有適宜之時。"}, {"original": "千里遠結婚，悠悠隔山陂。", "translation": "遠隔千里結為夫婦，山遙水遠阻隔著綿延的山陵。"}, {"original": "思君令人老，歲月忽已晚。", "translation": "思念你使人迅速衰老，歲月轉瞬間已經到了歲暮。"}, {"original": "傷彼籬下花，何乃自華滋！", "translation": "傷感那籬笆下的野花，為何單單自己開得那麼繁茂呢？"}, {"original": "攀條折其榮，將以遺所思。", "translation": "攀折下花樹繁茂的花朵，準備把它贈送給我所思念的人。"}, {"original": "玉山不可移，歲月復荏苒。", "translation": "堅固如玉山不可動搖，歲月卻又漸漸地流逝過去。"}, {"original": "傷彼孤生竹，倚傍何時依？", "translation": "傷感那孤單生長的竹子，什麼時候才能有所依傍依附呢？"}, {"original": "君亮執高節，賤妾亦何為！", "translation": "相信你一定恪守高潔的節操，我又在憂傷擔心些什麼呢！"}], "annotations": [{"num": "1", "term": "冉冉孤生竹", "terms": ["冉冉孤生竹", "冉冉"], "explanation": "柔弱下垂的孤竹。冉冉：柔弱下垂貌，亦有漸進貌。", "supplement": ""}, {"num": "2", "term": "結根泰山阿", "terms": ["結根泰山阿", "泰山阿"], "explanation": "把根紮在泰山的山坳裡。泰山阿：泰山的山坳、山曲。", "supplement": ""}, {"num": "3", "term": "兔絲附女蘿", "terms": ["兔絲附女蘿"], "explanation": "菟絲花依附著女蘿草，比喻新婚夫婦互相依託。", "supplement": ""}, {"num": "4", "term": "悠悠隔山陂", "terms": ["悠悠隔山陂", "山陂"], "explanation": "山遙水遠阻隔著山陵。山陂：山坡、山陵。", "supplement": ""}, {"num": "5", "term": "歲月忽已晚", "terms": ["歲月忽已晚"], "explanation": "轉眼間一年又到了歲暮（或指年華老去）。", "supplement": ""}, {"num": "6", "term": "何乃自華滋", "terms": ["何乃自華滋", "華滋", "華"], "explanation": "為何單單自己開得如此繁茂。華滋：花草繁茂。華：通「花」。", "supplement": ""}, {"num": "7", "term": "攀條折其榮", "terms": ["攀條折其榮", "榮"], "explanation": "攀折花枝採摘繁茂的花朵。榮：花。", "supplement": ""}, {"num": "8", "term": "歲月復荏苒", "terms": ["歲月復荏苒", "荏苒"], "explanation": "時間漸漸地流逝。荏苒：時間漸漸過去貌。", "supplement": ""}, {"num": "9", "term": "君亮執高節", "terms": ["君亮執高節", "亮", "高節"], "explanation": "相信你一定恪守高潔的節操。亮：相信、信得過。高節：高尚節操。", "supplement": ""}, {"num": "10", "term": "賤妾亦何為", "terms": ["賤妾亦何為"], "explanation": "我又在憂心悲傷些什麼呢？賤妾：女子自稱謙詞。", "supplement": ""}], "analysis": [{"title": "【一、出處與旨意】", "content": ["《冉冉孤生竹》選自《昭明文選》，為《古詩十九首》第八首，旨在敘寫思婦新婚不久即與丈夫遠別，獨守空閨，藉菟絲附女蘿、孤生竹等意象表達對遠方丈夫的深切思念與至死不渝的信任。"]}, {"title": "【二、情脈轉折與結構脈絡】", "content": ["1. 新婚依託（冉冉孤生竹…兔絲附女蘿）：以孤竹結根泰山、菟絲依附女蘿比喻新婚夫妻的依託關係。", "2. 遠別思念（千里遠結婚…歲月忽已晚）：新婚別離，遠隔千里山陵，思念漫長使人衰老。", "3. 物候觸懷（傷彼籬下花…將以遺所思）：見籬下花繁茂而自傷孤獨，折花欲贈遠方所思之人。", "4. 堅定信任（君亮執高節，賤妾亦何為）：最終由憂疑轉為堅信丈夫高節不渝，安慰自己無須過度憂傷。"]}, {"title": "【三、修辭特色分析】", "content": ["1. 比興：以「孤生竹」、「兔絲附女蘿」起興並比喻夫婦依託之情。", "2. 轉品：「華滋」之「華」（名詞通動詞，開花）。", "3. 設問（激問/反詰）：「賤妾亦何為！」意即不必過度悲傷愁苦。"]}], "quizzes": [{"q": "《冉冉孤生竹》開篇以「冉冉孤生竹，結根泰山阿。與君為新婚，菟絲附女蘿」，運用了何種手法？", "options": ["A. 起興與連類比喻，以孤竹結根泰山、菟絲依附女蘿，象徵女子將終身幸福深情託付給丈夫", "B. 純粹地理環境考察", "C. 批評菟絲植物具有寄生危害", "D. 描寫農業採集過程"], "ans": 0, "exp": "作者連用孤竹、菟絲女蘿等意象起興，生動形象地比喻新婚女子對丈夫至死不渝的依附與深厚信賴。"}, {"q": "關於《冉冉孤生竹》之文學主旨，下列敘述何者最為適切？", "options": ["A. 體現《古詩十九首》「思婦閨怨」之核心主題，敘述菟絲女蘿・情深願託", "B. 描寫田園隱居之樂，提倡消極避世", "C. 記錄邊疆戰火之殘酷，批判好大喜功", "D. 記述神仙道術之修煉，企求羽化登仙"], "ans": 0, "exp": "本詩選自《昭明文選》，屬於《古詩十九首》之代表作，核心情感為「菟絲女蘿・情深願託」，反映東漢士人或思婦之真摯心聲。"}, {"q": "在《冉冉孤生竹》的詩歌藝術表現上，下列何者符合《古詩十九首》「質樸真切」的寫作風格？", "options": ["A. 堆砌華麗冷僻的典故與辭藻", "B. 善用起興與譬喻，言淺而意深，情景交融", "C. 採用嚴格平仄對仗之近體格律", "D. 運用激昂狂放之敘事筆調"], "ans": 1, "exp": "《古詩十九首》被劉勰譽為「五言之冠冕」，鍾嶸譽為「驚心動魄，幾乎一字千金」，其最大特徵即為不求奇僻、言近旨遠、善用比興與白描。"}]}, {"id": 9, "title": "庭中有奇樹", "theme": "思婦閨怨", "tag": "春木華滋・攀條遺遠", "core_emotion": "借花表相思・何以慰相憶", "raw_header": "古詩十九首學習講義（九）\n《庭中有奇樹》", "lines": [{"original": "庭中有奇樹，綠葉發華滋。", "translation": "庭院裡有一棵珍奇的樹木，綠油油的葉子間開滿了繁茂的花朵。"}, {"original": "攀條折其榮，將以遺所思。", "translation": "我攀著樹枝折下一枝繁茂的花朵，準備把它贈送給我深切思念的人。"}, {"original": "香氣盈懷袖，路遠莫致之。", "translation": "濃郁的花香瀰漫了我的懷抱與衣袖，可惜路途遙遠無法把它送到他手中。"}, {"original": "此物何足貴？但感別經時。", "translation": "這花朵本身有什麼值得珍貴的呢？只是因為觸花感懷，感歎我們分別已經太久了。"}], "annotations": [{"num": "1", "term": "綠葉發華滋", "terms": ["綠葉發華滋", "華", "滋"], "explanation": "綠葉間開滿了繁茂的花朵。華：通「花」。滋：繁茂。", "supplement": ""}, {"num": "2", "term": "攀條折其榮", "terms": ["攀條折其榮", "榮"], "explanation": "攀伸手臂折取樹上繁茂的花朵。榮：花。", "supplement": ""}, {"num": "3", "term": "將以遺所思", "terms": ["將以遺所思", "遺", "所思"], "explanation": "準備把它贈送給我深切思念的人。遺：音ㄨㄟˋ，贈送。所思：思念的人，指丈夫。", "supplement": ""}, {"num": "4", "term": "香氣盈懷袖", "terms": ["香氣盈懷袖", "盈"], "explanation": "花香瀰漫充滿了懷抱與衣袖。盈：充滿、瀰漫。", "supplement": ""}, {"num": "5", "term": "路遠莫致之", "terms": ["路遠莫致之", "莫", "致", "之"], "explanation": "路途遙遠，無法將花送達。莫：不能。致：送達。之：指採下的花枝。", "supplement": ""}, {"num": "6", "term": "此物何足貴", "terms": ["此物何足貴", "何足", "貴"], "explanation": "這花朵本身哪裡值得珍貴。何足：何以、哪裡值得。貴：珍貴。", "supplement": ""}, {"num": "7", "term": "但感別經時", "terms": ["但感別經時", "但", "經時"], "explanation": "只是因為觸花感懷，感歎離別已經經過了漫長的時光。但：只。經時：經過漫長的時間。", "supplement": ""}], "analysis": [{"title": "【一、出處與旨意】", "content": ["《庭中有奇樹》選自《昭明文選》，為《古詩十九首》第九首，旨在敘寫思婦春日見庭中奇樹開花，因物興感，折花欲遺遠方所思之人，卻因路遠莫致而自寬自解，表達對遠人至死不渝的深情與離別的感傷。"]}, {"title": "【二、情脈轉折與結構脈絡】", "content": ["1. 欣然採花（庭中有奇樹…攀條折其榮）：庭中奇樹開花繁茂，思婦欣然攀條折花，欲寄遠方所思之人。", "2. 香盈致遠（香氣盈懷袖，路遠莫致之）：花香滿懷，卻驟然想到道路阻長無法送到，喜極轉悲。", "3. 自寬感懷（此物何足貴？但感別經時）：由花之貴賤轉入對別離時光的感嘆，言花不足貴，貴在寄託別離長久之深情。"]}, {"title": "【三、修辭特色分析】", "content": ["1. 轉化（擬人/寫意）與設問：「此物何足貴？」為設問（激問），自問自答表現離情。", "2. 映襯：折花之喜與路遠莫致之悲形成對比。"]}], "quizzes": [{"q": "《庭中有奇樹》中「攀條折其榮，將以遺所思」，但最後卻「馨香盈懷袖，路遠莫致之」，表現何種情緒？", "options": ["A. 憤怒將花瓣撕碎拋棄", "B. 縱使山遙路遠無法送達，仍深情自珍，藉手中的花香慰藉無窮相思", "C. 懊悔不該折斷樹枝破壞植物", "D. 嘲笑遠方之人不懂得賞花"], "ans": 1, "exp": "雖然路遠無法送達，但詩人「此物何足貴，但感別經時」，轉為內心深沈的感慨，將相思轉化為堅定溫柔的自我安慰。"}, {"q": "關於《庭中有奇樹》之文學主旨，下列敘述何者最為適切？", "options": ["A. 體現《古詩十九首》「思婦閨怨」之核心主題，敘述借花表相思・何以慰相憶", "B. 描寫田園隱居之樂，提倡消極避世", "C. 記錄邊疆戰火之殘酷，批判好大喜功", "D. 記述神仙道術之修煉，企求羽化登仙"], "ans": 0, "exp": "本詩選自《昭明文選》，屬於《古詩十九首》之代表作，核心情感為「借花表相思・何以慰相憶」，反映東漢士人或思婦之真摯心聲。"}, {"q": "在《庭中有奇樹》的詩歌藝術表現上，下列何者符合《古詩十九首》「質樸真切」的寫作風格？", "options": ["A. 堆砌華麗冷僻的典故與辭藻", "B. 善用起興與譬喻，言淺而意深，情景交融", "C. 採用嚴格平仄對仗之近體格律", "D. 運用激昂狂放之敘事筆調"], "ans": 1, "exp": "《古詩十九首》被劉勰譽為「五言之冠冕」，鍾嶸譽為「驚心動魄，幾乎一字千金」，其最大特徵即為不求奇僻、言近旨遠、善用比興與白描。"}]}, {"id": 10, "title": "迢迢牽牛星", "theme": "思婦閨怨", "tag": "星宿神話・咫尺天涯", "core_emotion": "一水相隔・脈脈不得語", "raw_header": "古詩十九首學習講義（十）\n《迢迢牽牛星》", "lines": [{"original": "迢迢牽牛星，皎皎河漢女。", "translation": "遙遠的牽牛星，明亮潔白的織女星。"}, {"original": "纖纖擢素手，札札弄機杼。", "translation": "織女伸出纖細白皙的雙手，札札地擺弄著織布機杼。"}, {"original": "終日不成章，泣涕零如雨。", "translation": "一整天也織不成一匹有花紋的布，眼淚像雨水般不住地落下。"}, {"original": "河漢清且淺，相去復幾許？", "translation": "銀河水看起來既清澈又淺淡，兩人相隔又能有多少距離呢？"}, {"original": "盈盈一水間，脈脈不得語。", "translation": "只相隔著這一條清澈的銀河，卻只能深情地相視而無法言語。"}], "annotations": [{"num": "1", "term": "迢迢牽牛星", "terms": ["迢迢牽牛星", "迢迢"], "explanation": "遙遠的牽牛星。迢迢：遙遠貌。", "supplement": ""}, {"num": "2", "term": "皎皎河漢女", "terms": ["皎皎河漢女", "皎皎", "河漢女"], "explanation": "明亮潔白的織女星。皎皎：明亮潔白貌。河漢女：織女星。", "supplement": ""}, {"num": "3", "term": "纖纖擢素手", "terms": ["纖纖擢素手", "纖纖", "擢", "素"], "explanation": "伸出纖細白皙的手。纖纖：纖細貌。擢：音ㄓㄨㄛˊ，伸出。素：白皙。", "supplement": ""}, {"num": "4", "term": "札札弄機杼", "terms": ["札札弄機杼", "札札", "機杼"], "explanation": "札札地擺弄織機。札札：織布機運轉聲。機杼：織布機。", "supplement": ""}, {"num": "5", "term": "終日不成章", "terms": ["終日不成章", "章"], "explanation": "一整天也織不成帶有花紋的匹布。章：織有花紋的絲織品。", "supplement": ""}, {"num": "6", "term": "泣涕零如雨", "terms": ["泣涕零如雨", "零"], "explanation": "眼淚如雨水般落下。零：落。", "supplement": ""}, {"num": "7", "term": "相去復幾許", "terms": ["相去復幾許", "幾許"], "explanation": "相距又能有多少呢？去：距。幾許：多少。", "supplement": ""}, {"num": "8", "term": "盈盈一水間", "terms": ["盈盈一水間", "盈盈"], "explanation": "水清澈貌，亦形容儀態美好。盈盈：水清淺貌。", "supplement": ""}, {"num": "9", "term": "脈脈不得語", "terms": ["脈脈不得語", "脈脈"], "explanation": "默默用眼神傳達深情而無法說話。脈脈：音ㄇㄛˋ ㄇㄛˋ，含情相視貌。", "supplement": ""}], "analysis": [{"title": "【一、出處與旨意】", "content": ["《迢迢牽牛星》選自《昭明文選》，為《古詩十九首》第十首，旨在藉由牽牛星與織女星隔銀河相望的神話故事，比喻人間夫妻或情侶被迫分離、近在咫尺卻難相聚的相思之苦。"]}, {"title": "【二、情脈轉折與結構脈絡】", "content": ["1. 雙星對峙（迢迢牽牛星，皎皎河漢女）：遙想天際牽牛織女二星隔河相對。", "2. 織女悲泣（纖纖擢素手…泣涕零如雨）：描繪織女勤於紡織卻因心懷相思而「終日不成章」，悲傷落淚如雨。", "3. 水阻深情（河漢清且淺…脈脈不得語）：反詰銀河清淺阻隔有限，然而「盈盈一水間」卻只能「脈脈不得語」，將無奈相思推至頂峰。"]}, {"title": "【三、修辭特色分析】", "content": ["1. 疊字（疊音詞）運用極具藝術效果：全詩十句中前六句與後兩句大量使用疊字（迢迢、皎皎、纖纖、札札、盈盈、脈脈），使節奏和美，極具音樂感與詩意美。", "2. 譬喻：「泣涕零如雨」以雨水比喻眼淚流落之多。", "3. 設問（反詰/激問）：「相去復幾許？」表現近在咫尺卻不得相見的深切遺憾。"]}], "quizzes": [{"q": "《迢迢牽牛星》中「盈盈一水間，脈脈不得語」，「脈脈」的意涵與修辭為何？", "options": ["A. 雙目含情、默默相視之狀；疊字修辭", "B. 河水急速流動的聲音；摹聲修辭", "C. 山脈綿延起伏；擬人修辭", "D. 脈搏跳動加速；誇飾修辭"], "ans": 0, "exp": "「脈脈」為疊字，生動傳神地描寫隔著銀河相望的牽牛與織女，雖近在咫尺卻只能含情凝視、不得言語的無限相思。"}, {"q": "關於《迢迢牽牛星》之文學主旨，下列敘述何者最為適切？", "options": ["A. 體現《古詩十九首》「思婦閨怨」之核心主題，敘述一水相隔・脈脈不得語", "B. 描寫田園隱居之樂，提倡消極避世", "C. 記錄邊疆戰火之殘酷，批判好大喜功", "D. 記述神仙道術之修煉，企求羽化登仙"], "ans": 0, "exp": "本詩選自《昭明文選》，屬於《古詩十九首》之代表作，核心情感為「一水相隔・脈脈不得語」，反映東漢士人或思婦之真摯心聲。"}, {"q": "在《迢迢牽牛星》的詩歌藝術表現上，下列何者符合《古詩十九首》「質樸真切」的寫作風格？", "options": ["A. 堆砌華麗冷僻的典故與辭藻", "B. 善用起興與譬喻，言淺而意深，情景交融", "C. 採用嚴格平仄對仗之近體格律", "D. 運用激昂狂放之敘事筆調"], "ans": 1, "exp": "《古詩十九首》被劉勰譽為「五言之冠冕」，鍾嶸譽為「驚心動魄，幾乎一字千金」，其最大特徵即為不求奇僻、言近旨遠、善用比興與白描。"}]}, {"id": 11, "title": "回車駕言邁", "theme": "生命感懷", "tag": "長途感時・立身揚名", "core_emotion": "金石不朽・富貴非願", "raw_header": "古詩十九首學習講義（十一）\n《回車駕言邁》", "lines": [{"original": "回車駕言邁，悠悠涉長道。", "translation": "調轉車頭駕車遠行，漫漫長路踏上遙遠的征途。"}, {"original": "四顧何茫茫，東風搖百草。", "translation": "四下環顧是多麼的茫茫無際，春天的東風吹拂動搖著百草。"}, {"original": "所遇無故物，嫣能不速老？", "translation": "眼中所見沒有一件是舊時的景物，人又怎能不迅速衰老呢？"}, {"original": "盛衰各有時，立身苦不早。", "translation": "世間萬物的盛衰各有其時節，苦於未能早早立身揚名。"}, {"original": "人生非金石，豈能長壽考？", "translation": "人的身體又不是金屬或石頭，哪裡能夠長生不老呢？"}, {"original": "奄忽隨物化，榮名以為寶。", "translation": "生命轉瞬間就會隨著萬物凋零變化，唯有美好的聲名才是最可寶貴的。"}], "annotations": [{"num": "1", "term": "回車駕言邁", "terms": ["回車駕言邁", "回車", "言", "邁"], "explanation": "調轉車頭駕車遠行。回車：轉過車頭。言：語助詞。邁：遠行。", "supplement": ""}, {"num": "2", "term": "悠悠涉長道", "terms": ["悠悠涉長道", "悠悠", "涉"], "explanation": "漫漫長路踏上遙遠的征途。悠悠：漫長貌。涉：經歷、行走。", "supplement": ""}, {"num": "3", "term": "四顧何茫茫", "terms": ["四顧何茫茫", "茫茫"], "explanation": "四下環顧廣大無際貌。茫茫：廣大遼闊貌。", "supplement": ""}, {"num": "4", "term": "嫣能不速老", "terms": ["嫣能不速老", "速"], "explanation": "安能、怎能不迅速衰老呢？嫣：通「安」，怎能。速：迅速。", "supplement": ""}, {"num": "5", "term": "盛衰各有時", "terms": ["盛衰各有時"], "explanation": "興盛與衰落各有其相應的時節。", "supplement": ""}, {"num": "6", "term": "立身苦不早", "terms": ["立身苦不早", "立身"], "explanation": "苦於未能早早立身揚名建功立業。立身：成就事業功名。", "supplement": ""}, {"num": "7", "term": "豈能長壽考", "terms": ["豈能長壽考", "考"], "explanation": "哪能長久活到高壽老死呢？壽考：高壽。考：老。", "supplement": ""}, {"num": "8", "term": "奄忽隨物化", "terms": ["奄忽隨物化", "奄忽", "物化"], "explanation": "轉瞬間順應自然萬物變化而死亡。奄忽：急促、轉瞬間。物化：指死亡。", "supplement": ""}, {"num": "9", "term": "榮名以為寶", "terms": ["榮名以為寶", "榮名"], "explanation": "美好的名聲才是最可寶貴的。榮名：美好的聲名功業。", "supplement": ""}], "analysis": [{"title": "【一、出處與旨意】", "content": ["《回車駕言邁》選自《昭明文選》，為《古詩十九首》第十一首，旨在敘寫詩人駕車行於漫漫長途，見春風百草而觸景感傷歲月流逝、人生短暫，進而發出人生非金石、當早立身立名以求不朽的生命感歎。"]}, {"title": "【二、情脈轉折與結構脈絡】", "content": ["1. 旅途觸景（回車駕言邁…東風搖百草）：駕車出遊，見東風搖百草之景，興起無端感傷。", "2. 感時傷老（所遇無故物，嫣能不速老）：見景物更迭，感嘆時光飛逝、人生迅速衰老。", "3. 生命反思（盛衰各有時…豈能長壽考）：悟出萬物盛衰有時，人生非金石不可長壽。", "4. 立身追求（奄忽隨物化，榮名以為寶）：最終歸結出生命雖短暫，唯有立身建功立業、留下「榮名」才是至寶。"]}, {"title": "【三、修辭特色分析】", "content": ["1. 設問（激問/反詰）：「嫣能不速老？」、「豈能長壽考？」均增強生命無常的沉痛感。", "2. 譬喻（對比喻）：「人生非金石」，以金石之堅固對比人生生命之脆弱。"]}], "quizzes": [{"q": "《回車駕言邁》中「人生非金石，豈能長壽考」，作者引申出的結論是什麼？", "options": ["A. 人應修仙煉丹以求肉身成聖", "B. 人生不能像金石般永存，應當及早立德立名，追求生命的精神不朽", "C. 應及時聚斂財富留給子孫", "D. 一切皆空，不如終日沉睡"], "ans": 1, "exp": "作者感悟人體脆弱無法長生不老，故提出「奄忽隨物化，榮名以為寶」，追求道德與名望的不朽留存。"}, {"q": "關於《回車駕言邁》之文學主旨，下列敘述何者最為適切？", "options": ["A. 體現《古詩十九首》「生命感懷」之核心主題，敘述金石不朽・富貴非願", "B. 描寫田園隱居之樂，提倡消極避世", "C. 記錄邊疆戰火之殘酷，批判好大喜功", "D. 記述神仙道術之修煉，企求羽化登仙"], "ans": 0, "exp": "本詩選自《昭明文選》，屬於《古詩十九首》之代表作，核心情感為「金石不朽・富貴非願」，反映東漢士人或思婦之真摯心聲。"}, {"q": "在《回車駕言邁》的詩歌藝術表現上，下列何者符合《古詩十九首》「質樸真切」的寫作風格？", "options": ["A. 堆砌華麗冷僻的典故與辭藻", "B. 善用起興與譬喻，言淺而意深，情景交融", "C. 採用嚴格平仄對仗之近體格律", "D. 運用激昂狂放之敘事筆調"], "ans": 1, "exp": "《古詩十九首》被劉勰譽為「五言之冠冕」，鍾嶸譽為「驚心動魄，幾乎一字千金」，其最大特徵即為不求奇僻、言近旨遠、善用比興與白描。"}]}, {"id": 12, "title": "東城高且長", "theme": "及時行樂", "tag": "歲暮傷逝・極宴自遣", "core_emotion": "時節忽復易・無為自戚戚", "raw_header": "古詩十九首學習講義（十二）\n《東城高且長》", "lines": [{"original": "東城高且長，逶迤自相屬。", "translation": "東邊的城廓高大又長遠，曲折綿延的自然相連。"}, {"original": "迴風動地起，秋草萋已綠。", "translation": "旋狀的疾風捲地而起，茂盛的秋草已經轉為黃綠色了。"}, {"original": "四時更變化，歲暮一何速！", "translation": "四季交替變化，到了年末時節多麼快速啊！"}, {"original": "晨風懷苦心，蟋蟀傷局促。", "translation": "晨風一詩懷著悲苦的心情，蟋蟀一詩感傷過於拘謹。"}, {"original": "蕩滌放情志，何為自結束？", "translation": "清除憂煩，縱情享樂吧，何必自己將感情志趣拘執拘束起來呢？"}, {"original": "燕趙多佳人，美者顏如玉。", "translation": "燕趙地方許多美女，美麗的女子的容貌有如玉石一般。"}, {"original": "被服羅裳衣，當戶理清曲。", "translation": "穿著綾羅的衣裙，臨著窗戶練習清商曲。"}, {"original": "音響一何悲！弦急知柱促。", "translation": "音調是多麼的悲苦啊！從琴弦聲響急促，知道已把琴柱往近拉緊了。"}, {"original": "馳情整中帶，沉吟聊躑躅。", "translation": "心馳神往中，不覺整理一下衣帶，深思曲意，姑且起身徘徊。"}, {"original": "思為雙飛燕，銜泥巢君屋。", "translation": "希望我倆化為雙飛複宿的燕鳥，銜著泥土在你的屋上築巢。"}], "annotations": [{"num": "1", "term": "東城高且長", "terms": ["東城高且長", "東城", "且"], "explanation": "東邊的城廓高大又長遠。東城：東邊的城廓。且：又。", "supplement": ""}, {"num": "2", "term": "逶迤自相屬", "terms": ["逶迤自相屬", "逶迤", "自", "相屬", "屬"], "explanation": "曲折綿延的自然相連。逶迤：音ㄨㄟ ㄧˊ，曲折綿延的樣子。自：自然。相屬：相連。屬：音ㄓㄨˇ，連也。", "supplement": ""}, {"num": "3", "term": "迴風動地起", "terms": ["迴風動地起", "迴風"], "explanation": "旋狀的疾風捲地而起。迴風：旋風，即旋狀的疾風。", "supplement": ""}, {"num": "4", "term": "秋草萋已綠", "terms": ["秋草萋已綠", "萋", "綠"], "explanation": "茂盛的秋草已經轉為黃綠色。萋：萋萋，茂盛的樣子。綠：指黃綠色。", "supplement": ""}, {"num": "5", "term": "四時更變化", "terms": ["四時更變化", "更"], "explanation": "四季交替變化。更：音ㄍㄥ，更迭，此指交替。", "supplement": ""}, {"num": "6", "term": "歲暮一何速", "terms": ["歲暮一何速", "歲暮", "一", "何", "速"], "explanation": "多麼快速的到了年末時節。歲暮：年末。一：助詞，無義。何：多麼。速：快。", "supplement": ""}, {"num": "7", "term": "晨風懷苦心", "terms": ["晨風懷苦心", "晨風"], "explanation": "晨風一詩懷著悲苦的心情。晨風：詩經秦風篇名。敘女子因思念情人、疑被棄而悲苦。", "supplement": ""}, {"num": "8", "term": "蟋蟀傷局促", "terms": ["蟋蟀傷局促", "蟋蟀", "局促"], "explanation": "蟋蟀一詩感傷過於拘謹。蟋蟀：詩經唐風篇名，敘因歲暮而感時光流逝，和想及時行樂，但又警惕自己須有節制。局促：拘謹、拘束。", "supplement": ""}, {"num": "9", "term": "蕩滌放情志", "terms": ["蕩滌放情志", "蕩滌", "放情志"], "explanation": "清除憂煩，縱情享樂。蕩滌：沖洗、清除。放情志：感情志趣放開。", "supplement": ""}, {"num": "10", "term": "何為自結束", "terms": ["何為自結束", "何為", "結束"], "explanation": "何必自己將感情志趣拘執拘束起來。何為：何必。結束：拘束。", "supplement": ""}, {"num": "11", "term": "燕趙多佳人", "terms": ["燕趙多佳人", "佳人"], "explanation": "燕趙地方多美女。佳人：美女。", "supplement": ""}, {"num": "12", "term": "美者顏如玉", "terms": ["美者顏如玉", "顏"], "explanation": "美麗的女子容貌有如玉石一般。顏：借指容顏、容貌。", "supplement": ""}, {"num": "13", "term": "被服羅裳衣", "terms": ["被服羅裳衣", "被、服", "被", "羅", "裳衣", "裳"], "explanation": "穿著綾羅的衣裙。被、服：均指穿著。被：音ㄆㄧ／通「披」，穿。羅：稀疏而輕軟的絲織品。裳衣：衣服。裳：下稱衣，下稱裳。", "supplement": ""}, {"num": "14", "term": "當戶理清曲", "terms": ["當戶理清曲", "當戶", "當", "理", "清曲"], "explanation": "臨著窗戶練習清商曲。當戶：臨著窗戶。當：臨。理：練習。清曲：即清商曲。", "supplement": ""}, {"num": "15", "term": "音響一何悲", "terms": ["音響一何悲", "一", "何"], "explanation": "音調是多麼的悲苦啊。一：助詞。何：多麼。", "supplement": ""}, {"num": "16", "term": "弦急知柱促", "terms": ["弦急知柱促", "弦急", "柱", "促"], "explanation": "從琴弦聲響急促，知道已把琴柱移近旋緊了。弦急：弦音急促。柱：琴柱，即架弦的短木柱。促：迫近；琴柱移前，將弦上緊。", "supplement": ""}, {"num": "17", "term": "馳情整中帶", "terms": ["馳情整中帶", "馳情", "中帶"], "explanation": "心馳神往中，不覺整理一下衣帶。馳情：神往。中帶：衣帶。", "supplement": ""}, {"num": "18", "term": "沉吟聊躑躅", "terms": ["沉吟聊躑躅", "沉吟", "聊", "躑躅"], "explanation": "深思曲意，姑且起身徘徊。沉吟：深思貌。聊：姑且。躑躅：音ㄓˊ ㄓㄨˊ，徘徊不前的樣子。", "supplement": ""}, {"num": "19", "term": "思為雙飛燕", "terms": ["思為雙飛燕"], "explanation": "希望我倆化為雙飛複宿的燕鳥。", "supplement": ""}, {"num": "20", "term": "銜泥巢君屋", "terms": ["銜泥巢君屋", "銜", "巢"], "explanation": "銜著泥土在你的屋上築巢。銜：口中含物。巢：築巢，動詞。", "supplement": ""}], "analysis": [{"title": "【一、出處與旨意】", "content": ["《東城高且長》選自《昭明文選》，為《古詩十九首》的第十二首，旨在抒寫因歲暮感懷，而覺得人生短暫，應該及時行樂。"]}, {"title": "【二、寫作動機與情感觸媒】", "content": ["因景物優美而心情和悅，因所見淒涼而心生感傷，因季節更迭而不能自己，因外在激盪而深有所感，這是情緒變化的觸媒，也是人受影響的結果。事業順遂的人，處處得意，比較不易受到牽引；至於際遇不順、情感失意、閨中思婦或漂泊在外的遊子，則在風物之前，時常會引起一些或大或小的波瀾。所以在季節更迭、歲月易逝的情景之下，興起不如敞開心胸、及時行樂，正是本詩寫作的動機。"]}, {"title": "【三、結構特色與實虛寫法】", "content": ["本詩前半實寫的文字，不但用字嚴謹，句句相衡，而且語氣比較緊湊。首二句「東城高且長」寫城廓綿延，三、四句秋景猛然來到，五、六句歲暮悚然而驚，七、八句懷傷深刻見骨，九、十句排遣早已豁出了一切。", "後半虛寫的文字，十一至十四句僅以簡筆略敘佳人的外貌，十五、十六句則以聲高而悲略敘彈奏的音樂。這是因為前半以濃重的筆墨，敘其感慨，感慨人生短暫正是本詩真正的主題。至於後半只以簡筆略敘佳人，是因佳人不是詩的主體，作者只是想借佳人，引出末兩句排遣短暫人生的主題罷了。", "本詩前後實虛，前緊後鬆，前敘感慨，後敘期盼。前半「蕩滌放情志」句總收後半所有的文字，後半「思為雙飛燕，銜泥巢君屋」句，則以總結束全詩，前後相互照應，是一首完整的作品。"]}, {"title": "【四、修辭特色分析】", "content": ["1. 譬喻：「美者顏如玉」，屬於明喻。", "2. 轉化：「馳情整中帶」，抽象的「情」，因具體的「馳」字而形象化了。", "3. 示現：「思為雙飛燕，銜泥巢君屋」，為作者想像情景的「懸想」示現。", "4. 轉品：「被服羅裳衣」的「被」、「服」，本為名詞，此處轉為動詞，意思為「穿」。", "5. 用典：本詩兩處引用詩經，均屬取義已與原來故事相反的「反用」。", "(1)「晨風懷苦心」：舉詩經秦風晨風詩，以敘人不應懷著悲苦的心情。", "(2)「蟋蟀傷局促」：舉詩經唐風蟋蟀詩，以敘人不應拘謹，而應及時行樂。", "6. 設問：「蕩滌放情志，何為自結束」，意指不應「自結束」、自我拘謹，屬於設問修辭的「激問」格。"]}], "quizzes": [{"q": "《東城高且長》中「斗酒相娛樂，聊厚不為薄」，詩人表達的生活態度是：", "options": ["A. 嗜酒如命的不良嗜好", "B. 面對歲月急逝與生命苦短，藉由與知交歡聚飲酒，自我排遣憂思", "C. 炫耀自己擁有珍貴的千日美酒", "D. 批評宴席上的飯菜寒酸"], "ans": 1, "exp": "在時節忽復易、人生如寄的感懷下，詩人以薄酒與友同樂，展現達觀排遣的處世哲學。"}, {"q": "關於《東城高且長》之文學主旨，下列敘述何者最為適切？", "options": ["A. 體現《古詩十九首》「及時行樂」之核心主題，敘述時節忽復易・無為自戚戚", "B. 描寫田園隱居之樂，提倡消極避世", "C. 記錄邊疆戰火之殘酷，批判好大喜功", "D. 記述神仙道術之修煉，企求羽化登仙"], "ans": 0, "exp": "本詩選自《昭明文選》，屬於《古詩十九首》之代表作，核心情感為「時節忽復易・無為自戚戚」，反映東漢士人或思婦之真摯心聲。"}, {"q": "在《東城高且長》的詩歌藝術表現上，下列何者符合《古詩十九首》「質樸真切」的寫作風格？", "options": ["A. 堆砌華麗冷僻的典故與辭藻", "B. 善用起興與譬喻，言淺而意深，情景交融", "C. 採用嚴格平仄對仗之近體格律", "D. 運用激昂狂放之敘事筆調"], "ans": 1, "exp": "《古詩十九首》被劉勰譽為「五言之冠冕」，鍾嶸譽為「驚心動魄，幾乎一字千金」，其最大特徵即為不求奇僻、言近旨遠、善用比興與白描。"}]}, {"id": 13, "title": "驅車上東門", "theme": "生命感懷", "tag": "驅車北邙・生死反思", "core_emotion": "人生寄客・神仙難求", "raw_header": "古詩十九首學習講義（十三）\n《驅車上東門》", "lines": [{"original": "驅車上東門，遙望郭北墓。", "translation": "駕車向前上東門駛去，遙遙望見洛陽城北邙山的墓群。"}, {"original": "白楊何蕭蕭，松柏夾廣路。", "translation": "風吹拂著白楊樹，樹葉發出蕭蕭悲涼的聲音。松樹與柏樹種植在寬闊墓道的兩旁。"}, {"original": "下有陳死人，杳杳即長暮。", "translation": "墓中躺著死去很久的人。墓裡昏暗，就如同無盡的長夜。"}, {"original": "潛寐黃泉下，千載永不寤。", "translation": "深沉地睡在黃泉之下，千年萬載永遠不能再醒過來。"}, {"original": "浩浩陰陽移，年命如朝露。", "translation": "春夏秋冬四季無止無盡地轉移，人的壽命有如清晨的露水一樣短暫。"}, {"original": "人生忽如寄，壽無金石固。", "translation": "人的一生迅速疾逝有如寄居世上，壽命不能像金屬、玉石一樣堅固。"}, {"original": "萬歲更相迭，聖賢莫能度。", "translation": "自古以來年復一年地互相交替，即使聖賢也無法超越短暫的壽命。"}, {"original": "服食求神仙，多為藥所誤。", "translation": "服食丹藥求為長生不死的神仙，大都被藥毀殺了生命。"}, {"original": "不如飲美酒，被服執紈素。", "translation": "不如暢飲美酒，穿著絹綢華美的衣服及時尋樂。"}], "annotations": [{"num": "1", "term": "驅車上東門", "terms": ["驅車上東門", "驅車", "上東門"], "explanation": "駕車向前上東門駛去。驅車：趕車、駕車。上東門：漢代洛陽城門十二，東面有三門，最北邊的門稱為上東門。", "supplement": ""}, {"num": "2", "term": "遙望郭北墓", "terms": ["遙望郭北墓", "郭北墓", "郭"], "explanation": "遙遙望見洛陽城北邙山的墓群。郭北墓：洛陽城北有邙山，為漢代王公貴族與富商的聚葬之地。郭：外城。", "supplement": ""}, {"num": "3", "term": "白楊何蕭蕭", "terms": ["白楊何蕭蕭", "何", "蕭蕭"], "explanation": "風吹拂著白楊樹，樹葉發出蕭蕭悲涼的聲音。何：表概歎。蕭蕭：風吹樹葉的聲音。", "supplement": ""}, {"num": "4", "term": "松柏夾廣路", "terms": ["松柏夾廣路", "夾", "廣路"], "explanation": "白楊、松樹與柏樹，種植在寬闊墓道的兩旁。夾：指兩側。廣路：寬廣的道路，此指墓道。", "supplement": ""}, {"num": "5", "term": "下有陳死人", "terms": ["下有陳死人", "下", "陳"], "explanation": "墓中躺著死去很久的人。下：中；指墳墓之中。陳：久。", "supplement": ""}, {"num": "6", "term": "杳杳即長暮", "terms": ["杳杳即長暮", "杳杳", "即", "長暮"], "explanation": "墓裡昏暗，就如同無盡的長夜。杳杳：音ㄧㄠˇ ㄧㄠˇ，昏暗的樣子。即：就。長暮：長夜，借指死亡。", "supplement": ""}, {"num": "7", "term": "潛寐黃泉下", "terms": ["潛寐黃泉下", "潛寐", "潛", "寐", "黃泉"], "explanation": "深沉地睡在黃泉之下。潛寐：深睡。潛：深。寐：音ㄇㄟˋ，睡。黃泉：黃土深處的泉水，指地下；舊稱人死後的去處。", "supplement": ""}, {"num": "8", "term": "千載永不寤", "terms": ["千載永不寤", "千載", "寤"], "explanation": "永遠不能再醒過來。千載：千年，有「永遠」之意。寤：音ㄨˋ，醒。", "supplement": ""}, {"num": "9", "term": "浩浩陰陽移", "terms": ["浩浩陰陽移", "浩浩", "陰陽", "移"], "explanation": "春夏秋冬四季無止無盡地轉移。浩浩：水廣大無際貌，此用來形容時間「無止無盡」。陰陽：春夏為陽，秋冬為陰。移：轉移。", "supplement": ""}, {"num": "10", "term": "年命如朝露", "terms": ["年命如朝露", "年命", "朝露"], "explanation": "人的壽命，有如清晨的露水一樣短暫；極言生命極短。年命：壽命。朝露：清晨的露水。", "supplement": ""}, {"num": "11", "term": "人生忽如寄", "terms": ["人生忽如寄", "忽", "寄"], "explanation": "人的一生迅速疾逝，有如寄居世上。忽：急速的、很快的。寄：寄居。", "supplement": ""}, {"num": "12", "term": "壽無金石固", "terms": ["壽無金石固", "金石"], "explanation": "壽命不能像金屬、玉石一樣堅固。金石：金屬、玉石，比喻堅固。", "supplement": ""}, {"num": "13", "term": "萬歲更相迭", "terms": ["萬歲更相迭", "萬歲", "更相", "更", "迭"], "explanation": "自古以來年復一年地互相交替。萬歲：萬年，此指亘古以來。更相：互相。更：音ㄍㄥ。迭：音ㄉㄧㄝˊ，交替、替代。", "supplement": ""}, {"num": "14", "term": "聖賢莫能度", "terms": ["聖賢莫能度", "度"], "explanation": "聖賢也無法超越短暫的壽命。度：通「渡」，超越。", "supplement": ""}, {"num": "15", "term": "服食求神仙", "terms": ["服食求神仙", "求神仙"], "explanation": "服食丹藥，求為長生不死的神仙。求神仙：即「求為神仙」，追求成仙長生。", "supplement": ""}, {"num": "16", "term": "多為藥所誤", "terms": ["多為藥所誤", "多為", "誤"], "explanation": "大都被丹藥毒害毀殺了生命。多為：被。誤：危害、耽誤。", "supplement": ""}, {"num": "17", "term": "被服執紈素", "terms": ["被服執紈素", "被服", "被、服", "被", "執", "紈素", "素"], "explanation": "穿著絹綢華美的衣服。被服：穿著。被、服：均指「穿」。被：音ㄆㄧ propose/通「披」，穿。執：音ㄓˊ，握持（一說握持樂器或羅扇）。紈素：白色細絹，引申為華麗精美的衣服。素：白色生絹。", "supplement": ""}], "analysis": [{"title": "【一、出處與旨意】", "content": ["《驅車上東門》選自《昭明文選》，為《古詩十九首》的第十三首，旨在抒寫因見城北北邙山的墳墓而感慨人生短暫，進而興起及時行樂的思想。"]}, {"title": "【二、生命觀點與寫作動機】", "content": ["人生數十寒暑，乍看不短，但在轉眼之間就過去了。面對生命的短暫與不可逆，古來賢者回應各異：", "1. 王羲之《蘭亭集序》感歎「修短隨化，終期於盡」，充滿無奈悲傷。", "2. 陶淵明《形影神·神釋》高唱「縱浪大化中，不喜亦不懼。應盡便須盡，無複獨多慮」，以坦然豁達超脫生死。", "3. 蘇軾《赤壁賦》寄情「江上之清風，與山間之明月」，在自然美景中悠然自適。", "4. 曹丕《典論·論文》立志「寄身於翰墨，見意於篇籍」，欲以有限生命創造永恆作品。", "本詩則係由短暫生命的無奈感慨，導向及時行樂的人生選擇。"]}, {"title": "【三、結構層次與邏輯推進】", "content": ["本詩層次分明，邏輯環環相扣：", "1. 前部（「驅車上東門」至「千載永不寤」八句）：描寫出城所見北邙山墓群與蕭蕭風樹，暗示對死亡的恐懼與震撼。", "2. 中部（「浩浩陰陽移」至「聖賢莫能度」六句）：由墓地連結四季輪轉與光陰飛逝，暗示對生命短暫的無奈與無能為力。", "3. 後部（「服食求神仙」至末句四句）：揭示求仙煉丹反遭藥害的荒謬，進而主張不如飲美酒、穿服錦繡，及時行樂。", "全詩因墓思死，因死思及時行樂，一路鋪陳自然，情感真摯而不失理趣。"]}, {"title": "【四、修辭特色分析】", "content": ["1. 譬喻：", "(1) 明喻：「年命如朝露」、「人生忽如寄」。", "(2) 略喻：「杳杳即（如）長暮」、「壽無（如）金石固」。", "2. 轉化：「浩浩陰陽移」之「浩浩」，以水流廣大無際形容時間無止無盡的轉移。", "3. 誇飾：「年命如朝露」，極寫生命極其短暫。", "4. 轉品：「下有陳死人」之「陳」，原為動詞「陳列」，轉為形容詞「久遠」。", "5. 映襯：「服食求神仙，多為藥所誤」反說其謬；「不如飲美酒，被服執紈素」正說及時行樂。"]}], "quizzes": [{"q": "《驅車上東門》中「驅車上東門，遙望郭北墓」，詩人所見之景觸發了何種感嘆？", "options": ["A. 讚賞北邙山風景優美適合踏青", "B. 目睹墳墓纍纍、白楊蕭蕭，深刻感悟人生寄宿於天地之間如過客般短暫", "C. 考察漢代墓葬形制與禮俗", "D. 感念先祖德澤興旺"], "ans": 1, "exp": "詩人登高遠眺洛陽城北的北邙山墓地，看到松柏摧為薪、死者長閉泉下，引發「人生忽如寄，壽無金石固」的生死大沉思。"}, {"q": "關於《驅車上東門》之文學主旨，下列敘述何者最為適切？", "options": ["A. 體現《古詩十九首》「生命感懷」之核心主題，敘述人生寄客・神仙難求", "B. 描寫田園隱居之樂，提倡消極避世", "C. 記錄邊疆戰火之殘酷，批判好大喜功", "D. 記述神仙道術之修煉，企求羽化登仙"], "ans": 0, "exp": "本詩選自《昭明文選》，屬於《古詩十九首》之代表作，核心情感為「人生寄客・神仙難求」，反映東漢士人或思婦之真摯心聲。"}, {"q": "在《驅車上東門》的詩歌藝術表現上，下列何者符合《古詩十九首》「質樸真切」的寫作風格？", "options": ["A. 堆砌華麗冷僻的典故與辭藻", "B. 善用起興與譬喻，言淺而意深，情景交融", "C. 採用嚴格平仄對仗之近體格律", "D. 運用激昂狂放之敘事筆調"], "ans": 1, "exp": "《古詩十九首》被劉勰譽為「五言之冠冕」，鍾嶸譽為「驚心動魄，幾乎一字千金」，其最大特徵即為不求奇僻、言近旨遠、善用比興與白描。"}]}, {"id": 14, "title": "去者日以疏", "theme": "生命感懷", "tag": "城郭古墓・桑田無常", "core_emotion": "去日以疏・歸心鄉思", "raw_header": "古詩十九首學習講義（十四）\n《去者日以疏》", "lines": [{"original": "去者日以疏，來者日以親。", "translation": "死去的人已被日漸疏遠淡忘，活著的人則已日漸親密。"}, {"original": "出郭門直視，但見丘與墳。", "translation": "走出外城門直接觀察，只看見到處都是荒廢的墳墓。"}, {"original": "古墓犁為田，松柏摧為薪。", "translation": "以前的墳墓已被耕為田地，種植的松樹、柏樹已被摧折砍伐成木柴。"}, {"original": "白楊多悲風，蕭蕭愁殺人！", "translation": "白楊樹間吹來陣陣悲涼的風，蕭蕭作響的聲音使人愁苦到了極點！"}, {"original": "思還故里閭，欲歸道無因。", "translation": "內心想要返回家鄉，想回去卻沒有機緣和方法可以實現。"}], "annotations": [{"num": "1", "term": "去者日以疏", "terms": ["去者日以疏", "去者", "日", "以", "疏"], "explanation": "死去的人已被日漸疏遠淡忘。去者：死去的人。日：日漸。以：通「已」，已經。疏：疏遠，有「淡忘」之意。", "supplement": ""}, {"num": "2", "term": "來者日以親", "terms": ["來者日以親", "來者", "親"], "explanation": "活著的人則已日漸親密。來者：生者、活著的人。親：親密。", "supplement": ""}, {"num": "3", "term": "出郭門直視", "terms": ["出郭門直視", "郭門", "郭", "直視"], "explanation": "走出外城門直接觀察。郭門：外城門。郭：外城。直視：直接觀察。", "supplement": ""}, {"num": "4", "term": "但見丘與墳", "terms": ["但見丘與墳", "但", "丘", "墳"], "explanation": "只看見到處都是墳墓。但：只。丘：墳墓。墳：土堆隆起的墳墓。「丘墳」為同義複詞，指墳墓。", "supplement": ""}, {"num": "5", "term": "古墓犁為田", "terms": ["古墓犁為田", "犁", "為"], "explanation": "以前荒廢的墳墓已被耕為田地。犁：耕，名詞轉動詞。為：成為。", "supplement": ""}, {"num": "6", "term": "松柏摧為薪", "terms": ["松柏摧為薪", "摧", "薪"], "explanation": "種植的松柏已被摧折伐為柴火。摧：摧折、毀壞。薪：柴火。", "supplement": ""}, {"num": "7", "term": "白楊多悲風", "terms": ["白楊多悲風", "多", "悲風"], "explanation": "白楊樹間吹來陣陣悲涼的风。多：表數量多，有「陣陣」之意。悲風：悲涼的風。", "supplement": ""}, {"num": "8", "term": "蕭蕭愁殺詞", "terms": ["蕭蕭愁殺詞", "蕭蕭", "愁", "殺"], "explanation": "蕭蕭作響的風樹聲，使人愁苦到了極點。蕭蕭：風吹樹葉聲。愁：使動詞，使……愁苦。殺：通「煞」，極、甚。", "supplement": ""}, {"num": "9", "term": "思還故里閭", "terms": ["思還故里閭", "還", "故里閭", "閭"], "explanation": "內心想要返回故鄉。還：回、歸。故里閭：故鄉。閭：音ㄌㄩˊ，古二十五戶為一閭。故里、故閭均指故鄉。", "supplement": ""}, {"num": "10", "term": "欲歸道無因", "terms": ["欲歸道無因", "道", "因"], "explanation": "想要回去卻沒有機緣和方法實現。道：方法、途徑。因：由，指機緣。", "supplement": ""}], "analysis": [{"title": "【一、出處與旨意】", "content": ["《去者日以疏》選自《昭明文選》，為《古詩十九首》的第十四首，旨在敘寫因出郭門目睹丘墳、古墓變田，感歎滄海桑田與人事無常，進而激發深沉的思鄉之情。"]}, {"title": "【二、鄉土情結與歸宿主題】", "content": ["古人除追求功名或避難外，絕不輕易離開鄉土。鄉里是根，是家，也是人生最終的歸宿。", "1. 項羽破秦後「富貴不歸故鄉，如衣錦夜行」（《史記·項羽本紀》），顯達者欲歸鄉炫耀。", "2. 王粲《登樓賦》感歎「悲舊鄉之壅隔兮，涕橫墜而弗禁」，落拓者以家鄉為庇護懷抱。", "境遇雖有異，但均以鄉里為終極歸宿。本詩亦是在目睹生死無常後，激發出對家鄉的深切渴望。"]}, {"title": "【三、布局技巧與倒裝設計】", "content": ["本詩布局高明，若依順序直敘，應為：", "「出郭門直視，但見丘與墳。古墓犁為田，松柏摧為薪。白楊多悲風，蕭蕭愁殺人！」（六句寫景目睹丘墳）", "「去者日以疏，來者日以親。」（兩句感歎生死親疏）", "「思還故里閭，欲歸道無因。」（兩句總結思鄉難歸）。", "作者特意將「去者日以疏，來者日以親」二句提到詩首作為前提，使全詩產生突兀轉折之趣味，深化詩意並拓寬意境。"]}, {"title": "【四、修辭特色分析】", "content": ["1. 映襯：「去者」與「來者」、「疏」與「親」對舉映襯。", "2. 描摹：視覺描摹（出郭門直視，但見丘與墳/古墓犁為田，松柏摧為薪）；聽覺與心覺描摹（白楊多悲風，蕭蕭愁殺人）。", "3. 轉化（擬人）：「白楊多悲風」之「悲」，將人類的情感遷移於樹木。", "4. 轉品：「古墓犁為田」之「犁」（名詞轉動詞）；「蕭蕭愁殺人」之「愁」（形容詞轉使動詞）與「殺」（動詞轉副詞「極」）。", "5. 被動句：「古墓（被）犁為田，松柏（被）摧為薪」，屬於省略「被」字的被動句。", "6. 致使句：「蕭蕭愁殺人」即「蕭蕭使人愁殺」。"]}], "quizzes": [{"q": "《去者日以疏》中「古墓犁為田，松柏摧為薪」，揭示了何種歷史與生命哲理？", "options": ["A. 農業耕作技術進步", "B. 滄海桑田、人事無常，歲月流轉能將昔日莊嚴陵寢化為農田柴木", "C. 環保造林的重要性", "D. 批評盜墓破壞文物的罪行"], "ans": 1, "exp": "「古墓犁為田，松柏摧為薪」展現出歲月無情磨洗一切的殘酷事實，死者隨時間流逝漸被遺忘，生者亦終將歸於塵土。"}, {"q": "關於《去者日以疏》之文學主旨，下列敘述何者最為適切？", "options": ["A. 體現《古詩十九首》「生命感懷」之核心主題，敘述去日以疏・歸心鄉思", "B. 描寫田園隱居之樂，提倡消極避世", "C. 記錄邊疆戰火之殘酷，批判好大喜功", "D. 記述神仙道術之修煉，企求羽化登仙"], "ans": 0, "exp": "本詩選自《昭明文選》，屬於《古詩十九首》之代表作，核心情感為「去日以疏・歸心鄉思」，反映東漢士人或思婦之真摯心聲。"}, {"q": "在《去者日以疏》的詩歌藝術表現上，下列何者符合《古詩十九首》「質樸真切」的寫作風格？", "options": ["A. 堆砌華麗冷僻的典故與辭藻", "B. 善用起興與譬喻，言淺而意深，情景交融", "C. 採用嚴格平仄對仗之近體格律", "D. 運用激昂狂放之敘事筆調"], "ans": 1, "exp": "《古詩十九首》被劉勰譽為「五言之冠冕」，鍾嶸譽為「驚心動魄，幾乎一字千金」，其最大特徵即為不求奇僻、言近旨遠、善用比興與白描。"}]}, {"id": 15, "title": "生年不滿百", "theme": "及時行樂", "tag": "百年短景・秉燭夜遊", "core_emotion": "常懷千歲憂・晝短苦夜長", "raw_header": "古詩十九首學習講義（十五）\n《生年不滿百》", "lines": [{"original": "生年不滿百，常懷千歲憂。", "translation": "人的壽命不到一百歲，卻時常抱著千年的憂愁。"}, {"original": "晝短苦夜長，何不秉燭遊？", "translation": "苦於白天短暫而夜晚漫長，為何不拿著燭火夜間遊玩呢？"}, {"original": "為樂當及時，何能待來茲？", "translation": "尋歡作樂應當及時，怎麼可以等待來年呢？"}, {"original": "愚者愛惜費，但為後世嗤。", "translation": "愚笨的人吝嗇錢財不肯享用，只會被後代的人們所嘲笑。"}, {"original": "仙人王子喬，難可與等期。", "translation": "得道成仙的王子喬，一般凡人很難期待能夠和他一樣長生不老。"}], "annotations": [{"num": "1", "term": "生年不滿百", "terms": ["生年不滿百", "生年"], "explanation": "人的壽命不到一百歲。生年：有生之年，指壽命。", "supplement": ""}, {"num": "2", "term": "常懷千歲憂", "terms": ["常懷千歲憂", "懷", "千歲憂"], "explanation": "時常抱著千年的憂愁。懷：抱、持、思。千歲憂：千年的憂愁，極言憂愁之多與時間之長。", "supplement": ""}, {"num": "3", "term": "晝短苦夜長", "terms": ["晝短苦夜長", "苦"], "explanation": "即「苦晝短夜長」，苦於白天短暫而夜晚漫長。苦：為……所苦（被動用法）。又指時常憂慮死後許多的事情。", "supplement": ""}, {"num": "4", "term": "何不秉燭遊", "terms": ["何不秉燭遊"], "explanation": "為何不拿著燭火夜間遊玩呢？秉：音ㄅㄧㄥˇ，持、拿。又可作「燃」解。", "supplement": ""}, {"num": "5", "term": "為樂當及時", "terms": ["為樂當及時", "為樂"], "explanation": "即「當及時為樂」，應當及時行樂。為樂：行樂。", "supplement": ""}, {"num": "6", "term": "何能待來茲", "terms": ["何能待來茲", "茲"], "explanation": "怎麼可以等待來年呢？來茲：來年、未來的時光。茲：年。", "supplement": ""}, {"num": "7", "term": "愚者愛惜費", "terms": ["愚者愛惜費", "愛惜", "費"], "explanation": "愚笨的人吝嗇錢財。愛惜：吝嗇。費：費用，此指錢財。", "supplement": ""}, {"num": "8", "term": "但為後世嗤", "terms": ["但為後世嗤", "但", "為", "嗤"], "explanation": "只會被後代的人們所嘲笑。但：只。為：被。嗤：音ㄔ，嘲笑。", "supplement": ""}, {"num": "9", "term": "王子喬", "terms": ["王子喬"], "explanation": "周靈王的大子晉，因得道而成仙。劉向《列仙傳》載其好吹笙作鳳鳴，遊伊洛間，後隨道士浮丘公接以上嵩高山成仙。", "supplement": ""}, {"num": "10", "term": "難可與等期", "terms": ["難可與等期", "等", "期"], "explanation": "凡人很難期待能夠和他一樣長生不老。等：同。期：希望，此指期待成仙。", "supplement": ""}], "analysis": [{"title": "【一、出處與旨意】", "content": ["《生年不滿百》選自《昭明文選》，為《古詩十九首》的第十五首，旨在敘寫人生短暫，應把握當下及時行樂，使自己過得更為快樂。"]}, {"title": "【二、源流與典故比較】", "content": ["本詩源自《詩經·唐風·山有樞》：「山有樞，隰有榆。子有衣裳，弗曳弗縷；子有車馬，弗馳弗驅。宛其死矣，他人是愉。」（有衣不穿，有車不乘，死後徒然留給別人享用）。", "同時與漢樂府《西門行》思想同調：「今日不作樂，當待何時？逮為樂，當及時！何能愁怫鬱，當複待來茲？釀美酒，炙肥牛……人生不滿百，常懷千歲憂；晝短苦夜長，何不秉燭遊。」兩者同為感慨人生短暫、主張及時行樂之代表作。"]}, {"title": "【三、結構與情節脈絡】", "content": ["全詩短短十句，由三條主線交織而成：人的壽命（年不滿百）、晝夜的長短（晝短夜長）、及時行樂（秉燭遊、莫待來茲）。", "作者揭示懷憂與吝嗇（惜費）乃是不快樂的主因，同時指出凡人難與仙人（王子喬）同壽的無奈。文字平淺自然，但感歎與發人深省的力度比《驅車上東門》、《去者日以疏》更為深沉。"]}, {"title": "【四、修辭特色分析】", "content": ["1. 映襯：首句「生年不滿百」（正說生命有限）與次句「常懷千歲憂」（反說何必折磨自己）構成對比映襯。", "2. 用典（借用）：「仙人王子喬，難可與等期」語出劉向《列仙傳》，借神仙典故抒發凡人不可求長生之感慨。", "3. 誇飾：「生年不滿百，常懷千歲憂」之「千歲」，極言時間之長與憂慮之多。", "4. 同義複詞：「愚者愛惜費」之「愛」與「惜」，均為「吝嗇」之意。", "5. 設問（激問/反詰）：「晝短苦夜長，何不秉燭遊？」與「為樂當及時，何能待來茲？」，兩句均為無疑而問的反詰激問法。"]}], "quizzes": [{"q": "《生年不滿百》中名句「生年不滿百，常懷千歲憂。晝短苦夜長，何不秉燭遊」，提倡的是何種生活觀？", "options": ["A. 終日憂心忡忡，為千年後的事情煩惱", "B. 既然人生短促不滿百年，就該擺脫無謂的憂思，珍惜有限光陰及時行樂", "C. 提倡夜晚加班工作以創造更多財富", "D. 提倡點燃蠟燭以節約能源"], "ans": 1, "exp": "面對百年短暫的生命，何必背負千年的憂患？詩人提出「何不秉燭遊」，是中國文學史上「及時行樂、把握當下」的經典宣言。"}, {"q": "關於《生年不滿百》之文學主旨，下列敘述何者最為適切？", "options": ["A. 體現《古詩十九首》「及時行樂」之核心主題，敘述常懷千歲憂・晝短苦夜長", "B. 描寫田園隱居之樂，提倡消極避世", "C. 記錄邊疆戰火之殘酷，批判好大喜功", "D. 記述神仙道術之修煉，企求羽化登仙"], "ans": 0, "exp": "本詩選自《昭明文選》，屬於《古詩十九首》之代表作，核心情感為「常懷千歲憂・晝短苦夜長」，反映東漢士人或思婦之真摯心聲。"}, {"q": "在《生年不滿百》的詩歌藝術表現上，下列何者符合《古詩十九首》「質樸真切」的寫作風格？", "options": ["A. 堆砌華麗冷僻的典故與辭藻", "B. 善用起興與譬喻，言淺而意深，情景交融", "C. 採用嚴格平仄對仗之近體格律", "D. 運用激昂狂放之敘事筆調"], "ans": 1, "exp": "《古詩十九首》被劉勰譽為「五言之冠冕」，鍾嶸譽為「驚心動魄，幾乎一字千金」，其最大特徵即為不求奇僻、言近旨遠、善用比興與白描。"}]}, {"id": 16, "title": "凜凜歲雲暮", "theme": "思婦閨怨", "tag": "歲暮寒冬・夢會遊子", "core_emotion": "夢幻泡影・覺後愈悲", "raw_header": "古詩十九首學習講義（十六）\n《凜凜歲雲暮》", "lines": [{"original": "凜凜歲雲暮，蠨蛸夕鳴悲。", "translation": "寒氣逼人的歲末時節，蠨蛸在傍晚發出悲涼的鳴叫。"}, {"original": "涼風率已厲，遊子寒無衣。", "translation": "寒風大概已經十分猛烈了，遠方的遊子可能還沒有禦寒的衣服。"}, {"original": "錦衾遺洛浦，同袍與我違。", "translation": "華美的錦被贈送給洛浦美女，丈夫與我相背離了。"}, {"original": "獨宿累長夜，夢想見容輝。", "translation": "獨自守空閨經過許多漫長夜晚，夢中想著能夠見到你的容顏。"}, {"original": "良人惟古歡，枉駕惠前綏。", "translation": "夢見良人還想念著舊情，親自駕車前來迎娶，遞給我上車的繩索。"}, {"original": "願得常巧笑，攜手同車歸。", "translation": "希望時常看到我美好的笑容，牽手一起乘車回歸家園。"}, {"original": "既來不須臾，又不處重閨。", "translation": "既然來到夢中卻停留不了一會兒，又不肯留宿在深閨之中。"}, {"original": "亮無晨風翼，焉能凌風飛？", "translation": "實在沒有晨風鳥般的翅膀，怎能乘風飛去追隨你呢？"}, {"original": "眄睞以適意，引領遙相睇。", "translation": "遊目四顧藉以寬慰心懷，伸長脖子遠遠地眺望良人所在。"}, {"original": "徒倚懷感傷，垂涕沾雙扉。", "translation": "徘徊不前懷著無限感傷，流下的眼淚沾濕了兩片門扇。"}], "annotations": [{"num": "1", "term": "凜凜歲雲暮", "terms": ["凜凜歲雲暮", "凜凜", "雲"], "explanation": "寒氣逼人的歲末時節。凜凜：寒氣逼人貌。雲：語助詞。", "supplement": ""}, {"num": "2", "term": "蠨蛸夕鳴悲", "terms": ["蠨蛸夕鳴悲"], "explanation": "蠨蛸（音ㄒㄧㄠ ㄕㄠ，長腳蜘蛛或土狗）在傍晚發出悲涼的鳴叫。", "supplement": ""}, {"num": "3", "term": "涼風率已厲", "terms": ["涼風率已厲", "率", "厲"], "explanation": "寒風大概已經很猛烈了。率：大概。厲：猛烈。", "supplement": ""}, {"num": "4", "term": "錦衾遺洛浦", "terms": ["錦衾遺洛浦", "錦衾", "遺", "洛浦"], "explanation": "錦被贈送給洛浦美女；意指良人可能在外另結新歡。錦衾：錦被。遺：音ㄨㄟˋ，贈送。洛浦：洛水之濱，借指美女。", "supplement": ""}, {"num": "5", "term": "同袍與我違", "terms": ["同袍與我違", "同袍", "違"], "explanation": "丈夫與我相背離了。同袍：借指丈夫。違：背離、背棄。", "supplement": ""}, {"num": "6", "term": "獨宿累長夜", "terms": ["獨宿累長夜", "累"], "explanation": "獨自守空閨經過許多漫長夜晚。累：音ㄌㄟˇ，累積、增加。", "supplement": ""}, {"num": "7", "term": "夢想見容輝", "terms": ["夢想見容輝", "容輝"], "explanation": "夢中想念著能夠見到丈夫的容貌。容輝：容貌容顏。", "supplement": ""}, {"num": "8", "term": "良人惟古歡", "terms": ["良人惟古歡", "良人", "惟", "古歡"], "explanation": "良人還思念著舊日的情歡。良人：丈夫。惟：思念。古歡：舊日喜愛的人（思婦）。", "supplement": ""}, {"num": "9", "term": "枉駕惠前綏", "terms": ["枉駕惠前綏", "枉駕", "惠", "前綏"], "explanation": "委屈自己駕車前來，遞給我上車的拉繩。枉駕：敬詞，委屈駕車。惠：賜予。前綏：挽婦上車的繩索。", "supplement": ""}, {"num": "10", "term": "既來不須臾", "terms": ["既來不須臾", "須臾"], "explanation": "既然來到夢中卻停留不了一會兒。須臾：片刻、極短時間。", "supplement": ""}, {"num": "11", "term": "亮無晨風翼", "terms": ["亮無晨風翼", "亮", "晨風"], "explanation": "實在沒有晨風鳥（鸇鷂之類善飛猛禽）般的翅膀。亮：信、實，確實。晨風：鳥名。", "supplement": ""}, {"num": "12", "term": "眄睞以適意", "terms": ["眄睞以適意", "眄睞", "適"], "explanation": "游目四顧藉以寬慰心懷。眄睞：音ㄇㄧㄢˇ ㄌㄞˋ，斜視、四顧。適：寬慰。", "supplement": ""}, {"num": "13", "term": "引領遙相睇", "terms": ["引領遙相睇", "引領", "睇"], "explanation": "伸長脖子遠遠地眺望。引領：伸長脖子。睇：音ㄉㄧˋ，望也。", "supplement": ""}, {"num": "14", "term": "徒倚懷感傷", "terms": ["徒倚懷感傷", "徒倚", "徒"], "explanation": "徘徊不前懷著感傷。徒倚：徘徊。徒：移也。", "supplement": ""}, {"num": "15", "term": "垂涕沾雙扉", "terms": ["垂涕沾雙扉", "涕", "扉"], "explanation": "流下眼淚沾濕了兩片門扇。涕：眼淚。扉：音ㄈㄟ，門扇。", "supplement": ""}], "analysis": [{"title": "【一、出處與旨意】", "content": ["《凜凜歲雲暮》選自《昭明文選》，為《古詩十九首》的第十六首，旨在敘寫思婦觸景生情，想念羈旅未歸的遊子，經歷由思而夢、由夢而醒、醒後更加惆悵的曲折情懷。"]}, {"title": "【二、情脈轉折與結構脈絡】", "content": ["全詩結構脈絡極具層次：", "1. 首四句（凜凜歲雲暮……遊子寒無衣）：觸景生情，歲暮天寒而惦念遊子寒無衣。", "2. 次四句（錦衾遺洛浦……夢想見容輝）：相離相疑，懷疑良人另結新歡；因極度思念而入夢，夢中相見。", "3. 次四句（良人惟古歡……不處重閨）：夢境描繪，夢見良人駕車前來迎娶的溫馨情景，隨即夢醒歡樂短暫。", "4. 末六句（亮無晨風翼……垂涕沾雙扉）：夢醒遙想，醒後恨無羽翼飛隨良人，只能伸頸遠眺、徘徊流淚。正如金聖歎《古詩解》所言「於實情中幻出虛景，又於景中寫出實情」，層層加深。"]}, {"title": "【三、修辭特色分析】", "content": ["1. 示現：", "- 追述示現：「良人惟古歡，枉駕惠前綏……」，夢中重溫舊日良人迎娶情形。", "- 懸想示現：「錦衾遺洛浦，同袍與我違」，懸想良人在外另結新歡。", "2. 借代：洛浦（借代美女）、同袍（借代丈夫）、涕（借代眼淚）。", "3. 逆筆：「既來不須臾，又不處重閨。亮無晨風翼，焉能凌風飛」，句句以「不」、「無」作反面敘寫。", "4. 設問（激問）：「亮無晨風翼，焉能凌風飛」，反詰無羽翼不能飛去。", "5. 譬喻（略喻）：「亮無（如）晨風翼」。", "6. 敬詞：「枉駕惠前綏」之「枉」，敬稱丈夫委屈駕車。"]}], "quizzes": [{"q": "《凜凜歲雲暮》中寫思婦「愁多知夜長，仰穴度晨光」，隨後「夢見在我旁。忽覺尚在訣」，此夢境描寫有何藝術效果？", "options": ["A. 證明思婦具有預知未來的能力", "B. 虛實相生，以夢中歡聚的溫馨瞬間，反襯夢醒後的更加孤寂與絕望悲楚", "C. 說明思婦睡眠品質不良", "D. 表現童話般的浪漫奇遇"], "ans": 1, "exp": "思極成夢，夢中良人忽在身側，醒來卻依舊遠隔關山，虛幻的甜蜜讓現實的孤寒更顯深刻入骨。"}, {"q": "關於《凜凜歲雲暮》之文學主旨，下列敘述何者最為適切？", "options": ["A. 體現《古詩十九首》「思婦閨怨」之核心主題，敘述夢幻泡影・覺後愈悲", "B. 描寫田園隱居之樂，提倡消極避世", "C. 記錄邊疆戰火之殘酷，批判好大喜功", "D. 記述神仙道術之修煉，企求羽化登仙"], "ans": 0, "exp": "本詩選自《昭明文選》，屬於《古詩十九首》之代表作，核心情感為「夢幻泡影・覺後愈悲」，反映東漢士人或思婦之真摯心聲。"}, {"q": "在《凜凜歲雲暮》的詩歌藝術表現上，下列何者符合《古詩十九首》「質樸真切」的寫作風格？", "options": ["A. 堆砌華麗冷僻的典故與辭藻", "B. 善用起興與譬喻，言淺而意深，情景交融", "C. 採用嚴格平仄對仗之近體格律", "D. 運用激昂狂放之敘事筆調"], "ans": 1, "exp": "《古詩十九首》被劉勰譽為「五言之冠冕」，鍾嶸譽為「驚心動魄，幾乎一字千金」，其最大特徵即為不求奇僻、言近旨遠、善用比興與白描。"}]}, {"id": 17, "title": "孟冬寒氣至", "theme": "思婦閨怨", "tag": "初冬苦寒・整衣思親", "core_emotion": "忠貞自守・誓不變更", "raw_header": "古詩十九首學習講義（十七）\n《孟冬寒氣至》", "lines": [{"original": "孟冬寒氣至，北風何慘慄！", "translation": "初冬十月，寒冷的天氣已經來到，北風是多麼的寒冷。"}, {"original": "愁多知夜長，仰視眾星列。", "translation": "愁思一多，使人體會到夜晚的漫長，抬起頭來眺望羅列在天上的群星。"}, {"original": "三五明月滿，四五蟾兔缺。", "translation": "十五的夜晚，明月圓滿；二十的夜晚，月有虧缺。"}, {"original": "客從遠方來，遺我一書札。", "translation": "有客人從遠方來，帶來給我一封信。"}, {"original": "上言長相思，下言久離別。", "translation": "前端訴說經過長久思念著我，後面訴說離別已久的心情。"}, {"original": "置書懷袖中，三歲字不滅。", "translation": "把書信放在胸前、衣袖裡珍惜收藏，經過三年，字跡也不磨損湮滅。"}, {"original": "一心抱區區，懼君不識別。", "translation": "我一心一意懷著慇懃摯愛之情，唯恐你不能瞭理解察我。"}], "annotations": [{"num": "1", "term": "孟冬", "terms": ["孟冬"], "explanation": "初冬，即陰曆十月。", "supplement": ""}, {"num": "2", "term": "北風何慘慄", "terms": ["北風何慘慄", "何", "慘慄"], "explanation": "北風是多麼的寒冷。何：多麼。慘慄：寒冷的樣子。", "supplement": ""}, {"num": "3", "term": "愁多知夜長", "terms": ["愁多知夜長"], "explanation": "意指愁思一多，難以入眠，故覺夜晚漫長。", "supplement": ""}, {"num": "4", "term": "仰視眾星列", "terms": ["仰視眾星列", "列"], "explanation": "抬起頭來眺望羅列在天上的群星。列：羅列。", "supplement": ""}, {"num": "5", "term": "三五明月滿", "terms": ["三五明月滿", "三五"], "explanation": "十五的夜晚，明月圓滿。三五：陰曆每月十五，為月圓之日。", "supplement": ""}, {"num": "6", "term": "四五蟾兔缺", "terms": ["四五蟾兔缺", "四五", "蟾兔"], "explanation": "二十的夜晚，月有虧缺。四五：陰曆每月二十。蟾兔：借指月亮。相傳嫦娥偷食不死之藥，飛入月宮化為蟾蜍；又謂月中有玉兔任搗藥之事。", "supplement": ""}, {"num": "7", "term": "遺我一書札", "terms": ["遺我一書札", "遺", "書札", "札"], "explanation": "帶給我一封信。遺：音ㄨㄟˋ，贈送、給。書札：書信。札：古代書寫用的薄木片，後借指書信。", "supplement": ""}, {"num": "8", "term": "上言長相思", "terms": ["上言長相思", "上", "長"], "explanation": "上：前面。長：經常。指信的前端訴說經常長久地思念著我。", "supplement": ""}, {"num": "9", "term": "下言久離別", "terms": ["下言久離別", "下"], "explanation": "下：後面。指信的後面訴說離別已久的心意與近況。", "supplement": ""}, {"num": "10", "term": "置書懷袖中", "terms": ["置書懷袖中", "置", "懷袖"], "explanation": "置：放。懷袖：胸懷、衣袖中。", "supplement": ""}, {"num": "11", "term": "三歲字不滅", "terms": ["三歲字不滅", "三歲", "滅"], "explanation": "意指小心珍藏，過三年字跡依然清晰毫無磨損。三歲：三年。滅：磨損湮滅。", "supplement": ""}, {"num": "12", "term": "一心抱區區", "terms": ["一心抱區區", "區區"], "explanation": "一心一意懷著慇懃摯愛的情意。區區：猶「拳拳」，慇懃摯愛之意。", "supplement": ""}, {"num": "13", "term": "懼君不識別", "terms": ["懼君不識別", "懼", "識別"], "explanation": "唯恐你不能瞭理解察我。懼：害怕、唯恐。識別：瞭解體察。", "supplement": ""}], "analysis": [{"title": "【一、出處與旨意】", "content": ["《孟冬寒氣至》選自《昭明文選》，為《古詩十九首》的第十七首，旨在敘寫閨婦思念遠遊未歸的丈夫，並表白自己忠貞不二、永不褪色的深厚情意。"]}, {"title": "【二、情脈轉折與結構脈絡】", "content": ["全詩結構脈絡分明，分為兩大部分：", "1. 前六句（孟冬寒氣至……四五蟾兔缺）：實寫思婦目前的處境。以初冬寒風朔朔為環境背景，烘託長夜難眠、仰望星空月圓月缺的孤寂之感。", "2. 後八句（客從遠方來……懼君不識別）：虛寫思婦目前的心情與感念。自遠客帶來丈夫書信，「上言長相思，下言久離別」，思婦「置書懷袖中，三歲字不滅」，以極具具體形象的手法表現珍藏書信之久，進而表白「一心抱區區」的忠貞誓言，平淡文字中見深情厚意。"]}, {"title": "【三、修辭特色分析】", "content": ["1. 借代：", "- 「四五蟾兔缺」之「蟾兔」，借代月亮。", "- 「遺我一書札」之「書札」，借代書信。", "2. 排比（對偶）：", "- 「上言長相思，下言久離別」與「三五明月滿，四五蟾兔缺」，均為句法平列的排比對偶。", "3. 錯綜（抽換詞面）：「三五明月滿，四五蟾兔缺」中，「明月」與「蟾兔」均指月亮，屬抽換詞面修辭。", "4. 數詞（倍數表意）：「三五」（3×5＝15，指十五月圓）與「四五」（4×5＝20，指二十月缺），均屬兩數相乘的倍數表意法。"]}], "quizzes": [{"q": "《孟冬寒氣至》中「客從遠方來，遺我一書札。上言長相思，下言久離別」，書信的核心意旨為何？", "options": ["A. 告知即將返家的日期", "B. 反覆傾訴相思之苦與久別之痛，撫慰思婦寂寞的心靈", "C. 向家中索取金錢與冬衣", "D. 記載路途所見之奇風異俗"], "ans": 1, "exp": "書札內容言簡意賅，「長相思、久離別」六字道盡無窮相聚艱難與彼此深情。"}, {"q": "關於《孟冬寒氣至》之文學主旨，下列敘述何者最為適切？", "options": ["A. 體現《古詩十九首》「思婦閨怨」之核心主題，敘述忠貞自守・誓不變更", "B. 描寫田園隱居之樂，提倡消極避世", "C. 記錄邊疆戰火之殘酷，批判好大喜功", "D. 記述神仙道術之修煉，企求羽化登仙"], "ans": 0, "exp": "本詩選自《昭明文選》，屬於《古詩十九首》之代表作，核心情感為「忠貞自守・誓不變更」，反映東漢士人或思婦之真摯心聲。"}, {"q": "在《孟冬寒氣至》的詩歌藝術表現上，下列何者符合《古詩十九首》「質樸真切」的寫作風格？", "options": ["A. 堆砌華麗冷僻的典故與辭藻", "B. 善用起興與譬喻，言淺而意深，情景交融", "C. 採用嚴格平仄對仗之近體格律", "D. 運用激昂狂放之敘事筆調"], "ans": 1, "exp": "《古詩十九首》被劉勰譽為「五言之冠冕」，鍾嶸譽為「驚心動魄，幾乎一字千金」，其最大特徵即為不求奇僻、言近旨遠、善用比興與白描。"}]}, {"id": 18, "title": "客從遠方來", "theme": "思婦閨怨", "tag": "遠客遺綺・膠漆相投", "core_emotion": "文彩雙鴛鴦・永誓無翻覆", "raw_header": "古詩十九首學習講義（十八）\n《客從遠方來》", "lines": [{"original": "客從遠方來，遺我一端綺。", "translation": "客人從遠處過來，贈送給我半匹素色花紋的絲織品。"}, {"original": "相去萬餘里，故人心尚爾。", "translation": "兩人雖然相距一萬多里，丈夫的心意依然如故、堅貞不變。"}, {"original": "文綵雙鴛鴦，裁為合歡被。", "translation": "在絲綢上織繡一對鴛鴦鳥，裁作成表裡相縫的合歡被。"}, {"original": "著以長相思，緣以結不解。", "translation": "被裡填入綿長的相思綿，被子四邊綴結永不解脫的絲縷。"}, {"original": "以膠投漆中，誰能別離此？", "translation": "感情就像把膠投入漆中般緊密，誰又能將我們分開呢？"}], "annotations": [{"num": "1", "term": "遺我一端綺", "terms": ["遺我一端綺", "遺", "端", "綺"], "explanation": "贈送給我半匹素色花紋的絲織品。遺：音ㄨㄟˋ，贈送。端：量詞，半匹（長二丈）。綺：音ㄑㄧˇ，素色花紋的絲織品。", "supplement": ""}, {"num": "2", "term": "相去萬餘里", "terms": ["相去萬餘里", "相去", "去"], "explanation": "兩人相距一萬多里。相去：相距、相離。去：距。", "supplement": ""}, {"num": "3", "term": "故人心尚爾", "terms": ["故人心尚爾", "故人", "尚爾", "爾"], "explanation": "丈夫的心意依然如此、堅貞不變。故人：舊友，此指丈夫。尚爾：依然如此（尚：猶；爾：如此）。", "supplement": ""}, {"num": "4", "term": "文綵雙鴛鴦", "terms": ["文綵雙鴛鴦", "文綵", "綵", "鴛鴦"], "explanation": "在絲綢上織繡一對鴛鴦鳥。文綵：織繡花紋（文：動詞，織繡；綵：彩色絲絹）。鴛鴦：雙棲之鳥，象徵夫婦情深。", "supplement": ""}, {"num": "5", "term": "裁為合歡被", "terms": ["裁為合歡被", "合歡", "歡"], "explanation": "裁作成表裡相縫的合歡被。合歡：漢代稱兩面相合之物，象徵夫婦情好如蜜。歡：同「歡」。", "supplement": ""}, {"num": "6", "term": "著以長相思", "terms": ["著以長相思", "著", "長相思"], "explanation": "被裡填入綿長的相思綿。著：音ㄓㄨㄛˊ，填入、放入。長相思：指長絲綿（「思」與「絲」雙關諧音）。", "supplement": ""}, {"num": "7", "term": "緣以結不解", "terms": ["緣以結不解", "緣", "結不解"], "explanation": "被子四邊綴結永不解開的絲線。緣：音ㄩㄢˋ，名詞轉動詞，被子四邊綴邊。結不解：雙關結姻緣永不分離。", "supplement": ""}, {"num": "8", "term": "以膠投漆中", "terms": ["以膠投漆中", "膠漆"], "explanation": "把膠投入漆裡；比喻夫婦感情緊密親切、難分難捨。膠漆：比喻感情親密無間。", "supplement": ""}, {"num": "9", "term": "誰能別離此", "terms": ["誰能別離此", "此"], "explanation": "誰能分開我們呢？別離：分開。此：表面指合歡被，實指夫婦間濃情密意的感情。", "supplement": ""}], "analysis": [{"title": "【一、出處與旨意】", "content": ["《客從遠方來》選自《昭明文選》，為《古詩十九首》的第十八首，旨在敘寫思婦因遠客帶來丈夫贈送的端綺而喜從天降，進而憧憬裁被、填綿、綴邊的過程，並以「以膠投漆中」表達生死不渝、永不分離的堅定伉儷之情。"]}, {"title": "【二、情脈轉折與結構脈絡】", "content": ["全詩詩意開闊而深情：", "1. 驚喜發端（客從遠方來，遺我一端綺）：遠客帶來良人禮物，觸發思婦無比喜悅與感念。", "2. 感念遙想（相去萬餘里，故人心尚爾）：雖相距萬里，感念丈夫心意依然如故、情意堅貞。", "3. 憧憬裁製（文綵雙鴛鴦，裁為合歡被。著以長相思，緣以結不解）：將單純縫被過程，融入鴛鴦、合歡、長相思（長絲綿）、結不解（結姻緣）等極具寓意的象徵與雙關語。", "4. 誓言不渝（以膠投漆中，誰能別離此）：以膠漆相融比喻感情親密無間，發出誰也無法分開我們的豪邁誓言。清吳淇《選詩定論》評：「十九首俱吉特，惟此一首相似樂府……畢竟是古詩。」"]}, {"title": "【三、修辭特色分析】", "content": ["1. 雙關：", "- 字音雙關：「著以長相思」之「思」與「絲」諧音，以具體「絲綿」雙關抽象「相思」。", "- 字義雙關：「緣以結不解」雙關「結姻緣永不分離」。", "2. 象徵：", "- 「文綵雙鴛鴦」象徵夫婦情深。", "- 「裁為合歡被」象徵夫婦情好如蜜。", "3. 譬喻（借喻）：「以膠投漆中」比喻夫婦感情如膠似漆、難分難捨。", "4. 轉品：", "- 「文綵雙鴛鴦」之「文綵」（名詞轉動詞，織繡花紋）。", "- 「緣以結不解」之「緣」（名詞轉動詞，被子四邊綴邊）。", "5. 借代：「故人心尚爾」之「故人」，借代為丈夫。"]}], "quizzes": [{"q": "《客從遠方來》中「以膠投漆中，誰能別離此」，其喻意為何？", "options": ["A. 介紹古代木工接榫的黏著工藝技術", "B. 以膠融入漆中緊密黏合難以分開，比喻夫妻深情永固、誓死不離", "C. 說明油漆調配的化學反應", "D. 感嘆物質結合容易分解困難"], "ans": 1, "exp": "「以膠投漆中」為漢代著名比喻，象徵夫妻情感如同膠漆交融，再大的外力阻隔也無法將二人分離。"}, {"q": "關於《客從遠方來》之文學主旨，下列敘述何者最為適切？", "options": ["A. 體現《古詩十九首》「思婦閨怨」之核心主題，敘述文彩雙鴛鴦・永誓無翻覆", "B. 描寫田園隱居之樂，提倡消極避世", "C. 記錄邊疆戰火之殘酷，批判好大喜功", "D. 記述神仙道術之修煉，企求羽化登仙"], "ans": 0, "exp": "本詩選自《昭明文選》，屬於《古詩十九首》之代表作，核心情感為「文彩雙鴛鴦・永誓無翻覆」，反映東漢士人或思婦之真摯心聲。"}, {"q": "在《客從遠方來》的詩歌藝術表現上，下列何者符合《古詩十九首》「質樸真切」的寫作風格？", "options": ["A. 堆砌華麗冷僻的典故與辭藻", "B. 善用起興與譬喻，言淺而意深，情景交融", "C. 採用嚴格平仄對仗之近體格律", "D. 運用激昂狂放之敘事筆調"], "ans": 1, "exp": "《古詩十九首》被劉勰譽為「五言之冠冕」，鍾嶸譽為「驚心動魄，幾乎一字千金」，其最大特徵即為不求奇僻、言近旨遠、善用比興與白描。"}]}, {"id": 19, "title": "明月何皎皎", "theme": "思婦閨怨", "tag": "皎月難眠・徘徊攬衣", "core_emotion": "牽衣踟躕・憂思入微", "raw_header": "古詩十九首學習講義（十九）\n《明月何皎皎》", "lines": [{"original": "明月何皎皎，照我羅床帷。", "translation": "明亮的月亮是多麼的潔白，照耀著我羅綺的床帷。"}, {"original": "憂愁不能寐，攬衣起徘徊。", "translation": "我心中憂愁得無法成眠，提起衣服起身來回走動。"}, {"original": "客行雖雲樂，不如早旋歸。", "translation": "遠行在外旅居雖然快樂，不如早點回到家鄉。"}, {"original": "出戶獨徬徨，愁思當告誰？", "translation": "走出家門獨自徘徊流連，滿腔憂愁該向誰傾訴呢？"}, {"original": "引領還入房，淚下沾裳衣。", "translation": "伸長脖子遠望之後回到房裡，流下的眼淚沾濕了衣裳。"}], "annotations": [{"num": "1", "term": "明月何皎皎", "terms": ["明月何皎皎", "皎皎", "皎"], "explanation": "明亮的月亮多麼潔白。皎皎：潔白的樣子。皎：潔白。", "supplement": ""}, {"num": "2", "term": "照我羅床帷", "terms": ["照我羅床帷", "羅", "帷"], "explanation": "照耀著我羅綺的床帳。羅：稀疏輕軟的絲織品。帷：音ㄨㄟˊ，帷帳。", "supplement": ""}, {"num": "3", "term": "憂愁不能寐", "terms": ["憂愁不能寐", "寐"], "explanation": "憂愁得無法成眠。寐：音ㄇㄟˋ，睡。因本有愁思，明月照帷更增其愁，故睡不著。", "supplement": ""}, {"num": "4", "term": "攬衣起徘徊", "terms": ["攬衣起徘徊", "攬", "徘徊"], "explanation": "提起衣服起身來回走動。攬：音ㄌㄢˇ，提起、拿取。徘徊：來回走動。", "supplement": ""}, {"num": "5", "term": "客行雖雲樂", "terms": ["客行雖雲樂", "客", "雲"], "explanation": "旅居遠行在外雖然快樂。客：旅居。雲：語氣助詞。此句為思婦臆測之詞。", "supplement": ""}, {"num": "6", "term": "不如早旋歸", "terms": ["不如早旋歸", "旋"], "explanation": "不如早點回到故鄉。旋：回、還、歸來。", "supplement": ""}, {"num": "7", "term": "出戶獨徬徨", "terms": ["出戶獨徬徨", "徬徨"], "explanation": "走出家門獨自徘徊流連。徬徨：音ㄆㄤˊ ㄏㄨㄤˊ，徘徊流連的樣子。", "supplement": ""}, {"num": "8", "term": "愁思當告誰", "terms": ["愁思當告誰"], "explanation": "滿腔愁思應該向誰傾訴呢？當：該、應。", "supplement": ""}, {"num": "9", "term": "引領還入房", "terms": ["引領還入房", "引領", "還"], "explanation": "伸長脖子遠望之後回到房裡。引領：伸頸遠望。還：歸、回。", "supplement": ""}, {"num": "10", "term": "淚下沾裳衣", "terms": ["淚下沾裳衣", "沾"], "explanation": "流下眼淚來沾濕了衣裳。沾：音ㄓㄢ，溼、浸溼。", "supplement": ""}], "analysis": [{"title": "【一、出處與旨意】", "content": ["《明月何皎皎》選自《昭明文選》，為《古詩十九首》的第十九首（最後一首），旨在敘寫閨婦在明月皎皎的深夜中，因觸景生情而徹夜難眠，在戶內外徘徊流連、極目遠眺，思念遠行在外不歸的良人。"]}, {"title": "【二、情脈轉折與結構脈絡】", "content": ["全詩以「愁」字為詩眼，結構環環相扣，層層推進：", "1. 月照床帷（明月何皎皎，照我羅床帷）：清風明月之夜，皎潔月色照入閨房，觸景生情。", "2. 輾轉起立（憂愁不能寐，攬衣起徘徊）：內心憂愁無法入睡，披衣起身在房內徘徊。", "3. 盼歸勸告（客行雖雲樂，不如早旋歸）：設想遊子客行在外雖樂，仍不如早日歸家。", "4. 出戶徬徨（出戶獨徬徨，愁思當告誰）：夜深走出家門極目遠望，孤獨無依，滿腔愁思無人能訴。", "5. 入房流淚（引領還入房，淚下沾裳衣）：引領遠望無果後重回寂寞房中，悲從中來，潸然淚下。"]}, {"title": "【三、修辭特色分析】", "content": ["1. 映襯：「客行雖雲樂，不如早旋歸。」以遊子客行之「樂」與閨婦勸歸之「思」作對比襯託。", "2. 設問（激問/反詰）：「出戶獨徬徨，愁思當告誰？」即「無人可以傾訴」之意。", "3. 同義複詞：如「憂愁」（憂、愁同義）、「旋歸」（旋、歸同義）。", "4. 衍生複詞（聯綿詞）：", "- 疊韻複詞：「徘徊」。", "- 雙聲複詞：「彷徨」。"]}], "quizzes": [{"q": "《明月何皎皎》作為《古詩十九首》的壓軸之作，其結尾「牽衣踟躕，憂思終難忘」，體現出整部《古詩十九首》何種總體抒情特質？", "options": ["A. 豪邁激昂，充滿征戰殺伐之氣", "B. 含蓄深厚，將深沉的憂患與相思化為無盡的徘徊與深情長嘆", "C. 詼諧諷刺，嬉笑怒罵皆成文章", "D. 超然物外，完全忘卻人間世情"], "ans": 1, "exp": "十九首結穴於月夜難眠、攬衣徘徊之景，將遊子思婦之情、人生流光之感凝結於含蓄悠遠的意境中，深具「溫柔敦厚」之旨。"}, {"q": "關於《明月何皎皎》之文學主旨，下列敘述何者最為適切？", "options": ["A. 體現《古詩十九首》「思婦閨怨」之核心主題，敘述牽衣踟躕・憂思入微", "B. 描寫田園隱居之樂，提倡消極避世", "C. 記錄邊疆戰火之殘酷，批判好大喜功", "D. 記述神仙道術之修煉，企求羽化登仙"], "ans": 0, "exp": "本詩選自《昭明文選》，屬於《古詩十九首》之代表作，核心情感為「牽衣踟躕・憂思入微」，反映東漢士人或思婦之真摯心聲。"}, {"q": "在《明月何皎皎》的詩歌藝術表現上，下列何者符合《古詩十九首》「質樸真切」的寫作風格？", "options": ["A. 堆砌華麗冷僻的典故與辭藻", "B. 善用起興與譬喻，言淺而意深，情景交融", "C. 採用嚴格平仄對仗之近體格律", "D. 運用激昂狂放之敘事筆調"], "ans": 1, "exp": "《古詩十九首》被劉勰譽為「五言之冠冕」，鍾嶸譽為「驚心動魄，幾乎一字千金」，其最大特徵即為不求奇僻、言近旨遠、善用比興與白描。"}]}];
+
+    /* App State */
+    let currentPoemId = 1;
+    let activeTab = 'tab-verses';
+    let currentVerseMode = 'parallel'; // 'parallel', 'original-only', 'trans-only', 'cloze'
+    let currentThemeFilter = 'ALL';
+    let favorites = JSON.parse(localStorage.getItem('gushi19_favorites') || '[]');
+    let currentSpeechUtterance = null;
+    let fontSizeLevel = 1; // 0: sm, 1: md, 2: lg, 3: xl
+    const fontSizes = ['14px', '16px', '18px', '20px'];
+
+    /* Themes list */
+    const THEMES = [
+      { id: 'ALL', name: '全部 (19)' },
+      { id: '思婦閨怨', name: '思婦閨怨 (9)' },
+      { id: '及時行樂', name: '及時行樂 (3)' },
+      { id: '生命感懷', name: '生命感懷 (3)' },
+      { id: '遊子懷思', name: '遊子懷思 (1)' },
+      { id: '求索悲歌', name: '求索悲歌與世態 (3)' }
+    ];
+
+    /* Initialization */
+    function initApp() {
+      try {
+        renderThemePills();
+        renderPoemPills();
+        loadPoem(1);
+        
+        // Keyboard Navigation
+        window.addEventListener('keydown', (e) => {
+          if (e.target.tagName === 'INPUT') return;
+          if (e.key === 'ArrowLeft') {
+            navigatePoem(-1);
+          } else if (e.key === 'ArrowRight') {
+            navigatePoem(1);
+          }
+        });
+      } catch (err) {
+        console.error('Initialization error:', err);
+      }
+    }
+
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', initApp);
+    } else {
+      initApp();
+    }
+
+    /* Render Theme Pills */
+    function renderThemePills() {
+      const container = document.getElementById('themePillsContainer');
+      container.innerHTML = THEMES.map(th => `
+        <button class="theme-pill ${th.id === currentThemeFilter ? 'active' : ''}" onclick="setThemeFilter('${th.id}')">
+          ${th.name}
+        </button>
+      `).join('');
+    }
+
+    /* Set Theme Filter */
+    function setThemeFilter(themeId) {
+      currentThemeFilter = themeId;
+      renderThemePills();
+      renderPoemPills();
+    }
+
+    /* Render Poem Pills */
+    function renderPoemPills() {
+      const container = document.getElementById('poemPillsContainer');
+      const filtered = POEMS_DATA.filter(p => {
+        if (currentThemeFilter === 'ALL') return true;
+        if (currentThemeFilter === '求索悲歌') {
+          return p.theme === '求索悲歌' || p.theme === '世態炎涼' || p.theme === '仕途功名';
+        }
+        return p.theme === currentThemeFilter;
+      });
+
+      container.innerHTML = filtered.map(p => {
+        const numZh = getChineseNum(p.id);
+        const isActive = p.id === currentPoemId;
+        const isFav = favorites.includes(p.id);
+        return `
+          <button class="poem-pill ${isActive ? 'active' : ''}" onclick="selectPoem(${p.id})">
+            <span class="pill-num">${p.id < 10 ? '0' + p.id : p.id}</span>
+            <span>${p.title}</span>
+            ${isFav ? '<span style="color:#f59e0b;font-size:0.75rem;">★</span>' : ''}
+          </button>
+        `;
+      }).join('');
+    }
+
+    function getChineseNum(num) {
+      const zhNums = ['', '一', '二', '三', '四', '五', '六', '七', '八', '九', '十', '十一', '十二', '十三', '十四', '十五', '十六', '十七', '十八', '十九'];
+      return zhNums[num] || num;
+    }
+
+    /* Select Poem */
+    function selectPoem(id) {
+      stopSpeech();
+      currentPoemId = id;
+      renderPoemPills();
+      loadPoem(id);
+      // Smooth scroll to stage
+      document.getElementById('poemStage').scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+
+    /* Load Poem Details */
+    function loadPoem(id) {
+      const poem = POEMS_DATA.find(p => p.id === id);
+      if (!poem) return;
+
+      // Update Banner Meta
+      document.getElementById('poemThemeBadge').textContent = poem.theme;
+      document.getElementById('poemTagBadge').textContent = poem.tag;
+      document.getElementById('poemNumLabel').textContent = `第${getChineseNum(poem.id)}首`;
+      document.getElementById('poemTitleText').textContent = `《${poem.title}》`;
+      document.getElementById('poemCoreEmotion').innerHTML = `<span>💭 核心意旨：${poem.core_emotion}</span>`;
+      
+      // Update Favorite Button State
+      updateFavBtnState();
+
+      // Update Badges Count
+      document.getElementById('notesCountBadge').textContent = poem.annotations.length;
+      document.getElementById('quizCountBadge').textContent = poem.quizzes.length;
+
+      // Render Tabs
+      renderVersesTab(poem);
+      renderNotesTab(poem);
+      renderAnalysisTab(poem);
+      renderQuizTab(poem);
+
+      // Update Prev / Next
+      updateNavFooter();
+    }
+
+    /* TAB 1: Verses Rendering */
+    function renderVersesTab(poem) {
+      const container = document.getElementById('coupletsList');
+      container.innerHTML = '';
+
+      poem.lines.forEach((line, idx) => {
+        const card = document.createElement('div');
+        card.className = 'couplet-card';
+        
+        let origHtml = '';
+        let transHtml = '';
+
+        if (currentVerseMode === 'cloze') {
+          // Cloze mode: split sentences and mask key characters
+          origHtml = generateClozeVerse(line.original, poem.annotations);
+          transHtml = `<div class="couplet-translation">${line.translation}</div>`;
+        } else if (currentVerseMode === 'original-only') {
+          origHtml = highlightNotesInVerse(line.original, poem.annotations);
+          transHtml = '';
+        } else if (currentVerseMode === 'trans-only') {
+          origHtml = '';
+          transHtml = `<div class="couplet-translation" style="font-size:1.1rem;padding-left:0;border:none;">${line.translation}</div>`;
+        } else {
+          // Parallel mode
+          origHtml = highlightNotesInVerse(line.original, poem.annotations);
+          transHtml = `<div class="couplet-translation">${line.translation}</div>`;
+        }
+
+        card.innerHTML = `
+          ${origHtml ? `<div class="couplet-original">${origHtml}</div>` : ''}
+          ${transHtml}
+        `;
+        container.appendChild(card);
+      });
+    }
+
+    /* Strip circled footnote numbers */
+    function stripCircledNumbers(str) {
+      return str.replace(/[①-⓿㉑-㉟❶-❿①-⑳⑴-⒇⒈-⒛]/g, '');
+    }
+
+    /* Highlight matching notes in verse (Single-pass replacement) */
+    function highlightNotesInVerse(verseStr, notes) {
+      const cleanVerse = stripCircledNumbers(verseStr);
+      if (!notes || notes.length === 0) return cleanVerse;
+
+      // Extract unique terms with length >= 2 from all note phrases & sub-terms
+      const termSet = new Set();
+      notes.forEach(n => {
+        const candidateTerms = (n.terms && n.terms.length > 0) ? n.terms : [n.term];
+        candidateTerms.forEach(rawTerm => {
+          if (rawTerm) {
+            const t = stripCircledNumbers(rawTerm).trim();
+            if (t.length >= 2 && cleanVerse.includes(t)) {
+              termSet.add(t);
+            }
+          }
+        });
+      });
+
+      const terms = Array.from(termSet);
+      if (terms.length === 0) return cleanVerse;
+
+      // Sort by length descending so longer terms match first
+      terms.sort((a, b) => b.length - a.length);
+
+      // Build safe single-pass alternation regex
+      const pattern = terms.map(escapeRegex).join('|');
+      const regex = new RegExp('(' + pattern + ')', 'g');
+
+      return cleanVerse.replace(regex, function(match) {
+        return `<span class="note-link" data-term="${encodeURIComponent(match)}" onclick="handleNoteClickByEl(this)">${match}</span>`;
+      });
+    }
+
+    function handleNoteClickByEl(el) {
+      const term = decodeURIComponent(el.getAttribute('data-term') || '');
+      handleNoteClick(term);
+    }
+
+    /* Generate Cloze Verse */
+    function generateClozeVerse(verseStr, notes) {
+      const cleanVerse = stripCircledNumbers(verseStr);
+      let result = '';
+      const parts = cleanVerse.split(/([，。？！；])/);
+      parts.forEach(part => {
+        if (/^[，。？！；]$/.test(part)) {
+          result += part;
+        } else if (part.length >= 4) {
+          // Mask 1 char
+          let charArr = part.split('');
+          const maskIdx = (charArr.length === 5) ? 4 : 2;
+          charArr[maskIdx] = `<span class="cloze-blank" onclick="revealBlank(this)">${charArr[maskIdx]}</span>`;
+          result += charArr.join('');
+        } else {
+          result += part;
+        }
+      });
+      return result;
+    }
+
+    function revealBlank(el) {
+      el.classList.toggle('revealed');
+    }
+
+    function escapeRegex(str) {
+      return str.split('').map(function(c) {
+        return '.*+?^${}()|[]\\'.indexOf(c) !== -1 ? '\\' + c : c;
+      }).join('');
+    }
+
+    function handleNoteClick(term) {
+      const poem = POEMS_DATA.find(p => p.id === currentPoemId);
+      if (!poem) return;
+      const cleanTerm = stripCircledNumbers(term);
+      const note = poem.annotations.find(n => {
+        if (n.terms && n.terms.some(t => stripCircledNumbers(t) === cleanTerm)) {
+          return true;
+        }
+        const nt = stripCircledNumbers(n.term || '');
+        return nt === cleanTerm || nt.includes(cleanTerm) || cleanTerm.includes(nt);
+      });
+      if (note) {
+        showToast(`【${note.term}】${note.explanation}`);
+      }
+    }
+
+    /* Verse Mode Switch */
+    function setVerseMode(mode) {
+      currentVerseMode = mode;
+      document.querySelectorAll('.mode-btn').forEach(btn => btn.classList.remove('active'));
+      const activeBtn = document.getElementById(`modeBtn-${mode}`);
+      if (activeBtn) activeBtn.classList.add('active');
+
+      const poem = POEMS_DATA.find(p => p.id === currentPoemId);
+      if (poem) renderVersesTab(poem);
+    }
+
+    /* TAB 2: Notes Rendering */
+    function renderNotesTab(poem, filterQuery = '') {
+      const container = document.getElementById('annotationsList');
+      container.innerHTML = '';
+
+      let notes = poem.annotations;
+      if (filterQuery.trim()) {
+        const q = filterQuery.trim().toLowerCase();
+        notes = notes.filter(n => (n.term && n.term.toLowerCase().includes(q)) || n.explanation.toLowerCase().includes(q) || n.supplement.toLowerCase().includes(q));
+      }
+
+      if (notes.length === 0) {
+        container.innerHTML = `<div style="grid-column:1/-1;text-align:center;color:var(--text-muted);padding:2rem;">查無相符的注釋詞條</div>`;
+        return;
+      }
+
+      notes.forEach(note => {
+        const card = document.createElement('div');
+        card.className = 'note-card';
+        card.innerHTML = `
+          <div class="note-card-header">
+            ${note.num ? `<span class="note-num">#${note.num}</span>` : ''}
+            <span class="note-term">〔${note.term || '詞義'}〕</span>
+          </div>
+          <div class="note-expl">${note.explanation}</div>
+          ${note.supplement ? `<div class="note-supp">💡 ${note.supplement}</div>` : ''}
+        `;
+        container.appendChild(card);
+      });
+    }
+
+    function filterNotes(query) {
+      const poem = POEMS_DATA.find(p => p.id === currentPoemId);
+      if (poem) renderNotesTab(poem, query);
+    }
+
+    /* TAB 3: Analysis Rendering */
+    function renderAnalysisTab(poem) {
+      const container = document.getElementById('analysisContainer');
+      container.innerHTML = '';
+
+      if (poem.analysis.length === 0) {
+        container.innerHTML = `<div style="color:var(--text-muted);padding:2rem;text-align:center;">尚無深度賞析內容</div>`;
+        return;
+      }
+
+      poem.analysis.forEach((sec, idx) => {
+        const card = document.createElement('div');
+        card.className = 'analysis-card';
+        
+        let icon = '📜';
+        if (sec.title.includes('出處') || sec.title.includes('背景')) icon = '🏛️';
+        else if (sec.title.includes('意境') || sec.title.includes('章法')) icon = '🎨';
+        else if (sec.title.includes('修辭') || sec.title.includes('名句')) icon = '💎';
+        else if (sec.title.includes('思考') || sec.title.includes('討論')) icon = '💡';
+
+        card.innerHTML = `
+          <div class="analysis-card-title">
+            <span>${icon}</span>
+            <span>${sec.title}</span>
+          </div>
+          <div class="analysis-card-body">
+            ${sec.content.map(para => `<p class="analysis-para">${para}</p>`).join('')}
+          </div>
+        `;
+        container.appendChild(card);
+      });
+    }
+
+    /* TAB 4: Quiz Challenge */
+    function renderQuizTab(poem) {
+      const container = document.getElementById('quizContainer');
+      container.innerHTML = '';
+
+      if (poem.quizzes.length === 0) {
+        container.innerHTML = `<div style="color:var(--text-muted);padding:2rem;text-align:center;">本篇評量建構中</div>`;
+        return;
+      }
+
+      poem.quizzes.forEach((quiz, qIdx) => {
+        const card = document.createElement('div');
+        card.className = 'quiz-card';
+        card.id = `quizCard-${qIdx}`;
+
+        card.innerHTML = `
+          <div class="quiz-q-title">
+            <span class="q-badge">第 ${qIdx + 1} 題</span>
+            <span>${quiz.q}</span>
+          </div>
+          <div class="quiz-options">
+            ${quiz.options.map((opt, optIdx) => `
+              <button class="quiz-option-btn" onclick="checkAnswer(${qIdx}, ${optIdx}, ${quiz.ans})">
+                ${opt}
+              </button>
+            `).join('')}
+          </div>
+          <div class="quiz-feedback" id="quizFeedback-${qIdx}">
+            <strong>【解題詳析】</strong> ${quiz.exp}
+          </div>
+        `;
+        container.appendChild(card);
+      });
+    }
+
+    function checkAnswer(qIdx, selectedIdx, correctIdx) {
+      const card = document.getElementById(`quizCard-${qIdx}`);
+      if (!card) return;
+      const btns = card.querySelectorAll('.quiz-option-btn');
+      btns.forEach((btn, idx) => {
+        btn.disabled = true;
+        if (idx === correctIdx) {
+          btn.classList.add('correct');
+        } else if (idx === selectedIdx) {
+          btn.classList.add('wrong');
+        }
+      });
+
+      const feedback = document.getElementById(`quizFeedback-${qIdx}`);
+      if (feedback) feedback.classList.add('show');
+
+      if (selectedIdx === correctIdx) {
+        showToast('🎉 答對了！理解非常精準！');
+      } else {
+        showToast('💡 差一點點，請仔細研讀解題詳析喔！');
+      }
+    }
+
+    function resetCurrentQuiz() {
+      const poem = POEMS_DATA.find(p => p.id === currentPoemId);
+      if (poem) renderQuizTab(poem);
+      showToast('測驗已重置，請重新作答！');
+    }
+
+    /* Tabs Switching */
+    function switchTab(tabId) {
+      activeTab = tabId;
+      document.querySelectorAll('.poem-tabs-nav .tab-btn').forEach(btn => btn.classList.remove('active'));
+      document.querySelectorAll('.tab-pane').forEach(pane => pane.classList.remove('active'));
+
+      const activeBtn = document.getElementById(`tabBtn-${tabId.replace('tab-', '')}`);
+      if (activeBtn) activeBtn.classList.add('active');
+
+      const activePane = document.getElementById(tabId);
+      if (activePane) activePane.classList.add('active');
+    }
+
+    /* Navigation Prev / Next */
+    function navigatePoem(direction) {
+      let nextId = currentPoemId + direction;
+      if (nextId < 1) nextId = 19;
+      if (nextId > 19) nextId = 1;
+      selectPoem(nextId);
+    }
+
+    function updateNavFooter() {
+      const prevId = currentPoemId > 1 ? currentPoemId - 1 : 19;
+      const nextId = currentPoemId < 19 ? currentPoemId + 1 : 1;
+      const prevPoem = POEMS_DATA.find(p => p.id === prevId);
+      const nextPoem = POEMS_DATA.find(p => p.id === nextId);
+
+      document.getElementById('prevPoemTitle').textContent = `上一首：《${prevPoem.title}》`;
+      document.getElementById('nextPoemTitle').textContent = `下一首：《${nextPoem.title}》`;
+      document.getElementById('currentPoemIndexStatus').textContent = `第 ${currentPoemId} / 19 首（${getChineseNum(currentPoemId)}）`;
+    }
+
+    /* Full-Text Search Engine */
+    function handleSearch(query) {
+      const panel = document.getElementById('searchResultsPanel');
+      const list = document.getElementById('searchItemsList');
+      const countSpan = document.getElementById('searchResultsCount');
+      const clearBtn = document.getElementById('clearSearchBtn');
+
+      if (!query || query.trim().length === 0) {
+        clearSearch();
+        return;
+      }
+
+      clearBtn.style.display = 'block';
+      const q = query.trim().toLowerCase();
+      const results = [];
+
+      POEMS_DATA.forEach(poem => {
+        // Search in title
+        if (poem.title.toLowerCase().includes(q)) {
+          results.push({
+            poemId: poem.id,
+            poemTitle: poem.title,
+            type: '詩題',
+            snippet: `《${poem.title}》符合搜尋關鍵字`
+          });
+        }
+        // Search in lines
+        poem.lines.forEach(line => {
+          if (line.original.toLowerCase().includes(q)) {
+            results.push({
+              poemId: poem.id,
+              poemTitle: poem.title,
+              type: '原文',
+              snippet: highlightQuerySnippet(line.original, q)
+            });
+          }
+          if (line.translation.toLowerCase().includes(q)) {
+            results.push({
+              poemId: poem.id,
+              poemTitle: poem.title,
+              type: '語譯',
+              snippet: highlightQuerySnippet(line.translation, q)
+            });
+          }
+        });
+        // Search in annotations
+        poem.annotations.forEach(note => {
+          if ((note.term && note.term.toLowerCase().includes(q)) || note.explanation.toLowerCase().includes(q)) {
+            results.push({
+              poemId: poem.id,
+              poemTitle: poem.title,
+              type: '注釋',
+              snippet: highlightQuerySnippet(`〔${note.term}〕${note.explanation}`, q)
+            });
+          }
+        });
+      });
+
+      if (results.length > 0) {
+        panel.style.display = 'block';
+        countSpan.textContent = `找到 ${results.length} 筆包含「${query}」之結果：`;
+        list.innerHTML = results.slice(0, 30).map(res => `
+          <div class="search-item" onclick="selectPoemFromSearch(${res.poemId})">
+            <div class="search-item-header">第${res.poemId}首《${res.poemTitle}》・【${res.type}】</div>
+            <div class="search-item-snippet">${res.snippet}</div>
+          </div>
+        `).join('');
+      } else {
+        panel.style.display = 'block';
+        countSpan.textContent = `未找到與「${query}」相符的內容`;
+        list.innerHTML = `<div style="color:var(--text-muted);padding:0.5rem;">請嘗試不同關鍵字或簡短字詞搜尋。</div>`;
+      }
+    }
+
+    function highlightQuerySnippet(text, query) {
+      const idx = text.toLowerCase().indexOf(query.toLowerCase());
+      if (idx === -1) return text;
+      const start = Math.max(0, idx - 15);
+      const end = Math.min(text.length, idx + query.length + 25);
+      const sub = text.substring(start, end);
+      const re = new RegExp(escapeRegex(query), 'gi');
+      return (start > 0 ? '...' : '') + sub.replace(re, '<span class="search-highlight">$&</span>') + (end < text.length ? '...' : '');
+    }
+
+    function selectPoemFromSearch(poemId) {
+      selectPoem(poemId);
+      document.getElementById('searchResultsPanel').style.display = 'none';
+    }
+
+    function clearSearch() {
+      document.getElementById('searchInput').value = '';
+      document.getElementById('clearSearchBtn').style.display = 'none';
+      document.getElementById('searchResultsPanel').style.display = 'none';
+    }
+
+    /* Web Speech API TTS */
+    function togglePlayPoem() {
+      if (!('speechSynthesis' in window)) {
+        showToast('您的瀏覽器不支援 Web Speech 語音朗讀功能');
+        return;
+      }
+
+      if (window.speechSynthesis.speaking) {
+        stopSpeech();
+        return;
+      }
+
+      const poem = POEMS_DATA.find(p => p.id === currentPoemId);
+      if (!poem) return;
+
+      const rate = parseFloat(document.getElementById('ttsRateSelect').value) || 1.0;
+      const textToRead = `${poem.title}。` + poem.lines.map(l => l.original).join('。');
+
+      currentSpeechUtterance = new SpeechSynthesisUtterance(textToRead);
+      currentSpeechUtterance.lang = 'zh-TW';
+      currentSpeechUtterance.rate = rate;
+
+      currentSpeechUtterance.onstart = () => {
+        document.getElementById('ttsPlayBtn').textContent = '⏸ 暫停';
+        showToast('正在朗讀《' + poem.title + '》...');
+      };
+      currentSpeechUtterance.onend = () => {
+        document.getElementById('ttsPlayBtn').textContent = '▶ 朗讀';
+      };
+      currentSpeechUtterance.onerror = () => {
+        document.getElementById('ttsPlayBtn').textContent = '▶ 朗讀';
+      };
+
+      window.speechSynthesis.speak(currentSpeechUtterance);
+    }
+
+    function stopSpeech() {
+      if ('speechSynthesis' in window && window.speechSynthesis.speaking) {
+        window.speechSynthesis.cancel();
+      }
+      const playBtn = document.getElementById('ttsPlayBtn');
+      if (playBtn) playBtn.textContent = '▶ 朗讀';
+    }
+
+    function changeSpeechRate() {
+      if (window.speechSynthesis.speaking) {
+        stopSpeech();
+        togglePlayPoem();
+      }
+    }
+
+    /* Theme Toggle */
+    function toggleTheme() {
+      document.body.classList.toggle('theme-dark');
+      const isDark = document.body.classList.contains('theme-dark');
+      document.getElementById('themeBtn').textContent = isDark ? '☀️ 素箋' : '🌙 夜讀';
+      localStorage.setItem('gushi19_theme', isDark ? 'dark' : 'light');
+    }
+    // Auto load theme
+    if (localStorage.getItem('gushi19_theme') === 'dark') {
+      document.body.classList.add('theme-dark');
+      const btn = document.getElementById('themeBtn');
+      if (btn) btn.textContent = '☀️ 素箋';
+    }
+
+    /* Font Size Scaler */
+    function cycleFontSize() {
+      fontSizeLevel = (fontSizeLevel + 1) % fontSizes.length;
+      document.documentElement.style.setProperty('--base-font-size', fontSizes[fontSizeLevel]);
+      showToast(`字級已調整為：${['小 (14px)', '標準 (16px)', '大 (18px)', '特大 (20px)'][fontSizeLevel]}`);
+    }
+
+    /* Favorite Bookmark */
+    function toggleFavorite() {
+      const idx = favorites.indexOf(currentPoemId);
+      if (idx === -1) {
+        favorites.push(currentPoemId);
+        showToast('已加入詩篇收藏！⭐');
+      } else {
+        favorites.splice(idx, 1);
+        showToast('已取消收藏');
+      }
+      localStorage.setItem('gushi19_favorites', JSON.stringify(favorites));
+      updateFavBtnState();
+      renderPoemPills();
+    }
+
+    function updateFavBtnState() {
+      const isFav = favorites.includes(currentPoemId);
+      const btn = document.getElementById('favBtn');
+      if (btn) {
+        btn.textContent = isFav ? '★ 已收藏' : '⭐ 收藏';
+        btn.classList.toggle('active', isFav);
+      }
+    }
+
+    /* Copy Poem Text */
+    function copyPoemText() {
+      const poem = POEMS_DATA.find(p => p.id === currentPoemId);
+      if (!poem) return;
+
+      let text = `【${poem.title}】（古詩十九首之${getChineseNum(poem.id)}）\n\n【詩文與白話語譯】\n`;
+      poem.lines.forEach(line => {
+        text += `${line.original}\n${line.translation}\n\n`;
+      });
+
+      navigator.clipboard.writeText(text).then(() => {
+        showToast('詩文與白話語譯已複製到剪貼簿！📋');
+      }).catch(() => {
+        showToast('複製失敗，請手動選取複製');
+      });
+    }
+
+    /* Toast Helper */
+    let toastTimeout = null;
+    function showToast(msg) {
+      const toast = document.getElementById('toastMsg');
+      toast.textContent = msg;
+      toast.classList.add('show');
+      if (toastTimeout) clearTimeout(toastTimeout);
+      toastTimeout = setTimeout(() => {
+        toast.classList.remove('show');
+      }, 2600);
+    }
+
+    // Initialize Lucide icons
+    document.addEventListener('DOMContentLoaded', () => {
+      if (window.lucide && typeof lucide.createIcons === 'function') {
+        lucide.createIcons();
+      }
+    });
+  </script>
+</body>
+</html>
