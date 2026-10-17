@@ -672,7 +672,232 @@
       line-height: 1.55;
     }
 
-    /* 單元三：成語大考驗與人比花嬌是非辨析 */
+    /* 模組三：古典詩詞裡的十大名花 */
+    .top10-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
+      gap: 1.8rem;
+    }
+
+    .top10-card {
+      background: white;
+      border-radius: 18px;
+      border: 1px solid var(--border);
+      box-shadow: 0 4px 15px rgba(0,0,0,0.03);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      transition: all 0.3s ease;
+    }
+    .top10-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 14px 28px rgba(225, 29, 72, 0.09);
+      border-color: #fca5a5;
+    }
+
+    .top10-img-box {
+      position: relative;
+      width: 100%;
+      height: 230px;
+      overflow: hidden;
+      background: #f8fafc;
+      cursor: pointer;
+    }
+    .top10-img-box img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.5s ease;
+    }
+    .top10-card:hover .top10-img-box img {
+      transform: scale(1.06);
+    }
+    .top10-img-overlay {
+      position: absolute;
+      top: 12px;
+      left: 12px;
+      background: rgba(15, 23, 42, 0.78);
+      backdrop-filter: blur(6px);
+      color: white;
+      padding: 5px 14px;
+      border-radius: 999px;
+      font-size: 0.85rem;
+      font-weight: 800;
+      letter-spacing: 0.5px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.25);
+    }
+    .top10-zoom-hint {
+      position: absolute;
+      bottom: 12px;
+      right: 12px;
+      background: rgba(255, 255, 255, 0.92);
+      backdrop-filter: blur(4px);
+      color: #1e293b;
+      padding: 5px 12px;
+      border-radius: 8px;
+      font-size: 0.8rem;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+      transition: all 0.2s;
+    }
+    .top10-zoom-hint:hover {
+      background: white;
+      color: var(--primary);
+    }
+
+    .top10-body {
+      padding: 1.5rem;
+      display: flex;
+      flex-direction: column;
+      flex-grow: 1;
+      gap: 1.1rem;
+    }
+
+    .top10-header-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid #f1f5f9;
+      padding-bottom: 0.85rem;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .top10-title-wrap {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .top10-alias {
+      font-size: 0.9rem;
+      font-weight: 800;
+      color: var(--primary);
+      background: var(--primary-light);
+      padding: 4px 12px;
+      border-radius: 8px;
+      border: 1px solid #fecdd3;
+    }
+
+    .top10-flower-name {
+      font-size: 1.5rem;
+      font-weight: 900;
+      color: var(--dark);
+      letter-spacing: 0.5px;
+    }
+
+    .top10-tts-btn {
+      background: #f8fafc;
+      border: 1px solid #e2e8f0;
+      color: #475569;
+      padding: 6px 14px;
+      border-radius: 999px;
+      font-size: 0.84rem;
+      font-weight: 700;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      transition: all 0.2s;
+    }
+    .top10-tts-btn:hover {
+      background: var(--primary-light);
+      border-color: var(--primary);
+      color: var(--primary);
+      transform: translateY(-1px);
+    }
+
+    .top10-poem-box {
+      background: linear-gradient(135deg, #fff8f9 0%, #fff1f2 100%);
+      border-left: 4px solid var(--primary);
+      border-radius: 0 12px 12px 0;
+      padding: 1.1rem 1.25rem;
+      position: relative;
+    }
+
+    .top10-poem-text {
+      font-size: 0.98rem;
+      font-weight: 600;
+      color: #1e293b;
+      line-height: 1.75;
+      margin-bottom: 0.5rem;
+    }
+
+    .top10-poem-source {
+      font-size: 0.85rem;
+      color: #64748b;
+      text-align: right;
+      font-style: italic;
+      font-weight: 600;
+    }
+
+    .top10-chars-box {
+      display: flex;
+      flex-direction: column;
+      gap: 0.6rem;
+    }
+
+    .top10-chars-title {
+      font-size: 0.92rem;
+      font-weight: 800;
+      color: #0f172a;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .top10-chars-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+      font-size: 0.92rem;
+      color: #334155;
+      line-height: 1.6;
+    }
+    .top10-chars-list li {
+      position: relative;
+      padding-left: 1.4rem;
+    }
+    .top10-chars-list li::before {
+      content: "🌸";
+      position: absolute;
+      left: 0;
+      top: 0;
+      font-size: 0.85rem;
+    }
+
+    .top10-footer-meta {
+      margin-top: auto;
+      padding-top: 1rem;
+      border-top: 1px dashed #e2e8f0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .top10-season-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: #f1f5f9;
+      color: #334155;
+      font-size: 0.84rem;
+      font-weight: 700;
+      padding: 6px 14px;
+      border-radius: 999px;
+      border: 1px solid #e2e8f0;
+    }
+
+    /* 單元四：成語大考驗與人比花嬌是非辨析 */
     .idiom-fill-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
@@ -1239,6 +1464,7 @@
           <li><a href="index.html"><i data-lucide="home"></i> 首頁</a></li>
           <li><a href="#plants-sec"><i data-lucide="flower-2"></i> 植物象徵</a></li>
           <li><a href="#stories-sec"><i data-lucide="book-open"></i> 名花物語</a></li>
+          <li><a href="#top10-sec"><i data-lucide="crown"></i> 十大名花</a></li>
           <li><a href="#idioms-sec"><i data-lucide="sparkles"></i> 花名成語</a></li>
           <li><a href="#grass-sec"><i data-lucide="leaf"></i> 草之離情</a></li>
           <li><a href="#quiz-sec"><i data-lucide="trophy"></i> 會考闖關</a></li>
@@ -1263,6 +1489,7 @@
         <div class="hero-tags">
           <div class="hero-tag"><i data-lucide="check-circle-2"></i> 9 大核心植物象徵全覽</div>
           <div class="hero-tag"><i data-lucide="check-circle-2"></i> 5 大名花物語代言人</div>
+          <div class="hero-tag"><i data-lucide="check-circle-2"></i> 古典詩詞十大名花圖鑑</div>
           <div class="hero-tag"><i data-lucide="check-circle-2"></i> 張潮《幽夢影》知己配對</div>
           <div class="hero-tag"><i data-lucide="check-circle-2"></i> 人比花嬌成語是非辨析</div>
           <div class="hero-tag"><i data-lucide="check-circle-2"></i> 12 題會考全真神仙挑戰賽</div>
@@ -1641,10 +1868,411 @@
       </div>
     </section>
 
-    <!-- 模組三：成語大考驗與人比花嬌是非辨析 -->
+    <!-- 模組三：古典詩詞裡的十大名花 -->
+    <section id="top10-sec" class="content-section">
+      <div class="section-header">
+        <span class="section-badge">Module 03・Ten Famous Flowers</span>
+        <h2 class="section-title">古典詩詞裡的十大名花</h2>
+        <p class="section-desc">從花中之魁、花中之王到凌波仙子，領略十大傳統名花的詩韻典故、風姿特徵與開花時節（支援高清看圖與詩詞語音朗讀）</p>
+      </div>
+
+      <div class="top10-grid">
+        <!-- 1. 梅花 -->
+        <article class="top10-card">
+          <div class="top10-img-box" onclick="openLightbox('flower/flower-top10-plum.jpg', '花中之魁 – 梅花')">
+            <img src="flower/flower-top10-plum.jpg" alt="梅花" loading="lazy">
+            <div class="top10-img-overlay">
+              <i data-lucide="crown" style="width:14px;height:14px;"></i> 花中之魁
+            </div>
+            <div class="top10-zoom-hint">
+              <i data-lucide="zoom-in" style="width:13px;height:13px;"></i> 點擊放大
+            </div>
+          </div>
+          <div class="top10-body">
+            <div class="top10-header-row">
+              <div class="top10-title-wrap">
+                <span class="top10-flower-name">梅花</span>
+                <span class="top10-alias">花中之魁・雪中高士</span>
+              </div>
+              <button class="top10-tts-btn" onclick="speakText('梅花。塵勞迥脫事非常，緊把繩頭做一場；不經一番寒徹骨，焉得梅花撲鼻香。唐代黃檗山斷際禪師宛陵錄。')">
+                <i data-lucide="volume-2" style="width:14px;height:14px;"></i> 聽名詩
+              </button>
+            </div>
+            <div class="top10-poem-box">
+              <div class="top10-poem-text">「塵勞迥脫事非常，緊把繩頭做一場；<br>不經一番寒徹骨，焉得梅花撲鼻香。」</div>
+              <div class="top10-poem-source">—— 唐代．黃檗山斷際禪師《宛陵錄》</div>
+            </div>
+            <div class="top10-chars-box">
+              <div class="top10-chars-title"><i data-lucide="sparkles" style="width:14px;height:14px;color:var(--primary);"></i> 核心特徵與文化象徵：</div>
+              <ul class="top10-chars-list">
+                <li><b>形態特徵：</b>樹皮淺灰帶綠，小枝綠色，花瓣5枚，白色至水紅，芳香幽雅。</li>
+                <li><b>文化意象：</b>與蘭、竹、菊並稱<b>「四君子」</b>；與松、竹並稱<b>「歲寒三友」</b>。</li>
+                <li><b>精神象徵：</b>象徵<b>高潔、堅強、謙虛</b>之品格，常以其凌寒傲霜勉人自立。</li>
+              </ul>
+            </div>
+            <div class="top10-footer-meta">
+              <span class="top10-season-badge"><i data-lucide="calendar" style="width:13px;height:13px;color:var(--primary);"></i> 【花期時序】西南12月~翌年1月／華中2~3月／華北3~4月</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- 2. 牡丹 -->
+        <article class="top10-card">
+          <div class="top10-img-box" onclick="openLightbox('flower/flower-top10-peony.jpg', '花中之王 – 牡丹')">
+            <img src="flower/flower-top10-peony.jpg" alt="牡丹" loading="lazy">
+            <div class="top10-img-overlay">
+              <i data-lucide="award" style="width:14px;height:14px;"></i> 花中之王
+            </div>
+            <div class="top10-zoom-hint">
+              <i data-lucide="zoom-in" style="width:13px;height:13px;"></i> 點擊放大
+            </div>
+          </div>
+          <div class="top10-body">
+            <div class="top10-header-row">
+              <div class="top10-title-wrap">
+                <span class="top10-flower-name">牡丹</span>
+                <span class="top10-alias">花中之王・國色天香</span>
+              </div>
+              <button class="top10-tts-btn" onclick="speakText('牡丹。庭前芍藥妖無格，池上芙蕖淨少情。唯有牡丹真國色，花開時節動京城。唐代劉禹錫賞牡丹。')">
+                <i data-lucide="volume-2" style="width:14px;height:14px;"></i> 聽名詩
+              </button>
+            </div>
+            <div class="top10-poem-box">
+              <div class="top10-poem-text">「庭前芍藥妖無格，池上芙蕖淨少情。<br>唯有牡丹真國色，花開時節動京城。」</div>
+              <div class="top10-poem-source">—— 唐代．劉禹錫《賞牡丹》</div>
+            </div>
+            <div class="top10-chars-box">
+              <div class="top10-chars-title"><i data-lucide="sparkles" style="width:14px;height:14px;color:var(--primary);"></i> 核心特徵與文化象徵：</div>
+              <ul class="top10-chars-list">
+                <li><b>形態特徵：</b>落葉小灌木，花大且香，雍容華麗；色澤有黃、綠、肉紅、深紅等，以黃綠為貴。</li>
+                <li><b>文化意象：</b>素有<b>「國色天香」</b>、<b>「花中之王」</b>之美譽，唐代盛極一時，動徹京城。</li>
+                <li><b>精神象徵：</b>象徵<b>圓滿、濃情、富貴吉祥</b>與盛世繁華，歷來深得世人鍾愛。</li>
+              </ul>
+            </div>
+            <div class="top10-footer-meta">
+              <span class="top10-season-badge"><i data-lucide="calendar" style="width:13px;height:13px;color:var(--primary);"></i> 【花期時序】每年 4 月中旬至 5 月初旬</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- 3. 菊花 -->
+        <article class="top10-card">
+          <div class="top10-img-box" onclick="openLightbox('flower/flower-top10-chrysanthemum.jpg', '凌霜綻妍 – 菊花')">
+            <img src="flower/flower-top10-chrysanthemum.jpg" alt="菊花" loading="lazy">
+            <div class="top10-img-overlay">
+              <i data-lucide="sun" style="width:14px;height:14px;"></i> 凌霜綻妍
+            </div>
+            <div class="top10-zoom-hint">
+              <i data-lucide="zoom-in" style="width:13px;height:13px;"></i> 點擊放大
+            </div>
+          </div>
+          <div class="top10-body">
+            <div class="top10-header-row">
+              <div class="top10-title-wrap">
+                <span class="top10-flower-name">菊花</span>
+                <span class="top10-alias">凌霜綻妍・花中隱士</span>
+              </div>
+              <button class="top10-tts-btn" onclick="speakText('菊花。故人具雞黍，邀我至田家；綠樹村邊合，青山郭外斜。開筵面場圃，把酒話桑麻；待到重陽日，還來就菊花。唐代孟浩然過故人莊。')">
+                <i data-lucide="volume-2" style="width:14px;height:14px;"></i> 聽名詩
+              </button>
+            </div>
+            <div class="top10-poem-box">
+              <div class="top10-poem-text">「故人具雞黍，邀我至田家；綠樹村邊合，青山郭外斜。<br>開筵面場圃，把酒話桑麻；待到重陽日，還來就菊花。」</div>
+              <div class="top10-poem-source">—— 唐代．孟浩然《過故人莊》</div>
+            </div>
+            <div class="top10-chars-box">
+              <div class="top10-chars-title"><i data-lucide="sparkles" style="width:14px;height:14px;color:var(--primary);"></i> 核心特徵與文化象徵：</div>
+              <ul class="top10-chars-list">
+                <li><b>形態特徵：</b>多年生宿根草本，秋季凌霜綻放；為「四君子」與「世界四大切花」之一。</li>
+                <li><b>文化意象：</b>農曆<b>九九重陽節</b>有賞菊、飲菊花酒之習俗，陶淵明「採菊東籬下」奠定隱士代表。</li>
+                <li><b>精神象徵：</b>象徵<b>清寒傲雪品格</b>、<b>超然隱逸</b>與<b>吉祥長壽</b>（九九延年）。</li>
+              </ul>
+            </div>
+            <div class="top10-footer-meta">
+              <span class="top10-season-badge"><i data-lucide="calendar" style="width:13px;height:13px;color:var(--primary);"></i> 【花期時序】每年 9 月至 11 月（秋季盛開）</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- 4. 蘭花 -->
+        <article class="top10-card">
+          <div class="top10-img-box" onclick="openLightbox('flower/flower-top10-orchid.jpg', '王者之香 – 蘭花')">
+            <img src="flower/flower-top10-orchid.jpg" alt="蘭花" loading="lazy">
+            <div class="top10-img-overlay">
+              <i data-lucide="wind" style="width:14px;height:14px;"></i> 王者之香
+            </div>
+            <div class="top10-zoom-hint">
+              <i data-lucide="zoom-in" style="width:13px;height:13px;"></i> 點擊放大
+            </div>
+          </div>
+          <div class="top10-body">
+            <div class="top10-header-row">
+              <div class="top10-title-wrap">
+                <span class="top10-flower-name">蘭花</span>
+                <span class="top10-alias">王者之香・空谷幽蘭</span>
+              </div>
+              <button class="top10-tts-btn" onclick="speakText('蘭花。珍重幽蘭開一枝，清香耿耿聽猶疑。定應欲較香高下，故取群芳競發時。北宋蘇轍幽蘭花。')">
+                <i data-lucide="volume-2" style="width:14px;height:14px;"></i> 聽名詩
+              </button>
+            </div>
+            <div class="top10-poem-box">
+              <div class="top10-poem-text">「珍重幽蘭開一枝，清香耿耿聽猶疑。<br>定應欲較香高下，故取群芳競發時。」</div>
+              <div class="top10-poem-source">—— 北宋．蘇轍《幽蘭花》</div>
+            </div>
+            <div class="top10-chars-box">
+              <div class="top10-chars-title"><i data-lucide="sparkles" style="width:14px;height:14px;color:var(--primary);"></i> 核心特徵與文化象徵：</div>
+              <ul class="top10-chars-list">
+                <li><b>形態特徵：</b>質樸文靜、淡雅高潔，花香清純幽遠，被譽為<b>「天下第一香」</b>與「香祖」。</li>
+                <li><b>文化意象：</b>列為<b>「花中四君子」</b>；引申出「金蘭之交」、「義結金蘭」、「蘭章」等詞。</li>
+                <li><b>精神象徵：</b>象徵<b>純潔高尚、賢者之德</b>與堅貞深厚的同道情誼。</li>
+              </ul>
+            </div>
+            <div class="top10-footer-meta">
+              <span class="top10-season-badge"><i data-lucide="calendar" style="width:13px;height:13px;color:var(--primary);"></i> 【花期時序】春蘭2~3月／蕙蘭4月／建蘭7~10月／寒墨蘭12~2月</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- 5. 月季 -->
+        <article class="top10-card">
+          <div class="top10-img-box" onclick="openLightbox('flower/flower-top10-chinese-rose.jpg', '花中皇后 – 月季')">
+            <img src="flower/flower-top10-chinese-rose.jpg" alt="月季" loading="lazy">
+            <div class="top10-img-overlay">
+              <i data-lucide="heart" style="width:14px;height:14px;"></i> 花中皇后
+            </div>
+            <div class="top10-zoom-hint">
+              <i data-lucide="zoom-in" style="width:13px;height:13px;"></i> 點擊放大
+            </div>
+          </div>
+          <div class="top10-body">
+            <div class="top10-header-row">
+              <div class="top10-title-wrap">
+                <span class="top10-flower-name">月季</span>
+                <span class="top10-alias">花中皇后・月月紅</span>
+              </div>
+              <button class="top10-tts-btn" onclick="speakText('月季。只道花無十日紅，此花無日不春風。一尖己剝胭脂筆，四破猶包翡翠茸。別有香超桃李外，更同梅鬥雪霜中。折來喜作新年看，忘卻今晨是季冬。南宋楊萬里蠟前月季。')">
+                <i data-lucide="volume-2" style="width:14px;height:14px;"></i> 聽名詩
+              </button>
+            </div>
+            <div class="top10-poem-box">
+              <div class="top10-poem-text">「只道花無十日紅，此花無日不春風。<br>一尖己剝胭脂筆，四破猶包翡翠茸。<br>別有香超桃李外，更同梅鬥雪霜中。<br>折來喜作新年看，忘卻今晨是季冬。」</div>
+              <div class="top10-poem-source">—— 南宋．楊萬里《蠟前月季》</div>
+            </div>
+            <div class="top10-chars-box">
+              <div class="top10-chars-title"><i data-lucide="sparkles" style="width:14px;height:14px;color:var(--primary);"></i> 核心特徵與文化象徵：</div>
+              <ul class="top10-chars-list">
+                <li><b>形態特徵：</b>四季開花、花色艷麗，被尊為<b>「花中皇后」</b>，為世界四大切花之一。</li>
+                <li><b>生態與實用：</b>適應力強，能吸收二氧化硫等有害氣體，具淨化空氣與環保價值；全草可入藥。</li>
+                <li><b>精神象徵：</b>紅色月季象徵<b>純潔的愛</b>；月月開花更寓意<b>生生不息、青春常在</b>。</li>
+              </ul>
+            </div>
+            <div class="top10-footer-meta">
+              <span class="top10-season-badge"><i data-lucide="calendar" style="width:13px;height:13px;color:var(--primary);"></i> 【花期時序】每年 8 月至隔年 4 月（常年花開不絕）</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- 6. 杜鵑 -->
+        <article class="top10-card">
+          <div class="top10-img-box" onclick="openLightbox('flower/flower-top10-azalea.jpg', '繁花似錦 – 杜鵑')">
+            <img src="flower/flower-top10-azalea.jpg" alt="杜鵑" loading="lazy">
+            <div class="top10-img-overlay">
+              <i data-lucide="flame" style="width:14px;height:14px;"></i> 繁花似錦
+            </div>
+            <div class="top10-zoom-hint">
+              <i data-lucide="zoom-in" style="width:13px;height:13px;"></i> 點擊放大
+            </div>
+          </div>
+          <div class="top10-body">
+            <div class="top10-header-row">
+              <div class="top10-title-wrap">
+                <span class="top10-flower-name">杜鵑</span>
+                <span class="top10-alias">繁花似錦・映山紅</span>
+              </div>
+              <button class="top10-tts-btn" onclick="speakText('杜鵑。蜀國曾聞子規鳥，宣城還見杜鵑花。一叫一迴腸一斷，三春三月憶三巴。唐代李白宣城見杜鵑花。')">
+                <i data-lucide="volume-2" style="width:14px;height:14px;"></i> 聽名詩
+              </button>
+            </div>
+            <div class="top10-poem-box">
+              <div class="top10-poem-text">「蜀國曾聞子規鳥，宣城還見杜鵑花。<br>一叫一迴腸一斷，三春三月憶三巴。」</div>
+              <div class="top10-poem-source">—— 唐代．李白《宣城見杜鵑花》</div>
+            </div>
+            <div class="top10-chars-box">
+              <div class="top10-chars-title"><i data-lucide="sparkles" style="width:14px;height:14px;color:var(--primary);"></i> 核心特徵與文化象徵：</div>
+              <ul class="top10-chars-list">
+                <li><b>典故傳說：</b>相傳蜀王杜宇（望帝）化為子規鳥，日夜啼血染紅漫山花朵，故稱<b>杜鵑花</b>。</li>
+                <li><b>文化風采：</b>盛開之際繁密艷麗、花團錦簇，染遍春山，極具熱情蓬勃的生命力。</li>
+                <li><b>精神象徵：</b>象徵<b>鴻運高照、事業興旺</b>、繁榮昌盛，文學上亦常寄託思鄉離別之愁。</li>
+              </ul>
+            </div>
+            <div class="top10-footer-meta">
+              <span class="top10-season-badge"><i data-lucide="calendar" style="width:13px;height:13px;color:var(--primary);"></i> 【花期時序】每年 4 月中旬至 6 月中旬</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- 7. 茶花 -->
+        <article class="top10-card">
+          <div class="top10-img-box" onclick="openLightbox('flower/flower-top10-camellia.jpg', '花中嬌客 – 茶花')">
+            <img src="flower/flower-top10-camellia.jpg" alt="茶花" loading="lazy">
+            <div class="top10-img-overlay">
+              <i data-lucide="gem" style="width:14px;height:14px;"></i> 花中嬌客
+            </div>
+            <div class="top10-zoom-hint">
+              <i data-lucide="zoom-in" style="width:13px;height:13px;"></i> 點擊放大
+            </div>
+          </div>
+          <div class="top10-body">
+            <div class="top10-header-row">
+              <div class="top10-title-wrap">
+                <span class="top10-flower-name">茶花</span>
+                <span class="top10-alias">花中嬌客・山茶</span>
+              </div>
+              <button class="top10-tts-btn" onclick="speakText('茶花。東園三日雨兼風，桃李飄零掃地空。惟有小茶偏耐久，綠叢又放數枝紅。南宋陸游山茶一株自冬至清明后著花不已。')">
+                <i data-lucide="volume-2" style="width:14px;height:14px;"></i> 聽名詩
+              </button>
+            </div>
+            <div class="top10-poem-box">
+              <div class="top10-poem-text">「東園三日雨兼風，桃李飄零掃地空。<br>惟有小茶偏耐久，綠叢又放數枝紅。」</div>
+              <div class="top10-poem-source">—— 南宋．陸游《山茶一株自冬至清明后著花不已》</div>
+            </div>
+            <div class="top10-chars-box">
+              <div class="top10-chars-title"><i data-lucide="sparkles" style="width:14px;height:14px;color:var(--primary);"></i> 核心特徵與文化象徵：</div>
+              <ul class="top10-chars-list">
+                <li><b>形態特徵：</b>植株姿態優美，葉色濃綠有光澤，花形重瓣端莊；自深冬開至春末，經久不衰。</li>
+                <li><b>落花特色：</b>凋謝時花瓣一片片慢慢脫落，不似一般花朵整朵凋萎，展現小心翼翼之姿。</li>
+                <li><b>精神象徵：</b>象徵<b>可愛、謙讓、謹慎、高雅</b>，寄託心慕與溫柔深情。</li>
+              </ul>
+            </div>
+            <div class="top10-footer-meta">
+              <span class="top10-season-badge"><i data-lucide="calendar" style="width:13px;height:13px;color:var(--primary);"></i> 【花期時序】每年 10 月至翌年 5 月（1~3月最盛）</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- 8. 荷花(蓮花) -->
+        <article class="top10-card">
+          <div class="top10-img-box" onclick="openLightbox('flower/flower-top10-lotus.jpg', '君子之花 – 荷花(蓮花)')">
+            <img src="flower/flower-top10-lotus.jpg" alt="荷花蓮花" loading="lazy">
+            <div class="top10-img-overlay">
+              <i data-lucide="shield-check" style="width:14px;height:14px;"></i> 君子之花
+            </div>
+            <div class="top10-zoom-hint">
+              <i data-lucide="zoom-in" style="width:13px;height:13px;"></i> 點擊放大
+            </div>
+          </div>
+          <div class="top10-body">
+            <div class="top10-header-row">
+              <div class="top10-title-wrap">
+                <span class="top10-flower-name">荷花(蓮花)</span>
+                <span class="top10-alias">君子之花・芙蕖</span>
+              </div>
+              <button class="top10-tts-btn" onclick="speakText('荷花。出淤泥而不染，濯清漣而不妖，中通外直，不蔓不枝，香遠益清，亭亭淨植，可遠觀而不可褻玩焉。北宋周敦頤愛蓮說。')">
+                <i data-lucide="volume-2" style="width:14px;height:14px;"></i> 聽名詩
+              </button>
+            </div>
+            <div class="top10-poem-box">
+              <div class="top10-poem-text">「出淤泥而不染，濯清漣而不妖，<br>中通外直，不蔓不枝，香遠益清，亭亭淨植，可遠觀而不可褻玩焉。」</div>
+              <div class="top10-poem-source">—— 北宋．周敦頤《愛蓮說》</div>
+            </div>
+            <div class="top10-chars-box">
+              <div class="top10-chars-title"><i data-lucide="sparkles" style="width:14px;height:14px;color:var(--primary);"></i> 核心特徵與文化象徵：</div>
+              <ul class="top10-chars-list">
+                <li><b>形態特徵：</b>多年生水生草本，葉大圓盾形，高潔挺拔；全身皆寶（蓮藕、蓮子、蓮心皆可食入藥）。</li>
+                <li><b>文化意象：</b>周敦頤獨愛蓮之潔，確立蓮花為<b>「花之君子者也」</b>，古今文人同聲歌詠。</li>
+                <li><b>精神象徵：</b>象徵<b>出污泥而不染、正直端方、潔身自愛</b>的崇高君子節操。</li>
+              </ul>
+            </div>
+            <div class="top10-footer-meta">
+              <span class="top10-season-badge"><i data-lucide="calendar" style="width:13px;height:13px;color:var(--primary);"></i> 【花期時序】每年 6 月至 9 月（盛夏花季）</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- 9. 桂花(木樨) -->
+        <article class="top10-card">
+          <div class="top10-img-box" onclick="openLightbox('flower/flower-top10-osmanthus.jpg', '十里飄香 – 桂花(木樨)')">
+            <img src="flower/flower-top10-osmanthus.jpg" alt="桂花" loading="lazy">
+            <div class="top10-img-overlay">
+              <i data-lucide="feather" style="width:14px;height:14px;"></i> 十里飄香
+            </div>
+            <div class="top10-zoom-hint">
+              <i data-lucide="zoom-in" style="width:13px;height:13px;"></i> 點擊放大
+            </div>
+          </div>
+          <div class="top10-body">
+            <div class="top10-header-row">
+              <div class="top10-title-wrap">
+                <span class="top10-flower-name">桂花(木樨)</span>
+                <span class="top10-alias">十里飄香・金粟</span>
+              </div>
+              <button class="top10-tts-btn" onclick="speakText('桂花。暗淡輕黃體性柔，情疏跡遠只香留。何須淺碧輕紅色，自是花中第一流。北宋李清照鷓鴣天。')">
+                <i data-lucide="volume-2" style="width:14px;height:14px;"></i> 聽名詩
+              </button>
+            </div>
+            <div class="top10-poem-box">
+              <div class="top10-poem-text">「暗淡輕黃體性柔，情疏跡遠只香留。<br>何須淺碧輕紅色，自是花中第一流。」</div>
+              <div class="top10-poem-source">—— 北宋．李清照《鷓鴣天》</div>
+            </div>
+            <div class="top10-chars-box">
+              <div class="top10-chars-title"><i data-lucide="sparkles" style="width:14px;height:14px;color:var(--primary);"></i> 核心特徵與文化象徵：</div>
+              <ul class="top10-chars-list">
+                <li><b>形態特徵：</b>常綠喬木，經冬不凋；仲秋開花，細小淡黃，「清可絕塵，濃能遠溢」，香飄十里。</li>
+                <li><b>典故與民俗：</b>科舉登科稱為<b>「蟾宮折桂」</b>；可做桂花釀、桂花茶與香甜糕點。</li>
+                <li><b>精神象徵：</b>象徵<b>崇高、吉祥、榮譽成就、富貴榮華</b>與忠貞之士。</li>
+              </ul>
+            </div>
+            <div class="top10-footer-meta">
+              <span class="top10-season-badge"><i data-lucide="calendar" style="width:13px;height:13px;color:var(--primary);"></i> 【花期時序】每年 9 月至隔年 3 月（秋季中秋最盛）</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- 10. 水仙 -->
+        <article class="top10-card">
+          <div class="top10-img-box" onclick="openLightbox('flower/flower-top10-narcissus.jpg', '凌波仙子 – 水仙')">
+            <img src="flower/flower-top10-narcissus.jpg" alt="水仙" loading="lazy">
+            <div class="top10-img-overlay">
+              <i data-lucide="sparkles" style="width:14px;height:14px;"></i> 凌波仙子
+            </div>
+            <div class="top10-zoom-hint">
+              <i data-lucide="zoom-in" style="width:13px;height:13px;"></i> 點擊放大
+            </div>
+          </div>
+          <div class="top10-body">
+            <div class="top10-header-row">
+              <div class="top10-title-wrap">
+                <span class="top10-flower-name">水仙</span>
+                <span class="top10-alias">凌波仙子・金盞銀台</span>
+              </div>
+              <button class="top10-tts-btn" onclick="speakText('水仙。水中仙子來何處，翠袖黃冠白玉英，報道幽人被渠惱，著詩送與老難兄。北宋朱熹用子服韻謝水仙花。')">
+                <i data-lucide="volume-2" style="width:14px;height:14px;"></i> 聽名詩
+              </button>
+            </div>
+            <div class="top10-poem-box">
+              <div class="top10-poem-text">「水中仙子來何處，翠袖黃冠白玉英，<br>報道幽人被渠惱，著詩送與老難兄。」</div>
+              <div class="top10-poem-source">—— 北宋．朱熹《用子服韻謝水仙花》</div>
+            </div>
+            <div class="top10-chars-box">
+              <div class="top10-chars-title"><i data-lucide="sparkles" style="width:14px;height:14px;color:var(--primary);"></i> 核心特徵與文化象徵：</div>
+              <ul class="top10-chars-list">
+                <li><b>形態特徵：</b>六片白玉花瓣襯托中央鵝黃副冠，素稱<b>「金盞銀台」</b>；一勺清水數枚卵石即能芬芳吐蕊。</li>
+                <li><b>文化意象：</b>宛如臨水而立的仙姬，故名<b>「凌波仙子」</b>；為傳統新春年節案頭必備吉祥清供。</li>
+                <li><b>精神象徵：</b>象徵<b>純潔、吉祥、堅貞愛情</b>與萬事如意、春意盎然。</li>
+              </ul>
+            </div>
+            <div class="top10-footer-meta">
+              <span class="top10-season-badge"><i data-lucide="calendar" style="width:13px;height:13px;color:var(--primary);"></i> 【花期時序】每年早春（約 1 月至 3 月新春之際）</span>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- 模組四：成語大考驗與人比花嬌是非辨析 -->
     <section id="idioms-sec" class="content-section">
       <div class="section-header">
-        <span class="section-badge">Module 03・Idioms & Vocabulary</span>
+        <span class="section-badge">Module 04・Idioms & Vocabulary</span>
         <h2 class="section-title">花名成語挑戰 ＆「人比花嬌」是非辨析</h2>
         <p class="section-desc">掌握語文中蘊藏的花木成語，精準辨析容貌儀態與會考易錯陷阱（點擊方框即時揭曉）</p>
       </div>
@@ -1845,10 +2473,10 @@
       </div>
     </section>
 
-    <!-- 模組四：拈花惹草──詩詞「草」之象徵與花草譬喻 -->
+    <!-- 模組五：拈花惹草──詩詞「草」之象徵與花草譬喻 -->
     <section id="grass-sec" class="content-section">
       <div class="section-header">
-        <span class="section-badge">Module 04・Grass & Metaphors</span>
+        <span class="section-badge">Module 05・Grass & Metaphors</span>
         <h2 class="section-title">拈花惹草：草之詩詞象徵與花草譬喻成語</h2>
         <p class="section-desc">從古典詩詞中的「草」透視離愁與鄉情，掌握會考高頻出現的植物借喻成語</p>
       </div>
@@ -2000,10 +2628,10 @@
       </div>
     </section>
 
-    <!-- 模組五：會考神仙挑戰賽 (12 題全真情境測驗) -->
+    <!-- 模組六：會考神仙挑戰賽 (12 題全真情境測驗) -->
     <section id="quiz-sec" class="content-section">
       <div class="section-header">
-        <span class="section-badge">Module 05・Exam Challenge</span>
+        <span class="section-badge">Module 06・Exam Challenge</span>
         <h2 class="section-title">會考神仙挑戰賽：花花世界全真診斷庫</h2>
         <p class="section-desc">即時檢測學習成效，包含傳說典故、知己配對、是非辨析與成語陷阱精解</p>
       </div>
@@ -2030,10 +2658,10 @@
       </div>
     </section>
 
-    <!-- 模組六：花語文學造句工坊 -->
+    <!-- 模組七：花語文學造句工坊 -->
     <section id="workshop-sec" class="content-section">
       <div class="section-header">
-        <span class="section-badge">Module 06・Creative Writing</span>
+        <span class="section-badge">Module 07・Creative Writing</span>
         <h2 class="section-title">花語文學造句工坊</h2>
         <p class="section-desc">自選花木意象、寫作情境與修辭技法，一鍵組合生成文采斐然之佳句範例</p>
       </div>
@@ -2085,10 +2713,10 @@
       </div>
     </section>
 
-    <!-- 模組七：專屬練習神器內嵌專區 -->
+    <!-- 模組八：專屬練習神器內嵌專區 -->
     <section id="practice-sec" class="content-section">
       <div class="section-header">
-        <span class="section-badge">Module 07・Interactive Practice Tools</span>
+        <span class="section-badge">Module 08・Interactive Practice Tools</span>
         <h2 class="section-title">花花語文世界・專屬練習神器雙享庫</h2>
         <p class="section-desc">整合「花花語文練習神器」與「詩詞常見意象練習神器」，支援 3D 翻轉卡片、意象測驗、是非速測與離線錯題本</p>
       </div>
