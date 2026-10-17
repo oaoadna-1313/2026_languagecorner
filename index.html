@@ -487,6 +487,10 @@
       border-top: 6px solid #a62b2b;
     }
 
+    .flagship-card.sentence-card {
+      border-top: 6px solid #4f46e5;
+    }
+
     .flagship-banner {
       padding: 2rem 2.2rem 1.5rem;
       position: relative;
@@ -538,6 +542,10 @@
 
     .oldpoem-card .flagship-banner {
       background: linear-gradient(135deg, #fdf8f6 0%, #fef2f2 100%);
+    }
+
+    .sentence-card .flagship-banner {
+      background: linear-gradient(135deg, #f5f3ff 0%, #e0e7ff 100%);
     }
 
     .flagship-tag-row {
@@ -612,6 +620,11 @@
 
     .oldpoem-card .flagship-category {
       background: #a62b2b;
+      color: white;
+    }
+
+    .sentence-card .flagship-category {
+      background: #4f46e5;
       color: white;
     }
 
@@ -1209,8 +1222,8 @@
         學思軒・語文補給站・<span>數位互動教材</span>
 </h1>
 <div class="hero-features-bar">
-<div class="hero-feature-chip"><i data-lucide="check-circle-2" style="color:#10b981; width:16px;"></i> 12 大旗艦主題殿堂</div>
-<div class="hero-feature-chip"><i data-lucide="check-circle-2" style="color:#10b981; width:16px;"></i> 23 款專屬練習神器</div>
+<div class="hero-feature-chip"><i data-lucide="check-circle-2" style="color:#10b981; width:16px;"></i> 13 大旗艦主題殿堂</div>
+<div class="hero-feature-chip"><i data-lucide="check-circle-2" style="color:#10b981; width:16px;"></i> 24 款專屬練習神器</div>
 <div class="hero-feature-chip"><i data-lucide="check-circle-2" style="color:#10b981; width:16px;"></i> 全真人語音發音朗讀</div>
 <div class="hero-feature-chip"><i data-lucide="check-circle-2" style="color:#10b981; width:16px;"></i> 跨載具響應式支援（手機/平板/電腦）</div>
 </div>
@@ -1230,6 +1243,7 @@
 <button class="lesson-chip" onclick="filterByLesson('B3L05', this)" type="button">B3L05 生命中的碎珠</button>
 <button class="lesson-chip" onclick="filterByLesson('B3L06', this)" type="button">B3L06 鳥</button>
 <button class="lesson-chip" onclick="filterByLesson('語文常識一', this)" type="button">B3語文常識一 詞性</button>
+<button class="lesson-chip" onclick="filterByLesson('語文常識二', this)" type="button">B3語文常識二 句型</button>
 </div>
 </div>
 </section>
@@ -1240,7 +1254,7 @@
 <h2 class="section-title serif"><i data-lucide="crown"></i> 旗艦學習殿堂主題</h2>
 <p class="section-desc">深度結合課文情境、觀念圖解、典範圖鑑與即時互動測驗的主題式教學網頁</p>
 </div>
-<span class="section-count">12 大主題殿堂</span>
+<span class="section-count">13 大主題殿堂</span>
 </div>
 <div class="flagship-grid">
 <!-- 殿堂 1：移覺（通感）修辭互動學習殿堂 (B3L01 田園之秋選) -->
@@ -1459,16 +1473,34 @@
 </div>
 </div>
 </article>
+<!-- 殿堂 13：四大句型・句法乾坤旗艦學習殿堂 (B3語文常識二 句型) -->
+<article class="flagship-card sentence-card course-item" data-keywords="四大句型 句型 敘事句 有無句 判斷句 表態句 主語 述語 賓語 繫詞 表語 倒裝句 翰林 B3 語二 語文常識二 句型 會考 國文">
+<div class="flagship-banner">
+<div class="flagship-tag-row">
+<span class="flagship-category">語法常識旗艦</span>
+<span class="flagship-level"><i data-lucide="layers" style="width:15px;"></i> 翰林 B3語文常識二〈句型〉</span>
+</div>
+<h3 class="flagship-title serif">四大句型・句法乾坤旗艦學習殿堂</h3>
+<p class="flagship-subtitle">動詞樞紐・語法乾坤！全面解構敘事句、有無句、判斷句、表態句，收錄 100 題完整真題庫、雙色螢光筆高亮、會考神仙挑戰賽與專屬練習神器。</p>
+</div>
+<div class="flagship-body">
+<div class="flagship-action-box">
+<a class="btn-enter-primary" href="sentence.html">
+<i data-lucide="sparkles"></i> 進入四大句型殿堂
+              </a>
+</div>
+</div>
+</article>
 </div>
 </section>
-<!-- 練習神器專區 (23 款互動練習卡片) -->
+<!-- 練習神器專區 (24 款互動練習卡片) -->
 <section class="practice-section" id="practice-sec">
 <div class="section-header">
 <div>
 <h2 class="section-title serif"><i data-lucide="gamepad-2"></i> 學思軒練習神器專區</h2>
 <p class="section-desc">輕量、高效、好玩的單元配對與快問快答，適合課堂互動搶答或課後自我檢測</p>
 </div>
-<span class="section-count">23 款專屬神器</span>
+<span class="section-count">24 款專屬神器</span>
 </div>
 <div class="practice-grid"><div class="practice-card course-item" data-keywords="移覺 通感 修辭 練習神器 視覺 聽覺 嗅覺 味覺 觸覺 感官 翰林 B3L01〈田園之秋選〉">
 <div>
@@ -1813,6 +1845,21 @@
 </div>
 <a class="practice-card-btn" href="color/color-practice.html" target="_blank">
 <i data-lucide="external-link" style="width:16px;"></i> 開啟顏色字練習
+          </a>
+</div>
+        <div class="practice-card course-item" data-keywords="四大句型 句型 敘事句 有無句 判斷句 表態句 練習神器 閃卡 測驗 題庫 錯題本 國文 會考 語文學習集 翰林 B3 語二 語文常識二 句型">
+<div>
+<div class="practice-card-header">
+<div class="practice-icon-box indigo"><i data-lucide="layers"></i></div>
+<div>
+<h3 class="practice-card-title">四大句型練習神器</h3>
+<div class="practice-card-tags"><span class="practice-card-tag">四大句型・百題刷題</span><span class="practice-card-lesson">🔖 B3 語文常識二 句型</span></div>
+</div>
+</div>
+<p class="practice-card-desc">收錄 100 題完整真題庫，支援 3D 雙面翻卡特訓、隨機四選一測驗、題庫總覽與個人專屬錯題本。</p>
+</div>
+<a class="practice-card-btn" href="sentence/sentence-practice.html" target="_blank">
+<i data-lucide="external-link" style="width:16px;"></i> 開啟四大句型練習
           </a>
 </div>
         </div>

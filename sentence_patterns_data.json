@@ -1,0 +1,2061 @@
+﻿{
+    "total":  100,
+    "questions":  [
+                      {
+                          "raw":  "人心不古。",
+                          "pattern":  "表態句",
+                          "id":  1,
+                          "explanation":  "沒有動詞",
+                          "runs":  [
+                                       {
+                                           "text":  "人心",
+                                           "type":  "subject"
+                                       },
+                                       {
+                                           "text":  "不古。",
+                                           "type":  "normal"
+                                       }
+                                   ]
+                      },
+                      {
+                          "raw":  "人生沒有永遠的順境。",
+                          "pattern":  "有無句",
+                          "id":  2,
+                          "explanation":  "主要動詞：有",
+                          "runs":  [
+                                       {
+                                           "text":  "人生",
+                                           "type":  "subject"
+                                       },
+                                       {
+                                           "text":  "沒",
+                                           "type":  "normal"
+                                       },
+                                       {
+                                           "text":  "有",
+                                           "type":  "verb"
+                                       },
+                                       {
+                                           "text":  "永遠的順境。",
+                                           "type":  "normal"
+                                       }
+                                   ]
+                      },
+                      {
+                          "raw":  "山川壯麗。",
+                          "pattern":  "表態句",
+                          "id":  3,
+                          "explanation":  "沒有動詞",
+                          "runs":  [
+                                       {
+                                           "text":  "山川",
+                                           "type":  "subject"
+                                       },
+                                       {
+                                           "text":  "壯麗。",
+                                           "type":  "normal"
+                                       }
+                                   ]
+                      },
+                      {
+                          "raw":  "天下沒有白吃的午餐。",
+                          "pattern":  "有無句",
+                          "id":  4,
+                          "explanation":  "主要動詞：有",
+                          "runs":  [
+                                       {
+                                           "text":  "天下",
+                                           "type":  "subject"
+                                       },
+                                       {
+                                           "text":  "沒",
+                                           "type":  "normal"
+                                       },
+                                       {
+                                           "text":  "有",
+                                           "type":  "verb"
+                                       },
+                                       {
+                                           "text":  "白吃的午餐。 ",
+                                           "type":  "normal"
+                                       }
+                                   ]
+                      },
+                      {
+                          "raw":  "天下無不是的父母。",
+                          "pattern":  "有無句",
+                          "id":  5,
+                          "explanation":  "主要動詞：無",
+                          "runs":  [
+                                       {
+                                           "text":  "天下",
+                                           "type":  "subject"
+                                       },
+                                       {
+                                           "text":  "無",
+                                           "type":  "verb"
+                                       },
+                                       {
+                                           "text":  "不是的父母。",
+                                           "type":  "normal"
+                                       }
+                                   ]
+                      },
+                      {
+                          "raw":  "天下無不散的筵席。",
+                          "pattern":  "有無句",
+                          "id":  6,
+                          "explanation":  "主要動詞：無",
+                          "runs":  [
+                                       {
+                                           "text":  "天下",
+                                           "type":  "subject"
+                                       },
+                                       {
+                                           "text":  "無",
+                                           "type":  "verb"
+                                       },
+                                       {
+                                           "text":  "不散的筵席。",
+                                           "type":  "normal"
+                                       }
+                                   ]
+                      },
+                      {
+                          "raw":  "天有不測風雲。",
+                          "pattern":  "有無句",
+                          "id":  7,
+                          "explanation":  "主要動詞：有",
+                          "runs":  [
+                                       {
+                                           "text":  "天",
+                                           "type":  "subject"
+                                       },
+                                       {
+                                           "text":  "有",
+                                           "type":  "verb"
+                                       },
+                                       {
+                                           "text":  "不測風雲。",
+                                           "type":  "normal"
+                                       }
+                                   ]
+                      },
+                      {
+                          "raw":  "心中無別人。",
+                          "pattern":  "有無句",
+                          "id":  8,
+                          "explanation":  "主要動詞：無",
+                          "runs":  [
+                                       {
+                                           "text":  "心中",
+                                           "type":  "subject"
+                                       },
+                                       {
+                                           "text":  "無",
+                                           "type":  "verb"
+                                       },
+                                       {
+                                           "text":  "別人。",
+                                           "type":  "normal"
+                                       }
+                                   ]
+                      },
+                      {
+                          "raw":  "月光多麼皎潔明亮。",
+                          "pattern":  "表態句",
+                          "id":  9,
+                          "explanation":  "沒有動詞",
+                          "runs":  [
+                                       {
+                                           "text":  "月光",
+                                           "type":  "subject"
+                                       },
+                                       {
+                                           "text":  "多麼皎潔明亮。",
+                                           "type":  "normal"
+                                       }
+                                   ]
+                      },
+                      {
+                          "raw":  "月明星稀。",
+                          "pattern":  "表態句",
+                          "id":  10,
+                          "explanation":  "沒有動詞",
+                          "runs":  [
+                                       {
+                                           "text":  "月",
+                                           "type":  "subject"
+                                       },
+                                       {
+                                           "text":  "明",
+                                           "type":  "normal"
+                                       },
+                                       {
+                                           "text":  "星",
+                                           "type":  "subject"
+                                       },
+                                       {
+                                           "text":  "稀。",
+                                           "type":  "normal"
+                                       }
+                                   ]
+                      },
+                      {
+                          "raw":  "人類的讚歌就是勇氣的讚歌。",
+                          "pattern":  "判斷句",
+                          "id":  11,
+                          "explanation":  "主要動詞：是",
+                          "runs":  [
+                                       {
+                                           "text":  "人類的讚歌",
+                                           "type":  "subject"
+                                       },
+                                       {
+                                           "text":  "就",
+                                           "type":  "normal"
+                                       },
+                                       {
+                                           "text":  "是",
+                                           "type":  "verb"
+                                       },
+                                       {
+                                           "text":  "勇氣的讚歌",
+                                           "type":  "normal"
+                                       },
+                                       {
+                                           "text":  "。",
+                                           "type":  "normal"
+                                       }
+                                   ]
+                      },
+                      {
+                          "raw":  "水都威尼斯浪漫無比。",
+                          "pattern":  "表態句",
+                          "id":  12,
+                          "explanation":  "沒有動詞",
+                          "runs":  [
+                                       {
+                                           "text":  "水都威尼斯",
+                                           "type":  "subject"
+                                       },
+                                       {
+                                           "text":  "浪漫無比。",
+                                           "type":  "normal"
+                                       }
+                                   ]
+                      },
+                      {
+                          "raw":  "牛仔很忙。",
+                          "pattern":  "表態句",
+                          "id":  13,
+                          "explanation":  "沒有動詞",
+                          "runs":  [
+                                       {
+                                           "text":  "牛仔",
+                                           "type":  "subject"
+                                       },
+                                       {
+                                           "text":  "很忙。",
+                                           "type":  "normal"
+                                       }
+                                   ]
+                      },
+                      {
+                          "raw":  "王老先生有塊地。",
+                          "pattern":  "有無句",
+                          "id":  14,
+                          "explanation":  "主要動詞：有",
+                          "runs":  [
+                                       {
+                                           "text":  "王老先生",
+                                           "type":  "subject"
+                                       },
+                                       {
+                                           "text":  "有",
+                                           "type":  "verb"
+                                       },
+                                       {
+                                           "text":  "塊地。",
+                                           "type":  "normal"
+                                       }
+                                   ]
+                      },
+                      {
+                          "raw":  "王藍田性急。",
+                          "pattern":  "表態句",
+                          "id":  15,
+                          "explanation":  "沒有動詞",
+                          "runs":  [
+                                       {
+                                           "text":  "王藍田",
+                                           "type":  "subject"
+                                       },
+                                       {
+                                           "text":  "性急。",
+                                           "type":  "normal"
+                                       }
+                                   ]
+                      },
+                      {
+                          "raw":  "他的生活一向平安寧靜。",
+                          "pattern":  "表態句",
+                          "id":  16,
+                          "explanation":  "沒有動詞",
+                          "runs":  [
+                                       {
+                                           "text":  "他的生活",
+                                           "type":  "subject"
+                                       },
+                                       {
+                                           "text":  "一向平安寧靜。",
+                                           "type":  "normal"
+                                       }
+                                   ]
+                      },
+                      {
+                          "raw":  "他舉起右手點名。",
+                          "pattern":  "敘事句",
+                          "id":  17,
+                          "explanation":  "主要動詞：點名",
+                          "runs":  [
+                                       {
+                                           "text":  "他",
+                                           "type":  "subject"
+                                       },
+                                       {
+                                           "text":  "舉起右手",
+                                           "type":  "normal"
+                                       },
+                                       {
+                                           "text":  "點名",
+                                           "type":  "verb"
+                                       },
+                                       {
+                                           "text":  "。",
+                                           "type":  "normal"
+                                       }
+                                   ]
+                      },
+                      {
+                          "raw":  "只有遠傳，沒有距離。",
+                          "pattern":  "有無句",
+                          "id":  18,
+                          "explanation":  "主要動詞：有",
+                          "runs":  [
+                                       {
+                                           "text":  "只",
+                                           "type":  "normal"
+                                       },
+                                       {
+                                           "text":  "有",
+                                           "type":  "verb"
+                                       },
+                                       {
+                                           "text":  "遠傳，沒",
+                                           "type":  "normal"
+                                       },
+                                       {
+                                           "text":  "有",
+                                           "type":  "verb"
+                                       },
+                                       {
+                                           "text":  "距離。",
+                                           "type":  "normal"
+                                       }
+                                   ]
+                      },
+                      {
+                          "raw":  "可愛者甚蕃。",
+                          "pattern":  "表態句",
+                          "id":  19,
+                          "explanation":  "沒有動詞",
+                          "runs":  [
+                                       {
+                                           "text":  "可愛者",
+                                           "type":  "subject"
+                                       },
+                                       {
+                                           "text":  "甚蕃。",
+                                           "type":  "normal"
+                                       }
+                                   ]
+                      },
+                      {
+                          "raw":  "四海昇平。",
+                          "pattern":  "表態句",
+                          "id":  20,
+                          "explanation":  "沒有動詞",
+                          "runs":  [
+                                       {
+                                           "text":  "四海",
+                                           "type":  "subject"
+                                       },
+                                       {
+                                           "text":  "昇平。",
+                                           "type":  "normal"
+                                       }
+                                   ]
+                      },
+                      {
+                          "raw":  "生命有一種絕對。",
+                          "pattern":  "有無句",
+                          "id":  21,
+                          "explanation":  "主要動詞：有",
+                          "runs":  [
+                                       {
+                                           "text":  "生命",
+                                           "type":  "subject"
+                                       },
+                                       {
+                                           "text":  "有",
+                                           "type":  "verb"
+                                       },
+                                       {
+                                           "text":  "一種絕對。",
+                                           "type":  "normal"
+                                       }
+                                   ]
+                      },
+                      {
+                          "raw":  "全家就是你家。",
+                          "pattern":  "判斷句",
+                          "id":  22,
+                          "explanation":  "主要動詞：是",
+                          "runs":  [
+                                       {
+                                           "text":  "全家",
+                                           "type":  "subject"
+                                       },
+                                       {
+                                           "text":  "就",
+                                           "type":  "normal"
+                                       },
+                                       {
+                                           "text":  "是",
+                                           "type":  "verb"
+                                       },
+                                       {
+                                           "text":  "你家。",
+                                           "type":  "normal"
+                                       }
+                                   ]
+                      },
+                      {
+                          "raw":  "在我的心中還有個尚未崩壞的地方。",
+                          "pattern":  "有無句",
+                          "id":  23,
+                          "explanation":  "主要動詞：有",
+                          "runs":  [
+                                       {
+                                           "text":  "在我的心中",
+                                           "type":  "subject"
+                                       },
+                                       {
+                                           "text":  "還",
+                                           "type":  "normal"
+                                       },
+                                       {
+                                           "text":  "有",
+                                           "type":  "verb"
+                                       },
+                                       {
+                                           "text":  "個尚未崩壞的地方。",
+                                           "type":  "normal"
+                                       }
+                                   ]
+                      },
+                      {
+                          "raw":  "如果我們不曾相遇。",
+                          "pattern":  "敘事句",
+                          "id":  24,
+                          "explanation":  "主要動詞：相遇",
+                          "runs":  [
+                                       {
+                                           "text":  "如果",
+                                           "type":  "normal"
+                                       },
+                                       {
+                                           "text":  "我們",
+                                           "type":  "subject"
+                                       },
+                                       {
+                                           "text":  "不曾",
+                                           "type":  "normal"
+                                       },
+                                       {
+                                           "text":  "相遇",
+                                           "type":  "verb"
+                                       },
+                                       {
+                                           "text":  "。",
+                                           "type":  "normal"
+                                       }
+                                   ]
+                      },
+                      {
+                          "raw":  "宅邊有五柳樹。",
+                          "pattern":  "有無句",
+                          "id":  25,
+                          "explanation":  "主要動詞：有",
+                          "runs":  [
+                                       {
+                                           "text":  "宅邊",
+                                           "type":  "subject"
+                                       },
+                                       {
+                                           "text":  "有",
+                                           "type":  "verb"
+                                       },
+                                       {
+                                           "text":  "五柳樹。",
+                                           "type":  "normal"
+                                       }
+                                   ]
+                      },
+                      {
+                          "raw":  "成功的男人背後必有個堅強的女性。",
+                          "pattern":  "有無句",
+                          "id":  26,
+                          "explanation":  "主要動詞：有",
+                          "runs":  [
+                                       {
+                                           "text":  "成功的男人背後",
+                                           "type":  "subject"
+                                       },
+                                       {
+                                           "text":  "必",
+                                           "type":  "normal"
+                                       },
+                                       {
+                                           "text":  "有",
+                                           "type":  "verb"
+                                       },
+                                       {
+                                           "text":  "個堅強的女性。",
+                                           "type":  "normal"
+                                       }
+                                   ]
+                      },
+                      {
+                          "raw":  "有沒有他這麼恨我們的八卦？",
+                          "pattern":  "有無句",
+                          "id":  27,
+                          "explanation":  "主要動詞：有",
+                          "runs":  [
+                                       {
+                                           "text":  "有",
+                                           "type":  "verb"
+                                       },
+                                       {
+                                           "text":  "沒有他這麼恨我們的八卦？",
+                                           "type":  "normal"
+                                       }
+                                   ]
+                      },
+                      {
+                          "raw":  "有恆為成功之本。",
+                          "pattern":  "判斷句",
+                          "id":  28,
+                          "explanation":  "主要動詞：為=是",
+                          "runs":  [
+                                       {
+                                           "text":  "有恆",
+                                           "type":  "subject"
+                                       },
+                                       {
+                                           "text":  "為",
+                                           "type":  "verb"
+                                       },
+                                       {
+                                           "text":  "成功之本。",
+                                           "type":  "normal"
+                                       }
+                                   ]
+                      },
+                      {
+                          "raw":  "有時候失去就是一種獲得。",
+                          "pattern":  "判斷句",
+                          "id":  29,
+                          "explanation":  "主要動詞：是",
+                          "runs":  [
+                                       {
+                                           "text":  "有時候",
+                                           "type":  "normal"
+                                       },
+                                       {
+                                           "text":  "失去",
+                                           "type":  "subject"
+                                       },
+                                       {
+                                           "text":  "就",
+                                           "type":  "normal"
+                                       },
+                                       {
+                                           "text":  "是",
+                                           "type":  "verb"
+                                       },
+                                       {
+                                           "text":  "一種獲得。",
+                                           "type":  "normal"
+                                       }
+                                   ]
+                      },
+                      {
+                          "raw":  "老鼠愛大米。",
+                          "pattern":  "敘事句",
+                          "id":  30,
+                          "explanation":  "主要動詞：愛",
+                          "runs":  [
+                                       {
+                                           "text":  "老鼠",
+                                           "type":  "subject"
+                                       },
+                                       {
+                                           "text":  "愛",
+                                           "type":  "verb"
+                                       },
+                                       {
+                                           "text":  "大米。",
+                                           "type":  "normal"
+                                       }
+                                   ]
+                      },
+                      {
+                          "raw":  "何處無竹柏？",
+                          "pattern":  "有無句",
+                          "id":  31,
+                          "explanation":  "主要動詞：無",
+                          "runs":  [
+                                       {
+                                           "text":  "何處",
+                                           "type":  "subject"
+                                       },
+                                       {
+                                           "text":  "無",
+                                           "type":  "verb"
+                                       },
+                                       {
+                                           "text":  "竹柏？",
+                                           "type":  "normal"
+                                       }
+                                   ]
+                      },
+                      {
+                          "raw":  "你不是真正的快樂。",
+                          "pattern":  "判斷句",
+                          "id":  32,
+                          "explanation":  "主要動詞：是",
+                          "runs":  [
+                                       {
+                                           "text":  "你",
+                                           "type":  "subject"
+                                       },
+                                       {
+                                           "text":  "不",
+                                           "type":  "normal"
+                                       },
+                                       {
+                                           "text":  "是",
+                                           "type":  "verb"
+                                       },
+                                       {
+                                           "text":  "真正的快樂。",
+                                           "type":  "normal"
+                                       }
+                                   ]
+                      },
+                      {
+                          "raw":  "你心中一定有座濃霧的湖泊。",
+                          "pattern":  "有無句",
+                          "id":  33,
+                          "explanation":  "主要動詞：有",
+                          "runs":  [
+                                       {
+                                           "text":  "你心中",
+                                           "type":  "subject"
+                                       },
+                                       {
+                                           "text":  "一定",
+                                           "type":  "normal"
+                                       },
+                                       {
+                                           "text":  "有",
+                                           "type":  "verb"
+                                       },
+                                       {
+                                           "text":  "座濃霧的湖泊。",
+                                           "type":  "normal"
+                                       }
+                                   ]
+                      },
+                      {
+                          "raw":  "你在煩惱什麼？",
+                          "pattern":  "敘事句",
+                          "id":  34,
+                          "explanation":  "主要動詞：煩惱",
+                          "runs":  [
+                                       {
+                                           "text":  "你",
+                                           "type":  "subject"
+                                       },
+                                       {
+                                           "text":  "在",
+                                           "type":  "normal"
+                                       },
+                                       {
+                                           "text":  "煩惱",
+                                           "type":  "verb"
+                                       },
+                                       {
+                                           "text":  "什麼？",
+                                           "type":  "normal"
+                                       }
+                                   ]
+                      },
+                      {
+                          "raw":  "最短的捷徑就是繞遠路。",
+                          "pattern":  "判斷句",
+                          "id":  35,
+                          "explanation":  "主要動詞：是",
+                          "runs":  [
+                                       {
+                                           "text":  "最短的捷徑",
+                                           "type":  "subject"
+                                       },
+                                       {
+                                           "text":  "就是",
+                                           "type":  "verb"
+                                       },
+                                       {
+                                           "text":  "繞遠路。",
+                                           "type":  "normal"
+                                       }
+                                   ]
+                      },
+                      {
+                          "raw":  "你是我最想留住的幸運。",
+                          "pattern":  "判斷句",
+                          "id":  36,
+                          "explanation":  "主要動詞：是",
+                          "runs":  [
+                                       {
+                                           "text":  "你",
+                                           "type":  "subject"
+                                       },
+                                       {
+                                           "text":  "是",
+                                           "type":  "verb"
+                                       },
+                                       {
+                                           "text":  "我最想留住的幸運。",
+                                           "type":  "normal"
+                                       }
+                                   ]
+                      },
+                      {
+                          "raw":  "關機是一種美德。",
+                          "pattern":  "判斷句",
+                          "id":  37,
+                          "explanation":  "主要動詞：是",
+                          "runs":  [
+                                       {
+                                           "text":  "關機",
+                                           "type":  "subject"
+                                       },
+                                       {
+                                           "text":  "是",
+                                           "type":  "verb"
+                                       },
+                                       {
+                                           "text":  "一種美德。",
+                                           "type":  "normal"
+                                       }
+                                   ]
+                      },
+                      {
+                          "raw":  "你被寫在我的歌裡。",
+                          "pattern":  "敘事句",
+                          "id":  38,
+                          "explanation":  "主要動詞：寫",
+                          "runs":  [
+                                       {
+                                           "text":  "你",
+                                           "type":  "subject"
+                                       },
+                                       {
+                                           "text":  "被",
+                                           "type":  "normal"
+                                       },
+                                       {
+                                           "text":  "寫",
+                                           "type":  "verb"
+                                       },
+                                       {
+                                           "text":  "在我的歌裡。",
+                                           "type":  "normal"
+                                       }
+                                   ]
+                      },
+                      {
+                          "raw":  "君子有終身之憂。",
+                          "pattern":  "有無句",
+                          "id":  39,
+                          "explanation":  "主要動詞：有",
+                          "runs":  [
+                                       {
+                                           "text":  "君子",
+                                           "type":  "subject"
+                                       },
+                                       {
+                                           "text":  "有",
+                                           "type":  "verb"
+                                       },
+                                       {
+                                           "text":  "終身之憂。",
+                                           "type":  "normal"
+                                       }
+                                   ]
+                      },
+                      {
+                          "raw":  "我已失去為你淚流滿面的權利。",
+                          "pattern":  "敘事句",
+                          "id":  40,
+                          "explanation":  "主要動詞：失去",
+                          "runs":  [
+                                       {
+                                           "text":  "我",
+                                           "type":  "subject"
+                                       },
+                                       {
+                                           "text":  "已",
+                                           "type":  "normal"
+                                       },
+                                       {
+                                           "text":  "失去",
+                                           "type":  "verb"
+                                       },
+                                       {
+                                           "text":  "為你淚流滿面的權利。",
+                                           "type":  "normal"
+                                       }
+                                   ]
+                      },
+                      {
+                          "raw":  "我不再是一顆寂寞的星星。",
+                          "pattern":  "判斷句",
+                          "id":  41,
+                          "explanation":  "主要動詞：是",
+                          "runs":  [
+                                       {
+                                           "text":  "我",
+                                           "type":  "subject"
+                                       },
+                                       {
+                                           "text":  "不再",
+                                           "type":  "normal"
+                                       },
+                                       {
+                                           "text":  "是",
+                                           "type":  "verb"
+                                       },
+                                       {
+                                           "text":  "一顆寂寞的星星。",
+                                           "type":  "normal"
+                                       }
+                                   ]
+                      },
+                      {
+                          "raw":  "我只在乎你。",
+                          "pattern":  "敘事句",
+                          "id":  42,
+                          "explanation":  "主要動詞：在乎",
+                          "runs":  [
+                                       {
+                                           "text":  "我",
+                                           "type":  "subject"
+                                       },
+                                       {
+                                           "text":  "只",
+                                           "type":  "normal"
+                                       },
+                                       {
+                                           "text":  "在乎",
+                                           "type":  "verb"
+                                       },
+                                       {
+                                           "text":  "你。",
+                                           "type":  "normal"
+                                       }
+                                   ]
+                      },
+                      {
+                          "raw":  "我多麼羨慕你。",
+                          "pattern":  "敘事句",
+                          "id":  43,
+                          "explanation":  "主要動詞：羨慕",
+                          "runs":  [
+                                       {
+                                           "text":  "我",
+                                           "type":  "subject"
+                                       },
+                                       {
+                                           "text":  "多麼",
+                                           "type":  "normal"
+                                       },
+                                       {
+                                           "text":  "羨慕",
+                                           "type":  "verb"
+                                       },
+                                       {
+                                           "text":  "你。",
+                                           "type":  "normal"
+                                       }
+                                   ]
+                      },
+                      {
+                          "raw":  "我的心中有無限感慨。",
+                          "pattern":  "有無句",
+                          "id":  44,
+                          "explanation":  "主要動詞：有",
+                          "runs":  [
+                                       {
+                                           "text":  "我的心中",
+                                           "type":  "subject"
+                                       },
+                                       {
+                                           "text":  "有",
+                                           "type":  "verb"
+                                       },
+                                       {
+                                           "text":  "無限感慨。",
+                                           "type":  "normal"
+                                       }
+                                   ]
+                      },
+                      {
+                          "raw":  "我的未來不是夢。",
+                          "pattern":  "判斷句",
+                          "id":  45,
+                          "explanation":  "主要動詞：是",
+                          "runs":  [
+                                       {
+                                           "text":  "我的未來",
+                                           "type":  "subject"
+                                       },
+                                       {
+                                           "text":  "不",
+                                           "type":  "normal"
+                                       },
+                                       {
+                                           "text":  "是",
+                                           "type":  "verb"
+                                       },
+                                       {
+                                           "text":  "夢。",
+                                           "type":  "normal"
+                                       }
+                                   ]
+                      },
+                      {
+                          "raw":  "我的字典裡沒有放棄。",
+                          "pattern":  "有無句",
+                          "id":  46,
+                          "explanation":  "主要動詞：有",
+                          "runs":  [
+                                       {
+                                           "text":  "我的字典",
+                                           "type":  "subject"
+                                       },
+                                       {
+                                           "text":  "裡沒",
+                                           "type":  "normal"
+                                       },
+                                       {
+                                           "text":  "有",
+                                           "type":  "verb"
+                                       },
+                                       {
+                                           "text":  "放棄。",
+                                           "type":  "normal"
+                                       }
+                                   ]
+                      },
+                      {
+                          "raw":  "我的自傳裡曾經有你。",
+                          "pattern":  "有無句",
+                          "id":  47,
+                          "explanation":  "主要動詞：有",
+                          "runs":  [
+                                       {
+                                           "text":  "我的自傳",
+                                           "type":  "subject"
+                                       },
+                                       {
+                                           "text":  "裡曾經",
+                                           "type":  "normal"
+                                       },
+                                       {
+                                           "text":  "有",
+                                           "type":  "verb"
+                                       },
+                                       {
+                                           "text":  "你。",
+                                           "type":  "normal"
+                                       }
+                                   ]
+                      },
+                      {
+                          "raw":  "我的青春多可貴。",
+                          "pattern":  "表態句",
+                          "id":  48,
+                          "explanation":  "沒有動詞",
+                          "runs":  [
+                                       {
+                                           "text":  "我的青春",
+                                           "type":  "subject"
+                                       },
+                                       {
+                                           "text":  "多可貴。",
+                                           "type":  "normal"
+                                       }
+                                   ]
+                      },
+                      {
+                          "raw":  "我知道你很難過。",
+                          "pattern":  "敘事句",
+                          "id":  49,
+                          "explanation":  "主要動詞：知道",
+                          "runs":  [
+                                       {
+                                           "text":  "我",
+                                           "type":  "subject"
+                                       },
+                                       {
+                                           "text":  "知道",
+                                           "type":  "verb"
+                                       },
+                                       {
+                                           "text":  "你很難過。",
+                                           "type":  "normal"
+                                       }
+                                   ]
+                      },
+                      {
+                          "raw":  "我們天生就是派對動物。",
+                          "pattern":  "判斷句",
+                          "id":  50,
+                          "explanation":  "主要動詞：是",
+                          "runs":  [
+                                       {
+                                           "text":  "我們",
+                                           "type":  "subject"
+                                       },
+                                       {
+                                           "text":  "天生就",
+                                           "type":  "normal"
+                                       },
+                                       {
+                                           "text":  "是",
+                                           "type":  "verb"
+                                       },
+                                       {
+                                           "text":  "派對動物。",
+                                           "type":  "normal"
+                                       }
+                                   ]
+                      },
+                      {
+                          "raw":  "我們只有那一片沙。",
+                          "pattern":  "有無句",
+                          "id":  51,
+                          "explanation":  "主要動詞：有",
+                          "runs":  [
+                                       {
+                                           "text":  "我們",
+                                           "type":  "subject"
+                                       },
+                                       {
+                                           "text":  "只",
+                                           "type":  "normal"
+                                       },
+                                       {
+                                           "text":  "有",
+                                           "type":  "verb"
+                                       },
+                                       {
+                                           "text":  "那一片沙。",
+                                           "type":  "normal"
+                                       }
+                                   ]
+                      },
+                      {
+                          "raw":  "我就是愛你。",
+                          "pattern":  "敘事句",
+                          "id":  52,
+                          "explanation":  "主要動詞：愛",
+                          "runs":  [
+                                       {
+                                           "text":  "我",
+                                           "type":  "subject"
+                                       },
+                                       {
+                                           "text":  "就是",
+                                           "type":  "normal"
+                                       },
+                                       {
+                                           "text":  "愛",
+                                           "type":  "verb"
+                                       },
+                                       {
+                                           "text":  "你。",
+                                           "type":  "normal"
+                                       }
+                                   ]
+                      },
+                      {
+                          "raw":  "我聽見雨滴落在青青草地。",
+                          "pattern":  "敘事句",
+                          "id":  53,
+                          "explanation":  "主要動詞：聽見",
+                          "runs":  [
+                                       {
+                                           "text":  "我",
+                                           "type":  "subject"
+                                       },
+                                       {
+                                           "text":  "聽見",
+                                           "type":  "verb"
+                                       },
+                                       {
+                                           "text":  "雨滴落在青青草地。",
+                                           "type":  "normal"
+                                       }
+                                   ]
+                      },
+                      {
+                          "raw":  "朋友買了一件衣料。",
+                          "pattern":  "敘事句",
+                          "id":  54,
+                          "explanation":  "主要動詞：買",
+                          "runs":  [
+                                       {
+                                           "text":  "朋友",
+                                           "type":  "subject"
+                                       },
+                                       {
+                                           "text":  "買",
+                                           "type":  "verb"
+                                       },
+                                       {
+                                           "text":  "了一件衣料。",
+                                           "type":  "normal"
+                                       }
+                                   ]
+                      },
+                      {
+                          "raw":  "林書豪的球技精湛。",
+                          "pattern":  "表態句",
+                          "id":  55,
+                          "explanation":  "沒有動詞",
+                          "runs":  [
+                                       {
+                                           "text":  "林書豪的球技",
+                                           "type":  "subject"
+                                       },
+                                       {
+                                           "text":  "精湛。",
+                                           "type":  "normal"
+                                       }
+                                   ]
+                      },
+                      {
+                          "raw":  "阿里山的少年壯如山。",
+                          "pattern":  "表態句",
+                          "id":  56,
+                          "explanation":  "沒有動詞",
+                          "runs":  [
+                                       {
+                                           "text":  "阿里山的少年",
+                                           "type":  "subject"
+                                       },
+                                       {
+                                           "text":  "壯如山。",
+                                           "type":  "normal"
+                                       }
+                                   ]
+                      },
+                      {
+                          "raw":  "阿爸沒有任何怨言。",
+                          "pattern":  "有無句",
+                          "id":  57,
+                          "explanation":  "主要動詞：有",
+                          "runs":  [
+                                       {
+                                           "text":  "阿爸",
+                                           "type":  "subject"
+                                       },
+                                       {
+                                           "text":  "沒",
+                                           "type":  "normal"
+                                       },
+                                       {
+                                           "text":  "有",
+                                           "type":  "verb"
+                                       },
+                                       {
+                                           "text":  "任何怨言。",
+                                           "type":  "normal"
+                                       }
+                                   ]
+                      },
+                      {
+                          "raw":  "雨下一整晚。",
+                          "pattern":  "敘事句",
+                          "id":  58,
+                          "explanation":  "主要動詞：下",
+                          "runs":  [
+                                       {
+                                           "text":  "雨",
+                                           "type":  "subject"
+                                       },
+                                       {
+                                           "text":  "下",
+                                           "type":  "verb"
+                                       },
+                                       {
+                                           "text":  "一整晚。",
+                                           "type":  "normal"
+                                       }
+                                   ]
+                      },
+                      {
+                          "raw":  "青春是段跌跌撞撞的旅行。",
+                          "pattern":  "判斷句",
+                          "id":  59,
+                          "explanation":  "主要動詞：是",
+                          "runs":  [
+                                       {
+                                           "text":  "青春",
+                                           "type":  "subject"
+                                       },
+                                       {
+                                           "text":  "是",
+                                           "type":  "verb"
+                                       },
+                                       {
+                                           "text":  "段跌跌撞撞的旅行。",
+                                           "type":  "normal"
+                                       }
+                                   ]
+                      },
+                      {
+                          "raw":  "後悔是時間最大的敵人。",
+                          "pattern":  "判斷句",
+                          "id":  60,
+                          "explanation":  "主要動詞：是",
+                          "runs":  [
+                                       {
+                                           "text":  "後悔",
+                                           "type":  "subject"
+                                       },
+                                       {
+                                           "text":  "是",
+                                           "type":  "verb"
+                                       },
+                                       {
+                                           "text":  "時間最大的敵人。",
+                                           "type":  "normal"
+                                       }
+                                   ]
+                      },
+                      {
+                          "raw":  "童叟無欺",
+                          "pattern":  "敘事句",
+                          "id":  61,
+                          "explanation":  "主要動詞：欺",
+                          "runs":  [
+                                       {
+                                           "text":  "童叟",
+                                           "type":  "subject"
+                                       },
+                                       {
+                                           "text":  "無",
+                                           "type":  "normal"
+                                       },
+                                       {
+                                           "text":  "欺",
+                                           "type":  "verb"
+                                       }
+                                   ]
+                      },
+                      {
+                          "raw":  "有你真好。",
+                          "pattern":  "表態句",
+                          "id":  62,
+                          "explanation":  "沒有動詞",
+                          "runs":  [
+                                       {
+                                           "text":  "有你",
+                                           "type":  "subject"
+                                       },
+                                       {
+                                           "text":  "真好。",
+                                           "type":  "normal"
+                                       }
+                                   ]
+                      },
+                      {
+                          "raw":  "突然好想你。",
+                          "pattern":  "敘事句",
+                          "id":  63,
+                          "explanation":  "主要動詞：想",
+                          "runs":  [
+                                       {
+                                           "text":  "突然好",
+                                           "type":  "normal"
+                                       },
+                                       {
+                                           "text":  "想",
+                                           "type":  "verb"
+                                       },
+                                       {
+                                           "text":  "你。",
+                                           "type":  "normal"
+                                       }
+                                   ]
+                      },
+                      {
+                          "raw":  "美就是心中有愛。",
+                          "pattern":  "判斷句",
+                          "id":  64,
+                          "explanation":  "主要動詞：是",
+                          "runs":  [
+                                       {
+                                           "text":  "美",
+                                           "type":  "subject"
+                                       },
+                                       {
+                                           "text":  "就",
+                                           "type":  "normal"
+                                       },
+                                       {
+                                           "text":  "是",
+                                           "type":  "verb"
+                                       },
+                                       {
+                                           "text":  "心中有愛。",
+                                           "type":  "normal"
+                                       }
+                                   ]
+                      },
+                      {
+                          "raw":  "美麗的故事都有遺憾。",
+                          "pattern":  "有無句",
+                          "id":  65,
+                          "explanation":  "主要動詞：有",
+                          "runs":  [
+                                       {
+                                           "text":  "美麗的故事",
+                                           "type":  "subject"
+                                       },
+                                       {
+                                           "text":  "都",
+                                           "type":  "normal"
+                                       },
+                                       {
+                                           "text":  "有",
+                                           "type":  "verb"
+                                       },
+                                       {
+                                           "text":  "遺憾。",
+                                           "type":  "normal"
+                                       }
+                                   ]
+                      },
+                      {
+                          "raw":  "倫敦大橋垮下來。",
+                          "pattern":  "敘事句",
+                          "id":  66,
+                          "explanation":  "主要動詞：垮",
+                          "runs":  [
+                                       {
+                                           "text":  "倫敦大橋",
+                                           "type":  "subject"
+                                       },
+                                       {
+                                           "text":  "垮",
+                                           "type":  "verb"
+                                       },
+                                       {
+                                           "text":  "下來。",
+                                           "type":  "normal"
+                                       }
+                                   ]
+                      },
+                      {
+                          "raw":  "校園林木蓊鬱。",
+                          "pattern":  "表態句",
+                          "id":  67,
+                          "explanation":  "沒有動詞",
+                          "runs":  [
+                                       {
+                                           "text":  "校園林木",
+                                           "type":  "subject"
+                                       },
+                                       {
+                                           "text":  "蓊鬱。",
+                                           "type":  "normal"
+                                       }
+                                   ]
+                      },
+                      {
+                          "raw":  "氣焰囂張。",
+                          "pattern":  "表態句",
+                          "id":  68,
+                          "explanation":  "沒有動詞",
+                          "runs":  [
+                                       {
+                                           "text":  "氣焰",
+                                           "type":  "subject"
+                                       },
+                                       {
+                                           "text":  "囂張。",
+                                           "type":  "normal"
+                                       }
+                                   ]
+                      },
+                      {
+                          "raw":  "海闊天空。",
+                          "pattern":  "表態句",
+                          "id":  69,
+                          "explanation":  "沒有動詞",
+                          "runs":  [
+                                       {
+                                           "text":  "海",
+                                           "type":  "subject"
+                                       },
+                                       {
+                                           "text":  "闊",
+                                           "type":  "normal"
+                                       },
+                                       {
+                                           "text":  "天",
+                                           "type":  "subject"
+                                       },
+                                       {
+                                           "text":  "空。",
+                                           "type":  "normal"
+                                       }
+                                   ]
+                      },
+                      {
+                          "raw":  "未來的事情無人知曉。",
+                          "pattern":  "敘事句",
+                          "id":  70,
+                          "explanation":  "主要動詞：知曉",
+                          "runs":  [
+                                       {
+                                           "text":  "未來的事情",
+                                           "type":  "normal"
+                                       },
+                                       {
+                                           "text":  "無人",
+                                           "type":  "subject"
+                                       },
+                                       {
+                                           "text":  "知曉",
+                                           "type":  "verb"
+                                       },
+                                       {
+                                           "text":  "。",
+                                           "type":  "normal"
+                                       }
+                                   ]
+                      },
+                      {
+                          "raw":  "胸無點墨。",
+                          "pattern":  "有無句",
+                          "id":  71,
+                          "explanation":  "主要動詞：無",
+                          "runs":  [
+                                       {
+                                           "text":  "胸",
+                                           "type":  "subject"
+                                       },
+                                       {
+                                           "text":  "無",
+                                           "type":  "verb"
+                                       },
+                                       {
+                                           "text":  "點墨。",
+                                           "type":  "normal"
+                                       }
+                                   ]
+                      },
+                      {
+                          "raw":  "淡水河畔的落日餘暉絕美無比。",
+                          "pattern":  "表態句",
+                          "id":  72,
+                          "explanation":  "沒有動詞",
+                          "runs":  [
+                                       {
+                                           "text":  "淡水河畔的落日餘暉",
+                                           "type":  "subject"
+                                       },
+                                       {
+                                           "text":  "絕美無比。",
+                                           "type":  "normal"
+                                       }
+                                   ]
+                      },
+                      {
+                          "raw":  "細雨綿綿。",
+                          "pattern":  "表態句",
+                          "id":  73,
+                          "explanation":  "沒有動詞",
+                          "runs":  [
+                                       {
+                                           "text":  "細雨",
+                                           "type":  "subject"
+                                       },
+                                       {
+                                           "text":  "綿綿。",
+                                           "type":  "normal"
+                                       }
+                                   ]
+                      },
+                      {
+                          "raw":  "這不是肯德基。",
+                          "pattern":  "判斷句",
+                          "id":  74,
+                          "explanation":  "主要動詞：是",
+                          "runs":  [
+                                       {
+                                           "text":  "這",
+                                           "type":  "subject"
+                                       },
+                                       {
+                                           "text":  "不",
+                                           "type":  "normal"
+                                       },
+                                       {
+                                           "text":  "是",
+                                           "type":  "verb"
+                                       },
+                                       {
+                                           "text":  "肯德基。",
+                                           "type":  "normal"
+                                       }
+                                   ]
+                      },
+                      {
+                          "raw":  "這些紙船都是有感情的。",
+                          "pattern":  "判斷句",
+                          "id":  75,
+                          "explanation":  "主要動詞：是",
+                          "runs":  [
+                                       {
+                                           "text":  "這些紙船",
+                                           "type":  "subject"
+                                       },
+                                       {
+                                           "text":  "都",
+                                           "type":  "normal"
+                                       },
+                                       {
+                                           "text":  "是",
+                                           "type":  "verb"
+                                       },
+                                       {
+                                           "text":  "有感情的。",
+                                           "type":  "normal"
+                                       }
+                                   ]
+                      },
+                      {
+                          "raw":  "這是一首簡單的小情歌。",
+                          "pattern":  "判斷句",
+                          "id":  76,
+                          "explanation":  "主要動詞：是",
+                          "runs":  [
+                                       {
+                                           "text":  "這",
+                                           "type":  "subject"
+                                       },
+                                       {
+                                           "text":  "是",
+                                           "type":  "verb"
+                                       },
+                                       {
+                                           "text":  "一首簡單的小情歌。",
+                                           "type":  "normal"
+                                       }
+                                   ]
+                      },
+                      {
+                          "raw":  "這樣的感覺真奇妙。",
+                          "pattern":  "表態句",
+                          "id":  77,
+                          "explanation":  "沒有動詞",
+                          "runs":  [
+                                       {
+                                           "text":  "這樣的感覺",
+                                           "type":  "subject"
+                                       },
+                                       {
+                                           "text":  "真奇妙。",
+                                           "type":  "normal"
+                                       }
+                                   ]
+                      },
+                      {
+                          "raw":  "勝敗乃兵家常事。",
+                          "pattern":  "判斷句",
+                          "id":  78,
+                          "explanation":  "主要動詞：乃=是",
+                          "runs":  [
+                                       {
+                                           "text":  "勝敗",
+                                           "type":  "subject"
+                                       },
+                                       {
+                                           "text":  "乃",
+                                           "type":  "verb"
+                                       },
+                                       {
+                                           "text":  "兵家常事。",
+                                           "type":  "normal"
+                                       }
+                                   ]
+                      },
+                      {
+                          "raw":  "聽媽媽的話。",
+                          "pattern":  "敘事句",
+                          "id":  79,
+                          "explanation":  "主要動詞：聽",
+                          "runs":  [
+                                       {
+                                           "text":  "聽",
+                                           "type":  "verb"
+                                       },
+                                       {
+                                           "text":  "媽媽的話。",
+                                           "type":  "normal"
+                                       }
+                                   ]
+                      },
+                      {
+                          "raw":  "湖水很清澈。",
+                          "pattern":  "表態句",
+                          "id":  80,
+                          "explanation":  "沒有動詞",
+                          "runs":  [
+                                       {
+                                           "text":  "湖水",
+                                           "type":  "subject"
+                                       },
+                                       {
+                                           "text":  "很清澈。",
+                                           "type":  "normal"
+                                       }
+                                   ]
+                      },
+                      {
+                          "raw":  "無欲無求是種幸福。",
+                          "pattern":  "判斷句",
+                          "id":  81,
+                          "explanation":  "主要動詞：是",
+                          "runs":  [
+                                       {
+                                           "text":  "無欲無求",
+                                           "type":  "subject"
+                                       },
+                                       {
+                                           "text":  "是",
+                                           "type":  "verb"
+                                       },
+                                       {
+                                           "text":  "種幸福。",
+                                           "type":  "normal"
+                                       }
+                                   ]
+                      },
+                      {
+                          "raw":  "給我一首歌的時間。",
+                          "pattern":  "敘事句",
+                          "id":  82,
+                          "explanation":  "主要動詞：給",
+                          "runs":  [
+                                       {
+                                           "text":  "給",
+                                           "type":  "verb"
+                                       },
+                                       {
+                                           "text":  "我一首歌的時間。",
+                                           "type":  "normal"
+                                       }
+                                   ]
+                      },
+                      {
+                          "raw":  "傷心的人別聽慢歌。",
+                          "pattern":  "敘事句",
+                          "id":  83,
+                          "explanation":  "主要動詞：聽",
+                          "runs":  [
+                                       {
+                                           "text":  "傷心的人",
+                                           "type":  "subject"
+                                       },
+                                       {
+                                           "text":  "別",
+                                           "type":  "normal"
+                                       },
+                                       {
+                                           "text":  "聽",
+                                           "type":  "verb"
+                                       },
+                                       {
+                                           "text":  "慢歌。",
+                                           "type":  "normal"
+                                       }
+                                   ]
+                      },
+                      {
+                          "raw":  "想你的人沒有睡。",
+                          "pattern":  "敘事句",
+                          "id":  84,
+                          "explanation":  "主要動詞：睡",
+                          "runs":  [
+                                       {
+                                           "text":  "想你的人",
+                                           "type":  "subject"
+                                       },
+                                       {
+                                           "text":  "沒有",
+                                           "type":  "normal"
+                                       },
+                                       {
+                                           "text":  "睡",
+                                           "type":  "verb"
+                                       },
+                                       {
+                                           "text":  "。",
+                                           "type":  "normal"
+                                       }
+                                   ]
+                      },
+                      {
+                          "raw":  "想念是會呼吸的痛。",
+                          "pattern":  "判斷句",
+                          "id":  85,
+                          "explanation":  "主要動詞：是",
+                          "runs":  [
+                                       {
+                                           "text":  "想念",
+                                           "type":  "subject"
+                                       },
+                                       {
+                                           "text":  "是",
+                                           "type":  "verb"
+                                       },
+                                       {
+                                           "text":  "會呼吸的痛。",
+                                           "type":  "normal"
+                                       }
+                                   ]
+                      },
+                      {
+                          "raw":  "慈烏失其母。",
+                          "pattern":  "敘事句",
+                          "id":  86,
+                          "explanation":  "主要動詞：失",
+                          "runs":  [
+                                       {
+                                           "text":  "慈烏",
+                                           "type":  "subject"
+                                       },
+                                       {
+                                           "text":  "失",
+                                           "type":  "verb"
+                                       },
+                                       {
+                                           "text":  "其母。",
+                                           "type":  "normal"
+                                       }
+                                   ]
+                      },
+                      {
+                          "raw":  "裡邊沒人。",
+                          "pattern":  "有無句",
+                          "id":  87,
+                          "explanation":  "主要動詞：沒",
+                          "runs":  [
+                                       {
+                                           "text":  "裡邊",
+                                           "type":  "subject"
+                                       },
+                                       {
+                                           "text":  "沒",
+                                           "type":  "verb"
+                                       },
+                                       {
+                                           "text":  "人。",
+                                           "type":  "normal"
+                                       }
+                                   ]
+                      },
+                      {
+                          "raw":  "賈人搬有運無。",
+                          "pattern":  "敘事句",
+                          "id":  88,
+                          "explanation":  "主要動詞：搬運",
+                          "runs":  [
+                                       {
+                                           "text":  "賈人",
+                                           "type":  "subject"
+                                       },
+                                       {
+                                           "text":  "搬",
+                                           "type":  "verb"
+                                       },
+                                       {
+                                           "text":  "有",
+                                           "type":  "normal"
+                                       },
+                                       {
+                                           "text":  "運",
+                                           "type":  "verb"
+                                       },
+                                       {
+                                           "text":  "無。",
+                                           "type":  "normal"
+                                       }
+                                   ]
+                      },
+                      {
+                          "raw":  "遇見了你是生命最好的事情。",
+                          "pattern":  "判斷句",
+                          "id":  89,
+                          "explanation":  "主要動詞：是",
+                          "runs":  [
+                                       {
+                                           "text":  "遇見了你",
+                                           "type":  "subject"
+                                       },
+                                       {
+                                           "text":  "是",
+                                           "type":  "verb"
+                                       },
+                                       {
+                                           "text":  "生命最好的事情。",
+                                           "type":  "normal"
+                                       }
+                                   ]
+                      },
+                      {
+                          "raw":  "電腦遊戲五花八門。",
+                          "pattern":  "表態句",
+                          "id":  90,
+                          "explanation":  "沒有動詞",
+                          "runs":  [
+                                       {
+                                           "text":  "電腦遊戲",
+                                           "type":  "subject"
+                                       },
+                                       {
+                                           "text":  "五花八門。",
+                                           "type":  "normal"
+                                       }
+                                   ]
+                      },
+                      {
+                          "raw":  "電影海角七號很好看。",
+                          "pattern":  "表態句",
+                          "id":  91,
+                          "explanation":  "沒有動詞",
+                          "runs":  [
+                                       {
+                                           "text":  "電影海角七號",
+                                           "type":  "subject"
+                                       },
+                                       {
+                                           "text":  "很好看。",
+                                           "type":  "normal"
+                                       }
+                                   ]
+                      },
+                      {
+                          "raw":  "團結即力量。",
+                          "pattern":  "判斷句",
+                          "id":  92,
+                          "explanation":  "主要動詞：即=是",
+                          "runs":  [
+                                       {
+                                           "text":  "團結",
+                                           "type":  "subject"
+                                       },
+                                       {
+                                           "text":  "即",
+                                           "type":  "verb"
+                                       },
+                                       {
+                                           "text":  "力量。",
+                                           "type":  "normal"
+                                       }
+                                   ]
+                      },
+                      {
+                          "raw":  "與你相遇好幸運。",
+                          "pattern":  "表態句",
+                          "id":  93,
+                          "explanation":  "沒有動詞",
+                          "runs":  [
+                                       {
+                                           "text":  "與你相遇",
+                                           "type":  "subject"
+                                       },
+                                       {
+                                           "text":  "好幸運。",
+                                           "type":  "normal"
+                                       }
+                                   ]
+                      },
+                      {
+                          "raw":  "蓋一癩蝦蟆也。",
+                          "pattern":  "判斷句",
+                          "id":  94,
+                          "explanation":  "主要動詞：蓋=原來是",
+                          "runs":  [
+                                       {
+                                           "text":  "蓋",
+                                           "type":  "verb"
+                                       },
+                                       {
+                                           "text":  "一癩蝦蟆也。",
+                                           "type":  "normal"
+                                       }
+                                   ]
+                      },
+                      {
+                          "raw":  "數大便是美。",
+                          "pattern":  "判斷句",
+                          "id":  95,
+                          "explanation":  "主要動詞：是",
+                          "runs":  [
+                                       {
+                                           "text":  "數大",
+                                           "type":  "subject"
+                                       },
+                                       {
+                                           "text":  "便",
+                                           "type":  "normal"
+                                       },
+                                       {
+                                           "text":  "是",
+                                           "type":  "verb"
+                                       },
+                                       {
+                                           "text":  "美。",
+                                           "type":  "normal"
+                                       }
+                                   ]
+                      },
+                      {
+                          "raw":  "貓捉老鼠。",
+                          "pattern":  "敘事句",
+                          "id":  96,
+                          "explanation":  "主要動詞：捉",
+                          "runs":  [
+                                       {
+                                           "text":  "貓",
+                                           "type":  "subject"
+                                       },
+                                       {
+                                           "text":  "捉",
+                                           "type":  "verb"
+                                       },
+                                       {
+                                           "text":  "老鼠。",
+                                           "type":  "normal"
+                                       }
+                                   ]
+                      },
+                      {
+                          "raw":  "你是唯一。",
+                          "pattern":  "判斷句",
+                          "id":  97,
+                          "explanation":  "主要動詞：是",
+                          "runs":  [
+                                       {
+                                           "text":  "你",
+                                           "type":  "subject"
+                                       },
+                                       {
+                                           "text":  "是",
+                                           "type":  "verb"
+                                       },
+                                       {
+                                           "text":  "唯一。",
+                                           "type":  "normal"
+                                       }
+                                   ]
+                      },
+                      {
+                          "raw":  "故人西辭黃鶴樓。",
+                          "pattern":  "敘事句",
+                          "id":  98,
+                          "explanation":  "主要動詞：辭",
+                          "runs":  [
+                                       {
+                                           "text":  "故人",
+                                           "type":  "subject"
+                                       },
+                                       {
+                                           "text":  "西",
+                                           "type":  "normal"
+                                       },
+                                       {
+                                           "text":  "辭",
+                                           "type":  "verb"
+                                       },
+                                       {
+                                           "text":  "黃鶴樓。",
+                                           "type":  "normal"
+                                       }
+                                   ]
+                      },
+                      {
+                          "raw":  "春光明媚。",
+                          "pattern":  "表態句",
+                          "id":  99,
+                          "explanation":  "沒有動詞",
+                          "runs":  [
+                                       {
+                                           "text":  "春光",
+                                           "type":  "subject"
+                                       },
+                                       {
+                                           "text":  "明媚。",
+                                           "type":  "normal"
+                                       }
+                                   ]
+                      },
+                      {
+                          "raw":  "尊重別人權利。",
+                          "pattern":  "敘事句",
+                          "id":  100,
+                          "explanation":  "主要動詞：尊重",
+                          "runs":  [
+                                       {
+                                           "text":  "尊重",
+                                           "type":  "verb"
+                                       },
+                                       {
+                                           "text":  "別人權利。",
+                                           "type":  "normal"
+                                       }
+                                   ]
+                      }
+                  ]
+}
